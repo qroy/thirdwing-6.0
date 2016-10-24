@@ -17,18 +17,17 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: @grey-dark;
+  font-size: 20em/@fs;
+  line-height: 60em/20;
+  padding-top: 15em/20;
   font-family: 'Open Sans', Verdana, sans-serif;
 }
 h1 {
   color: @orange;
-  font-size: 32em/@fs;
-  line-height: 60em/32;
-  padding-top: 10em/32;
-  margin-bottom: 20em/32;
-  word-break: break-all;
-  @media @phone-ls {
-    word-break: normal;
-  }
+  font-size: 26em/@fs;
+  line-height: 30em/26;
+  padding-top: 12em/26;
+  margin-bottom: 18em/26;
   @media @tablet {
     font-size: 42em/@fs;
     line-height: 60em/42;
@@ -42,7 +41,7 @@ h2 {
   line-height: 60em/20;
   padding-top: 15em/20;
   margin-bottom: 15em/20;
-  @media @tablet {
+  @media @wide {
     font-size: 26em/@fs;
     line-height: 60em/26;
     padding-top: 12em/26;

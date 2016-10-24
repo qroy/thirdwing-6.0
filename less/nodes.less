@@ -113,6 +113,7 @@
     background: @white;
     margin: 0 -30em/@fs 60em/@fs;
     padding: 0 30em/@fs;
+    .box-shadow();
   
     &.node-type-nieuws {
       width: 50%;
@@ -141,13 +142,6 @@
         }
       }
       > .field-more-info {
-        display: none;
-        height: 30em/@fs;
-        @media @phone-ls {
-          float: left;
-          clear: left;
-          width: 260/550 * 100%;
-        } 
         a {
           display: block;
           background: @purple;
