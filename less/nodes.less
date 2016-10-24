@@ -144,15 +144,22 @@
       > .field-more-info {
         a {
           display: block;
-          background: @purple;
+          .icon(@icon-info-circle); 
+          width: 115em/@fs;
+          height: 30em/@fs;
           text-align: center;
-          color: @white;
-          .border-radius(@border-radius-small);
-          box-sizing: border-box;
-          overflow: hidden;
-          margin: 0;
           .border-radius(@border-radius-large @border-radius-large 0 0);
-          &:hover { background: @orange; }
+          @media @phone-ls {
+            float: left;
+            clear: left;
+          }
+          &:link, &:visited {
+            color: @white;
+            background: @purple;
+          }
+          &:active, &:hover {
+            background: @orange;
+          }
         }
       }
     }
@@ -164,15 +171,8 @@
         background-repeat: no-repeat;
       }
     }
-    &:hover {
-      > div > div {
-        .field-more-info {
-          display: block;
-        }
-      }
-    }
     &.taxonomy-Leden {
-      border: 3em/@fs solid @purple;  
+      border: 3em/@fs solid @red;  
       border-width: 3em/@fs 0; 
       margin-bottom: 57em/@fs;  
       @media @tablet {
@@ -185,7 +185,7 @@
         position: absolute;
         right: 30em/@fs;
         top: 0;
-        background: @purple;
+        background: @red;
         color: @white;
         text-align: center;
         width: 115em/@fs;
