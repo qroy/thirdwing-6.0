@@ -1,0 +1,256 @@
+/**
+ * Views
+ */
+ 
+.editablefields .description {
+  display: none;
+}
+.editablefields .form-text {
+  max-width: 100px;
+  font-size: 10px;
+}
+.editablefields .form-select {
+  max-width: 50px;
+  font-size: 10px;
+}
+
+/**
+ * Ledenagenda
+ */
+
+.views-field-field-bijzonderheden-value {
+  font-size: 13em/@fs;
+  line-height: 24em/13;
+}
+@media screen {
+
+.Repetitie {
+  .badge.badge-date-compact {
+    color: @grey-dark;
+  }
+  .badge.badge-time-compact {
+    background: @red-light;
+  }
+  .badge.badge-koor-tijd {
+    background: @purple-light;
+  }
+  .badge.badge-sleepgroep, .badge.badge-sleepgroep-tijd {
+    background: @yellow-light;
+  }
+  .badge.badge-kar {
+    background: @blue-light;
+  }
+  .badge-combo-aanwezig, .badge-combo-vervanging { background: @green-light; }
+  .badge-combo-afwezig                     { background: @red-light; }
+  .badge-combo-vraag                       { background: @grey-light; }
+}
+
+}
+
+@media print {
+
+.Repetitie .badge {
+  font-weight: normal;
+}
+
+} // print
+/**
+ * Foto albums
+ */
+
+.buildmode-full > .node-type-album > .nd-region-header > .field-afbeeldingen {
+  float: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.node-type-album > .nd-region-header > .field-afbeeldingen .field-item,
+.view.fotos .views-row {
+  width: 19%;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+}
+.view.fotos img {
+  width: 100%;
+  height: auto;
+}
+.view-fotos .fotos-album, .view-fotos .fotos-album a {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.view.fotos a .fotos-title {
+  padding: 5px;
+  width: 100%;
+  min-height: 64px;
+  box-sizing: border-box;
+  opacity: 0.8;
+  display: block;
+  background: @grey-dark;
+  color: @white;
+  position: absolute;
+  bottom: 5px;
+}
+.view.fotos a .fotos-title .year {
+  font-weight: bold;
+}
+.view.fotos a:hover .fotos-title {
+  background: @purple;
+}
+
+/**
+ * MP3's
+ */
+
+th.views-field-field-mp3-fid {
+  width: 160px;
+}
+th.views-field-duration {
+  width: 30px;
+}
+th.views-field-field-audio-type-value {
+  width: 60px;
+}
+th.views-field-field-audio-jaar-value {
+  width: 40px;
+}
+th.views-field-field-audio-uitvoerende-value {
+  width: 200px;
+}
+th.views-field-field-audio-nummer-value {
+  width: 40px;
+}
+
+
+/**
+ * Smoelenblad
+ */
+.smoelenblad .lid {
+  float: left;
+  display: block;
+  width: 7.2527472527472527472527472527473%; /* 64px / 910 px */
+  height: 130px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 9px;
+  margin: 0 0.43956043956043956043956043956044% 4px 0; /* 4px / 910 px */
+  padding: 0;
+  overflow: hidden;
+}
+.smoelenblad .views-row-13 .lid,
+.smoelenblad .views-row-26 .lid,
+.smoelenblad .views-row-39 .lid,
+.smoelenblad .views-row-52 .lid,
+.smoelenblad .views-row-65 .lid {
+  margin-right: 0;
+}
+.smoelenblad .lid-border {
+  display: block;
+}
+.smoelenblad .lid.code-S1 .lid-border {
+  background-color: #c9c9e9;
+}
+.smoelenblad .lid.code-S2 .lid-border {
+  background-color: #f7dfb1;
+}
+.smoelenblad .lid.code-A .lid-border {
+  background-color: #b6db91;
+}
+.smoelenblad .lid.code-B .lid-border {
+  background-color: #a4ddf6;
+}
+.smoelenblad .lid.code-T .lid-border {
+  background-color: #f6a6ab;
+}
+.smoelenblad .lid.code-D .lid-border {
+  background-color: @grey-light;
+}
+.smoelenblad .lid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/**
+ * Ledenlijst bezoekers, Sleepgroepen
+ */
+.view-id-koorleden.view-display-id-block_1 .item-list, .view-id-koorleden.view-display-id-block_5 .item-list {
+  display: block;
+  float: left;
+  margin: 0.8450704225352112676056338028169%; /* 6px / 710px */
+  min-height: 250px;
+  width: 18.309859154929577464788732394366%; /* 130px / 710px */
+}
+.uitkoor {
+  text-decoration: line-through;
+}
+.kar {
+  font-style: italic;
+}
+/**
+ * Combo en Bestuur en Commissies
+ */
+.view-id-koorleden.view-display-id-block_2 .view-content ul li, 
+.view-id-koorleden.view-display-id-block_3 .view-content ul li, 
+.view-id-koorleden.view-display-id-block_6 .view-content ul li,
+.view-id-koorleden.view-display-id-block_7 .view-content ul li,
+.view-id-koorleden.view-display-id-block_8 .view-content ul li,
+.view-id-koorleden.view-display-id-block_9 .view-content ul li,
+.view-id-koorleden.view-display-id-block_11 .view-content ul li {
+  display: block;
+  width: 30%;
+  height: 100px;
+  background: none;
+  text-align: left;
+  padding: 5px;
+  margin: 5px;
+  float: left;
+  border: 1px solid @grey-light;
+}
+.view-id-koorleden.view-display-id-block_2 .view-content ul li {
+  width: 22%;
+}
+.view-koorleden .picture, .view-commissies .picture {
+  float: right;
+  width: 65px;
+}
+.view-koorleden .picture img, .view-commissies .picture img {
+  width: 100%;
+  height: auto;
+}
+.A {
+  font-style: italic;
+}
+
+/**
+ * Knipsels
+ */
+ 
+.view.knipsels .views-row {
+  display: block;
+  float: left;
+  width: 23.4375%; /* 225px / 960px */
+  margin: 0.52083333333333333333333333333333%; /* 5px / 960px */
+  border: 1px solid @grey-light;
+}
+.view.knipsels .knipsel {
+  padding: 0.75em 1.5em; /* 9px / 12px en 18px / 12px */
+  display: block;
+}
+.view.knipsels .knipsel-titel {
+  display: block;
+  height: 6em; /* 72px / 12px */ 
+}
+.view.knipsels .knipsel-titel h2 {
+  font-size: 1em; /* 12px / 12px */
+  line-height: 1.5em; /* 18px / 12px */
+  font-weight: bold;
+}
+.view.knipsels .knipsel-datum {
+
+}
+.view.knipsels .views-row img {
+  width: 100%;
+  height: auto;
+}

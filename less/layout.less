@@ -6,106 +6,183 @@
   display: none;
 }
 body {
-  background: @white url(../images/bg-footer.png) repeat-x 50% bottom;
+  min-width: 320em/@fs;
 }
 #wrapper {
-  background: transparent url(../images/body.png) repeat-x 50% 0;
+  background: @white-off;
 }
 
-#container {
+.container {
+  padding: 0 30em/@fs;
   margin: 0 auto;
-  padding: 0 20px;
-  max-width: 1270px;
+  max-width: 1200em/@fs;
   position: relative;
-}
-.front #container {
+  @media @normal {
+    padding: 0 90em/@fs;
+  }
 }
 
-#topbar {
-  position: absolute;
-  right: 20px;
-  top: 0;
-}
 /**
  * Header
  */
+#logo {
+  height: 105em/@fs;
+  background: @purple;
+  padding: 15em/@fs 30em/@fs 23em/@fs;
+  margin: 0 -30em/@fs 37em/@fs;
+  .box-shadow(@box-shadow-inset);
+  @media @tablet {
+    box-sizing: border-box;
+    height: 203em/@fs;
+    position: relative;
+    background: transparent url(../images/header.jpg) no-repeat 50% 50%;
+    background-size: 100%;
+  }
+  @media @normal {
+    padding: 15em/@fs 30em/@fs;
+    margin-bottom: 15em/@fs;
+    height: 195em/@fs;
+    .border-radius(0 0 @border-radius-large @border-radius-large);
+  }
+}
+.sidebar-left, .two-sidebars {
+  #logo {
+    @media @tablet { padding-left: 12.75em; /* width of sidebar + 1.5em */ } 
+  }
+  #header {
+    @media @tablet { padding-left: 11.25em; /* width of sidebar */  }
+  }
+}
+#logo-img {
+  box-sizing: border-box;
+  .border-radius(@border-radius-large);
+  background: @purple url(../images/logo2.png) no-repeat 50% 50%;
+  background-size: 90%;
+  border: 2em/@fs solid @white;
+  width: 90em/@fs;
+  height: 90em/@fs;
+  float: left;
+  @media @tablet {
+    box-sizing: content-box;
+    .box-shadow();
+    background: @purple url(../images/logo1.png) no-repeat 50% 50%;
+    background-size: 90%;
+    border: 0;
+    float: none;
+    width: 150em/@fs;
+    height: 150em/@fs;
+  }
+}
+#logo-title {
+  font-size: 35em/@fs;
+  line-height: 42em/35;
+  float: left;
+  color: @white;
+  width: 2em;
+  margin-left: 15em/35;
+  &::first-line {
+    font-size: 28em/35;
+    line-height: 42em/28;
+  }
+  @media @tablet {
+    display: none;
+  }
+}
+#topbar {
+  position: absolute;
+  height: 45em/@fs;
+  overflow: visible;
+  right: 30em/@fs;
+  top: 120em/@fs;
+  left: 30em/@fs;
+  z-index: 5;
+
+  background: @grey-dark;
+  .border-radius();
+  .box-shadow();
+
+  @media @tablet { 
+    top: 0; 
+    left: inherit; 
+    .border-radius(0 0 @border-radius-small @border-radius-small);
+  }
+  @media @normal { 
+    right: 90em/@fs; 
+    height: 30em/@fs; 
+  }
+}
 #header {
-  padding: 120px 0 0;
-  height: 20px;
-  margin: 0 auto;
-  background: transparent url(../images/header.png) no-repeat 80px 0;
-}
-.sidebar-left #header,
-.two-sidebars #header {
-  padding-left: 180px;
-/*   background-position: 180px 0;*/
+  z-index: 10;
+
+  @media @normal {
+    padding: 0 0;
+    height: 30em/@fs;
+    margin: -30em/@fs auto 0;
+    position: inherit;
+    left: inherit;
+    top: inherit;
+  }
 }
 
-.breadcrumb {
-  font-size: 0.92em;
+#breadcrumb {
+  font-size: 13em/@fs;
+  line-height: 30em/13;
+  margin: 0 0 30em/13;
+  height: 30em/13;
+  clear: both;
 }
 
-.breadcrumb, .breadcrumb a {
+#breadcrumb, #breadcrumb a {
   color: @black;
 }
+.messages {
 
-body {
-  min-width: 780px;
 }
-body.two-sidebars, body.sidebar-left {
-  min-width: 980px;
-}
-body.sidebar-right {
-  min-width: 780px;
-}
+
+@media @tablet {
 
 /* We must define 100% width to avoid the body being too narrow for near-empty pages */
 #center {
   float: left;
   width: 100%;
+  min-height: 100vh; 
 }
 
 /* So we move the #center container over the sidebars to compensate */
 body.sidebar-left #center {
-  margin-left: -180px;
+  margin-left: -160em/@fs;
 }
 body.sidebar-right #center {
-  margin-right: -180px;
+  margin-right: -160em/@fs;
 }
 body.two-sidebars #center {
-  margin: 0 -180px;
+  margin: 0 -160em/@fs;
 }
 
 /* And add blanks left and right for the sidebars to fill */
 body.sidebar-left #squeeze {
-  margin-left: 180px;
+  margin-left: 190em/@fs;
 }
 body.sidebar-right #squeeze {
-  margin-right: 180px;
+  margin-right: 190em/@fs;
 }
 body.two-sidebars #squeeze {
-  margin: 0 180px;
+  margin: 0 190em/@fs;
 }
 
 /* We ensure the sidebars are still clickable using z-index */
-#container .sidebar {
-  margin: 50px 0 5em;
-  width: 180px;
+.container .sidebar {
+  margin: 90em/@fs 0 80em/@fs;
+  width: 160em/@fs;
   float: left;
   z-index: 2;
   position: relative;
 }
 
+} // tablet
+
 .sidebar .block {
-  margin: 0 0 1.5em 0; /* 18px / 12px */
-}
-
-#sidebar-left .block {
-  padding: 0 15px 0 0px;
-}
-
-#sidebar-right .block {
-  padding: 0 0px 0 15px;
+  margin: 0 0 60em/@fs 0;
 }
 
 .block .content {
@@ -128,64 +205,27 @@ body.two-sidebars #squeeze {
   font-size: 1.3em;
 }
 
-/* Now we add the backgrounds for the main content shading */
 #squeeze {
+  background: none;
   position: relative;
 }
 
-.right-corner {
-}
-
-.left-corner {
-  background: @white;
-  padding: 70px 25px 5em 25px;
-  margin: 20px 0;
-  min-height: 400px;
-  .box-shadow();
-  .border-radius();
-}
-.two-sidebars, sidebar-right {
-  .left-corner {
-    margin-right: 10px;
+#footer {
+  float: none;
+  clear: both;
+  text-align: left;
+  color: @white;
+  background: @grey-dark url(../images/logo2.png) no-repeat right -20%;
+  background-size: auto 200%;
+  .box-shadow(@box-shadow-inset);
+  .container {
+    padding: 0;
   }
 }
 
-
-.taxonomy-Leden .left-corner:before {
-  content: 'voor leden';
-  position: absolute;
-  right: 25px;
-  top: 0;
-  background: @pink;
-  color: @white;
-  text-align: center;
-  width: 100px;
-  font-size: 1.2em;
-  line-height: 2em;
-  .border-radius(0 0 @border-radius-small @border-radius-small);
-}
-.taxonomy-Bezoekers .left-corner:before {
-  content: '';
-}
-.left-corner .block {
-  margin-bottom: 2em;
-}
-
-#footer {
-  padding: 50px 0 0 0;
-  float: none;
-  clear: both;
-  height: 150px;
-  text-align: center;
-  color: @grey;
-  font-size: 10px;
-  line-height: 10px;
-  background: transparent url(../images/footer.png) no-repeat 100% 100%;
-}
-
-.breadcrumb {
-  position: absolute;
-  top: 20px;
-  left: 25px; /* LTR */
-  z-index: 3;
+#l10n-client, #admin-toolbar {
+  display: none;
+  @media @normal {
+    display: block;
+  }
 }

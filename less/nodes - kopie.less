@@ -1,0 +1,149 @@
+/**
+ * Nodes and Comments
+ */
+
+.node > .nd-region-header {
+  > .field-node-type {
+    text-align: center;
+    color: @white;
+    .border-radius(@border-radius-small);
+    float: left;
+    width: 100px;
+    box-sizing: border-box;
+    margin: 0 0.75em 0.75em 0;
+  }
+  > .field-afbeeldingen {
+    margin: 0 0 1.5em;
+    @media @tablet {
+      width: 50%;
+      float: right;
+      margin: 0 0 1.5em 1.5em;
+    }
+    overflow: hidden;
+    img {
+      box-sizing: border-box;
+      width: 100%;
+      height: auto;
+      .border-radius(@border-radius-small);
+      border: 1px solid @grey-lightest;
+    }
+  }
+  > .field-post-date, .field-author {
+    float: left;
+    font-size: 13em/@fs;
+    font-weight: 300;
+    color: @grey;
+    margin-right: 3em/13;
+  }
+  > .field-author::after {
+    content: ' - ';
+  }
+  > .field-body {
+    clear: left;
+  }
+  > .field-datum {
+    float: left;
+    clear: left;
+    margin: 0 0.75em 1.5em 0;
+  }
+  > .field-group-datumtijd {
+    padding-right: 3em;
+    height: 13.5em; /* 189px */
+    &::after {
+      font-family: FontAwesome;
+      font-size: 5em;
+      line-height: 1.2em;
+      content: @icon-map-marker;
+      position: absolute;
+      right: 0.1em;
+      bottom: 0;
+      color: @grey-lightest;
+    }
+  }
+}
+.buildmode-teaser {
+  > .node {
+    position: relative;
+    background: @white;
+    margin: 0 -1.5em 1.5em;
+    padding: 1.5em 1.5em 3.65em;
+    @media @tablet {
+      .border-radius(@border-radius-large);
+      margin: 0 0 1.5em;
+    }
+    > .nd-region-header {
+      > .field-afbeeldingen {
+        @media @tablet {
+          width: 40%; 
+        }
+      }
+      > .field-node-type {
+        box-sizing: border-box;
+        float: none;
+        overflow: hidden;
+        width: 14.3em; /* 200px */
+        line-height: 2.15em; /* 30px / 14px */
+        .border-radius(0 0 @border-radius-large @border-radius-large);
+        margin: -1.5em 0 0;
+      }
+      > .field-group-datumtijd {
+        height: 11.14em; /* 156px */
+        .field-l-plaats, .field-l-postcode { display: inline-block; }
+        &::after {
+          color: @white
+        }
+      }
+      > .field-body {
+        @media @tablet {
+          box-sizing: border-box;
+          padding-right: 1.5em;
+          width: 60%;
+        }
+      }
+      > .field-read-more a {
+        &:link, &:visited {
+          background: @purple;
+          color: @white;
+          text-align: center;
+          line-height: 2.15em; /* 30px / 14px */
+          width: 14.3em; /* 200px */
+          .border-radius(@border-radius-large @border-radius-large 0 0);
+          position: absolute;
+          bottom: 0;
+        }
+        &:hover, &:active, &:focus {
+          background: @orange;
+        }
+        &::after {
+          content: '  ';
+          height: 0;
+          position: relative;
+          right: 0;
+          width: 0;
+          border: 3px solid transparent;
+          border-left-color: @white;
+          margin: 0 0 0 2px;
+          overflow: hidden;
+         display: inline-block;
+        }
+      }
+    }
+  }
+  .node.taxonomy-Leden {
+      border: 2px solid @purple;
+  }
+}
+.node-type-nieuws .field-node-type {
+  background: @green;
+}
+.node-type-activiteit .field-node-type {
+  background: @blue;
+}
+
+/* Links in nodes */
+.node h2 a:link, .node h2 a:visited {
+  color: @orange;
+}
+.node h2 a:hover, .node h2 a:focus, .node h2 a:active {
+  color: @purple;
+}

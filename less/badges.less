@@ -1,188 +1,87 @@
-.badge-date, .badge-time {
-  display: block;
-  float: left;
-  width: 100px;
-  margin: 0 10px 10px 0;
-  text-align: center;
-  border: 1px solid @pink;
-  background: @white;
-  line-height: 1.5em;
-}
-.badge-date span {
-  width: 100px;
-  display: block;
-}
-.badge-date .badge-day-short {
-  background: @pink;
-  color: white;
-}
-.badge-date .badge-day {
-  font-weight: bold;
-  font-size: 2em;
-  line-height: 1.5em;
-}
-.badge-date .badge-month {
-  font-size: 1.5em;
-  line-height: 1.5em;
-}
-.badge-date .badge-year {
-  color: @pink;
-  font-weight: bold;
-}
-.badge-time {
-  clear: left;
-  background: @pink;
-  color: white;
-}
 .badge {
   display: inline-block;
-  vertical-align: bottom;  
-  font-size: 1em; /* 12px */
-  line-height: 2em; /* 24px */
-  padding: 4px;
-  margin: 2px;
+  vertical-align: bottom;
+  line-height: 28em/@fs;
+  padding: 0 4em/@fs;
+  margin: 2em/@fs 2em/@fs 0 0;
   text-align: center;
   .transition-standard();
-
   color: @white;
   .border-radius();
 
   &.badge-combo {
     font-family: band;
-    font-size: 2em; /* 24px / 12px */
-    width: 1em; /* 24px / 24px */
-    line-height: 1em; /* 24px */
+    font-size: 24em/@fs;
+    line-height: 28em/24;
+    width: 28em/24;
+    padding: 0;
+    margin: 2em/24 2em/24 0 0;
   }
   &.badge-combo-aanwezig, &.badge-combo-vervanging { background: @green; }
-  &.badge-combo-vraag {                        background: @grey; }
-  &.badge-combo-afwezig {                      background: @red; }
+  &.badge-combo-vraag {                              background: @grey; }
+  &.badge-combo-afwezig {                            background: @red; }
 
   @media print {
+
     &.badge-combo-aanwezig, &.badge-combo-vervanging { background: @grey-dark; }
-    &.badge-combo-vraag {                        background: @grey-light; }
-    &.badge-combo-afwezig {                      background: transparent; }
+    &.badge-combo-vraag {                              background: @grey; }
+    &.badge-combo-afwezig {                            background: transparent; }
+
   }
 
   &.badge-sleepgroep {
-    width: 2em; /* 24px / 24px */
-    line-height: 2em; /* 24px */
-    @media screen {
-      background: @yellow;
-    }
-    @media print {
-      background: @grey-dark;
-    }
+    width: 20em/16;
+    background: @yellow;
   }
   &.badge-nummer {
-    width: 2em; /* 24px / 24px */
-    line-height: 2em; /* 24px */
-    @media screen {
-      background: @grey-light;
-    }
-    @media print {
-      background: @grey-dark;
-    }
+    width: 20em/16;
+    background: @grey-light;
   }
   &.badge-kar {
-    width: 8em;
-    overflow: hidden;
-    &:before {
-      content: '\f0d1';
-      font-family: FontAwesome;
-      padding-right: 3px;
-    }
-    @media screen {
-      background: @blue;
-    }
-    @media print {
-      background: @grey-dark;
-    }
+    background: @blue;
+    width: 110em/@fs;
+    .icon(@icon-truck);
   }
 
   &.badge-date-compact {
-    background: @white;
     color: @black;
-    width: 11em;
-    span {
-      padding: 0 1px;
-    }
-    @media screen {
-      background: @white;
-      .badge-day, .badge-month {
-        font-weight: bold;
-      }
-    }
-    @media print {
-      background: transparent;
-    }
+    width: 154em/@fs;
+    text-transform: uppercase;
+    text-align: left;
+    .icon(@icon-calendar);
   }
 
   &.badge-time-compact {
-    width: 5em;
-    &:before {
-      content: '\f017';
-      font-family: FontAwesome;
-      padding-right: 3px;
-    }
-    @media screen {
-      background: @pink;
-    }
-    @media print {
-      background: transparent;
-      color: @black;
-    }
+    background: @red;
+    width: 72em/@fs;
+    .icon(@icon-clock-o);
   }
   &.badge-koor-tijd {
-    width: 5em;
-    &:before {
-      content: '\f0c0';
-      font-family: FontAwesome;
-      padding-right: 3px;
-    }
-    @media screen {
-      background: @purple;
-    }
-    @media print {
-      background: transparent;
-      color: @black;
-    }
+    background: @red;
+    width: 72em/@fs;
+    .icon(@icon-users);
   }
   &.badge-sleepgroep-tijd {
-    width: 5em;
-    &:before {
-      content: '\f017';
-      font-family: FontAwesome;
-      padding-right: 3px;
-    }
-    @media screen {
-      background: @yellow;
-    }
-    @media print {
-      background: @grey-dark;
-    }
+    background: @yellow;
+    width: 80em/@fs;
+    .icon(@icon-clock-o);
   }
 }
 
 @media screen {
 
-a:link, a:visited {
-  .badge.badge-nummer {
-    background: @pink-light;
-  }
-}
-
 tr {
-  &.odd, &.even {
+  &:nth-of-type(odd), &:nth-of-type(even) {
     &:hover {
       .Repetitie {
         .badge.badge-sleepgroep, .badge.badge-sleepgroep-tijd {
           background: @yellow;
         }
         .badge.badge-time-compact {
-          background: @pink;
+          background: @red;
         }
         .badge.badge-koor-tijd {
-          background: @purple;
+          background: @red;
         }
         .badge.badge-kar {
           background: @blue;
@@ -191,60 +90,79 @@ tr {
         .badge-combo-afwezig                     { background: @red; }
         .badge-combo-vraag                       { background: @grey; }
       }
-      .badge.badge-date-compact {
-        background: @white;
-      }
       .badge.badge-nummer {
         background: @grey;
       }
       a {
         &:link, &:visited {
           .badge.badge-nummer {
-            background: @pink;
+            background: @purple;
           }
         }
         &:hover, &:active, &:focus {
           .badge.badge-nummer {
-            background: @purple;
+            background: @orange;
           }
         }
       }
     }
   }
-  &.odd {
-    .badge.badge-date-compact {
-      background: @white-off;
-    }
-  }
 }
 
-.Repetitie {
-  .badge.badge-date-compact {
-    color: @grey-dark;
-  }
-  .badge.badge-time-compact {
-    background: @pink-light;
-  }
-  .badge.badge-koor-tijd {
+a:link, a:visited {
+  .badge.badge-nummer {
     background: @purple-light;
   }
-  .badge.badge-sleepgroep, .badge.badge-sleepgroep-tijd {
-    background: @yellow-light;
-  }
-  .badge.badge-kar {
-    background: @blue-light;
-  }
-  .badge-combo-aanwezig, .badge-combo-vervanging { background: @green-light; }
-  .badge-combo-afwezig                     { background: @red-light; }
-  .badge-combo-vraag                       { background: @grey-light; }
 }
 
 }
 
-@media print {
-
-.Repetitie .badge {
-  font-weight: normal;
+.badge-date, .badge-time {
+    display: block;
+    width: 100px;
+    margin: 0;
+    text-align: center;
+    line-height: 1.8em;
+    box-sizing: border-box;
+    background: @white;
+}
+.badge-date {
+    span {
+      width: 100px;
+      display: block;
+    }
+    .badge-day-short {
+      .border-radius(@border-radius-small @border-radius-small 0 0);
+      background: @red;
+      color: white;
+    }
+    .badge-day {
+      font-weight: bold;
+      font-size: 2.5em;
+      line-height: 1.5em;
+    }
+    .badge-month {
+      font-size: 1.2em;
+      line-height: 1.5em;
+    }
+    .badge-year {
+      color: @red;
+      font-weight: bold;
+      line-height: 2em;
+      border-bottom: 1.86em solid @red;
+      .border-radius(0 0 @border-radius-small @border-radius-small);
+    }
+}
+.badge-time {
+    clear: left;
+    background: @red;
+    color: white;
+    .border-radius(0 0 @border-radius-small @border-radius-small);
+    margin-top: -1.86em;
+    .icon(@icon-clock-o);
 }
 
-} // print
+
+.field-icon-application-pdf {
+  .icon(@icon-file-pdf-o);
+}

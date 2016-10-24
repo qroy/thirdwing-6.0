@@ -1,0 +1,50 @@
+ul.menu {
+  .icon-only.menu-square {
+    .icon-only();
+  }
+  .icon-only:not(.menu-square) {
+    @media @normal { .icon-only() }
+  }
+}
+.icon-only() {
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative; /* for absolute positioning of icon */
+  width: 26em/20;
+  @media @phone-ls { width: 31em/20; }
+  @media @normal { width: 16em/@fs; /* make room for icon */ }
+  &:before {
+    text-indent: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0;
+    display: inline;
+    width: auto;
+  }
+}
+.icon-home             { .icon(@icon-home); }
+.icon-link             { .icon(@icon-link); }
+.icon-search           { .icon(@icon-search); }
+.icon-envelope         { .icon(@icon-envelope); }
+.icon-question-circle  { .icon(@icon-question-circle); }
+.icon-comments         { .icon(@icon-comments); }
+.icon-heart            { .icon(@icon-heart); }
+.icon-youtube          { .icon(@icon-youtube); }
+.icon-facebook         { .icon(@icon-facebook); }
+.icon-twitter          { .icon(@icon-twitter); }
+.icon-user             { .icon(@icon-user); }
+.icon-plus-square      { .icon(@icon-plus-square); }
+.icon-sign-out         { .icon(@icon-sign-out); }
+.icon-sign-in          { .icon(@icon-sign-in); }
+.icon-map-marker       { .icon(@icon-map-marker); }
+.icon-bars             { .icon(@icon-bars); }
+.icon-cog              { .icon(@icon-cog); }
+.icon-cogs             { .icon(@icon-cogs); }
+.icon-pencil-square-o  { .icon(@icon-pencil-square-o); }
+.icon-circle           { .icon(@icon-circle); }
+.icon-circle-o         { .icon(@icon-circle-o); }
+.icon-dot-circle-o     { .icon(@icon-dot-circle-o); }
+.icon-file-pdf-o       { .icon(@icon-file-pdf-o); }
