@@ -1,0 +1,15 @@
+; $Id: garland.info,v 1.5 2007/07/01 23:27:32 goba Exp $
+name = Thirdwing 2.2
+description = Versie 2 van de Thirdwing site, gemaakt in 2010.
+version = 2.2
+core = 6.x
+engine = phptemplate
+stylesheets[all][] = css/style.css
+scripts[] = js/doubletaptogo.js
+
+regions[topbar] = Topbar
+regions[header] = Menubar
+regions[left] = Left sidebar
+regions[content] = Content
+regions[right] = Right sidebar
+regions[footer] = Footer

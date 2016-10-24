@@ -1,0 +1,191 @@
+/**
+ * Layout
+ */
+
+#print {
+  display: none;
+}
+body {
+  background: @white url(../images/bg-footer.png) repeat-x 50% bottom;
+}
+#wrapper {
+  background: transparent url(../images/body.png) repeat-x 50% 0;
+}
+
+#container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1270px;
+  position: relative;
+}
+.front #container {
+}
+
+#topbar {
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
+/**
+ * Header
+ */
+#header {
+  padding: 120px 0 0;
+  height: 20px;
+  margin: 0 auto;
+  background: transparent url(../images/header.png) no-repeat 80px 0;
+}
+.sidebar-left #header,
+.two-sidebars #header {
+  padding-left: 180px;
+/*   background-position: 180px 0;*/
+}
+
+.breadcrumb {
+  font-size: 0.92em;
+}
+
+.breadcrumb, .breadcrumb a {
+  color: @black;
+}
+
+body {
+  min-width: 780px;
+}
+body.two-sidebars, body.sidebar-left {
+  min-width: 980px;
+}
+body.sidebar-right {
+  min-width: 780px;
+}
+
+/* We must define 100% width to avoid the body being too narrow for near-empty pages */
+#center {
+  float: left;
+  width: 100%;
+}
+
+/* So we move the #center container over the sidebars to compensate */
+body.sidebar-left #center {
+  margin-left: -180px;
+}
+body.sidebar-right #center {
+  margin-right: -180px;
+}
+body.two-sidebars #center {
+  margin: 0 -180px;
+}
+
+/* And add blanks left and right for the sidebars to fill */
+body.sidebar-left #squeeze {
+  margin-left: 180px;
+}
+body.sidebar-right #squeeze {
+  margin-right: 180px;
+}
+body.two-sidebars #squeeze {
+  margin: 0 180px;
+}
+
+/* We ensure the sidebars are still clickable using z-index */
+#container .sidebar {
+  margin: 50px 0 5em;
+  width: 180px;
+  float: left;
+  z-index: 2;
+  position: relative;
+}
+
+.sidebar .block {
+  margin: 0 0 1.5em 0; /* 18px / 12px */
+}
+
+#sidebar-left .block {
+  padding: 0 15px 0 0px;
+}
+
+#sidebar-right .block {
+  padding: 0 0px 0 15px;
+}
+
+.block .content {
+  margin: 0;
+}
+
+#sidebar-left .block-region {
+  margin: 0 15px 0 0px;
+}
+
+#sidebar-right .block-region {
+  margin: 0 0px 0 15px;
+}
+
+.block-region {
+  padding: 1em;
+  background: transparent;
+  border: 2px dashed #b4d7f0;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+/* Now we add the backgrounds for the main content shading */
+#squeeze {
+  position: relative;
+}
+
+.right-corner {
+}
+
+.left-corner {
+  background: @white;
+  padding: 70px 25px 5em 25px;
+  margin: 20px 0;
+  min-height: 400px;
+  .box-shadow();
+  .border-radius();
+}
+.two-sidebars, sidebar-right {
+  .left-corner {
+    margin-right: 10px;
+  }
+}
+
+
+.taxonomy-Leden .left-corner:before {
+  content: 'voor leden';
+  position: absolute;
+  right: 25px;
+  top: 0;
+  background: @pink;
+  color: @white;
+  text-align: center;
+  width: 100px;
+  font-size: 1.2em;
+  line-height: 2em;
+  .border-radius(0 0 @border-radius-small @border-radius-small);
+}
+.taxonomy-Bezoekers .left-corner:before {
+  content: '';
+}
+.left-corner .block {
+  margin-bottom: 2em;
+}
+
+#footer {
+  padding: 50px 0 0 0;
+  float: none;
+  clear: both;
+  height: 150px;
+  text-align: center;
+  color: @grey;
+  font-size: 10px;
+  line-height: 10px;
+  background: transparent url(../images/footer.png) no-repeat 100% 100%;
+}
+
+.breadcrumb {
+  position: absolute;
+  top: 20px;
+  left: 25px; /* LTR */
+  z-index: 3;
+}

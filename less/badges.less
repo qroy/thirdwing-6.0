@@ -1,0 +1,250 @@
+.badge-date, .badge-time {
+  display: block;
+  float: left;
+  width: 100px;
+  margin: 0 10px 10px 0;
+  text-align: center;
+  border: 1px solid @pink;
+  background: @white;
+  line-height: 1.5em;
+}
+.badge-date span {
+  width: 100px;
+  display: block;
+}
+.badge-date .badge-day-short {
+  background: @pink;
+  color: white;
+}
+.badge-date .badge-day {
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 1.5em;
+}
+.badge-date .badge-month {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+.badge-date .badge-year {
+  color: @pink;
+  font-weight: bold;
+}
+.badge-time {
+  clear: left;
+  background: @pink;
+  color: white;
+}
+.badge {
+  display: inline-block;
+  vertical-align: bottom;  
+  font-size: 1em; /* 12px */
+  line-height: 2em; /* 24px */
+  padding: 4px;
+  margin: 2px;
+  text-align: center;
+  .transition-standard();
+
+  color: @white;
+  .border-radius();
+
+  &.badge-combo {
+    font-family: band;
+    font-size: 2em; /* 24px / 12px */
+    width: 1em; /* 24px / 24px */
+    line-height: 1em; /* 24px */
+  }
+  &.badge-combo-aanwezig, &.badge-combo-vervanging { background: @green; }
+  &.badge-combo-vraag {                        background: @grey; }
+  &.badge-combo-afwezig {                      background: @red; }
+
+  @media print {
+    &.badge-combo-aanwezig, &.badge-combo-vervanging { background: @grey-dark; }
+    &.badge-combo-vraag {                        background: @grey-light; }
+    &.badge-combo-afwezig {                      background: transparent; }
+  }
+
+  &.badge-sleepgroep {
+    width: 2em; /* 24px / 24px */
+    line-height: 2em; /* 24px */
+    @media screen {
+      background: @yellow;
+    }
+    @media print {
+      background: @grey-dark;
+    }
+  }
+  &.badge-nummer {
+    width: 2em; /* 24px / 24px */
+    line-height: 2em; /* 24px */
+    @media screen {
+      background: @grey-light;
+    }
+    @media print {
+      background: @grey-dark;
+    }
+  }
+  &.badge-kar {
+    width: 8em;
+    overflow: hidden;
+    &:before {
+      content: '\f0d1';
+      font-family: FontAwesome;
+      padding-right: 3px;
+    }
+    @media screen {
+      background: @blue;
+    }
+    @media print {
+      background: @grey-dark;
+    }
+  }
+
+  &.badge-date-compact {
+    background: @white;
+    color: @black;
+    width: 11em;
+    span {
+      padding: 0 1px;
+    }
+    @media screen {
+      background: @white;
+      .badge-day, .badge-month {
+        font-weight: bold;
+      }
+    }
+    @media print {
+      background: transparent;
+    }
+  }
+
+  &.badge-time-compact {
+    width: 5em;
+    &:before {
+      content: '\f017';
+      font-family: FontAwesome;
+      padding-right: 3px;
+    }
+    @media screen {
+      background: @pink;
+    }
+    @media print {
+      background: transparent;
+      color: @black;
+    }
+  }
+  &.badge-koor-tijd {
+    width: 5em;
+    &:before {
+      content: '\f0c0';
+      font-family: FontAwesome;
+      padding-right: 3px;
+    }
+    @media screen {
+      background: @purple;
+    }
+    @media print {
+      background: transparent;
+      color: @black;
+    }
+  }
+  &.badge-sleepgroep-tijd {
+    width: 5em;
+    &:before {
+      content: '\f017';
+      font-family: FontAwesome;
+      padding-right: 3px;
+    }
+    @media screen {
+      background: @yellow;
+    }
+    @media print {
+      background: @grey-dark;
+    }
+  }
+}
+
+@media screen {
+
+a:link, a:visited {
+  .badge.badge-nummer {
+    background: @pink-light;
+  }
+}
+
+tr {
+  &.odd, &.even {
+    &:hover {
+      .Repetitie {
+        .badge.badge-sleepgroep, .badge.badge-sleepgroep-tijd {
+          background: @yellow;
+        }
+        .badge.badge-time-compact {
+          background: @pink;
+        }
+        .badge.badge-koor-tijd {
+          background: @purple;
+        }
+        .badge.badge-kar {
+          background: @blue;
+        }
+        .badge-combo-aanwezig, .badge-combo-vervanging { background: @green; }
+        .badge-combo-afwezig                     { background: @red; }
+        .badge-combo-vraag                       { background: @grey; }
+      }
+      .badge.badge-date-compact {
+        background: @white;
+      }
+      .badge.badge-nummer {
+        background: @grey;
+      }
+      a {
+        &:link, &:visited {
+          .badge.badge-nummer {
+            background: @pink;
+          }
+        }
+        &:hover, &:active, &:focus {
+          .badge.badge-nummer {
+            background: @purple;
+          }
+        }
+      }
+    }
+  }
+  &.odd {
+    .badge.badge-date-compact {
+      background: @white-off;
+    }
+  }
+}
+
+.Repetitie {
+  .badge.badge-date-compact {
+    color: @grey-dark;
+  }
+  .badge.badge-time-compact {
+    background: @pink-light;
+  }
+  .badge.badge-koor-tijd {
+    background: @purple-light;
+  }
+  .badge.badge-sleepgroep, .badge.badge-sleepgroep-tijd {
+    background: @yellow-light;
+  }
+  .badge.badge-kar {
+    background: @blue-light;
+  }
+  .badge-combo-aanwezig, .badge-combo-vervanging { background: @green-light; }
+  .badge-combo-afwezig                     { background: @red-light; }
+  .badge-combo-vraag                       { background: @grey-light; }
+}
+
+}
+
+@media print {
+
+.Repetitie .badge {
+  font-weight: normal;
+}
+
+} // print
