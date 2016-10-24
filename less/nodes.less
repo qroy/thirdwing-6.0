@@ -45,7 +45,7 @@
         text-align: center;
         color: @white;
         .border-radius(@border-radius-small);
-        width: 115em/@fs;
+        width: 120em/@fs;
         box-sizing: border-box;
         overflow: hidden;
         margin: 0 0 30em/@fs;
@@ -141,11 +141,11 @@
           clear: left;
         }
       }
-      > .field-more-info {
+      > .field-read-more {
         a {
           display: block;
-          .icon(@icon-info-circle); 
-          width: 115em/@fs;
+          .icon(@icon-arrow-circle-right);
+          width: 120em/@fs;
           height: 30em/@fs;
           text-align: center;
           .border-radius(@border-radius-large @border-radius-large 0 0);
@@ -161,6 +161,9 @@
             background: @orange;
           }
         }
+      }
+      > .field-more-info a {
+        .icon(@icon-info-circle);
       }
     }
     &.node-type-activiteit > div > div > .field-afbeeldingen .image {
