@@ -15,6 +15,49 @@
 }
 
 /**
+ * Archief blok
+ */
+ 
+.sidebar .tw-archief {
+  font-size: 13em/@fs;
+  line-height: 28em/13;
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      box-sizing: border-box;
+      float: left;
+      margin: 2em/13 0 0;
+      border-right-width: 2em/13;
+      border-style: solid;
+      border-color: @white-off;
+      padding: 0;
+      display: inline-block;
+      color: @grey;
+      text-align: center;
+      .border-radius(@border-radius-small);
+      background: @grey-light;
+      width: 25%;
+      @media @phone-ls { width: 12.5%; }
+      @media @tablet { width: 50%; }
+      a {
+        color: @grey;
+        &.active {
+          color: @orange;
+        }
+      }
+      &:hover, &:active {
+        color: @white;
+        background: @orange;
+        a {
+          color: @white;
+        }
+      }
+    }
+  }
+}
+
+/**
  * Ledenagenda
  */
 

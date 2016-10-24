@@ -33,6 +33,8 @@
 @border-radius-large: 10px;
 @border-radius-small: 5px;
 
+@border: 5em/@fs;
+
 @box-shadow-large: 0px 0px 10px @grey-dark;
 @box-shadow-small: 0px 0px 3px @grey-dark;
 @box-shadow-inset: inset 0 0 10px @black;
@@ -63,6 +65,11 @@
   -webkit-border-radius: @radius;
      -moz-border-radius: @radius;
           border-radius: @radius;
+}
+.border {
+  border-style: dotted;
+  border-color: @orange;
+  border-width: 0 0 @border;
 }
 .transition (...) {
         @props: ~`"@{arguments}".replace(/[\[\]]/g, '')`;

@@ -25,6 +25,10 @@ h1 {
   line-height: 60em/32;
   padding-top: 10em/32;
   margin-bottom: 20em/32;
+  word-break: break-all;
+  @media @phone-ls {
+    word-break: normal;
+  }
   @media @tablet {
     font-size: 42em/@fs;
     line-height: 60em/42;

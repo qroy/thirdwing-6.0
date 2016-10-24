@@ -76,17 +76,17 @@
         "less" : "00000000-0000-0000-0000-000000000000"
       }
     },
-    "less\/fieldsets.less" : {
-      "output" : "css\/fieldsets.css",
-      "profiles" : {
-        "less" : "00000000-0000-0000-0000-000000000000"
-      }
-    },
     "js\/toggle-nav.js" : {
       "output" : "js\/toggle-nav.out.js",
       "profiles" : {
         "uglify" : "00000000-0000-0000-0000-000000000000",
         "jshint" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/fieldsets.less" : {
+      "output" : "css\/fieldsets.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
       }
     },
     "less\/print.less" : {
@@ -170,7 +170,7 @@
     "js" : {
       "jshint" : "00000000-0000-0000-0000-000000000000",
       "uglify" : "00000000-0000-0000-0000-000000000000",
-      "output" : "*.out.js"
+      "output" : "\/js\/*.out.js"
     }
   },
   "profiles" : {
