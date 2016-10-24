@@ -10,7 +10,6 @@
     img {
       width: 100%;
       height: auto;
-      .border-radius();
     }
   }
   .field-node-type {
@@ -33,9 +32,6 @@
   .field-author:after {
     content: ' - ';
   }
-  .field-body {
-    clear: left;
-  }
   
   @media screen {
 
@@ -49,56 +45,76 @@
   } // screen
   
 }
-
-.buildmode-teaser > .node {
-  margin: 0 0 1.5em;
-  > div > div {
-    background: @white-off;
-    padding: 1.5em 1.5em 3em ; /* 18px / 12px */
-    position: relative;
-    .border-radius();
-    > .field-afbeeldingen {
-      width: 30%;
+.buildmode-teaser, .buildmode-compact {
+  > .node.node-type-nieuws > div > div > .field-afbeeldingen {
+    width: 30%;
+  }
+}
+.buildmode-teaser, .buildmode-compact {
+  > .node.node-type-activiteit > div > div > .field-afbeeldingen > div {
+    > div {
+      display: none;
     }
-    > .field-node-type {
-      margin: 0;
-      background: @white;
-      color: @grey;
-      font-weight: normal;
+    > div:first-of-type {
+      display: block;
     }
-    > .field-title h2 a {
-
-        color: @pink;
+    > div:first-of-type > .image {
+      height: 200em/12;
+      background-size: contain;
+      background-position: right top;
+      background-repeat: no-repeat;
+    }
+  }
+}
+.buildmode-teaser, .buildmode-compact {
+  > .node {
+    margin: 0 0 1.5em;
+    > div > div {
+      background: @white-off;
+      padding: 1.5em 1.5em 3em ; /* 18px / 12px */
+      position: relative;
+      .border-radius();
+      > .field-afbeeldingen {
+        width: 45%;
+      }
+      > .field-node-type {
+        margin: 0;
+        background: @white;
+        color: @grey;
+        font-weight: normal;
+      }
+      > .field-title h2 a {
+        color: @pink; 
         &:hover { color: @purple; }
-
+      }
     }
-  }
-  &.taxonomy-Leden > div > div {
-    border: 3px solid @pink;
-    background: @white;
-    > .field-node-type {
-      background: @grey-light;
-      color: @white;
-      font-weight: bold;
+    &.taxonomy-Leden > div > div {
+      border: 3px solid @pink;
+      background: @white;
+      > .field-node-type {
+        background: @grey-light;
+        color: @white;
+        font-weight: bold;
+      }
+      &:before {
+        content: 'voor leden';
+        position: absolute;
+        right: 25px;
+        top: 0;
+        background: @pink;
+        color: @white;
+        text-align: center;
+        width: 100px;
+        line-height: 2em;
+        .border-radius(0 0 @border-radius-small @border-radius-small);
+      }
     }
-    &:before {
-      content: 'voor leden';
-      position: absolute;
-      right: 25px;
-      top: 0;
-      background: @pink;
-      color: @white;
-      text-align: center;
-      width: 100px;
-      line-height: 2em;
-      .border-radius(0 0 @border-radius-small @border-radius-small);
-    }
-  }
-  &.taxonomy-Bezoekers > div > div {
-    border: 0;
-    background: @white-off;
-    &:before {
-      content: '';
+    &.taxonomy-Bezoekers > div > div {
+      border: 0;
+      background: @white-off;
+      &:before {
+        content: '';
+      }
     }
   }
 }
@@ -115,17 +131,42 @@
 
 
 .node img.imagecache-preview-bak {
-  width: 30%;
+  width: 50%;
   height: auto;
 }
 .buildmode-teaser .inline img {
   display: none;
 }
-
-.field-read-more a {
-  &:link, &:visited {
+.node > div > div > .field-locatie, .node > div > div > .field-l-bijzonderheden {
+  width: 222em/12;
+  margin: 0 4em/12 4em/12 0;
+  padding: 4em/12;
+  background: @white;
+  .border-radius(@border-radius-small);
+}
+.buildmode-full > .node > div > div > .field-locatie, 
+.buildmode-full > .node > div > div > .field-l-bijzonderheden,
+.buildmode-full > .node > div > div > .field-datum .badge-date {
+  background: @white-off;
+}
+.node.node-type-locatie.clear-block {
+  margin: 0;
+  &:after {
+    clear: none;
+  }
+}
+.node .field-locatie .field-title p {
+  margin-bottom: 0;
+}
+.node .field-l-plaats {
+  text-transform: uppercase;
+  color: @pink;
+}
+.field-read-more a, .field-more-info a {
+  &:link, &:visited { 
     display: inline-block;
-    padding: 0 20px;
+    padding: 0 4em/12;
+    width: 222em/12;
     background: @pink;
     color: @white;
     line-height: 2em;
@@ -338,13 +379,13 @@ li.upload_attachments a {
  * Foto albums
  */
 
-.node-type-album > .nd-region-header > .field-afbeeldingen {
+.node-type-album > div > div > .field-afbeeldingen {
   float: none;
   width: 100%;
   margin: 0;
   padding: 0;
 }
-.node-type-album > .nd-region-header > .field-afbeeldingen .field-item,
+.node-type-album > div > div > .field-afbeeldingen .field-item,
 .view.fotos .views-row {
   width: 19%;
   box-sizing: border-box;
