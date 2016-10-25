@@ -130,6 +130,9 @@ body {
   margin: 0 0 30em/13;
   height: 30em/13;
   clear: both;
+  .bull {
+    color: @orange;
+  }
 }
 
 #breadcrumb, #breadcrumb a {
@@ -172,7 +175,7 @@ body.two-sidebars #squeeze {
 
 /* We ensure the sidebars are still clickable using z-index */
 .container .sidebar {
-  margin: 90em/@fs 0 80em/@fs;
+  margin: 180em/@fs 0 80em/@fs;
   width: 130em/@fs;
   float: left;
   z-index: 2;
@@ -183,6 +186,13 @@ body.two-sidebars #squeeze {
 
 .sidebar .block {
   margin: 0 0 60em/@fs 0;
+}
+.sidebar h2 {
+  color: @grey;
+  text-align: right;
+  line-height: 30em/20;
+  padding: 0;
+  margin: 0;
 }
 
 .block .content {

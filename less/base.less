@@ -27,7 +27,7 @@ h1 {
   font-size: 26em/@fs;
   line-height: 30em/26;
   padding-top: 12em/26;
-  margin-bottom: 18em/26;
+  margin-bottom: 48em/26;
   @media @tablet {
     font-size: 42em/@fs;
     line-height: 60em/42;
@@ -87,8 +87,9 @@ a:hover, a:focus, a:active, a.active, a.active-trail {
   a {
     display: inline-block;
     white-space: nowrap;
-    padding: 0 3px;
-    margin: 0 -3px;
+    line-height: 28em/@fs;
+    padding: 0 3em/@fs;
+    margin: 2em/@fs -3em/@fs 0;
     .border-radius(@border-radius-small);
     &:hover {
       background: @orange;

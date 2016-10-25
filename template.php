@@ -10,7 +10,7 @@
  */
 function phptemplate_breadcrumb($breadcrumb) {
   if (!empty($breadcrumb)) {
-    return implode(' › ', $breadcrumb);
+    return implode(' <span class="bull">&bull;</span> ', $breadcrumb);
   }
 }
 
