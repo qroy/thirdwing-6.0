@@ -240,6 +240,23 @@
       padding-left: 15em/@fs;
     }
   }
+  margin: 0 0 60em/@fs;
+  &:nth-child(odd) {
+    .buildmode-teaser, .buildmode-compact {
+      > .node {
+        margin-left: -30em/@fs;
+        margin-right: 0;
+      }
+    }
+  }
+  &:nth-child(even) {
+    .buildmode-teaser, .buildmode-compact {
+      > .node {
+        margin-left: 0;
+        margin-right: -30em/@fs;
+      }
+    }
+  }
 }
 
 
