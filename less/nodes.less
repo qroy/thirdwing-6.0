@@ -65,6 +65,23 @@
         display: block;
         overflow: hidden;
       }
+      > .field-author {
+        font-size: 13em/@fs;
+        line-height: 30em/13;
+        color: @grey;
+        .icon(@icon-user);
+        display: inline;
+        font-weight: 200;
+      }
+      > .field-post-date {
+        color: @grey;
+        font-size: 13em/@fs;
+        line-height: 30em/13;
+        .icon(@icon-calendar);
+        display: inline;
+        margin-left: 1em;
+        font-weight: 200;
+      }
       > .field-datum {
         margin: 30em/@fs 0 13em/@fs;
         padding: 0 0 12em/@fs;
@@ -105,9 +122,6 @@
     }
   }
 }
-.views-row-odd .buildmode-teaser, .buildmode-compact > .node.node-type-nieuws {
-
-}
 .buildmode-teaser, .buildmode-compact {
   > .node {
     background: @white;
@@ -121,22 +135,9 @@
     }
 
     > div > div { /* middle region */
-      > .field-afbeeldingen {
-        display: none;
-        @media @phone-ls { 
-          display: block; 
-          float: right;
-          width: 290/550 * 100%;
-          box-sizing: border-box;
-          padding: 0 0 0 30em/@fs;
-        }
-      }
-      > .field-title {
-        @media @phone-ls {
-          float: left;
-          width: 260/550 * 100%;
-          clear: left;
-        }
+      > .field-body {
+        height: 120em/@fs;
+        overflow: hidden;
       }
       > .field-read-more {
         a {
@@ -165,12 +166,27 @@
       }
     }
     &.node-type-activiteit > div > div {
-      > .field-afbeeldingen .image {
+      > .field-title {
         @media @phone-ls {
-          height: 330em/@fs;
-          background-size: contain;
-          background-position: right top;
-          background-repeat: no-repeat;
+          float: left;
+          width: 260/550 * 100%;
+          clear: left;
+        }
+      }
+      > .field-afbeeldingen {
+        display: none;
+        @media @phone-ls { 
+          display: block; 
+          float: right;
+          width: 290/550 * 100%;
+          box-sizing: border-box;
+          padding: 0 0 0 30em/@fs;
+          .image {
+            height: 330em/@fs;
+            background-size: contain;
+            background-position: right top;
+            background-repeat: no-repeat;
+          }
         }
       }
       > .field-read-more a {
@@ -178,13 +194,7 @@
       }
     }
     &.taxonomy-Leden {
-      border: 3em/@fs solid @red;  
-      border-width: 3em/@fs 0; 
-      margin-bottom: 57em/@fs;  
-      @media @tablet {
-        border-width: 3em/@fs;
-        padding: 0 27em/@fs;
-      }
+      background: @red-lightest;
       &:before {
         z-index: 5;
         content: 'voor leden';
@@ -198,12 +208,9 @@
         line-height: 30em/@fs;
         .border-radius(0 0 @border-radius-large @border-radius-large);
       }
-      > div > div > .field-node-type {
-        margin-bottom: 27em/@fs;
-      }
     }
     &.taxonomy-Bezoekers {
-      border: 0;
+      background: @white;
       &:before {
         content: '';
       }
@@ -240,20 +247,31 @@
       padding-left: 15em/@fs;
     }
   }
-  margin: 0 0 60em/@fs;
   &:nth-child(odd) {
     .buildmode-teaser, .buildmode-compact {
       > .node {
-        margin-left: -30em/@fs;
-        margin-right: 0;
+        @media @phone-ls {
+          margin: 0 0 60em/@fs -30em/@fs;
+          .border-radius(0 @border-radius-large @border-radius-large 0);
+        }
+        @media @tablet {
+          margin: 0 0 60em/@fs;
+          .border-radius(@border-radius-large);
+        }
       }
     }
   }
   &:nth-child(even) {
     .buildmode-teaser, .buildmode-compact {
       > .node {
-        margin-left: 0;
-        margin-right: -30em/@fs;
+        @media @phone-ls {
+          margin: 0 -30em/@fs 60em/@fs 0;
+          .border-radius(@border-radius-large 0 0 @border-radius-large);
+        }
+        @media @tablet {
+          margin: 0 0 60em/@fs;
+          .border-radius(@border-radius-large);
+        }
       }
     }
   }
