@@ -74,7 +74,6 @@
           float: left;
           clear: left;
           width: 260/550 * 100%;
-          margin-right: 30/550 * 100%;
         }
       }
       > .field-locatie, .field-l-bijzonderheden {
@@ -83,7 +82,6 @@
           float: left;
           clear: left;
           width: 260/550 * 100%;
-          margin-right: 30/550 * 100%;
         }
         .icon(@icon-map-marker);
         &:before { 
@@ -107,16 +105,15 @@
     }
   }
 }
+.views-row-odd .buildmode-teaser, .buildmode-compact > .node.node-type-nieuws {
+
+}
 .buildmode-teaser, .buildmode-compact {
   > .node {
     background: @white;
     margin: 0 -30em/@fs 60em/@fs;
     padding: 0 30em/@fs;
     .box-shadow();
-  
-    &.node-type-nieuws {
-      width: 50%;
-    }
 
     @media @tablet {
       margin: 0 0 60em/@fs;
@@ -129,14 +126,15 @@
         @media @phone-ls { 
           display: block; 
           float: right;
-          width: 260/550 * 100%;
+          width: 290/550 * 100%;
+          box-sizing: border-box;
+          padding: 0 0 0 30em/@fs;
         }
       }
       > .field-title {
         @media @phone-ls {
           float: left;
           width: 260/550 * 100%;
-          margin-right: 30/550 * 100%;
           clear: left;
         }
       }
@@ -146,7 +144,7 @@
           .icon(@icon-arrow-circle-right);
           height: 30em/@fs;
           text-align: center;
-          margin: 0 0 30em/@fs 20em/@fs;
+          margin: 0 0 30em/@fs;
           padding: 0 10em/@fs;
           .border-radius(@border-radius-small);
           @media @phone-ls {
@@ -166,12 +164,17 @@
         .icon(@icon-info-circle);
       }
     }
-    &.node-type-activiteit > div > div > .field-afbeeldingen .image {
-      @media @phone-ls {
-        height: 330em/@fs;
-        background-size: contain;
-        background-position: right top;
-        background-repeat: no-repeat;
+    &.node-type-activiteit > div > div {
+      > .field-afbeeldingen .image {
+        @media @phone-ls {
+          height: 330em/@fs;
+          background-size: contain;
+          background-position: right top;
+          background-repeat: no-repeat;
+        }
+      }
+      > .field-read-more a {
+        margin-left: 20em/@fs;
       }
     }
     &.taxonomy-Leden {
@@ -225,6 +228,20 @@
     color: @red;
   }
 }
+.display-half .views-row {
+  @media @phone-ls {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    &:nth-child(odd) {
+      padding-right: 15em/@fs;
+    }
+    &:nth-child(even) {
+      padding-left: 15em/@fs;
+    }
+  }
+}
+
 
 /* Links in nodes */
 .node h2 a:link, .node h2 a:visited {
