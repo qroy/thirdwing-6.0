@@ -2,10 +2,10 @@
  * Collapsible fieldsets
  */
 fieldset {
-  margin: 0 0 1.5em;
-  padding: 2.9em 0.75em 0.75em;
+  margin: 0 0 30em/@fs;
+  padding: 60em/@fs 30em/@fs 30em/@fs;
   border: 0;
-  .border-radius();
+  .border-radius(@border-radius-large);
   background: @white;
   position: relative;
   box-sizing: border-box;
@@ -16,12 +16,12 @@ fieldset {
 fieldset legend {
   position: absolute;
   top: 0;
-  left: 0.75em;
+  left: 30em/@fs;
   box-sizing: border-box;
-  padding: 0 0.75em;
+  padding: 0 10em/@fs;
   background: @grey-dark;
   color: @white;
-  line-height: 2.15em; /* 30px / 14px */
+  line-height: 30em/@fs;
   .border-radius(0 0 @border-radius-large @border-radius-large);
 }
 .buildmode-teaser fieldset legend {
