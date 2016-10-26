@@ -51,18 +51,20 @@
   }
 }
 .buildmode-teaser, .buildmode-compact {
-  > .node.node-type-activiteit > div > div > .field-afbeeldingen > div {
-    > div {
-      display: none;
-    }
-    > div:first-of-type {
-      display: block;
-    }
-    > div:first-of-type > .image {
-      height: 200em/12;
-      background-size: contain;
-      background-position: right top;
-      background-repeat: no-repeat;
+  > .node.node-type-activiteit, .node.node-type-nieuws {
+    > div > div > .field-afbeeldingen > div {
+      > div {
+        display: none;
+      }
+      > div:first-of-type {
+        display: block;
+      }
+      > div:first-of-type > .image {
+        height: 200em/12;
+        background-size: contain;
+        background-position: right top;
+        background-repeat: no-repeat;
+      }
     }
   }
 }
