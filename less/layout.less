@@ -6,10 +6,9 @@
   display: none;
 }
 body {
-  background: @white url(../images/bg-footer.png) repeat-x 50% bottom;
 }
 #wrapper {
-  background: transparent url(../images/body.png) repeat-x 50% 0;
+  background: @white-off;
 }
 
 #container {
@@ -30,15 +29,43 @@ body {
  * Header
  */
 #header {
-  padding: 120px 0 0;
+  padding: 160px 0 0;
   height: 20px;
   margin: 0 auto;
-  background: transparent url(../images/header.png) no-repeat 80px 0;
+  position: relative;
 }
-.sidebar-left #header,
-.two-sidebars #header {
-  padding-left: 180px;
-/*   background-position: 180px 0;*/
+.sidebar-left, .two-sidebars {
+  #header {
+    padding-left: 180px;
+  }
+}
+#logo {
+  position: absolute;
+  height: 120px;
+  top: 20px;
+  #logo-img {
+    float: left;
+    height: 120px;
+    width: 120px;
+    .box-shadow();
+    .border-radius();
+    background: @purple url(../images/logo2.png) no-repeat 50% 50%;
+    background-size: 90%;
+  }
+  #logo-title {
+    width: 100px;
+    font-family: 'Open Sans', Verdana, sans-serif;
+    font-weight: 600;
+    float: left;
+    line-height: 90px;
+    font-size: 70px;
+    margin-left: 30px;
+    color: @grey-dark;
+    &::first-line {
+      line-height: 30px;
+      font-size: 28px;
+    }
+  }
 }
 
 .breadcrumb {
@@ -172,15 +199,17 @@ body.two-sidebars #squeeze {
 }
 
 #footer {
-  padding: 50px 0 0 0;
+  padding: 20px 0 0 0;
+  margin-top: 30px;
   float: none;
   clear: both;
   height: 150px;
   text-align: center;
-  color: @grey;
+  color: @white-off;
   font-size: 10px;
   line-height: 10px;
-  background: transparent url(../images/footer.png) no-repeat 100% 100%;
+  background: @grey-dark;
+  a { color: @white; }
 }
 
 .breadcrumb {

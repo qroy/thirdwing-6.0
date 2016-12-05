@@ -42,6 +42,10 @@
 
       </div>
       <div id="header">
+      <div id="logo">
+          <div id="logo-img"></div>
+          <div id="logo-title"><?php print $site_name; ?></div>
+      </div> <!-- /logo -->
       <nav id="nav" role="navigation"><?php print $header; ?></nav>
       </div> <!-- /header -->
 
@@ -81,9 +85,11 @@ endif; ?><?php print $help; ?>
         </div>
       <?php endif; ?>
 
-          <div id="footer"><?php print $last_updated ?><?php print $footer_message ?></div>
     </div> <!-- /container -->
-  </div><!-- /layout -->
+
+<div id="footer"><?php print $last_updated ?><?php print $footer_message ?></div>
+
+  </div><!-- /wrapper -->
 
   <?php print $closure ?>
   </body>
