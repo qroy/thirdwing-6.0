@@ -18,22 +18,22 @@ dl.user-member {
 body {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
-  font-family: Verdana, sans-serif;
+  font-family: 'Open Sans', Verdana, sans-serif;
   font-size: 100%;
   color: @black;
 }
 #wrapper {
-  font-size: 0.75em; /* 12px / 16px */
-  line-height: 1.5em; /* 18px / 12px */
+  font-size: 14em/16;
+  line-height: 24em/14;
 }
 
 input {
-  font: 12px/100% "Verdana";
+  font: 12px/100%;
   color: #494949;
 }
 
 textarea, select {
-  font: 12px/160% "Verdana";
+  font: 12px/160%;
   color: #494949;
 }
 
@@ -41,20 +41,23 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   font-weight: normal;
-  font-family: Helvetica, Arial, sans-serif;
 }
 
 h1 {
-  font-size: 1.666666666666667em; /* 20px / 12px */
-  line-height: 1.8em; /* 36px / 20px */
+  font-size: 30em/12;
+  line-height: 36em/30;
+  color: @pink;
+  margin-top: 12px;
+  font-weight: 600;
+  position: relative;
+  z-index: 3;
 }
 
 h2 {
-  font-size: 1.666666666666667em; /* 20px / 12px */
-  line-height: 1.8em; /* 36px / 20px */
-}
-.sidebar h2 {
-  color: @white;
+  font-size: 24em/12;
+  line-height: 36em/24;
+  color: @pink;
+  font-weight: 600;
 }
 h3 {
   font-size: 1.3333333333333333em; /* 16px / 12px */
@@ -79,14 +82,15 @@ ul, quote, code, fieldset {
 }
 
 p {
-  margin: 0 0 1.33333333333em; /* 16px / 12px */
+  margin: 0 0 2em; /* 24px / 12px */
   padding: 0;
 }
 .fa {
-  font-family: Verdana, sans-serif;
+  font-family: 'Open Sans', Verdana, sans-serif;
 }
 .fa:before {
   font-family: fontawesome;
+  margin-right: 2px;
 }
 a {
   .transition-standard();

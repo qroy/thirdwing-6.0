@@ -104,14 +104,10 @@
   .border-radius(0 0 @border-radius-small @border-radius-small);
 }
 
-.sidebar a.fa::before,
-#center a.fa::before {
-  content: none;
-}
 a.fa {
-  font-family: Verdana, sans-serif;
-  font-size: 1em; /* 12px / 12px */
-  line-height: 1.5em; /* 18px / 12px */ 
+  font-family: 'Open Sans', Verdana, sans-serif;
+  font-size: 12em/12;
+  line-height: 24em/12;
 }
 #header, #topbar {
   ul.menu a.fa::before {
@@ -138,63 +134,50 @@ a.fa {
  * Right Sidebar Menu
  */
 
-#sidebar-right ul.menu li {
-  margin: 0;
-  padding: 0;
-  background: none;
-  font-size: 1.333333333333333333333em; /* 16px / 12px */  
-  line-height: 1.125em; /* 18px / 16px */
-}
-#sidebar-right ul.menu li a:link,
-#sidebar-right ul.menu li a:visited {
-  color: @black;
-  text-align: center;
-  background-color: @grey-light;
-  margin: 0 0 1.125em; /* 18px / 16px */
-  padding: 1.125em 0; /* 18px / 16px */
-  .border-radius();
-  border: 1px solid @grey-light;
-}
-#sidebar-right #block-menu-menu-startpagina-rec ul.menu li a:link,
-#sidebar-right #block-menu-menu-startpagina-rec ul.menu li a:visited {
-  color: @grey-light;
-  background-color: @grey-dark;
-  border: 1px solid @grey-dark;
-}
-#sidebar-right ul.menu li a:hover,
-#sidebar-right ul.menu li a:active,
-#sidebar-right ul.menu li a.active:link,
-#sidebar-right ul.menu li a.active:visited,
-#sidebar-right #block-menu-menu-startpagina-rec ul.menu li a:hover,
-#sidebar-right #block-menu-menu-startpagina-rec ul.menu li a:active,
-#sidebar-right #block-menu-menu-startpagina-rec ul.menu li a.active:link,
-#sidebar-right #block-menu-menu-startpagina-rec ul.menu li a.active:visited {
-  background-color: @purple;
-  color: @white;
-  text-decoration: none;
-  border: 1px solid @purple;
-}
-#sidebar-right ul.menu li a.active:link,
-#sidebar-right ul.menu li a.active:visited {
-  font-weight: bold;
+#sidebar-right {
+  ul.menu {
+    margin: 0 0 24em/14 0;
+  }
+  ul.menu li {
+    margin: 0;
+    padding: 0;
+    background: none;
+    font-size: 16em/14;  
+    line-height: 30em/16;
+  
+    a:link, a:visited {
+      .box-shadow();
+      color: @grey-dark;
+      text-align: center;
+      background-color: @grey-light;
+      margin: 0 0 18em/16;
+      padding: 18em/16 0;
+      .border-radius();
+      border: 1px solid @grey-light;
+    }
+  }
+  #block-menu-menu-startpagina-rec ul.menu li {
+    a:link, a:visited {
+      color: @white;
+      background-color: @purple;
+      border: 1px solid @purple;
+    }
+  }  
+  #block-menu-menu-startpagina-rec ul.menu li, ul.menu li {
+    a:hover, a:active, a.active:link, a.active:visited {
+      background-color: @pink;
+      color: @white;
+      text-decoration: none;
+      border: 1px solid @pink;
+    }
+  }
+  .fa:before {
+    font-size: 28em/16;
+    line-height: 28em/28;
+    margin-right: 8em/28;
+  }
 }
 
-#sidebar-right ul.menu li.menu-mlid-5479 a,
-#sidebar-right ul.menu li.menu-mlid-5478 a,
-#sidebar-right ul.menu li.menu-mlid-5480 a {
-  padding-left: 50px;
-  background-image: url(../images/social.png);
-  background-repeat: no-repeat;
-}
-#sidebar-right ul.menu li.menu-mlid-5478 a {
-  background-position: 0 -80px;
-}
-#sidebar-right ul.menu li.menu-mlid-5479 a {
-  background-position: 0 -150px;
-}
-#sidebar-right ul.menu li.menu-mlid-5480 a {
-  background-position: 0 -10px;
-}
 /**
  * Local tasks
  */
@@ -277,4 +260,33 @@ tr.even td.menu-disabled {
 }
 td.menu-disabled {
   opacity: 0.5;
+}
+
+.sidebar .tw-archief {
+  font-size: 12px;
+  line-height: 22px;
+  ul.views-summary {
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 0;
+      margin: 0;
+      a {
+        box-sizing: border-box;
+        float: left;
+        margin: 2px 2px 0 0;
+        padding: 0;
+        display: inline-block;
+        color: @grey-dark;
+        text-align: center;
+        .border-radius(@border-radius-small);
+        background: @grey-light;
+        width: 80px;
+        &.active, &:hover, &:active {
+          color: @white;
+          background: @purple;
+        }
+      }
+    }
+  }
 }
