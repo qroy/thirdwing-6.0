@@ -20,7 +20,7 @@
       <?php print phptemplate_get_ie_styles(); ?>
     <![endif]-->
     <link rel="apple-touch-icon" href="<?php print base_path() . path_to_theme() ?>/images/apple-touch-icon.png" />
-      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="https://code.jquery.com/jquery-latest.min.js"></script>
       <script type="text/javascript"> 
         var $jq = jQuery.noConflict(); 
       </script> 
