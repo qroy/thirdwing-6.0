@@ -157,12 +157,6 @@ body.two-sidebars #squeeze {
 /* Now we add the backgrounds for the main content shading */
 #squeeze {
   position: relative;
-}
-
-.right-corner {
-}
-
-.left-corner {
   background: @white;
   padding: 70px 25px 5em 25px;
   margin: 40px 0;
@@ -171,8 +165,7 @@ body.two-sidebars #squeeze {
   .border-radius(@border-radius-large);
 }
 
-
-.taxonomy-Leden .left-corner:before {
+.taxonomy-Leden #squeeze:before {
   content: 'voor leden';
   position: absolute;
   right: 25px;
@@ -185,10 +178,10 @@ body.two-sidebars #squeeze {
   line-height: 2em;
   .border-radius(0 0 @border-radius-small @border-radius-small);
 }
-.taxonomy-Bezoekers .left-corner:before {
+.taxonomy-Bezoekers #squeeze:before {
   content: '';
 }
-.left-corner .block {
+#squeeze .block {
   margin-bottom: 2em;
 }
 

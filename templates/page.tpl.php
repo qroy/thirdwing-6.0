@@ -1,12 +1,6 @@
 <?php
 // $Id: page.tpl.php,v 1.18.2.1 2009/04/30 00:13:31 goba Exp $
   phptemplate_comment_wrapper(NULL, $node->type); 
-  $date = format_date($node->changed, 'custom', 'l d F Y');
-  $time = format_date($node->changed, 'custom', 'H:m');
-
-  if ($node->changed):
-  $last_updated = '<strong>Pagina laatst aangepast op ' . $date . ' om ' . $time . '</strong><br /><br />';
-  endif;
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
@@ -56,7 +50,7 @@
         </div>
       <?php endif; ?>
 
-      <div id="center"><div id="squeeze"><div class="right-corner"><div class="left-corner">
+      <div id="center"><div id="squeeze"><div class="left-corner">
           <?php print $breadcrumb; ?>
           <?php if ($tabs): print '<div id="tabs"><ul class="tabs primary">'. $tabs .'</ul>'; endif; ?>
           <?php if ($tabs): print '</div>'; endif; ?>
@@ -76,7 +70,7 @@ endif; ?><?php print $help; ?>
             <?php print $content ?>
           </div>
           <?php print $feed_icons ?>
-      </div></div></div></div> <!-- /.left-corner, /.right-corner, /#squeeze, /#center -->
+      </div></div></div> <!-- /.left-corner, /#squeeze, /#center -->
 
       <?php if ($right): ?>
         <div id="sidebar-right" class="sidebar">
@@ -87,7 +81,7 @@ endif; ?><?php print $help; ?>
 
     </div> <!-- /container -->
 
-<div id="footer"><?php print $last_updated ?><?php print $footer_message ?></div>
+<div id="footer"><?php print $footer_message ?><?php print $footer ?></div>
 
   </div><!-- /wrapper -->
 
