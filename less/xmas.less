@@ -1,30 +1,20 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
-
 #wrapper {
   background: @white-off url(../images/xmas.png);
 }
-#header {
-  &:after {
-    content: 'Merry Christmas!';
-    font-size: 36px;
-    line-height: 40px;
-    font-family: 'Indie Flower';
-    display: block;
-    width: 300px;
-    height: 40px;
-    color: @white;
-    position: absolute;
-    right: 0;
-    top: 100px;
-    text-align: right;
-  }
-}
 #logo {
   color: @white;
+  text-shadow: 0 0 10px @grey-dark;
 }
 .sidebar h2 {
   color: @white;
 }
 #container .sidebar {
   color: @white;
+}
+#sidebar-right {
+  ul.menu li {
+    a:link, a:visited {
+      .box-shadow();
+    }
+  }
 }

@@ -146,7 +146,6 @@ a.fa {
     line-height: 30em/16;
   
     a:link, a:visited {
-      .box-shadow();
       color: @grey-dark;
       text-align: center;
       background-color: @grey-light;
@@ -290,6 +289,52 @@ td.menu-disabled {
           color: @white;
           background: @purple;
         }
+      }
+    }
+  }
+}
+
+#footer {
+  ul.menu {
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0;
+      padding: 0;
+      background: none;
+    }
+  }
+  #block-menu-menu-social {
+    ul li {
+      float: left;
+      a {
+        .border-radius();
+        margin-left: 10px;
+        &:link, &:visited {
+          background: @white-off;
+          color: @grey-dark;
+        }
+        &:hover, &:active {
+          background: @grey;
+        }
+      }
+    }
+    a.fa {
+      text-indent: 200%;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 80px;
+      height: 80px;
+      position: relative;
+      &::before {
+        width: 80px;
+        text-align: center;
+        text-indent: 0;
+        position: absolute;
+        left: 0;
+        margin: 0;
+        font-size: 50px;
+        line-height: 80px;
       }
     }
   }

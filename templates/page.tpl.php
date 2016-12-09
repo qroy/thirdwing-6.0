@@ -30,15 +30,16 @@
 
 <!-- Layout -->
     <div id="wrapper">
-    <div id="container" class="clear-block">
+    <div id="container" class="container clear-block">
 <div id="topbar">
       <?php print $topbar; ?>
 
       </div>
       <div id="header">
       <div id="logo">
-          <div id="logo-img"></div>
-          <div id="logo-title"><?php print $site_name; ?></div>
+          <?php if ($logo): ?><div id="logo-img"></div><?php endif; ?>
+          <?php if ($site_name): ?><div id="logo-title"><?php print $site_name; ?></div><?php endif; ?>
+          <?php if ($site_slogan): ?><div id="logo-slogan"><?php print $site_slogan; ?></div><?php endif; ?>
       </div> <!-- /logo -->
       <nav id="nav" role="navigation"><?php print $header; ?></nav>
       </div> <!-- /header -->
@@ -81,7 +82,7 @@ endif; ?><?php print $help; ?>
 
     </div> <!-- /container -->
 
-<div id="footer"><?php print $footer_message ?><?php print $footer ?></div>
+<div id="footer"><div class="container"><?php print $footer_message ?><?php print $footer ?></div></div>
 
   </div><!-- /wrapper -->
 

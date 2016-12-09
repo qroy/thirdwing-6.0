@@ -11,13 +11,11 @@ body {
   background: @white-off;
 }
 
-#container {
+.container {
   margin: 0 auto;
   padding: 0 20px;
   max-width: 1270px;
   position: relative;
-}
-.front #container {
 }
 
 #topbar {
@@ -43,18 +41,20 @@ body {
   position: absolute;
   height: 120px;
   top: 20px;
-  text-shadow: 0 0 10px @grey-dark;
+  right: 0;
+  left: 0;
   #logo-img {
     float: left;
     height: 120px;
     width: 120px;
     .box-shadow();
-    .border-radius();
+    .border-radius(@border-radius-large);
     background: @purple url(../images/logo2.png) no-repeat 50% 50%;
     background-size: 90%;
   }
   #logo-title {
-    width: 250px;
+    word-spacing: 1000px;
+    width: 400px;
     font-weight: 600;
     float: left;
     line-height: 90px;
@@ -64,6 +64,15 @@ body {
       line-height: 30px;
       font-size: 28px;
     }
+  }
+  #logo-slogan {
+    font-size: 36px;
+    line-height: 40px;
+    font-family: 'Indie Flower';
+    text-align: right;
+    display: table-cell;
+    vertical-align: bottom;
+    height: 120px;
   }
 }
 
@@ -114,7 +123,7 @@ body.two-sidebars #squeeze {
 }
 
 /* We ensure the sidebars are still clickable using z-index */
-#container .sidebar {
+.container .sidebar {
   margin: 50px 0 5em;
   width: 180px;
   float: left;
@@ -187,17 +196,53 @@ body.two-sidebars #squeeze {
 
 #footer {
   .box-shadow(@box-shadow-inset);
-  padding: 20px 0 0 0;
+  padding: 20px 0 70px;
   margin-top: 30px;
   float: none;
   clear: both;
-  height: 150px;
-  text-align: center;
+  min-height: 150px;
   color: @white-off;
-  font-size: 10px;
-  line-height: 10px;
   background: @grey-dark;
-  a { color: @white; }
+  a {
+    &:link, &:visited {
+      color: @white;
+    }
+    &:hover, &:active, &.active {
+      color: @grey;
+    }
+  }
+  #block-menu-menu-footer {
+    float: left;
+  }
+  #block-menu-menu-social, #block-block-5 {
+    float: right;
+    clear: right;
+  }
+  #block-block-5 {
+    text-align: right;
+    font-size: 10em/14;
+    line-height: 24em/10;
+    margin: 24px 0;
+    color: @grey;
+    padding-right: 60px;
+    position: relative;
+    &:after {
+      content: '\e900';
+      font-family: 'thirdwing';
+      font-size: 40px;
+      line-height: 50px;
+      text-align: center;
+      display: block;
+      width: 50px;
+      height: 50px;
+      border: 1px solid @grey;
+      .border-radius();
+      position: absolute;
+      right: 0;
+      top: 0;
+      visibility: visible;
+    }
+  }
 }
 
 .breadcrumb {
