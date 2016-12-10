@@ -66,6 +66,9 @@
     width: 12em;
     text-align: left;
     text-transform: uppercase;
+    &:before {
+      color: @red;
+    }
     span {
       padding: 0 1px;
     }
@@ -80,7 +83,7 @@
   &.badge-time {
     width: 66em/12;
     @media screen {
-      background: @pink;
+      background: @red;
     }
     @media print {
       background: transparent;
@@ -90,7 +93,7 @@
   &.badge-koor-tijd {
     width: 66em/12;
     @media screen {
-      background: @purple;
+      background: @primary;
     }
     @media print {
       background: transparent;
@@ -112,7 +115,7 @@
 
 a:link, a:visited {
   .badge.badge-nummer {
-    background: @pink-light;
+    background: @red-light;
   }
 }
 
@@ -124,10 +127,10 @@ tr {
           background: @yellow;
         }
         .badge.badge-time {
-          background: @pink;
+          background: @secondary;
         }
         .badge.badge-koor-tijd {
-          background: @purple;
+          background: @primary;
         }
         .badge.badge-kar {
           background: @blue;
@@ -145,12 +148,12 @@ tr {
       a {
         &:link, &:visited {
           .badge.badge-nummer {
-            background: @pink;
+            background: @secondary;
           }
         }
         &:hover, &:active, &:focus {
           .badge.badge-nummer {
-            background: @purple;
+            background: @primary;
           }
         }
       }
@@ -168,10 +171,10 @@ tr {
     color: @grey-dark;
   }
   .badge.badge-time-compact {
-    background: @pink-light;
+    background: @red-light;
   }
   .badge.badge-koor-tijd {
-    background: @purple-light;
+    background: @primary-light;
   }
   .badge.badge-sleepgroep, .badge.badge-sleepgroep-tijd {
     background: @yellow-light;

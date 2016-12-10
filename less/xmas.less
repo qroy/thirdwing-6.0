@@ -3,7 +3,12 @@
 }
 #logo {
   color: @white;
-  text-shadow: 0 0 10px @grey-dark;
+  #logo-title, #logo-slogan {
+    text-shadow: 0 0 10px @grey-dark;
+  }
+  #logo-slogan {
+    color: @white;
+  }
 }
 .sidebar h2 {
   color: @white;
@@ -17,4 +22,8 @@
       .box-shadow();
     }
   }
+}
+.sidebar a:link, .sidebar a:visited {
+  color: @white;
+  text-decoration: none;
 }

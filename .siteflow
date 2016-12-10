@@ -27,8 +27,8 @@
         "less" : "00000000-0000-0000-0000-000000000000"
       }
     },
-    "less\/layout.less" : {
-      "output" : "css\/layout.css",
+    "less\/xmas-vars.less" : {
+      "output" : "css\/xmas-vars.css",
       "profiles" : {
         "less" : "00000000-0000-0000-0000-000000000000"
       }
@@ -36,6 +36,7 @@
     "less\/style.less" : {
       "imports" : [
         "less\/variables.less",
+        "less\/xmas-vars.less",
         "less\/base.less",
         "less\/layout.less",
         "less\/nodes.less",
@@ -43,6 +44,7 @@
         "less\/menu.less",
         "less\/admin.less",
         "less\/jplayer.less",
+        "less\/xmas.less",
         "less\/screen.less",
         "less\/print.less"
       ],
@@ -65,6 +67,12 @@
     },
     "css\/print.css" : {
       "output" : "css\/print.out.css"
+    },
+    "less\/layout.less" : {
+      "output" : "css\/layout.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
     },
     "less\/jplayer.less" : {
       "output" : "css\/jplayer.css",
@@ -101,6 +109,12 @@
     },
     "less\/variables.less" : {
       "output" : "css\/variables.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/xmas.less" : {
+      "output" : "css\/xmas.css",
       "profiles" : {
         "less" : "00000000-0000-0000-0000-000000000000"
       }

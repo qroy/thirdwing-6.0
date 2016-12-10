@@ -44,13 +44,22 @@ body {
   right: 0;
   left: 0;
   #logo-img {
+    background: @primary;
+    color: @white;
     float: left;
     height: 120px;
     width: 120px;
     .box-shadow();
     .border-radius(@border-radius-large);
-    background: @purple url(../images/logo2.png) no-repeat 50% 50%;
-    background-size: 90%;
+    &:after {
+      display: block;
+      content: '\e900';
+      font-family: 'thirdwing';
+      width: 120px;
+      font-size: 100px;
+      line-height: 120px;
+      text-align: center;
+    }
   }
   #logo-title {
     word-spacing: 1000px;
@@ -73,6 +82,7 @@ body {
     display: table-cell;
     vertical-align: bottom;
     height: 120px;
+    color: @secondary;
   }
 }
 
@@ -85,13 +95,13 @@ body {
 }
 
 body {
-  min-width: 780px;
+  min-width: 880px;
 }
 body.two-sidebars, body.sidebar-left {
-  min-width: 980px;
+  min-width: 1080px;
 }
 body.sidebar-right {
-  min-width: 780px;
+  min-width: 880px;
 }
 
 /* We must define 100% width to avoid the body being too narrow for near-empty pages */
@@ -179,7 +189,7 @@ body.two-sidebars #squeeze {
   position: absolute;
   right: 25px;
   top: 0;
-  background: @pink;
+  background: @red;
   color: @white;
   text-align: center;
   width: 100px;
@@ -212,33 +222,34 @@ body.two-sidebars #squeeze {
     }
   }
   #block-menu-menu-footer {
-    float: left;
+    float: right;
   }
   #block-menu-menu-social, #block-block-5 {
-    float: right;
-    clear: right;
+    float: left;
+    clear: left;
   }
   #block-block-5 {
-    text-align: right;
+    text-align: left;
     font-size: 10em/14;
-    line-height: 24em/10;
+    line-height: 20em/10;
     margin: 24px 0;
     color: @grey;
-    padding-right: 60px;
+    padding-left: 70px;
+    width: 290px;
     position: relative;
     &:after {
       content: '\e900';
       font-family: 'thirdwing';
-      font-size: 40px;
-      line-height: 50px;
+      font-size: 50px;
+      line-height: 60px;
       text-align: center;
       display: block;
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border: 1px solid @grey;
       .border-radius();
       position: absolute;
-      right: 0;
+      left: 0;
       top: 0;
       visibility: visible;
     }

@@ -13,7 +13,7 @@
   float: right;
   position: relative;
   z-index: 4;
-  background-color: @purple;
+  background-color: @primary;
   .box-shadow();
   .border-radius();
   width: 100%;
@@ -39,7 +39,7 @@
       color: @white-off;
     }
     > a:active, > a:focus, > a:hover, > a.active, > a.active-trail, &.active-trail > a, &.over > a, &:hover > a {
-      background-color: @pink;
+      background-color: @secondary;
       color: @white;
       .box-shadow();
       .border-radius(0 0 @border-radius-small @border-radius-small);
@@ -82,7 +82,7 @@
           color: @white;
         }
         &:active, &:focus, &:hover, &.active, &.active-trail {
-          background: @pink;
+          background: @secondary;
           .box-shadow(none);
         }
       }
@@ -158,16 +158,16 @@ a.fa {
   #block-menu-menu-startpagina-rec ul.menu li {
     a:link, a:visited {
       color: @white;
-      background-color: @purple;
-      border: 1px solid @purple;
+      background-color: @primary;
+      border: 1px solid @primary;
     }
   }  
   #block-menu-menu-startpagina-rec ul.menu li, ul.menu li {
     a:hover, a:active, a.active:link, a.active:visited {
-      background-color: @pink;
+      background-color: @secondary;
       color: @white;
       text-decoration: none;
-      border: 1px solid @pink;
+      border: 1px solid @secondary;
     }
   }
   .fa:before {
@@ -241,7 +241,7 @@ ul.secondary li.active a,
 ul.secondary li.active a:link,
 ul.secondary li.active a:visited,
 ul.secondary li a:hover {
-  background-color: @purple;
+  background-color: @primary;
   color: @white;
   -moz-box-box-shadow: 0px 0px 6px @grey-dark;
   -webkit-box-shadow: 0px 0px 6px @grey-dark;
@@ -287,7 +287,7 @@ td.menu-disabled {
         width: 80px;
         &.active, &:hover, &:active {
           color: @white;
-          background: @purple;
+          background: @primary;
         }
       }
     }
@@ -309,7 +309,7 @@ td.menu-disabled {
       float: left;
       a {
         .border-radius();
-        margin-left: 10px;
+        margin-right: 10px;
         &:link, &:visited {
           background: @white-off;
           color: @grey-dark;

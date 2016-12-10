@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 30em/12;
   line-height: 36em/30;
-  color: @pink;
+  color: @secondary;
   margin: 6px 0;
   font-weight: 600;
   position: relative;
@@ -56,8 +56,16 @@ h1 {
 h2 {
   font-size: 24em/12;
   line-height: 36em/24;
-  color: @pink;
+  color: @secondary;
   font-weight: 600;
+}
+h1, h2 {
+  a:link, a:visited {
+    color: @secondary;
+  }
+  a:hover, a:active, a:focus {
+    color: @primary;
+  }
 }
 h3 {
   font-size: 1.3333333333333333em; /* 16px / 12px */
@@ -96,27 +104,23 @@ a {
   .transition-standard();
 }
 a:link, a:visited {
-  color: @pink;
+  color: @primary;
   text-decoration: none;
 }
 
 a:hover, a:active, a.active, a.active-trail {
-  color: @purple;
+  color: @secondary;
   text-decoration: none;
 }
 
-.sidebar a:link, .sidebar a:visited {
-  color: @white;
-  text-decoration: none;
-}
 .sidebar a:hover, .sidebar a:active, .sidebar a.active, .sidebar a.active-trail {
-  color: @purple;
+  color: @primary;
   text-decoration: none;
 }
 
 ::selection {
   color: @white;
-  background: @pink;
+  background: @secondary;
 }
 
 hr {
@@ -220,13 +224,13 @@ img, a img {
 table {
   margin: 1em 0;
   width: 100%;
-  border-bottom: 2px solid @purple;
+  border-bottom: 2px solid @primary;
 }
 
 thead th {
   color: @white;
   font-weight: bold;
-  background: @purple;
+  background: @primary;
   border: none;
   a {
     &:link, &:visited {
@@ -234,7 +238,7 @@ thead th {
       text-decoration: none;
     }
     &:hover, &:active {
-     color: @pink;
+     color: @secondary;
     }
   }
   &:first-child {
@@ -271,7 +275,7 @@ td.active {
 td.region, td.module, td.container {
   border-top: 1.5em solid @white;
   border-bottom: 1px solid @black;
-  background-color: @purple-light;
+  background-color: @primary-light;
   color: @black;
   font-weight: bold;
 }
