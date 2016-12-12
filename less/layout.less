@@ -210,9 +210,10 @@ body.two-sidebars #squeeze {
   margin-top: 30px;
   float: none;
   clear: both;
-  min-height: 150px;
+  height: 400px;
   color: @white-off;
   background: @grey-dark;
+  position: relative;
   a {
     &:link, &:visited {
       color: @white;
@@ -221,22 +222,46 @@ body.two-sidebars #squeeze {
       color: @grey;
     }
   }
-  #block-menu-menu-footer {
+  h2 {
+    color: @white-off; 
+    text-transform: uppercase;
+    font-size: 14em/14;
+    line-height: 24em/14;
+  }
+  #footer-left {
+    width: 488px;
+    float: left;
+  }
+  #footer-right {
     float: right;
+  }
+  #block-menu-menu-footer, #block-menu-menu-footer-service, #block-block-6 {
+    float: left;
+    width: 120px;
+    height: 260px;
+    clear: none;
+    margin-right: 24px;
+  }
+  #block-block-6 {
+    width: 200px;
+    margin: 0;
   }
   #block-menu-menu-social, #block-block-5 {
     float: left;
     clear: left;
+    width: 360px;
+    display: block;
   }
   #block-block-5 {
     text-align: left;
     font-size: 10em/14;
     line-height: 20em/10;
-    margin: 24px 0;
+    margin: 85px 0 24px;
     color: @grey;
-    padding-left: 70px;
-    width: 290px;
+    padding: 0 70px 0 10px;
     position: relative;
+    box-sizing: border-box;
+    text-align: right;
     &:after {
       content: '\e900';
       font-family: 'thirdwing';
@@ -249,10 +274,32 @@ body.two-sidebars #squeeze {
       border: 1px solid @grey;
       .border-radius();
       position: absolute;
-      left: 0;
+      right: 0;
       top: 0;
       visibility: visible;
     }
+  }
+  #block-menu-menu-social h2 {
+    margin-left: 10px;
+  }
+  .fa-ul {
+    margin-left: 24em/14em;
+    padding: 0;
+    li {
+      background: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+.sidebar-left, .two-sidebars {
+  #footer-left {
+    margin-left: 180px;
+  }
+}
+.sidebar-right, .two-sidebars {
+  #footer-right {
+    margin-right: 180px;
   }
 }
 

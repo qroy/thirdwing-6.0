@@ -82,7 +82,10 @@ endif; ?><?php print $help; ?>
 
     </div> <!-- /container -->
 
-<div id="footer"><div class="container"><?php print $footer_message ?><?php print $footer ?></div></div>
+<div id="footer"><div class="container"><?php print $footer_message ?>
+  <div id="footer-left"><?php print $footerleft ?></div>
+  <div id="footer-right"><?php print $footerright ?></div>
+</div></div>
 
   </div><!-- /wrapper -->
 

@@ -304,12 +304,33 @@ td.menu-disabled {
       background: none;
     }
   }
+  #block-menu-menu-footer, #block-menu-menu-footer-service {
+    ul.menu li {
+     
+      a {
+        .border-radius(@border-radius-large);
+        padding: 0 10px;
+        margin: 0 0 5px;
+        width: 100px;
+        line-height: 28px;
+        display: block;
+        &:link, &:visited {
+          background: @grey;
+          color: @grey-dark;
+        }
+        &:hover, &:active, &.active {
+          background: @white-off;
+          color: @grey-dark;
+        }
+      }
+    }
+  }
   #block-menu-menu-social {
     ul li {
       float: left;
       a {
         .border-radius();
-        margin-right: 10px;
+        margin-left: 10px;
         &:link, &:visited {
           background: @white-off;
           color: @grey-dark;
