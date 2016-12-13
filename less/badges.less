@@ -10,7 +10,7 @@
   .border-radius();
 
   &.badge-combo {
-    font-family: band;
+    font-family: 'thirdwing';
     font-size: 24em/@fs;
     line-height: 28em/24;
     width: 28em/24;
@@ -40,7 +40,7 @@
   &.badge-kar {
     background: @blue;
     width: 110em/@fs;
-    .icon(@icon-truck);
+    .icon(@fa-var-truck);
   }
 
   &.badge-date {
@@ -48,24 +48,24 @@
     width: 162em/@fs;
     text-transform: uppercase;
     text-align: left;
-    .icon(@icon-calendar);
+    .icon(@fa-var-calendar);
     &:before { color: @red; }
   }
 
   &.badge-time {
     background: @red;
     width: 74em/@fs;
-    .icon(@icon-clock-o);
+    .icon(@fa-var-clock-o);
   }
   &.badge-koor-tijd {
     background: @purple;
     width: 74em/@fs;
-    .icon(@icon-users);
+    .icon(@fa-var-users);
   }
   &.badge-sleepgroep-tijd {
     background: @yellow;
     width: 80em/@fs;
-    .icon(@icon-clock-o);
+    .icon(@fa-var-clock-o);
   }
 }
 
@@ -119,5 +119,5 @@ a:link, a:visited {
 } /* screen */
 
 .field-icon-application-pdf {
-  .icon(@icon-file-pdf-o);
+  .icon(@fa-var-file-pdf-o);
 }

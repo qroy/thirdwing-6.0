@@ -13,4 +13,5 @@ regions[header] = Menubar
 regions[left] = Left sidebar
 regions[content] = Content
 regions[right] = Right sidebar
-regions[footer] = Footer
+regions[footerleft] = Footer Left
+regions[footerright] = Footer Right

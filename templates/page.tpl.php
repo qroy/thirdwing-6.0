@@ -1,12 +1,6 @@
 <?php
 // $Id: page.tpl.php,v 1.18.2.1 2009/04/30 00:13:31 goba Exp $
   phptemplate_comment_wrapper(NULL, $node->type); 
-  $date = format_date($node->changed, 'custom', 'l d F Y');
-  $time = format_date($node->changed, 'custom', 'H:m');
-
-  if ($node->changed):
-  $last_updated = '<p>Pagina laatst aangepast op ' . $date . ' om ' . $time . '</p>';
-  endif;
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
   "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
@@ -44,15 +38,16 @@
 
   <div class="container clear-block">
   <div id="logo">
-      <div id="logo-img"></div>
-      <div id="logo-title"><?php print $site_name; ?></div>
+    <?php if ($logo): ?><div id="logo-img"></div><?php endif; ?>
+    <?php if ($site_name): ?><div id="logo-title"><?php print $site_name; ?></div><?php endif; ?>
+    <?php if ($site_slogan): ?><div id="logo-slogan"><?php print $site_slogan; ?></div><?php endif; ?>
   </div> <!-- /logo -->
   </div>
 
   <div class="clear-block container">
       
     <div id="header">
-      <nav id="nav" role="navigation"><a href="#" class="toggle-nav icon icon-bars">Menu</a><?php print $header; ?></nav>
+      <nav id="nav" role="navigation"><a href="#" class="toggle-nav fa fa-bars">Menu</a><?php print $header; ?></nav>
     </div> <!-- /header -->
 
     <?php if ($left): ?><div id="sidebar-left" class="sidebar"><?php print $left ?></div><?php endif; ?>
@@ -61,7 +56,7 @@
       <div id="breadcrumb"><?php print $breadcrumb; ?></div>
       <?php if ($show_messages && $messages): print $messages; endif; ?>
       <?php print $help; ?>
-      <?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block"><a href="#" class="toggle-tabs icon icon-pencil-square-o">Bewerk</a><ul class="tabs primary">'. $tabs;
+      <?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block"><a href="#" class="toggle-tabs fa fa-pencil-square-o">Bewerk</a><ul class="tabs primary">'. $tabs;
             if (arg(0) == 'node') :
             global $user; $user_roles = array_keys($user->roles);
             if (in_array(6, $user_roles) || in_array(12, $user_roles)) { print '<li><a href="' . $_GET['q'] . '">' . $_GET['q'] . '</a></li>'; }
@@ -81,7 +76,10 @@
 
   </div> <!-- /container -->
 
-  <div id="footer"><div class="container clear-block"><?php print $last_updated ?><?php print $footer_message ?></div></div>
+  <div id="footer"><div class="container"><?php print $footer_message ?>
+    <div id="footer-left"><?php print $footerleft ?></div>
+    <div id="footer-right"><?php print $footerright ?></div>
+  </div></div>
 
   <div id="to-top"><a href="#top" title="Terug naar boven"></a></div>
 

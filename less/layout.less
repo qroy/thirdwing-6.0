@@ -54,23 +54,33 @@ body {
   }
 }
 #logo-img {
-  box-sizing: border-box;
-  .border-radius(@border-radius-large);
-  background: @purple url(../images/logo2.png) no-repeat 50% 50%;
-  background-size: 90%;
-  border: 2em/@fs solid @white;
-  width: 90em/@fs;
-  height: 90em/@fs;
-  float: left;
-  @media @tablet {
-    box-sizing: content-box;
-    .box-shadow();
-    background: @purple url(../images/logo1.png) no-repeat 50% 50%;
-    background-size: 90%;
-    border: 0;
-    float: none;
-    width: 150em/@fs;
-    height: 150em/@fs;
+  &:after {
+    display: block;
+    content: '\e900';
+    font-family: 'thirdwing';
+    font-size: 80em/@fs;
+    line-height: 90em/80;
+    box-sizing: border-box;
+    .border-radius(@border-radius-large);
+    background: @purple;
+    color: @white;
+    border: 2em/80 solid @white;
+    width: 90em/80;
+    height: 90em/80;
+    float: left;
+    text-align: center;
+    @media @tablet {
+      box-sizing: content-box;
+      content: '\e901';
+      .box-shadow();
+      background: @purple;
+      border: 0;
+      float: none;
+      font-size: 150em/@fs;
+      line-height: 150em/150;
+      width: 150em/150;
+      height: 150em/150;
+    }
   }
 }
 #logo-title {
@@ -87,6 +97,9 @@ body {
   @media @tablet {
     display: none;
   }
+}
+#logo-slogan {
+  display: none;
 }
 #topbar {
   position: absolute;
@@ -224,12 +237,24 @@ body.two-sidebars #squeeze {
   float: none;
   clear: both;
   text-align: left;
-  color: @white;
-  background: @grey-dark url(../images/logo2.png) no-repeat right -20%;
+  color: @white-off;
+  background: @grey-dark;
   background-size: auto 200%;
   .box-shadow(@box-shadow-inset);
   .container {
     padding: 0;
+  }
+  a {
+    &:link, &:visited {
+      color: @white-off;
+    }
+    &:hover, &:active, &:focus, &.active {
+      color: @white;
+    }
+  }
+  h2 {
+    color: @white-off;
+    text-transform: uppercase;
   }
 }
 

@@ -64,7 +64,7 @@
         font-size: 13em/@fs;
         line-height: 30em/13;
         color: @grey;
-        .icon(@icon-user);
+        .icon(@fa-var-user);
         display: inline;
         font-weight: 200;
       }
@@ -72,7 +72,7 @@
         color: @grey;
         font-size: 13em/@fs;
         line-height: 30em/13;
-        .icon(@icon-calendar);
+        .icon(@fa-var-calendar);
         display: inline;
         margin-left: 1em;
         font-weight: 200;
@@ -95,7 +95,7 @@
           clear: left;
           width: 260/550 * 100%;
         }
-        .icon(@icon-map-marker);
+        .icon(@fa-var-map-marker);
         &:before { 
           color: @red; 
           margin: 0 0 0 4em/@fs;
@@ -162,7 +162,6 @@
       > .field-read-more {
         a {
           display: block;
-          .icon(@icon-arrow-circle-right);
           height: 30em/@fs;
           text-align: center;
           margin: 0 0 30em/@fs;
@@ -180,9 +179,6 @@
             background: @orange;
           }
         }
-      }
-      > .field-more-info a {
-        .icon(@icon-info-circle);
       }
     }
     &.node-type-activiteit > div > div {
@@ -239,9 +235,11 @@
 
 
 /* Links in nodes */
-.node h2 a:link, .node h2 a:visited {
-  color: @orange;
-}
-.node h2 a:hover, .node h2 a:focus, .node h2 a:active {
-  color: @purple;
+.node h2 a {
+  &:link, &:visited {
+    color: @orange;
+  }
+  &:hover, &:focus, &:active {
+    color: @purple;
+  }
 }
