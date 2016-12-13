@@ -34,7 +34,7 @@ body {
 }
 .sidebar-left, .two-sidebars {
   #header {
-    padding-left: 180px;
+    margin-left: 180px;
   }
 }
 #logo {
@@ -43,7 +43,7 @@ body {
   top: 20px;
   right: 0;
   left: 0;
-  #logo-img {
+  #logo-img a {
     background: @primary;
     color: @white;
     float: left;
@@ -60,8 +60,11 @@ body {
       line-height: 120px;
       text-align: center;
     }
+    &:hover, &:active, &:focus {
+      background: @secondary;
+    }
   }
-  #logo-title {
+  #logo-title a {
     word-spacing: 1000px;
     width: 400px;
     font-weight: 600;
@@ -69,9 +72,13 @@ body {
     line-height: 90px;
     font-size: 70px;
     margin-left: 20px;
+    color: @black;
     &::first-line {
       line-height: 30px;
       font-size: 28px;
+    }
+    &:hover, &:active, &:focus {
+      color: @secondary;
     }
   }
   #logo-slogan {
@@ -210,7 +217,7 @@ body.two-sidebars #squeeze {
   margin-top: 30px;
   float: none;
   clear: both;
-  height: 400px;
+  height: 500px;
   color: @white-off;
   background: @grey-dark;
   position: relative;
@@ -229,24 +236,33 @@ body.two-sidebars #squeeze {
     line-height: 24em/14;
   }
   #footer-left {
-    width: 488px;
+    width: 660px; 
     float: left;
   }
   #footer-right {
     float: right;
   }
-  #block-menu-menu-footer, #block-menu-menu-footer-service,#block-menu-menu-footer-service-visitor , #block-block-6 {
+  #block-menu-menu-footer, #block-menu-menu-footer-service,#block-menu-menu-footer-service-visitor , #block-block-6, #block-menu-menu-social {
     float: left;
     width: 120px;
     height: 260px;
     clear: none;
     margin-right: 24px;
   }
-  #block-block-6 {
-    width: 200px;
+  #block-menu-menu-social {
+    width: 180px;
     margin: 0;
+    h2 {
+      margin-left: 10px;
+    }
   }
-  #block-menu-menu-social, #block-block-5 {
+  #block-block-6 {
+    width: 192px;
+    margin: 0;
+    font-size: 13em/@fs;
+    line-height: 20em/12;
+  }
+  #block-block-5 {
     float: left;
     clear: left;
     width: 360px;
@@ -256,7 +272,7 @@ body.two-sidebars #squeeze {
     text-align: left;
     font-size: 10em/14;
     line-height: 20em/10;
-    margin: 85px 0 24px;
+    margin: 24px 0;
     color: @grey;
     padding: 0 70px 0 10px;
     position: relative;
@@ -278,9 +294,6 @@ body.two-sidebars #squeeze {
       top: 0;
       visibility: visible;
     }
-  }
-  #block-menu-menu-social h2 {
-    margin-left: 10px;
   }
   .fa-ul {
     margin-left: 24em/14em;

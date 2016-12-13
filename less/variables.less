@@ -28,6 +28,9 @@
 @red-light:      lighten(@red,    20%);
 @red-lightest:   lighten(@red,    38%);
 
+@fs: 14; /* font-size in pixels */
+@lh: 24; /* line-height in pixels */
+
 @primary:        @purple;
 @secondary:      @orange;
 @primary-light:  @purple-light;
@@ -44,6 +47,19 @@
 .transition-standard {
   .transition(border 0.4s, background-color 0.4s, color 0.6s);
 }
+
+// Media query variables.
+@phone-width:    (320em  / @fs);
+@phone-ls-width: (610em  / @fs);
+@tablet-width:   (830em  / @fs);
+@normal-width:   (950em  / @fs);
+@wide-width:     (1200em / @fs);
+
+@phone:   ~"screen and (min-width: @{phone-width} )";
+@phone-ls:~"screen and (min-width: @{phone-ls-width} )";
+@tablet:  ~"screen and (min-width: @{tablet-width} )";
+@normal:  ~"screen and (min-width: @{normal-width} )";
+@wide:    ~"screen and (min-width: @{wide-width})";
 
 .box-shadow(@shadow:  @box-shadow-large) {
   @media screen {

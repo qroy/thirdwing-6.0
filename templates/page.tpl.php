@@ -37,8 +37,8 @@
       </div>
       <div id="header">
       <div id="logo">
-          <?php if ($logo): ?><div id="logo-img"></div><?php endif; ?>
-          <?php if ($site_name): ?><div id="logo-title"><?php print $site_name; ?></div><?php endif; ?>
+          <?php if ($logo): ?><div id="logo-img"><a href="/" title="Keer terug naar home"></a></div><?php endif; ?>
+          <?php if ($site_name): ?><div id="logo-title"><a href="/" title="Keer terug naar home"><?php print $site_name; ?></a></div><?php endif; ?>
           <?php if ($site_slogan): ?><div id="logo-slogan"><?php print $site_slogan; ?></div><?php endif; ?>
       </div> <!-- /logo -->
       <nav id="nav" role="navigation"><?php print $header; ?></nav>
