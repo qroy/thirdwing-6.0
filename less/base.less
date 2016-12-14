@@ -361,3 +361,38 @@ span.clear {
   font-size: 0px;
   margin-bottom: -1px;
 }
+
+.button {
+  display: inline-block;
+  line-height: 22em/@fs;
+  padding: 0 10em/@fs;
+  margin: 2em/@fs 2em/@fs 0 0;
+  .border-radius(@border-radius-small);
+  &:link, &:visited {
+    color: @white;
+    background: @primary;
+  }
+  &:active, &:hover, &:focus, &.active {
+    background: @secondary;
+  }
+}
+.button-social {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative; /* for absolute positioning of icon */
+  width: 14em/@fs; /* make room for icon */
+  vertical-align: top;
+  &:before {
+    text-indent: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    margin: 0;
+    display: inline;
+    width: auto;
+  } 
+}
