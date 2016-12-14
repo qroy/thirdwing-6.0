@@ -329,3 +329,12 @@ tr.even td.menu-disabled {
 td.menu-disabled {
   opacity: 0.5;
 }
+
+ul.menu {
+  .icon-only.menu-square {
+    .icon-only();
+  }
+  .icon-only:not(.menu-square) {
+    @media @normal { .icon-only() }
+  }
+}

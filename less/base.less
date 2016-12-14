@@ -286,9 +286,15 @@ span.clear {
 
 .button {
   display: inline-block;
-  line-height: 28em/@fs;
+  vertical-align: bottom;
+  line-height: 58em/@fs;
   padding: 0 10em/@fs;
   margin: 2em/@fs 2em/@fs 0 0;
+  @media @normal {
+    line-height: 28em/@fs;
+    padding: 0 10em/@fs;
+    margin: 2em/@fs 2em/@fs 0 0;
+  }
   .border-radius(@border-radius-small);
   &:link, &:visited {
     color: @white;
@@ -299,5 +305,12 @@ span.clear {
   }
 }
 .button-social {
-  .icon-only();  
+  .icon-only();
+  padding: 0 7em/@fs;
+  &:link, &:visited {
+    background: @tertiary;
+  }
+  &:active, &:hover, &:focus, &.active {
+    background: @secondary;
+  }
 }

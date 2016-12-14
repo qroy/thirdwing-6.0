@@ -3,6 +3,11 @@
 .icon(@icon) {
   &:before {
     content: @icon;
+  }
+  .fa;
+}
+.fa { 
+  &:before {
     font-family: FontAwesome;
     display: inline-block;
     margin-right: 0.25em;
@@ -10,21 +15,14 @@
     text-align: center;
   }
 }
-.fa { .icon(@fa-var-500px); }
 
-ul.menu {
-  .icon-only.menu-square {
-    .icon-only();
-  }
-  .icon-only:not(.menu-square) {
-    @media @normal { .icon-only() }
-  }
-}
+
 .icon-only() {
   text-indent: 200%;
   white-space: nowrap;
   overflow: hidden;
   position: relative; /* for absolute positioning of icon */
+  vertical-align: bottom;
   width: 26em/20;
   @media @phone-ls { width: 31em/20; }
   @media @normal { width: 16em/@fs; /* make room for icon */ }

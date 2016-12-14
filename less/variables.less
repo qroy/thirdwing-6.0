@@ -41,7 +41,7 @@
 @border-radius-large: 10px;
 @border-radius-small: 5px;
 
-@border: 5em/@fs;
+@border: 8em/@fs;
 
 @box-shadow-large: 0px 0px 10px @grey-dark;
 @box-shadow-small: 0px 0px 3px @grey-dark;
@@ -77,8 +77,14 @@
 }
 .border {
   border-style: dotted;
-  border-color: @orange;
+  border-color: @secondary;
+  border-image-source: url('../images/border.svg');
+  border-image-slice: 33% 33%;
+  border-image-repeat: round;
   border-width: 0 0 @border;
+}
+#Artboard-1 {
+  fill: @secondary;
 }
 .transition (...) {
         @props: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
