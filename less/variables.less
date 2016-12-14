@@ -29,6 +29,12 @@
 @red-light:      lighten(@red,    20%);
 @red-lightest:   lighten(@red,    38%);
 
+@primary:        @purple;
+@primary-light:  @purple-light;
+@secondary:      @orange;
+@secondary-light:@orange-light;
+@tertiary:       @grey;
+
 @fs: 16; /* font-size in pixels */
 @lh: 30; /* line-height in pixels */
 
@@ -47,15 +53,17 @@
 
 // Media query variables.
 @phone-width:    (320em  / @fs);
-@phone-ls-width: (610em  / @fs);
-@tablet-width:   (830em  / @fs);
-@normal-width:   (950em  / @fs);
+@phone-ls-width: (620em  / @fs);
+@tablet-width:   (700em  / @fs);
+@tablet-ls-width:(860em  / @fs);
+@normal-width:   (980em  / @fs);
 @wide-width:     (1200em / @fs); 
-@phone:   ~"screen and (min-width: @{phone-width} )";
-@phone-ls:~"screen and (min-width: @{phone-ls-width} )";
-@tablet:  ~"screen and (min-width: @{tablet-width} )";
-@normal:  ~"screen and (min-width: @{normal-width} )";
-@wide:    ~"screen and (min-width: @{wide-width})";
+@phone:    ~"screen and (min-width: @{phone-width} )";
+@phone-ls: ~"screen and (min-width: @{phone-ls-width} )";
+@tablet:   ~"screen and (min-width: @{tablet-width} )";
+@tablet-ls:~"screen and (min-width: @{tablet-ls-width} )";
+@normal:   ~"screen and (min-width: @{normal-width} )";
+@wide:     ~"screen and (min-width: @{wide-width})";
 
 .box-shadow(@shadow:  @box-shadow-large) {
   -webkit-box-shadow: @shadow;

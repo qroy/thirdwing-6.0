@@ -45,7 +45,7 @@
         text-align: center;
         color: @white;
         .border-radius(@border-radius-small);
-        width: 120em/@fs;
+        width: 130em/@fs;
         box-sizing: border-box;
         overflow: hidden;
         margin: 0 0 30em/@fs;
@@ -85,7 +85,7 @@
         @media @phone-ls {
           float: left;
           clear: left;
-          width: 260/550 * 100%;
+          width: 280/580 * 100%;
         }
       }
       > .field-locatie, .field-l-bijzonderheden {
@@ -93,7 +93,7 @@
         @media @phone-ls {
           float: left;
           clear: left;
-          width: 260/550 * 100%;
+          width: 280/580 * 100%;
         }
         .icon(@fa-var-map-marker);
         &:before { 
@@ -114,15 +114,18 @@
       .field-body {
         
       }
+      .field-read-more {
+        display: inline-block;
+        height: 30em/@fs;
+      }
     }
   }
 }
 .buildmode-teaser, .buildmode-compact {
   > .node {
     background: @white;
-    margin: 0 -30em/@fs 60em/@fs;
-    padding: 0 30em/@fs;
-//    .box-shadow();
+    margin: 0 -20em/@fs 60em/@fs;
+    padding: 0 20em/@fs;
 
     @media @tablet {
       margin: 0 0 60em/@fs;
@@ -135,7 +138,7 @@
         display: block;
         @media @phone-ls {
           float: left;
-          width: 260/550 * 100%;
+          width: 280/580 * 100%;
           clear: left;
         }
       }
@@ -144,9 +147,9 @@
         @media @phone-ls { 
           display: block; 
           float: right;
-          width: 290/550 * 100%;
+          width: 300/580 * 100%;
           box-sizing: border-box;
-          padding: 0 0 0 30em/@fs;
+          padding: 0 0 0 20em/@fs;
           .image-div {
             height: 330em/@fs;
             background-size: contain;
@@ -159,35 +162,11 @@
         height: 120em/@fs;
         overflow: hidden;
       }
-      > .field-read-more {
-        a {
-          display: block;
-          height: 30em/@fs;
-          text-align: center;
-          margin: 0 0 30em/@fs;
-          padding: 0 10em/@fs;
-          .border-radius(@border-radius-small);
-          @media @phone-ls {
-            float: left;
-            clear: left;
-          }
-          &:link, &:visited {
-            color: @white;
-            background: @purple;
-          }
-          &:active, &:hover {
-            background: @orange;
-          }
-        }
-      }
     }
     &.node-type-activiteit > div > div {
       > .field-title {
         height: 150em/@fs;
         overflow: hidden;
-      }
-      > .field-read-more a {
-        margin-left: 20em/@fs;
       }
     }
     &.taxonomy-Leden {
@@ -196,12 +175,12 @@
         z-index: 5;
         content: 'voor leden';
         position: absolute;
-        right: 30em/@fs;
+        right: 20em/@fs;
         top: 0;
         background: @red;
         color: @white;
         text-align: center;
-        width: 115em/@fs;
+        width: 130em/@fs;
         line-height: 30em/@fs;
         .border-radius(0 0 @border-radius-large @border-radius-large);
       }
@@ -233,61 +212,12 @@
   }
 }
 
-.display-half .views-row {
-  @media @phone-ls {
-    width: 50%;
-    float: left;
-    box-sizing: border-box;
-  }
-  @media @tablet {
-    &:nth-child(odd) {
-      padding-right: 15em/@fs;
-    }
-    &:nth-child(even) {
-      padding-left: 15em/@fs;
-    }
-  }
-  &:nth-child(odd) {
-    .buildmode-teaser, .buildmode-compact {
-      > .node {
-        @media @phone-ls {
-          margin: 0 0 60em/@fs -30em/@fs;
-          padding-right: 45em/@fs;
-          position: relative;
-        }
-        @media @tablet {
-          margin: 0 0 60em/@fs;
-          padding-right: 30em/@fs;          
-        }
-      }
-    }
-  }
-  &:nth-child(even) {
-    .buildmode-teaser, .buildmode-compact {
-      > .node {
-        @media @phone-ls {
-          margin: 0 -30em/@fs 60em/@fs 0;
-          padding-left: 40em/@fs;
-          .border;
-          border-width: 0 0 0 5em/@fs;
-        }
-        @media @tablet {
-          margin: 0 0 60em/@fs;
-          padding-left: 30em/@fs;
-          border-width: 0;       
-        }
-      }
-    }
-  }
-}
-
-
 /* Links in nodes */
 .node h2 a {
   &:link, &:visited {
-    color: @orange;
+    color: @secondary;
   }
   &:hover, &:focus, &:active {
-    color: @purple;
+    color: @primary;
   }
 }

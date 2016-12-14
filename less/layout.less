@@ -13,12 +13,12 @@ body {
 }
 
 .container {
-  padding: 0 30em/@fs;
+  padding: 0 20em/@fs;
   margin: 0 auto;
   max-width: 1200em/@fs;
   position: relative;
   @media @normal {
-    padding: 0 90em/@fs;
+    padding: 0 80em/@fs;
   }
 }
 
@@ -27,9 +27,9 @@ body {
  */
 #logo {
   height: 105em/@fs;
-  background: @purple;
-  padding: 15em/@fs 30em/@fs 23em/@fs;
-  margin: 0 -30em/@fs 37em/@fs;
+  background: @primary;
+  padding: 15em/@fs 20em/@fs 23em/@fs;
+  margin: 0 -20em/@fs 37em/@fs;
   .box-shadow(@box-shadow-inset);
   @media @tablet {
     box-sizing: border-box;
@@ -39,7 +39,7 @@ body {
     background-size: 100%;
   }
   @media @normal {
-    padding: 15em/@fs 30em/@fs;
+    padding: 15em/@fs 20em/@fs;
     margin-bottom: 15em/@fs;
     height: 195em/@fs;
     .border-radius(0 0 @border-radius-large @border-radius-large);
@@ -62,7 +62,7 @@ body {
     line-height: 90em/80;
     box-sizing: border-box;
     .border-radius(@border-radius-large);
-    background: @purple;
+    background: @primary;
     color: @white;
     border: 2em/80 solid @white;
     width: 90em/80;
@@ -73,7 +73,7 @@ body {
       box-sizing: content-box;
       content: '\e901';
       .box-shadow();
-      background: @purple;
+      background: @primary;
       border: 0;
       float: none;
       font-size: 150em/@fs;
@@ -105,12 +105,12 @@ body {
   position: absolute;
   height: 45em/@fs;
   overflow: visible;
-  right: 30em/@fs;
+  right: 20em/@fs;
   top: 120em/@fs;
-  left: 30em/@fs;
+  left: 20em/@fs;
   z-index: 5;
 
-  background: @grey-dark;
+  background: @tertiary;
   .border-radius();
   .box-shadow();
 
@@ -120,7 +120,7 @@ body {
     .border-radius(0 0 @border-radius-small @border-radius-small);
   }
   @media @normal { 
-    right: 90em/@fs; 
+    right: 80em/@fs; 
     height: 30em/@fs; 
   }
 }
@@ -140,11 +140,11 @@ body {
 #breadcrumb {
   font-size: 13em/@fs;
   line-height: 30em/13;
-  margin: 0 0 30em/13;
+  margin: 0 0 20em/13;
   height: 30em/13;
   clear: both;
   .bull {
-    color: @orange;
+    color: @secondary;
   }
 }
 
@@ -155,7 +155,7 @@ body {
 
 }
 
-@media @tablet {
+@media @tablet-ls {
 
 /* We must define 100% width to avoid the body being too narrow for near-empty pages */
 #center {
@@ -166,13 +166,13 @@ body {
 
 /* So we move the #center container over the sidebars to compensate */
 body.sidebar-left #center {
-  margin-left: -130em/@fs;
+  margin-left: -140em/@fs;
 }
 body.sidebar-right #center {
-  margin-right: -130em/@fs;
+  margin-right: -140em/@fs;
 }
 body.two-sidebars #center {
-  margin: 0 -130em/@fs;
+  margin: 0 -140em/@fs;
 }
 
 /* And add blanks left and right for the sidebars to fill */
@@ -189,13 +189,13 @@ body.two-sidebars #squeeze {
 /* We ensure the sidebars are still clickable using z-index */
 .container .sidebar {
   margin: 180em/@fs 0 80em/@fs;
-  width: 130em/@fs;
+  width: 140em/@fs;
   float: left;
   z-index: 2;
   position: relative;
 }
 
-} // tablet
+} // tablet-ls
 
 .sidebar .block {
   margin: 0 0 60em/@fs 0;
@@ -210,22 +210,6 @@ body.two-sidebars #squeeze {
 
 .block .content {
   margin: 0;
-}
-
-#sidebar-left .block-region {
-  margin: 0 15px 0 0px;
-}
-
-#sidebar-right .block-region {
-  margin: 0 0px 0 15px;
-}
-
-.block-region {
-  padding: 1em;
-  background: transparent;
-  border: 2px dashed #b4d7f0;
-  text-align: center;
-  font-size: 1.3em;
 }
 
 #squeeze {

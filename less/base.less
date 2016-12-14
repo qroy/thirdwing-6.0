@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans', Verdana, sans-serif;
 }
 h1 {
-  color: @orange;
+  color: @secondary;
   font-size: 26em/@fs;
   line-height: 30em/26;
   padding-top: 12em/26;
@@ -36,7 +36,7 @@ h1 {
   }
 }
 h2 {
-  color: @orange;
+  color: @secondary;
   font-size: 20em/@fs;
   line-height: 60em/20;
   padding-top: 15em/20;
@@ -55,7 +55,7 @@ h4 {
 }
 h5 {
   font-weight: 400;
-  color: @orange;
+  color: @secondary;
 }
 h6 {
   font-weight: 300;
@@ -75,11 +75,11 @@ a {
   .transition-standard();
 }
 a:link, a:visited {
-  color: @purple;
+  color: @primary;
   text-decoration: none;
 }
 a:hover, a:focus, a:active, a.active, a.active-trail {
-  color: @orange;
+  color: @secondary;
   text-decoration: none;
 }
 
@@ -93,14 +93,14 @@ a:hover, a:focus, a:active, a.active, a.active-trail {
     margin: 2em/@fs -3em/@fs 0;
     .border-radius(@border-radius-small);
     &:hover {
-      background: @orange;
+      background: @secondary;
       color: @white;
     }
   }
 }
 ::selection {
   color: @white;
-  background: @orange;
+  background: @secondary;
 }
 
 ul, ul.menu, ul.links {
@@ -123,7 +123,7 @@ ul, ul.menu, ul.links {
       .icon(@fa-var-circle-o);
       position: relative;
       &:before {
-        color: @orange;
+        color: @secondary;
         font-size: 13em/@fs;
         line-height: 30em/13;
         margin-right: 10em/13;
@@ -135,7 +135,7 @@ ul, ul.menu, ul.links {
       .icon(@fa-var-circle);
       position: relative;
       &:before {
-        color: @orange;
+        color: @secondary;
         font-size: 13em/@fs;
         line-height: 30em/13;
         margin-right: 10em/13;
@@ -150,7 +150,7 @@ ol > li {
   position: relative;
   &:before {
     content: counter(count-me);
-    color: @orange;
+    color: @secondary;
     font-size: 13em/@fs;
     line-height: 30em/13;
     margin-right: 10em/13;
@@ -189,7 +189,7 @@ table {
 thead th {
   color: @white;
   font-weight: bold;
-  background: @purple;
+  background: @primary;
   border: 0;
   a {
     &:link, &:visited {
@@ -241,7 +241,7 @@ td.active {
 td.region, td.module, td.container {
   border-top: 1.5em solid @white;
   border-bottom: 1px solid @black;
-  background-color: @purple-light;
+  background-color: @primary-light;
   color: @black;
   font-weight: bold;
 }
@@ -282,4 +282,22 @@ span.clear {
   line-height: 0px;
   font-size: 0px;
   margin-bottom: -1px;
+}
+
+.button {
+  display: inline-block;
+  line-height: 28em/@fs;
+  padding: 0 10em/@fs;
+  margin: 2em/@fs 2em/@fs 0 0;
+  .border-radius(@border-radius-small);
+  &:link, &:visited {
+    color: @white;
+    background: @primary;
+  }
+  &:active, &:hover, &:focus, &.active {
+    background: @secondary;
+  }
+}
+.button-social {
+  .icon-only();  
 }

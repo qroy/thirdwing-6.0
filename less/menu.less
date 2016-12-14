@@ -22,10 +22,10 @@
   }
   &:link, &:visited {
     color: @white;
-    background: @orange;
+    background: @secondary;
   }
   &:hover, &:active, &.nav-active {
-    background: @orange;
+    background: @secondary;
   }
 }
 .toggle-nav {
@@ -55,7 +55,6 @@
   @media @normal {
     display: none;
   }
-  .box-shadow();
 }
 
 #header, #topbar {
@@ -125,7 +124,7 @@
         padding: 0;
         margin: 0;
         z-index: 4;
-        background: @grey-dark;
+        background: @tertiary;
         .box-shadow(@box-shadow-inset);
         @media @normal {
           position: absolute;
@@ -138,17 +137,16 @@
           float: none;
         }
         li a {
-          padding: 0 7em/20;
-          @media @normal {
-            padding: 0 7em/@fs;
-          }
+          padding: 0 20em/20;
+          @media @tablet { padding: 0 7em/20; }
+          @media @normal { padding: 0 7em/@fs; }
           white-space: nowrap;
           display: block;
           &:link, &:visited {
             color: @white;
           }
           &:active, &:focus, &:hover, &.active, &.active-trail {
-            background: @orange;
+            background: @secondary;
             .box-shadow(none);
           }
         }
@@ -172,14 +170,14 @@
   }
   overflow: hidden;
   .transition(max-height 0.5s);
-  background-color: @purple;
+  background-color: @primary;
   .box-shadow(@box-shadow-inset);
-  margin: 0 -30em/@fs;
+  margin: 0 -20em/@fs;
   @media @tablet {
     .border-radius();
     float: left;
     position: absolute;
-    left: 30em/@fs;
+    left: 20em/@fs;
     margin: 0;
     .box-shadow();
     width: 320em/@fs;
@@ -202,12 +200,12 @@
       }
     }
     > a:link, > a:visited {
-      padding: 0 30em/20;
+      padding: 0 20em/20;
       @media @tablet { padding: 0 7em/20; }
       @media @normal { padding: 0 7em/@fs; }
     }
     > a:active, > a:focus, > a:hover, > a.active, > a.active-trail, &.active-trail > a, &.over > a, &:hover > a {
-      background-color: @orange;
+      background-color: @secondary;
       color: @white;
       @media @normal {
         .box-shadow();
@@ -233,7 +231,7 @@
       }
     }
     > a:active, > a:focus, > a:hover, > a.active, > a.active-trail, &.active-trail > a, &.over > a, &:hover > a {
-      background-color: @orange;
+      background-color: @secondary;
       color: @white;
       .border-radius(@border-radius-small);
       .box-shadow();
@@ -267,19 +265,20 @@ ul.tabs {
     .transition(max-height 0.5s);
     position: absolute;
     z-index: 4;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.875em; /* 30px */     
+    background: @tertiary;
+    .border-radius();
+    .box-shadow();
     @media @normal { 
       position: relative;
       max-height: 60em; 
       width: 100%;
       float: left;
+      .box-shadow(none);
     }
-    border: 0;
-    margin: 0;
-    padding: 0;
-    line-height: 1.875em; /* 30px */     
-    background: @grey-dark;
-    .border-radius();
-    .box-shadow();
     &.tabs-active {
       max-height: 60em;
     }
@@ -299,13 +298,13 @@ ul.tabs {
         }
         border: 0;
         color: @white;
-        background: @grey-dark;
+        background: @tertiary;
         display: block;
         overflow: hidden;
         white-space: nowrap;
       }
       a:hover, a:focus, a:active, &.active a {
-        background: @orange;
+        background: @secondary;
         @media @normal {
           .border-radius(0 0 @border-radius-small @border-radius-small);
         }
