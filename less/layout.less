@@ -64,21 +64,23 @@ body {
       background: @secondary;
     }
   }
-  #logo-title a {
-    word-spacing: 1000px;
+  #logo-title {
+    word-spacing: 400px;
     width: 400px;
     font-weight: 600;
     float: left;
-    line-height: 90px;
-    font-size: 70px;
+    display: block;
+    height: 120px;
     margin-left: 20px;
-    color: @black;
+    font-size: 70em/@fs;
+    line-height: 90em/70;
     &::first-line {
-      line-height: 30px;
-      font-size: 28px;
+      font-size: 28em/70;
+      line-height: 30em/28;
     }
-    &:hover, &:active, &:focus {
-      color: @secondary;
+    /* firefox hack */
+    @-moz-document url-prefix() {
+      margin-top: -50px;
     }
   }
   #logo-slogan {
