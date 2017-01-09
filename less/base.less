@@ -167,14 +167,23 @@ hr {
 img, a img {
   border: none;
 }
+
+/** TABLES **/
+
+td, td.active, thead th, tr, tr.odd, tr.even {
+  // Drupal system.css reset
+  background: 0;
+  border: 0;
+  padding: 0;
+}
+
 @media screen {
-
-table, tbody, th, td, tr { 
-  display: block;
+  table, tbody, th, td, tr { 
+    display: block;
+  }
+  thead { display: none; }
 }
-thead { display: none; }
 
-}
 @media @tablet {
   table { display: table; }
   tr { display: table-row; }
@@ -182,72 +191,15 @@ thead { display: none; }
   thead { display: table-header-group; }
   tbody { display: table-row-group; }
 }
+
 table {
-  margin: 1em 0;
   width: 100%;
-}
-thead th {
-  color: @white;
-  font-weight: bold;
-  background: @primary;
-  border: 0;
-  a {
-    &:link, &:visited {
-      color: @white;
-      text-decoration: none;
-    }
-    &:hover, &:active {
-     color: @pink;
-    }
-  }
-  &:first-child {
-    .border-radius(@border-radius-large 0 0 0);
-  }
-  &:last-child {
-    .border-radius(0 @border-radius-large 0 0);
-  }
-}
-tbody tr:last-child td {
-  &:first-child {
-    .border-radius(0 0 0 @border-radius-large);
-  }
-  &:last-child {
-    .border-radius(0 0 @border-radius-large 0);
-  }
-}
-
-td, th {
-  padding: 15px 5px;
-  vertical-align: top;
-}
-tr {
   &:hover {
-  }
-  &:nth-of-type(odd), &:nth-of-type(even) {
-    &:hover {
-      background-color: @grey-lightest; 
-    }
-    background-color: @white;
-    border: none;
-  }
-  &:nth-of-type(even) {
-    background-color: @white-off;
+    color: @grey;
   }
 }
-td.active {
-  background-color: transparent;
-}
-
-td.region, td.module, td.container {
-  border-top: 1.5em solid @white;
-  border-bottom: 1px solid @black;
-  background-color: @primary-light;
+tr:hover {
   color: @black;
-  font-weight: bold;
-}
-
-tr:first-child td.region, tr:first-child td.module, tr:first-child td.container {
-  border-top-width: 0;
 }
 
 .form-checkboxes, .form-radios, .form-checkboxes .form-item, .form-radios .form-item {

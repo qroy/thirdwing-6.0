@@ -6,10 +6,10 @@
   margin: 2em/@fs 2em/@fs 0 0;
   text-align: center;
   .transition-standard();
-  color: @white;
   .border-radius();
 
   &.badge-combo {
+    color: @white;
     font-family: 'thirdwing';
     font-size: 24em/@fs;
     line-height: 28em/24;
@@ -30,20 +30,22 @@
   }
 
   &.badge-sleepgroep {
+    color: @white;
     width: 20em/16;
     background: @yellow;
   }
   &.badge-nummer {
+    color: @white;
     width: 20em/16;
     background: @grey-light;
   }
   &.badge-kar {
+    color: @white;
     background: @blue;
     width: 110em/@fs;
   }
 
   &.badge-date {
-    color: @black;
     width: 162em/@fs;
     text-transform: uppercase;
     text-align: left;
@@ -51,59 +53,23 @@
   }
 
   &.badge-time {
+    color: @white;
     background: @red;
     width: 74em/@fs;
   }
   &.badge-koor-tijd {
+    color: @white;
     background: @primary;
     width: 74em/@fs;
   }
   &.badge-sleepgroep-tijd {
+    color: @white;
     background: @yellow;
     width: 80em/@fs;
   }
 }
 
 @media screen {
-
-tr {
-  &:nth-of-type(odd), &:nth-of-type(even) {
-    &:hover {
-      .Repetitie {
-        .badge.badge-sleepgroep, .badge.badge-sleepgroep-tijd {
-          background: @yellow;
-        }
-        .badge.badge-time {
-          background: @red;
-        }
-        .badge.badge-koor-tijd {
-          background: @red;
-        }
-        .badge.badge-kar {
-          background: @blue;
-        }
-        .badge-combo-aanwezig, .badge-combo-vervanging { background: @green; }
-        .badge-combo-afwezig                     { background: @red; }
-        .badge-combo-vraag                       { background: @grey; }
-      }
-      .badge.badge-nummer {
-        background: @grey;
-      }
-      a {
-        &:link, &:visited {
-          .badge.badge-nummer {
-            background: @primary;
-          }
-        }
-        &:hover, &:active, &:focus {
-          .badge.badge-nummer {
-            background: @secondary;
-          }
-        }
-      }
-    }
-  }
-}
 
 a:link, a:visited {
   .badge.badge-nummer {

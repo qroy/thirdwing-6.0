@@ -124,7 +124,7 @@
         padding: 0;
         margin: 0;
         z-index: 4;
-        background: @tertiary;
+        background: @grey-dark;
         .box-shadow(@box-shadow-inset);
         @media @normal {
           position: absolute;
@@ -223,6 +223,7 @@
   > li {
     float: left;
     > a:link, > a:visited {
+      color: @grey-dark;
       margin: 0 2em/20 0 0;
       padding: 0 7em/20;
       @media @normal { 
@@ -269,7 +270,7 @@ ul.tabs {
     margin: 0;
     padding: 0;
     line-height: 1.875em; /* 30px */     
-    background: @tertiary;
+    background: @grey-dark;
     .border-radius();
     .box-shadow();
     @media @normal { 
@@ -298,7 +299,7 @@ ul.tabs {
         }
         border: 0;
         color: @white;
-        background: @tertiary;
+        background: @grey-dark;
         display: block;
         overflow: hidden;
         white-space: nowrap;
@@ -315,19 +316,6 @@ ul.tabs {
       }
     }
   }
-}
-
-/**
- * Menu.module
- */
-tr.odd td.menu-disabled {
-  background-color: #edf5fa;
-}
-tr.even td.menu-disabled {
-  background-color: @white;
-}
-td.menu-disabled {
-  opacity: 0.5;
 }
 
 ul.menu {
