@@ -9,9 +9,9 @@ body {
   font-size: 100%;
   color: @black;
 }
-#wrapper {
+#page-wrapper {
   font-size: @fs/16em;
-  line-height: @lh/@fs+0em; /* 24px / 16px */
+  line-height: @lh/@fs+0em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,7 +51,11 @@ h2 {
 h3 {
 }
 h4 {
-  font-weight: 400;
+  font-size: 16em/@fs;
+  line-height: 30em/@fs;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
 }
 h5 {
   font-weight: 400;
@@ -194,19 +198,51 @@ td, td.active, thead th, tr, tr.odd, tr.even {
 
 table {
   width: 100%;
-  &:hover {
-    color: @grey;
+  margin-bottom: 30em/@fs;
+  tbody:hover tr {
+    background: @white url('../images/line-dots-grey.svg') repeat-x bottom left;
+//    .blur();
   }
 }
-tr:hover {
-  color: @black;
+thead th {
+  background: @primary;
+  color: @white;
+  padding: 0 5em/@fs 15em/@fs;
+  &:first-child {
+    .border-radius(@border-radius-small 0 0 0);
+  }
+  &:last-child {
+    .border-radius(0 @border-radius-small 0 0);
+  }
 }
+tbody {
+  td, td.active {
+    padding: 12em/@fs 5em/@fs 18em/@fs;
+  }
+  tr:first-child {
+    td, td.active {
+      padding-top: 15em/@fs;
+    }
+  }
+  tr, tr.odd, tr.even {
+    background: @white url('../images/line-dots-grey.svg') repeat-x bottom left;
+    &:last-child {
+      background: @white;
+    }
+    &:hover {
+      background: @white url('../images/line-dots-orange.svg') repeat-x bottom left;
+//      .unblur();
+      .badge:not(.badge-date) { .saturate(); }
+    }
+  }
+}
+
 
 .form-checkboxes, .form-radios, .form-checkboxes .form-item, .form-radios .form-item {
   margin: 0.25em 0;
 }
 
-#center form {
+#main form {
   margin-bottom: 2em;
 }
 
@@ -260,7 +296,7 @@ span.clear {
   .icon-only();
   padding: 0 7em/@fs;
   &:link, &:visited {
-    background: @tertiary;
+    background: @primary;
   }
   &:active, &:hover, &:focus, &.active {
     background: @secondary;

@@ -2,7 +2,7 @@
  * Primary navigation
  */
 
-#header .content {
+#menu-main .content {
   margin: 0px;
   padding: 0px;
 }
@@ -31,7 +31,7 @@
 .toggle-nav {
   z-index: 10;
   position: absolute;
-  top: -60em/20;
+  top: 120em/20;
   @media @phone-ls {
     text-align: center;
     width: 136em/20;
@@ -49,6 +49,7 @@
   }
   @media @tablet {
     width: 136em/20;
+    top: 180em/20;
   }
 }
 .toggle-tabs {
@@ -57,7 +58,7 @@
   }
 }
 
-#header, #topbar {
+#menu-main, #menu-service {
   .content > div > ul.menu {
     padding: 0;
     margin: 0;
@@ -124,7 +125,7 @@
         padding: 0;
         margin: 0;
         z-index: 4;
-        background: @grey-dark;
+        background: @tertiary;
         .box-shadow(@box-shadow-inset);
         @media @normal {
           position: absolute;
@@ -163,7 +164,7 @@
     }
   }
 }
-#header .content > div > ul.menu {
+#menu-main .content > div > ul.menu {
   max-height: 0;
   &.nav-active {
     max-height: 1200em/@fs;
@@ -218,12 +219,12 @@
     }
   }
 }
-#topbar .content > div > ul.menu {
+#menu-service .content > div > ul.menu {
   float: right;
   > li {
     float: left;
     > a:link, > a:visited {
-      color: @grey-dark;
+      color: @white-off;
       margin: 0 2em/20 0 0;
       padding: 0 7em/20;
       @media @normal { 
@@ -270,7 +271,7 @@ ul.tabs {
     margin: 0;
     padding: 0;
     line-height: 1.875em; /* 30px */     
-    background: @grey-dark;
+    background: @tertiary;
     .border-radius();
     .box-shadow();
     @media @normal { 
@@ -299,7 +300,7 @@ ul.tabs {
         }
         border: 0;
         color: @white;
-        background: @grey-dark;
+        background: @tertiary;
         display: block;
         overflow: hidden;
         white-space: nowrap;

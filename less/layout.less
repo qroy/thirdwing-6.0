@@ -8,11 +8,11 @@
 body {
   min-width: 320em/@fs;
 }
-#wrapper {
+#page-wrapper {
   background: @white-off;
 }
 
-.container {
+.layout-container {
   padding: 0 20em/@fs;
   margin: 0 auto;
   max-width: 1200em/@fs;
@@ -49,7 +49,7 @@ body {
   #logo {
     @media @tablet { padding-left: 12.75em; /* width of sidebar + 1.5em */ } 
   }
-  #header {
+  #menu-main {
     @media @tablet { padding-left: 11.25em; /* width of sidebar */  }
   }
 }
@@ -101,7 +101,7 @@ body {
 #logo-slogan {
   display: none;
 }
-#topbar {
+#menu-service {
   position: absolute;
   height: 45em/@fs;
   overflow: visible;
@@ -110,7 +110,7 @@ body {
   left: 20em/@fs;
   z-index: 5;
 
-  background: @white-off;
+  background: @tertiary;
   .border-radius();
   .box-shadow();
 
@@ -124,7 +124,7 @@ body {
     height: 30em/@fs; 
   }
 }
-#header {
+#menu-main {
   z-index: 10;
 
   @media @normal {
@@ -158,36 +158,36 @@ body {
 @media @tablet-ls {
 
 /* We must define 100% width to avoid the body being too narrow for near-empty pages */
-#center {
+#main {
   float: left;
   width: 100%;
   min-height: 100vh; 
 }
 
-/* So we move the #center container over the sidebars to compensate */
-body.sidebar-left #center {
+/* So we move the #main container over the sidebars to compensate */
+body.sidebar-left #main {
   margin-left: -140em/@fs;
 }
-body.sidebar-right #center {
+body.sidebar-right #main {
   margin-right: -140em/@fs;
 }
-body.two-sidebars #center {
+body.two-sidebars #main {
   margin: 0 -140em/@fs;
 }
 
 /* And add blanks left and right for the sidebars to fill */
-body.sidebar-left #squeeze {
+body.sidebar-left #main-squeeze {
   margin-left: 160em/@fs;
 }
-body.sidebar-right #squeeze {
+body.sidebar-right #main-squeeze {
   margin-right: 160em/@fs;
 }
-body.two-sidebars #squeeze {
+body.two-sidebars #main-squeeze {
   margin: 0 160em/@fs;
 }
 
 /* We ensure the sidebars are still clickable using z-index */
-.container .sidebar {
+.layout-container .sidebar {
   margin: 180em/@fs 0 80em/@fs;
   width: 140em/@fs;
   float: left;
@@ -212,7 +212,7 @@ body.two-sidebars #squeeze {
   margin: 0;
 }
 
-#squeeze {
+#main-squeeze {
   background: none;
   position: relative;
 }
@@ -222,10 +222,10 @@ body.two-sidebars #squeeze {
   clear: both;
   text-align: left;
   color: @white-off;
-  background: @grey-dark;
+  background: @tertiary;
   background-size: auto 200%;
   .box-shadow(@box-shadow-inset);
-  .container {
+  .layout-container {
     padding: 0;
   }
   a {

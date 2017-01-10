@@ -47,16 +47,64 @@
 }
 
 /**
+ * Ledenagenda
+ */
+
+.tw-agenda {
+  @media @tablet {
+    .views-field-field-datum-value {
+      width: 172em/@fs;
+    }
+    .views-field-field-sleepgroep-value {
+      width: 120em/@fs;
+    }
+    .views-field-field-keyboard-value {
+      width: 60em/@fs;
+    }
+  }
+  h4:not(.Repetitie) {
+    a:link, a:visited {
+      color: @secondary;
+    }
+    a:hover, a:active {
+      color: @primary;
+    }
+  }
+  .views-field-field-bijzonderheden-value {
+    font-size: 12em/@fs;
+    line-height: 30m/12;
+    .icon(@fa-var-info-circle);
+    &:before { 
+      color: @red; 
+    }
+  }
+  .views-field-field-locatie {
+    font-size: 14em/@fs;
+    line-height: 30m/14;
+    text-transform: uppercase;
+    .icon(@fa-var-map-marker);
+    &:before { 
+      color: @red; 
+    }
+  }
+  .Repetitie .badge:not(.badge-date) {
+    .desaturate();
+    &.badge-date {
+    }
+  }
+}
+
+/**
  * Foto albums
  */
 
-.buildmode-full > .node-type-album > .nd-region-header > .field-afbeeldingen {
+.node-type-album.buildmode-full > .nd-region-middle > .field-afbeeldingen {
   float: none;
   width: 100%;
   margin: 0;
   padding: 0;
 }
-.node-type-album > .nd-region-header > .field-afbeeldingen .field-item,
+.node-type-album > .nd-region-middle > .field-afbeeldingen .field-item,
 .view.fotos .views-row {
   width: 19%;
   box-sizing: border-box;

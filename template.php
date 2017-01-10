@@ -29,7 +29,7 @@ function phptemplate_comment_wrapper($content, $node) {
 /**
  * Override or insert PHPTemplate variables into the templates.
  */
-function thirdwing_30_preprocess_page(&$vars) {
+function thirdwing_30_preprocess_page(&$vars, $hook) {
   if ((arg(0) == 'node') && (is_numeric(arg(1)))) {
     if (!$vars['node']) $vars['node'] = node_load(arg(1));
   }

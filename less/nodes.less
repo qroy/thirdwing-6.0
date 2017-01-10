@@ -2,8 +2,8 @@
  * Nodes and Comments
  */
 
-.buildmode-full, .buildmode-teaser, .buildmode-compact {
-  > .node {
+.node {
+  &.buildmode-full, &.buildmode-teaser, &.buildmode-compact {
     position: relative;
     
     > div { /* header region */
@@ -121,8 +121,8 @@
     }
   }
 }
-.buildmode-teaser, .buildmode-compact {
-  > .node {
+.node {
+  &.buildmode-teaser, &.buildmode-compact {
     background: @white;
     margin: 0 -20em/@fs 60em/@fs;
     padding: 0 20em/@fs;
@@ -170,7 +170,7 @@
       }
     }
     &.taxonomy-Leden {
-      background: @red-lightest;
+      background: @white;
       &:before {
         z-index: 5;
         content: 'voor leden';

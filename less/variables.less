@@ -17,23 +17,12 @@
 @grey:           rgb(135, 135, 134);
 @grey-light:     rgb(215, 215, 214);
 @grey-lightest:  rgb(230, 230, 229);
-@white-off:      rgb(240, 240, 238);
+@white-off:      rgb(245, 245, 242);
 @white:          rgb(255, 255, 255);
 
-@purple-light:   lighten(@purple, 30%);
-@orange-light:   lighten(@orange, 20%);
-@pink-light:     lighten(@pink,   20%);
-@green-light:    lighten(@green,  20%);
-@blue-light:     lighten(@blue,   20%);
-@yellow-light:   lighten(@yellow, 30%);
-@red-light:      lighten(@red,    20%);
-@red-lightest:   lighten(@red,    38%);
-
 @primary:        @purple;
-@primary-light:  @purple-light;
 @secondary:      @orange;
-@secondary-light:@orange-light;
-@tertiary:       @grey;
+@tertiary:       @grey-dark;
 
 @fs: 16; /* font-size in pixels */
 @lh: 30; /* line-height in pixels */
@@ -77,7 +66,7 @@
 }
 .border {
   border-bottom: @border dotted @secondary;
-  border-image: url('../images/dots-orange.svg') 15 15 space;
+  border-image: url('../images/border-dots-orange.svg') 15 15 space;
 }
 .transition (...) {
         @props: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
@@ -85,4 +74,24 @@
      -moz-transition: @props;
       -ms-transition: @props; 
        -o-transition: @props;  
+}
+.blur(@blur: 1px) {
+  filter: blur(@blur);
+  -webkit-filter: blur(@blur);
+  -moz-filter: blur(@blur);
+  -o-filter: blur(@blur);
+  -ms-filter: blur(@blur);
+}
+.unblur(@blur: 0px) {
+  .blur(@blur);
+}
+.desaturate(@blur: 50%) {
+  filter: opacity(@blur);
+  -webkit-filter: opacity(@blur);
+  -moz-filter: opacity(@blur);
+  -o-filter: opacity(@blur);
+  -ms-filter: opacity(@blur);
+}
+.saturate(@blur: 100%) {
+  .desaturate(@blur);
 }
