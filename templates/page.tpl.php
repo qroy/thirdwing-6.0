@@ -10,7 +10,7 @@
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">var $jq = jQuery.noConflict();</script> 
 <?php print $scripts ?>
-<script>$jq( function() { $( '#nav li:has(ul)' ).doubleTapToGo(); });</script>
+<script>$jq( function() { $( '#menu-main li:has(ul)' ).doubleTapToGo(); });</script>
 </head>
 <body class="<?php print $body_classes; ?>">
 <div id="top"></div>
