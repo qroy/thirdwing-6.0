@@ -531,9 +531,9 @@ th.views-field-field-audio-nummer-value {
 }
 
 /**
- * Ledenlijst bezoekers, Sleepgroepen
+ * Sleepgroepen
  */
-.view-id-koorleden.view-display-id-block_1 .item-list, .view-id-koorleden.view-display-id-block_5 .item-list {
+.view-id-koorleden.view-display-id-block_5 .item-list {
   display: block;
   float: left;
   margin: 0.8450704225352112676056338028169%; /* 6px / 710px */
@@ -547,55 +547,55 @@ th.views-field-field-audio-nummer-value {
 .kar {
   font-style: italic;
 }
+
 /**
  * Combo en Bestuur en Commissies
  */
-.box-leden .view-content {
-  ul {
-    margin: 0;
-    display: block;
-    width: 100%;
-    li { 
-      display: block;
+
+.personen {
+  .persoon {
+    width: 25%;
+    float: left;
+    text-align: center;
+  }
+  .persoon-box {
+    font-size: 12em/@fs;
+    line-height: 24em/12;
+    margin: 12em/12 12em/12;
+    padding: 5em/12;
+    background: @white-off;
+    .border-radius(@border-radius-large);
+  }
+  .persoon-foto {
+    width: 80em/12;
+    height: 110px;
+    margin: 0 auto;
+    img {
       box-sizing: border-box;
-      width: 32.609%; /* 300 / 920 */
-      height: 100px;
-      background: none;
-      text-align: left;
-      float: left;
-      padding: 5px;
-      margin: 0 1.087% 1.087% 0; /* 10 / 920 */
-      background: @grey-lightest;
-      &:nth-child(3n+0) {
-        margin-right: 0;
-      }
+      width: 100%;
+      height: auto;
     }
   }
-  h3 {
-    display: inline-block;
-    width: 100%;
+  .persoon-naam {
+    text-transform: uppercase;
   }
-}
-.box-combo, .box-verjaardag {
-  .view-content ul li {
-    width: 24.272%; /* 250 / 1030 */
-    margin: 0 0.971% 0.971% 0; /* 10 / 1030 */
-    &:nth-child(3n+0) {
-      margin-right: 0.971%;
-    }
-    &:nth-child(4n+0) {
-      margin-right: 0;
+  .persoon-functie {
+    color: @red;
+    > span {
+      display: none;
     }
   }
 }
-.box-leden .picture, .view-commissies .picture {
-  float: right;
-  width: 65px;
-}
-.box-leden .picture img, .view-commissies .picture img {
-  width: 100%;
-  height: auto;
-}
+.personen-leden      .persoon-functie .persoon-functie-koor,
+.personen-band       .persoon-functie .persoon-functie-koor       { display: inline-block; }
+.personen-bestuur    .persoon-functie .persoon-functie-bestuur    { display: inline-block; }
+.personen-muziek     .persoon-functie .persoon-functie-muziek     { display: inline-block; }
+.personen-regie      .persoon-functie .persoon-functie-regie      { display: inline-block; }
+.personen-concert    .persoon-functie .persoon-functie-concert    { display: inline-block; }
+.personen-knuffel    .persoon-functie .persoon-functie-knuffel    { display: inline-block; }
+.personen-feest      .persoon-functie .persoon-functie-feest      { display: inline-block; }
+.personen-verjaardag .persoon-functie .persoon-functie-verjaardag { display: inline-block; }
+
 .A {
   font-style: italic;
 }
