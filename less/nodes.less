@@ -590,6 +590,28 @@ th.views-field-field-audio-nummer-value {
       display: none;
     }
   }
+  &.personen-wie {
+    .views-row {
+      width: 9%;
+      padding: 0 2em/@fs 2em/@fs 0;
+    }
+    .persoon { 
+      background: transparent;
+      padding: 0;
+    }
+    .persoon-foto { width: 100%; }
+    .persoon-naam { color: @white; }
+    .persoon-achternaam { display: none; }
+    .persoon-A  .persoon-naam { background: @green; }
+    .persoon-B  .persoon-naam { background: @blue; }
+    .persoon-T  .persoon-naam { background: @red; }
+    .persoon-S1 .persoon-naam { background: @purple; }
+    .persoon-S2 .persoon-naam { background: @yellow; }
+    .persoon-Z1, .persoon-Z2, .persoon-Z3, .persoon-Z4 {
+      .persoon-naam { background: @grey-light; }
+    }
+    .persoon-Y1 .persoon-naam { background: @grey; }
+  }
 }
 .personen-leden      .persoon-functie .persoon-functie-koor,
 .personen-band       .persoon-functie .persoon-functie-koor       { display: inline-block; }
