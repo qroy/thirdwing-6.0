@@ -553,22 +553,26 @@ th.views-field-field-audio-nummer-value {
  */
 
 .personen {
-  .persoon {
-    width: 25%;
-    float: left;
-    text-align: center;
+  margin-right: -12em/@fs;
+  .views-row {
+    width: 24.5%;
+    height: 228em/@fs;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 12em/@fs 12em/@fs 0;
   }
-  .persoon-box {
+  .persoon {
+    text-align: center;
     font-size: 12em/@fs;
     line-height: 24em/12;
-    margin: 12em/12 12em/12;
-    padding: 5em/12;
     background: @white-off;
     .border-radius(@border-radius-large);
+    padding: 12em/12;
   }
   .persoon-foto {
-    width: 80em/12;
-    height: 110px;
+    height: 120em/12;
+    width: 90em/12;
     margin: 0 auto;
     img {
       box-sizing: border-box;
@@ -578,6 +582,7 @@ th.views-field-field-audio-nummer-value {
   }
   .persoon-naam {
     text-transform: uppercase;
+    min-height: 48em/12;
   }
   .persoon-functie {
     color: @red;
@@ -596,8 +601,25 @@ th.views-field-field-audio-nummer-value {
 .personen-feest      .persoon-functie .persoon-functie-feest      { display: inline-block; }
 .personen-verjaardag .persoon-functie .persoon-functie-verjaardag { display: inline-block; }
 
-.A {
-  font-style: italic;
+.persoon-aspirant {
+  @media screen { 
+    color: @red; 
+    a:link, a:visited {
+      color: @red;
+    }
+    a:hover, a:active {
+      color: @primary;
+    }
+  }
+  @media print { font-style: italic; }
+}
+.views-field-field-lidsinds-value .persoon-aspirant {
+  .date-display-single {
+    display: none;
+  }
+  &:after {
+    content: 'Aspirant';
+  }
 }
 
 /**
