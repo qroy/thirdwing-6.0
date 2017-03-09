@@ -90,7 +90,7 @@ ul, quote, code, fieldset {
 }
 
 p {
-  margin: 0 0 2em; /* 24px / 12px */
+  margin: 0 0 24em/@fs;
   padding: 0;
 }
 .fa {
@@ -130,40 +130,63 @@ hr {
 em {
   font-style: italic;
 }
-ol {
-  margin: 0.75em 0 1.25em;
-  padding: 0;
-}
 
-ol li, ul li {
-  margin: 0.4em 0 0.4em .5em; /* LTR */
-}
-
-ul.menu, .item-list ul {
-  margin: 0 0 1.3333333333333333333333333333333em -0.5em; /* LTR */
-  padding: 0;
-}
-
-ul.menu ul, .item-list ul ul {
-  margin-left: 0em; /* LTR */
-}
-
-ol li, ul li, ul.menu li, .item-list ul li, li.leaf {
-  margin: 0 0 0 .5em; /* LTR */
-}
-
-ul li, ul.menu li, .item-list ul li, li.leaf {
-  padding: 0 0 0 1.5em;
+ul.menu li, .item-list ul li, li.leaf {
   list-style-type: none;
   list-style-image: none;
-  background: transparent url(../images/menu-leaf.png) no-repeat 1px 0; /* LTR */
 }
-
-ol li {
+ul, ol {
+  margin: 0 0 24em/@fs;
   padding: 0;
-  margin-left: 1.5em; /*2em LTR */
-  list-style-type: decimal;
-  background: 0;
+  li {
+    padding: 0;
+    margin-left: 24em/@fs;
+    list-style-type: none;
+    background: 0;
+  }
+  &:not([class]) {
+    > li {
+      position: relative;
+      &:before {
+        color: @secondary;
+        font-weight: bold;
+        text-align: center;
+        font-size: 13em/@fs;
+        line-height: 24em/13;
+        margin-right: 10em/13;
+        display: inline-block;
+        width: 20em/13;
+        position: absolute;
+        left: -24em/13;
+      }
+    }
+  }
+  ul, ol {
+    margin: 0;
+  }
+}
+ul:not([class]) > li:before {
+  content: '\2022';
+}
+ol {
+  counter-reset: list;
+  > li {
+    counter-increment: list;
+    &:before {
+      content: counter(list);
+    }
+  }
+  ol {
+    > li:before {
+      content: counter(list, lower-latin);
+    }
+  }
+  ol ol > li:before {
+    content: counter(list, lower-roman);
+  }
+  ol ol ol > li:before {
+    content: counter(list, lower-greek);
+  }
 }
 
 ul li.expanded {

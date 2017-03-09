@@ -377,6 +377,12 @@ li.upload_attachments a {
   padding: 2px 0px 2px 20px;
   background: transparent url(../images/attach.png) no-repeat 0 50%; 
 }
+.comment .submitted {
+  float: none;
+  clear: none;
+  padding-left: 0;
+  margin: 0 0 0 0;
+}
 
 /**
  * Ledenagenda
@@ -473,79 +479,45 @@ th.views-field-field-audio-nummer-value {
   width: 40px;
 }
 
-
-/**
- * Smoelenblad
- */
-.smoelenblad .lid {
-  float: left;
-  display: block;
-  width: 7.2527472527472527472527472527473%; /* 64px / 910 px */
-  height: 130px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 9px;
-  margin: 0 0.43956043956043956043956043956044% 4px 0; /* 4px / 910 px */
-  padding: 0;
-  overflow: hidden;
-}
-.smoelenblad .views-row-13 .lid,
-.smoelenblad .views-row-26 .lid,
-.smoelenblad .views-row-39 .lid,
-.smoelenblad .views-row-52 .lid,
-.smoelenblad .views-row-65 .lid {
-  margin-right: 0;
-}
-.smoelenblad .lid-border {
-  display: block;
-}
-.smoelenblad .lid.code-S1 .lid-border {
-  background-color: #c9c9e9;
-}
-.smoelenblad .lid.code-S2 .lid-border {
-  background-color: #f7dfb1;
-}
-.smoelenblad .lid.code-A .lid-border {
-  background-color: #b6db91;
-}
-.smoelenblad .lid.code-B .lid-border {
-  background-color: #a4ddf6;
-}
-.smoelenblad .lid.code-T .lid-border {
-  background-color: #f6a6ab;
-}
-.smoelenblad .lid.code-D .lid-border {
-  background-color: @grey-light;
-}
-.smoelenblad .lid img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.comment .submitted {
-  float: none;
-  clear: none;
-  padding-left: 0;
-  margin: 0 0 0 0;
-}
-
 /**
  * Sleepgroepen
  */
-.view-id-koorleden.view-display-id-block_5 .item-list {
-  display: block;
-  float: left;
-  margin: 0.8450704225352112676056338028169%; /* 6px / 710px */
-  min-height: 250px;
-  width: 18.309859154929577464788732394366%; /* 130px / 710px */
-}
-
-.uitkoor {
-  text-decoration: line-through;
-}
-.kar {
-  font-style: italic;
+.sleepgroepen {
+  margin-right: -12em/@fs;
+  .item-list {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    @media @normal { width: 18.8%; }
+    min-height: 400em/@fs;
+    margin: 0 12em/@fs 12em/@fs 0;
+    background: @white-off;
+    .border-radius(@border-radius-large);
+    padding: 12em/@fs 12em/@fs 0;
+    text-align: center;
+    h3 {
+      margin-bottom: 12em/@fs;
+    }
+  }
+  .sleepgroep-uitkoor {
+    text-decoration: line-through;
+  }
+  .sleepgroep-karrijder {
+    font-style: italic;
+  }
+  .sleepgroep-bestuur {
+    font-weight: bold;
+  }
+  .sleepgroep-geslacht-Man:after {
+    content: " \f222";
+  }
+  .sleepgroep-geslacht:after {
+    font-family: fontawesome;
+    color: @red;
+    font-style: normal;
+    font-weight: normal;
+  }
 }
 
 /**
@@ -560,15 +532,15 @@ th.views-field-field-audio-nummer-value {
     box-sizing: border-box;
     display: inline-block;
     vertical-align: top;
-    padding: 0 12em/@fs 12em/@fs 0;
+    padding: 0 6em/@fs 12em/@fs 0;
   }
   .persoon {
     text-align: center;
     font-size: 12em/@fs;
     line-height: 24em/12;
-    background: @white-off;
     .border-radius(@border-radius-large);
     padding: 12em/12;
+    background: @white-off;
   }
   .persoon-foto {
     height: 120em/12;
@@ -590,36 +562,53 @@ th.views-field-field-audio-nummer-value {
       display: none;
     }
   }
+  &.personen-wie, &.personen-leden {
+    .views-row {
+      @media @tablet { width: 19.5%; }
+      @media @normal { width: 16.2%; }
+      height: auto;
+    }
+    .persoon {
+      background: @white-off;
+      padding: 12em/12 12em/12;
+    }
+    .persoon-foto {
+      width: 80%;
+      height: auto;
+    }
+    .persoon-naam { 
+      min-height: 24em/12;
+     }
+    .persoon-achternaam { display: none; }
+    .persoon-functie {
+      color: @white;
+      .border-radius();
+    }
+    .persoon-E  .persoon-functie { background: @green; }
+    .persoon-B  .persoon-functie { background: @blue; }
+    .persoon-A  .persoon-functie { background: @red; }
+    .persoon-C  .persoon-functie { background: @purple; }
+    .persoon-D  .persoon-functie { background: @yellow; }
+    .persoon-Z1, .persoon-Z2, .persoon-Z3, .persoon-Z4 {
+                .persoon-functie { background: @grey-light; }
+    }
+    .persoon-Y1 .persoon-functie { background: @grey; }
+  }
   &.personen-wie {
     .views-row {
-      width: 9%;
-      padding: 0 2em/@fs 2em/@fs 0;
+      width: 12%;
+//      padding: 0 0 3em/@fs 0;
     }
-    .persoon { 
-      background: transparent;
-      padding: 0;
-    }
-    .persoon-foto { width: 100%; }
-    .persoon-naam { color: @white; }
-    .persoon-achternaam { display: none; }
-    .persoon-A  .persoon-naam { background: @green; }
-    .persoon-B  .persoon-naam { background: @blue; }
-    .persoon-T  .persoon-naam { background: @red; }
-    .persoon-S1 .persoon-naam { background: @purple; }
-    .persoon-S2 .persoon-naam { background: @yellow; }
-    .persoon-Z1, .persoon-Z2, .persoon-Z3, .persoon-Z4 {
-      .persoon-naam { background: @grey-light; }
-    }
-    .persoon-Y1 .persoon-naam { background: @grey; }
   }
 }
 .personen-leden      .persoon-functie .persoon-functie-koor,
+.personen-wie        .persoon-functie .persoon-functie-koor,
 .personen-band       .persoon-functie .persoon-functie-koor       { display: inline-block; }
 .personen-bestuur    .persoon-functie .persoon-functie-bestuur    { display: inline-block; }
-.personen-muziek     .persoon-functie .persoon-functie-muziek     { display: inline-block; }
+.personen-mc         .persoon-functie .persoon-functie-mc         { display: inline-block; }
 .personen-regie      .persoon-functie .persoon-functie-regie      { display: inline-block; }
 .personen-concert    .persoon-functie .persoon-functie-concert    { display: inline-block; }
-.personen-knuffel    .persoon-functie .persoon-functie-knuffel    { display: inline-block; }
+.personen-ir         .persoon-functie .persoon-functie-ir         { display: inline-block; }
 .personen-feest      .persoon-functie .persoon-functie-feest      { display: inline-block; }
 .personen-verjaardag .persoon-functie .persoon-functie-verjaardag { display: inline-block; }
 
@@ -635,12 +624,23 @@ th.views-field-field-audio-nummer-value {
   }
   @media print { font-style: italic; }
 }
-.views-field-field-lidsinds-value .persoon-aspirant {
-  .date-display-single {
-    display: none;
+.personen-ledenlijst {
+  .views-field-field-lidsinds-value .persoon-aspirant {
+    .date-display-single {
+      display: none;
+    }
+    &:after {
+      content: 'Aspirant';
+      font-size: 12em/@fs;
+      line-height: 24em/12;
+      text-transform: uppercase;
+    }
   }
-  &:after {
-    content: 'Aspirant';
+  .persoon-functie-bestuur {
+    font-size: 12em/@fs;
+    line-height: 24em/12;
+    text-transform: uppercase;
+    color: @red; 
   }
 }
 
