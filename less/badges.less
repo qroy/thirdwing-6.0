@@ -11,6 +11,9 @@
   color: @white;
   .border-radius();
 
+  &.badge-general {
+    background: @grey;
+  }
   &.badge-combo {
     font-family: thirdwing;
     font-size: 24em/12;
@@ -198,3 +201,69 @@ tr {
 }
 
 } // print
+
+
+// Icons
+
+.icon { 
+  &:before {
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-right: 0.25em;
+    width: 1em;
+    text-align: center;
+    color: @black;
+  }
+}
+.icon-only() {
+  display: inline-block;
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative; /* for absolute positioning of icon */
+  vertical-align: bottom;
+  width: 24em/@fs;
+  &:before {
+    font-family: FontAwesome;
+    text-indent: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0;
+    display: inline;
+    width: auto;
+  }
+}
+
+
+.views-field-edit-node, 
+.views-field-delete-node, 
+.views-field-clone-node {
+  a { .icon-only(); }
+}
+.comment_comments, 
+.comment_add,
+.comment_reply,
+.comment_edit,
+.comment_delete,
+.upload_attachments {
+  a { .icon; }
+}
+.views-field-edit-node   a:before { content: '\f044'; }
+.views-field-delete-node a:before { content: '\f147'; }
+.views-field-clone-node  a:before { content: '\f24d'; }
+.comment_comments        a:before { content: '\f086'; }
+.comment_add             a:before { content: '\f0e5'; }
+.comment_reply           a:before { content: '\f196'; }
+.comment_edit            a:before { content: '\f044'; }
+.comment_delete          a:before { content: '\f147'; }
+.upload_attachments      a:before { content: '\f0c5'; }
+
+// File icons
+
+.field-icon-application-pdf { display: none; }
+a[type*="pdf"] {
+  .icon;
+  &:before { content: '\f1c1'; }
+}

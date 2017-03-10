@@ -60,13 +60,7 @@
           <?php if ($tabs2): print '<div id="tabs2"><ul class="tabs secondary">'. $tabs2 .'</ul></div>'; endif; ?>
           <div class="clear-block"></div>
           <?php if ($show_messages && $messages): print $messages; endif; ?>
-          <?php if (arg(0) == 'node' || arg(0) == 'taxonomy' || arg(0) == 'image') :
-global $user;
-$user_roles = array_keys($user->roles);
-if (in_array(6, $user_roles) || in_array(12, $user_roles)) {
-  print '<span class="admininfo dontprint"><strong>Link hierheen:</strong> internal:' . $_GET['q'] . ' - http://www.thirdwing.nl/' . $_GET['q'] . '</span>';
-}
-endif; ?><?php print $help; ?>
+          <?php print $help; ?>
           <div class="clear-block">
             <?php print $content ?>
           </div>

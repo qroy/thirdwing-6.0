@@ -233,33 +233,28 @@ h3.calltoaction {
     padding: 0;
   }
 }
-.field-tijd-aanwezig, .field-sleepgroep, .field-sleepgroep-aanwezig, .field-keyboard, .field-gitaar, .field-basgitaar, .field-drums, .field-vervoer {
+.field-inline {
   float: left;
-  .field-label-inline-first {
-    display: none;
-  }
+}
+.field-margin-left {
+  margin-left: 12em/@fs;
+}
+.field-margin-right {
+  margin-right: 12em/@fs;
+}
+.field-group {
+  clear: left;
+}
+.field .field-label-inline-first {
+  font-weight: normal;
+  color: @red;
+  text-transform: uppercase;
 }
 .admininfo, .messages {
   position: relative;
   z-index: 3;
 }
 
-
-.views-field-edit-node a, .views-field-delete-node a, .views-field-clone-node a {
-  display: block;
-  text-indent:-9009px;
-  height: 16px;
-  width: 16px;
-}
-.views-field-edit-node a {
-  background-image: url(../images/page_edit.png);
-}
-.views-field-delete-node a {
-  background-image: url(../images/page_delete.png);
-}
-.views-field-clone-node a {
-  background-image: url(../images/page_add.png);
-}
 .field-type-viewfield {
   clear: both;
 }
@@ -355,28 +350,6 @@ ul.links li, ul.inline li {
   position: relative;
   top: -5px;
 }
-.view-content .node ul.links li {
-}
-li.comment_comments a {
-  padding: 2px 0px 2px 20px;
-  background: transparent url(../images/comments.png) no-repeat 0 50%; 
-}
-li.comment_add a, li.comment_reply a {
-  padding: 2px 0px 2px 20px;
-  background: transparent url(../images/comment_add.png) no-repeat 0 50%; 
-}
-li.comment_edit a {
-  padding: 2px 0px 2px 20px;
-  background: transparent url(../images/comment_edit.png) no-repeat 0 50%; 
-}
-li.comment_delete a {
-  padding: 2px 0px 2px 20px;
-  background: transparent url(../images/comment_delete.png) no-repeat 0 50%; 
-}
-li.upload_attachments a {
-  padding: 2px 0px 2px 20px;
-  background: transparent url(../images/attach.png) no-repeat 0 50%; 
-}
 .comment .submitted {
   float: none;
   clear: none;
@@ -388,28 +361,34 @@ li.upload_attachments a {
  * Ledenagenda
  */
 
-.view-leden-agenda .views-field-title {
-  .Wereldlijk, .Kerkelijk, .Vergadering, .Koorreis, .Concours, .Overige, .Programma {
-    font-weight: bold;
-    font-size: 1.2em;
+.view-leden-agenda {
+  .views-field-title {
+    .Wereldlijk, .Kerkelijk, .Vergadering, .Koorreis, .Concours, .Overige, .Programma {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    a { 
+      display: inline-block;
+      line-height: 2em; 
+      padding: 4px 0;
+      margin: 2px 0;
+    }
   }
-  a { 
-    display: inline-block;
-    line-height: 2em; 
-    padding: 4px 0;
-    margin: 2px 0;
+  .views-field-field-datum-value {
+    width: 12em;
+  }
+  .views-field-field-sleepgroep-value {
+    width: 9em;
+  }
+  .views-field-field-keyboard-value {
+    min-width: 6em;
+    max-width: 12em;
+  }
+  .views-field-field-locatie {
+    text-transform: uppercase;
   }
 }
-.view-leden-agenda .views-field-field-datum-value {
-  width: 12em;
-}
-.view-leden-agenda .views-field-field-sleepgroep-value {
-  width: 9em;
-}
-.view-leden-agenda .views-field-field-keyboard-value {
-  min-width: 6em;
-  max-width: 12em;
-}
+
 
 /**
  * Foto albums
@@ -597,7 +576,6 @@ th.views-field-field-audio-nummer-value {
   &.personen-wie {
     .views-row {
       width: 12%;
-//      padding: 0 0 3em/@fs 0;
     }
   }
 }
@@ -878,10 +856,4 @@ table.system-status-report tr.warning, table.system-status-report tr.warning th 
 table.system-status-report tr.ok, table.system-status-report tr.ok th {
   background-color: #dfd;
   border-color: #beb;
-}
-
-
-.views-field-field-bijzonderheden-value {
-  font-size: 10px;
-  line-height: 12px;
 }
