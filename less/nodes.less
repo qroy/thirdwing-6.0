@@ -250,6 +250,46 @@ h3.calltoaction {
   color: @red;
   text-transform: uppercase;
 }
+.video-gallery {
+  .video-thumb {
+    width: 25%;
+    padding: 5em/@fs;
+    float: left;
+  }
+}
+.video {
+  &.video-thumb {
+    display: block;
+    width: 480px;
+    height: 360px;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    &:after {
+      display: inline-block;
+      position: absolute;
+      content: '\f166';
+      font-family: FontAwesome;
+      font-size: 60em/@fs;
+      line-height: 60em/60;
+      top: 30%;
+      left: 0;
+      right: 0;
+    }
+    img { 
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+a.video-thumb {
+  &:link, &:visited {
+    color: @white;
+  }
+  &:hover, &:active, &:focus {
+    color: @secondary;
+  }
+}
 .admininfo, .messages {
   position: relative;
   z-index: 3;
@@ -360,8 +400,8 @@ ul.links li, ul.inline li {
 /**
  * Ledenagenda
  */
+.agenda {
 
-.view-leden-agenda {
   .views-field-title {
     .Wereldlijk, .Kerkelijk, .Vergadering, .Koorreis, .Concours, .Overige, .Programma {
       font-weight: bold;
@@ -374,21 +414,24 @@ ul.links li, ul.inline li {
       margin: 2px 0;
     }
   }
-  .views-field-field-datum-value {
-    width: 12em;
-  }
-  .views-field-field-sleepgroep-value {
-    width: 9em;
-  }
-  .views-field-field-keyboard-value {
-    min-width: 6em;
-    max-width: 12em;
-  }
   .views-field-field-locatie {
     text-transform: uppercase;
   }
-}
 
+  &.agenda-leden {
+    .views-field-field-datum-value {
+      width: 12em;
+    }
+    .views-field-field-sleepgroep-value {
+      width: 9em;
+    }
+    .views-field-field-keyboard-value {
+      min-width: 6em;
+      max-width: 12em;
+    }
+  }
+
+}
 
 /**
  * Foto albums
