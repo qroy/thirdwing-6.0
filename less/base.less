@@ -68,8 +68,8 @@ h1, h2 {
   }
 }
 h3 {
-  font-size: 1.3333333333333333em; /* 16px / 12px */
-  line-height: 1em; /* 18px / 18px */
+  font-size: 16em/@fs;
+  line-height: 36em/16;
   font-weight: bold;
 }
 
@@ -140,11 +140,13 @@ ul, ol {
   padding: 0;
   li {
     padding: 0;
-    margin-left: 24em/@fs;
     list-style-type: none;
     background: 0;
   }
   &:not([class]) {
+    li {
+      margin-left: 24em/@fs;
+    }
     > li {
       position: relative;
       &:before {

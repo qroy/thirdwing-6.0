@@ -5,6 +5,7 @@ version = 2.3
 core = 6.x
 engine = phptemplate
 stylesheets[all][] = css/style.css
+stylesheets[all][] = jplayer.css
 scripts[] = js/doubletaptogo.js
 
 regions[topbar] = Topbar

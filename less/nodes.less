@@ -405,13 +405,11 @@ ul.links li, ul.inline li {
   .views-field-title {
     .Wereldlijk, .Kerkelijk, .Vergadering, .Koorreis, .Concours, .Overige, .Programma {
       font-weight: bold;
-      font-size: 1.2em;
     }
     a { 
       display: inline-block;
-      line-height: 2em; 
-      padding: 4px 0;
-      margin: 2px 0;
+      font-size: 16em/@fs;
+      line-height: 36em/16;
     }
   }
   .views-field-field-locatie {
@@ -499,6 +497,49 @@ th.views-field-field-audio-uitvoerende-value {
 }
 th.views-field-field-audio-nummer-value {
   width: 40px;
+}
+
+.opnamen {
+  .views-row {
+    width: 33%;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 6em/@fs 12em/@fs 0;
+  }
+  .opname {
+    background: @white-off;
+    .border-radius(@border-radius-large);
+    padding: 6em/@fs;
+  }
+  .opname-bestand {
+    position: relative;
+    &:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: (315 / 560) * 100%;
+    }
+    .video, .jp-single-player {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+    .video {
+      top: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .opname-title {
+    font-size: 16em/@fs;
+    line-height: 36em/16;
+    color: @orange;
+    font-weight: 600;
+  }
+  .opname-data {
+  }
 }
 
 /**
