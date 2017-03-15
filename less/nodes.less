@@ -13,7 +13,7 @@
         z-index: 0;
         .node-background {
           width: 100%;
-          height: 220px;
+          height: 220em/@fs;
           background-position: center 10%;
           background-size: cover;
           background-repeat: no-repeat;
@@ -25,7 +25,7 @@
             z-index: 1;
             display: block;
             width: 100%;
-            height: 220px;
+            height: 220em/@fs;
             background: @white;
             opacity: 0.75;
             .border-radius(@border-radius-large @border-radius-large 0 0);
@@ -37,10 +37,10 @@
       > .field-node-type {
         text-align: center;
         .border-radius(@border-radius-small);
-        width: 120px;
+        width: 120em/@fs;
         box-sizing: border-box;
         overflow: hidden;
-        margin: 0 0 24px;
+        margin: 0 0 24em/@fs;
         .border-radius();
         color: @white;
       }
@@ -51,37 +51,37 @@
         float: right;
         width: 50%;
         box-sizing: border-box;
-        padding: 0 0 0 24px;
+        padding: 0 0 0 24em/@fs;
         img {
           box-sizing: border-box;
           width: 100%;
           height: auto;
         }
         .image {
-          height: 330px;
+          height: 330em/@fs;
           background-size: contain;
           background-position: right top;
           background-repeat: no-repeat;
         }
       }
       > .field-author {
-        font-size: 13px;
-        line-height: 24px;
+        font-size: 13em/@fs;
+        line-height: 24em/13;
         color: @grey;
         display: inline;
         font-weight: 200;
       }
       > .field-post-date {
         color: @grey;
-        font-size: 13px;
-        line-height: 24px;
+        font-size: 13em/@fs;
+        line-height: 24em/13;
         display: inline;
-        margin-left: 1em;
+        margin-left: 12em/13;
         font-weight: 200;
       }
       > .field-datum {
-        margin: 0 0 5px;
-        padding: 4px 0 0 4px;
+        margin: 0 0 5em/@fs;
+        padding: 4em/@fs 0 0 4em/@fs;
         box-sizing: border-box;
         background: @white;
         .border-radius();
@@ -95,19 +95,19 @@
         float: left;
         clear: left;
         background: @white;
-        margin: 0 0 5px;
-        padding: 4px;
+        margin: 0 0 5em/@fs;
+        padding: 4em/@fs;
         box-sizing: border-box;
         .border-radius();
         width: 50%;
         &:before { 
           color: @red; 
-          margin: 0 0 0 4px;
+          margin: 0 0 0 4em/@fs;
         }
         > .field-items {
-          padding: 0 4px;
+          padding: 0 4em/@fs;
           position: relative;
-          margin-right: 22px;
+          margin-right: 22em/@fs;
         }
       }
       .field-clear-block {
@@ -123,17 +123,17 @@
   > .node {
     position: relative;
     background: @white-off;
-    padding: 24px;
-    margin: 0 0 60px;
+    padding: 24em/@fs;
+    margin: 0 0 60em/@fs;
     .border-radius(@border-radius-large);
 
     > div { /* header region */
       > .field-background {
         .node-background {
-          height: 426px;
+          height: 426em/@fs;
           .border-radius(@border-radius-large);
           &:after {
-            height: 426px;
+            height: 426em/@fs;
             .border-radius(@border-radius-large);
           }
         }
@@ -144,7 +144,7 @@
         float: left;
         width: 260/550 * 100%;
         clear: left;
-        height: 150px;
+        height: 150em/@fs;
         display: block;
         overflow: hidden;
       }
@@ -156,13 +156,13 @@
         z-index: 5;
         content: 'voor leden';
         position: absolute;
-        right: 30px;
+        right: 30em/@fs;
         top: 0;
         background: @red; 
         color: @white;
         text-align: center;
-        width: 115px;
-        line-height: 30px;
+        width: 115em/@fs;
+        line-height: 30em/@fs;
         .border-radius(0 0 @border-radius-small @border-radius-small);
       }
     }
@@ -179,7 +179,7 @@
   > .node {
     > div > div { /* middle region */
       > .field-node-type {
-        margin-top: 100px;
+        margin-top: 100em/@fs;
       }
       > .field-datum {
         background: @white-off;
@@ -212,19 +212,19 @@
   display: none;
 }
 h3.calltoaction {
-  margin-bottom: 12px;
-  font-size: 30px;
-  line-height: 40px;
-  .fa{
+  font-size: 30em/@fs;
+  line-height: 40em/30;
+  margin-bottom: 12em/30;
+  .fa {
     text-align: center;
     background: @secondary;
     color: @white;
-    width: 40px;
-    height: 40px;
-    font-size: 26px;
-    line-height: 40px;
+    font-size: 26em/30;
+    line-height: 40em/26;
+    width: 40em/26;
+    height: 40em/26;
     .border-radius();
-    margin-right: 10px;
+    margin-right: 10em/26;
   }
 } 
 .buildmode-full .node-type-album > div > div {
@@ -260,8 +260,8 @@ h3.calltoaction {
 .video {
   &.video-thumb {
     display: block;
-    width: 480px;
-    height: 360px;
+    width: 480em/@fs;
+    height: 360em/@fs;
     position: relative;
     box-sizing: border-box;
     text-align: center;
@@ -401,31 +401,36 @@ ul.links li, ul.inline li {
  * Ledenagenda
  */
 .agenda {
-
   .views-field-title {
-    .Wereldlijk, .Kerkelijk, .Vergadering, .Koorreis, .Concours, .Overige, .Programma {
-      font-weight: bold;
-    }
-    a { 
-      display: inline-block;
-      font-size: 16em/@fs;
-      line-height: 36em/16;
+    .Wereldlijk, .Kerkelijk, .Vergadering, .Koorreis, .Concours, .Overige {
+      font-weight: 600;
+      a {
+        &:link, &:visited {
+          color: @secondary;
+        }
+        &:hover, &:active, &:focus {
+          color: @primary;
+        }
+      }
     }
   }
   .views-field-field-locatie {
     text-transform: uppercase;
   }
+  .views-field-field-bijzonderheden-value {
+    font-size: 12em/16;
+    line-height: 24em/12;
+  }
 
   &.agenda-leden {
     .views-field-field-datum-value {
-      width: 12em;
+      width: 184em/@fs;
     }
     .views-field-field-sleepgroep-value {
-      width: 9em;
+      width: 128em/@fs;
     }
     .views-field-field-keyboard-value {
-      min-width: 6em;
-      max-width: 12em;
+      width: 72em/@fs;
     }
   }
 
@@ -501,7 +506,8 @@ th.views-field-field-audio-nummer-value {
 
 .opnamen {
   .views-row {
-    width: 33%;
+    width: 49%;
+    @media @normal { width: 33%; }
     box-sizing: border-box;
     display: inline-block;
     vertical-align: top;
@@ -516,29 +522,44 @@ th.views-field-field-audio-nummer-value {
     position: relative;
     &:before {
       display: block;
-      content: "";
+      content: '';
       width: 100%;
-      padding-top: (315 / 560) * 100%;
+      padding-top: (9 / 16) * 100%;
     }
     .video, .jp-single-player {
       position: absolute;
+      top: 0;
       left: 0;
       right: 0;
       bottom: 0;
+      .jp-interface {
+        top: 20%;
+      }
     }
     .video {
-      top: 0;
       height: 100%;
       width: 100%;
     }
   }
-  .opname-title {
-    font-size: 16em/@fs;
-    line-height: 36em/16;
-    color: @orange;
-    font-weight: 600;
-  }
   .opname-data {
+    min-height: 108em/@fs;
+    margin-top: 6em/@fs;
+  }
+  .opname-title {
+    color: @red;
+    text-transform: uppercase;
+    display: inline;
+  }
+  .opname-artist {
+    display: inline;
+  }
+  .opname-notes {
+    font-size: 12em/@fs;
+    line-height: 24em/12;
+    min-height: 48em/12;
+  }
+  .opname-type {
+    text-align: right;
   }
 }
 

@@ -23,43 +23,12 @@ body {
   color: @black;
 }
 #wrapper {
-  font-size: 14em/16;
-  line-height: 24em/14;
-}
-
-input {
-  font: 12px/100%;
-  color: #494949;
-}
-
-textarea, select {
-  font: 12px/160%;
-  color: #494949;
+  font-size: @fs/16em;
+  line-height: @lh/@fs+0em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  padding: 0;
-  font-weight: normal;
-}
-
-h1 {
-  font-size: 30em/12;
-  line-height: 36em/30;
-  color: @secondary;
-  margin: 6px 0;
-  font-weight: 600;
-  position: relative;
-  z-index: 3;
-}
-
-h2 {
-  font-size: 24em/12;
-  line-height: 36em/24;
-  color: @secondary;
-  font-weight: 600;
-}
-h1, h2 {
+  font-family: 'Open Sans', Verdana, sans-serif;
   a:link, a:visited {
     color: @secondary;
   }
@@ -67,22 +36,49 @@ h1, h2 {
     color: @primary;
   }
 }
+h1 {
+  color: @secondary;
+  font-weight: 600;
+  font-size: 36em/@fs;
+  line-height: 36em/36;
+  margin-bottom: 24em/36;
+  position: relative;
+  z-index: 3;
+}
+
+h2 {
+  color: @secondary;
+  font-weight: 600;
+  font-size: 24em/@fs;
+  line-height: 36em/24;
+  margin-bottom: 24em/36;
+}
 h3 {
-  font-size: 16em/@fs;
-  line-height: 36em/16;
-  font-weight: bold;
+  color: @grey-dark;
+  font-weight: 600;
+  font-size: 20em/@fs;
+  line-height: 36em/20;
 }
 
 h4 {
-  font-size: 130%;
+  color: @grey;
+  font-weight: 600;
+  font-size: 20em/@fs;
+  line-height: 36em/20;
 }
 
 h5 {
-  font-size: 120%;
+  color: @grey;
+  font-weight: 600;
+  font-size: 14em/@fs;
+  line-height: 24em/@fs;
 }
 
 h6 {
-  font-size: 110%;
+  color: @grey;
+  font-weight: 500;
+  font-size: 14em/@fs;
+  line-height: 24em/@fs;
 }
 
 ul, quote, code, fieldset {
