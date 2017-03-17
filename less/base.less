@@ -38,6 +38,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
   color: @secondary;
+  @media print { color: @grey-dark; }
   font-weight: 600;
   font-size: 36em/@fs;
   line-height: 36em/36;
@@ -48,6 +49,7 @@ h1 {
 
 h2 {
   color: @secondary;
+  @media print { color: @grey-dark; }
   font-weight: 600;
   font-size: 24em/@fs;
   line-height: 36em/24;
@@ -101,6 +103,7 @@ a {
 }
 a:link, a:visited {
   color: @primary;
+  @media print { color: @black; }
   text-decoration: none;
 }
 
@@ -249,6 +252,7 @@ table {
   margin: 1em 0;
   width: 100%;
   border-bottom: 2px solid @primary;
+  @media print { border-color: @grey-dark; }
 }
 
 thead th {
@@ -256,10 +260,16 @@ thead th {
   font-weight: bold;
   background: @primary;
   border: none;
+  @media print {
+    color: @black;
+    background: transparent;
+    border-bottom: 2px solid @grey-dark;
+  }
   a {
     &:link, &:visited {
       color: @white;
       text-decoration: none;
+      @media print { color: @black; }
     }
     &:hover, &:active {
      color: @secondary;
@@ -287,9 +297,13 @@ tr {
     }
     background: transparent;
     border: none;
+    @media print {
+      border-bottom: 1px solid @grey-dark;
+    }
   }
   &.even {
     background: @white-off;
+    @media print { background: 0; }
   }
 }
 td.active {
@@ -418,5 +432,5 @@ span.clear {
     margin: 0;
     display: inline;
     width: auto;
-  } 
+  }
 }

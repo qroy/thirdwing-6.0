@@ -9,6 +9,12 @@
   .transition-standard();
 
   color: @white;
+  @media print { 
+    color: @grey-dark; 
+    border: 1px solid @grey-light;
+    background: @grey-light;
+    padding: 3em/@fs;
+  }
   .border-radius();
 
   &.badge-general {
@@ -23,13 +29,13 @@
     margin: 0 4em/24 4em/24 0;
   }
   &.badge-combo-aanwezig, &.badge-combo-vervanging { background: @green; }
-  &.badge-combo-vraag {                        background: @grey; }
-  &.badge-combo-afwezig {                      background: @red; }
+  &.badge-combo-vraag {                              background: @grey;  }
+  &.badge-combo-afwezig {                            background: @red;   }
 
   @media print {
-    &.badge-combo-aanwezig, &.badge-combo-vervanging { background: @grey-dark; }
-    &.badge-combo-vraag {                        background: @grey-light; }
-    &.badge-combo-afwezig {                      background: transparent; }
+    &.badge-combo-aanwezig, &.badge-combo-vervanging { background: @grey-light; color: @grey-dark;  border-color: @grey-light;  }
+    &.badge-combo-vraag {                              background: transparent; color: @white-off;  border-color: @white-off;   }
+    &.badge-combo-afwezig {                            background: transparent; color: transparent; border-color: transparent;  }
   }
 
   &.badge-sleepgroep {
@@ -38,18 +44,12 @@
     @media screen {
       background: @yellow;
     }
-    @media print {
-      background: @grey-dark;
-    }
   }
   &.badge-nummer {
     width: 24em/@fs;
     line-height: 24em/@fs;
     @media screen {
       background: @grey-light;
-    }
-    @media print {
-      background: @grey-dark;
     }
     &.persoon-aspirant {
       @media screen {
@@ -63,28 +63,21 @@
     @media screen {
       background: @blue;
     }
-    @media print {
-      background: @grey-dark;
-    }
   }
 
   &.badge-date {
-    background: @white;
-    color: @black;
     width: 172em/@fs;
     text-align: left;
     text-transform: uppercase;
     &:before {
-      color: @red;
+      @media screen { color: @red; }
     }
     span {
       padding: 0 1px;
     }
     @media screen {
+      color: @black;
       background: @white;
-    }
-    @media print {
-      background: transparent;
     }
   }
 
@@ -93,28 +86,17 @@
     @media screen {
       background: @red;
     }
-    @media print {
-      background: transparent;
-      color: @black;
-    }
   }
   &.badge-koor-tijd {
     width: 80em/@fs;
     @media screen {
       background: @primary;
     }
-    @media print {
-      background: transparent;
-      color: @black;
-    }
   }
   &.badge-sleepgroep-tijd {
     width: 80em/@fs;
     @media screen {
       background: @yellow;
-    }
-    @media print {
-      background: @grey-dark;
     }
   }
   &.badge-color-purple      { background: @purple; }
@@ -202,15 +184,6 @@ tr {
 }
 
 }
-
-@media print {
-
-.Repetitie .badge {
-  font-weight: normal;
-}
-
-} // print
-
 
 // Icons
 

@@ -1,0 +1,369 @@
+/**
+ * Ledenagenda
+ */
+.agenda {
+  .views-field-title {
+    .Wereldlijk, .Kerkelijk, .Vergadering, .Koorreis, .Concours, .Overige {
+      font-weight: 600;
+      a {
+        &:link, &:visited {
+          color: @secondary;
+          @media print { color: @black; }
+        }
+        &:hover, &:active, &:focus {
+          color: @primary;
+        }
+      }
+    }
+  }
+  .views-field-field-locatie {
+    text-transform: uppercase;
+  }
+  .views-field-field-l-plaats {
+    color: @red;
+  }
+  .views-field-field-bijzonderheden-value {
+    font-size: 12em/16;
+    line-height: 24em/12;
+  }
+
+  &.agenda-leden {
+    .views-field-field-datum-value {
+      width: 184em/@fs;
+    }
+    .views-field-field-sleepgroep-value {
+      width: 128em/@fs;
+    }
+    .views-field-field-keyboard-value {
+      width: 72em/@fs;
+    }
+  }
+
+}
+
+/**
+ * Foto albums
+ */
+
+.node-type-album > div > div > .field-afbeeldingen {
+  float: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.node-type-album > div > div > .field-afbeeldingen .field-item,
+.view.fotos .views-row {
+  width: 19%;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+}
+.view.fotos img {
+  width: 100%;
+  height: auto;
+}
+.view-fotos .fotos-album, .view-fotos .fotos-album a {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+.view.fotos a .fotos-title {
+  padding: 5px;
+  width: 100%;
+  min-height: 64px;
+  box-sizing: border-box;
+  opacity: 0.8;
+  display: block;
+  background: @grey-dark;
+  color: @white;
+  position: absolute;
+  bottom: 5px;
+}
+.view.fotos a .fotos-title .year {
+  font-weight: bold;
+}
+.view.fotos a:hover .fotos-title {
+  background: @primary;
+}
+
+/**
+ * Opnamen
+ */
+
+.opnamen {
+  .views-row {
+    width: 49%;
+    @media @normal { width: 33%; }
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 6em/@fs 12em/@fs 0;
+  }
+  .opname {
+    background: @white-off;
+    .border-radius(@border-radius-large);
+    padding: 6em/@fs;
+  }
+  .opname-bestand {
+    position: relative;
+    &:before {
+      display: block;
+      content: '';
+      width: 100%;
+      padding-top: (9 / 16) * 100%;
+    }
+    .video, .jp-single-player {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      .jp-interface {
+        top: 20%;
+      }
+    }
+    .video {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .opname-data {
+    min-height: 108em/@fs;
+    margin-top: 6em/@fs;
+  }
+  .opname-title {
+    color: @red;
+    text-transform: uppercase;
+    display: inline;
+  }
+  .opname-artist {
+    display: inline;
+  }
+  .opname-notes {
+    font-size: 12em/@fs;
+    line-height: 24em/12;
+    min-height: 48em/12;
+  }
+  .opname-type {
+    text-align: right;
+  }
+}
+
+/**
+ * Sleepgroepen
+ */
+.sleepgroepen {
+  margin-right: -12em/@fs;
+  .item-list {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+    @media @normal { width: 18.8%; }
+    min-height: 400em/@fs;
+    margin: 0 12em/@fs 12em/@fs 0;
+    background: @white-off;
+    .border-radius(@border-radius-large);
+    padding: 12em/@fs 12em/@fs 0;
+    text-align: center;
+    h3 {
+      margin-bottom: 12em/@fs;
+    }
+  }
+  .sleepgroep-uitkoor {
+    text-decoration: line-through;
+  }
+  .sleepgroep-karrijder {
+    font-style: italic;
+  }
+  .sleepgroep-bestuur {
+    font-weight: bold;
+  }
+  .sleepgroep-geslacht-Man:after {
+    content: " \f222";
+  }
+  .sleepgroep-geslacht:after {
+    font-family: fontawesome;
+    color: @red;
+    font-style: normal;
+    font-weight: normal;
+  }
+}
+
+/**
+ * Combo en Bestuur en Commissies
+ */
+
+.personen {
+  margin-right: -12em/@fs;
+  .views-row {
+    width: 24.5%;
+    height: 228em/@fs;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 6em/@fs 12em/@fs 0;
+  }
+  .persoon {
+    text-align: center;
+    font-size: 12em/@fs;
+    line-height: 24em/12;
+    .border-radius(@border-radius-large);
+    padding: 12em/12;
+    background: @white-off;
+  }
+  .persoon-foto {
+    height: 120em/12;
+    width: 90em/12;
+    margin: 0 auto;
+    img {
+      box-sizing: border-box;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .persoon-naam {
+    text-transform: uppercase;
+    min-height: 48em/12;
+  }
+  .persoon-functie {
+    color: @red;
+    > span {
+      display: none;
+    }
+  }
+  &.personen-wie, &.personen-leden, &.personen-ledenlijst {
+    .views-row {
+      @media @tablet { width: 19.5%; }
+      @media @normal { width: 16.2%; }
+      height: auto;
+    }
+    .persoon {
+      background: @white-off;
+      padding: 12em/12 12em/12;
+    }
+    .persoon-foto {
+      width: 80%;
+      height: auto;
+    }
+    .persoon-naam { 
+      min-height: 24em/12;
+     }
+    .persoon-achternaam { display: none; }
+    .persoon-functie {
+      color: @white;
+      .border-radius();
+    }
+    .persoon-E  .persoon-functie { background: @green; }
+    .persoon-B  .persoon-functie { background: @blue; }
+    .persoon-A  .persoon-functie { background: @red; }
+    .persoon-C  .persoon-functie { background: @purple; }
+    .persoon-D  .persoon-functie { background: @yellow; }
+    .persoon-Z1, .persoon-Z2, .persoon-Z3, .persoon-Z4 {
+                .persoon-functie { background: @grey-light; }
+    }
+    .persoon-Y1 .persoon-functie { background: @grey; }
+  }
+  &.personen-ledenlijst {
+    .persoon-functie {
+      text-align: center;
+      padding: 0 10em/@fs;
+    }
+    .persoon-foto {
+      width: 58em/@fs;
+      
+    }
+  }
+  &.personen-wie {
+    .views-row {
+      width: 12%;
+    }
+  }
+}
+.personen-leden      .persoon-functie .persoon-functie-koor,
+.personen-ledenlijst .persoon-functie .persoon-functie-koor,
+.personen-wie        .persoon-functie .persoon-functie-koor,
+.personen-band       .persoon-functie .persoon-functie-koor       { display: inline-block; }
+.personen-bestuur    .persoon-functie .persoon-functie-bestuur    { display: inline-block; }
+.personen-mc         .persoon-functie .persoon-functie-mc         { display: inline-block; }
+.personen-regie      .persoon-functie .persoon-functie-regie      { display: inline-block; }
+.personen-concert    .persoon-functie .persoon-functie-concert    { display: inline-block; }
+.personen-ir         .persoon-functie .persoon-functie-ir         { display: inline-block; }
+.personen-feest      .persoon-functie .persoon-functie-feest      { display: inline-block; }
+.personen-verjaardag .persoon-functie .persoon-functie-verjaardag { display: inline-block; }
+
+.persoon-aspirant {
+  @media screen { 
+    color: @red; 
+    a:link, a:visited {
+      color: @red;
+    }
+    a:hover, a:active {
+      color: @primary;
+    }
+  }
+  @media print { font-style: italic; }
+}
+.personen-ledenlijst {
+  .views-field-field-lidsinds-value .persoon-aspirant {
+    .date-display-single {
+      display: none;
+    }
+    &:after {
+      content: 'Aspirant';
+      font-size: 12em/@fs;
+      line-height: 24em/12;
+      text-transform: uppercase;
+    }
+  }
+  .persoon-functie-bestuur {
+    font-size: 12em/@fs;
+    line-height: 24em/12;
+    text-transform: uppercase;
+    color: @red; 
+  }
+}
+
+/**
+ * Knipsels
+ */
+ 
+.view.knipsels .views-row {
+  display: block;
+  float: left;
+  width: 23.4375%; /* 225px / 960px */
+  margin: 0.52083333333333333333333333333333%; /* 5px / 960px */
+  border: 1px solid @grey-light;
+}
+.view.knipsels .knipsel {
+  padding: 0.75em 1.5em; /* 9px / 12px en 18px / 12px */
+  display: block;
+}
+.view.knipsels .knipsel-titel {
+  display: block;
+  height: 6em; /* 72px / 12px */ 
+}
+.view.knipsels .knipsel-titel h2 {
+  font-size: 1em; /* 12px / 12px */
+  line-height: 1.5em; /* 18px / 12px */
+  font-weight: bold;
+}
+.view.knipsels .knipsel-datum {
+
+}
+.view.knipsels .views-row img {
+  width: 100%;
+  height: auto;
+}
+
+/**
+ * Foto's
+*/
+
+.voorbeeld .views-row {
+  float: left;
+  margin: 0 10px 0 0;
+}
+.voorbeeld .view-footer {
+  clear: both;
+}
