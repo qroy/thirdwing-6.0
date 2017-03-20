@@ -232,7 +232,7 @@ h3.calltoaction {
     margin-right: 10em/26;
   }
 } 
-.buildmode-full .node-type-album > div > div {
+.buildmode-full .node-type-foto > div > div {
   > .field-afbeeldingen {
     width: 100%;
     padding: 0;
@@ -255,46 +255,7 @@ h3.calltoaction {
   color: @red;
   text-transform: uppercase;
 }
-.video-gallery {
-  .video-thumb {
-    width: 25%;
-    padding: 5em/@fs;
-    float: left;
-  }
-}
-.video {
-  &.video-thumb {
-    display: block;
-    width: 480em/@fs;
-    height: 360em/@fs;
-    position: relative;
-    box-sizing: border-box;
-    text-align: center;
-    &:after {
-      display: inline-block;
-      position: absolute;
-      content: '\f166';
-      font-family: FontAwesome;
-      font-size: 60em/@fs;
-      line-height: 60em/60;
-      top: 30%;
-      left: 0;
-      right: 0;
-    }
-    img { 
-      width: 100%;
-      height: auto;
-    }
-  }
-}
-a.video-thumb {
-  &:link, &:visited {
-    color: @white;
-  }
-  &:hover, &:active, &:focus {
-    color: @secondary;
-  }
-}
+
 .admininfo, .messages {
   position: relative;
   z-index: 3;
