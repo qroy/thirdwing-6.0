@@ -38,7 +38,6 @@
       width: 72em/@fs;
     }
   }
-
 }
 
 /**
@@ -60,12 +59,11 @@
     background: @white-off;
     .border-radius(@border-radius-large);
     padding: 6em/@fs;
-    a { display: none; }
-    &.opname-foto:hover {
+    &:hover {
       .transition-standard();
       background: @secondary;
       .badge { background: @white; color: @secondary; }
-      .opname-title { color: @white; }
+      .opname-title, .opname-artist { color: @white; }
     }
   }
   img {
@@ -75,6 +73,7 @@
   }
   .opname-bestand {
     position: relative;
+    z-index: 2;
     &:before {
       display: block;
       content: '';
@@ -97,8 +96,9 @@
     }
   }
   .opname-data {
-    min-height: 108em/@fs;
+    height: 72em/@fs;
     margin-top: 6em/@fs;
+    overflow: hidden;
   }
   .opname-title {
     color: @red;
@@ -111,16 +111,20 @@
   .opname-notes {
     font-size: 12em/@fs;
     line-height: 24em/12;
-    min-height: 48em/12;
   }
   .opname-type {
+    height: 36em/@fs;
     text-align: right;
   }
+  .opname-link {
+    z-index: 1;
+    position: absolute;
+    display: block;
+    top: 0; bottom: 0; left: 0; right: 0;
+  }
   .opname-foto {
-    a { 
-      position: absolute;
-      display: block;
-      top: 0; bottom: 0; left: 0; right: 0;
+    .opname-link { 
+      z-index: 3;
     }
     .opname-title {
       display: block;
@@ -130,6 +134,10 @@
       display: none;
     }
   }
+  .badge-multimedia { display: none; }
+  .opname-foto .badge-foto { display: inline-block; }
+  .opname-video .badge-video { display: inline-block; }
+  .opname-audio .badge-audio { display: inline-block; }
 }
 .video {
   &.video-thumb {
@@ -299,7 +307,7 @@ a.video-thumb {
   @media print { font-style: italic; }
 }
 .personen-ledenlijst {
-  .views-field-field-lidsinds-value .persoon-aspirant {
+  .views-field-field-lidsinds-value.persoon-aspirant {
     .date-display-single {
       display: none;
     }
@@ -311,12 +319,75 @@ a.video-thumb {
     }
   }
   .persoon-functie-bestuur {
-    font-size: 12em/@fs;
-    line-height: 24em/12;
-    text-transform: uppercase;
     color: @red; 
   }
 }
+
+/**
+ * Vrienden
+ */
+
+.vrienden {
+  margin-right: -12em/@fs;
+  overflow: hidden;
+  .views-row {
+    width: 100% / 2;
+    @media @normal { width: 100% / 3; }
+    box-sizing: border-box;
+    float: left;
+    padding: 0 12em/@fs 12em/@fs 0;
+  }
+  .vriend {
+    text-align: center;
+    position: relative;
+    background: @white-off;
+    .border-radius(@border-radius-large);
+    padding: 6em/@fs;
+    &:hover {
+      .transition-standard();
+      background: @secondary;
+      .vriend-info, .vriend-title { color: @white; }
+      .badge { background: @white; color: @orange; }
+    }
+  }
+  .vriend-image {
+    position: relative;
+    &:before {
+      display: block;
+      content: ' ';
+      width: 100%;
+      padding-top: (9 / 16) * 100%;
+    }
+    .image {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center top;
+    }
+  }
+  .vriend-info {
+    text-transform: uppercase;
+    height: 48em/@fs;
+    margin: 24em/@fs 0;
+  }
+  .vriend-title {
+    color: red;
+  }
+  .vriend-jaren {
+    height: 36em/@fs;
+  }
+  .vriend-site {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
 
 /**
  * Knipsels

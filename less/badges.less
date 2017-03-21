@@ -29,7 +29,7 @@
     margin: 0 4em/24 4em/24 0;
   }
   &.badge-combo-aanwezig, &.badge-combo-vervanging { background: @green; }
-  &.badge-combo-vraag {                              background: @grey;  }
+  &.badge-combo-vraag {                              background: @grey-light;  }
   &.badge-combo-afwezig {                            background: @red;   }
 
   @media print {
@@ -39,6 +39,7 @@
   }
   &.badge-functie {
     padding: 4em/@fs 8em/@fs;
+    width: 92em/@fs;
   }
   @media screen {
   &.badge-functie-A  { background: @red;        }
@@ -64,7 +65,7 @@
     width: 24em/@fs;
     line-height: 24em/@fs;
     @media screen {
-      background: @grey-light;
+      background: @grey;
     }
     &.persoon-aspirant {
       @media screen {
@@ -114,91 +115,75 @@
       background: @yellow;
     }
   }
-  &.badge-color-purple      { background: @purple; }
-  &.badge-color-orange      { background: @orange; }
-  &.badge-color-red         { background: @red; }
-  &.badge-color-yellow      { background: @yellow; }
-  &.badge-color-blue        { background: @blue; }
-  &.badge-color-green       { background: @green; }
-  &.badge-color-pink        { background: @pink; }
-  &.badge-color-brown       { background: @brown; }
-  &.badge-color-grey-light  { background: @grey-light; }
+  &.badge-multimedia {
+    width: 24em/@fs;
+    line-height: 24em/@fs;
+    @media screen {
+      background: @grey;
+    }
+  }
+  &.badge-nodetype {
+    width: 120em/@fs;
+  }
+  &.badge-nodetype-nieuws     { background: @green;  }
+  &.badge-nodetype-activiteit { background: @blue;   }
+  &.badge-vriend {
+    padding: 4em/@fs 8em/@fs;
+  }
+  &.badge-vriend-1            { background: @grey;   }
+  &.badge-vriend-2            { background: @purple; }
+  &.badge-vriend-3            { background: @orange; }
+  &.badge-color-grey          { background: @grey;   }
+  &.badge-color-purple        { background: @purple; }
+  &.badge-color-orange        { background: @orange; }
+  &.badge-color-red           { background: @red;    }
+  &.badge-color-yellow        { background: @yellow; }
+  &.badge-color-blue          { background: @blue;   }
+  &.badge-color-green         { background: @green;  }
+  &.badge-color-pink          { background: @pink;   }
+  &.badge-color-brown         { background: @brown;  }
+  &.badge-color-grey-light    { background: @grey-light; }
 }
 
 @media screen {
 
 a:link, a:visited {
-  .badge.badge-nummer {
-    background: @red-light;
+  .badge {
+    background: @primary;
+  }
+}
+a:hover, a:active {
+  .badge {
+    background: @secondary;
   }
 }
 
 tr {
   &.odd, &.even {
-    &:hover {
-      .Repetitie {
-        .badge.badge-sleepgroep, .badge.badge-sleepgroep-tijd {
-          background: @yellow;
-        }
-        .badge.badge-time {
-          background: @red;
-        }
-        .badge.badge-koor-tijd {
-          background: @primary;
-        }
-        .badge.badge-kar {
-          background: @blue;
-        }
-        .badge-combo-aanwezig, .badge-combo-vervanging { background: @green; }
-        .badge-combo-afwezig                     { background: @red; }
-        .badge-combo-vraag                       { background: @grey; }
-      }
-      .badge.badge-date {
-        background: @white;
-      }
-      .badge.badge-nummer {
-        background: @grey;
-      }
-      a {
-        &:link, &:visited {
-          .badge.badge-nummer {
-            background: @secondary;
-          }
-        }
-        &:hover, &:active, &:focus {
-          .badge.badge-nummer {
-            background: @primary;
-          }
+    &:not(:hover) {
+      span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) {
+        .badge-nummer,
+        .badge-functie, 
+        .badge-sleepgroep, 
+        .badge-time, 
+        .badge-koor-tijd, 
+        .badge-sleepgroep-tijd, 
+        .badge-kar {
+          background: @grey-light;
         }
       }
     }
   }
   &.odd {
-    .badge.badge-date {
-      background: @white-off;
+    &:not(:hover) {
+      .badge-date {
+        background: @white-off;
+      }
     }
   }
 }
 
-.Repetitie {
-  .badge.badge-time {
-    background: @red-light;
-  }
-  .badge.badge-koor-tijd {
-    background: @primary-light;
-  }
-  .badge.badge-sleepgroep, .badge.badge-sleepgroep-tijd {
-    background: @yellow-light;
-  }
-  .badge.badge-kar {
-    background: @blue-light;
-  }
-  .badge-combo-aanwezig, .badge-combo-vervanging { background: @green-light; }
-  .badge-combo-afwezig                     { background: @red-light; }
-  .badge-combo-vraag                       { background: @grey-light; }
-}
-
-}
+} //screen
 
 // Icons
 
@@ -268,3 +253,58 @@ a[type*="mpeg"] {
   .icon;
   &:before { content: '\f1c7'; }
 }
+
+// Buttons
+
+.button {
+  display: inline-block;
+  line-height: 24em/@fs;
+  padding: 4em/@fs 8em/@fs;
+  margin: 0 4em/@fs 4em/@fs 0;
+  .border-radius(@border-radius-small);
+  &:link, &:visited {
+    color: @white;
+    background: @primary;
+  }
+  &:active, &:hover, &:focus, &.active {
+    background: @secondary;
+  }
+}
+.button-social {
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative; /* for absolute positioning of icon */
+  width: 20em/@fs; /* make room for icon */
+  vertical-align: top;
+  &:before {
+    line-height: 36em/@fs;
+    text-indent: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    margin: 0;
+    display: inline;
+    width: auto;
+  }
+}
+
+h3.calltoaction {
+  font-size: 30em/@fs;
+  line-height: 40em/30;
+  margin-bottom: 12em/30;
+  .fa {
+    text-align: center;
+    background: @secondary;
+    color: @white;
+    font-size: 26em/30;
+    line-height: 40em/26;
+    width: 40em/26;
+    height: 40em/26;
+    .border-radius();
+    margin-right: 10em/26;
+  }
+} 

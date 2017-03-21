@@ -35,14 +35,8 @@
     }   
     > div > div { /* middle region */
       > .field-node-type {
-        text-align: center;
-        .border-radius(@border-radius-small);
-        width: 120em/@fs;
-        box-sizing: border-box;
-        overflow: hidden;
         margin: 0 0 24em/@fs;
-        .border-radius();
-        color: @white;
+        display: block; // override badge inline-block
       }
       > .field-afbeeldingen {
         margin: 0;
@@ -64,57 +58,34 @@
           background-repeat: no-repeat;
         }
       }
-      > .field-author {
-        font-size: 13em/@fs;
-        line-height: 24em/13;
-        color: @grey;
-        display: inline;
+      > .field-author, .field-post-date {
         font-weight: 200;
-      }
-      > .field-post-date {
-        color: @grey;
-        font-size: 13em/@fs;
-        line-height: 24em/13;
-        display: inline;
-        margin-left: 12em/13;
-        font-weight: 200;
-      }
-      > .field-datum {
-        margin: 0 0 5em/@fs;
-        padding: 4em/@fs 0 0 4em/@fs;
-        box-sizing: border-box;
-        background: @white;
-        .border-radius();
-        .badge-time { float: right; }
-        float: left;
-        clear: left;
-        width: 50%;
+        em { font-style: normal; }
       }
       > .field-locatie, .field-l-bijzonderheden {
         text-transform: uppercase;
-        float: left;
-        clear: left;
-        background: @white;
-        margin: 0 0 5em/@fs;
-        padding: 4em/@fs;
-        box-sizing: border-box;
-        .border-radius();
-        width: 50%;
-        &:before { 
-          color: @red; 
-          margin: 0 0 0 4em/@fs;
-        }
         > .field-items {
           padding: 0 4em/@fs;
-          position: relative;
-          margin-right: 22em/@fs;
+//          position: relative;
+//          margin-right: 22em/@fs;
         }
+      }
+      .field-box {
+        box-sizing: border-box;
+        background: @white;
+        .border-radius();
+        margin: 0 0 5em/@fs;
+        padding: 4em/@fs 8em/@fs;
+        .badge-time { float: right; margin: 0; }
+        .badge { margin: 0; } 
+      }
+      .field-left {
+        float: left;
+        clear: left;
+        width: 50%;
       }
       .field-clear-block {
         height: 0;
-      }
-      > .field-read-more {
-        display: inline;
       }
     }
     // Laat social buttons alleen zien op pagina's die openbaar zijn
@@ -133,10 +104,10 @@
     > div { /* header region */
       > .field-background {
         .node-background {
-          height: 426em/@fs;
+          height: 434em/@fs;
           .border-radius(@border-radius-large);
           &:after {
-            height: 426em/@fs;
+            height: 434em/@fs;
             .border-radius(@border-radius-large);
           }
         }
@@ -144,9 +115,6 @@
     }
     > div > div { /* middle region */
       > .field-title {
-        float: left;
-        width: 260/550 * 100%;
-        clear: left;
         height: 150em/@fs;
         display: block;
         overflow: hidden;
@@ -186,20 +154,11 @@
       > .field-node-type {
         margin-top: 100em/@fs;
       }
-      > .field-datum {
-        background: @white-off;
-      }
-      > .field-locatie, .field-l-bijzonderheden {
+      > .field-box {
         background: @white-off;
       }
     }
   }
-}
-.node-type-nieuws .field-node-type {
-  background: @green;
-}
-.node-type-activiteit .field-node-type {
-  background: @blue;
 }
 .nd-region-middle {
   position: relative;
@@ -216,30 +175,24 @@
 .front h1 {
   display: none;
 }
-h3.calltoaction {
-  font-size: 30em/@fs;
-  line-height: 40em/30;
-  margin-bottom: 12em/30;
-  .fa {
-    text-align: center;
-    background: @secondary;
-    color: @white;
-    font-size: 26em/30;
-    line-height: 40em/26;
-    width: 40em/26;
-    height: 40em/26;
-    .border-radius();
-    margin-right: 10em/26;
-  }
-} 
 .buildmode-full .node-type-foto > div > div {
   > .field-afbeeldingen {
     width: 100%;
     padding: 0;
   }
 }
-.field-inline {
-  float: left;
+.field-inline, .field-inline div {
+  display: inline;
+}
+.field .field-label-inline-first {
+  display: inline-block;
+  min-width: 160em/@fs; 
+}
+.field-inline .field-label-inline-first {
+  display: inline;
+}
+.field-block {
+  display: block;
 }
 .field-margin-left {
   margin-left: 12em/@fs;
