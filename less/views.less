@@ -35,7 +35,7 @@
       width: 128em/@fs;
     }
     .views-field-field-keyboard-value {
-      width: 72em/@fs;
+      width: 76em/@fs;
     }
   }
    
@@ -422,37 +422,26 @@ a.video-thumb {
   }
 }
 
-
 /**
- * Knipsels
+ * Repertoire
  */
- 
-.view.knipsels .views-row {
-  display: block;
-  float: left;
-  width: 23.4375%; /* 225px / 960px */
-  margin: 0.52083333333333333333333333333333%; /* 5px / 960px */
-  border: 1px solid @grey-light;
-}
-.view.knipsels .knipsel {
-  padding: 0.75em 1.5em; /* 9px / 12px en 18px / 12px */
-  display: block;
-}
-.view.knipsels .knipsel-titel {
-  display: block;
-  height: 6em; /* 72px / 12px */ 
-}
-.view.knipsels .knipsel-titel h2 {
-  font-size: 1em; /* 12px / 12px */
-  line-height: 1.5em; /* 18px / 12px */
-  font-weight: bold;
-}
-.view.knipsels .knipsel-datum {
 
-}
-.view.knipsels .views-row img {
-  width: 100%;
-  height: auto;
+.repertoire {
+  .repertoire-programma {
+    color: @red;
+    text-transform: uppercase;
+  }
+  tr {
+    &.odd, &.even {
+      &:not(:hover) {
+        a:link, a:visited {
+          .badge-nummer {
+            @media screen { background: @grey-light; }
+          }
+        }
+      }
+    }
+  }
 }
 
 /**
