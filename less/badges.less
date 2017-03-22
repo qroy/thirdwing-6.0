@@ -9,6 +9,7 @@
   .transition-standard();
 
   color: @white;
+  background: @grey;
   @media print { 
     color: @grey-dark; 
     border: 1px solid @grey-light;
@@ -17,9 +18,6 @@
   }
   .border-radius();
 
-  &.badge-general {
-    background: @grey;
-  }
   &.badge-combo {
     font-family: thirdwing;
     font-size: 24em/@fs;
@@ -66,11 +64,6 @@
     line-height: 24em/@fs;
     @media screen {
       background: @grey;
-    }
-    &.persoon-aspirant {
-      @media screen {
-        background: @red-light;
-      }
     }
   }
   &.badge-kar {
@@ -125,8 +118,15 @@
   &.badge-nodetype {
     width: 120em/@fs;
   }
+  &.badge-nodetype-pagina     { background: @brown;  }
   &.badge-nodetype-nieuws     { background: @green;  }
   &.badge-nodetype-activiteit { background: @blue;   }
+  &.badge-nodetype-verslag    { background: @pink;   }
+  &.badge-nodetype-audio,
+  &.badge-nodetype-video,
+  &.badge-nodetype-foto,
+  &.badge-nodetype-repertoire
+                              { background: @red;   }
   &.badge-vriend {
     padding: 4em/@fs 8em/@fs;
   }
@@ -145,42 +145,18 @@
   &.badge-color-grey-light    { background: @grey-light; }
 }
 
+.marker {
+  .badge();
+  .badge-color-red();
+}
+
 @media screen {
 
 a:link, a:visited {
-  .badge {
-    background: @primary;
-  }
+  .badge { background: @primary; }
 }
 a:hover, a:active {
-  .badge {
-    background: @secondary;
-  }
-}
-
-tr {
-  &.odd, &.even {
-    &:not(:hover) {
-      span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) {
-        .badge-nummer,
-        .badge-functie, 
-        .badge-sleepgroep, 
-        .badge-time, 
-        .badge-koor-tijd, 
-        .badge-sleepgroep-tijd, 
-        .badge-kar {
-          background: @grey-light;
-        }
-      }
-    }
-  }
-  &.odd {
-    &:not(:hover) {
-      .badge-date {
-        background: @white-off;
-      }
-    }
-  }
+  .badge { background: @secondary; }
 }
 
 } //screen

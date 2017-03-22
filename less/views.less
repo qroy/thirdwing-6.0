@@ -38,6 +38,36 @@
       width: 72em/@fs;
     }
   }
+  tr {
+    &.odd, &.even {
+      &:not(:hover) {
+        span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) {
+          .badge-sleepgroep,
+          .badge-time,
+          .badge-koor-tijd,
+          .badge-sleepgroep-tijd,
+          .badge-kar {
+            background: @grey-light;
+          }
+          .badge-combo.badge-combo-aanwezig, .badge-combo.badge-combo-vervanging { background: @green-light; }
+          .badge-combo.badge-combo-afwezig,                                      { background: @red-light; }
+        }
+      }
+    }
+    &.even {
+      &:not(:hover) {
+        span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) {
+        }
+      }
+    }
+    &.odd {
+      &:not(:hover) {
+        .badge-date {
+          background: @white-off;
+        }
+      }
+    }
+  }
 }
 
 /**
@@ -279,6 +309,21 @@ a.video-thumb {
     .persoon-foto {
       width: 58em/@fs;
       
+    }
+    tr {
+      &.odd, &.even {
+        &:not(:hover) {
+          .badge-sleepgroep,
+          .badge-functie {
+            @media screen { background: @grey-light; }
+          }
+        }
+      }
+    }
+    .badge.persoon-aspirant {
+      @media screen {
+        background: @red;
+      }
     }
   }
 }
