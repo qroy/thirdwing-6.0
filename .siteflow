@@ -2,14 +2,38 @@
   "id" : "00000000-0000-0000-0000-000000000000",
   "javascriptIndentation" : 4,
   "files" : {
-    "mail.css" : {
-      "output" : "mail.out.css"
+    "less\/xmas-vars.less" : {
+      "output" : "css\/xmas-vars.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/menu.less" : {
+      "output" : "css\/menu.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
     },
     "css\/fix-ie.css" : {
       "output" : "css\/fix-ie.out.css"
     },
+    "less\/views.less" : {
+      "output" : "css\/views.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "css\/style.css" : {
+      "output" : "css\/style.out.css"
+    },
     "less\/fix-ie.less" : {
       "output" : "css\/fix-ie.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/layout.less" : {
+      "output" : "css\/layout.css",
       "profiles" : {
         "less" : "00000000-0000-0000-0000-000000000000"
       }
@@ -21,67 +45,28 @@
         "jshint" : "00000000-0000-0000-0000-000000000000"
       }
     },
-    "less\/badges.less" : {
-      "output" : "css\/badges.css",
-      "profiles" : {
-        "less" : "00000000-0000-0000-0000-000000000000"
-      }
-    },
-    "less\/xmas-vars.less" : {
-      "output" : "css\/xmas-vars.css",
+    "less\/screen.less" : {
+      "output" : "css\/screen.css",
       "profiles" : {
         "less" : "00000000-0000-0000-0000-000000000000"
       }
     },
     "less\/style.less" : {
       "imports" : [
+        "less\/reset.less",
         "less\/variables.less",
-        "less\/xmas-vars.less",
         "less\/base.less",
         "less\/layout.less",
         "less\/nodes.less",
+        "less\/views.less",
         "less\/badges.less",
         "less\/menu.less",
         "less\/admin.less",
         "less\/jplayer.less",
-        "less\/xmas.less",
         "less\/screen.less",
         "less\/print.less"
       ],
       "output" : "css\/style.css",
-      "profiles" : {
-        "less" : "00000000-0000-0000-0000-000000000000"
-      }
-    },
-    "less\/nodes.less" : {
-      "output" : "css\/nodes.css",
-      "profiles" : {
-        "less" : "00000000-0000-0000-0000-000000000000"
-      }
-    },
-    "less\/base.less" : {
-      "output" : "css\/base.css",
-      "profiles" : {
-        "less" : "00000000-0000-0000-0000-000000000000"
-      }
-    },
-    "css\/print.css" : {
-      "output" : "css\/print.out.css"
-    },
-    "less\/layout.less" : {
-      "output" : "css\/layout.css",
-      "profiles" : {
-        "less" : "00000000-0000-0000-0000-000000000000"
-      }
-    },
-    "less\/jplayer.less" : {
-      "output" : "css\/jplayer.css",
-      "profiles" : {
-        "less" : "00000000-0000-0000-0000-000000000000"
-      }
-    },
-    "less\/menu.less" : {
-      "output" : "css\/menu.css",
       "profiles" : {
         "less" : "00000000-0000-0000-0000-000000000000"
       }
@@ -98,23 +83,53 @@
         "less" : "00000000-0000-0000-0000-000000000000"
       }
     },
-    "less\/screen.less" : {
-      "output" : "css\/screen.css",
+    "less\/xmas.less" : {
+      "output" : "css\/xmas.css",
       "profiles" : {
         "less" : "00000000-0000-0000-0000-000000000000"
       }
     },
-    "css\/style.css" : {
-      "output" : "css\/style.out.css"
+    "mail.css" : {
+      "output" : "mail.out.css"
+    },
+    "css\/xmas-vars.css" : {
+      "output" : "css\/xmas-vars.out.css"
+    },
+    "less\/jplayer.less" : {
+      "output" : "css\/jplayer.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/base.less" : {
+      "output" : "css\/base.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "jplayer.css" : {
+      "output" : "jplayer.out.css"
+    },
+    "less\/badges.less" : {
+      "output" : "css\/badges.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/reset.less" : {
+      "output" : "css\/reset.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/nodes.less" : {
+      "output" : "css\/nodes.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
     },
     "less\/variables.less" : {
       "output" : "css\/variables.css",
-      "profiles" : {
-        "less" : "00000000-0000-0000-0000-000000000000"
-      }
-    },
-    "less\/xmas.less" : {
-      "output" : "css\/xmas.css",
       "profiles" : {
         "less" : "00000000-0000-0000-0000-000000000000"
       }
@@ -122,8 +137,8 @@
   },
   "flows" : {
     "stylus" : {
-      "output" : "*.css",
-      "stylus" : "00000000-0000-0000-0000-000000000000"
+      "stylus" : "00000000-0000-0000-0000-000000000000",
+      "output" : "*.css"
     },
     "sass" : {
       "sass" : "00000000-0000-0000-0000-000000000000",
@@ -147,9 +162,9 @@
       "output" : "*.out.css"
     },
     "js" : {
-      "output" : "*.out.js",
+      "jshint" : "00000000-0000-0000-0000-000000000000",
       "uglify" : "00000000-0000-0000-0000-000000000000",
-      "jshint" : "00000000-0000-0000-0000-000000000000"
+      "output" : "*.out.js"
     }
   },
   "profiles" : {
