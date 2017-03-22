@@ -38,6 +38,7 @@
       width: 72em/@fs;
     }
   }
+   
   tr {
     &.odd, &.even {
       &:not(:hover) {
@@ -47,24 +48,12 @@
           .badge-koor-tijd,
           .badge-sleepgroep-tijd,
           .badge-kar {
-            background: @grey-light;
+            @media screen { background: @grey-light; }
           }
-          .badge-combo.badge-combo-aanwezig, .badge-combo.badge-combo-vervanging { background: @green-light; }
-          .badge-combo.badge-combo-afwezig,                                      { background: @red-light; }
+          .badge-combo.badge-combo-aanwezig, .badge-combo.badge-combo-vervanging { @media screen { background: @green-light; } }
+          .badge-combo.badge-combo-afwezig,                                      { @media screen { background: @red-light; } }
         }
-      }
-    }
-    &.even {
-      &:not(:hover) {
-        span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) {
-        }
-      }
-    }
-    &.odd {
-      &:not(:hover) {
-        .badge-date {
-          background: @white-off;
-        }
+        .badge-date { @media screen{ background: @white-off; } }
       }
     }
   }
@@ -410,7 +399,7 @@ a.video-thumb {
       width: 100%;
       background-size: contain;
       background-repeat: no-repeat;
-      background-position: center top;
+      background-position: center center;
     }
   }
   .vriend-info {

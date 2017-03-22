@@ -248,6 +248,17 @@ img, a img {
   border: none;
 }
 
+/**
+  * Tables
+  */
+
+td, td.active, thead th, tr, tr.odd, tr.even {
+  // Drupal system.css reset
+  background: 0;
+  border: 0;
+  padding: 0;
+}
+
 table {
   margin: 1em 0;
   width: 100%;
@@ -259,7 +270,8 @@ thead th {
   color: @white;
   font-weight: bold;
   background: @primary;
-  border: none;
+  padding: 0 6em/@fs 15em/@fs;
+  vertical-align: top;
   @media print {
     color: @black;
     background: transparent;
@@ -282,32 +294,34 @@ thead th {
     .border-radius(0 @border-radius-small 0 0);
   }
 }
-
-td, th {
-  padding: 15px 3px;
-  vertical-align: top;
-}
-tr {
-  &:hover {
+tbody {
+  td, td.active {
+    padding: 12em/@fs 6em/@fs 18em/@fs;
+    vertical-align: top;
   }
-  &.odd, &.even {
-    .transition-standard();
-    &:hover {
-      background: @grey-lightest; 
+  tr:first-child {
+    td, td.active {
+      padding-top: 15em/@fs;
     }
-    background: transparent;
-    border: none;
+  }
+  tr, tr.odd, tr.even {
+    .transition-standard();
+    @media screen { background: transparent url('../images/dots-grey.svg') repeat-x 0% 98%; }
+    &:last-child {
+      background: transparent;
+    }
+    &:hover {
+      @media screen { 
+        background-color: @white-off;
+        &:not(:last-child) {
+          background-image: url('../images/dots-orange.svg');
+        }
+      }
+    }
     @media print {
       border-bottom: 1px solid @grey-dark;
     }
   }
-  &.even {
-    background: @white-off;
-    @media print { background: 0; }
-  }
-}
-td.active {
-  background: transparent;
 }
 
 td.region, td.module, td.container {
