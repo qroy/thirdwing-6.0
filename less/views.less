@@ -10,7 +10,7 @@
 .sidebar .tw-archief {
   font-size: 12em/@fs;
   line-height: 28em/12;
-  ul {
+  ul.views-summary {
     padding: 0;
     margin: 0;
     li {
@@ -50,7 +50,7 @@
  * Ledenagenda
  */
 
-.tw-agenda {
+.agenda-leden {
   @media @tablet {
     .views-field-field-datum-value {
       width: 172em/@fs;
@@ -92,49 +92,4 @@
     &.badge-date {
     }
   }
-}
-
-/**
- * Foto albums
- */
-
-.node-type-album.buildmode-full > .nd-region-middle > .field-afbeeldingen {
-  float: none;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-.node-type-album > .nd-region-middle > .field-afbeeldingen .field-item,
-.view.fotos .views-row {
-  width: 19%;
-  box-sizing: border-box;
-  display: inline-block;
-  vertical-align: top;
-}
-.view.fotos img {
-  width: 100%;
-  height: auto;
-}
-.view-fotos .fotos-album, .view-fotos .fotos-album a {
-  display: block;
-  position: relative;
-  width: 100%;
-}
-.view.fotos a .fotos-title {
-  padding: 5px;
-  width: 100%;
-  min-height: 64px;
-  box-sizing: border-box;
-  opacity: 0.8;
-  display: block;
-  background: @grey-dark;
-  color: @white;
-  position: absolute;
-  bottom: 5px;
-}
-.view.fotos a .fotos-title .year {
-  font-weight: bold;
-}
-.view.fotos a:hover .fotos-title {
-  background: @primary;
 }

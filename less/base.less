@@ -13,17 +13,19 @@ body {
   font-size: @fs/16em;
   line-height: @lh/@fs+0em;
 }
-
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  color: @grey-dark;
-  font-size: 20em/@fs;
-  line-height: 60em/20;
-  padding-top: 15em/20;
   font-family: 'Open Sans', Verdana, sans-serif;
+  a:link, a:visited {
+    color: @secondary;
+  }
+  a:hover, a:active, a:focus {
+    color: @primary;
+  }
 }
 h1 {
   color: @secondary;
+  @media print { color: @grey-dark; }
+  font-weight: 600;
   font-size: 26em/@fs;
   line-height: 30em/26;
   padding-top: 12em/26;
@@ -44,25 +46,40 @@ h2 {
   @media @wide {
     font-size: 26em/@fs;
     line-height: 60em/26;
-    padding-top: 12em/26;
-    margin-bottom: 18em/26;
+    padding-top: 11em/26;
+    margin-bottom: 19em/26;
   }
 }
 h3 {
+  color: @red;
+  text-transform: uppercase;
+  font-size: 20em/@fs;
+  line-height: 30em/20;
+  padding-top: 29em/20;
+  margin-bottom: 1em/20;
 }
 h4 {
-  font-size: 16em/@fs;
-  line-height: 30em/@fs;
-  font-weight: 700;
-  padding: 0;
-  margin: 0;
+  color: @grey;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20em/@fs;
+  line-height: 30em/20;
+  padding-top: 29em/20;
+  margin-bottom: 1em/20;
 }
 h5 {
-  font-weight: 400;
-  color: @secondary;
+  color: @grey;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16em/@fs;
+  line-height: 30em/@fs;
 }
 h6 {
-  font-weight: 300;
+  color: @grey;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16em/@fs;
+  line-height: 30em/@fs;
 }
 quote, code, fieldset {
   margin: .5em 0;
@@ -87,82 +104,68 @@ a:hover, a:focus, a:active, a.active, a.active-trail {
   text-decoration: none;
 }
 
-/* Boxed link style */
-.node p, .node li, .node .filefield-file, #breadcrumb {
-  a {
-    display: inline-block;
-    white-space: nowrap;
-    line-height: 28em/@fs;
-    padding: 0 3em/@fs;
-    margin: 2em/@fs -3em/@fs 0;
-    .border-radius(@border-radius-small);
-    &:hover {
-      background: @secondary;
-      color: @white;
-    }
-  }
-}
 ::selection {
   color: @white;
   background: @secondary;
 }
 
-ul, ul.menu, ul.links {
-  li, li.leaf, li.collapsed, li.expanded {
-    list-style: none;
-  }
+ul.menu li, .item-list ul li, li.leaf {
+  list-style-type: none;
+  list-style-image: none;
 }
-.item-list ul li {
-  list-style: none;
-}
-.nd-region-header {
-  ul, ol {
+ul, ol {
+  margin: 0 0 30em/@fs;
+  padding: 0;
+  li {
+    padding: 0;
     list-style-type: none;
-    margin: 0 0 30em/@fs;
-    padding: 0 0 0 30em/@fs;
-    ul, ol {
-      margin: 0;
-    }
-    ul > li {
-      .icon(@fa-var-circle-o);
-      position: relative;
-      &:before {
-        color: @secondary;
-        font-size: 13em/@fs;
-        line-height: 30em/13;
-        margin-right: 10em/13;
-      }
-    }
+    background: 0;
   }
-  ul {
+  &:not([class]) {
+    li {
+      margin-left: 30em/@fs;
+    }
     > li {
-      .icon(@fa-var-circle);
       position: relative;
       &:before {
         color: @secondary;
+        font-weight: bold;
+        text-align: center;
         font-size: 13em/@fs;
         line-height: 30em/13;
         margin-right: 10em/13;
+        display: inline-block;
+        width: 20em/13;
         position: absolute;
         left: -30em/13;
       }
     }
   }
+  ul, ol {
+    margin: 0;
+  }
 }
-ol > li {
-  counter-increment: count-me;
-  position: relative;
-  &:before {
-    content: counter(count-me);
-    color: @secondary;
-    font-size: 13em/@fs;
-    line-height: 30em/13;
-    margin-right: 10em/13;
-    font-weight: bold;
-    display: inline-block;
-    width: 13em/13;
-    position: absolute;
-    left: -30em/13;
+ul:not([class]) > li:before {
+  content: '\2022';
+}
+ol {
+  counter-reset: list;
+  > li {
+    counter-increment: list;
+    &:before {
+      content: counter(list);
+    }
+  }
+  ol {
+    > li:before {
+      content: counter(list, lower-latin);
+    }
+  }
+  ol ol > li:before {
+    content: counter(list, lower-roman);
+  }
+  ol ol ol > li:before {
+    content: counter(list, lower-greek);
   }
 }
 hr {
