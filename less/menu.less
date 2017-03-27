@@ -144,34 +144,33 @@
             margin-right: -10em/@fs;
           }
         }
-        li a {
-          padding: 0 20em/20;
-          @media @tablet { padding: 0 7em/20; }
-          @media @normal { padding: 0 7em/@fs; }
-          white-space: nowrap;
-          display: block;
-          &:link, &:visited {
+        li {
+          a:link, a:visited {
+            padding: 0 20em/20;
+            @media @tablet { padding: 0 7em/20; }
+            @media @normal { padding: 0 7em/@fs; }
+            white-space: nowrap;
+            display: block;
             color: @white;
           }
-          &:active, &:focus, &:hover, &.active, &.active-trail {
+          a:active, a:focus, a:hover, a.active, a.active-trail, &:hover > a {
             background: @secondary;
             .box-shadow(none);
           }
         }
-        li.first a {
+        li.first > a {
           @media @normal { .border-radius(@border-radius-small @border-radius-small 0 0); }
         }
-        li.last a {
+        li.last > a {
           @media @normal { .border-radius(0 0 @border-radius-small @border-radius-small); }
         }
         > li.expanded > a {
-          padding-right: 12px;
           &::after {
             /* arrow for submenu */
             content: '  ';
             height: 0;
             position: absolute;
-            right: 18em/@fs;
+            right: 8em/@fs;
             top: 15em/@fs;
             width: 0;
             overflow: hidden;
@@ -181,6 +180,8 @@
             @media @normal {
               border: 3em/@fs solid transparent;
               border-left-color: @white;
+              top: 13em/@fs;
+              right: 18em/@fs;
             }
           }
         }
@@ -196,13 +197,15 @@
         overflow: hidden;
         padding: 0;
         margin: 0;
-        background: @tertiary;
-        .box-shadow();
-        .border-radius();
+        background: @grey;
+        .box-shadow(@box-shadow-inset);
         @media @normal {
+          background: @tertiary;
           position: absolute;
           left: 100%;
           top: 0;
+          .box-shadow();
+          .border-radius();
         }
       }
       > ul > li:hover > ul {
@@ -281,6 +284,7 @@
     }
     > a:active, > a:focus, > a:hover, > a.active, > a.active-trail, &.active-trail > a, &.over > a, &:hover > a {
       background-color: @secondary;
+      @media @tablet { background-color: @primary; }
       color: @white;
       .border-radius(@border-radius-small);
       .box-shadow();
