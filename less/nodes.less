@@ -4,7 +4,6 @@
 
 .node {
   &.buildmode-full, &.buildmode-teaser, &.buildmode-compact {
-    position: relative;
     
     > div { /* header region */
       > .field-background {
@@ -42,14 +41,9 @@
     
     > div > div { /* middle region */
       > .field-node-type {
-        text-align: center;
-        color: @white;
-        .border-radius(@border-radius-small);
-        width: 130em/@fs;
         box-sizing: border-box;
         overflow: hidden;
-        margin: 0 0 30em/@fs;
-        .border-radius(0 0 @border-radius-large @border-radius-large);
+        margin: 30em/@fs 0 0;
       }
       > .field-afbeeldingen {
         margin: 30em/@fs 0;
@@ -58,6 +52,19 @@
           box-sizing: border-box;
           width: 100%;
           height: auto;
+        }
+        @media @phone-ls { 
+          display: block; 
+          float: right;
+          width: 50%;
+          box-sizing: border-box;
+          padding: 0 0 0 20em/@fs;
+          .image-div {
+            height: 330em/@fs;
+            background-size: contain;
+            background-position: right bottom;
+            background-repeat: no-repeat;
+          }
         }
       }
       > .field-author {
@@ -78,23 +85,13 @@
         font-weight: 200;
       }
       > .field-datum {
-        margin: 30em/@fs 0 11em/@fs;
-        padding: 0 0 11em/@fs;
-        .border;
+        margin: 30em/@fs 0 12em/@fs;
+        padding: 0 0 18em/@fs;
         .badge-time { float: right; }
-        @media @phone-ls {
-          float: left;
-          clear: left;
-          width: 280/580 * 100%;
-        }
+        background: transparent url('../images/line-dots-orange.svg') repeat-x left bottom;
       }
       > .field-locatie, .field-l-bijzonderheden {
         text-transform: uppercase;
-        @media @phone-ls {
-          float: left;
-          clear: left;
-          width: 280/580 * 100%;
-        }
         .icon(@fa-var-map-marker);
         &:before { 
           color: @red; 
@@ -106,6 +103,13 @@
           top: -30em/@fs;
           left: 22em/@fs;
           margin-right: 22em/@fs;
+        }
+      }
+      .field-left {
+        @media @phone-ls {
+          float: left;
+          clear: left;
+          width: 50%;
         }
       }
       .field-clear-block {
@@ -123,6 +127,7 @@
 }
 .node {
   &.buildmode-teaser, &.buildmode-compact {
+    position: relative;
     background: @white;
     margin: 0 -20em/@fs 60em/@fs;
     padding: 0 20em/@fs;
@@ -136,26 +141,11 @@
       > .field-title {
         min-height: 150em/@fs;
         display: block;
-        @media @phone-ls {
-          float: left;
-          width: 280/580 * 100%;
-          clear: left;
-        }
       }
       > .field-afbeeldingen {
         display: none;
         @media @phone-ls { 
           display: block; 
-          float: right;
-          width: 300/580 * 100%;
-          box-sizing: border-box;
-          padding: 0 0 0 20em/@fs;
-          .image-div {
-            height: 330em/@fs;
-            background-size: contain;
-            background-position: right top;
-            background-repeat: no-repeat;
-          }
         }
       }
       > .field-body {
@@ -214,4 +204,9 @@
   &:hover, &:focus, &:active {
     color: @primary;
   }
+}
+
+.admininfo, .messages {
+  position: relative;
+  z-index: 3;
 }
