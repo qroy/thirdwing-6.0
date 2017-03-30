@@ -353,53 +353,7 @@ ul.links li, ul.inline li {
   margin: 0;
 }
 
-/**
- * Collapsible fieldsets
- */
-fieldset {
-  margin: 1em 0;
-  padding: 1em;
-  border: 1px solid @grey-light;
-  .border-radius();
-}
-.buildmode-teaser fieldset {
-  border-color: @white;
-}
 
-/* Targets IE 7. Fixes background image in field sets. */
-*:first-child+html fieldset {
-  padding: 0 1em 1em;
-  background-position: 0 .75em;
-  background-color: transparent;
-}
-
-*:first-child+html fieldset > .description, *:first-child+html fieldset .fieldset-wrapper .description {
-  padding-top: 1em;
-}
-
-fieldset legend {
-  /* Fix disappearing legend in FFox */
-  display: block;
-}
-
-*:first-child+html fieldset legend, *:first-child+html fieldset.collapsed legend {
-  display: inline;
-}
-
-html.js fieldset.collapsed {
-  background: transparent;
-  padding-top: 0;
-  padding-bottom: .6em;
-}
-
-html.js fieldset.collapsible legend a {
-  padding-left: 2em; /* LTR */
-  background: url(../images/menu-expanded.png) no-repeat 0% 50%; /* LTR */
-}
-
-html.js fieldset.collapsed legend a {
-  background: url(../images/menu-collapsed.png) no-repeat 0% 50%; /* LTR */
-}
 
 /**
  * Syndication icons and block
@@ -494,21 +448,4 @@ tr.dblog-page-not-found, tr.dblog-access-denied {
 }
 tr.dblog-page-not-found td.active, tr.dblog-access-denied td.active {
   background: #c7eec7;
-}
-
-/**
- * Status report colors.
- */
-table.system-status-report tr.error, table.system-status-report tr.error th {
-  background-color: #fcc;
-  border-color: #ebb;
-  color: #200;
-}
-table.system-status-report tr.warning, table.system-status-report tr.warning th {
-  background-color: #ffd;
-  border-color: #eeb;
-}
-table.system-status-report tr.ok, table.system-status-report tr.ok th {
-  background-color: #dfd;
-  border-color: #beb;
 }

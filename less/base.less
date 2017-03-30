@@ -95,6 +95,10 @@ p {
   margin: 0 0 24em/@fs;
   padding: 0;
 }
+strong, b {
+  color: @red;
+  text-transform: uppercase;
+}
 .fa {
   font-family: 'Open Sans', Verdana, sans-serif;
 }
@@ -316,7 +320,6 @@ tbody {
     }
     &:hover {
       @media screen { 
-        background-color: @white-off;
         &:not(:last-child) {
           background-image: url('../images/dots-orange.svg');
         }
@@ -367,16 +370,46 @@ span.read-more {
 }
 
 .messages, .preview {
-  margin: 0 0 1.5em; /* 18px / 12px */
-  padding: 0.75em 1em; /* 9px / 12px */
+  margin: 0 0 24em/@fs;
+  padding: 24em/@fs;
 }
-.messages.status {
-  border: 1px solid #beb;
-  background-color: #dfd;
+.messages.status,
+.messages.error,
+.messages.warning {
+  margin: 0 0 24em/@fs;
+  padding: 24em/@fs;
+  border: 0;
+  background-color: @green-light;
+  .border-radius(@border-radius-large);
 }
-
+.messages.error {
+  background-color: @red-light;
+}
+.messages.warning {
+  background-color: @yellow-light;
+}
 .messages ul {
   margin: 0;
+}
+/**
+ * Status report colors.
+ */
+.system-status-report, .update {
+  tr.error, tr.error th {
+    background-color: @red-light;
+    border-bottom: 1px solid @red;
+    background-image: none;
+  }
+  tr.warning, tr.warning th {
+    background-color: @yellow-light;
+    border-bottom: 1px solid @yellow;
+    background-image: none;
+  }
+  tr.ok, tr.ok th {
+    background-color: @green-light;
+    border-bottom: 1px solid @green;
+    background-image: none;
+  }
 }
 
 // FORMS
@@ -393,7 +426,7 @@ input {
     outline: none;
     border: 2em/14 solid @orange;
   }
-  &:hover:read-write:not(:focus) {
+  &:hover:read-write:not(:focus):not(:disabled) {
     border: 2em/14 solid @grey;
   }
   &:read-only, &:disabled {
@@ -403,6 +436,9 @@ input {
   &[type=submit], &[type=reset] {
     .button;
     cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     &:focus, &:hover {
       border-color: transparent;
     }
@@ -415,20 +451,20 @@ input {
       cursor: pointer;
       display: inline-block;
       vertical-align: middle;
-      width: 10em/14;
-      height: 10em/14;
+      width: 12em/14;
+      height: 12em/14;
       margin-right: 10em/14;
-      border: 4em/14 solid @white-off;
+      border: 2em/14 solid @white-off;
       background: @white-off;
     }
     &:checked ~ .option__indicator {
       background: @grey-dark;
     }
     &:focus ~ .option__indicator {
-      border: 4em/14 solid @orange;
+      border-color: @orange;
     }
     &:disabled ~ .option__indicator {
-      border: 4em/14 solid @grey-light;
+      border-color: @grey-light;
     }
     &:disabled:checked ~ .option__indicator {
       background: @grey;
@@ -473,22 +509,35 @@ select {
   &:hover:not(:focus) {
     border: 2em/14 solid @grey;
   }
-}
-.select__arrow {
-  width: 0;
-  height: 0;
-  pointer-events: none;
-  border-width: 8px 5px 0 5px;
-  border-style: solid;
-  border-color: #7b7b7b transparent transparent transparent;
+  ~ .select__arrow {
+    display: inline-block;
+    position: relative;
+    left: -20em/14;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-width: 8em/14 5em/14 0 5em/14;
+    border-style: solid;
+    border-color: @grey transparent transparent transparent;
+  }
+  &[multiple] ~ .select__arrow {
+    display: none;
+  }
 }
 label:hover input ~ .option__indicator {
-    border: 4em/14 solid @grey;
+    border-color: @grey;
 }
 label:not(.option) {
   font-weight: normal;
   color: @red;
   text-transform: uppercase;
+}
+/* Animated throbber */
+html.js input.form-autocomplete {
+  background-position: 100% 40px; /* LTR */
+}
+html.js input.throbbing {
+  background-position: 100% -15px; /* LTR */
 }
 .form-item {
   position: relative;
