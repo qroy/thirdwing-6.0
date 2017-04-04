@@ -25,17 +25,23 @@ $date = format_date($node->created, 'custom', 'F Y');
    <title>Vrienden van Thirdwing Nieuwsbrief</title>
 <style type="text/css" media="screen">
       body {
-         background-color: #f5f6f4;
+         background-color: #f0f0ee;
          margin: 0;
          padding: 0;
       }
 
       h2 {
         font-family: Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        line-height: 16px;
+        font-size: 24px;
+        line-height: 36px;
         margin: 0;
         padding: 0;
+        color: #eb7314;
+      }
+      h3 {
+        text-transform: uppercase;
+        font-size: 20px;
+        line-height: 36px;
       }
 
       a img {
@@ -62,7 +68,7 @@ $date = format_date($node->created, 'custom', 'F Y');
       }
       .date p {
       	font-family: Verdana;
-      	font-size: 10px;
+      	font-size: 14px;
       	font-weight: bold;
         color: #000000;
       	display: inline;
@@ -79,18 +85,23 @@ $date = format_date($node->created, 'custom', 'F Y');
 
       .mainbar p {
       	font-family: Verdana;
-      	font-size: 12px;
+      	font-size: 14px;
       	color: #000000;
       	margin: 0 0 10px 0;
       	text-align: left;
       }
       .mainbar p a {
-      	color: #a75859;
+      	color: #eb7314;
+      }
+      .mainbar ul li {
+        font-family: Verdana;
+        font-size: 14px;
+        font-weight: normal;
       }
       .mainbar ul a {
       	font-family: Verdana;
-      	font-size: 12px;
-      	color: #a75859;
+      	font-size: 14px;
+      	color: #eb7314;
       }
       td.contact {
       	font-family: Verdana;
@@ -117,7 +128,7 @@ $date = format_date($node->created, 'custom', 'F Y');
       .footer a {
       	font-family: Verdana;
       	font-size: 11px;
-      	color: #a75859;
+      	color: #eb7314;
       }
 </style>
 </head>

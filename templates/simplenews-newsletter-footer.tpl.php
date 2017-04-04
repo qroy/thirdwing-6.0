@@ -30,7 +30,7 @@
            <td width="25%" valign="top" class="contact" align="center"><a href="http://www.thirdwing.nl/node/540">Onze Vrienden</td>
            <td width="25%" valign="top" class="contact" align="center"><a href="http://www.thirdwing.nl">www.thirdwing.nl</a></td>
            <td width="25%" valign="top" class="contact" align="center"><a href="mailto:info@thirdwing.nl">info@thirdwing.nl</a><br />tel. 045 - 5 22 14 27</td>
-           <td width="25%" valign="top" class="contact" align="center">Rabobank Heerlen 14.60.25.253</td>
+           <td width="25%" valign="top" class="contact" align="center">Rabobank Heerlen IBAN NL84 RABO 0146 0252 53</td>
         </tr>
      </table>
 
