@@ -96,8 +96,8 @@ p {
   padding: 0;
 }
 strong, b {
-  color: @red;
   text-transform: uppercase;
+  color: @primary;
 }
 .fa {
   font-family: 'Open Sans', Verdana, sans-serif;
@@ -105,6 +105,7 @@ strong, b {
 .fa:before {
   font-family: fontawesome;
   margin-right: 2px;
+  font-weight: normal;
 }
 a {
   .transition-standard();
@@ -128,6 +129,28 @@ a:hover, a:active, a.active, a.active-trail {
 ::selection {
   color: @white;
   background: @secondary;
+}
+#center p {
+  a:link, a:visited {
+    @media screen { 
+      white-space: nowrap;
+      position: relative;
+      display: inline-block;
+      color: @red; 
+      padding: 0 2px;
+      margin: 0 -2px;
+      text-transform: uppercase;
+//      border-color: transparent;
+//      border-bottom: 2px dotted @red;
+    }
+  }
+  a:hover, a:active, a.active, a.active-trail {
+    @media screen { 
+      background: @red; color: @white; 
+      .border-radius(@border-radius-small);
+//      border-color: transparent;
+    }
+  }
 }
 
 hr {
