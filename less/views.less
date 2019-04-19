@@ -306,8 +306,12 @@ a.video-thumb {
     }
     .persoon {
       padding: 3em/12 3em/12;
-      font-size: 10em/@fs;
-      line-height: 24em/10;
+      font-size: 9em/@fs;
+      line-height: 24em/9;
+      @media @tablet {
+        font-size: 10em/@fs;
+        line-height: 24em/10;
+      }
       @media @normal {
         font-size: 12em/@fs;
         line-height: 24em/12;
