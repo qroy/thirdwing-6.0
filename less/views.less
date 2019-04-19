@@ -235,11 +235,10 @@ a.video-thumb {
 /**
  * Combo en Bestuur en Commissies
  */
-
 .personen {
   margin-right: -12em/@fs;
   overflow: hidden;
-  .views-row {
+  .persoon-wrapper {
     width: 100% / 4;
     height: 228em/@fs;
     box-sizing: border-box;
@@ -274,8 +273,8 @@ a.video-thumb {
       display: none;
     }
   }
-  &.personen-leden, &.personen-ledenlijst {
-    .views-row {
+  &.personen-leden, &.personen-ledenlijst, &.personen-opstelling {
+    .persoon-wrapper {
       @media @tablet { width: 100% / 5; }
       @media @normal { width: 100% / 6; }
       height: auto;
@@ -290,13 +289,45 @@ a.video-thumb {
     }
     .persoon-naam { 
       min-height: 24em/12;
-     }
+    }
     .persoon-achternaam { display: none; }
+  }
+  &.personen-opstelling {
+    .persoon-wrapper {
+      width: 100% / 14;
+      padding: 0 3em/@fs 12em/@fs 0;
+      &.persoon-101, &.persoon-201, &.persoon-301, &.persoon-401, &.persoon-501, &.persoon-503 {
+        clear: left;
+      }
+      &.persoon-201 { margin-left: 100% / 28; }
+      &.persoon-301 { margin-left: 100% / 14; }
+      &.persoon-401 { margin-left: 100% / 28 * 3; }
+      &.persoon-601 { margin-left: 100% / 28 * 9; }
+    }
+    .persoon {
+      padding: 3em/12 3em/12;
+      font-size: 10em/@fs;
+      line-height: 24em/10;
+      @media @normal {
+        font-size: 12em/@fs;
+        line-height: 24em/12;
+      }
+      color: @white;
+    }
+    .persoon-A  { background: @red;         }
+    .persoon-B  { background: @blue;        }
+    .persoon-C  { background: @purple;      }
+    .persoon-D  { background: @yellow;      }
+    .persoon-E  { background: @green;       }
+    .persoon-Y1 { background: @grey;        }
+    .persoon-Z1,
+    .persoon-Z2,
+    .persoon-Z3,
+    .persoon-Z4 { background: @grey-light;  }
   }
   &.personen-ledenlijst {
     .persoon-foto {
       width: 58em/@fs;
-      
     }
     tr {
       &.odd, &.even {
@@ -325,7 +356,8 @@ a.video-thumb {
 .personen-concert    .persoon-functie .persoon-functie-concert    { display: inline-block; }
 .personen-pr         .persoon-functie .persoon-functie-pr         { display: inline-block; }
 .personen-ir         .persoon-functie .persoon-functie-ir         { display: inline-block; }
-.personen-feest      .persoon-functie .persoon-functie-feest      { display: inline-block; } 
+.personen-feest      .persoon-functie .persoon-functie-feest      { display: inline-block; }
+.personen-tec        .persoon-functie .persoon-functie-tec        { display: inline-block; }
 .personen-verjaardag .persoon-functie .persoon-functie-verjaardag { display: inline-block; }
 
 .persoon-aspirant {
