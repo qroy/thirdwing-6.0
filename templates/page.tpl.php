@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php print $head ?>
 <title><?php print $head_title ?></title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php print $styles ?>
 <!--[if lt IE 7]><?php print phptemplate_get_ie_styles(); ?><![endif]-->
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
