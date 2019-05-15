@@ -18,7 +18,10 @@ body {
   position: relative;
   @media @normal {
     padding: 0 80em/@fs;
-    max-width: 920em/@fs;
+    max-width: @normal-width;
+  }
+  @media @wide {
+    max-width: @wide-width;
   }
 }
 
@@ -35,8 +38,8 @@ body {
     box-sizing: border-box;
     height: 203em/@fs;
     position: relative;
-    background: transparent url(../images/header.jpg) no-repeat 50% 50%;
-    background-size: 100%;
+//    background: transparent url(../images/header.jpg) no-repeat 50% 50%;
+//    background-size: 100%;
   }
   @media @normal {
     padding: 15em/@fs 20em/@fs;
