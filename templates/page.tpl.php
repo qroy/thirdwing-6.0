@@ -7,7 +7,7 @@
   <head>
     <?php print $head ?>
     <title><?php print $head_title ?></title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <?php print $styles ?>
 
     <!--[if lt IE 7]>
