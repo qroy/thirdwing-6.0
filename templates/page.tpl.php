@@ -31,13 +31,7 @@
 <div id="breadcrumb"><?php print $breadcrumb; ?></div>
 <?php if ($show_messages && $messages): print $messages; endif; ?>
 <?php print $help; ?>
-<?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block"><a href="#" class="toggle-tabs fa fa-pencil-square-o">Bewerk</a><ul class="tabs primary">'. $tabs;
-  if (arg(0) == 'node') :
-  global $user; $user_roles = array_keys($user->roles);
-  if (in_array(6, $user_roles) || in_array(12, $user_roles)) { print '<li><a href="' . $_GET['q'] . '">' . $_GET['q'] . '</a></li>'; }
-  endif;
-  print '</ul>'; endif;
-  if ($tabs): print '</div>'; endif;
+<?php if ($tabs): print '<div id="tabs-wrapper" class="clear-block"><a href="#" class="toggle-tabs fa fa-pencil-square-o">Bewerk</a><ul class="tabs primary">'. $tabs . '</ul></div>'; endif;
 ?>
 <?php if ($tabs2): print '<ul class="tabs secondary">'. $tabs2 .'</ul>'; endif; ?>
 <?php if ($title): print '<h1>'. $title .'</h1>'; endif; ?>

@@ -29,7 +29,7 @@ function phptemplate_comment_wrapper($content, $node) {
 /**
  * Override or insert PHPTemplate variables into the templates.
  */
-function thirdwing_30_preprocess_page(&$vars, $hook) {
+function phptemplate_preprocess_page(&$vars, $hook) {
   if ((arg(0) == 'node') && (is_numeric(arg(1)))) {
     if (!$vars['node']) $vars['node'] = node_load(arg(1));
   }
@@ -40,7 +40,7 @@ function thirdwing_30_preprocess_page(&$vars, $hook) {
     }
   }
 }
-function thirdwing_30_preprocess_node(&$vars) {
+function phptemplate_preprocess_node(&$vars) {
   if (module_exists('taxonomy') && $vars['node']->nid) {
     foreach (taxonomy_node_get_terms($vars['node']) as $term) {
       $vars['node_classes'] = $vars['node_classes'] . ' taxonomy-' . eregi_replace('[^a-z0-9]', '-', $term->name);
@@ -90,7 +90,7 @@ function phptemplate_date_all_day_label() {
   return '';
 }
 
-function thirdwing_30_filefield_file($file) {
+function phptemplate_filefield_file($file) {
   // Views may call this function with a NULL value, return an empty string.
   if (empty($file['fid'])) {
     return '';
