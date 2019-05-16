@@ -1,7 +1,7 @@
 ; $Id: garland.info,v 1.5 2007/07/01 23:27:32 goba Exp $
-name = Thirdwing 3.0
-description = Versie 3 van de Thirdwing site, gemaakt in 2015-2016.
-version = 3.0
+name = Thirdwing 2.4
+description = Versie 2.4 van de Thirdwing site, gemaakt in 2019. Responsive.
+version = 2.4
 core = 6.x
 engine = phptemplate
 stylesheets[all][] = css/style.css
