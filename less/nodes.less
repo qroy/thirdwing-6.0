@@ -1,171 +1,242 @@
 /**
  * Nodes and Comments
  */
-.field-background { display: none; }
-.node {
-  > div > div > .field-afbeeldingen {
-    width: 40%;
-    float: right;
-    margin: 0 0 1.5em 1.5em; /* 18px / 12px */
-    img {
-      width: 100%;
-      height: auto;
-      .border-radius();
+.buildmode-full, .buildmode-teaser, .buildmode-compact {
+  > .node {
+    
+    > div { /* header region */
+      > .field-background {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 0;
+        .node-background {
+          width: 100%;
+          height: 220em/@fs;
+          background-position: center 10%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-color: @grey;
+          .border-radius(@border-radius-large @border-radius-large 0 0);
+          &:after {
+            content: ' ';
+            position: relative;
+            z-index: 1;
+            display: block;
+            width: 100%;
+            height: 220em/@fs;
+            background: @white;
+            opacity: 0.75;
+            .border-radius(@border-radius-large @border-radius-large 0 0);
+          }
+        }
+      }
+    }   
+    > div > div { /* middle region */
+      > .field-node-type {
+        margin: 0 0 24em/@fs;
+        display: block; // override badge inline-block
+      }
+      > .field-afbeeldingen {
+        margin: 0;
+        overflow: hidden;
+        display: block; 
+        float: right;
+        width: 50%;
+        box-sizing: border-box;
+        padding: 0 0 0 24em/@fs;
+        img {
+          box-sizing: border-box;
+          width: 100%;
+          height: auto;
+        }
+        .image {
+          height: 330em/@fs;
+          background-size: contain;
+          background-position: right top;
+          background-repeat: no-repeat;
+        }
+      }
+      > .field-author, .field-post-date {
+        font-weight: 200;
+        em { font-style: normal; }
+      }
+      > .field-locatie, .field-l-bijzonderheden {
+        text-transform: uppercase;
+        > .field-items {
+          padding: 0 4em/@fs;
+//          position: relative;
+//          margin-right: 22em/@fs;
+        }
+      }
+      .field-box {
+        box-sizing: border-box;
+        background: @white;
+        .border-radius();
+        margin: 0 0 5em/@fs;
+        padding: 4em/@fs 8em/@fs;
+        .badge-date { text-align: left; }
+        .badge-time { float: right; margin: 0; }
+        .badge { margin: 0; } 
+      }
+      .field-left {
+        float: left;
+        clear: left;
+        width: 50%;
+      }
+      .field-clear-block {
+        height: 0;
+      }
     }
+    // Laat social buttons alleen zien op pagina's die openbaar zijn
+    &.taxonomy-Leden     > div > div > .field-read-more .button-social { display: none; }
+    &.taxonomy-Bezoekers > div > div > .field-read-more .button-social { display: inline-block; }
   }
-  .field-node-type {
-    display: inline-block;
-    background: @grey-light;
-    color: @white;
-    font-weight: bold;
-    text-align: center;
-    width: 102px;
-    margin-bottom: 1em;
-    .border-radius();
-  }
-  .field-post-date, .field-author {
-    float: left;
-    font-size: 0.8em;
-    font-style: italic;
-    color: @grey;
-    margin-right: 3px;
-  }
-  .field-author:after {
-    content: ' - ';
-  }
-  .field-body {
-    clear: left;
-  }
-  
-  @media screen {
-
-  .field-tijd-aanwezig, .field-sleepgroep, .field-sleepgroep-aanwezig, .field-keyboard, .field-gitaar, .field-basgitaar, .field-drums, .field-vervoer {
-    float: left;
-    .field-label-inline-first {
-      display: none;
-    }
-  }
-  
-  } // screen
-  
 }
-
-.buildmode-teaser > .node {
-  margin: 0 0 1.5em;
-  > div > div {
-    background: @white-off;
-    padding: 1.5em 1.5em 3em ; /* 18px / 12px */
+.buildmode-teaser, .buildmode-compact {
+  > .node {
     position: relative;
-    .border-radius();
-    > .field-afbeeldingen {
-      width: 30%;
-    }
-    > .field-node-type {
-      margin: 0;
-      background: @white;
-      color: @grey;
-      font-weight: normal;
-    }
-    > .field-title h2 a {
-
-        color: @pink;
-        &:hover { color: @purple; }
-
-    }
-  }
-  &.taxonomy-Leden > div > div {
-    border: 3px solid @pink;
-    background: @white;
-    > .field-node-type {
-      background: @grey-light;
-      color: @white;
-      font-weight: bold;
-    }
-    &:before {
-      content: 'voor leden';
-      position: absolute;
-      right: 25px;
-      top: 0;
-      background: @pink;
-      color: @white;
-      text-align: center;
-      width: 100px;
-      line-height: 2em;
-      .border-radius(0 0 @border-radius-small @border-radius-small);
-    }
-  }
-  &.taxonomy-Bezoekers > div > div {
-    border: 0;
     background: @white-off;
-    &:before {
-      content: '';
+    padding: 24em/@fs;
+    margin: 0 0 60em/@fs;
+    .border-radius(@border-radius-large);
+
+    > div { /* header region */
+      > .field-background {
+        .node-background {
+          height: 434em/@fs;
+          .border-radius(@border-radius-large);
+          &:after {
+            height: 434em/@fs;
+            .border-radius(@border-radius-large);
+          }
+        }
+      }
+    }
+    > div > div { /* middle region */
+      > .field-title {
+        height: 150em/@fs;
+        display: block;
+        overflow: hidden;
+      }
+    }
+    &.taxonomy-Leden {
+      background: @white;
+      border: 2px solid @red;
+      &:before {
+       @media screen {
+        z-index: 5;
+        content: 'voor leden';
+        position: absolute;
+        right: 30em/@fs;
+        top: 0;
+        background: @red; 
+        color: @white;
+        text-align: center;
+        width: 115em/@fs;
+        line-height: 30em/@fs;
+        .border-radius(0 0 @border-radius-small @border-radius-small);
+       }
+      }
+    }
+    &.taxonomy-Bezoekers {
+      background: @white-off;
+      border: 0;
+      &:before {
+        content: '';
+      }
     }
   }
 }
-.node .field-ledeninfo {
-  display: inline-block;
-  border: 1px solid @pink;
-  padding: 1.5em 1.5em 3em ; /* 18px / 12px */
+.buildmode-full {
+  > .node {
+    > div > div { /* middle region */
+      > .field-node-type {
+        margin-top: 100em/@fs;
+      }
+      > .field-box {
+        background: @white-off;
+      }
+    }
+  }
 }
-.node .field-ledeninfo .field-label {
-  font-size: 1.666666666666667em; /* 20px / 12px */
-  line-height: 1.8em; /* 36px / 20px */
-  font-weight: normal;
+.nd-region-middle {
+  position: relative;
+  z-index: 2;
 }
-
-
-.node img.imagecache-preview-bak {
-  width: 30%;
-  height: auto;
+.node.node-type-locatie > div > div {
+  > .field-title p {
+    margin: 0;
+  }
+  > .field-l-plaats {
+    color: @red;
+  }
 }
-.buildmode-teaser .inline img {
+.front h1 {
   display: none;
 }
+.buildmode-full .node-type-foto > div > div {
+  > .field-afbeeldingen {
+    width: 100%;
+    padding: 0;
+  }
+}
+.field-inline, .field-inline div {
+  display: inline-block;
+  vertical-align: middle;
+  .badge {
+    margin-right: 0;
+  }
+}
+.field .field-label-inline-first {
+  display: inline-block;
+  min-width: 160em/@fs; 
+}
+.field-inline .field-label-inline-first {
+  display: inline;
+}
+.field-block {
+  display: block;
+}
+.field-margin-left {
+  margin-left: 12em/@fs;
+}
+.field-margin-right {
+  margin-right: 12em/@fs;
+}
+.field-group {
+  clear: left;
+}
+.field .field-label-inline-first {
+  font-weight: normal;
+  color: @red;
+  text-transform: uppercase;
+}
 
-.field-read-more a {
-  &:link, &:visited {
-    display: inline-block;
-    padding: 0 20px;
-    background: @pink;
-    color: @white;
-    line-height: 2em;
-    .border-radius();
-  }
-  &:hover, &:active, &:focus {
-    background: @purple;
-  }
-  &::after {
-    content: '  ';
-    height: 0;
-    position: relative;
-    right: 0;
-    width: 0;
-    border: 4px solid transparent;
-    border-left-color: @white;
-    margin: 0 0 0 5px;
-    overflow: hidden;
-    display: inline-block;
-  }
+.admininfo, .messages {
+  position: relative;
+  z-index: 3;
 }
-.admininfo {
-  font-size: 0.92em;
-  color: @grey;
+
+.field-type-viewfield {
+  clear: both;
 }
-.node {
-  margin: 0 0 1.33333333333333em 0; /* 16px / 12px */
+.editablefields .description {
+  display: none;
 }
-.new {
-  color: #ffae00;
-  font-size: 0.92em;
-  font-weight: bold;
-  float: right;
+.editablefields .form-text {
+  max-width: 100px;
+  font-size: 10px;
 }
-.preview .node, .preview .comment {
-  margin: 0;
-  padding: 0.5em 0;
-  border: 0;
-  background: 0;
+.editablefields .form-select {
+  max-width: 50px;
+  font-size: 10px;
 }
+
+/**
+ * Comments
+ */
 
 #comments {
   margin: 0;
@@ -206,47 +277,6 @@
   width: 65px;
   height: auto;
 }
-
-.indented {
-  margin-left: 25px;
-}
-
-.views-field-edit-node a, .views-field-delete-node a, .views-field-clone-node a {
-  display: block;
-  text-indent:-9009px;
-  height: 16px;
-  width: 16px;
-}
-.views-field-edit-node a {
-  background-image: url(../images/page_edit.png);
-}
-.views-field-delete-node a {
-  background-image: url(../images/page_delete.png);
-}
-.views-field-clone-node a {
-  background-image: url(../images/page_add.png);
-}
-.field-type-viewfield {
-  clear: both;
-}
-.editablefields .description {
-  display: none;
-}
-.editablefields .form-text {
-  max-width: 100px;
-  font-size: 10px;
-}
-.editablefields .form-select {
-  max-width: 50px;
-  font-size: 10px;
-}
-
-span.inline .caption {
-  display: none;
-}
-.taxonomy-Leden .image-attach-body {
-  padding-right: 20px;
-}
 .node .links, .comment .links {
   text-align: left; /* LTR */
 }
@@ -284,293 +314,11 @@ ul.links li, ul.inline li {
   position: relative;
   top: -5px;
 }
-.view-content .node ul.links li {
-}
-li.comment_comments a {
-  padding: 2px 0px 2px 20px;
-  background: transparent url(../images/comments.png) no-repeat 0 50%; 
-}
-li.comment_add a, li.comment_reply a {
-  padding: 2px 0px 2px 20px;
-  background: transparent url(../images/comment_add.png) no-repeat 0 50%; 
-}
-li.comment_edit a {
-  padding: 2px 0px 2px 20px;
-  background: transparent url(../images/comment_edit.png) no-repeat 0 50%; 
-}
-li.comment_delete a {
-  padding: 2px 0px 2px 20px;
-  background: transparent url(../images/comment_delete.png) no-repeat 0 50%; 
-}
-li.upload_attachments a {
-  padding: 2px 0px 2px 20px;
-  background: transparent url(../images/attach.png) no-repeat 0 50%; 
-}
-
-/**
- * Ledenagenda
- */
-
-.view-leden-agenda .views-field-title {
-  .Wereldlijk, .Kerkelijk, .Vergadering, .Koorreis, .Concours, .Overige, .Programma {
-    font-weight: bold;
-    font-size: 1.2em;
-  }
-  a { 
-    display: inline-block;
-    line-height: 2em; 
-    padding: 4px 0;
-    margin: 2px 0;
-  }
-}
-.view-leden-agenda .views-field-field-datum-value {
-  width: 12em;
-}
-.view-leden-agenda .views-field-field-sleepgroep-value {
-  width: 9em;
-}
-.view-leden-agenda .views-field-field-keyboard-value {
-  min-width: 6em;
-  max-width: 12em;
-}
-
-/**
- * Foto albums
- */
-
-.node-type-album > .nd-region-header > .field-afbeeldingen {
-  float: none;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-.node-type-album > .nd-region-header > .field-afbeeldingen .field-item,
-.view.fotos .views-row {
-  width: 19%;
-  box-sizing: border-box;
-  display: inline-block;
-  vertical-align: top;
-}
-.view.fotos img {
-  width: 100%;
-  height: auto;
-}
-.view-fotos .fotos-album, .view-fotos .fotos-album a {
-  display: block;
-  position: relative;
-  width: 100%;
-}
-.view.fotos a .fotos-title {
-  padding: 5px;
-  width: 100%;
-  min-height: 64px;
-  box-sizing: border-box;
-  opacity: 0.8;
-  display: block;
-  background: @grey-dark;
-  color: @white;
-  position: absolute;
-  bottom: 5px;
-}
-.view.fotos a .fotos-title .year {
-  font-weight: bold;
-}
-.view.fotos a:hover .fotos-title {
-  background: @purple;
-}
-
-/**
- * MP3's
- */
-
-th.views-field-field-mp3-fid {
-  width: 160px;
-}
-th.views-field-duration {
-  width: 30px;
-}
-th.views-field-field-audio-type-value {
-  width: 60px;
-}
-th.views-field-field-audio-jaar-value {
-  width: 40px;
-}
-th.views-field-field-audio-uitvoerende-value {
-  width: 200px;
-}
-th.views-field-field-audio-nummer-value {
-  width: 40px;
-}
-
-
-/**
- * Smoelenblad
- */
-.smoelenblad .lid {
-  float: left;
-  display: block;
-  width: 7.2527472527472527472527472527473%; /* 64px / 910 px */
-  height: 130px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 9px;
-  margin: 0 0.43956043956043956043956043956044% 4px 0; /* 4px / 910 px */
-  padding: 0;
-  overflow: hidden;
-}
-.smoelenblad .views-row-13 .lid,
-.smoelenblad .views-row-26 .lid,
-.smoelenblad .views-row-39 .lid,
-.smoelenblad .views-row-52 .lid,
-.smoelenblad .views-row-65 .lid {
-  margin-right: 0;
-}
-.smoelenblad .lid-border {
-  display: block;
-}
-.smoelenblad .lid.code-S1 .lid-border {
-  background-color: #c9c9e9;
-}
-.smoelenblad .lid.code-S2 .lid-border {
-  background-color: #f7dfb1;
-}
-.smoelenblad .lid.code-A .lid-border {
-  background-color: #b6db91;
-}
-.smoelenblad .lid.code-B .lid-border {
-  background-color: #a4ddf6;
-}
-.smoelenblad .lid.code-T .lid-border {
-  background-color: #f6a6ab;
-}
-.smoelenblad .lid.code-D .lid-border {
-  background-color: @grey-light;
-}
-.smoelenblad .lid img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 .comment .submitted {
   float: none;
   clear: none;
   padding-left: 0;
   margin: 0 0 0 0;
-}
-
-/**
- * Ledenlijst bezoekers, Sleepgroepen
- */
-.view-id-koorleden.view-display-id-block_1 .item-list, .view-id-koorleden.view-display-id-block_5 .item-list {
-  display: block;
-  float: left;
-  margin: 0.8450704225352112676056338028169%; /* 6px / 710px */
-  min-height: 250px;
-  width: 18.309859154929577464788732394366%; /* 130px / 710px */
-}
-
-.uitkoor {
-  text-decoration: line-through;
-}
-.kar {
-  font-style: italic;
-}
-/**
- * Combo en Bestuur en Commissies
- */
-.box-leden .view-content {
-  ul {
-    margin: 0;
-    display: block;
-    width: 100%;
-    li { 
-      display: block;
-      box-sizing: border-box;
-      width: 32.609%; /* 300 / 920 */
-      height: 100px;
-      background: none;
-      text-align: left;
-      float: left;
-      padding: 5px;
-      margin: 0 1.087% 1.087% 0; /* 10 / 920 */
-      background: @grey-lightest;
-      &:nth-child(3n+0) {
-        margin-right: 0;
-      }
-    }
-  }
-  h3 {
-    display: inline-block;
-    width: 100%;
-  }
-}
-.box-combo, .box-verjaardag {
-  .view-content ul li {
-    width: 24.272%; /* 250 / 1030 */
-    margin: 0 0.971% 0.971% 0; /* 10 / 1030 */
-    &:nth-child(3n+0) {
-      margin-right: 0.971%;
-    }
-    &:nth-child(4n+0) {
-      margin-right: 0;
-    }
-  }
-}
-.box-leden .picture, .view-commissies .picture {
-  float: right;
-  width: 65px;
-}
-.box-leden .picture img, .view-commissies .picture img {
-  width: 100%;
-  height: auto;
-}
-.A {
-  font-style: italic;
-}
-
-/**
- * Knipsels
- */
- 
-.view.knipsels .views-row {
-  display: block;
-  float: left;
-  width: 23.4375%; /* 225px / 960px */
-  margin: 0.52083333333333333333333333333333%; /* 5px / 960px */
-  border: 1px solid @grey-light;
-}
-.view.knipsels .knipsel {
-  padding: 0.75em 1.5em; /* 9px / 12px en 18px / 12px */
-  display: block;
-}
-.view.knipsels .knipsel-titel {
-  display: block;
-  height: 6em; /* 72px / 12px */ 
-}
-.view.knipsels .knipsel-titel h2 {
-  font-size: 1em; /* 12px / 12px */
-  line-height: 1.5em; /* 18px / 12px */
-  font-weight: bold;
-}
-.view.knipsels .knipsel-datum {
-
-}
-.view.knipsels .views-row img {
-  width: 100%;
-  height: auto;
-}
-
-/**
- * Foto's
-*/
-
-.voorbeeld .views-row {
-  float: left;
-  margin: 0 10px 0 0;
-}
-.voorbeeld .view-footer {
-  clear: both;
 }
 
 /**
@@ -605,53 +353,7 @@ th.views-field-field-audio-nummer-value {
   margin: 0;
 }
 
-/**
- * Collapsible fieldsets
- */
-fieldset {
-  margin: 1em 0;
-  padding: 1em;
-  border: 1px solid @grey-light;
-  .border-radius();
-}
-.buildmode-teaser fieldset {
-  border-color: @white;
-}
 
-/* Targets IE 7. Fixes background image in field sets. */
-*:first-child+html fieldset {
-  padding: 0 1em 1em;
-  background-position: 0 .75em;
-  background-color: transparent;
-}
-
-*:first-child+html fieldset > .description, *:first-child+html fieldset .fieldset-wrapper .description {
-  padding-top: 1em;
-}
-
-fieldset legend {
-  /* Fix disappearing legend in FFox */
-  display: block;
-}
-
-*:first-child+html fieldset legend, *:first-child+html fieldset.collapsed legend {
-  display: inline;
-}
-
-html.js fieldset.collapsed {
-  background: transparent;
-  padding-top: 0;
-  padding-bottom: .6em;
-}
-
-html.js fieldset.collapsible legend a {
-  padding-left: 2em; /* LTR */
-  background: url(../images/menu-expanded.png) no-repeat 0% 50%; /* LTR */
-}
-
-html.js fieldset.collapsed legend a {
-  background: url(../images/menu-collapsed.png) no-repeat 0% 50%; /* LTR */
-}
 
 /**
  * Syndication icons and block
@@ -746,27 +448,4 @@ tr.dblog-page-not-found, tr.dblog-access-denied {
 }
 tr.dblog-page-not-found td.active, tr.dblog-access-denied td.active {
   background: #c7eec7;
-}
-
-/**
- * Status report colors.
- */
-table.system-status-report tr.error, table.system-status-report tr.error th {
-  background-color: #fcc;
-  border-color: #ebb;
-  color: #200;
-}
-table.system-status-report tr.warning, table.system-status-report tr.warning th {
-  background-color: #ffd;
-  border-color: #eeb;
-}
-table.system-status-report tr.ok, table.system-status-report tr.ok th {
-  background-color: #dfd;
-  border-color: #beb;
-}
-
-
-.views-field-field-bijzonderheden-value {
-  font-size: 10px;
-  line-height: 12px;
 }

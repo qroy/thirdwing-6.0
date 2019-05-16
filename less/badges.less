@@ -1,250 +1,287 @@
-.badge-date, .badge-time {
-  display: block;
-  float: left;
-  width: 100px;
-  margin: 0 10px 10px 0;
-  text-align: center;
-  border: 1px solid @pink;
-  background: @white;
-  line-height: 1.5em;
-}
-.badge-date span {
-  width: 100px;
-  display: block;
-}
-.badge-date .badge-day-short {
-  background: @pink;
-  color: white;
-}
-.badge-date .badge-day {
-  font-weight: bold;
-  font-size: 2em;
-  line-height: 1.5em;
-}
-.badge-date .badge-month {
-  font-size: 1.5em;
-  line-height: 1.5em;
-}
-.badge-date .badge-year {
-  color: @pink;
-  font-weight: bold;
-}
-.badge-time {
-  clear: left;
-  background: @pink;
-  color: white;
-}
 .badge {
   display: inline-block;
-  vertical-align: bottom;  
-  font-size: 1em; /* 12px */
-  line-height: 2em; /* 24px */
-  padding: 4px;
-  margin: 2px;
+  vertical-align: middle;  
+  font-size: 14em/@fs;
+  line-height: 24em/@fs;
+  padding: 4em/@fs;
+  margin: 0 4em/@fs 4em/@fs 0;
   text-align: center;
   .transition-standard();
 
   color: @white;
+  background: @grey;
+  @media print { 
+    color: @grey-dark; 
+    border: 1px solid @grey-light;
+    background: @grey-light;
+    padding: 3em/@fs;
+  }
   .border-radius();
 
   &.badge-combo {
-    font-family: band;
-    font-size: 2em; /* 24px / 12px */
-    width: 1em; /* 24px / 24px */
-    line-height: 1em; /* 24px */
+    font-family: thirdwing;
+    font-size: 24em/@fs;
+    width: 24em/24;
+    line-height: 23em/24;
+    padding: 4em/24;
+    margin: 0 4em/24 4em/24 0;
   }
   &.badge-combo-aanwezig, &.badge-combo-vervanging { background: @green; }
-  &.badge-combo-vraag {                        background: @grey; }
-  &.badge-combo-afwezig {                      background: @red; }
+  &.badge-combo-vraag {                              background: @grey-light;  }
+  &.badge-combo-afwezig {                            background: @red;   }
 
   @media print {
-    &.badge-combo-aanwezig, &.badge-combo-vervanging { background: @grey-dark; }
-    &.badge-combo-vraag {                        background: @grey-light; }
-    &.badge-combo-afwezig {                      background: transparent; }
+    &.badge-combo-aanwezig, &.badge-combo-vervanging { background: @grey-light; color: @grey-dark;  border-color: @grey-light;  }
+    &.badge-combo-vraag {                              background: transparent; color: @white-off;  border-color: @white-off;   }
+    &.badge-combo-afwezig {                            background: transparent; color: transparent; border-color: transparent;  }
+  }
+  &.badge-functie {
+    padding: 4em/@fs 8em/@fs;
+    width: 92em/@fs;
+  }
+  @media screen {
+  &.badge-functie-A  { background: @red;        }
+  &.badge-functie-B  { background: @blue;       }
+  &.badge-functie-C  { background: @purple;     }
+  &.badge-functie-D  { background: @yellow;     }
+  &.badge-functie-E  { background: @green;      }
+  &.badge-functie-Y1 { background: @grey;       }
+  &.badge-functie-Z1 { background: @grey-light; }
+  &.badge-functie-Z2 { background: @grey-light; }
+  &.badge-functie-Z3 { background: @grey-light; }
+  &.badge-functie-Z4 { background: @grey-light; }
   }
 
   &.badge-sleepgroep {
-    width: 2em; /* 24px / 24px */
-    line-height: 2em; /* 24px */
+    width: 24em/@fs;
+    line-height: 24em/@fs;
     @media screen {
       background: @yellow;
     }
-    @media print {
-      background: @grey-dark;
-    }
   }
   &.badge-nummer {
-    width: 2em; /* 24px / 24px */
-    line-height: 2em; /* 24px */
+    width: 24em/@fs;
+    line-height: 24em/@fs;
     @media screen {
-      background: @grey-light;
-    }
-    @media print {
-      background: @grey-dark;
+      background: @grey;
     }
   }
   &.badge-kar {
-    width: 8em;
+    width: 116em/@fs;
     overflow: hidden;
-    &:before {
-      content: '\f0d1';
-      font-family: FontAwesome;
-      padding-right: 3px;
-    }
     @media screen {
       background: @blue;
     }
-    @media print {
-      background: @grey-dark;
-    }
   }
 
-  &.badge-date-compact {
-    background: @white;
-    color: @black;
-    width: 11em;
+  &.badge-date {
+    width: 172em/@fs;
+    text-transform: uppercase;
+    &:before {
+      @media screen { color: @red; }
+    }
     span {
       padding: 0 1px;
     }
     @media screen {
+      color: @black;
       background: @white;
-      .badge-day, .badge-month {
-        font-weight: bold;
-      }
-    }
-    @media print {
-      background: transparent;
     }
   }
 
-  &.badge-time-compact {
-    width: 5em;
-    &:before {
-      content: '\f017';
-      font-family: FontAwesome;
-      padding-right: 3px;
-    }
+  &.badge-time {
+    width: 80em/@fs;
     @media screen {
-      background: @pink;
-    }
-    @media print {
-      background: transparent;
-      color: @black;
+      background: @red;
     }
   }
   &.badge-koor-tijd {
-    width: 5em;
-    &:before {
-      content: '\f0c0';
-      font-family: FontAwesome;
-      padding-right: 3px;
-    }
+    width: 80em/@fs;
     @media screen {
-      background: @purple;
-    }
-    @media print {
-      background: transparent;
-      color: @black;
+      background: @primary;
     }
   }
   &.badge-sleepgroep-tijd {
-    width: 5em;
-    &:before {
-      content: '\f017';
-      font-family: FontAwesome;
-      padding-right: 3px;
-    }
+    width: 80em/@fs;
     @media screen {
       background: @yellow;
     }
-    @media print {
-      background: @grey-dark;
+  }
+  &.badge-multimedia {
+    width: 24em/@fs;
+    line-height: 24em/@fs;
+    @media screen {
+      background: @grey;
     }
   }
+  &.badge-nodetype {
+    width: 120em/@fs;
+  }
+  &.badge-nodetype-pagina     { background: @brown;  }
+  &.badge-nodetype-nieuws     { background: @green;  }
+  &.badge-nodetype-activiteit { background: @blue;   }
+  &.badge-nodetype-verslag    { background: @pink;   }
+  &.badge-nodetype-audio,
+  &.badge-nodetype-video,
+  &.badge-nodetype-foto,
+  &.badge-nodetype-repertoire
+                              { background: @red;   }
+  &.badge-vriend {
+    padding: 4em/@fs 8em/@fs;
+  }
+  &.badge-vriend-1            { background: @grey;   }
+  &.badge-vriend-2            { background: @purple; }
+  &.badge-vriend-3            { background: @orange; }
+  &.badge-color-grey          { background: @grey;   }
+  &.badge-color-purple        { background: @purple; }
+  &.badge-color-orange        { background: @orange; }
+  &.badge-color-red           { background: @red;    }
+  &.badge-color-yellow        { background: @yellow; }
+  &.badge-color-blue          { background: @blue;   }
+  &.badge-color-green         { background: @green;  }
+  &.badge-color-pink          { background: @pink;   }
+  &.badge-color-brown         { background: @brown;  }
+  &.badge-color-grey-light    { background: @grey-light; }
+}
+
+.marker {
+  .badge();
+  .badge-color-red();
 }
 
 @media screen {
 
 a:link, a:visited {
-  .badge.badge-nummer {
-    background: @pink-light;
+  .badge { background: @primary; }
+}
+a:hover, a:active {
+  .badge { background: @secondary; }
+}
+
+} //screen
+
+// Icons
+
+.icon { 
+  &:before {
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-right: 0.25em;
+    width: 1em;
+    text-align: center;
+    color: @black;
+  }
+}
+.icon-only() {
+  display: inline-block;
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative; /* for absolute positioning of icon */
+  vertical-align: bottom;
+  width: 24em/@fs;
+  &:before {
+    font-family: FontAwesome;
+    text-indent: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0;
+    display: inline;
+    width: auto;
   }
 }
 
-tr {
-  &.odd, &.even {
-    &:hover {
-      .Repetitie {
-        .badge.badge-sleepgroep, .badge.badge-sleepgroep-tijd {
-          background: @yellow;
-        }
-        .badge.badge-time-compact {
-          background: @pink;
-        }
-        .badge.badge-koor-tijd {
-          background: @purple;
-        }
-        .badge.badge-kar {
-          background: @blue;
-        }
-        .badge-combo-aanwezig, .badge-combo-vervanging { background: @green; }
-        .badge-combo-afwezig                     { background: @red; }
-        .badge-combo-vraag                       { background: @grey; }
-      }
-      .badge.badge-date-compact {
-        background: @white;
-      }
-      .badge.badge-nummer {
-        background: @grey;
-      }
-      a {
-        &:link, &:visited {
-          .badge.badge-nummer {
-            background: @pink;
-          }
-        }
-        &:hover, &:active, &:focus {
-          .badge.badge-nummer {
-            background: @purple;
-          }
-        }
-      }
-    }
+
+.views-field-edit-node, 
+.views-field-delete-node, 
+.views-field-clone-node {
+  a { .icon-only(); }
+}
+.comment_comments, 
+.comment_add,
+.comment_reply,
+.comment_edit,
+.comment_delete,
+.upload_attachments {
+  a { .icon; }
+}
+.views-field-edit-node   a:before { content: '\f044'; }
+.views-field-delete-node a:before { content: '\f147'; }
+.views-field-clone-node  a:before { content: '\f24d'; }
+.comment_comments        a:before { content: '\f086'; }
+.comment_add             a:before { content: '\f0e5'; }
+.comment_reply           a:before { content: '\f196'; }
+.comment_edit            a:before { content: '\f044'; }
+.comment_delete          a:before { content: '\f147'; }
+.upload_attachments      a:before { content: '\f0c5'; }
+
+// File icons
+
+.field-icon-application-pdf { display: none; }
+a[type*="pdf"] {
+  .icon;
+  &:before { content: '\f1c1'; }
+}
+a[type*="mpeg"] {
+  .icon;
+  &:before { content: '\f1c7'; }
+}
+
+// Buttons
+
+.button {
+  display: inline-block;
+  line-height: 24em/@fs;
+  padding: 4em/@fs 8em/@fs;
+  margin: 0 4em/@fs 4em/@fs 0;
+  .border-radius(@border-radius-small);
+  color: @white;
+  background: @primary;
+  &:link, &:visited {
+    color: @white;
+    background: @primary;
   }
-  &.odd {
-    .badge.badge-date-compact {
-      background: @white-off;
-    }
+  &:active, &:hover, &:focus, &.active {
+    background: @secondary;
+  }
+}
+.button-social {
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative; /* for absolute positioning of icon */
+  width: 20em/@fs; /* make room for icon */
+  vertical-align: top;
+  &:before {
+    line-height: 36em/@fs;
+    text-indent: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    margin: 0;
+    display: inline;
+    width: auto;
   }
 }
 
-.Repetitie {
-  .badge.badge-date-compact {
-    color: @grey-dark;
+.calltoaction {
+  font-size: 30em/@fs;
+  line-height: 40em/30;
+  margin-bottom: 12em/30;
+  .fa {
+    text-align: center;
+    background: @secondary;
+    color: @white;
+    font-size: 26em/30;
+    line-height: 40em/26;
+    width: 40em/26;
+    height: 40em/26;
+    .border-radius();
+    margin-right: 10em/26;
   }
-  .badge.badge-time-compact {
-    background: @pink-light;
-  }
-  .badge.badge-koor-tijd {
-    background: @purple-light;
-  }
-  .badge.badge-sleepgroep, .badge.badge-sleepgroep-tijd {
-    background: @yellow-light;
-  }
-  .badge.badge-kar {
-    background: @blue-light;
-  }
-  .badge-combo-aanwezig, .badge-combo-vervanging { background: @green-light; }
-  .badge-combo-afwezig                     { background: @red-light; }
-  .badge-combo-vraag                       { background: @grey-light; }
-}
-
-}
-
-@media print {
-
-.Repetitie .badge {
-  font-weight: normal;
-}
-
-} // print
+} 

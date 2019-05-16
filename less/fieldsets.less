@@ -1,0 +1,72 @@
+/**
+ * Collapsible fieldsets
+ */
+fieldset {
+  margin: 0 0 24em/@fs;
+  padding: 48em/@fs 24em/@fs 24em/@fs;
+  border: 2em/@fs solid @white-off;
+  .border-radius(@border-radius-large);
+  position: relative;
+  box-sizing: border-box;
+}
+.buildmode-teaser fieldset {
+  background: @white;
+}
+fieldset legend {
+  position: absolute;
+  top: 0;
+  left: 24em/@fs;
+  box-sizing: border-box;
+  padding: 0 10em/@fs;
+  background: @white-off;
+  line-height: 24em/@fs;
+  .border-radius(0 0 @border-radius-small @border-radius-small);
+}
+.buildmode-teaser fieldset legend {
+  color: @grey-dark;
+  background: @white;
+}
+
+html.js fieldset.collapsed {
+  background: transparent;
+  border-top: @primary 2px solid;
+  .border-radius(0);
+  margin-bottom: 2.25em;
+}
+html.js fieldset.collapsible legend {
+  background: transparent;
+  .border-radius(0);
+  padding: 0;
+}
+html.js fieldset.collapsible legend a {
+  padding: 0 0.5em;
+  .border-radius(0 0 @border-radius-large @border-radius-large);
+}
+html.js fieldset.collapsible legend a::after {
+  display: inline-block;
+  content: '  ';
+  height: 0;
+  position: relative;
+  width: 0;
+  border: 5px solid transparent;
+  border-top-color: @white;
+  margin-left: 5px;
+}
+html.js fieldset.collapsed legend a {
+  
+}
+html.js fieldset.collapsed legend a::after {
+  border-top-color: transparent;
+  border-left-color: @white;
+}
+html.js fieldset.collapsible legend a:link,
+html.js fieldset.collapsible legend a:visited {
+  background: @primary;
+  color: @white;
+}
+html.js fieldset.collapsible legend a:hover,
+html.js fieldset.collapsible legend a:focus,
+html.js fieldset.collapsible legend a:active {
+  background: @secondary;
+  color: @white;
+}

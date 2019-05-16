@@ -29,7 +29,7 @@ function phptemplate_comment_wrapper($content, $node) {
 /**
  * Override or insert PHPTemplate variables into the templates.
  */
-function thirdwing_22_preprocess_page(&$vars) {
+function phptemplate_preprocess_page(&$vars) {
   if ((arg(0) == 'node') && (is_numeric(arg(1)))) {
     if (!$vars['node']) $vars['node'] = node_load(arg(1));
   }
@@ -40,7 +40,7 @@ function thirdwing_22_preprocess_page(&$vars) {
     }
   }
 }
-function thirdwing_22_preprocess_node(&$vars) {
+function phptemplate_preprocess_node(&$vars) {
   if (module_exists('taxonomy') && $vars['node']->nid) {
     foreach (taxonomy_node_get_terms($vars['node']) as $term) {
       $vars['node_classes'] = $vars['node_classes'] . ' taxonomy-' . eregi_replace('[^a-z0-9]', '-', $term->name);
@@ -90,7 +90,7 @@ function phptemplate_date_all_day_label() {
   return '';
 }
 
-function thirdwing_22_filefield_file($file) {
+function phptemplate_filefield_file($file) {
   // Views may call this function with a NULL value, return an empty string.
   if (empty($file['fid'])) {
     return '';
@@ -126,4 +126,44 @@ function thirdwing_22_filefield_file($file) {
   }
 
   return '<div class="filefield-file clear-block">'. $icon . l($link_text, $url, $options) .'</div>';
+}
+
+function phptemplate_radio($element) {
+  _form_set_class($element, array('form-radio'));
+  $output = '<input type="radio" ';
+  $output .= 'id="' . $element['#id'] . '" ';
+  $output .= 'name="' . $element['#name'] . '" ';
+  $output .= 'value="' . $element['#return_value'] . '" ';
+  $output .= (check_plain($element['#value']) == $element['#return_value']) ? ' checked="checked" ' : ' ';
+  $output .= drupal_attributes($element['#attributes']) . ' />';
+  if (!is_null($element['#title'])) {
+    $output = '<label class="option" for="' . $element['#id'] . '">' . $output . '<div class="option__indicator"></div> ' . $element['#title'] . '</label>';
+  }
+
+  unset($element['#title']);
+  return theme('form_element', $element, $output);
+}
+function phptemplate_checkbox($element) {
+  _form_set_class($element, array('form-checkbox'));
+  $checkbox = '<input ';
+  $checkbox .= 'type="checkbox" ';
+  $checkbox .= 'name="' . $element['#name'] . '" ';
+  $checkbox .= 'id="' . $element['#id'] . '" ';
+  $checkbox .= 'value="' . $element['#return_value'] . '" ';
+  $checkbox .= $element['#value'] ? ' checked="checked" ' : ' ';
+  $checkbox .= drupal_attributes($element['#attributes']) . ' />';
+
+  if (!is_null($element['#title'])) {
+    $checkbox = '<label class="option" for="' . $element['#id'] . '">' . $checkbox . '<div class="option__indicator"></div> ' . $element['#title'] . '</label>';
+  }
+
+  unset($element['#title']);
+  return theme('form_element', $element, $checkbox);
+}
+function phptemplate_select($element) {
+  $select = '';
+  $size = $element['#size'] ? ' size="' . $element['#size'] . '"' : '';
+  _form_set_class($element, array('form-select'));
+  $multiple = $element['#multiple'];
+  return theme('form_element', $element, '<div class="select"><select name="' . $element['#name'] . '' . ($multiple ? '[]' : '') . '"' . ($multiple ? ' multiple="multiple" ' : '') . drupal_attributes($element['#attributes']) . ' id="' . $element['#id'] . '" ' . $size . '>' . form_select_options($element) . '</select><div class="select__arrow"></div></div>');
 }

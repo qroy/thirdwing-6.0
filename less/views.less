@@ -1,0 +1,493 @@
+/**
+ * Ledenagenda
+ */
+.agenda {
+  .views-field-title {
+    .Wereldlijk, .Kerkelijk, .Vergadering, .Koorreis, .Concours, .Overige {
+      font-weight: 600;
+      a {
+        &:link, &:visited {
+          color: @secondary;
+          @media print { color: @black; }
+        }
+        &:hover, &:active, &:focus {
+          color: @primary;
+        }
+      }
+    }
+  }
+  .views-field-field-locatie {
+    text-transform: uppercase;
+  }
+  .views-field-field-l-plaats {
+    color: @red;
+  }
+  .views-field-field-bijzonderheden-value {
+    font-size: 12em/16;
+    line-height: 24em/12;
+  }
+
+  &.agenda-leden {
+    .views-field-field-datum-value {
+      width: 184em/@fs;
+    }
+    .views-field-field-sleepgroep-value {
+      width: 128em/@fs;
+    }
+    .views-field-field-keyboard-value {
+      width: 76em/@fs;
+    }
+  }
+   
+  tr {
+    &.odd, &.even {
+      &:not(:hover) {
+        span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) {
+          .badge-sleepgroep,
+          .badge-time,
+          .badge-koor-tijd,
+          .badge-sleepgroep-tijd,
+          .badge-kar {
+            @media screen { background: @grey-light; }
+          }
+          .badge-combo.badge-combo-aanwezig, .badge-combo.badge-combo-vervanging { @media screen { background: @green-light; } }
+          .badge-combo.badge-combo-afwezig,                                      { @media screen { background: @red-light; } }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Opnamen
+ */
+.opnamen {
+  overflow: hidden;
+  margin-right: -12em/@fs;
+  padding: 0;
+  .views-row, .field-item {
+    width: 100% /2;
+    @media @normal { width: 100% / 3; }
+    box-sizing: border-box;
+    float: left;
+    padding: 0 12em/@fs 12em/@fs 0;
+  }
+  .opname {
+    position: relative;
+    background: @white-off;
+    .border-radius(@border-radius-large);
+    padding: 6em/@fs;
+    &:hover {
+      .transition-standard();
+      background: @secondary;
+      .badge { background: @white; color: @secondary; }
+      .opname-title, .opname-artist { color: @white; }
+    }
+  }
+  img {
+    width: 100%;
+    height: auto;
+    .border-radius();
+  }
+  .opname-bestand {
+    position: relative;
+    z-index: 2;
+    &:before {
+      display: block;
+      content: '';
+      width: 100%;
+      padding-top: (9 / 16) * 100%;
+    }
+    .video, .jp-single-player, img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      .jp-interface {
+        top: 20%;
+      }
+    }
+    .video {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .opname-data {
+    height: 72em/@fs;
+    margin-top: 6em/@fs;
+    overflow: hidden;
+  }
+  .opname-title {
+    color: @red;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  .opname-artist {
+    display: inline-block;
+  }
+  .opname-notes {
+    font-size: 12em/@fs;
+    line-height: 24em/12;
+  }
+  .opname-type {
+    height: 36em/@fs;
+    text-align: right;
+  }
+  .opname-link {
+    z-index: 1;
+    position: absolute;
+    display: block;
+    top: 0; bottom: 0; left: 0; right: 0;
+  }
+  .opname-foto {
+    .opname-link { 
+      z-index: 3;
+    }
+    .opname-title {
+      display: block;
+      min-height: 72em/@fs;
+    }
+    .opname-artist, .opname-notes {
+      display: none;
+    }
+  }
+  .badge-multimedia { display: none; }
+  .opname-foto .badge-foto { display: inline-block; }
+  .opname-video .badge-video { display: inline-block; }
+  .opname-audio .badge-audio { display: inline-block; }
+}
+.video {
+  &.video-thumb {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    &:after {
+      display: inline-block;
+      position: absolute;
+      content: '\f166';
+      font-family: FontAwesome;
+      font-size: 60em/@fs;
+      line-height: 60em/60;
+      top: 30%;
+      left: 0;
+      right: 0;
+    }
+    img { 
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+a.video-thumb {
+  &:link, &:visited {
+    color: @white;
+  }
+  &:hover, &:active, &:focus {
+    color: @secondary;
+  }
+}
+
+/**
+ * Sleepgroepen
+ */
+.sleepgroepen {
+  margin-right: -12em/@fs;
+  overflow: hidden;
+  .item-list {
+    box-sizing: border-box;
+    float: left;
+    width: 100% / 3;
+    @media @normal { width: 100% / 5; }
+    padding: 0 12em/@fs 12em/@fs 0;
+    text-align: center;
+    ol {
+      background: @white-off;
+      .border-radius(@border-radius-large);
+      padding: 6em/@fs;
+      min-height: 360em/@fs;
+    }
+    h3 {
+      margin-bottom: 12em/@fs;
+    }
+  }
+  .sleepgroep-uitkoor {
+    text-decoration: line-through;
+  }
+  .sleepgroep-karrijder {
+    font-style: italic;
+  }
+  .sleepgroep-bestuur {
+    font-weight: bold;
+  }
+  .sleepgroep-geslacht-Man:after {
+    content: " \f222";
+  }
+  .sleepgroep-geslacht:after {
+    font-family: fontawesome;
+    color: @red;
+    font-style: normal;
+    font-weight: normal;
+  }
+}
+
+/**
+ * Combo en Bestuur en Commissies
+ */
+.personen {
+  margin-right: -12em/@fs;
+  overflow: hidden;
+  .persoon-wrapper {
+    width: 100% / 4;
+    height: 228em/@fs;
+    box-sizing: border-box;
+    float: left;
+    padding: 0 12em/@fs 12em/@fs 0;
+  }
+  .persoon {
+    text-align: center;
+    font-size: 12em/@fs;
+    line-height: 24em/12;
+    .border-radius(@border-radius-large);
+    padding: 12em/12;
+    background: @white-off;
+  }
+  .persoon-foto {
+    height: 120em/12;
+    width: 90em/12;
+    margin: 0 auto;
+    img {
+      box-sizing: border-box;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .persoon-naam {
+    text-transform: uppercase;
+    min-height: 48em/12;
+  }
+  .persoon-functie {
+    color: @red;
+    > span {
+      display: none;
+    }
+  }
+  &.personen-leden, &.personen-ledenlijst, &.personen-opstelling {
+    .persoon-wrapper {
+      @media @tablet { width: 100% / 5; }
+      @media @normal { width: 100% / 6; }
+      height: auto;
+    }
+    .persoon {
+      background: @white-off;
+      padding: 12em/12 12em/12;
+    }
+    .persoon-foto {
+      width: 80%;
+      height: auto;
+    }
+    .persoon-naam { 
+      min-height: 24em/12;
+    }
+    .persoon-achternaam { display: none; }
+  }
+  &.personen-opstelling {
+    .persoon-wrapper {
+      width: 100% / 14;
+      padding: 0 3em/@fs 12em/@fs 0;
+      &.persoon-101, &.persoon-201, &.persoon-301, &.persoon-401, &.persoon-501, &.persoon-503 {
+        clear: left;
+      }
+      &.persoon-201 { margin-left: 100% / 28; }
+      &.persoon-301 { margin-left: 100% / 14; }
+      &.persoon-401 { margin-left: 100% / 28 * 3; }
+      &.persoon-601 { margin-left: 100% / 28 * 9; }
+    }
+    .persoon {
+      padding: 3em/12 3em/12;
+      font-size: 9em/@fs;
+      line-height: 24em/9;
+      @media @tablet {
+        font-size: 10em/@fs;
+        line-height: 24em/10;
+      }
+      @media @normal {
+        font-size: 12em/@fs;
+        line-height: 24em/12;
+      }
+      color: @white;
+    }
+    .persoon-A  { background: @red; }
+    .persoon-B  { background: @blue; }
+    .persoon-C  { background: @purple; }
+    .persoon-D  { background: @yellow; }
+    .persoon-E  { background: @green; }
+    .persoon-Y1 { background: @grey; }
+    .persoon-Z1,
+    .persoon-Z2,
+    .persoon-Z3,
+    .persoon-Z4 { background: @grey-light; }
+  }
+  &.personen-ledenlijst {
+    .persoon-foto {
+      width: 58em/@fs;
+    }
+    tr {
+      &.odd, &.even {
+        &:not(:hover) {
+          .badge-sleepgroep,
+          .badge-functie {
+            @media screen { background: @grey-light; }
+          }
+        }
+      }
+    }
+    .badge.persoon-aspirant {
+      @media screen {
+        background: @red;
+      }
+    }
+  }
+}
+.personen-leden      .persoon-functie .persoon-functie-koor,
+.personen-ledenlijst .persoon-functie .persoon-functie-koor,
+.personen-wie        .persoon-functie .persoon-functie-koor,
+.personen-band       .persoon-functie .persoon-functie-koor       { display: inline-block; }
+.personen-bestuur    .persoon-functie .persoon-functie-bestuur    { display: inline-block; }
+.personen-mc         .persoon-functie .persoon-functie-mc         { display: inline-block; }
+.personen-regie      .persoon-functie .persoon-functie-regie      { display: inline-block; }
+.personen-concert    .persoon-functie .persoon-functie-concert    { display: inline-block; }
+.personen-pr         .persoon-functie .persoon-functie-pr         { display: inline-block; }
+.personen-ir         .persoon-functie .persoon-functie-ir         { display: inline-block; }
+.personen-feest      .persoon-functie .persoon-functie-feest      { display: inline-block; }
+.personen-tec        .persoon-functie .persoon-functie-tec        { display: inline-block; }
+.personen-verjaardag .persoon-functie .persoon-functie-verjaardag { display: inline-block; }
+
+.persoon-aspirant {
+  @media screen { 
+    color: @red; 
+    a:link, a:visited {
+      color: @red;
+    }
+    a:hover, a:active {
+      color: @primary;
+    }
+  }
+  @media print { font-style: italic; }
+}
+.personen-ledenlijst {
+  .views-field-field-lidsinds-value.persoon-aspirant {
+    .date-display-single {
+      display: none;
+    }
+    &:after {
+      content: 'Aspirant';
+      font-size: 12em/@fs;
+      line-height: 24em/12;
+      text-transform: uppercase;
+    }
+  }
+  .persoon-functie-bestuur {
+    color: @red; 
+  }
+}
+
+/**
+ * Vrienden
+ */
+
+.vrienden {
+  margin-right: -12em/@fs;
+  overflow: hidden;
+  .views-row {
+    width: 100% / 2;
+    @media @normal { width: 100% / 3; }
+    box-sizing: border-box;
+    float: left;
+    padding: 0 12em/@fs 12em/@fs 0;
+  }
+  .vriend {
+    text-align: center;
+    position: relative;
+    background: @white-off;
+    .border-radius(@border-radius-large);
+    padding: 6em/@fs;
+    &:hover {
+      .transition-standard();
+      background: @secondary;
+      .vriend-info, .vriend-title { color: @white; }
+      .badge { background: @white; color: @orange; }
+    }
+  }
+  .vriend-image {
+    position: relative;
+    &:before {
+      display: block;
+      content: ' ';
+      width: 100%;
+      padding-top: (9 / 16) * 100%;
+    }
+    .image {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+  .vriend-info {
+    text-transform: uppercase;
+    height: 48em/@fs;
+    margin: 24em/@fs 0;
+  }
+  .vriend-title {
+    color: red;
+  }
+  .vriend-jaren {
+    height: 36em/@fs;
+  }
+  .vriend-site {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/**
+ * Repertoire
+ */
+
+.repertoire {
+  .repertoire-programma {
+    color: @red;
+    text-transform: uppercase;
+  }
+  tr {
+    &.odd, &.even {
+      &:not(:hover) {
+        a:link, a:visited {
+          .badge-nummer {
+            @media screen { background: @grey-light; }
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Foto's
+*/
+
+.voorbeeld .views-row {
+  float: left;
+  margin: 0 10px 0 0;
+}
+.voorbeeld .view-footer {
+  clear: both;
+}

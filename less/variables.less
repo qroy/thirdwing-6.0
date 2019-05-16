@@ -2,20 +2,21 @@
  * COLOURS
  */
 
-@purple:         rgb( 76,  50, 188);
-@orange:         rgb(235, 116,  21);
+@purple:         rgb( 60,  50, 155);
+@orange:         rgb(235, 115,  20);
 @pink:           rgb(167,  88,  99);
-@green:          rgb(107, 181,  85);
-@blue:           rgb( 30, 136, 182);
+@green:          rgb(170, 213,  99);
+@blue:           rgb( 81, 170, 236);
 @red:            rgb(233,  88,  76);
 @yellow:         rgb(230, 209,  25);
+@brown:          rgb(244, 183, 133);
 
 @black:          rgb(  0,   0,   0);
 @grey-dark:      rgb( 50,  50,  49);
 @grey:           rgb(135, 135, 134);
 @grey-light:     rgb(215, 215, 214);
 @grey-lightest:  rgb(230, 230, 229);
-@white-off:      rgb(245, 245, 243);;
+@white-off:      rgb(240, 240, 238);
 @white:          rgb(255, 255, 255);
 
 @purple-light:   lighten(@purple, 30%);
@@ -23,8 +24,18 @@
 @pink-light:     lighten(@pink,   20%);
 @green-light:    lighten(@green,  20%);
 @blue-light:     lighten(@blue,   20%);
-@red-light:      lighten(@red,    20%);
 @yellow-light:   lighten(@yellow, 30%);
+@red-light:      lighten(@red,    20%);
+@red-lightest:   lighten(@red,    38%);
+
+@fs: 14; /* font-size in pixels */
+@lh: 24; /* line-height in pixels */
+
+@primary:        @purple;
+@secondary:      @orange;
+@primary-light:  @purple-light;
+@secondary-light:@orange-light;
+
 
 @border-radius-large: 10px;
 @border-radius-small: 5px;
@@ -36,6 +47,19 @@
 .transition-standard {
   .transition(border 0.4s, background-color 0.4s, color 0.6s);
 }
+
+// Media query variables.
+@phone-width:    (320em  / @fs);
+@phone-ls-width: (610em  / @fs);
+@tablet-width:   (830em  / @fs);
+@normal-width:   (950em  / @fs);
+@wide-width:     (1200em / @fs);
+
+@phone:   ~"screen and (min-width: @{phone-width} )";
+@phone-ls:~"screen and (min-width: @{phone-ls-width} )";
+@tablet:  ~"screen and (min-width: @{tablet-width} )";
+@normal:  ~"screen and (min-width: @{normal-width} )";
+@wide:    ~"screen and (min-width: @{wide-width})";
 
 .box-shadow(@shadow:  @box-shadow-large) {
   @media screen {

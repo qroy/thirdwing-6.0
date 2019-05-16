@@ -10,7 +10,12 @@
 .node .links,
 .comment .links,
 #toolbar-toolbar,
-.messages {
+.messages,
+.sticky-header,
+#admin-toolbar,
+#l10n-client,
+#l10n-client-data,
+#topbar {
   display: none;
 }
 body.sidebars, 
@@ -34,7 +39,6 @@ body.sidebar-left #center, body.sidebar-right #center, body.sidebars #center,
 body.sidebar-left #squeeze, body.sidebar-right #squeeze, body.sidebars #squeeze {
   margin: 0;
 }
-.breadcrumb,
 #center,
 .right-corner,
 taxonomy-Leden .right-corner,
@@ -49,15 +53,6 @@ taxonomy-Leden .right-corner,
     float: none;
     clear: both;
     background: none;
-}
-
-.badge {
-  display: inline;
-}
-tr {
-  &.odd, &.even {
-    border-bottom: 1px solid @grey;
-  }
 }
 
 }
