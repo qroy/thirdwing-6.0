@@ -369,3 +369,12 @@ ul.tabs {
     }
   }
 }
+
+ul.menu {
+  .icon-only.menu-square {
+    .icon-only();
+  }
+  .icon-only:not(.menu-square) {
+    @media @normal { .icon-only() }
+  }
+}

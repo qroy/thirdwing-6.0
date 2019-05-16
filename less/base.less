@@ -274,26 +274,7 @@ span.clear {
   font-size: 0px;
   margin-bottom: -1px;
 }
-.icon-only() {
-  text-indent: 200%;
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative; /* for absolute positioning of icon */
-  vertical-align: bottom;
-  width: 26em/20;
-  @media @phone-ls { width: 31em/20; }
-  @media @normal { width: 16em/@fs; /* make room for icon */ }
-  &:before {
-    text-indent: 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    text-align: center;
-    margin: 0;
-    display: inline;
-    width: auto;
-  }
-}
+
 .button {
   display: inline-block;
   vertical-align: bottom;
