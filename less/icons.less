@@ -8,34 +8,14 @@
 }
 .fa { 
   font-family: 'Open Sans', Verdana, sans-serif;
+  font-size: @fs/16em;
+  line-height: @lh/@fs+0em;
   &:before {
     font-family: FontAwesome;
     display: inline-block;
-    margin-right: 0.25em;
-    width: 1em;
+    margin-right: 4rem/@fs;
+    width: 16rem/@fs;
     text-align: center;
-  }
-}
-
-
-.icon-only() {
-  text-indent: 200%;
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative; /* for absolute positioning of icon */
-  vertical-align: bottom;
-  width: 26em/20;
-  @media @phone-ls { width: 31em/20; }
-  @media @normal { width: 16em/@fs; /* make room for icon */ }
-  &:before {
-    text-indent: 0;
-    position: absolute;
-    left: 0;
-    right: 0;
-    text-align: center;
-    margin: 0;
-    display: inline;
-    width: auto;
   }
 }
 

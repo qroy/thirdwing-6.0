@@ -18,7 +18,7 @@ body {
   position: relative;
   @media @normal {
     padding: 0 80em/@fs;
-    max-width: 920em/@fs;
+    max-width: @wide-width - 20em/@fs;
   }
 }
 
@@ -226,9 +226,6 @@ body.two-sidebars #main-squeeze {
   background: @tertiary;
   background-size: auto 200%;
   .box-shadow(@box-shadow-inset);
-  .layout-container {
-    padding: 0;
-  }
   a {
     &:link, &:visited {
       color: @white-off;
@@ -237,9 +234,32 @@ body.two-sidebars #main-squeeze {
       color: @white;
     }
   }
-  h2 {
-    color: @white-off;
-    text-transform: uppercase;
+  ul.menu a {
+    .button;
+    .button-footer;
+  }
+  h2 { .h3; color: @white; }
+  @media @tablet-ls {
+    height: 500em/@fs;
+    #footer-left {
+      width: 60%;
+      float: left;
+      .block {
+        width: 30%;
+        float: left;
+      }
+    }
+    #footer-right {
+      width: 40%; 
+      float: right;
+    }
+  }
+}
+#block-menu-menu-social {
+  ul.menu a {
+    .button-x3;
+    .button-icon-only;
+    .button-icon-only-x3;
   }
 }
 

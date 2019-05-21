@@ -13,80 +13,82 @@ body {
   font-size: @fs/16em;
   line-height: @lh/@fs+0em;
 }
-h1, h2, h3, h4, h5, h6 {
+.h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: 'Open Sans', Verdana, sans-serif;
-  a:link, a:visited {
-    color: @secondary;
-  }
-  a:hover, a:active, a:focus {
-    color: @primary;
-  }
+  a:link, a:visited {          color: @secondary; }
+  a:hover, a:active, a:focus { color: @primary;   }
 }
+h1 { .h1; }
 h1 {
   color: @secondary;
   @media print { color: @grey-dark; }
   font-weight: 600;
-  font-size: 26em/@fs;
-  line-height: 30em/26;
-  padding-top: 12em/26;
-  margin-bottom: 48em/26;
+  font-size: 26rem/@fs;
+  line-height: 30rem/@fs;
+  padding-top: 12rem/@fs;
+  margin-bottom: 48rem/@fs;
   @media @tablet {
-    font-size: 42em/@fs;
-    line-height: 60em/42;
-    padding-top: 5em/42;
-    margin-bottom: 55em/42;
+    font-size: 42rem/@fs;
+    line-height: 60rem/@fs;
+    padding-top: 5rem/@fs;
+    margin-bottom: 55rem/@fs;
   }
 }
-h2 {
+h2 { .h2; }
+.h2 {
   color: @secondary;
-  font-size: 20em/@fs;
-  line-height: 60em/20;
-  padding-top: 15em/20;
-  margin-bottom: 15em/20;
+  font-size: 20rem/@fs;
+  line-height: 60rem/@fs;
+  padding-top: 15rem/@fs;
+  margin-bottom: 15em/@fs;
   @media @wide {
-    font-size: 26em/@fs;
-    line-height: 60em/26;
-    padding-top: 11em/26;
-    margin-bottom: 19em/26;
+    font-size: 26rem/@fs;
+    line-height: 60rem/@fs;
+    padding-top: 11rem/@fs;
+    margin-bottom: 19rem/@fs;
   }
 }
-h3 {
+h3 { .h3; }
+.h3 {
   color: @red;
   text-transform: uppercase;
-  font-size: 20em/@fs;
-  line-height: 30em/20;
-  padding-top: 29em/20;
-  margin-bottom: 1em/20;
+  font-size: 20rem/@fs;
+  line-height: 30rem/@fs;
+  padding-top: 29rem/@fs;
+  margin-bottom: 1rem/@fs;
 }
-h4 {
+h4 { .h4; }
+.h4 {
   color: @grey;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 20em/@fs;
-  line-height: 30em/20;
-  padding-top: 29em/20;
-  margin-bottom: 1em/20;
+  font-size: 20rem/@fs;
+  line-height: 30rem/@fs;
+  padding-top: 29rem/@fs;
+  margin-bottom: 1rem/@fs;
 }
-h5 {
+h5 { .h5; }
+.h5 {
   color: @grey;
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 16em/@fs;
-  line-height: 30em/@fs;
+  font-size: 16rem/@fs;
+  line-height: 30rem/@fs;
 }
-h6 {
+h6 { .h6; }
+.h6 {
   color: @grey;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 16em/@fs;
-  line-height: 30em/@fs;
+  font-size: 16rem/@fs;
+  line-height: 30rem/@fs;
 }
 quote, code, fieldset {
   margin: .5em 0;
 }
 p {
   padding: 0;
-  margin-bottom: 30em/@fs;
+  margin-bottom: 30rem/@fs;
 }
 strong, b {
   font-weight: 600;
@@ -108,12 +110,33 @@ a:hover, a:focus, a:active, a.active, a.active-trail {
   color: @white;
   background: @secondary;
 }
+#main p {
+  a:link, a:visited {
+    @media screen { 
+      white-space: nowrap;
+      position: relative;
+      display: inline-block;
+      color: @red; 
+      padding: 0 2px;
+      margin: 0 -2px;
+      text-transform: uppercase;
+    }
+  }
+  a:hover, a:active, a.active, a.active-trail {
+    @media screen { 
+      background: @red; color: @white; 
+      .border-radius(@border-radius-small);
+    }
+  }
+}
 
 ul.menu li, .item-list ul li, li.leaf {
   list-style-type: none;
   list-style-image: none;
+  padding: 0;
+  margin: 0;
 }
-ul, ol {
+ul, ol, .block ul {
   margin: 0 0 30em/@fs;
   padding: 0;
   li {
@@ -273,35 +296,4 @@ span.clear {
   line-height: 0px;
   font-size: 0px;
   margin-bottom: -1px;
-}
-
-.button {
-  display: inline-block;
-  vertical-align: bottom;
-  line-height: 58em/@fs;
-  padding: 0 10em/@fs;
-  margin: 2em/@fs 2em/@fs 0 0;
-  @media @normal {
-    line-height: 28em/@fs;
-    padding: 0 10em/@fs;
-    margin: 2em/@fs 2em/@fs 0 0;
-  }
-  .border-radius(@border-radius-small);
-  &:link, &:visited {
-    color: @white;
-    background: @primary;
-  }
-  &:active, &:hover, &:focus, &.active {
-    background: @secondary;
-  }
-}
-.button-social {
-  .icon-only();
-  padding: 0 7em/@fs;
-  &:link, &:visited {
-    background: @primary;
-  }
-  &:active, &:hover, &:focus, &.active {
-    background: @secondary;
-  }
 }

@@ -1,165 +1,260 @@
-/**
- * Aggregator.module
- */
-#aggregator {
-  margin-top: 1em;
-}
-#aggregator .feed-item-title {
-  font-size: 160%;
-  line-height: 130%;
-}
-#aggregator .feed-item {
-  border-bottom: 1px solid #e9eff3;
-  margin: -1.5em -31px 1.75em;
-  padding: 1.5em 31px;
-}
-#aggregator .feed-item-categories {
-  font-size: 0.92em;
-}
-#aggregator .feed-item-meta {
-  font-size: 0.92em;
-  color: @grey;
-}
-
-/**
- * Autocomplete.
- */
-#autocomplete li {
-  cursor: default;
-  padding: 2px;
-  margin: 0;
-}
-
-/**
- * Syndication icons and block
- */
-#block-node-0 h2 {
-  float: left; /* LTR */
-  padding-right: 20px; /* LTR */
-}
-
-#block-node-0 img, .feed-icon {
-  float: right; /* LTR */
-  padding-top: 4px;
-}
-
-#block-node-0 .content {
-  clear: right; /* LTR */
-}
-
-/**
- * Login Block
- */
-#user-login-form {
+/* BADGES */
+.badge {
+  /* base badge */
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: bottom;
+  line-height: 28em/@fs;
+  padding: 0 4rem/@fs;
+  margin: 2em/@fs 2rem/@fs 0 0;
   text-align: center;
-}
-#user-login-form ul {
-  text-align: left; /* LTR */
-}
-
-/**
- * User profiles.
- */
-.profile {
-  margin-top: 1.5em;
-}
-.profile h3 {
-  border-bottom: 0;
-  margin-bottom: 1em;
-}
-.profile dl {
-  margin: 0;
-}
-.profile dt {
-  font-weight: normal;
-  color: @grey;
-  font-size: 0.92em;
-  line-height: 1.3em;
-  margin-top: 1.4em;
-  margin-bottom: 0.45em;
-}
-.profile dd {
-  margin-bottom: 1.6em;
-}
-
-
-
-/**
- * dblog.module
- */
-tr.dblog-user {
-  background-color: #fcf9e5;
-}
-
-tr.dblog-user td.active {
-  background-color: #fbf5cf;
-}
-
-tr.dblog-content {
-  background-color: #fefefe;
-}
-
-tr.dblog-content td.active {
-  background-color: #f5f5f5;
-}
-
-tr.dblog-warning {
-  background-color: #fdf5e6;
-}
-
-tr.dblog-warning td.active {
-  background-color: #fdf2de;
-}
-
-tr.dblog-error {
-  background-color: #fbe4e4;
-}
-
-tr.dblog-error td.active {
-  background-color: #fbdbdb;
-}
-tr.dblog-page-not-found, tr.dblog-access-denied {
-  background: #d7ffd7;
-}
-tr.dblog-page-not-found td.active, tr.dblog-access-denied td.active {
-  background: #c7eec7;
-}
-
-/**
- * Status report colors.
- */
-table.system-status-report tr.error, table.system-status-report tr.error th {
-  background-color: #fcc;
-  border-color: #ebb;
-  color: #200;
-}
-table.system-status-report tr.warning, table.system-status-report tr.warning th {
-  background-color: #ffd;
-  border-color: #eeb;
-}
-table.system-status-report tr.ok, table.system-status-report tr.ok th {
-  background-color: #dfd;
-  border-color: #beb;
-}
-.messages, .preview {
-  margin: 15em/@fs 0;
-  padding: 15em/@fs 30em/@fs;
-}
-.messages.status,
-.messages.error,
-.messages.warning {
-  border: 0;
-  background-color: @green;
+  .transition-standard();
+  .border-radius();
   color: @white;
-  .border-radius(@border-radius-large);
+  background: @grey;
+  @media print { 
+    color: @grey-dark;
+    border: 1rem/@fs solid @grey-light;
+    background: @grey-light;
+    padding: 3em/@fs 3rem/@fs;
+  }
 }
-.messages.error {
-  background-color: @red;
+.badge-color-primary       { @media screen { background: @primary;  }}
+.badge-color-secondary     { @media screen { background: @secondary;}}
+.badge-color-grey          { @media screen { background: @grey;     }}
+.badge-color-purple        { @media screen { background: @purple;   }}
+.badge-color-orange        { @media screen { background: @orange;   }}
+.badge-color-red           { @media screen { background: @red;      }}
+.badge-color-yellow        { @media screen { background: @yellow;   }}
+.badge-color-blue          { @media screen { background: @blue;     }}
+.badge-color-green         { @media screen { background: @green;    }}
+.badge-color-pink          { @media screen { background: @pink;     }}
+.badge-color-brown         { @media screen { background: @brown;    }}
+.badge-color-grey-light    { @media screen { background: @grey-light; }}
+.badge-color-white         { @media screen { background: @white; color: @black }}
+.badge-combo {
+  font-family: 'thirdwing';
+  font-size: 24em/@fs;
+  line-height: 28rem/@fs;
+  width: 28rem/@fs;
+  padding: 0;
+  margin: 2em/24 2rem/@fs 0 0;
 }
+.badge-combo-aanwezig, 
+.badge-combo-vervanging { 
+  .badge-color-green;
+  @media print {
+    background: @grey-light; 
+    color: @grey-dark;  
+    border-color: @grey-light;
+  }
+}
+.badge-combo-vraag { 
+  .badge-color-grey;
+  @media print {
+    background: transparent; 
+    color: @white-off;  
+    border-color: @white-off;
+  }
+}
+.badge-combo-afwezig { 
+  .badge-color-red;
+  @media print {
+    background: transparent; 
+    color: transparent; 
+    border-color: transparent;
+  }
+}
+.badge-functie {
+  padding: 0 8rem/@fs;
+  width: 92rem/@fs;
+}
+.badge-functie-A  { .badge-color-red;        }
+.badge-functie-B  { .badge-color-blue;       }
+.badge-functie-C  { .badge-color-purple;     }
+.badge-functie-D  { .badge-color-yellow;     }
+.badge-functie-E  { .badge-color-green;      }
+.badge-functie-Y1 { .badge-color-grey;       }
+.badge-functie-Z1 { .badge-color-grey-light; }
+.badge-functie-Z2 { .badge-color-grey-light; }
+.badge-functie-Z3 { .badge-color-grey-light; }
+.badge-functie-Z4 { .badge-color-grey-light; }
+
+.badge-sleepgroep {
+  .badge-color-yellow;
+  width: 28rem/@fs;
+}
+.badge-nummer {
+  .badge-color-grey-light;
+  font-size: 12rem/@fs;
+  line-height: 28rem/@fs;
+  width: 28rem/@fs;
+}
+.badge-kar {
+  .badge-color-blue;
+  width: 114rem/@fs;
+}
+.badge-date {
+  .badge-color-white;
+  width: 170rem/@fs;
+  text-transform: uppercase;
+  text-align: left;
+  &:before { color: @red; }
+}
+.badge-time {
+  .badge-color-red;
+  width: 84rem/@fs;
+}
+.badge-koor-tijd {
+  .badge-color-primary;
+  width: 84rem/@fs;
+}
+.badge-sleepgroep-tijd {
+  .badge-color-yellow;
+  width: 84rem/@fs;
+}
+.badge-nodetype {
+  width: 130rem/@fs;
+}
+.badge-nodetype-pagina     { .badge-color-brown;  }
+.badge-nodetype-nieuws     { .badge-color-green;  }
+.badge-nodetype-activiteit { .badge-color-blue;   }
+.badge-nodetype-verslag    { .badge-color-pink;   }
+.badge-nodetype-audio,
+.badge-nodetype-video,
+.badge-nodetype-foto,
+.badge-nodetype-repertoire { .badge-color-red;    }
+.badge-vriend {
+  padding: 0 8rem/@fs;
+}
+.badge-vriend-1            { .badge-color-grey;   }
+.badge-vriend-2            { .badge-color-purple; }
+.badge-vriend-3            { .badge-color-orange; }
+a:link, a:visited {
+  .badge { .badge-color-primary; }
+}
+a:hover, a:active {
+  .badge { .badge-color-secondary; }
+}
+
+.marker {
+  .badge();
+  .badge-color-red();
+}
+
+
+/* BUTTONS */
+
+.button {
+  /* base button */
+  display: block;
+  vertical-align: bottom;
+  line-height: 28em/@fs;
+  padding: 0 10rem/@fs;
+  margin: 2rem/@fs 2em/@fs 0 0;
+  .border-radius(@border-radius-small);
+  &:link, &:visited {
+    color: @white;
+    background: @primary;
+  }
+  &:active, &:hover, &:focus, &.active {
+    background: @secondary;
+  }
+}
+.button-inline {
+  display: inline-block;
+}
+.button-footer {
+  &:link, &:visited {
+    background: @grey;
+    color: @grey-dark;
+  }
+  &:hover, &:active, &.active {
+    background: @white-off;
+    color: @grey-dark;
+  }
+}
+.button-icon-only {
+  box-sizing: border-box;
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative; /* for absolute positioning of icon */
+  vertical-align: bottom;
+  width: 28rem/@fs;
+  padding: 0 6rem/@fs;
+  &:before {
+    text-indent: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: 0;
+    display: inline;
+    width: 28rem/@fs;
+  }
+}
+.button-x2 {
+  font-size: 32rem/@fs;
+  line-height: 58rem/@fs;
+}
+.button-icon-only-x2 {
+  width: 58rem/@fs;
+  &:before {
+    width: 58rem/@fs;
+  }
+}
+.button-x3 {
+  font-size: 48rem/@fs;
+  line-height: 88rem/@fs;
+}
+.button-icon-only-x3 {
+  width: 88rem/@fs;
+  &:before {
+    width: 88rem/@fs;
+  }
+}
+
+.messages, .preview {
+
+  margin: 15em/@fs 0;
+
+  padding: 15em/@fs 30em/@fs;
+
+}
+
+
+.messages.status,
+
+.messages.error,
+
 .messages.warning {
-  background-color: @yellow;
+
+  border: 0;
+
+  background-color: @green;
+
+  color: @white;
+
+  .border-radius(@border-radius-large);
+
 }
+
+
+.messages.error {
+
+  background-color: @red;
+
+}
+
+.messages.warning {
+
+  background-color: @yellow;
+
+}
+
 
 .messages ul {
+
   margin: 0;
 }
