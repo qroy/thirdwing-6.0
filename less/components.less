@@ -148,7 +148,7 @@ a:hover, a:active {
 .button {
   /* base button */
   display: block;
-  vertical-align: bottom;
+  vertical-align: middle;
   line-height: 28em/@fs;
   padding: 0 10rem/@fs;
   margin: 2rem/@fs 2em/@fs 0 0;
@@ -164,12 +164,20 @@ a:hover, a:active {
 .button-inline {
   display: inline-block;
 }
-.button-footer {
+.button-alt {
+  &:link, &:visited { 
+    background: @secondary; 
+  }
+  &:active, &:hover, &:focus, &.active { 
+    background: @secondary; 
+  }
+}
+.button-light {
   &:link, &:visited {
     background: @grey;
     color: @grey-dark;
   }
-  &:hover, &:active, &.active {
+  &:active, &:hover, &:focus, &.active {
     background: @white-off;
     color: @grey-dark;
   }
@@ -180,7 +188,7 @@ a:hover, a:active {
   white-space: nowrap;
   overflow: hidden;
   position: relative; /* for absolute positioning of icon */
-  vertical-align: bottom;
+  vertical-align: middle;
   width: 28rem/@fs;
   padding: 0 6rem/@fs;
   &:before {
@@ -195,18 +203,30 @@ a:hover, a:active {
   }
 }
 .button-x2 {
-  font-size: 32rem/@fs;
+  font-size: 20rem/@fs !important;
   line-height: 58rem/@fs;
+  &:before {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 32rem/@fs !important;
+    line-height: 58rem/@fs;
+    width: 38rem/@fs;
+  }
 }
 .button-icon-only-x2 {
   width: 58rem/@fs;
   &:before {
     width: 58rem/@fs;
+    margin: 0;
   }
 }
 .button-x3 {
-  font-size: 48rem/@fs;
+  font-size: 30rem/@fs;
   line-height: 88rem/@fs;
+  &:before {
+    font-size: 48rem/@fs;
+    width: 68rem/@fs;
+  }
 }
 .button-icon-only-x3 {
   width: 88rem/@fs;

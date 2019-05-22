@@ -7,55 +7,25 @@
   padding: 0px;
 }
 .toggle-nav, .toggle-tabs {
-  font-size: 20em/@fs;
-  line-height: 45em/20;
-  padding: 0 7em/20;
-  height: 45em/20;
-  display: inline-block;
-  .border-radius();
-
-  .button-icon-only();
-  width: 29em/20;
-
+  .button;
+  .button-alt;
+  .button-inline;
+  .button-x2;
+  @media @phone-ls-max {
+    .button-icon-only;
+    .button-icon-only-x2;
+  }
+  @media @phone-ls {
+    width: 130rem/@fs;
+  }
   @media @normal {
     display: none;
-  }
-  &:link, &:visited {
-    color: @white;
-    background: @secondary;
-  }
-  &:hover, &:active, &.nav-active {
-    background: @secondary;
   }
 }
 .toggle-nav {
   z-index: 10;
   position: absolute;
-  top: 120em/20;
-  @media @phone-ls {
-    text-align: center;
-    width: 136em/20;
-    .box-shadow();
-    text-indent: inherit;
-    &:before {
-      position: relative;
-      left: inherit;
-      right: inherit;
-      text-align: inherit;
-      margin-right: 5em/20;
-      display: inline-block;
-      width: 1em;
-    }
-  }
-  @media @tablet {
-    width: 136em/20;
-    top: 180em/20;
-  }
-}
-.toggle-tabs {
-  @media @normal {
-    display: none;
-  }
+  top: 120rem/@fs;
 }
 
 #menu-main, #menu-service {

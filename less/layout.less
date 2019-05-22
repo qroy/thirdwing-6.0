@@ -13,93 +13,101 @@ body {
 }
 
 .layout-container {
-  padding: 0 20em/@fs;
+  padding: 0 20rem/@fs;
   margin: 0 auto;
   position: relative;
   @media @normal {
-    padding: 0 80em/@fs;
-    max-width: @wide-width - 20em/@fs;
+    padding: 0 80rem/@fs;
+    max-width: @wide-width - 20rem/@fs;
   }
 }
 
 /**
  * Header
  */
-#logo {
-  height: 105em/@fs;
+#header {
   background: @primary;
-  padding: 15em/@fs 20em/@fs 23em/@fs;
-  margin: 0 -20em/@fs 37em/@fs;
   .box-shadow(@box-shadow-inset);
+}
+#logo {
+  height: 105rem/@fs;
+  padding: 15rem/@fs 20rem/@fs 23rem/@fs;
+  margin: 0 -20rem/@fs 37rem/@fs;
   @media @tablet {
     box-sizing: border-box;
-    height: 203em/@fs;
+    height: 203rem/@fs;
     position: relative;
-    background: transparent url(../images/header.jpg) no-repeat 50% 50%;
-    background-size: 100%;
   }
   @media @normal {
-    padding: 15em/@fs 20em/@fs;
-    margin-bottom: 15em/@fs;
+    padding: 15rem/@fs 60rem/@fs;
+    margin: 0 -60rem/@fs 15rem/@fs;
     height: 195em/@fs;
-    .border-radius(0 0 @border-radius-large @border-radius-large);
   }
 }
-.sidebar-left, .two-sidebars {
-  #logo {
-    @media @tablet { padding-left: 12.75em; /* width of sidebar + 1.5em */ } 
-  }
-  #menu-main {
-    @media @tablet { padding-left: 11.25em; /* width of sidebar */  }
-  }
-}
+
 #logo-img {
   &:after {
     display: block;
     content: '\e900';
     font-family: 'thirdwing';
-    font-size: 80em/@fs;
-    line-height: 90em/80;
+    font-size: 80rem/@fs;
+    line-height: 90rem/@fs;
     box-sizing: border-box;
     .border-radius(@border-radius-large);
     background: @primary;
     color: @white;
-    border: 2em/80 solid @white;
-    width: 90em/80;
-    height: 90em/80;
+    border: 2rem/@fs solid @white;
+    width: 90rem/@fs;
+    height: 90rem/@fs;
     float: left;
     text-align: center;
     @media @tablet {
-      box-sizing: content-box;
-      content: '\e901';
-      .box-shadow();
-      background: @primary;
-      border: 0;
-      float: none;
-      font-size: 150em/@fs;
-      line-height: 150em/150;
-      width: 150em/150;
-      height: 150em/150;
+      font-size: 130rem/@fs;
+      line-height: 150rem/@fs;
+      width: 150rem/@fs;
+      height: 150rem/@fs;
     }
   }
 }
+.hero #logo-img {
+}
 #logo-title {
-  font-size: 35em/@fs;
-  line-height: 42em/35;
+  font-size: 35rem/@fs;
+  line-height: 42rem/@fs;
+  font-weight: 600;
   float: left;
   color: @white;
-  width: 2em;
-  margin-left: 15em/35;
+  width: 2rem;
+  margin-left: 15rem/@fs;
   &::first-line {
-    font-size: 28em/35;
-    line-height: 42em/28;
+    font-size: 28rem/@fs;
+    line-height: 42rem/@fs;
+    font-weight: 400;
   }
   @media @tablet {
-    display: none;
+//    display: none;
+    font-size: 70rem/@fs;
+    line-height: 75rem/@fs;
+    margin-left: 30rem/@fs;
+    &::first-line {
+      font-size: 28rem/@fs;
+      line-height: 60rem/@fs;
+    }
   }
 }
 #logo-slogan {
   display: none;
+  @media @normal {
+    display: block;
+    font-size: 36rem/@fs;
+    line-height: 40rem/@fs;
+    font-family: 'Indie Flower';
+    text-align: right;
+    display: table-cell;
+    vertical-align: bottom;
+    height: 120px;
+    color: @secondary;
+  }
 }
 #menu-service {
   position: absolute;
@@ -226,21 +234,14 @@ body.two-sidebars #main-squeeze {
   background: @tertiary;
   background-size: auto 200%;
   .box-shadow(@box-shadow-inset);
-  a {
-    &:link, &:visited {
-      color: @white-off;
-    }
-    &:hover, &:active, &:focus, &.active {
-      color: @white;
-    }
-  }
+  a { .link-light; }
   ul.menu a {
     .button;
-    .button-footer;
+    .button-light;
   }
   h2 { .h3; color: @white; }
   @media @tablet-ls {
-    height: 500em/@fs;
+    height: 700rem/@fs;
     #footer-left {
       width: 60%;
       float: left;
@@ -262,10 +263,17 @@ body.two-sidebars #main-squeeze {
     .button-icon-only-x3;
   }
 }
+#to-top a {
+  .icon(@fa-var-mars);
+  .button;
+  .button-x3;
+  .button-icon-only;
+  .button-icon-only-x3;
+}
 
 #l10n-client, #admin-toolbar {
   display: none;
-  @media @normal {
+  @media @wide {
     display: block;
   }
 }

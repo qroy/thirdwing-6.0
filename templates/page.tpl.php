@@ -17,7 +17,7 @@
 <div id="top"></div>
 <div id="page-wrapper">
 <div id="page">
-<header id="header" role="banner" class="layout-container clearfix">
+<header id="header" role="banner"><div class="layout-container clearfix">
 <div id="menu-service"><?php print $topbar; ?></div>
 <div id="logo">
 <?php if ($logo): ?><div id="logo-img"></div><?php endif; ?>
@@ -25,7 +25,7 @@
 <?php if ($site_slogan): ?><div id="logo-slogan"><?php print $site_slogan; ?></div><?php endif; ?>
 </div>
 <nav id="menu-main" role="navigation"><a href="#" class="toggle-nav fa fa-bars">Menu</a><?php print $header; ?></nav>
-</header>
+</div></header>
 <div id="main-wrapper" class="layout-container clearfix">
 <main id="main"><div id="main-squeeze">
 <div id="breadcrumb"><?php print $breadcrumb; ?></div>
