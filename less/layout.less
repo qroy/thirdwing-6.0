@@ -111,26 +111,20 @@ body {
 }
 #menu-service {
   position: absolute;
-  height: 45em/@fs;
+  height: 45rem/@fs;
   overflow: visible;
-  right: 20em/@fs;
-  top: 120em/@fs;
-  left: 20em/@fs;
+  right: 20rem/@fs;
+  top: 120rem/@fs;
+  left: 20rem/@fs;
   z-index: 5;
 
-  background: @tertiary;
-  .border-radius();
-  .box-shadow();
-
   @media @tablet { 
-    background: @secondary;
     top: 0; 
     left: inherit; 
-    .border-radius(0 0 @border-radius-small @border-radius-small);
   }
   @media @normal { 
-    right: 80em/@fs; 
-    height: 30em/@fs; 
+    right: 80rem/@fs; 
+    height: 30rem/@fs; 
   }
 }
 #menu-main {
@@ -273,7 +267,7 @@ body.two-sidebars #main-squeeze {
 
 #l10n-client, #admin-toolbar {
   display: none;
-  @media @wide {
+  @media @normal {
     display: block;
   }
 }

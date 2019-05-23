@@ -2,7 +2,7 @@
 jQuery(document).ready(function() {
     jQuery('.toggle-nav').click(function(e) {
         jQuery(this).toggleClass('nav-active');
-        jQuery('ul.menu').toggleClass('nav-active');
+        jQuery('#menu-main').toggleClass('nav-active');
         e.preventDefault();
     });
 });
@@ -11,8 +11,8 @@ jQuery(document).ready(function() {
 (function ($jq) {
 jQuery(document).ready(function() {
     jQuery('.toggle-tabs').click(function(e) {
-        jQuery(this).toggleClass('tabs-active');
-        jQuery('.tabs.primary').toggleClass('tabs-active');
+        jQuery(this).toggleClass('nav-active');
+        jQuery('#menu-local-tasks').toggleClass('nav-active');
         e.preventDefault();
     });
 });
