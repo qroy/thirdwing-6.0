@@ -27,6 +27,9 @@ body {
  */
 #header {
   background: @primary;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
   .box-shadow(@box-shadow-inset);
 }
 #logo {
@@ -108,6 +111,20 @@ body {
     font-size: 36rem/@fs;
     line-height: 40rem/@fs;
   }
+}
+.hero #logo-img {
+  &:after {
+    content: '\e901';
+    .box-shadow();
+    border: 0;
+    font-size: 150rem/@fs;
+  }
+}
+.hero #logo-title {
+  display: none;
+}
+.sticky .field-afbeeldingen img {
+
 }
 #menu-service {
   position: absolute;

@@ -17,7 +17,10 @@
 <div id="top"></div>
 <div id="page-wrapper">
 <div id="page">
-<header id="header" role="banner"><div class="layout-container clearfix">
+<header id="header" role="banner"
+<?php if ($node->field_afbeeldingen[0]['filepath'] && $node->sticky && $node->type != 'activiteit'): print ' style="background-image: url(/' . $node->field_afbeeldingen[0]['filepath'] . ');"'; endif; ?>
+<?php if ($node->field_background[0]['filepath'] && $node->type == 'activiteit'): print ' style="background-image: url(/' . $node->field_background[0]['filepath'] . ');"'; endif; ?>
+><div class="layout-container clearfix">
 <div id="menu-service"><?php print $topbar; ?></div>
 <div id="logo">
 <?php if ($logo): ?><div id="logo-img"></div><?php endif; ?>
