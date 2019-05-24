@@ -30,18 +30,14 @@ body {
   .box-shadow(@box-shadow-inset);
 }
 #logo {
-  height: 105rem/@fs;
-  padding: 15rem/@fs 20rem/@fs 23rem/@fs;
-  margin: 0 -20rem/@fs 37rem/@fs;
+  height: 90rem/@fs;
+  padding: 15rem/@fs 0;
   @media @tablet {
-    box-sizing: border-box;
-    height: 203rem/@fs;
+    height: 150rem/@fs;
     position: relative;
   }
   @media @normal {
-    padding: 15rem/@fs 60rem/@fs;
-    margin: 0 -60rem/@fs 15rem/@fs;
-    height: 195em/@fs;
+    padding: 30rem/@fs 0;
   }
 }
 
@@ -69,8 +65,6 @@ body {
     }
   }
 }
-.hero #logo-img {
-}
 #logo-title {
   font-size: 35rem/@fs;
   line-height: 42rem/@fs;
@@ -85,7 +79,6 @@ body {
     font-weight: 400;
   }
   @media @tablet {
-//    display: none;
     font-size: 70rem/@fs;
     line-height: 75rem/@fs;
     margin-left: 30rem/@fs;
@@ -97,16 +90,23 @@ body {
 }
 #logo-slogan {
   display: none;
-  @media @normal {
-    display: block;
-    font-size: 36rem/@fs;
-    line-height: 40rem/@fs;
+  @media @tablet {
+    display: inline-block;
+    font-size: 24rem/@fs;
+    line-height: 30rem/@fs;
     font-family: 'Indie Flower';
     text-align: right;
-    display: table-cell;
-    vertical-align: bottom;
-    height: 120px;
-    color: @secondary;
+    color: @red;
+    position: absolute;
+    right: 0;
+    bottom: 30rem/@fs;
+    width: 100%;
+    padding-left: 550rem/@fs;
+    box-sizing: border-box;
+  }
+  @media @normal {
+    font-size: 36rem/@fs;
+    line-height: 40rem/@fs;
   }
 }
 #menu-service {
@@ -129,14 +129,18 @@ body {
 }
 #menu-main {
   z-index: 10;
-
+  margin: 0 auto 17rem/@fs;
   @media @normal {
+    margin: 0 auto 32rem/@fs;
     padding: 0 0;
-    height: 30em/@fs;
-    margin: -30em/@fs auto 0;
+    height: 28rem/@fs;
     position: inherit;
     left: inherit;
     top: inherit;
+  }
+  .content {
+    margin: 0px;
+    padding: 0px;
   }
 }
 
@@ -240,21 +244,28 @@ body.two-sidebars #main-squeeze {
       width: 60%;
       float: left;
       .block {
-        width: 30%;
+        box-sizing: border-box;
+        padding-right: 20rem/@fs;
+        width: 100/3%;
         float: left;
       }
     }
     #footer-right {
       width: 40%; 
-      float: right;
+      float: left;
     }
   }
 }
 #block-menu-menu-social {
-  ul.menu a {
-    .button-x3;
-    .button-icon-only;
-    .button-icon-only-x3;
+  ul.menu {
+    li {
+      display: inline-block;
+    }
+    a {
+      .button-x3;
+      .button-icon-only;
+      .button-icon-only-x3;
+    }
   }
 }
 #to-top a {

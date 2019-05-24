@@ -2,15 +2,8 @@
  * Primary navigation
  */
 
-#menu-main .content {
-  margin: 0px;
-  padding: 0px;
-}
 .toggle-nav, .toggle-tabs {
-  .button;
-  .button-alt;
-  .button-inline;
-  .button-x2;
+  .box-shadow();
   @media @phone-ls-max {
     .button-icon-only;
     .button-icon-only-x2;
@@ -21,37 +14,41 @@
   @media @normal {
     display: none;
   }
+  margin: 0;
 }
 .toggle-nav {
   z-index: 10;
-  position: absolute;
-  top: 120rem/@fs;
 }
 #menu-main, #menu-service, #menu-local-tasks {
+  line-height: 28rem/@fs;
   :not(li) > ul.menu, > ul.menu {
-    vertical-align: middle;
+    vertical-align: top;
     padding: 0;
     margin: 0;
     position: relative;
     z-index: 5;
+    background-color: @tertiary;
+    @media @tablet {
+      .box-shadow();
+    }
     li {
       position: relative;
       margin: 0;
       padding: 0;
       a {
         font-size: 20rem/@fs;
-        line-height: 45rem/@fs;
+        line-height: 43rem/@fs;
         text-decoration: none;
         @media @normal {
           font-size: 16rem/@fs;
-          line-height: 30rem/@fs;
+          line-height: 28rem/@fs;
         }
       }
     }
     > li {
       @media @normal {
         display: inline-block;
-        vertical-align: middle;
+        vertical-align: top;
         padding-bottom: 10em/@fs; /* 10px force a gap between menu and submenu */
         margin-bottom: -10em/@fs; /* 10px remove extra height from menu */
       }
@@ -59,11 +56,28 @@
         display: block;
         color: @white-off;
         margin: 0;
-        padding: 0 7rem/@fs;
-        @media @normal {
-          display: inline-block;
-          vertical-align: middle;
+        padding: 0 20rem/@fs;
+        @media @tablet {
           padding: 0 10rem/@fs;
+        }
+        @media @normal {
+          .border-radius(@border-radius-small);
+          display: inline-block;
+          vertical-align: top;
+        }
+        &.icon-only {
+          @media @normal { 
+            .button-icon-only;
+            vertical-align: top;
+            padding: 0 6rem/@fs;
+          }
+        }
+      }
+      > a:active, > a:focus, > a:hover, > a.active, > a.active-trail, &.active-trail > a, &.over > a, &:hover > a {
+        background-color: @secondary;
+        color: @white;
+        @media @normal {
+          .box-shadow();
         }
       }
       &.expanded > a {
@@ -82,7 +96,7 @@
         padding: 0;
         margin: 0;
         z-index: 4;
-        background: @primary;
+        background: @grey;
         .box-shadow(@box-shadow-inset);
         @media @normal {
           position: absolute;
@@ -143,8 +157,85 @@
     }
   }
 }
+#menu-main, #menu-local-tasks {
+  position: relative;
+  &.nav-active {
+    :not(li) > ul.menu, > ul.menu {
+      margin-top: 15rem/@fs;
+      max-height: 1200rem/@fs;
+      @media @tablet {
+        margin-top: 0;
+      }
+    }
+  }
+  :not(li) > ul.menu, > ul.menu {
+    .transition(max-height 0.5s);
+    .box-shadow(@box-shadow-inset);
+    overflow: hidden;
+    max-height: 0;
+    margin: 0 -20rem/@fs;
+    @media @tablet {
+      position: absolute;
+      top: 55rem/@fs;
+      margin: 0;
+      width: 320rem/@fs;
+      .border-radius();
+      .box-shadow();
+    }
+    @media @normal {
+      position: relative;
+      top: inherit;
+      width: 100%;
+      max-height: 960rem/@fs;
+      overflow: visible;
+    }
+    > li {
+      > a:link, > a:visited {
+        padding: 0 20rem/@fs;
+        @media @tablet { padding: 0 10rem/@fs; }
+      }
+    }
+    &.menu-secondary {
+      background: @grey;
+      margin-top: 30rem/@fs;
+    }
+  }
+}
+#menu-service {
+  :not(li) > ul.menu {
+    .border-radius(@border-radius-small);
+    .box-shadow;
+    text-align: right;
+    padding: 0 0 0 45rem/@fs;
+    @media @tablet {
+      .border-radius(0 0 @border-radius-small @border-radius-small);
+      padding: 0;
+    }
+    > li {
+      display: inline-block;
+      vertical-align: top;
+      > a:link, > a:visited {
+        display: inline-block;
+        vertical-align: top;
+        .border-radius(@border-radius-small);
+      }
+      > a:active, > a:focus, > a:hover, > a.active, > a.active-trail, &.active-trail > a, &.over > a, &:hover > a {
+        .box-shadow();
+      }
+      a.icon-only {
+        .button-icon-only;
+        padding: 0 6rem/@fs;
+        vertical-align: top;
+        @media @normal-max { 
+          .button-icon-only-x2;
+        }
+      }
+    }
+  }
+}
 .menu-arrow {
   /* arrow for submenu */
+  position: relative;
   &:after {
     content: '  ';
     height: 0;
@@ -159,171 +250,14 @@
     display: inline-block;
     @media @normal {
       position: relative;
-      right: 0;
       top: 0;
+      right: 0;
       border: 3rem/@fs solid transparent;
       border-top-color: @white;
     }
   }
 }
-#menu-main-old, #menu-service-old {
-  .content > div > ul.menu {
-    li {
-      background: none;
-    }
-    > li {
-      
-    }
-  }
+.menu-arrow-down {
 }
-#menu-main, #menu-local-tasks {
-  &.nav-active {
-    :not(li) > ul.menu, > ul.menu {
-      max-height: 1200rem/@fs;
-    }
-  }
-  :not(li) > ul.menu, > ul.menu {
-    overflow: hidden;
-    max-height: 0;
-    margin: 0 -20rem/@fs;
-    @media @tablet {
-      .border-radius();
-      float: left;
-      position: absolute;
-      left: 20rem/@fs;
-      margin: 0;
-      .box-shadow();
-      width: 320rem/@fs;
-    }
-    @media @normal {
-      position: relative;
-      left: inherit;
-      width: 100%;
-      max-height: 960rem/@fs;
-      overflow: visible;
-    }
-  }
-}
-#menu-main-old .content > div > ul.menu {
-    .transition(max-height 0.5s);
-    .box-shadow(@box-shadow-inset);
-  > li {
-    > a:link, > a:visited {
-      padding: 0 20em/20;
-      @media @tablet { padding: 0 7rem/@fs; }
-      @media @normal { padding: 0 7rem/@fs; }
-    }
-    > a:active, > a:focus, > a:hover, > a.active, > a.active-trail, &.active-trail > a, &.over > a, &:hover > a {
-      background-color: @secondary;
-      color: @white;
-      @media @normal {
-        .box-shadow();
-        .border-radius(@border-radius-small);
-      }
-    }
-    @media @normal {
-      &:first-of-type > a { margin-left: 7em/@fs; }
-      &:last-of-type > a  { margin-right: 7em/@fs; }
-    }
-  }
-}
-#menu-service-old .content > div > ul.menu {
-  float: right;
-  > li {
-    float: left;
-    > a:link, > a:visited {
-      color: @white-off;
-      margin: 0 2em/20 0 0;
-      padding: 0 7em/20;
-      @media @normal { 
-        margin: 0 2em/@fs 0 0; 
-        padding: 0 7em/@fs;
-      }
-    }
-    > a:active, > a:focus, > a:hover, > a.active, > a.active-trail, &.active-trail > a, &.over > a, &:hover > a {
-      background-color: @secondary;
-      @media @tablet { background-color: @primary; }
-      color: @white;
-      .border-radius(@border-radius-small);
-      .box-shadow();
-      @media @tablet {
-        .border-radius(0 0 @border-radius-small @border-radius-small);
-      }
-    }
-    &:first-of-type > a { 
-      margin-left: 0;
-      @media @tablet { margin-left: 7em/20; }
-      @media @normal { margin-left: 7em/@fs; }
-    }
-    &:last-of-type > a  { 
-      margin-right: 0;
-      @media @tablet { margin-right: 7em/20; }
-      @media @normal { margin-right: 7em/@fs; }
-    }
-  }
-}
-
-/**
- * Tabs
-  */
-#tabs-wrapper {
-}
-
-ul.tabs-old {
-  &.primary {
-    max-height: 0;
-    overflow: hidden;
-    .transition(max-height 0.5s);
-    position: absolute;
-    z-index: 4;
-    border: 0;
-    margin: 0;
-    padding: 0;
-    line-height: 1.875em; /* 30px */     
-    background: @tertiary;
-    .border-radius();
-    .box-shadow();
-    @media @normal { 
-      position: relative;
-      max-height: 60em; 
-      width: 100%;
-      float: left;
-      .box-shadow(none);
-    }
-    &.tabs-active {
-      max-height: 60em;
-    }
-    li {
-      margin: 0;
-      padding: 0;
-      display: block;
-      color: @white;
-      @media @normal {
-        float: left;
-      }
-      a:link, a:visited {
-        margin: 0;
-        padding: 0 0.5em;
-        @media @normal {
-          margin: 0 0.125em;
-        }
-        border: 0;
-        color: @white;
-        background: @tertiary;
-        display: block;
-        overflow: hidden;
-        white-space: nowrap;
-      }
-      a:hover, a:focus, a:active, &.active a {
-        background: @secondary;
-        @media @normal {
-          .border-radius(0 0 @border-radius-small @border-radius-small);
-        }
-      }
-      @media @normal {
-        &:first-of-type > a { margin-left: 0.5em; /* 8px */ }
-        &:last-of-type > a  { margin-right: 0.5em; /* 8px */ }
-      }
-    }
-  }
+.menu-arrow-right {
 }

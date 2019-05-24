@@ -24,16 +24,16 @@
 <?php if ($site_name): ?><div id="logo-title"><?php print $site_name; ?></div><?php endif; ?>
 <?php if ($site_slogan): ?><div id="logo-slogan"><?php print $site_slogan; ?></div><?php endif; ?>
 </div>
-<nav id="menu-main" role="navigation"><a href="#" class="toggle-nav fa fa-bars">Menu</a><?php print $header; ?></nav>
+<nav id="menu-main" role="navigation"><a href="#" class="toggle-nav button button-x2 button-alt button-inline fa fa-bars">Menu</a><?php print $header; ?></nav>
 </div></header>
 <div id="main-wrapper" class="layout-container clearfix">
 <main id="main"><div id="main-squeeze">
 <div id="breadcrumb"><?php print $breadcrumb; ?></div>
 <?php if ($show_messages && $messages): print $messages; endif; ?>
 <?php print $help; ?>
-<?php if ($tabs): print '<div id="menu-local-tasks" class="clear-block"><a href="#" class="toggle-tabs fa fa-pencil-square-o">Bewerk</a><ul class="menu menu-primary">'. $tabs . '</ul></div>'; endif;
-?>
+<?php if ($tabs): print '<div id="menu-local-tasks" class="clear-block"><a href="#" class="toggle-tabs button button-x2 button-alt button-inline fa fa-pencil-square-o">Bewerk</a><ul class="menu menu-primary">'. $tabs . '</ul>'; endif; ?>
 <?php if ($tabs2): print '<ul class="menu menu-secondary">'. $tabs2 .'</ul>'; endif; ?>
+<?php if ($tabs): print '</div>'; endif; ?>
 <?php if ($title): print '<h1>'. $title .'</h1>'; endif; ?>
 <?php print $content ?>
 <?php print $feed_icons ?>
