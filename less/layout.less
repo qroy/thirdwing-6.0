@@ -28,8 +28,9 @@ body {
 #header {
   background: @primary;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center top;
+//  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
   .box-shadow(@box-shadow-inset);
 }
 #logo {
@@ -117,14 +118,25 @@ body {
     content: '\e901';
     .box-shadow();
     border: 0;
-    font-size: 150rem/@fs;
+    font-size: 90rem/@fs;
+    @media @tablet {
+      font-size: 150rem/@fs;
+    }
   }
 }
 .hero #logo-title {
   display: none;
 }
-.sticky .field-afbeeldingen img {
-
+.hero.node-type-pagina {
+  #header {
+    height: 100vh;
+  }
+  #main-wrapper {
+    top: 0;
+  }
+  .node.buildmode-full>div>div>.field-afbeeldingen {
+    display: none;
+  }
 }
 #menu-service {
   position: absolute;

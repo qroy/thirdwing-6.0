@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php print $styles ?>
 <!--[if lt IE 7]><?php print phptemplate_get_ie_styles(); ?><![endif]-->
+<?php if ($hero): print '<style> #header { background-image: url(/' . $hero . '); }</style>'; endif; ?>
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">var $jq = jQuery.noConflict();</script> 
 <?php print $scripts ?>
@@ -17,10 +18,7 @@
 <div id="top"></div>
 <div id="page-wrapper">
 <div id="page">
-<header id="header" role="banner"
-<?php if ($node->field_afbeeldingen[0]['filepath'] && $node->sticky && $node->type != 'activiteit'): print ' style="background-image: url(/' . $node->field_afbeeldingen[0]['filepath'] . ');"'; endif; ?>
-<?php if ($node->field_background[0]['filepath'] && $node->type == 'activiteit'): print ' style="background-image: url(/' . $node->field_background[0]['filepath'] . ');"'; endif; ?>
-><div class="layout-container clearfix">
+<header id="header" role="banner"><div class="layout-container clearfix">
 <div id="menu-service"><?php print $topbar; ?></div>
 <div id="logo">
 <?php if ($logo): ?><div id="logo-img"></div><?php endif; ?>

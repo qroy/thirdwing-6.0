@@ -45,12 +45,15 @@ function phptemplate_preprocess_page(&$vars, $hook) {
     }
   }
 
-  if ($vars['node']->sticky && $vars['node']->type != 'activiteit') {
+  if ($vars['node']->field_afbeeldingen[0]['filepath'] && $vars['node']->sticky) {
     $body_classes[] = 'hero';
+    $vars['hero'] = $vars['node']->field_afbeeldingen[0]['filepath'];
   }
-  if ($vars['node']->type == 'activiteit') {
+  if ($vars['node']->field_background[0]['filepath'] && $vars['node']->type == 'activiteit') {
     $body_classes[] = 'hero';
+    $vars['hero'] = $vars['node']->field_background[0]['filepath'];
   }
+  $body_classes[] = 'node-type-' . $vars['node']->type;
 
   // Add new body classes to existing variable
   $vars['body_classes'] = implode(' ', $body_classes);
