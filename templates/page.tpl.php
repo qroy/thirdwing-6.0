@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php print $styles ?>
 <!--[if lt IE 7]><?php print phptemplate_get_ie_styles(); ?><![endif]-->
-<?php if ($hero): print '<style> #header { background-image: url(/' . $hero . '); }</style>'; endif; ?>
+<?php if ($hero): print '<style>#header { background-image: url(/' . $hero . '); }</style>'; endif; ?>
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">var $jq = jQuery.noConflict();</script> 
 <?php print $scripts ?>
