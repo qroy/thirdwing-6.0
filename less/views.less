@@ -133,6 +133,8 @@
   .opname-type {
     height: 36em/@fs;
     text-align: right;
+    z-index: 2;
+    position: relative;
   }
   .opname-link {
     z-index: 1;
@@ -156,6 +158,16 @@
   .opname-foto .badge-foto { display: inline-block; }
   .opname-video .badge-video { display: inline-block; }
   .opname-audio .badge-audio { display: inline-block; }
+  .badge.badge-audio-download {
+    &:link, &:visited {
+      background: @primary;
+      color: @white;
+    }
+    &:hover, &:active, &:focus {
+      background: @grey;
+      color: @secondary;
+    }
+  }
 }
 .video {
   &.video-thumb {
