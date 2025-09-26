@@ -1,0 +1,326 @@
+/**
+ * Layout
+ */
+
+#print {
+  display: none;
+}
+body {
+}
+#wrapper {
+  background: @white-off;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1270px;
+  position: relative;
+}
+
+#topbar {
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
+/**
+ * Header
+ */
+#header {
+  padding: 160px 0 0;
+  height: 20px;
+  margin: 0 auto;
+  position: relative;
+}
+.sidebar-left, .two-sidebars {
+  #header {
+    margin-left: 180px;
+  }
+}
+#logo {
+  position: absolute;
+  height: 120px;
+  top: 20px;
+  right: 0;
+  left: 0;
+  #logo-img a {
+    background: @primary;
+    color: @white;
+    float: left;
+    height: 120px;
+    width: 120px;
+    .box-shadow();
+    .border-radius(@border-radius-large);
+    &:after {
+      display: block;
+      content: '\e900';
+      font-family: 'thirdwing';
+      width: 120px;
+      font-size: 100px;
+      line-height: 120px;
+      text-align: center;
+    }
+    &:hover, &:active, &:focus {
+      background: @secondary;
+    }
+  }
+  #logo-title {
+    word-spacing: 400px;
+    width: 400px;
+    font-weight: 600;
+    float: left;
+    display: block;
+    height: 120px;
+    margin-left: 20px;
+    font-size: 70em/@fs;
+    line-height: 90em/70;
+    &::first-line {
+      font-size: 28em/70;
+      line-height: 30em/28;
+    }
+    /* firefox hack */
+    @-moz-document url-prefix() {
+      margin-top: -50px;
+    }
+  }
+  #logo-slogan {
+    font-size: 36px;
+    line-height: 40px;
+    font-family: 'Indie Flower';
+    text-align: right;
+    display: table-cell;
+    vertical-align: bottom;
+    height: 120px;
+    color: @secondary;
+  }
+}
+
+.breadcrumb {
+  font-size: 0.92em;
+}
+
+.breadcrumb, .breadcrumb a {
+  color: @black;
+}
+
+body {
+  min-width: 880px;
+}
+body.two-sidebars, body.sidebar-left {
+  min-width: 1080px;
+}
+body.sidebar-right {
+  min-width: 880px;
+}
+
+/* We must define 100% width to avoid the body being too narrow for near-empty pages */
+#center {
+  float: left;
+  width: 100%;
+}
+
+/* So we move the #center container over the sidebars to compensate */
+body.sidebar-left #center {
+  margin-left: -180px;
+}
+body.sidebar-right #center {
+  margin-right: -180px;
+}
+body.two-sidebars #center {
+  margin: 0 -180px;
+}
+
+/* And add blanks left and right for the sidebars to fill */
+body.sidebar-left #squeeze {
+  margin-left: 180px;
+}
+body.sidebar-right #squeeze {
+  margin-right: 180px;
+}
+body.two-sidebars #squeeze {
+  margin: 0 180px;
+}
+
+/* We ensure the sidebars are still clickable using z-index */
+.container .sidebar {
+  margin: 50px 0 5em;
+  width: 180px;
+  float: left;
+  z-index: 2;
+  position: relative;
+}
+
+.sidebar .block {
+  margin: 0 0 1.5em 0; /* 18px / 12px */
+}
+
+#sidebar-left .block {
+  padding: 0 15px 0 0px;
+}
+
+#sidebar-right .block {
+  padding: 0 0px 0 15px;
+}
+
+.block .content {
+  margin: 0;
+}
+
+#sidebar-left .block-region {
+  margin: 0 15px 0 0px;
+}
+
+#sidebar-right .block-region {
+  margin: 0 0px 0 15px;
+}
+
+.block-region {
+  padding: 1em;
+  background: transparent;
+  border: 2px dashed #b4d7f0;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+/* Now we add the backgrounds for the main content shading */
+#squeeze {
+  position: relative;
+  background: @white;
+  padding: 70px 25px 5em 25px;
+  margin: 40px 0;
+  min-height: 400px;
+  .box-shadow();
+  .border-radius(@border-radius-large);
+}
+
+.taxonomy-Leden #squeeze:before {
+  content: 'voor leden';
+  position: absolute;
+  right: 25px;
+  top: 0;
+  background: @red;
+  color: @white;
+  text-align: center;
+  width: 100px;
+  font-size: 1.2em;
+  line-height: 2em;
+  .border-radius(0 0 @border-radius-small @border-radius-small);
+}
+.taxonomy-Bezoekers #squeeze:before {
+  content: '';
+}
+#squeeze .block {
+  margin-bottom: 2em;
+}
+
+#footer {
+  .box-shadow(@box-shadow-inset);
+  padding: 20px 0 70px;
+  margin-top: 30px;
+  float: none;
+  clear: both;
+  height: 500px;
+  color: @white-off;
+  background: @grey-dark;
+  position: relative;
+  a {
+    &:link, &:visited {
+      color: @white;
+    }
+    &:hover, &:active, &.active {
+      color: @grey;
+    }
+  }
+  h2 {
+    color: @white-off; 
+    text-transform: uppercase;
+    font-size: 14em/14;
+    line-height: 24em/14;
+  }
+  #footer-left {
+    width: 660px; 
+    float: left;
+  }
+  #footer-right {
+    float: right;
+  }
+  #block-menu-menu-footer, #block-menu-menu-footer-service,#block-menu-menu-footer-service-visitor , #block-block-6, #block-menu-menu-social {
+    float: left;
+    width: 120px;
+    height: 260px;
+    clear: none;
+    margin-right: 24px;
+  }
+  #block-menu-menu-social {
+    width: 180px;
+    margin: 0;
+    h2 {
+      margin-left: 10px;
+    }
+  }
+  #block-block-6 {
+    width: 192px;
+    margin: 0;
+    font-size: 13em/@fs;
+    line-height: 20em/12;
+  }
+  #block-block-5 {
+    float: left;
+    clear: left;
+    width: 360px;
+    display: block;
+  }
+  #block-block-5 {
+    text-align: left;
+    font-size: 10em/14;
+    line-height: 20em/10;
+    margin: 24px 0;
+    color: @grey;
+    padding: 0 70px 0 10px;
+    position: relative;
+    box-sizing: border-box;
+    text-align: right;
+    &:after {
+      content: '\e900';
+      font-family: 'thirdwing';
+      font-size: 50px;
+      line-height: 60px;
+      text-align: center;
+      display: block;
+      width: 60px;
+      height: 60px;
+      border: 1px solid @grey;
+      .border-radius();
+      position: absolute;
+      right: 0;
+      top: 0;
+      visibility: visible;
+    }
+  }
+  .fa-ul {
+    margin-left: 24em/14em;
+    padding: 0;
+    li {
+      background: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+.sidebar-left, .two-sidebars {
+  #footer-left {
+    margin-left: 180px;
+  }
+}
+.sidebar-right, .two-sidebars {
+  #footer-right {
+    margin-right: 180px;
+  }
+}
+
+.breadcrumb {
+  position: absolute;
+  top: 20px;
+  left: 25px; /* LTR */
+  z-index: 3;
+}

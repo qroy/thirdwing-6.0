@@ -1,0 +1,207 @@
+{
+  "id" : "00000000-0000-0000-0000-000000000000",
+  "javascriptIndentation" : 4,
+  "files" : {
+    "mail.css" : {
+      "output" : "mail.out.css"
+    },
+    "css\/fix-ie.css" : {
+      "output" : "css\/fix-ie.out.css"
+    },
+    "less\/fix-ie.less" : {
+      "output" : "css\/fix-ie.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "js\/doubletaptogo.js" : {
+      "output" : "js\/doubletaptogo.out.js",
+      "profiles" : {
+        "uglify" : "00000000-0000-0000-0000-000000000000",
+        "jshint" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/badges.less" : {
+      "output" : "css\/badges.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/layout.less" : {
+      "output" : "css\/layout.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/style.less" : {
+      "imports" : [
+        "less\/variables.less",
+        "less\/base.less",
+        "less\/layout.less",
+        "less\/nodes.less",
+        "less\/badges.less",
+        "less\/menu.less",
+        "less\/admin.less",
+        "less\/jplayer.less",
+        "less\/screen.less",
+        "less\/print.less"
+      ],
+      "output" : "css\/style.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/nodes.less" : {
+      "output" : "css\/nodes.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/base.less" : {
+      "output" : "css\/base.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/jplayer.less" : {
+      "output" : "css\/jplayer.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/menu.less" : {
+      "output" : "css\/menu.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/print.less" : {
+      "output" : "css\/print.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/admin.less" : {
+      "output" : "css\/admin.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/screen.less" : {
+      "output" : "css\/screen.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "less\/variables.less" : {
+      "output" : "css\/variables.css",
+      "profiles" : {
+        "less" : "00000000-0000-0000-0000-000000000000"
+      }
+    },
+    "css\/style.css" : {
+      "output" : "css\/style.out.css"
+    }
+  },
+  "flows" : {
+    "stylus" : {
+      "output" : "*.css",
+      "stylus" : "00000000-0000-0000-0000-000000000000"
+    },
+    "sass" : {
+      "sass" : "00000000-0000-0000-0000-000000000000",
+      "output" : "*.css"
+    },
+    "coffee" : {
+      "coffee" : "00000000-0000-0000-0000-000000000000",
+      "jshint" : "00000000-0000-0000-0000-000000000000",
+      "output" : "*.js",
+      "uglify" : "00000000-0000-0000-0000-000000000000"
+    },
+    "jinja" : {
+      "jinja" : "00000000-0000-0000-0000-000000000000",
+      "output" : "*"
+    },
+    "less" : {
+      "less" : "00000000-0000-0000-0000-000000000000",
+      "output" : "\/css\/*.css"
+    },
+    "css" : {
+      "output" : "*.out.css"
+    },
+    "js" : {
+      "output" : "*.out.js",
+      "uglify" : "00000000-0000-0000-0000-000000000000",
+      "jshint" : "00000000-0000-0000-0000-000000000000"
+    }
+  },
+  "profiles" : {
+    "stylus" : {
+      "00000000-0000-0000-0000-000000000000" : {
+        "mediaquery" : false,
+        "name" : "Default Stylus Profile",
+        "comments" : false,
+        "format" : 1
+      }
+    },
+    "coffee" : {
+      "00000000-0000-0000-0000-000000000000" : {
+        "name" : "Default CoffeeScript Profile",
+        "bare" : false
+      }
+    },
+    "sass" : {
+      "00000000-0000-0000-0000-000000000000" : {
+        "name" : "Default Sass Profile",
+        "style" : "compressed",
+        "debug" : 0
+      }
+    },
+    "jshint" : {
+      "00000000-0000-0000-0000-000000000000" : {
+        "name" : "Default JSHint Profile",
+        "options" : [
+          "undef",
+          "unused",
+          "bitwise",
+          "curly",
+          "eqeqeq",
+          "latedef",
+          "newcap",
+          "noarg",
+          "nonew",
+          "trailing",
+          "browser",
+          "jquery"
+        ],
+        "globals" : ""
+      }
+    },
+    "less" : {
+      "00000000-0000-0000-0000-000000000000" : {
+        "imports" : false,
+        "mediaquery" : false,
+        "name" : "Default Less Profile",
+        "comments" : false,
+        "format" : 1
+      }
+    },
+    "jinja" : {
+      "00000000-0000-0000-0000-000000000000" : {
+        "name" : "Default Jinja Profile",
+        "autoescape" : false
+      }
+    },
+    "uglify" : {
+      "00000000-0000-0000-0000-000000000000" : {
+        "name" : "Default UglifyJS Profile",
+        "options" : [
+          "--mangle",
+          "--compress",
+          "beautify"
+        ]
+      }
+    }
+  },
+  "version" : 10100
+}

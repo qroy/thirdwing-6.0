@@ -1,0 +1,63 @@
+@media print {
+
+.sidebar,
+#header,
+.dontprint, 
+.breadcrumb,
+.tabs,
+.tabs2,
+#footer,
+.node .links,
+.comment .links,
+#toolbar-toolbar,
+.messages {
+  display: none;
+}
+body.sidebars, 
+body.sideber-left, 
+body.sidebar-right, 
+body,
+#wrapper,
+#container {
+  width: 100%;
+  background: none;
+}
+a, a:link, a:visited, a:hover, a:active {
+  color: #000;
+  text-decoration: none;
+}
+body.sidebars, body.sideber-left, body.sidebar-right, body {
+  width: 640px;
+}
+
+body.sidebar-left #center, body.sidebar-right #center, body.sidebars #center,
+body.sidebar-left #squeeze, body.sidebar-right #squeeze, body.sidebars #squeeze {
+  margin: 0;
+}
+.breadcrumb,
+#center,
+.right-corner,
+taxonomy-Leden .right-corner,
+.left-corner,
+#footer,
+#squeeze {
+    position: static;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    float: none;
+    clear: both;
+    background: none;
+}
+
+.badge {
+  display: inline;
+}
+tr {
+  &.odd, &.even {
+    border-bottom: 1px solid @grey;
+  }
+}
+
+}
