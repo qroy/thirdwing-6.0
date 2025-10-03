@@ -62,6 +62,7 @@
           <?php if ($show_messages && $messages): print $messages; endif; ?>
           <?php print $help; ?>
           <div class="clear-block">
+		    <?php print $before_content ?>
             <?php print $content ?>
           </div>
           <?php print $feed_icons ?>

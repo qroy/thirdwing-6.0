@@ -7,6 +7,7 @@
   margin: 0 4em/@fs 4em/@fs 0;
   text-align: center;
   .transition-standard();
+  height: 24em/@fs;
 
   color: @white;
   background: @grey;
@@ -17,18 +18,20 @@
     padding: 3em/@fs;
   }
   .border-radius();
-
+  
   &.badge-combo {
     font-family: thirdwing;
+	width: 24em/@fs;
     font-size: 24em/@fs;
     width: 24em/24;
-    line-height: 23em/24;
+    line-height: 24em/24;
     padding: 4em/24;
-    margin: 0 4em/24 4em/24 0;
+	margin: 0 4em/24 4em/24 0;
+	height: 24em/24;
   }
   &.badge-combo-aanwezig, &.badge-combo-vervanging { background: @green; }
-  &.badge-combo-vraag {                              background: @grey-light;  }
-  &.badge-combo-afwezig {                            background: @red;   }
+  &.badge-combo-vraag {                              background: @grey-light; }
+  &.badge-combo-afwezig {                            background: @red; }
 
   @media print {
     &.badge-combo-aanwezig, &.badge-combo-vervanging { background: @grey-light; color: @grey-dark;  border-color: @grey-light;  }
@@ -67,7 +70,7 @@
     }
   }
   &.badge-kar {
-    width: 116em/@fs;
+    width: 168em/@fs; // 5*32 (width + padding) + 4*4 (margin) - 2*4 (padding)
     overflow: hidden;
     @media screen {
       background: @blue;
@@ -102,7 +105,7 @@
     }
   }
   &.badge-sleepgroep-tijd {
-    width: 80em/@fs;
+    width: 96em/@fs; // 3*32 (width + padding) + 2*4 (margin) - 2*4 (padding)
     @media screen {
       background: @yellow;
     }

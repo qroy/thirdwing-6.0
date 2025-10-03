@@ -32,10 +32,10 @@
       width: 184em/@fs;
     }
     .views-field-field-sleepgroep-value {
-      width: 128em/@fs;
+      width: 166em/@fs;
     }
     .views-field-field-keyboard-value {
-      width: 76em/@fs;
+      width: 114em/@fs;
     }
   }
    
@@ -50,11 +50,15 @@
           .badge-kar {
             @media screen { background: @grey-light; }
           }
-          .badge-combo.badge-combo-aanwezig, .badge-combo.badge-combo-vervanging { @media screen { background: @green-light; } }
-          .badge-combo.badge-combo-afwezig,                                      { @media screen { background: @red-light; } }
+		  .badge-combo.badge-combo-aanwezig, .badge-combo.badge-combo-vervanging { @media screen { background-color: @green-light; } }
+          .badge-combo.badge-combo-afwezig,                                      { @media screen { background-color: @red-light; } }
+		  .badge-combo.badge-combo-vraag,                                        { @media screen { background-color: @grey-light; } }
         }
       }
     }
+  }
+  .nd-region-right {
+    width: 180em/@fs;
   }
 }
 
@@ -407,70 +411,6 @@ a.video-thumb {
   }
 }
 
-/**
- * Vrienden
- */
-
-.vrienden {
-  margin-right: -12em/@fs;
-  overflow: hidden;
-  .views-row {
-    width: 100% / 2;
-    @media @normal { width: 100% / 3; }
-    box-sizing: border-box;
-    float: left;
-    padding: 0 12em/@fs 12em/@fs 0;
-  }
-  .vriend {
-    text-align: center;
-    position: relative;
-    background: @white-off;
-    .border-radius(@border-radius-large);
-    padding: 6em/@fs;
-    &:hover {
-      .transition-standard();
-      background: @secondary;
-      .vriend-info, .vriend-title { color: @white; }
-      .badge { background: @white; color: @orange; }
-    }
-  }
-  .vriend-image {
-    position: relative;
-    &:before {
-      display: block;
-      content: ' ';
-      width: 100%;
-      padding-top: (9 / 16) * 100%;
-    }
-    .image {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100%;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center center;
-    }
-  }
-  .vriend-info {
-    text-transform: uppercase;
-    height: 48em/@fs;
-    margin: 24em/@fs 0;
-  }
-  .vriend-title {
-    color: red;
-  }
-  .vriend-jaren {
-    height: 36em/@fs;
-  }
-  .vriend-site {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-  }
-}
 
 /**
  * Repertoire

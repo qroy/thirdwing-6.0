@@ -11,6 +11,7 @@ scripts[] = js/doubletaptogo.js
 regions[topbar] = Topbar
 regions[header] = Menubar
 regions[left] = Left sidebar
+regions[before_content] = Before Content
 regions[content] = Content
 regions[right] = Right sidebar
 regions[footerleft] = Left Footer
