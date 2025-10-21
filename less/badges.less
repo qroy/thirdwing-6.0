@@ -29,14 +29,16 @@
 	margin: 0 4em/24 4em/24 0;
 	height: 24em/24;
   }
-  &.badge-combo-aanwezig, &.badge-combo-vervanging { background: @green; }
-  &.badge-combo-vraag {                              background: @grey-light; }
-  &.badge-combo-afwezig {                            background: @red; }
+  &.badge-combo-aanwezig {   background: @green; }
+  &.badge-combo-vervanging { background: @orange; }
+  &.badge-combo-vraag {      background: @grey-light; }
+  &.badge-combo-afwezig {    background: @red; }
 
   @media print {
-    &.badge-combo-aanwezig, &.badge-combo-vervanging { background: @grey-light; color: @grey-dark;  border-color: @grey-light;  }
-    &.badge-combo-vraag {                              background: transparent; color: @white-off;  border-color: @white-off;   }
-    &.badge-combo-afwezig {                            background: transparent; color: transparent; border-color: transparent;  }
+    &.badge-combo-aanwezig  {   background: @grey-light; color: @grey-dark;  border-color: @grey-light;  }
+	&.badge-combo-vervanging {  background: @grey-light; color: @grey-dark;  border-color: @grey-light;  }
+    &.badge-combo-vraag {       background: transparent; color: @white-off;  border-color: @white-off;   }
+    &.badge-combo-afwezig {     background: transparent; color: transparent; border-color: transparent;  }
   }
   &.badge-functie {
     padding: 4em/@fs 8em/@fs;
@@ -146,6 +148,13 @@
   &.badge-color-brown         { background: @brown;  }
   &.badge-color-grey-light    { background: @grey-light; }
 }
+  .location {
+    display: block;
+    text-transform: uppercase;
+  }
+  .location-title {
+    color: @red;
+  }
 
 .marker {
   .badge();

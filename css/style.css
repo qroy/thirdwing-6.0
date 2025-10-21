@@ -1802,12 +1802,6 @@ tr.dblog-access-denied td.active {
 .agenda .views-field-title .Overige a:focus {
   color: #3c329b;
 }
-.agenda .views-field-field-locatie {
-  text-transform: uppercase;
-}
-.agenda .views-field-field-l-plaats {
-  color: #e9584c;
-}
 .agenda .views-field-field-bijzonderheden-value {
   font-size: 0.75em;
   line-height: 2em;
@@ -2379,9 +2373,11 @@ a.video-thumb:focus {
   margin: 0 0.16666667em 0.16666667em 0;
   height: 1em;
 }
-.badge.badge-combo-aanwezig,
-.badge.badge-combo-vervanging {
+.badge.badge-combo-aanwezig {
   background: #aad563;
+}
+.badge.badge-combo-vervanging {
+  background: #eb7314;
 }
 .badge.badge-combo-vraag {
   background: #d7d7d6;
@@ -2390,7 +2386,11 @@ a.video-thumb:focus {
   background: #e9584c;
 }
 @media print {
-  .badge.badge-combo-aanwezig,
+  .badge.badge-combo-aanwezig {
+    background: #d7d7d6;
+    color: #323231;
+    border-color: #d7d7d6;
+  }
   .badge.badge-combo-vervanging {
     background: #d7d7d6;
     color: #323231;
@@ -2584,6 +2584,13 @@ a.video-thumb:focus {
 .badge.badge-color-grey-light {
   background: #d7d7d6;
 }
+.location {
+  display: block;
+  text-transform: uppercase;
+}
+.location-title {
+  color: #e9584c;
+}
 .marker {
   display: inline-block;
   vertical-align: middle;
@@ -2622,9 +2629,11 @@ a.video-thumb:focus {
   margin: 0 0.16666667em 0.16666667em 0;
   height: 1em;
 }
-.marker.badge-combo-aanwezig,
-.marker.badge-combo-vervanging {
+.marker.badge-combo-aanwezig {
   background: #aad563;
+}
+.marker.badge-combo-vervanging {
+  background: #eb7314;
 }
 .marker.badge-combo-vraag {
   background: #d7d7d6;
@@ -2633,7 +2642,11 @@ a.video-thumb:focus {
   background: #e9584c;
 }
 @media print {
-  .marker.badge-combo-aanwezig,
+  .marker.badge-combo-aanwezig {
+    background: #d7d7d6;
+    color: #323231;
+    border-color: #d7d7d6;
+  }
   .marker.badge-combo-vervanging {
     background: #d7d7d6;
     color: #323231;
