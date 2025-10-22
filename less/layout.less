@@ -11,14 +11,14 @@ body {
   background: @white-off;
 }
 
-.container {
+.layout-container {
   margin: 0 auto;
   padding: 0 20px;
   max-width: 1270px;
   position: relative;
 }
 
-#topbar {
+#menu-service {
   position: absolute;
   right: 20px;
   top: 0;
@@ -31,6 +31,7 @@ body {
   height: 20px;
   margin: 0 auto;
   position: relative;
+  background-image: none;
 }
 .sidebar-left, .two-sidebars {
   #header {
@@ -107,51 +108,57 @@ body {
   color: @black;
 }
 
-body {
-  min-width: 880px;
-}
-body.two-sidebars, body.sidebar-left {
-  min-width: 1080px;
-}
-body.sidebar-right {
-  min-width: 880px;
-}
-
-/* We must define 100% width to avoid the body being too narrow for near-empty pages */
-#center {
-  float: left;
+#grid {
+  display: grid;
+  grid-template-columns: auto;
   width: 100%;
 }
 
-/* So we move the #center container over the sidebars to compensate */
-body.sidebar-left #center {
-  margin-left: -180px;
+body {
+  min-width: 880px;
+  &.sidebar-left {
+    min-width: 1080px;
+    #grid {
+      grid-template-columns: 180px auto;
+      #main {
+        grid-column: 2;
+      }
+      #sidebar-left {
+        grid-column: 1;
+      }
+	}
+  }
+  &.sidebar-right {
+    min-width: 880px;
+    #grid {
+      grid-template-columns: auto 180px;
+      #main {
+        grid-column: 1;
+      }
+      #sidebar-right {
+        grid-column: 2;
+      }
+	}
+  }
+  &.two-sidebars {
+    #grid {
+	  min-width: 1080px;
+      grid-template-columns: 180px auto 180px;
+      #main {
+        grid-column: 2;
+      }
+      #sidebar-left {
+        grid-column: 1;
+      }
+      #sidebar-right {
+        grid-column: 3;
+      }
+	}
+  }
 }
-body.sidebar-right #center {
-  margin-right: -180px;
-}
-body.two-sidebars #center {
-  margin: 0 -180px;
-}
-
-/* And add blanks left and right for the sidebars to fill */
-body.sidebar-left #squeeze {
-  margin-left: 180px;
-}
-body.sidebar-right #squeeze {
-  margin-right: 180px;
-}
-body.two-sidebars #squeeze {
-  margin: 0 180px;
-}
-
-/* We ensure the sidebars are still clickable using z-index */
-.container .sidebar {
+.sidebar {
   margin: 50px 0 5em;
   width: 180px;
-  float: left;
-  z-index: 2;
-  position: relative;
 }
 
 .sidebar .block {
@@ -187,7 +194,7 @@ body.two-sidebars #squeeze {
 }
 
 /* Now we add the backgrounds for the main content shading */
-#squeeze {
+#main {
   position: relative;
   background: @white;
   padding: 72em/@fs 25em/@fs 5em;
@@ -215,7 +222,7 @@ body.two-sidebars #squeeze {
 .taxonomy-Bezoekers #squeeze:before {
   content: '';
 }
-#squeeze .block {
+#main .block {
   margin-bottom: 2em;
 }
 

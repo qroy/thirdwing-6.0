@@ -29,16 +29,36 @@ function phptemplate_comment_wrapper($content, $node) {
 /**
  * Override or insert PHPTemplate variables into the templates.
  */
-function phptemplate_preprocess_page(&$vars) {
+function phptemplate_preprocess_page(&$vars, $hook) {
+
+  $body_classes = array($vars['body_classes']);
+
   if ((arg(0) == 'node') && (is_numeric(arg(1)))) {
     if (!$vars['node']) $vars['node'] = node_load(arg(1));
   }
+
   $vars['tabs2'] = menu_secondary_local_tasks(); 
+
   if (module_exists('taxonomy') && $vars['node']->nid) {
     foreach (taxonomy_node_get_terms($vars['node']) as $term) {
-      $vars['body_classes'] = $vars['body_classes'] . ' taxonomy-' . eregi_replace('[^a-z0-9]', '-', $term->name);
+      $body_classes[] = 'taxonomy-' . eregi_replace('[^a-z0-9]', '-', $term->name);
     }
   }
+
+  if ($vars['node']->field_afbeeldingen[0]['filepath'] && $vars['node']->sticky) {
+    $body_classes[] = 'hero';
+    $vars['hero'] = $vars['node']->field_afbeeldingen[0]['filepath'];
+  }
+  if ($vars['node']->field_background[0]['filepath'] && $vars['node']->type == 'activiteit') {
+    $body_classes[] = 'hero';
+    $vars['hero'] = $vars['node']->field_background[0]['filepath'];
+  }
+  $body_classes[] = 'node-type-' . $vars['node']->type;
+
+  // Add new body classes to existing variable
+  $vars['body_classes'] = implode(' ', $body_classes);
+
+
 }
 function phptemplate_preprocess_node(&$vars) {
   if (module_exists('taxonomy') && $vars['node']->nid) {

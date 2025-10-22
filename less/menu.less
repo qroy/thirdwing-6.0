@@ -1,12 +1,15 @@
 /**
  * Primary navigation
  */
+ .toggle-nav {
+   display: none;
+ }
 #header .content {
   margin: 0px;
   padding: 0px;
 }
 
-#header, #topbar {
+#header, #menu-service {
   .content > div > ul.menu {
   margin: 0;
   padding: 0;
@@ -139,7 +142,7 @@
   }
   }
 }
-#topbar .content > div > ul.menu {
+#menu-service .content > div > ul.menu {
   background: @grey-dark;
   .border-radius(0 0 @border-radius-small @border-radius-small);
 }
@@ -149,7 +152,7 @@ a.fa {
   font-size: 14em/@fs;
   line-height: 24em/@fs;
 }
-#header, #topbar {
+#header, #menu-service {
   ul.menu a.fa::before {
     font-family: FontAwesome;
     margin-right: 5px;
@@ -315,7 +318,7 @@ td.menu-disabled {
   }
 }
 
-#center {
+#main {
   ul.menu, .menu ul.views-summary {
     overflow: hidden;
     padding: 20em/@fs 0 0;
