@@ -1377,7 +1377,8 @@ body.two-sidebars #grid #sidebar-right {
 }
 .buildmode-teaser > .node:not(:empty),
 .buildmode-compact > .node:not(:empty),
-.buildmode-full > .node:not(:empty) {
+.buildmode-full > .node:not(:empty),
+.buildmode-schema > .node:not(:empty) {
   position: relative;
   background: #ffffff;
   padding: 1.71428571em;
@@ -1389,7 +1390,8 @@ body.two-sidebars #grid #sidebar-right {
 @media screen {
   .buildmode-teaser > .node:not(:empty),
   .buildmode-compact > .node:not(:empty),
-  .buildmode-full > .node:not(:empty) {
+  .buildmode-full > .node:not(:empty),
+  .buildmode-schema > .node:not(:empty) {
     -webkit-box-shadow: 0px 0px 3px #323231;
     -moz-box-shadow: 0px 0px 3px #323231;
     box-shadow: 0px 0px 3px #323231;
@@ -1397,12 +1399,14 @@ body.two-sidebars #grid #sidebar-right {
 }
 .buildmode-teaser > .node:not(:empty) > div,
 .buildmode-compact > .node:not(:empty) > div,
-.buildmode-full > .node:not(:empty) > div {
+.buildmode-full > .node:not(:empty) > div,
+.buildmode-schema > .node:not(:empty) > div {
   /* header region */
 }
 .buildmode-teaser > .node:not(:empty) > div > .field-background .node-background,
 .buildmode-compact > .node:not(:empty) > div > .field-background .node-background,
-.buildmode-full > .node:not(:empty) > div > .field-background .node-background {
+.buildmode-full > .node:not(:empty) > div > .field-background .node-background,
+.buildmode-schema > .node:not(:empty) > div > .field-background .node-background {
   height: 31em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -1410,7 +1414,8 @@ body.two-sidebars #grid #sidebar-right {
 }
 .buildmode-teaser > .node:not(:empty) > div > .field-background .node-background:after,
 .buildmode-compact > .node:not(:empty) > div > .field-background .node-background:after,
-.buildmode-full > .node:not(:empty) > div > .field-background .node-background:after {
+.buildmode-full > .node:not(:empty) > div > .field-background .node-background:after,
+.buildmode-schema > .node:not(:empty) > div > .field-background .node-background:after {
   height: 31em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -1418,25 +1423,29 @@ body.two-sidebars #grid #sidebar-right {
 }
 .buildmode-teaser > .node:not(:empty) > div > div,
 .buildmode-compact > .node:not(:empty) > div > div,
-.buildmode-full > .node:not(:empty) > div > div {
+.buildmode-full > .node:not(:empty) > div > div,
+.buildmode-schema > .node:not(:empty) > div > div {
   /* middle region */
 }
 .buildmode-teaser > .node:not(:empty) > div > div > .field-title,
 .buildmode-compact > .node:not(:empty) > div > div > .field-title,
-.buildmode-full > .node:not(:empty) > div > div > .field-title {
+.buildmode-full > .node:not(:empty) > div > div > .field-title,
+.buildmode-schema > .node:not(:empty) > div > div > .field-title {
   height: 10.71428571em;
   display: block;
   overflow: hidden;
 }
 .buildmode-teaser > .node:not(:empty).taxonomy-Leden,
 .buildmode-compact > .node:not(:empty).taxonomy-Leden,
-.buildmode-full > .node:not(:empty).taxonomy-Leden {
+.buildmode-full > .node:not(:empty).taxonomy-Leden,
+.buildmode-schema > .node:not(:empty).taxonomy-Leden {
   background: #ffffff;
 }
 @media screen {
   .buildmode-teaser > .node:not(:empty).taxonomy-Leden:before,
   .buildmode-compact > .node:not(:empty).taxonomy-Leden:before,
-  .buildmode-full > .node:not(:empty).taxonomy-Leden:before {
+  .buildmode-full > .node:not(:empty).taxonomy-Leden:before,
+  .buildmode-schema > .node:not(:empty).taxonomy-Leden:before {
     z-index: 5;
     content: 'voor leden';
     position: absolute;
@@ -1454,13 +1463,15 @@ body.two-sidebars #grid #sidebar-right {
 }
 .buildmode-teaser > .node:not(:empty).taxonomy-Bezoekers,
 .buildmode-compact > .node:not(:empty).taxonomy-Bezoekers,
-.buildmode-full > .node:not(:empty).taxonomy-Bezoekers {
+.buildmode-full > .node:not(:empty).taxonomy-Bezoekers,
+.buildmode-schema > .node:not(:empty).taxonomy-Bezoekers {
   background: #ffffff;
   border: 0;
 }
 .buildmode-teaser > .node:not(:empty).taxonomy-Bezoekers:before,
 .buildmode-compact > .node:not(:empty).taxonomy-Bezoekers:before,
-.buildmode-full > .node:not(:empty).taxonomy-Bezoekers:before {
+.buildmode-full > .node:not(:empty).taxonomy-Bezoekers:before,
+.buildmode-schema > .node:not(:empty).taxonomy-Bezoekers:before {
   content: '';
 }
 .buildmode-full > .node > div > div {
