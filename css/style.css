@@ -887,7 +887,7 @@ span.clear {
 #print {
   display: none;
 }
-#wrapper {
+#page-wrapper {
   background: #f0f0ee;
 }
 .layout-container {
@@ -1070,20 +1070,9 @@ body.two-sidebars #grid #sidebar-right {
 /* Now we add the backgrounds for the main content shading */
 #main {
   position: relative;
-  background: #ffffff;
-  padding: 5.14285714em 1.78571429em 5em;
+  padding: 5.14285714em 0 5em;
   margin: 2.85714286em 0;
   min-height: 400px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-@media screen {
-  #main {
-    -webkit-box-shadow: 0px 0px 10px #323231;
-    -moz-box-shadow: 0px 0px 10px #323231;
-    box-shadow: 0px 0px 10px #323231;
-  }
 }
 @media screen {
   .taxonomy-Leden #squeeze:before {
@@ -1386,52 +1375,68 @@ body.two-sidebars #grid #sidebar-right {
 .buildmode-compact > .node.taxonomy-Bezoekers > div > div > .field-read-more .button-social {
   display: inline-block;
 }
-.buildmode-teaser > .node,
-.buildmode-compact > .node {
+.buildmode-teaser > .node:not(:empty),
+.buildmode-compact > .node:not(:empty),
+.buildmode-full > .node:not(:empty) {
   position: relative;
-  background: #f0f0ee;
+  background: #ffffff;
   padding: 1.71428571em;
   margin: 0 0 4.28571429em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.buildmode-teaser > .node > div,
-.buildmode-compact > .node > div {
+@media screen {
+  .buildmode-teaser > .node:not(:empty),
+  .buildmode-compact > .node:not(:empty),
+  .buildmode-full > .node:not(:empty) {
+    -webkit-box-shadow: 0px 0px 3px #323231;
+    -moz-box-shadow: 0px 0px 3px #323231;
+    box-shadow: 0px 0px 3px #323231;
+  }
+}
+.buildmode-teaser > .node:not(:empty) > div,
+.buildmode-compact > .node:not(:empty) > div,
+.buildmode-full > .node:not(:empty) > div {
   /* header region */
 }
-.buildmode-teaser > .node > div > .field-background .node-background,
-.buildmode-compact > .node > div > .field-background .node-background {
+.buildmode-teaser > .node:not(:empty) > div > .field-background .node-background,
+.buildmode-compact > .node:not(:empty) > div > .field-background .node-background,
+.buildmode-full > .node:not(:empty) > div > .field-background .node-background {
   height: 31em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.buildmode-teaser > .node > div > .field-background .node-background:after,
-.buildmode-compact > .node > div > .field-background .node-background:after {
+.buildmode-teaser > .node:not(:empty) > div > .field-background .node-background:after,
+.buildmode-compact > .node:not(:empty) > div > .field-background .node-background:after,
+.buildmode-full > .node:not(:empty) > div > .field-background .node-background:after {
   height: 31em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.buildmode-teaser > .node > div > div,
-.buildmode-compact > .node > div > div {
+.buildmode-teaser > .node:not(:empty) > div > div,
+.buildmode-compact > .node:not(:empty) > div > div,
+.buildmode-full > .node:not(:empty) > div > div {
   /* middle region */
 }
-.buildmode-teaser > .node > div > div > .field-title,
-.buildmode-compact > .node > div > div > .field-title {
+.buildmode-teaser > .node:not(:empty) > div > div > .field-title,
+.buildmode-compact > .node:not(:empty) > div > div > .field-title,
+.buildmode-full > .node:not(:empty) > div > div > .field-title {
   height: 10.71428571em;
   display: block;
   overflow: hidden;
 }
-.buildmode-teaser > .node.taxonomy-Leden,
-.buildmode-compact > .node.taxonomy-Leden {
+.buildmode-teaser > .node:not(:empty).taxonomy-Leden,
+.buildmode-compact > .node:not(:empty).taxonomy-Leden,
+.buildmode-full > .node:not(:empty).taxonomy-Leden {
   background: #ffffff;
-  border: 2px solid #e9584c;
 }
 @media screen {
-  .buildmode-teaser > .node.taxonomy-Leden:before,
-  .buildmode-compact > .node.taxonomy-Leden:before {
+  .buildmode-teaser > .node:not(:empty).taxonomy-Leden:before,
+  .buildmode-compact > .node:not(:empty).taxonomy-Leden:before,
+  .buildmode-full > .node:not(:empty).taxonomy-Leden:before {
     z-index: 5;
     content: 'voor leden';
     position: absolute;
@@ -1447,13 +1452,15 @@ body.two-sidebars #grid #sidebar-right {
     border-radius: 0 0 5px 5px;
   }
 }
-.buildmode-teaser > .node.taxonomy-Bezoekers,
-.buildmode-compact > .node.taxonomy-Bezoekers {
-  background: #f0f0ee;
+.buildmode-teaser > .node:not(:empty).taxonomy-Bezoekers,
+.buildmode-compact > .node:not(:empty).taxonomy-Bezoekers,
+.buildmode-full > .node:not(:empty).taxonomy-Bezoekers {
+  background: #ffffff;
   border: 0;
 }
-.buildmode-teaser > .node.taxonomy-Bezoekers:before,
-.buildmode-compact > .node.taxonomy-Bezoekers:before {
+.buildmode-teaser > .node:not(:empty).taxonomy-Bezoekers:before,
+.buildmode-compact > .node:not(:empty).taxonomy-Bezoekers:before,
+.buildmode-full > .node:not(:empty).taxonomy-Bezoekers:before {
   content: '';
 }
 .buildmode-full > .node > div > div {

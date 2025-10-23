@@ -94,14 +94,14 @@
     &.taxonomy-Bezoekers > div > div > .field-read-more .button-social { display: inline-block; }
   }
 }
-.buildmode-teaser, .buildmode-compact {
-  > .node {
+.buildmode-teaser, .buildmode-compact, .buildmode-full {
+  > .node:not(:empty) {
     position: relative;
-    background: @white-off;
+    background: @white;
     padding: 24em/@fs;
     margin: 0 0 60em/@fs;
     .border-radius(@border-radius-large);
-
+	.box-shadow(@box-shadow-small);
     > div { /* header region */
       > .field-background {
         .node-background {
@@ -123,7 +123,7 @@
     }
     &.taxonomy-Leden {
       background: @white;
-      border: 2px solid @red;
+      //border: 2px solid @red;
       &:before {
        @media screen {
         z-index: 5;
@@ -141,7 +141,7 @@
       }
     }
     &.taxonomy-Bezoekers {
-      background: @white-off;
+      background: @white;
       border: 0;
       &:before {
         content: '';
