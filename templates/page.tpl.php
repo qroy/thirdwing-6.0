@@ -6,7 +6,7 @@
 <?php print $head ?>
 <title><?php print $head_title ?></title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<?php if ($hero): print '<style>#header { background-image: url(/' . $hero . '); }</style>'; endif; ?>
+<?php if ($hero): print '<style>#header-bg { background-image: url(/' . $hero . '); }</style>'; endif; ?>
 <?php print $styles ?>
 <!--[if lt IE 7]><?php print phptemplate_get_ie_styles(); ?><![endif]-->
 <link rel="apple-touch-icon" href="<?php print base_path() . path_to_theme() ?>/images/apple-touch-icon.png" />
@@ -16,19 +16,19 @@
 <script>$jq( function() { $( '#menu-main li:has(ul)' ).doubleTapToGo(); });</script>
 </head>
 <body class="<?php print $body_classes; ?>">
-<div id="top"></div>
 <div id="page-wrapper">
-<div id="page" class="layout-container clear-block">
-<div id="menu-service"><?php print $topbar; ?></div>
+<div id="page">
 <header id="header" role="banner">
+<div id="menu-service"><?php print $topbar; ?></div>
 <div id="logo">
-<?php if ($logo): ?><div id="logo-img"><a href="/" title="Keer terug naar home"></a></div><?php endif; ?>
+<?php if ($logo): ?><a href="/" title="Keer terug naar home"><div id="logo-img"></div><?php endif; ?>
 <?php if ($site_name): ?><div id="logo-title"><?php print $site_name; ?></div><?php endif; ?>
+<?php if ($logo): ?></a><?php endif; ?>
 <?php if ($site_slogan): ?><div id="logo-slogan"><?php print $site_slogan; ?></div><?php endif; ?>
 </div>
 <nav id="menu-main" role="navigation"><a href="#" class="toggle-nav button button-x2 button-alt button-inline fa fa-bars">Menu</a><?php print $header; ?></nav>
 </header>
-<div id="grid"><main id="main">
+<main id="main">
 <div id="breadcrumb"><?php print $breadcrumb; ?></div>
 <?php if ($show_messages && $messages): print $messages; endif; ?>
 <?php print $help; ?>
@@ -43,13 +43,13 @@
 </main>
 <?php if ($left): ?><aside role="complementary" id="sidebar-left" class="sidebar"><?php print $left ?></aside><?php endif; ?>
 <?php if ($right): ?><aside role="complementary" id="sidebar-right" class="sidebar"><?php print $right ?></aside><?php endif; ?>
-</div>
-</div>
-<footer id="footer"><div class="layout-container"><?php print $footer_message ?>
+<footer id="footer"><?php print $footer_message ?>
 <div id="footer-left"><?php print $footerleft ?></div>
 <div id="footer-right"><?php print $footerright ?></div>
-</div></footer>
-<div id="to-top"><a href="#top" title="Terug naar boven"></a></div>
+</footer>
+<div id="header-bg"></div>
+<div id="footer-bg"></div>
+</div>
 </div>
 <?php print $closure ?>
 </body>

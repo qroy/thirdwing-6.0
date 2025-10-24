@@ -215,7 +215,7 @@ h1 {
 }
 @media print {
   h1 {
-    color: #323231;
+    color: #464644;
   }
 }
 h2 {
@@ -227,7 +227,7 @@ h2 {
 }
 @media print {
   h2 {
-    color: #323231;
+    color: #464644;
   }
 }
 h3 {
@@ -488,7 +488,7 @@ table {
 }
 @media print {
   table {
-    border-color: #323231;
+    border-color: #464644;
   }
 }
 thead th {
@@ -502,7 +502,7 @@ thead th {
   thead th {
     color: #000000;
     background: transparent;
-    border-bottom: 2px solid #323231;
+    border-bottom: 2px solid #464644;
   }
 }
 thead th a:link,
@@ -570,7 +570,7 @@ tbody tr.even:last-child {
   tbody tr,
   tbody tr.odd,
   tbody tr.even {
-    border-bottom: 1px solid #323231;
+    border-bottom: 1px solid #464644;
   }
 }
 td.region,
@@ -748,7 +748,7 @@ input[type=radio] ~ .option__indicator {
 }
 input[type=checkbox]:checked ~ .option__indicator,
 input[type=radio]:checked ~ .option__indicator {
-  background: #323231;
+  background: #464644;
 }
 input[type=checkbox]:focus ~ .option__indicator,
 input[type=radio]:focus ~ .option__indicator {
@@ -887,155 +887,136 @@ span.clear {
 #print {
   display: none;
 }
-#page-wrapper {
+body {
   background: #f0f0ee;
 }
-.layout-container {
-  margin: 0 auto;
-  padding: 0 20px;
-  max-width: 1270px;
-  position: relative;
+#page {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: minmax(20px, 1fr) minmax(700px, 1090px) 180px minmax(20px, 1fr);
+  grid-template-areas: ". header header ." ". main main ." ". footer footer .";
 }
-#menu-service {
-  position: absolute;
-  right: 20px;
-  top: 0;
+.two-sidebars #page {
+  grid-template-columns: minmax(20px, 1fr) 180px minmax(700px, 1090px) 180px minmax(20px, 1fr);
+  grid-template-areas: ". . header header ." ". sidebar-left main sidebar-right ." ". . footer footer .";
+}
+.sidebar-right #page {
+  grid-template-areas: ". header header ." ". main sidebar-right ." ". footer footer .";
+}
+.sidebar-left #page {
+  grid-template-columns: minmax(20px, 1fr) 180px minmax(700px, 1090px) 180px minmax(20px, 1fr);
+  grid-template-areas: ". . header header ." ". sidebar-left main main ." ". . footer footer .";
 }
 /**
  * Header
  */
 #header {
-  padding: 160px 0 0;
-  height: 20px;
-  margin: 0 auto;
-  position: relative;
-  background-image: none;
+  grid-area: header;
+  padding-bottom: 30px;
+  display: grid;
 }
-.sidebar-left #header,
-.two-sidebars #header {
-  margin-left: 180px;
+#header-bg {
+  background-color: #3c329b;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  grid-column: 1 / -1;
+  grid-row: 1;
+  z-index: -1;
+}
+@media screen {
+  #header-bg {
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    -moz-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
+  }
+}
+.hero #header-bg {
+  grid-row: 1 / 3;
+}
+#menu-service {
+  justify-self: right;
 }
 #logo {
-  position: absolute;
+  display: grid;
+  grid-template-columns: 140px min-content 1fr;
   height: 120px;
-  top: 20px;
+  margin-bottom: 20px;
   right: 0;
   left: 0;
-}
-#logo #logo-img a {
-  background: #3c329b;
   color: #ffffff;
-  float: left;
+}
+#logo a {
+  display: contents;
+  color: #ffffff;
+}
+#logo a:hover,
+#logo a:active,
+#logo a:focus {
+  color: #eb7314;
+}
+#logo a:hover #logo-img,
+#logo a:active #logo-img,
+#logo a:focus #logo-img {
+  color: #eb7314;
+  border-color: #eb7314;
+}
+#logo #logo-img {
+  background-image: url(../images/logo_zonder_tekst.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 90%;
+  box-sizing: border-box;
   height: 120px;
   width: 120px;
+  border: 2px solid #ffffff;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-@media screen {
-  #logo #logo-img a {
-    -webkit-box-shadow: 0px 0px 10px #323231;
-    -moz-box-shadow: 0px 0px 10px #323231;
-    box-shadow: 0px 0px 10px #323231;
-  }
-}
-#logo #logo-img a:after {
-  display: block;
-  content: '\e900';
-  font-family: 'thirdwing';
-  width: 120px;
-  font-size: 100px;
-  line-height: 120px;
-  text-align: center;
-}
-#logo #logo-img a:hover,
-#logo #logo-img a:active,
-#logo #logo-img a:focus {
-  background: #eb7314;
-}
 #logo #logo-title {
-  word-spacing: 400px;
-  width: 400px;
   font-weight: 600;
-  float: left;
-  display: block;
-  height: 120px;
-  margin-left: 20px;
   font-size: 5em;
-  line-height: 1em;
-  /* firefox hack */
-  margin-top: -25px;
+  line-height: 0.71428571em;
+  width: 2rem;
 }
 #logo #logo-title::first-line {
   font-size: 0.4em;
-  line-height: 1.07142857em;
+  font-weight: 400;
 }
 #logo #logo-slogan {
+  display: flex;
   font-size: 36px;
   line-height: 40px;
   font-family: 'Indie Flower';
-  text-align: right;
-  display: table-cell;
-  vertical-align: bottom;
   height: 120px;
   color: #eb7314;
+  justify-self: right;
+  align-items: end;
 }
-.breadcrumb {
-  font-size: 0.85714286em;
-  line-height: 2em;
-  position: absolute;
-  top: 4em;
-  left: 2.08333333em;
-  z-index: 3;
+.hero #logo #logo-img {
+  border: 0;
+  background-color: #3c329b;
+  background-image: url(../images/logo_met_tekst.svg);
+  background-size: 70%;
 }
-.breadcrumb,
-.breadcrumb a {
-  color: #000000;
+@media screen {
+  .hero #logo #logo-img {
+    -webkit-box-shadow: 0px 0px 10px #000000;
+    -moz-box-shadow: 0px 0px 10px #000000;
+    box-shadow: 0px 0px 10px #000000;
+  }
 }
-#grid {
-  display: grid;
-  grid-template-columns: auto;
-  width: 100%;
+.hero #logo #logo-title,
+.hero #logo #logo-slogan {
+  display: none;
 }
-body {
-  min-width: 880px;
+#sidebar-left {
+  grid-area: sidebar-left;
 }
-body.sidebar-left {
-  min-width: 1080px;
-}
-body.sidebar-left #grid {
-  grid-template-columns: 180px auto;
-}
-body.sidebar-left #grid #main {
-  grid-column: 2;
-}
-body.sidebar-left #grid #sidebar-left {
-  grid-column: 1;
-}
-body.sidebar-right {
-  min-width: 880px;
-}
-body.sidebar-right #grid {
-  grid-template-columns: auto 180px;
-}
-body.sidebar-right #grid #main {
-  grid-column: 1;
-}
-body.sidebar-right #grid #sidebar-right {
-  grid-column: 2;
-}
-body.two-sidebars #grid {
-  min-width: 1080px;
-  grid-template-columns: 180px auto 180px;
-}
-body.two-sidebars #grid #main {
-  grid-column: 2;
-}
-body.two-sidebars #grid #sidebar-left {
-  grid-column: 1;
-}
-body.two-sidebars #grid #sidebar-right {
-  grid-column: 3;
+#sidebar-right {
+  grid-area: sidebar-right;
 }
 .sidebar {
   margin: 50px 0 5em;
@@ -1067,52 +1048,25 @@ body.two-sidebars #grid #sidebar-right {
   text-align: center;
   font-size: 1.3em;
 }
-/* Now we add the backgrounds for the main content shading */
 #main {
+  grid-area: main;
   position: relative;
   padding: 5.14285714em 0 5em;
   margin: 2.85714286em 0;
   min-height: 400px;
 }
-@media screen {
-  .taxonomy-Leden #squeeze:before {
-    content: 'voor leden';
-    position: absolute;
-    right: 25px;
-    top: 0;
-    background: #e9584c;
-    color: #ffffff;
-    text-align: center;
-    width: 100px;
-    font-size: 1.2em;
-    line-height: 2em;
-    -webkit-border-radius: 0 0 5px 5px;
-    -moz-border-radius: 0 0 5px 5px;
-    border-radius: 0 0 5px 5px;
-  }
-}
-.taxonomy-Bezoekers #squeeze:before {
-  content: '';
-}
 #main .block {
   margin-bottom: 2em;
 }
 #footer {
+  grid-area: footer;
   padding: 20px 0 70px;
   margin-top: 30px;
   float: none;
   clear: both;
   height: 500px;
   color: #f0f0ee;
-  background: #323231;
   position: relative;
-}
-@media screen {
-  #footer {
-    -webkit-box-shadow: inset 0 0 10px #000000;
-    -moz-box-shadow: inset 0 0 10px #000000;
-    box-shadow: inset 0 0 10px #000000;
-  }
 }
 #footer a:link,
 #footer a:visited {
@@ -1204,34 +1158,58 @@ body.two-sidebars #grid #sidebar-right {
   margin: 0;
   padding: 0;
 }
-.sidebar-left #footer-left,
-.two-sidebars #footer-left {
-  margin-left: 180px;
+#footer-bg {
+  background: #464644;
+  grid-column: 1 / -1;
+  grid-row: 3;
+  z-index: -1;
 }
-.sidebar-right #footer-right,
-.two-sidebars #footer-right {
-  margin-right: 180px;
+@media screen {
+  #footer-bg {
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    -moz-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
+  }
+}
+@media screen {
+  .hero #footer-bg {
+    -webkit-box-shadow: unset;
+    -moz-box-shadow: unset;
+    box-shadow: unset;
+  }
+}
+.breadcrumb {
+  font-size: 0.85714286em;
+  line-height: 2em;
+  position: absolute;
+  top: 4em;
+  left: 2.08333333em;
+  z-index: 3;
+}
+.breadcrumb,
+.breadcrumb a {
+  color: #000000;
 }
 /**
  * Nodes and Comments
  */
-.buildmode-full > .node > div,
-.buildmode-teaser > .node > div,
-.buildmode-compact > .node > div {
+.buildmode-full > div,
+.buildmode-teaser > div,
+.buildmode-compact > div {
   /* header region */
 }
-.buildmode-full > .node > div > .field-background,
-.buildmode-teaser > .node > div > .field-background,
-.buildmode-compact > .node > div > .field-background {
+.buildmode-full > div > .field-background,
+.buildmode-teaser > div > .field-background,
+.buildmode-compact > div > .field-background {
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   z-index: 0;
 }
-.buildmode-full > .node > div > .field-background .node-background,
-.buildmode-teaser > .node > div > .field-background .node-background,
-.buildmode-compact > .node > div > .field-background .node-background {
+.buildmode-full > div > .field-background .node-background,
+.buildmode-teaser > div > .field-background .node-background,
+.buildmode-compact > div > .field-background .node-background {
   width: 100%;
   height: 15.71428571em;
   background-position: center 10%;
@@ -1242,9 +1220,9 @@ body.two-sidebars #grid #sidebar-right {
   -moz-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
 }
-.buildmode-full > .node > div > .field-background .node-background:after,
-.buildmode-teaser > .node > div > .field-background .node-background:after,
-.buildmode-compact > .node > div > .field-background .node-background:after {
+.buildmode-full > div > .field-background .node-background:after,
+.buildmode-teaser > div > .field-background .node-background:after,
+.buildmode-compact > div > .field-background .node-background:after {
   content: ' ';
   position: relative;
   z-index: 1;
@@ -1257,20 +1235,20 @@ body.two-sidebars #grid #sidebar-right {
   -moz-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
 }
-.buildmode-full > .node > div > div,
-.buildmode-teaser > .node > div > div,
-.buildmode-compact > .node > div > div {
+.buildmode-full > div > div,
+.buildmode-teaser > div > div,
+.buildmode-compact > div > div {
   /* middle region */
 }
-.buildmode-full > .node > div > div > .field-node-type,
-.buildmode-teaser > .node > div > div > .field-node-type,
-.buildmode-compact > .node > div > div > .field-node-type {
+.buildmode-full > div > div > .field-node-type,
+.buildmode-teaser > div > div > .field-node-type,
+.buildmode-compact > div > div > .field-node-type {
   margin: 0 0 1.71428571em;
   display: block;
 }
-.buildmode-full > .node > div > div > .field-afbeeldingen,
-.buildmode-teaser > .node > div > div > .field-afbeeldingen,
-.buildmode-compact > .node > div > div > .field-afbeeldingen {
+.buildmode-full > div > div > .field-afbeeldingen,
+.buildmode-teaser > div > div > .field-afbeeldingen,
+.buildmode-compact > div > div > .field-afbeeldingen {
   margin: 0;
   overflow: hidden;
   display: block;
@@ -1279,56 +1257,56 @@ body.two-sidebars #grid #sidebar-right {
   box-sizing: border-box;
   padding: 0 0 0 1.71428571em;
 }
-.buildmode-full > .node > div > div > .field-afbeeldingen img,
-.buildmode-teaser > .node > div > div > .field-afbeeldingen img,
-.buildmode-compact > .node > div > div > .field-afbeeldingen img {
+.buildmode-full > div > div > .field-afbeeldingen img,
+.buildmode-teaser > div > div > .field-afbeeldingen img,
+.buildmode-compact > div > div > .field-afbeeldingen img {
   box-sizing: border-box;
   width: 100%;
   height: auto;
 }
-.buildmode-full > .node > div > div > .field-afbeeldingen .image,
-.buildmode-teaser > .node > div > div > .field-afbeeldingen .image,
-.buildmode-compact > .node > div > div > .field-afbeeldingen .image {
+.buildmode-full > div > div > .field-afbeeldingen .image,
+.buildmode-teaser > div > div > .field-afbeeldingen .image,
+.buildmode-compact > div > div > .field-afbeeldingen .image {
   height: 23.57142857em;
   background-size: contain;
   background-position: right top;
   background-repeat: no-repeat;
 }
-.buildmode-full > .node > div > div > .field-author,
-.buildmode-teaser > .node > div > div > .field-author,
-.buildmode-compact > .node > div > div > .field-author,
-.buildmode-full > .node > div > div .field-post-date,
-.buildmode-teaser > .node > div > div .field-post-date,
-.buildmode-compact > .node > div > div .field-post-date {
+.buildmode-full > div > div > .field-author,
+.buildmode-teaser > div > div > .field-author,
+.buildmode-compact > div > div > .field-author,
+.buildmode-full > div > div .field-post-date,
+.buildmode-teaser > div > div .field-post-date,
+.buildmode-compact > div > div .field-post-date {
   font-weight: 200;
 }
-.buildmode-full > .node > div > div > .field-author em,
-.buildmode-teaser > .node > div > div > .field-author em,
-.buildmode-compact > .node > div > div > .field-author em,
-.buildmode-full > .node > div > div .field-post-date em,
-.buildmode-teaser > .node > div > div .field-post-date em,
-.buildmode-compact > .node > div > div .field-post-date em {
+.buildmode-full > div > div > .field-author em,
+.buildmode-teaser > div > div > .field-author em,
+.buildmode-compact > div > div > .field-author em,
+.buildmode-full > div > div .field-post-date em,
+.buildmode-teaser > div > div .field-post-date em,
+.buildmode-compact > div > div .field-post-date em {
   font-style: normal;
 }
-.buildmode-full > .node > div > div > .field-locatie,
-.buildmode-teaser > .node > div > div > .field-locatie,
-.buildmode-compact > .node > div > div > .field-locatie,
-.buildmode-full > .node > div > div .field-l-bijzonderheden,
-.buildmode-teaser > .node > div > div .field-l-bijzonderheden,
-.buildmode-compact > .node > div > div .field-l-bijzonderheden {
+.buildmode-full > div > div > .field-locatie,
+.buildmode-teaser > div > div > .field-locatie,
+.buildmode-compact > div > div > .field-locatie,
+.buildmode-full > div > div .field-l-bijzonderheden,
+.buildmode-teaser > div > div .field-l-bijzonderheden,
+.buildmode-compact > div > div .field-l-bijzonderheden {
   text-transform: uppercase;
 }
-.buildmode-full > .node > div > div > .field-locatie > .field-items,
-.buildmode-teaser > .node > div > div > .field-locatie > .field-items,
-.buildmode-compact > .node > div > div > .field-locatie > .field-items,
-.buildmode-full > .node > div > div .field-l-bijzonderheden > .field-items,
-.buildmode-teaser > .node > div > div .field-l-bijzonderheden > .field-items,
-.buildmode-compact > .node > div > div .field-l-bijzonderheden > .field-items {
+.buildmode-full > div > div > .field-locatie > .field-items,
+.buildmode-teaser > div > div > .field-locatie > .field-items,
+.buildmode-compact > div > div > .field-locatie > .field-items,
+.buildmode-full > div > div .field-l-bijzonderheden > .field-items,
+.buildmode-teaser > div > div .field-l-bijzonderheden > .field-items,
+.buildmode-compact > div > div .field-l-bijzonderheden > .field-items {
   padding: 0 0.28571429em;
 }
-.buildmode-full > .node > div > div .field-box,
-.buildmode-teaser > .node > div > div .field-box,
-.buildmode-compact > .node > div > div .field-box {
+.buildmode-full > div > div .field-box,
+.buildmode-teaser > div > div .field-box,
+.buildmode-compact > div > div .field-box {
   box-sizing: border-box;
   background: #ffffff;
   -webkit-border-radius: 5px;
@@ -1337,48 +1315,48 @@ body.two-sidebars #grid #sidebar-right {
   margin: 0 0 0.35714286em;
   padding: 0.28571429em 0.57142857em;
 }
-.buildmode-full > .node > div > div .field-box .badge-date,
-.buildmode-teaser > .node > div > div .field-box .badge-date,
-.buildmode-compact > .node > div > div .field-box .badge-date {
+.buildmode-full > div > div .field-box .badge-date,
+.buildmode-teaser > div > div .field-box .badge-date,
+.buildmode-compact > div > div .field-box .badge-date {
   text-align: left;
 }
-.buildmode-full > .node > div > div .field-box .badge-time,
-.buildmode-teaser > .node > div > div .field-box .badge-time,
-.buildmode-compact > .node > div > div .field-box .badge-time {
+.buildmode-full > div > div .field-box .badge-time,
+.buildmode-teaser > div > div .field-box .badge-time,
+.buildmode-compact > div > div .field-box .badge-time {
   float: right;
   margin: 0;
 }
-.buildmode-full > .node > div > div .field-box .badge,
-.buildmode-teaser > .node > div > div .field-box .badge,
-.buildmode-compact > .node > div > div .field-box .badge {
+.buildmode-full > div > div .field-box .badge,
+.buildmode-teaser > div > div .field-box .badge,
+.buildmode-compact > div > div .field-box .badge {
   margin: 0;
 }
-.buildmode-full > .node > div > div .field-left,
-.buildmode-teaser > .node > div > div .field-left,
-.buildmode-compact > .node > div > div .field-left {
+.buildmode-full > div > div .field-left,
+.buildmode-teaser > div > div .field-left,
+.buildmode-compact > div > div .field-left {
   float: left;
   clear: left;
   width: 50%;
 }
-.buildmode-full > .node > div > div .field-clear-block,
-.buildmode-teaser > .node > div > div .field-clear-block,
-.buildmode-compact > .node > div > div .field-clear-block {
+.buildmode-full > div > div .field-clear-block,
+.buildmode-teaser > div > div .field-clear-block,
+.buildmode-compact > div > div .field-clear-block {
   height: 0;
 }
-.buildmode-full > .node.taxonomy-Leden > div > div > .field-read-more .button-social,
-.buildmode-teaser > .node.taxonomy-Leden > div > div > .field-read-more .button-social,
-.buildmode-compact > .node.taxonomy-Leden > div > div > .field-read-more .button-social {
+.buildmode-full.taxonomy-Leden > div > div > .field-read-more .button-social,
+.buildmode-teaser.taxonomy-Leden > div > div > .field-read-more .button-social,
+.buildmode-compact.taxonomy-Leden > div > div > .field-read-more .button-social {
   display: none;
 }
-.buildmode-full > .node.taxonomy-Bezoekers > div > div > .field-read-more .button-social,
-.buildmode-teaser > .node.taxonomy-Bezoekers > div > div > .field-read-more .button-social,
-.buildmode-compact > .node.taxonomy-Bezoekers > div > div > .field-read-more .button-social {
+.buildmode-full.taxonomy-Bezoekers > div > div > .field-read-more .button-social,
+.buildmode-teaser.taxonomy-Bezoekers > div > div > .field-read-more .button-social,
+.buildmode-compact.taxonomy-Bezoekers > div > div > .field-read-more .button-social {
   display: inline-block;
 }
-.buildmode-teaser > .node:not(:empty),
-.buildmode-compact > .node:not(:empty),
-.buildmode-full > .node:not(:empty),
-.buildmode-schema > .node:not(:empty) {
+.buildmode-teaser:not(:empty),
+.buildmode-compact:not(:empty),
+.buildmode-full:not(:empty),
+.buildmode-schema:not(:empty) {
   position: relative;
   background: #ffffff;
   padding: 1.71428571em;
@@ -1387,65 +1365,55 @@ body.two-sidebars #grid #sidebar-right {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-@media screen {
-  .buildmode-teaser > .node:not(:empty),
-  .buildmode-compact > .node:not(:empty),
-  .buildmode-full > .node:not(:empty),
-  .buildmode-schema > .node:not(:empty) {
-    -webkit-box-shadow: 0px 0px 3px #323231;
-    -moz-box-shadow: 0px 0px 3px #323231;
-    box-shadow: 0px 0px 3px #323231;
-  }
-}
-.buildmode-teaser > .node:not(:empty) > div,
-.buildmode-compact > .node:not(:empty) > div,
-.buildmode-full > .node:not(:empty) > div,
-.buildmode-schema > .node:not(:empty) > div {
+.buildmode-teaser:not(:empty) > div,
+.buildmode-compact:not(:empty) > div,
+.buildmode-full:not(:empty) > div,
+.buildmode-schema:not(:empty) > div {
   /* header region */
 }
-.buildmode-teaser > .node:not(:empty) > div > .field-background .node-background,
-.buildmode-compact > .node:not(:empty) > div > .field-background .node-background,
-.buildmode-full > .node:not(:empty) > div > .field-background .node-background,
-.buildmode-schema > .node:not(:empty) > div > .field-background .node-background {
+.buildmode-teaser:not(:empty) > div > .field-background .node-background,
+.buildmode-compact:not(:empty) > div > .field-background .node-background,
+.buildmode-full:not(:empty) > div > .field-background .node-background,
+.buildmode-schema:not(:empty) > div > .field-background .node-background {
   height: 31em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.buildmode-teaser > .node:not(:empty) > div > .field-background .node-background:after,
-.buildmode-compact > .node:not(:empty) > div > .field-background .node-background:after,
-.buildmode-full > .node:not(:empty) > div > .field-background .node-background:after,
-.buildmode-schema > .node:not(:empty) > div > .field-background .node-background:after {
+.buildmode-teaser:not(:empty) > div > .field-background .node-background:after,
+.buildmode-compact:not(:empty) > div > .field-background .node-background:after,
+.buildmode-full:not(:empty) > div > .field-background .node-background:after,
+.buildmode-schema:not(:empty) > div > .field-background .node-background:after {
   height: 31em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.buildmode-teaser > .node:not(:empty) > div > div,
-.buildmode-compact > .node:not(:empty) > div > div,
-.buildmode-full > .node:not(:empty) > div > div,
-.buildmode-schema > .node:not(:empty) > div > div {
+.buildmode-teaser:not(:empty) > div > div,
+.buildmode-compact:not(:empty) > div > div,
+.buildmode-full:not(:empty) > div > div,
+.buildmode-schema:not(:empty) > div > div {
   /* middle region */
 }
-.buildmode-teaser > .node:not(:empty) > div > div > .field-title,
-.buildmode-compact > .node:not(:empty) > div > div > .field-title,
-.buildmode-full > .node:not(:empty) > div > div > .field-title,
-.buildmode-schema > .node:not(:empty) > div > div > .field-title {
+.buildmode-teaser:not(:empty) > div > div > .field-title,
+.buildmode-compact:not(:empty) > div > div > .field-title,
+.buildmode-full:not(:empty) > div > div > .field-title,
+.buildmode-schema:not(:empty) > div > div > .field-title {
   height: 10.71428571em;
   display: block;
   overflow: hidden;
 }
-.buildmode-teaser > .node:not(:empty).taxonomy-Leden,
-.buildmode-compact > .node:not(:empty).taxonomy-Leden,
-.buildmode-full > .node:not(:empty).taxonomy-Leden,
-.buildmode-schema > .node:not(:empty).taxonomy-Leden {
+.buildmode-teaser:not(:empty).taxonomy-Leden,
+.buildmode-compact:not(:empty).taxonomy-Leden,
+.buildmode-full:not(:empty).taxonomy-Leden,
+.buildmode-schema:not(:empty).taxonomy-Leden {
   background: #ffffff;
 }
 @media screen {
-  .buildmode-teaser > .node:not(:empty).taxonomy-Leden:before,
-  .buildmode-compact > .node:not(:empty).taxonomy-Leden:before,
-  .buildmode-full > .node:not(:empty).taxonomy-Leden:before,
-  .buildmode-schema > .node:not(:empty).taxonomy-Leden:before {
+  .buildmode-teaser:not(:empty).taxonomy-Leden:before,
+  .buildmode-compact:not(:empty).taxonomy-Leden:before,
+  .buildmode-full:not(:empty).taxonomy-Leden:before,
+  .buildmode-schema:not(:empty).taxonomy-Leden:before {
     z-index: 5;
     content: 'voor leden';
     position: absolute;
@@ -1461,26 +1429,26 @@ body.two-sidebars #grid #sidebar-right {
     border-radius: 0 0 5px 5px;
   }
 }
-.buildmode-teaser > .node:not(:empty).taxonomy-Bezoekers,
-.buildmode-compact > .node:not(:empty).taxonomy-Bezoekers,
-.buildmode-full > .node:not(:empty).taxonomy-Bezoekers,
-.buildmode-schema > .node:not(:empty).taxonomy-Bezoekers {
+.buildmode-teaser:not(:empty).taxonomy-Bezoekers,
+.buildmode-compact:not(:empty).taxonomy-Bezoekers,
+.buildmode-full:not(:empty).taxonomy-Bezoekers,
+.buildmode-schema:not(:empty).taxonomy-Bezoekers {
   background: #ffffff;
   border: 0;
 }
-.buildmode-teaser > .node:not(:empty).taxonomy-Bezoekers:before,
-.buildmode-compact > .node:not(:empty).taxonomy-Bezoekers:before,
-.buildmode-full > .node:not(:empty).taxonomy-Bezoekers:before,
-.buildmode-schema > .node:not(:empty).taxonomy-Bezoekers:before {
+.buildmode-teaser:not(:empty).taxonomy-Bezoekers:before,
+.buildmode-compact:not(:empty).taxonomy-Bezoekers:before,
+.buildmode-full:not(:empty).taxonomy-Bezoekers:before,
+.buildmode-schema:not(:empty).taxonomy-Bezoekers:before {
   content: '';
 }
-.buildmode-full > .node > div > div {
+.buildmode-full > div > div {
   /* middle region */
 }
-.buildmode-full > .node > div > div > .field-node-type {
+.buildmode-full > div > div > .field-node-type {
   margin-top: 7.14285714em;
 }
-.buildmode-full > .node > div > div > .field-box {
+.buildmode-full > div > div > .field-box {
   background: #f0f0ee;
 }
 .nd-region-middle {
@@ -2633,7 +2601,7 @@ a.video-thumb:focus {
 }
 @media print {
   .badge {
-    color: #323231;
+    color: #464644;
     border: 1px solid #d7d7d6;
     background: #d7d7d6;
     padding: 0.21428571em;
@@ -2664,12 +2632,12 @@ a.video-thumb:focus {
 @media print {
   .badge.badge-combo-aanwezig {
     background: #d7d7d6;
-    color: #323231;
+    color: #464644;
     border-color: #d7d7d6;
   }
   .badge.badge-combo-vervanging {
     background: #d7d7d6;
-    color: #323231;
+    color: #464644;
     border-color: #d7d7d6;
   }
   .badge.badge-combo-vraag {
@@ -2892,7 +2860,7 @@ a.video-thumb:focus {
 }
 @media print {
   .marker {
-    color: #323231;
+    color: #464644;
     border: 1px solid #d7d7d6;
     background: #d7d7d6;
     padding: 0.21428571em;
@@ -2923,12 +2891,12 @@ a.video-thumb:focus {
 @media print {
   .marker.badge-combo-aanwezig {
     background: #d7d7d6;
-    color: #323231;
+    color: #464644;
     border-color: #d7d7d6;
   }
   .marker.badge-combo-vervanging {
     background: #d7d7d6;
-    color: #323231;
+    color: #464644;
     border-color: #d7d7d6;
   }
   .marker.badge-combo-vraag {
@@ -3322,7 +3290,7 @@ fieldset legend {
   border-radius: 0 0 5px 5px;
 }
 .buildmode-teaser fieldset legend {
-  color: #323231;
+  color: #464644;
   background: #ffffff;
 }
 html.js fieldset.collapsed {
@@ -3388,7 +3356,7 @@ html.js fieldset.collapsible legend a:active {
   float: right;
   position: relative;
   z-index: 4;
-  background-color: #3c329b;
+  background-color: #464644;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -3397,9 +3365,9 @@ html.js fieldset.collapsible legend a:active {
 @media screen {
   #header .content > div > ul.menu,
   #menu-service .content > div > ul.menu {
-    -webkit-box-shadow: 0px 0px 10px #323231;
-    -moz-box-shadow: 0px 0px 10px #323231;
-    box-shadow: 0px 0px 10px #323231;
+    -webkit-box-shadow: 0px 0px 10px #000000;
+    -moz-box-shadow: 0px 0px 10px #000000;
+    box-shadow: 0px 0px 10px #000000;
   }
 }
 #header .content > div > ul.menu li,
@@ -3471,9 +3439,9 @@ html.js fieldset.collapsible legend a:active {
   #menu-service .content > div > ul.menu > li.over > a,
   #header .content > div > ul.menu > li:hover > a,
   #menu-service .content > div > ul.menu > li:hover > a {
-    -webkit-box-shadow: 0px 0px 10px #323231;
-    -moz-box-shadow: 0px 0px 10px #323231;
-    box-shadow: 0px 0px 10px #323231;
+    -webkit-box-shadow: 0px 0px 10px #000000;
+    -moz-box-shadow: 0px 0px 10px #000000;
+    box-shadow: 0px 0px 10px #000000;
   }
 }
 #header .content > div > ul.menu > li.first > a,
@@ -3510,7 +3478,7 @@ html.js fieldset.collapsible legend a:active {
   top: 100%;
   min-width: 100%;
   z-index: 4;
-  background: #323231;
+  background: #464644;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -3518,9 +3486,9 @@ html.js fieldset.collapsible legend a:active {
 @media screen {
   #header .content > div > ul.menu > li > ul,
   #menu-service .content > div > ul.menu > li > ul {
-    -webkit-box-shadow: 0px 0px 10px #323231;
-    -moz-box-shadow: 0px 0px 10px #323231;
-    box-shadow: 0px 0px 10px #323231;
+    -webkit-box-shadow: 0px 0px 10px #000000;
+    -moz-box-shadow: 0px 0px 10px #000000;
+    box-shadow: 0px 0px 10px #000000;
   }
 }
 #header .content > div > ul.menu > li > ul li,
@@ -3620,7 +3588,7 @@ html.js fieldset.collapsible legend a:active {
   position: absolute;
   left: 100%;
   top: 0;
-  background: #323231;
+  background: #464644;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -3628,9 +3596,9 @@ html.js fieldset.collapsible legend a:active {
 @media screen {
   #header .content > div > ul.menu > li > ul > li > ul,
   #menu-service .content > div > ul.menu > li > ul > li > ul {
-    -webkit-box-shadow: 0px 0px 10px #323231;
-    -moz-box-shadow: 0px 0px 10px #323231;
-    box-shadow: 0px 0px 10px #323231;
+    -webkit-box-shadow: 0px 0px 10px #000000;
+    -moz-box-shadow: 0px 0px 10px #000000;
+    box-shadow: 0px 0px 10px #000000;
   }
 }
 #header .content > div > ul.menu > li > ul > li:hover > ul,
@@ -3638,7 +3606,6 @@ html.js fieldset.collapsible legend a:active {
   display: block;
 }
 #menu-service .content > div > ul.menu {
-  background: #323231;
   -webkit-border-radius: 0 0 5px 5px;
   -moz-border-radius: 0 0 5px 5px;
   border-radius: 0 0 5px 5px;
@@ -3684,7 +3651,7 @@ a.fa {
 }
 #sidebar-right ul.menu li a:link,
 #sidebar-right ul.menu li a:visited {
-  color: #323231;
+  color: #464644;
   text-align: center;
   background-color: #d7d7d6;
   margin: 0 0 1.125em;
@@ -3796,9 +3763,9 @@ ul.secondary li a:focus {
   ul.secondary li a:hover,
   ul.primary li a:focus,
   ul.secondary li a:focus {
-    -webkit-box-shadow: 0px 0px 10px #323231;
-    -moz-box-shadow: 0px 0px 10px #323231;
-    box-shadow: 0px 0px 10px #323231;
+    -webkit-box-shadow: 0px 0px 10px #000000;
+    -moz-box-shadow: 0px 0px 10px #000000;
+    box-shadow: 0px 0px 10px #000000;
   }
 }
 /**
@@ -3831,7 +3798,7 @@ td.menu-disabled {
   margin: 2px 2px 0 0;
   padding: 0;
   display: inline-block;
-  color: #323231;
+  color: #464644;
   text-align: center;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -3871,7 +3838,7 @@ td.menu-disabled {
 #main .menu ul.views-summary li a:link,
 #main ul.menu li a:visited,
 #main .menu ul.views-summary li a:visited {
-  color: #323231;
+  color: #464644;
   text-align: center;
   background-color: #d7d7d6;
   margin: 0.42857143em;
@@ -3922,7 +3889,7 @@ td.menu-disabled {
 #footer #block-menu-menu-footer-service ul.menu li a:visited,
 #footer #block-menu-menu-footer-service-visitor ul.menu li a:visited {
   background: #878786;
-  color: #323231;
+  color: #464644;
 }
 #footer #block-menu-menu-footer ul.menu li a:hover,
 #footer #block-menu-menu-footer-service ul.menu li a:hover,
@@ -3934,7 +3901,7 @@ td.menu-disabled {
 #footer #block-menu-menu-footer-service ul.menu li a.active,
 #footer #block-menu-menu-footer-service-visitor ul.menu li a.active {
   background: #f0f0ee;
-  color: #323231;
+  color: #464644;
 }
 #footer #block-menu-menu-social ul li {
   float: left;
@@ -3948,7 +3915,7 @@ td.menu-disabled {
 #footer #block-menu-menu-social ul li a:link,
 #footer #block-menu-menu-social ul li a:visited {
   background: #f0f0ee;
-  color: #323231;
+  color: #464644;
 }
 #footer #block-menu-menu-social ul li a:hover,
 #footer #block-menu-menu-social ul li a:active {

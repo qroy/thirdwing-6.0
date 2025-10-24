@@ -2,8 +2,6 @@
  * Nodes and Comments
  */
 .buildmode-full, .buildmode-teaser, .buildmode-compact {
-  > .node {
-    
     > div { /* header region */
       > .field-background {
         position: absolute;
@@ -92,16 +90,15 @@
     // Laat social buttons alleen zien op pagina's die openbaar zijn
     &.taxonomy-Leden     > div > div > .field-read-more .button-social { display: none; }
     &.taxonomy-Bezoekers > div > div > .field-read-more .button-social { display: inline-block; }
-  }
 }
 .buildmode-teaser, .buildmode-compact, .buildmode-full, .buildmode-schema {
-  > .node:not(:empty) {
+  &:not(:empty) {
     position: relative;
     background: @white;
     padding: 24em/@fs;
     margin: 0 0 60em/@fs;
     .border-radius(@border-radius-large);
-	.box-shadow(@box-shadow-small);
+//	.box-shadow(@box-shadow-small);
     > div { /* header region */
       > .field-background {
         .node-background {
@@ -150,8 +147,7 @@
   }
 }
 .buildmode-full {
-  > .node {
-    > div > div { /* middle region */
+  > div > div { /* middle region */
       > .field-node-type {
         margin-top: 100em/@fs;
       }
@@ -159,7 +155,6 @@
         background: @white-off;
       }
     }
-  }
 }
 .nd-region-middle {
   position: relative;

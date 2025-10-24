@@ -10,4 +10,4 @@
  */
 ?>
 
-<div class="buildmode-<?php print $node->build_mode; ?>"><div class="node node-type-<?php print $node->type; ?><?php if (isset($node_classes)): print $node_classes; endif; ?><?php if ($sticky && $node->build_mode == 'sticky'): print ' sticky'; endif; ?><?php if (!$status): print ' node-unpublished'; endif; ?> clear-block"><?php print $content; ?></div><!-- /node --></div><!-- /buildmode -->
+<article id="node-<?php print $node->nid; ?>" class="node node-type-<?php print $node->type; ?><?php if (isset($node_classes)): print $node_classes; endif; ?><?php if ($sticky && $node->build_mode == 'sticky'): print ' sticky'; endif; ?><?php if (!$status): print ' node-unpublished'; endif; ?> buildmode-<?php print $node->build_mode; ?> clear-block"><?php print $content; ?></article>
