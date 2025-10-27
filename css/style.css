@@ -1268,6 +1268,32 @@ body.two-sidebars #grid #sidebar-right {
   -moz-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
 }
+.buildmode-full > .node > div > .field-afbeeldingen,
+.buildmode-teaser > .node > div > .field-afbeeldingen,
+.buildmode-compact > .node > div > .field-afbeeldingen {
+  margin: 0;
+  overflow: hidden;
+  display: block;
+  float: right;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0 0 0 1.71428571em;
+}
+.buildmode-full > .node > div > .field-afbeeldingen img,
+.buildmode-teaser > .node > div > .field-afbeeldingen img,
+.buildmode-compact > .node > div > .field-afbeeldingen img {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+}
+.buildmode-full > .node > div > .field-afbeeldingen .image,
+.buildmode-teaser > .node > div > .field-afbeeldingen .image,
+.buildmode-compact > .node > div > .field-afbeeldingen .image {
+  height: 23.57142857em;
+  background-size: contain;
+  background-position: right top;
+  background-repeat: no-repeat;
+}
 .buildmode-full > .node > div > div,
 .buildmode-teaser > .node > div > div,
 .buildmode-compact > .node > div > div {
@@ -1278,32 +1304,6 @@ body.two-sidebars #grid #sidebar-right {
 .buildmode-compact > .node > div > div > .field-node-type {
   margin: 0 0 1.71428571em;
   display: block;
-}
-.buildmode-full > .node > div > div > .field-afbeeldingen,
-.buildmode-teaser > .node > div > div > .field-afbeeldingen,
-.buildmode-compact > .node > div > div > .field-afbeeldingen {
-  margin: 0;
-  overflow: hidden;
-  display: block;
-  float: right;
-  width: 50%;
-  box-sizing: border-box;
-  padding: 0 0 0 1.71428571em;
-}
-.buildmode-full > .node > div > div > .field-afbeeldingen img,
-.buildmode-teaser > .node > div > div > .field-afbeeldingen img,
-.buildmode-compact > .node > div > div > .field-afbeeldingen img {
-  box-sizing: border-box;
-  width: 100%;
-  height: auto;
-}
-.buildmode-full > .node > div > div > .field-afbeeldingen .image,
-.buildmode-teaser > .node > div > div > .field-afbeeldingen .image,
-.buildmode-compact > .node > div > div > .field-afbeeldingen .image {
-  height: 23.57142857em;
-  background-size: contain;
-  background-position: right top;
-  background-repeat: no-repeat;
 }
 .buildmode-full > .node > div > div > .field-author,
 .buildmode-teaser > .node > div > div > .field-author,
@@ -1385,6 +1385,11 @@ body.two-sidebars #grid #sidebar-right {
 .buildmode-teaser > .node.taxonomy-Bezoekers > div > div > .field-read-more .button-social,
 .buildmode-compact > .node.taxonomy-Bezoekers > div > div > .field-read-more .button-social {
   display: inline-block;
+}
+.buildmode-full .nd-region-right,
+.buildmode-teaser .nd-region-right,
+.buildmode-compact .nd-region-right {
+  float: none;
 }
 .buildmode-teaser > .node,
 .buildmode-compact > .node {
@@ -1468,6 +1473,9 @@ body.two-sidebars #grid #sidebar-right {
 .nd-region-middle {
   position: relative;
   z-index: 2;
+}
+.nd-sidebar-right .nd-region-middle {
+  margin-right: 0;
 }
 .node.node-type-locatie > div > div > .field-title p {
   margin: 0;
@@ -2855,6 +2863,9 @@ a.video-thumb:focus {
 }
 .location-title {
   color: #e9584c;
+}
+.buildmode-full .location span {
+  display: block;
 }
 .marker {
   display: inline-block;
