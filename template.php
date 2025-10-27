@@ -46,11 +46,11 @@ function phptemplate_preprocess_page(&$vars, $hook) {
   }
 
   if ($vars['node']->field_afbeeldingen[0]['filepath'] && $vars['node']->sticky) {
-    $body_classes[] = 'hero';
+    $body_classes[] = 'node-hero';
     $vars['hero'] = $vars['node']->field_afbeeldingen[0]['filepath'];
   }
   if ($vars['node']->field_background[0]['filepath'] && $vars['node']->type == 'activiteit') {
-    $body_classes[] = 'hero';
+    $body_classes[] = 'node-hero';
     $vars['hero'] = $vars['node']->field_background[0]['filepath'];
   }
   $body_classes[] = 'node-type-' . $vars['node']->type;
@@ -65,6 +65,12 @@ function phptemplate_preprocess_node(&$vars) {
     foreach (taxonomy_node_get_terms($vars['node']) as $term) {
       $vars['node_classes'] = $vars['node_classes'] . ' taxonomy-' . eregi_replace('[^a-z0-9]', '-', $term->name);
     }
+  }
+  if ($vars['node']->field_afbeeldingen[0]['filepath'] && $vars['node']->sticky) {
+    $vars['node_classes'] = $vars['node_classes'] . ' node-hero';
+  }
+  if ($vars['node']->field_background[0]['filepath'] && $vars['node']->type == 'activiteit') {
+    $vars['node_classes'] = $vars['node_classes'] . ' node-hero';
   }
 }
 

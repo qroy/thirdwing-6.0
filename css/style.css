@@ -932,7 +932,7 @@ body {
     box-shadow: inset 0 0 10px #000000;
   }
 }
-.hero #header-bg {
+.node-hero #header-bg {
   grid-row: 1 / 3;
 }
 #menu-service {
@@ -995,21 +995,21 @@ body {
   justify-self: right;
   align-items: end;
 }
-.hero #logo #logo-img {
+.node-hero #logo #logo-img {
   border: 0;
   background-color: #3c329b;
   background-image: url(../images/logo_met_tekst.svg);
   background-size: 70%;
 }
 @media screen {
-  .hero #logo #logo-img {
+  .node-hero #logo #logo-img {
     -webkit-box-shadow: 0px 0px 10px #000000;
     -moz-box-shadow: 0px 0px 10px #000000;
     box-shadow: 0px 0px 10px #000000;
   }
 }
-.hero #logo #logo-title,
-.hero #logo #logo-slogan {
+.node-hero #logo #logo-title,
+.node-hero #logo #logo-slogan {
   display: none;
 }
 #sidebar-left {
@@ -1172,7 +1172,7 @@ body {
   }
 }
 @media screen {
-  .hero #footer-bg {
+  .node-hero #footer-bg {
     -webkit-box-shadow: unset;
     -moz-box-shadow: unset;
     box-shadow: unset;
@@ -1193,23 +1193,14 @@ body {
 /**
  * Nodes and Comments
  */
-.buildmode-full > div,
-.buildmode-teaser > div,
-.buildmode-compact > div {
-  /* header region */
-}
-.buildmode-full > div > .field-background,
-.buildmode-teaser > div > .field-background,
-.buildmode-compact > div > .field-background {
+.buildmode-teaser > .nd-region-header > .field-background {
   position: absolute;
   left: 0;
   top: 0;
   right: 0;
   z-index: 0;
 }
-.buildmode-full > div > .field-background .node-background,
-.buildmode-teaser > div > .field-background .node-background,
-.buildmode-compact > div > .field-background .node-background {
+.buildmode-teaser > .nd-region-header > .field-background .node-background {
   width: 100%;
   height: 15.71428571em;
   background-position: center 10%;
@@ -1220,9 +1211,7 @@ body {
   -moz-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
 }
-.buildmode-full > div > .field-background .node-background:after,
-.buildmode-teaser > div > .field-background .node-background:after,
-.buildmode-compact > div > .field-background .node-background:after {
+.buildmode-teaser > .nd-region-header > .field-background .node-background:after {
   content: ' ';
   position: relative;
   z-index: 1;
@@ -1235,20 +1224,8 @@ body {
   -moz-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
 }
-.buildmode-full > div > div,
-.buildmode-teaser > div > div,
-.buildmode-compact > div > div {
-  /* middle region */
-}
-.buildmode-full > div > div > .field-node-type,
-.buildmode-teaser > div > div > .field-node-type,
-.buildmode-compact > div > div > .field-node-type {
-  margin: 0 0 1.71428571em;
-  display: block;
-}
-.buildmode-full > div > div > .field-afbeeldingen,
-.buildmode-teaser > div > div > .field-afbeeldingen,
-.buildmode-compact > div > div > .field-afbeeldingen {
+.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle > .field-afbeeldingen,
+.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle > .field-afbeeldingen {
   margin: 0;
   overflow: hidden;
   display: block;
@@ -1257,56 +1234,33 @@ body {
   box-sizing: border-box;
   padding: 0 0 0 1.71428571em;
 }
-.buildmode-full > div > div > .field-afbeeldingen img,
-.buildmode-teaser > div > div > .field-afbeeldingen img,
-.buildmode-compact > div > div > .field-afbeeldingen img {
+.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle > .field-afbeeldingen img,
+.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle > .field-afbeeldingen img {
   box-sizing: border-box;
   width: 100%;
   height: auto;
 }
-.buildmode-full > div > div > .field-afbeeldingen .image,
-.buildmode-teaser > div > div > .field-afbeeldingen .image,
-.buildmode-compact > div > div > .field-afbeeldingen .image {
+.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle > .field-afbeeldingen .image,
+.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle > .field-afbeeldingen .image {
   height: 23.57142857em;
   background-size: contain;
   background-position: right top;
   background-repeat: no-repeat;
 }
-.buildmode-full > div > div > .field-author,
-.buildmode-teaser > div > div > .field-author,
-.buildmode-compact > div > div > .field-author,
-.buildmode-full > div > div .field-post-date,
-.buildmode-teaser > div > div .field-post-date,
-.buildmode-compact > div > div .field-post-date {
+.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle > .field-author,
+.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle > .field-author,
+.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-post-date,
+.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-post-date {
   font-weight: 200;
 }
-.buildmode-full > div > div > .field-author em,
-.buildmode-teaser > div > div > .field-author em,
-.buildmode-compact > div > div > .field-author em,
-.buildmode-full > div > div .field-post-date em,
-.buildmode-teaser > div > div .field-post-date em,
-.buildmode-compact > div > div .field-post-date em {
+.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle > .field-author em,
+.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle > .field-author em,
+.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-post-date em,
+.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-post-date em {
   font-style: normal;
 }
-.buildmode-full > div > div > .field-locatie,
-.buildmode-teaser > div > div > .field-locatie,
-.buildmode-compact > div > div > .field-locatie,
-.buildmode-full > div > div .field-l-bijzonderheden,
-.buildmode-teaser > div > div .field-l-bijzonderheden,
-.buildmode-compact > div > div .field-l-bijzonderheden {
-  text-transform: uppercase;
-}
-.buildmode-full > div > div > .field-locatie > .field-items,
-.buildmode-teaser > div > div > .field-locatie > .field-items,
-.buildmode-compact > div > div > .field-locatie > .field-items,
-.buildmode-full > div > div .field-l-bijzonderheden > .field-items,
-.buildmode-teaser > div > div .field-l-bijzonderheden > .field-items,
-.buildmode-compact > div > div .field-l-bijzonderheden > .field-items {
-  padding: 0 0.28571429em;
-}
-.buildmode-full > div > div .field-box,
-.buildmode-teaser > div > div .field-box,
-.buildmode-compact > div > div .field-box {
+.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-box,
+.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-box {
   box-sizing: border-box;
   background: #ffffff;
   -webkit-border-radius: 5px;
@@ -1315,46 +1269,38 @@ body {
   margin: 0 0 0.35714286em;
   padding: 0.28571429em 0.57142857em;
 }
-.buildmode-full > div > div .field-box .badge-date,
-.buildmode-teaser > div > div .field-box .badge-date,
-.buildmode-compact > div > div .field-box .badge-date {
+.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-box .badge-date,
+.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-box .badge-date {
   text-align: left;
 }
-.buildmode-full > div > div .field-box .badge-time,
-.buildmode-teaser > div > div .field-box .badge-time,
-.buildmode-compact > div > div .field-box .badge-time {
+.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-box .badge-time,
+.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-box .badge-time {
   float: right;
   margin: 0;
 }
-.buildmode-full > div > div .field-box .badge,
-.buildmode-teaser > div > div .field-box .badge,
-.buildmode-compact > div > div .field-box .badge {
+.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-box .badge,
+.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-box .badge {
   margin: 0;
 }
-.buildmode-full > div > div .field-left,
-.buildmode-teaser > div > div .field-left,
-.buildmode-compact > div > div .field-left {
+.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-left,
+.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-left {
   float: left;
   clear: left;
   width: 50%;
 }
-.buildmode-full > div > div .field-clear-block,
-.buildmode-teaser > div > div .field-clear-block,
-.buildmode-compact > div > div .field-clear-block {
+.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-clear-block,
+.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-clear-block {
   height: 0;
 }
 .buildmode-full.taxonomy-Leden > div > div > .field-read-more .button-social,
-.buildmode-teaser.taxonomy-Leden > div > div > .field-read-more .button-social,
-.buildmode-compact.taxonomy-Leden > div > div > .field-read-more .button-social {
+.buildmode-teaser.taxonomy-Leden > div > div > .field-read-more .button-social {
   display: none;
 }
 .buildmode-full.taxonomy-Bezoekers > div > div > .field-read-more .button-social,
-.buildmode-teaser.taxonomy-Bezoekers > div > div > .field-read-more .button-social,
-.buildmode-compact.taxonomy-Bezoekers > div > div > .field-read-more .button-social {
+.buildmode-teaser.taxonomy-Bezoekers > div > div > .field-read-more .button-social {
   display: inline-block;
 }
 .buildmode-teaser:not(:empty),
-.buildmode-compact:not(:empty),
 .buildmode-full:not(:empty),
 .buildmode-schema:not(:empty) {
   position: relative;
@@ -1365,53 +1311,36 @@ body {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.buildmode-teaser:not(:empty) > div,
-.buildmode-compact:not(:empty) > div,
-.buildmode-full:not(:empty) > div,
-.buildmode-schema:not(:empty) > div {
-  /* header region */
-}
-.buildmode-teaser:not(:empty) > div > .field-background .node-background,
-.buildmode-compact:not(:empty) > div > .field-background .node-background,
-.buildmode-full:not(:empty) > div > .field-background .node-background,
-.buildmode-schema:not(:empty) > div > .field-background .node-background {
+.buildmode-teaser:not(:empty) > .nd-region-header > .field-background .node-background,
+.buildmode-full:not(:empty) > .nd-region-header > .field-background .node-background,
+.buildmode-schema:not(:empty) > .nd-region-header > .field-background .node-background {
   height: 31em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.buildmode-teaser:not(:empty) > div > .field-background .node-background:after,
-.buildmode-compact:not(:empty) > div > .field-background .node-background:after,
-.buildmode-full:not(:empty) > div > .field-background .node-background:after,
-.buildmode-schema:not(:empty) > div > .field-background .node-background:after {
+.buildmode-teaser:not(:empty) > .nd-region-header > .field-background .node-background:after,
+.buildmode-full:not(:empty) > .nd-region-header > .field-background .node-background:after,
+.buildmode-schema:not(:empty) > .nd-region-header > .field-background .node-background:after {
   height: 31em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.buildmode-teaser:not(:empty) > div > div,
-.buildmode-compact:not(:empty) > div > div,
-.buildmode-full:not(:empty) > div > div,
-.buildmode-schema:not(:empty) > div > div {
-  /* middle region */
-}
-.buildmode-teaser:not(:empty) > div > div > .field-title,
-.buildmode-compact:not(:empty) > div > div > .field-title,
-.buildmode-full:not(:empty) > div > div > .field-title,
-.buildmode-schema:not(:empty) > div > div > .field-title {
+.buildmode-teaser:not(:empty) > .nd-region-middle-wrapper > .nd-region-middle > .field-title,
+.buildmode-full:not(:empty) > .nd-region-middle-wrapper > .nd-region-middle > .field-title,
+.buildmode-schema:not(:empty) > .nd-region-middle-wrapper > .nd-region-middle > .field-title {
   height: 10.71428571em;
   display: block;
   overflow: hidden;
 }
 .buildmode-teaser:not(:empty).taxonomy-Leden,
-.buildmode-compact:not(:empty).taxonomy-Leden,
 .buildmode-full:not(:empty).taxonomy-Leden,
 .buildmode-schema:not(:empty).taxonomy-Leden {
   background: #ffffff;
 }
 @media screen {
   .buildmode-teaser:not(:empty).taxonomy-Leden:before,
-  .buildmode-compact:not(:empty).taxonomy-Leden:before,
   .buildmode-full:not(:empty).taxonomy-Leden:before,
   .buildmode-schema:not(:empty).taxonomy-Leden:before {
     z-index: 5;
@@ -1430,25 +1359,17 @@ body {
   }
 }
 .buildmode-teaser:not(:empty).taxonomy-Bezoekers,
-.buildmode-compact:not(:empty).taxonomy-Bezoekers,
 .buildmode-full:not(:empty).taxonomy-Bezoekers,
 .buildmode-schema:not(:empty).taxonomy-Bezoekers {
   background: #ffffff;
   border: 0;
 }
 .buildmode-teaser:not(:empty).taxonomy-Bezoekers:before,
-.buildmode-compact:not(:empty).taxonomy-Bezoekers:before,
 .buildmode-full:not(:empty).taxonomy-Bezoekers:before,
 .buildmode-schema:not(:empty).taxonomy-Bezoekers:before {
   content: '';
 }
-.buildmode-full > div > div {
-  /* middle region */
-}
-.buildmode-full > div > div > .field-node-type {
-  margin-top: 7.14285714em;
-}
-.buildmode-full > div > div > .field-box {
+.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle > .field-box {
   background: #f0f0ee;
 }
 .nd-region-middle {

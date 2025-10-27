@@ -1,9 +1,11 @@
 /**
  * Nodes and Comments
  */
-.buildmode-full, .buildmode-teaser, .buildmode-compact {
-    > div { /* header region */
+ 
+.buildmode-teaser {
+    > .nd-region-header {
       > .field-background {
+	    // position background image
         position: absolute;
         left: 0;
         top: 0;
@@ -30,12 +32,10 @@
           }
         }
       }
-    }   
-    > div > div { /* middle region */
-      > .field-node-type {
-        margin: 0 0 24em/@fs;
-        display: block; // override badge inline-block
-      }
+    }
+}
+.buildmode-full, .buildmode-teaser {
+    > .nd-region-middle-wrapper > .nd-region-middle {
       > .field-afbeeldingen {
         margin: 0;
         overflow: hidden;
@@ -60,14 +60,6 @@
         font-weight: 200;
         em { font-style: normal; }
       }
-      > .field-locatie, .field-l-bijzonderheden {
-        text-transform: uppercase;
-        > .field-items {
-          padding: 0 4em/@fs;
-//          position: relative;
-//          margin-right: 22em/@fs;
-        }
-      }
       .field-box {
         box-sizing: border-box;
         background: @white;
@@ -91,15 +83,14 @@
     &.taxonomy-Leden     > div > div > .field-read-more .button-social { display: none; }
     &.taxonomy-Bezoekers > div > div > .field-read-more .button-social { display: inline-block; }
 }
-.buildmode-teaser, .buildmode-compact, .buildmode-full, .buildmode-schema {
+.buildmode-teaser, .buildmode-full, .buildmode-schema {
   &:not(:empty) {
     position: relative;
     background: @white;
     padding: 24em/@fs;
     margin: 0 0 60em/@fs;
     .border-radius(@border-radius-large);
-//	.box-shadow(@box-shadow-small);
-    > div { /* header region */
+    > .nd-region-header {
       > .field-background {
         .node-background {
           height: 434em/@fs;
@@ -111,7 +102,7 @@
         }
       }
     }
-    > div > div { /* middle region */
+    > .nd-region-middle-wrapper > .nd-region-middle {
       > .field-title {
         height: 150em/@fs;
         display: block;
@@ -120,7 +111,6 @@
     }
     &.taxonomy-Leden {
       background: @white;
-      //border: 2px solid @red;
       &:before {
        @media screen {
         z-index: 5;
@@ -147,10 +137,7 @@
   }
 }
 .buildmode-full {
-  > div > div { /* middle region */
-      > .field-node-type {
-        margin-top: 100em/@fs;
-      }
+  > .nd-region-middle-wrapper > .nd-region-middle {
       > .field-box {
         background: @white-off;
       }

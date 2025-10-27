@@ -17,3 +17,4 @@ print content_format('field_view', $node->field_view[4], 'default', $node);
 <div class="links"><?php print $links; ?></div>
 </div>
 <?php endif; ?></article>
+<!-- HOI HOI -->
