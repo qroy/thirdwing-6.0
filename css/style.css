@@ -1237,6 +1237,24 @@ body {
   -moz-border-radius: 10px 10px 0 0;
   border-radius: 10px 10px 0 0;
 }
+.buildmode-teaser > .nd-region-right > .field-afbeeldingen .image {
+  height: 23.57142857em;
+  width: 100%;
+  background-size: contain;
+  background-position: right top;
+  background-repeat: no-repeat;
+}
+.buildmode-full > .nd-region-right > .field-afbeeldingen div {
+  height: 23.57142857em;
+  width: 100%;
+}
+.buildmode-full > .nd-region-right > .field-afbeeldingen div img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: right top;
+  float: right;
+}
 .buildmode-teaser:not(:empty),
 .buildmode-full:not(:empty),
 .buildmode-schema:not(:empty) {
@@ -1307,7 +1325,8 @@ body {
 .buildmode-schema:not(:empty).taxonomy-Bezoekers:before {
   content: '';
 }
-.nd-region-middle {
+.nd-region-middle,
+.nd-region-right {
   position: relative;
   z-index: 2;
 }
