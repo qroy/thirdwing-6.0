@@ -2,6 +2,14 @@
  * Nodes and Comments
  */
  
+// RESETS FOR ND REGIONS
+.nd-region-header, .nd-region-left, .nd-region-right, .nd-region-middle, .nd-region-middle-wrapper, .nd-region-footer, .nd-sidebar-right .nd-region-middle {
+  float: none;
+  display: block;
+  margin: 0;
+  clear: both;
+  width: auto;
+}
 .buildmode-teaser {
     > .nd-region-header {
       > .field-background {
@@ -66,7 +74,8 @@
     > .nd-region-middle-wrapper > .nd-region-middle {
       > .field-title {
         height: 150em/@fs;
-        display: block;
+        display: table-cell;
+		vertical-align: bottom;
         overflow: hidden;
       }
     }
@@ -110,6 +119,8 @@
     "node-header node-header"
     "node-main node-right"
     "node-footer node-footer";
+	column-gap: 20em/@fs;
+	row-gap: 20em/@fs;
   }
   .nd-region-header {
     grid-area: node-header;

@@ -1193,6 +1193,19 @@ body {
 /**
  * Nodes and Comments
  */
+.nd-region-header,
+.nd-region-left,
+.nd-region-right,
+.nd-region-middle,
+.nd-region-middle-wrapper,
+.nd-region-footer,
+.nd-sidebar-right .nd-region-middle {
+  float: none;
+  display: block;
+  margin: 0;
+  clear: both;
+  width: auto;
+}
 .buildmode-teaser > .nd-region-header > .field-background {
   position: absolute;
   left: 0;
@@ -1255,7 +1268,8 @@ body {
 .buildmode-full:not(:empty) > .nd-region-middle-wrapper > .nd-region-middle > .field-title,
 .buildmode-schema:not(:empty) > .nd-region-middle-wrapper > .nd-region-middle > .field-title {
   height: 10.71428571em;
-  display: block;
+  display: table-cell;
+  vertical-align: bottom;
   overflow: hidden;
 }
 .buildmode-teaser:not(:empty).taxonomy-Leden,
@@ -1303,6 +1317,8 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 0 auto auto;
   grid-template-areas: "node-header node-header" "node-main node-right" "node-footer node-footer";
+  column-gap: 1.42857143em;
+  row-gap: 1.42857143em;
 }
 .node-type-activiteit .nd-region-header {
   grid-area: node-header;
@@ -2592,6 +2608,7 @@ a.video-thumb:focus {
 }
 .badge.badge-time {
   width: 5.71428571em;
+  float: right;
 }
 @media screen {
   .badge.badge-time {
@@ -2695,6 +2712,15 @@ a.video-thumb:focus {
 }
 .buildmode-full .location span {
   display: block;
+}
+.field-box {
+  background: #f0f0ee;
+  padding: 0.28571429em;
+  padding-bottom: 0;
+  margin-bottom: 0.28571429em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 .marker {
   display: inline-block;
@@ -2854,6 +2880,7 @@ a.video-thumb:focus {
 }
 .marker.badge-time {
   width: 5.71428571em;
+  float: right;
 }
 @media screen {
   .marker.badge-time {
