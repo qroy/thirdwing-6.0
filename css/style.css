@@ -1838,10 +1838,14 @@ tr.dblog-access-denied td.active {
 }
 @media screen {
   .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-aanwezig,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-aanwezig,
+  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-aanwezig {
+    background-color: #d6ebb3;
+  }
+}
+@media screen {
   .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-vervanging,
   .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-vervanging {
-    background-color: #d6ebb3;
+    background-color: #f3ab72;
   }
 }
 @media screen {
