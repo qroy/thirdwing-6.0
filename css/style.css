@@ -1226,14 +1226,50 @@ body.two-sidebars #grid #sidebar-right {
 /**
  * Nodes and Comments
  */
+.nd-region-header,
+.nd-region-left,
+.nd-region-right,
+.nd-region-middle,
+.nd-region-middle-wrapper,
+.nd-region-footer,
+.nd-sidebar-right .nd-region-middle {
+  float: none;
+  display: block;
+  margin: 0;
+  clear: both;
+  width: auto;
+}
+.buildmode-full .node-type-activiteit,
+.buildmode-teaser .node-type-activiteit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 0 auto auto;
+  grid-template-areas: "node-header node-header" "node-main node-right" "node-footer node-footer";
+  column-gap: 1.42857143em;
+  row-gap: 1.42857143em;
+}
+.buildmode-full .node-type-activiteit .nd-region-header,
+.buildmode-teaser .node-type-activiteit .nd-region-header {
+  grid-area: node-header;
+}
+.buildmode-full .node-type-activiteit .nd-region-middle-wrapper,
+.buildmode-teaser .node-type-activiteit .nd-region-middle-wrapper {
+  grid-area: node-main;
+}
+.buildmode-full .node-type-activiteit .nd-region-right,
+.buildmode-teaser .node-type-activiteit .nd-region-right {
+  grid-area: node-right;
+}
+.buildmode-full .node-type-activiteit .nd-region-footer,
+.buildmode-teaser .node-type-activiteit .nd-region-footer {
+  grid-area: node-footer;
+}
 .buildmode-full > .node > div,
-.buildmode-teaser > .node > div,
-.buildmode-compact > .node > div {
+.buildmode-teaser > .node > div {
   /* header region */
 }
 .buildmode-full > .node > div > .field-background,
-.buildmode-teaser > .node > div > .field-background,
-.buildmode-compact > .node > div > .field-background {
+.buildmode-teaser > .node > div > .field-background {
   position: absolute;
   left: 0;
   top: 0;
@@ -1241,8 +1277,7 @@ body.two-sidebars #grid #sidebar-right {
   z-index: 0;
 }
 .buildmode-full > .node > div > .field-background .node-background,
-.buildmode-teaser > .node > div > .field-background .node-background,
-.buildmode-compact > .node > div > .field-background .node-background {
+.buildmode-teaser > .node > div > .field-background .node-background {
   width: 100%;
   height: 15.71428571em;
   background-position: center 10%;
@@ -1254,8 +1289,7 @@ body.two-sidebars #grid #sidebar-right {
   border-radius: 10px 10px 0 0;
 }
 .buildmode-full > .node > div > .field-background .node-background:after,
-.buildmode-teaser > .node > div > .field-background .node-background:after,
-.buildmode-compact > .node > div > .field-background .node-background:after {
+.buildmode-teaser > .node > div > .field-background .node-background:after {
   content: ' ';
   position: relative;
   z-index: 1;
@@ -1270,76 +1304,67 @@ body.two-sidebars #grid #sidebar-right {
 }
 .buildmode-full > .node > div > .field-afbeeldingen,
 .buildmode-teaser > .node > div > .field-afbeeldingen,
-.buildmode-compact > .node > div > .field-afbeeldingen {
+.buildmode-full > .node > div > div > .field-afbeeldingen,
+.buildmode-teaser > .node > div > div > .field-afbeeldingen {
   margin: 0;
   overflow: hidden;
   display: block;
   float: right;
-  width: 50%;
   box-sizing: border-box;
   padding: 0 0 0 1.71428571em;
 }
 .buildmode-full > .node > div > .field-afbeeldingen img,
 .buildmode-teaser > .node > div > .field-afbeeldingen img,
-.buildmode-compact > .node > div > .field-afbeeldingen img {
+.buildmode-full > .node > div > div > .field-afbeeldingen img,
+.buildmode-teaser > .node > div > div > .field-afbeeldingen img {
   box-sizing: border-box;
   width: 100%;
   height: auto;
 }
 .buildmode-full > .node > div > .field-afbeeldingen .image,
 .buildmode-teaser > .node > div > .field-afbeeldingen .image,
-.buildmode-compact > .node > div > .field-afbeeldingen .image {
+.buildmode-full > .node > div > div > .field-afbeeldingen .image,
+.buildmode-teaser > .node > div > div > .field-afbeeldingen .image {
   height: 23.57142857em;
   background-size: contain;
   background-position: right top;
   background-repeat: no-repeat;
 }
 .buildmode-full > .node > div > div,
-.buildmode-teaser > .node > div > div,
-.buildmode-compact > .node > div > div {
+.buildmode-teaser > .node > div > div {
   /* middle region */
 }
 .buildmode-full > .node > div > div > .field-node-type,
-.buildmode-teaser > .node > div > div > .field-node-type,
-.buildmode-compact > .node > div > div > .field-node-type {
+.buildmode-teaser > .node > div > div > .field-node-type {
   margin: 0 0 1.71428571em;
   display: block;
 }
 .buildmode-full > .node > div > div > .field-author,
 .buildmode-teaser > .node > div > div > .field-author,
-.buildmode-compact > .node > div > div > .field-author,
 .buildmode-full > .node > div > div .field-post-date,
-.buildmode-teaser > .node > div > div .field-post-date,
-.buildmode-compact > .node > div > div .field-post-date {
+.buildmode-teaser > .node > div > div .field-post-date {
   font-weight: 200;
 }
 .buildmode-full > .node > div > div > .field-author em,
 .buildmode-teaser > .node > div > div > .field-author em,
-.buildmode-compact > .node > div > div > .field-author em,
 .buildmode-full > .node > div > div .field-post-date em,
-.buildmode-teaser > .node > div > div .field-post-date em,
-.buildmode-compact > .node > div > div .field-post-date em {
+.buildmode-teaser > .node > div > div .field-post-date em {
   font-style: normal;
 }
 .buildmode-full > .node > div > div > .field-locatie,
 .buildmode-teaser > .node > div > div > .field-locatie,
-.buildmode-compact > .node > div > div > .field-locatie,
 .buildmode-full > .node > div > div .field-l-bijzonderheden,
-.buildmode-teaser > .node > div > div .field-l-bijzonderheden,
-.buildmode-compact > .node > div > div .field-l-bijzonderheden {
+.buildmode-teaser > .node > div > div .field-l-bijzonderheden {
   text-transform: uppercase;
 }
 .buildmode-full > .node > div > div > .field-locatie > .field-items,
 .buildmode-teaser > .node > div > div > .field-locatie > .field-items,
-.buildmode-compact > .node > div > div > .field-locatie > .field-items,
 .buildmode-full > .node > div > div .field-l-bijzonderheden > .field-items,
-.buildmode-teaser > .node > div > div .field-l-bijzonderheden > .field-items,
-.buildmode-compact > .node > div > div .field-l-bijzonderheden > .field-items {
+.buildmode-teaser > .node > div > div .field-l-bijzonderheden > .field-items {
   padding: 0 0.28571429em;
 }
 .buildmode-full > .node > div > div .field-box,
-.buildmode-teaser > .node > div > div .field-box,
-.buildmode-compact > .node > div > div .field-box {
+.buildmode-teaser > .node > div > div .field-box {
   box-sizing: border-box;
   background: #ffffff;
   -webkit-border-radius: 5px;
@@ -1349,50 +1374,43 @@ body.two-sidebars #grid #sidebar-right {
   padding: 0.28571429em 0.57142857em;
 }
 .buildmode-full > .node > div > div .field-box .badge-date,
-.buildmode-teaser > .node > div > div .field-box .badge-date,
-.buildmode-compact > .node > div > div .field-box .badge-date {
+.buildmode-teaser > .node > div > div .field-box .badge-date {
   text-align: left;
 }
 .buildmode-full > .node > div > div .field-box .badge-time,
-.buildmode-teaser > .node > div > div .field-box .badge-time,
-.buildmode-compact > .node > div > div .field-box .badge-time {
+.buildmode-teaser > .node > div > div .field-box .badge-time {
   float: right;
   margin: 0;
 }
 .buildmode-full > .node > div > div .field-box .badge,
-.buildmode-teaser > .node > div > div .field-box .badge,
-.buildmode-compact > .node > div > div .field-box .badge {
+.buildmode-teaser > .node > div > div .field-box .badge {
   margin: 0;
 }
 .buildmode-full > .node > div > div .field-left,
-.buildmode-teaser > .node > div > div .field-left,
-.buildmode-compact > .node > div > div .field-left {
-  float: left;
+.buildmode-teaser > .node > div > div .field-left {
   clear: left;
-  width: 50%;
 }
 .buildmode-full > .node > div > div .field-clear-block,
-.buildmode-teaser > .node > div > div .field-clear-block,
-.buildmode-compact > .node > div > div .field-clear-block {
+.buildmode-teaser > .node > div > div .field-clear-block {
   height: 0;
 }
 .buildmode-full > .node.taxonomy-Leden > div > div > .field-read-more .button-social,
-.buildmode-teaser > .node.taxonomy-Leden > div > div > .field-read-more .button-social,
-.buildmode-compact > .node.taxonomy-Leden > div > div > .field-read-more .button-social {
+.buildmode-teaser > .node.taxonomy-Leden > div > div > .field-read-more .button-social {
   display: none;
 }
 .buildmode-full > .node.taxonomy-Bezoekers > div > div > .field-read-more .button-social,
-.buildmode-teaser > .node.taxonomy-Bezoekers > div > div > .field-read-more .button-social,
-.buildmode-compact > .node.taxonomy-Bezoekers > div > div > .field-read-more .button-social {
+.buildmode-teaser > .node.taxonomy-Bezoekers > div > div > .field-read-more .button-social {
   display: inline-block;
 }
-.buildmode-full .nd-region-right,
-.buildmode-teaser .nd-region-right,
-.buildmode-compact .nd-region-right {
-  float: none;
+.buildmode-full > .node-type-nieuws > div > div > .field-afbeeldingen,
+.buildmode-teaser > .node-type-nieuws > div > div > .field-afbeeldingen {
+  width: 50%;
 }
-.buildmode-teaser > .node,
-.buildmode-compact > .node {
+.buildmode-full > .node-type-activiteit > div > .field-afbeeldingen,
+.buildmode-teaser > .node-type-activiteit > div > .field-afbeeldingen {
+  width: 100%;
+}
+.buildmode-teaser > .node {
   position: relative;
   background: #f0f0ee;
   padding: 1.71428571em;
@@ -1401,42 +1419,35 @@ body.two-sidebars #grid #sidebar-right {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.buildmode-teaser > .node > div,
-.buildmode-compact > .node > div {
+.buildmode-teaser > .node > div {
   /* header region */
 }
-.buildmode-teaser > .node > div > .field-background .node-background,
-.buildmode-compact > .node > div > .field-background .node-background {
+.buildmode-teaser > .node > div > .field-background .node-background {
   height: 31em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.buildmode-teaser > .node > div > .field-background .node-background:after,
-.buildmode-compact > .node > div > .field-background .node-background:after {
+.buildmode-teaser > .node > div > .field-background .node-background:after {
   height: 31em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.buildmode-teaser > .node > div > div,
-.buildmode-compact > .node > div > div {
+.buildmode-teaser > .node > div > div {
   /* middle region */
 }
-.buildmode-teaser > .node > div > div > .field-title,
-.buildmode-compact > .node > div > div > .field-title {
+.buildmode-teaser > .node > div > div > .field-title {
   height: 10.71428571em;
   display: block;
   overflow: hidden;
 }
-.buildmode-teaser > .node.taxonomy-Leden,
-.buildmode-compact > .node.taxonomy-Leden {
+.buildmode-teaser > .node.taxonomy-Leden {
   background: #ffffff;
   border: 2px solid #e9584c;
 }
 @media screen {
-  .buildmode-teaser > .node.taxonomy-Leden:before,
-  .buildmode-compact > .node.taxonomy-Leden:before {
+  .buildmode-teaser > .node.taxonomy-Leden:before {
     z-index: 5;
     content: 'voor leden';
     position: absolute;
@@ -1452,13 +1463,11 @@ body.two-sidebars #grid #sidebar-right {
     border-radius: 0 0 5px 5px;
   }
 }
-.buildmode-teaser > .node.taxonomy-Bezoekers,
-.buildmode-compact > .node.taxonomy-Bezoekers {
+.buildmode-teaser > .node.taxonomy-Bezoekers {
   background: #f0f0ee;
   border: 0;
 }
-.buildmode-teaser > .node.taxonomy-Bezoekers:before,
-.buildmode-compact > .node.taxonomy-Bezoekers:before {
+.buildmode-teaser > .node.taxonomy-Bezoekers:before {
   content: '';
 }
 .buildmode-full > .node > div > div {
@@ -1470,7 +1479,8 @@ body.two-sidebars #grid #sidebar-right {
 .buildmode-full > .node > div > div > .field-box {
   background: #f0f0ee;
 }
-.nd-region-middle {
+.nd-region-middle,
+.nd-region-right {
   position: relative;
   z-index: 2;
 }
@@ -1486,6 +1496,7 @@ body.two-sidebars #grid #sidebar-right {
 .front h1 {
   display: none;
 }
+.buildmode-full .node-type-foto > div > .field-afbeeldingen,
 .buildmode-full .node-type-foto > div > div > .field-afbeeldingen {
   width: 100%;
   padding: 0;

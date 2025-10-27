@@ -1,9 +1,41 @@
 /**
  * Nodes and Comments
  */
-.buildmode-full, .buildmode-teaser, .buildmode-compact {
+ // RESETS FOR ND REGIONS
+.nd-region-header, .nd-region-left, .nd-region-right, .nd-region-middle, .nd-region-middle-wrapper, .nd-region-footer, .nd-sidebar-right .nd-region-middle {
+  float: none;
+  display: block;
+  margin: 0;
+  clear: both;
+  width: auto;
+}
+.buildmode-full, .buildmode-teaser {
+  .node-type-activiteit {
+    display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 0 auto auto;
+	grid-template-areas: 
+    "node-header node-header"
+    "node-main node-right"
+    "node-footer node-footer";
+	column-gap: 20em/@fs;
+  	row-gap: 20em/@fs;
+    .nd-region-header {
+      grid-area: node-header;
+    }
+    .nd-region-middle-wrapper {
+      grid-area: node-main;
+    }
+    .nd-region-right {
+      grid-area: node-right;
+    }
+    .nd-region-footer {
+      grid-area: node-footer;
+    }
+  }
+}
+.buildmode-full, .buildmode-teaser {
   > .node {
-    
     > div { /* header region */
       > .field-background {
         position: absolute;
@@ -32,12 +64,11 @@
           }
         }
       }
-	  > .field-afbeeldingen {
+	  > .field-afbeeldingen, > div > .field-afbeeldingen {
         margin: 0;
         overflow: hidden;
         display: block; 
         float: right;
-        width: 50%;
         box-sizing: border-box;
         padding: 0 0 0 24em/@fs;
         img {
@@ -79,9 +110,8 @@
         .badge { margin: 0; } 
       }
       .field-left {
-        float: left;
+//        float: left;
         clear: left;
-        width: 50%;
       }
       .field-clear-block {
         height: 0;
@@ -91,11 +121,14 @@
     &.taxonomy-Leden     > div > div > .field-read-more .button-social { display: none; }
     &.taxonomy-Bezoekers > div > div > .field-read-more .button-social { display: inline-block; }
   }
-  .nd-region-right {
-	float: none;
+  > .node-type-nieuws > div > div > .field-afbeeldingen {
+    width: 50%;
+  }
+  > .node-type-activiteit > div > .field-afbeeldingen {
+    width: 100%;
   }
 }
-.buildmode-teaser, .buildmode-compact {
+.buildmode-teaser {
   > .node {
     position: relative;
     background: @white-off;
@@ -162,7 +195,7 @@
     }
   }
 }
-.nd-region-middle {
+.nd-region-middle, .nd-region-right {
   position: relative;
   z-index: 2;
 }
@@ -180,8 +213,8 @@
 .front h1 {
   display: none;
 }
-.buildmode-full .node-type-foto > div > div {
-  > .field-afbeeldingen {
+.buildmode-full .node-type-foto > div {
+  > .field-afbeeldingen, > div > .field-afbeeldingen {
     width: 100%;
     padding: 0;
   }
