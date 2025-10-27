@@ -1247,51 +1247,6 @@ body {
   background-position: right top;
   background-repeat: no-repeat;
 }
-.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle > .field-author,
-.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle > .field-author,
-.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-post-date,
-.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-post-date {
-  font-weight: 200;
-}
-.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle > .field-author em,
-.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle > .field-author em,
-.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-post-date em,
-.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-post-date em {
-  font-style: normal;
-}
-.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-box,
-.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-box {
-  box-sizing: border-box;
-  background: #ffffff;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  margin: 0 0 0.35714286em;
-  padding: 0.28571429em 0.57142857em;
-}
-.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-box .badge-date,
-.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-box .badge-date {
-  text-align: left;
-}
-.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-box .badge-time,
-.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-box .badge-time {
-  float: right;
-  margin: 0;
-}
-.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-box .badge,
-.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-box .badge {
-  margin: 0;
-}
-.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-left,
-.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-left {
-  float: left;
-  clear: left;
-  width: 50%;
-}
-.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle .field-clear-block,
-.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle .field-clear-block {
-  height: 0;
-}
 .buildmode-full.taxonomy-Leden > div > div > .field-read-more .button-social,
 .buildmode-teaser.taxonomy-Leden > div > div > .field-read-more .button-social {
   display: none;
