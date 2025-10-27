@@ -37,29 +37,12 @@
 .buildmode-full, .buildmode-teaser {
     > .nd-region-middle-wrapper > .nd-region-middle {
       > .field-afbeeldingen {
-        margin: 0;
-        overflow: hidden;
-        display: block; 
-        float: right;
-        width: 50%;
-        box-sizing: border-box;
-        padding: 0 0 0 24em/@fs;
         img {
-          box-sizing: border-box;
-          width: 100%;
-          height: auto;
         }
         .image {
-          height: 330em/@fs;
-          background-size: contain;
-          background-position: right top;
-          background-repeat: no-repeat;
         }
       }
     }
-    // Laat social buttons alleen zien op pagina's die openbaar zijn
-    &.taxonomy-Leden     > div > div > .field-read-more .button-social { display: none; }
-    &.taxonomy-Bezoekers > div > div > .field-read-more .button-social { display: inline-block; }
 }
 .buildmode-teaser, .buildmode-full, .buildmode-schema {
   &:not(:empty) {
@@ -114,25 +97,36 @@
     }
   }
 }
-.buildmode-full {
-  > .nd-region-middle-wrapper > .nd-region-middle {
-      > .field-box {
-        background: @white-off;
-      }
-    }
-}
 .nd-region-middle {
   position: relative;
   z-index: 2;
 }
-.node.node-type-locatie > div > div {
-  > .field-title p {
-    margin: 0;
+.node-type-activiteit {
+  &.buildmode-full, &.buildmode-teaser {
+    display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 0 auto auto;
+	grid-template-areas: 
+    "node-header node-header"
+    "node-main node-right"
+    "node-footer node-footer";
   }
-  > .field-l-plaats {
-    color: @red;
+  .nd-region-header {
+    grid-area: node-header;
+  }
+  .nd-region-middle-wrapper {
+    grid-area: node-main;
+  }
+  .nd-region-right {
+    grid-area: node-right;
+  }
+  .nd-region-footer {
+    grid-area: node-footer;
   }
 }
+
+
+
 .front h1 {
   display: none;
 }

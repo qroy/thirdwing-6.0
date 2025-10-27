@@ -149,13 +149,16 @@
   &.badge-color-brown         { background: @brown;  }
   &.badge-color-grey-light    { background: @grey-light; }
 }
-  .location {
-    display: block;
-    text-transform: uppercase;
-  }
-  .location-title {
-    color: @red;
-  }
+.location {
+  display: block;
+  text-transform: uppercase;
+}
+.location-title {
+  color: @red;
+}
+.buildmode-full {
+  .location span { display: block; }
+}
 
 .marker {
   .badge();
