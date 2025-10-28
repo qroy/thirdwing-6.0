@@ -13,15 +13,14 @@
   .node-type-activiteit {
     display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 0 auto auto;
+	grid-template-rows: auto auto;
 	grid-template-areas: 
-    "node-header node-header"
     "node-main node-right"
     "node-footer node-footer";
-	column-gap: 20em/@fs;
-  	row-gap: 20em/@fs;
+	column-gap: 24em/@fs;
+  	row-gap: 24em/@fs;
     .nd-region-header {
-      grid-area: node-header;
+      grid-area: node-main;
     }
     .nd-region-middle-wrapper {
       grid-area: node-main;
@@ -65,23 +64,29 @@
         }
       }
 	  > .field-afbeeldingen, > div > .field-afbeeldingen {
-        margin: 0;
-        overflow: hidden;
-        display: block; 
-        float: right;
-        box-sizing: border-box;
-        padding: 0 0 0 24em/@fs;
-        img {
+	    float: right;
+	    > div > div {
+	      height: 330em/@fs;
+		  width: 100%;
+          margin: 0;
+          overflow: hidden;
+          display: block;
           box-sizing: border-box;
-          width: 100%;
-          height: auto;
-        }
-        .image {
-          height: 330em/@fs;
-          background-size: contain;
-          background-position: right top;
-          background-repeat: no-repeat;
-        }
+          padding: 0;
+          img {
+		    height: 100%;
+	        width: 100%;
+            box-sizing: border-box;
+		    object-fit: contain;
+            object-position: top right;
+          }
+          .image {
+            height: 330em/@fs;
+            background-size: contain;
+            background-position: right top;
+            background-repeat: no-repeat;
+          }
+		}
       }
     }   
     > div > div { /* middle region */
@@ -110,7 +115,6 @@
         .badge { margin: 0; } 
       }
       .field-left {
-//        float: left;
         clear: left;
       }
       .field-clear-block {
@@ -121,11 +125,10 @@
     &.taxonomy-Leden     > div > div > .field-read-more .button-social { display: none; }
     &.taxonomy-Bezoekers > div > div > .field-read-more .button-social { display: inline-block; }
   }
-  > .node-type-nieuws > div > div > .field-afbeeldingen {
-    width: 50%;
-  }
-  > .node-type-activiteit > div > .field-afbeeldingen {
-    width: 100%;
+  > .node-type-nieuws, > .node-type-pagina {
+    > div > div > .field-afbeeldingen {
+      width: 50%;
+	}
   }
 }
 .buildmode-teaser {
@@ -133,16 +136,17 @@
     position: relative;
     background: @white-off;
     padding: 24em/@fs;
-    margin: 0 0 60em/@fs;
+	padding-bottom: 0;
+    margin: 0 0 48em/@fs;
     .border-radius(@border-radius-large);
 
     > div { /* header region */
       > .field-background {
         .node-background {
-          height: 434em/@fs;
+          height: 378em/@fs;
           .border-radius(@border-radius-large);
           &:after {
-            height: 434em/@fs;
+            height: 378em/@fs;
             .border-radius(@border-radius-large);
           }
         }
@@ -151,7 +155,8 @@
     > div > div { /* middle region */
       > .field-title {
         height: 150em/@fs;
-        display: block;
+        display: table-cell;
+		vertical-align: bottom;
         overflow: hidden;
       }
     }

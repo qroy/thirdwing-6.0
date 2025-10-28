@@ -1243,14 +1243,14 @@ body.two-sidebars #grid #sidebar-right {
 .buildmode-teaser .node-type-activiteit {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 0 auto auto;
-  grid-template-areas: "node-header node-header" "node-main node-right" "node-footer node-footer";
-  column-gap: 1.42857143em;
-  row-gap: 1.42857143em;
+  grid-template-rows: auto auto;
+  grid-template-areas: "node-main node-right" "node-footer node-footer";
+  column-gap: 1.71428571em;
+  row-gap: 1.71428571em;
 }
 .buildmode-full .node-type-activiteit .nd-region-header,
 .buildmode-teaser .node-type-activiteit .nd-region-header {
-  grid-area: node-header;
+  grid-area: node-main;
 }
 .buildmode-full .node-type-activiteit .nd-region-middle-wrapper,
 .buildmode-teaser .node-type-activiteit .nd-region-middle-wrapper {
@@ -1306,25 +1306,34 @@ body.two-sidebars #grid #sidebar-right {
 .buildmode-teaser > .node > div > .field-afbeeldingen,
 .buildmode-full > .node > div > div > .field-afbeeldingen,
 .buildmode-teaser > .node > div > div > .field-afbeeldingen {
+  float: right;
+}
+.buildmode-full > .node > div > .field-afbeeldingen > div > div,
+.buildmode-teaser > .node > div > .field-afbeeldingen > div > div,
+.buildmode-full > .node > div > div > .field-afbeeldingen > div > div,
+.buildmode-teaser > .node > div > div > .field-afbeeldingen > div > div {
+  height: 23.57142857em;
+  width: 100%;
   margin: 0;
   overflow: hidden;
   display: block;
-  float: right;
   box-sizing: border-box;
-  padding: 0 0 0 1.71428571em;
+  padding: 0;
 }
-.buildmode-full > .node > div > .field-afbeeldingen img,
-.buildmode-teaser > .node > div > .field-afbeeldingen img,
-.buildmode-full > .node > div > div > .field-afbeeldingen img,
-.buildmode-teaser > .node > div > div > .field-afbeeldingen img {
-  box-sizing: border-box;
+.buildmode-full > .node > div > .field-afbeeldingen > div > div img,
+.buildmode-teaser > .node > div > .field-afbeeldingen > div > div img,
+.buildmode-full > .node > div > div > .field-afbeeldingen > div > div img,
+.buildmode-teaser > .node > div > div > .field-afbeeldingen > div > div img {
+  height: 100%;
   width: 100%;
-  height: auto;
+  box-sizing: border-box;
+  object-fit: contain;
+  object-position: top right;
 }
-.buildmode-full > .node > div > .field-afbeeldingen .image,
-.buildmode-teaser > .node > div > .field-afbeeldingen .image,
-.buildmode-full > .node > div > div > .field-afbeeldingen .image,
-.buildmode-teaser > .node > div > div > .field-afbeeldingen .image {
+.buildmode-full > .node > div > .field-afbeeldingen > div > div .image,
+.buildmode-teaser > .node > div > .field-afbeeldingen > div > div .image,
+.buildmode-full > .node > div > div > .field-afbeeldingen > div > div .image,
+.buildmode-teaser > .node > div > div > .field-afbeeldingen > div > div .image {
   height: 23.57142857em;
   background-size: contain;
   background-position: right top;
@@ -1403,18 +1412,17 @@ body.two-sidebars #grid #sidebar-right {
   display: inline-block;
 }
 .buildmode-full > .node-type-nieuws > div > div > .field-afbeeldingen,
-.buildmode-teaser > .node-type-nieuws > div > div > .field-afbeeldingen {
+.buildmode-teaser > .node-type-nieuws > div > div > .field-afbeeldingen,
+.buildmode-full > .node-type-pagina > div > div > .field-afbeeldingen,
+.buildmode-teaser > .node-type-pagina > div > div > .field-afbeeldingen {
   width: 50%;
-}
-.buildmode-full > .node-type-activiteit > div > .field-afbeeldingen,
-.buildmode-teaser > .node-type-activiteit > div > .field-afbeeldingen {
-  width: 100%;
 }
 .buildmode-teaser > .node {
   position: relative;
   background: #f0f0ee;
   padding: 1.71428571em;
-  margin: 0 0 4.28571429em;
+  padding-bottom: 0;
+  margin: 0 0 3.42857143em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -1423,13 +1431,13 @@ body.two-sidebars #grid #sidebar-right {
   /* header region */
 }
 .buildmode-teaser > .node > div > .field-background .node-background {
-  height: 31em;
+  height: 27em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
 .buildmode-teaser > .node > div > .field-background .node-background:after {
-  height: 31em;
+  height: 27em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
@@ -1439,7 +1447,8 @@ body.two-sidebars #grid #sidebar-right {
 }
 .buildmode-teaser > .node > div > div > .field-title {
   height: 10.71428571em;
-  display: block;
+  display: table-cell;
+  vertical-align: bottom;
   overflow: hidden;
 }
 .buildmode-teaser > .node.taxonomy-Leden {
