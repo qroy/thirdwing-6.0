@@ -325,7 +325,7 @@ thead th {
 }
 tbody {
   td, td.active {
-    padding: 12em/@fs 6em/@fs 18em/@fs;
+    padding: 12em/@fs 6em/@fs;
     vertical-align: top;
   }
   tr:first-child {
@@ -334,21 +334,18 @@ tbody {
     }
   }
   tr, tr.odd, tr.even {
-    .transition-standard();
-    @media screen { background: transparent url('../images/dots-grey.svg') repeat-x 0% 98%; }
-    &:last-child {
-      background: transparent;
-    }
-    &:hover {
-      @media screen { 
-        &:not(:last-child) {
-          background-image: url('../images/dots-orange.svg');
-        }
-      }
-    }
     @media print {
       border-bottom: 1px solid @grey-dark;
     }
+  }
+  tr.even {
+    background: @white-off;
+    .badge-location-wrapper, .badge-date-wrapper, .badge-location, .badge-date {
+      background: @white;
+    }
+  }
+  tr.odd {
+    background: @white;
   }
 }
 

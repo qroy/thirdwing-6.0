@@ -534,39 +534,12 @@ thead th:last-child {
 }
 tbody td,
 tbody td.active {
-  padding: 0.85714286em 0.42857143em 1.28571429em;
+  padding: 0.85714286em 0.42857143em;
   vertical-align: top;
 }
 tbody tr:first-child td,
 tbody tr:first-child td.active {
   padding-top: 1.07142857em;
-}
-tbody tr,
-tbody tr.odd,
-tbody tr.even {
-  -webkit-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  -moz-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  -ms-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  -o-transition: border 0.4s, background-color 0.4s, color 0.6s;
-}
-@media screen {
-  tbody tr,
-  tbody tr.odd,
-  tbody tr.even {
-    background: transparent url('../images/dots-grey.svg') repeat-x 0% 98%;
-  }
-}
-tbody tr:last-child,
-tbody tr.odd:last-child,
-tbody tr.even:last-child {
-  background: transparent;
-}
-@media screen {
-  tbody tr:hover:not(:last-child),
-  tbody tr.odd:hover:not(:last-child),
-  tbody tr.even:hover:not(:last-child) {
-    background-image: url('../images/dots-orange.svg');
-  }
 }
 @media print {
   tbody tr,
@@ -574,6 +547,18 @@ tbody tr.even:last-child {
   tbody tr.even {
     border-bottom: 1px solid #323231;
   }
+}
+tbody tr.even {
+  background: #f0f0ee;
+}
+tbody tr.even .badge-location-wrapper,
+tbody tr.even .badge-date-wrapper,
+tbody tr.even .badge-location,
+tbody tr.even .badge-date {
+  background: #ffffff;
+}
+tbody tr.odd {
+  background: #ffffff;
 }
 td.region,
 td.module,
@@ -1769,62 +1754,23 @@ tr.dblog-access-denied td.active {
 /**
  * Ledenagenda
  */
-.agenda .views-field-title .Wereldlijk,
-.agenda .views-field-title .Kerkelijk,
-.agenda .views-field-title .Vergadering,
-.agenda .views-field-title .Koorreis,
-.agenda .views-field-title .Concours,
-.agenda .views-field-title .Overige {
+.agenda .views-field-title .title {
+  text-transform: uppercase;
   font-weight: 600;
 }
-.agenda .views-field-title .Wereldlijk a:link,
-.agenda .views-field-title .Kerkelijk a:link,
-.agenda .views-field-title .Vergadering a:link,
-.agenda .views-field-title .Koorreis a:link,
-.agenda .views-field-title .Concours a:link,
-.agenda .views-field-title .Overige a:link,
-.agenda .views-field-title .Wereldlijk a:visited,
-.agenda .views-field-title .Kerkelijk a:visited,
-.agenda .views-field-title .Vergadering a:visited,
-.agenda .views-field-title .Koorreis a:visited,
-.agenda .views-field-title .Concours a:visited,
-.agenda .views-field-title .Overige a:visited {
-  color: #eb7314;
+.agenda .views-field-title .title a:link,
+.agenda .views-field-title .title a:visited {
+  color: #e9584c;
 }
 @media print {
-  .agenda .views-field-title .Wereldlijk a:link,
-  .agenda .views-field-title .Kerkelijk a:link,
-  .agenda .views-field-title .Vergadering a:link,
-  .agenda .views-field-title .Koorreis a:link,
-  .agenda .views-field-title .Concours a:link,
-  .agenda .views-field-title .Overige a:link,
-  .agenda .views-field-title .Wereldlijk a:visited,
-  .agenda .views-field-title .Kerkelijk a:visited,
-  .agenda .views-field-title .Vergadering a:visited,
-  .agenda .views-field-title .Koorreis a:visited,
-  .agenda .views-field-title .Concours a:visited,
-  .agenda .views-field-title .Overige a:visited {
+  .agenda .views-field-title .title a:link,
+  .agenda .views-field-title .title a:visited {
     color: #000000;
   }
 }
-.agenda .views-field-title .Wereldlijk a:hover,
-.agenda .views-field-title .Kerkelijk a:hover,
-.agenda .views-field-title .Vergadering a:hover,
-.agenda .views-field-title .Koorreis a:hover,
-.agenda .views-field-title .Concours a:hover,
-.agenda .views-field-title .Overige a:hover,
-.agenda .views-field-title .Wereldlijk a:active,
-.agenda .views-field-title .Kerkelijk a:active,
-.agenda .views-field-title .Vergadering a:active,
-.agenda .views-field-title .Koorreis a:active,
-.agenda .views-field-title .Concours a:active,
-.agenda .views-field-title .Overige a:active,
-.agenda .views-field-title .Wereldlijk a:focus,
-.agenda .views-field-title .Kerkelijk a:focus,
-.agenda .views-field-title .Vergadering a:focus,
-.agenda .views-field-title .Koorreis a:focus,
-.agenda .views-field-title .Concours a:focus,
-.agenda .views-field-title .Overige a:focus {
+.agenda .views-field-title .title a:hover,
+.agenda .views-field-title .title a:active,
+.agenda .views-field-title .title a:focus {
   color: #3c329b;
 }
 .agenda .views-field-field-bijzonderheden-value {
@@ -1832,53 +1778,15 @@ tr.dblog-access-denied td.active {
   line-height: 2em;
 }
 .agenda.agenda-leden .views-field-field-datum-value {
-  width: 13.14285714em;
+  width: 28.07142857em;
+}
+.agenda.agenda-leden .badge-date-wrapper {
+  width: 21.42857143em;
+}
+.agenda.agenda-leden .badge-koor-tijd {
+  margin-right: 0;
 }
 .agenda.agenda-leden .views-field-field-sleepgroep-value {
-  width: 11.85714286em;
-}
-.agenda.agenda-leden .views-field-field-keyboard-value {
-  width: 8.14285714em;
-}
-@media screen {
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-sleepgroep,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-sleepgroep,
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-time,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-time,
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-koor-tijd,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-koor-tijd,
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-sleepgroep-tijd,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-sleepgroep-tijd,
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-kar,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-kar {
-    background: #d7d7d6;
-  }
-}
-@media screen {
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-aanwezig,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-aanwezig {
-    background-color: #d6ebb3;
-  }
-}
-@media screen {
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-vervanging,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-vervanging {
-    background-color: #f3ab72;
-  }
-}
-@media screen {
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-afwezig,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-afwezig {
-    background-color: #f4ada7;
-  }
-}
-@media screen {
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-vraag,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-vraag {
-    background-color: #d7d7d6;
-  }
-}
-.agenda .nd-region-right {
   width: 12.85714286em;
 }
 /**
@@ -2510,14 +2418,6 @@ a.video-thumb:focus {
   width: 4.14285714em;
 }
 @media screen {
-  .personen.personen-ledenlijst tr.odd:not(:hover) .badge-sleepgroep,
-  .personen.personen-ledenlijst tr.even:not(:hover) .badge-sleepgroep,
-  .personen.personen-ledenlijst tr.odd:not(:hover) .badge-functie,
-  .personen.personen-ledenlijst tr.even:not(:hover) .badge-functie {
-    background: #d7d7d6;
-  }
-}
-@media screen {
   .personen.personen-ledenlijst .badge.persoon-aspirant {
     background: #e9584c;
   }
@@ -2597,14 +2497,6 @@ a.video-thumb:focus {
 .repertoire .repertoire-programma {
   color: #e9584c;
   text-transform: uppercase;
-}
-@media screen {
-  .repertoire tr.odd:not(:hover) a:link .badge-nummer,
-  .repertoire tr.even:not(:hover) a:link .badge-nummer,
-  .repertoire tr.odd:not(:hover) a:visited .badge-nummer,
-  .repertoire tr.even:not(:hover) a:visited .badge-nummer {
-    background: #d7d7d6;
-  }
 }
 /**
  * Foto's
@@ -2755,6 +2647,7 @@ a.video-thumb:focus {
   }
 }
 .badge.badge-location {
+  overflow: hidden;
   width: 100%;
   text-align: left;
   text-transform: uppercase;
@@ -3065,6 +2958,7 @@ a.video-thumb:focus {
   }
 }
 .marker.badge-location {
+  overflow: hidden;
   width: 100%;
   text-align: left;
   text-transform: uppercase;

@@ -3,18 +3,19 @@
  */
 .agenda {
   .views-field-title {
-    .Wereldlijk, .Kerkelijk, .Vergadering, .Koorreis, .Concours, .Overige {
-      font-weight: 600;
+    .title {
+	  text-transform: uppercase;
+	  font-weight: 600;
       a {
         &:link, &:visited {
-          color: @secondary;
+          color: @red;
           @media print { color: @black; }
         }
         &:hover, &:active, &:focus {
           color: @primary;
         }
       }
-    }
+	}
   }
   .views-field-field-bijzonderheden-value {
     font-size: 12em/16;
@@ -23,37 +24,17 @@
 
   &.agenda-leden {
     .views-field-field-datum-value {
-      width: 184em/@fs;
+      width: 393em/@fs;
     }
+	.badge-date-wrapper {
+	  width: 300em/@fs;
+	}
+	.badge-koor-tijd {
+	  margin-right: 0;
+	}
     .views-field-field-sleepgroep-value {
-      width: 166em/@fs;
+      width: 180em/@fs;
     }
-    .views-field-field-keyboard-value {
-      width: 114em/@fs;
-    }
-  }
-   
-  tr {
-    &.odd, &.even {
-      &:not(:hover) {
-        span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) {
-          .badge-sleepgroep,
-          .badge-time,
-          .badge-koor-tijd,
-          .badge-sleepgroep-tijd,
-          .badge-kar {
-            @media screen { background: @grey-light; }
-          }
-		  .badge-combo.badge-combo-aanwezig,   { @media screen { background-color: @green-light; } }
-		  .badge-combo.badge-combo-vervanging, { @media screen { background-color: @orange-light; } }
-          .badge-combo.badge-combo-afwezig,    { @media screen { background-color: @red-light; } }
-		  .badge-combo.badge-combo-vraag,      { @media screen { background-color: @grey-light; } }
-        }
-      }
-    }
-  }
-  .nd-region-right {
-    width: 180em/@fs;
   }
 }
 
@@ -416,16 +397,6 @@ a.video-thumb {
     .persoon-foto {
       width: 58em/@fs;
     }
-    tr {
-      &.odd, &.even {
-        &:not(:hover) {
-          .badge-sleepgroep,
-          .badge-functie {
-            @media screen { background: @grey-light; }
-          }
-        }
-      }
-    }
     .badge.persoon-aspirant {
       @media screen {
         background: @red;
@@ -487,17 +458,6 @@ a.video-thumb {
   .repertoire-programma {
     color: @red;
     text-transform: uppercase;
-  }
-  tr {
-    &.odd, &.even {
-      &:not(:hover) {
-        a:link, a:visited {
-          .badge-nummer {
-            @media screen { background: @grey-light; }
-          }
-        }
-      }
-    }
   }
 }
 
