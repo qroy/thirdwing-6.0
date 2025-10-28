@@ -1316,15 +1316,9 @@ body.two-sidebars #grid #sidebar-right {
   box-sizing: border-box;
   object-fit: contain;
   object-position: top right;
-}
-.buildmode-full > .node > div > .field-afbeeldingen > div > div .image,
-.buildmode-teaser > .node > div > .field-afbeeldingen > div > div .image,
-.buildmode-full > .node > div > div > .field-afbeeldingen > div > div .image,
-.buildmode-teaser > .node > div > div > .field-afbeeldingen > div > div .image {
-  height: 23.57142857em;
-  background-size: contain;
-  background-position: right top;
-  background-repeat: no-repeat;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 .buildmode-full > .node > div > div,
 .buildmode-teaser > .node > div > div {
