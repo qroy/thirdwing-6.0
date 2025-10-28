@@ -278,8 +278,10 @@ b {
 }
 .fa:before {
   font-family: fontawesome;
-  margin-right: 2px;
   font-weight: normal;
+  display: inline-block;
+  text-align: center;
+  width: 1.71428571em;
 }
 a {
   -webkit-transition: border 0.4s, background-color 0.4s, color 0.6s;
@@ -1359,18 +1361,6 @@ body.two-sidebars #grid #sidebar-right {
 .buildmode-full > .node > div > div .field-post-date em,
 .buildmode-teaser > .node > div > div .field-post-date em {
   font-style: normal;
-}
-.buildmode-full > .node > div > div > .field-locatie,
-.buildmode-teaser > .node > div > div > .field-locatie,
-.buildmode-full > .node > div > div .field-l-bijzonderheden,
-.buildmode-teaser > .node > div > div .field-l-bijzonderheden {
-  text-transform: uppercase;
-}
-.buildmode-full > .node > div > div > .field-locatie > .field-items,
-.buildmode-teaser > .node > div > div > .field-locatie > .field-items,
-.buildmode-full > .node > div > div .field-l-bijzonderheden > .field-items,
-.buildmode-teaser > .node > div > div .field-l-bijzonderheden > .field-items {
-  padding: 0 0.28571429em;
 }
 .buildmode-full > .node > div > div .field-box,
 .buildmode-teaser > .node > div > div .field-box {
@@ -2629,6 +2619,7 @@ a.video-thumb:focus {
 .badge {
   display: inline-block;
   vertical-align: middle;
+  box-sizing: border-box;
   font-size: 1em;
   line-height: 1.71428571em;
   padding: 0.28571429em;
@@ -2638,7 +2629,7 @@ a.video-thumb:focus {
   -moz-transition: border 0.4s, background-color 0.4s, color 0.6s;
   -ms-transition: border 0.4s, background-color 0.4s, color 0.6s;
   -o-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  height: 1.71428571em;
+  height: 2.28571429em;
   color: #ffffff;
   background: #878786;
   -webkit-border-radius: 5px;
@@ -2655,13 +2646,13 @@ a.video-thumb:focus {
 }
 .badge.badge-combo {
   font-family: thirdwing;
-  width: 1.71428571em;
+  width: 2.28571429em;
   font-size: 1.71428571em;
-  width: 1em;
+  width: 1.33333333em;
   line-height: 1em;
   padding: 0.16666667em;
   margin: 0 0.16666667em 0.16666667em 0;
-  height: 1em;
+  height: 1.33333333em;
 }
 .badge.badge-combo-aanwezig {
   background: #aad563;
@@ -2699,7 +2690,7 @@ a.video-thumb:focus {
 }
 .badge.badge-functie {
   padding: 0.28571429em 0.57142857em;
-  width: 6.57142857em;
+  width: 7.14285714em;
 }
 @media screen {
   .badge.badge-functie-A {
@@ -2737,7 +2728,7 @@ a.video-thumb:focus {
   }
 }
 .badge.badge-sleepgroep {
-  width: 1.71428571em;
+  width: 2.28571429em;
   line-height: 1.71428571em;
 }
 @media screen {
@@ -2746,7 +2737,7 @@ a.video-thumb:focus {
   }
 }
 .badge.badge-nummer {
-  width: 1.71428571em;
+  width: 2.28571429em;
   line-height: 1.71428571em;
 }
 @media screen {
@@ -2755,7 +2746,7 @@ a.video-thumb:focus {
   }
 }
 .badge.badge-kar {
-  width: 12em;
+  width: 12.57142857em;
   overflow: hidden;
 }
 @media screen {
@@ -2763,8 +2754,41 @@ a.video-thumb:focus {
     background: #51aaec;
   }
 }
+.badge.badge-location {
+  width: 100%;
+  text-align: left;
+  text-transform: uppercase;
+}
+@media screen {
+  .badge.badge-location {
+    background: #f0f0ee;
+    color: #000000;
+  }
+}
+@media screen {
+  .badge.badge-location:before {
+    color: #e9584c;
+  }
+}
+.badge.badge-location-ext {
+  height: auto;
+}
+.badge.badge-location-ext .badge-location-adres,
+.badge.badge-location-ext .badge-location-plaats,
+.badge.badge-location-ext .badge-location-link,
+.badge.badge-location-ext .badge-location-bijzonderheden {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 1.71428571em;
+}
+.badge .badge-location-title {
+  color: #e9584c;
+}
+.badge .badge-location-bijzonderheden {
+  font-style: italic;
+}
 .badge.badge-date {
-  width: 12.28571429em;
   text-transform: uppercase;
 }
 @media screen {
@@ -2778,11 +2802,25 @@ a.video-thumb:focus {
 @media screen {
   .badge.badge-date {
     color: #000000;
-    background: #ffffff;
+    background: #f0f0ee;
   }
 }
+.badge.badge-date-wrapper {
+  width: 100%;
+  padding: 0;
+  text-align: left;
+}
+@media screen {
+  .badge.badge-date-wrapper {
+    background: #f0f0ee;
+  }
+}
+.badge.badge-date-wrapper .badge-time {
+  margin-right: 0;
+}
 .badge.badge-time {
-  width: 5.71428571em;
+  width: 6.28571429em;
+  float: right;
 }
 @media screen {
   .badge.badge-time {
@@ -2790,7 +2828,7 @@ a.video-thumb:focus {
   }
 }
 .badge.badge-koor-tijd {
-  width: 5.71428571em;
+  width: 6.28571429em;
 }
 @media screen {
   .badge.badge-koor-tijd {
@@ -2798,7 +2836,7 @@ a.video-thumb:focus {
   }
 }
 .badge.badge-sleepgroep-tijd {
-  width: 6.85714286em;
+  width: 7.42857143em;
 }
 @media screen {
   .badge.badge-sleepgroep-tijd {
@@ -2806,7 +2844,7 @@ a.video-thumb:focus {
   }
 }
 .badge.badge-multimedia {
-  width: 1.71428571em;
+  width: 2.28571429em;
   line-height: 1.71428571em;
 }
 @media screen {
@@ -2815,7 +2853,7 @@ a.video-thumb:focus {
   }
 }
 .badge.badge-nodetype {
-  width: 8.57142857em;
+  width: 9.14285714em;
 }
 .badge.badge-nodetype-pagina {
   background: #f4b785;
@@ -2890,6 +2928,7 @@ a.video-thumb:focus {
 .marker {
   display: inline-block;
   vertical-align: middle;
+  box-sizing: border-box;
   font-size: 1em;
   line-height: 1.71428571em;
   padding: 0.28571429em;
@@ -2899,7 +2938,7 @@ a.video-thumb:focus {
   -moz-transition: border 0.4s, background-color 0.4s, color 0.6s;
   -ms-transition: border 0.4s, background-color 0.4s, color 0.6s;
   -o-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  height: 1.71428571em;
+  height: 2.28571429em;
   color: #ffffff;
   background: #878786;
   -webkit-border-radius: 5px;
@@ -2917,13 +2956,13 @@ a.video-thumb:focus {
 }
 .marker.badge-combo {
   font-family: thirdwing;
-  width: 1.71428571em;
+  width: 2.28571429em;
   font-size: 1.71428571em;
-  width: 1em;
+  width: 1.33333333em;
   line-height: 1em;
   padding: 0.16666667em;
   margin: 0 0.16666667em 0.16666667em 0;
-  height: 1em;
+  height: 1.33333333em;
 }
 .marker.badge-combo-aanwezig {
   background: #aad563;
@@ -2961,7 +3000,7 @@ a.video-thumb:focus {
 }
 .marker.badge-functie {
   padding: 0.28571429em 0.57142857em;
-  width: 6.57142857em;
+  width: 7.14285714em;
 }
 @media screen {
   .marker.badge-functie-A {
@@ -2999,7 +3038,7 @@ a.video-thumb:focus {
   }
 }
 .marker.badge-sleepgroep {
-  width: 1.71428571em;
+  width: 2.28571429em;
   line-height: 1.71428571em;
 }
 @media screen {
@@ -3008,7 +3047,7 @@ a.video-thumb:focus {
   }
 }
 .marker.badge-nummer {
-  width: 1.71428571em;
+  width: 2.28571429em;
   line-height: 1.71428571em;
 }
 @media screen {
@@ -3017,7 +3056,7 @@ a.video-thumb:focus {
   }
 }
 .marker.badge-kar {
-  width: 12em;
+  width: 12.57142857em;
   overflow: hidden;
 }
 @media screen {
@@ -3025,8 +3064,41 @@ a.video-thumb:focus {
     background: #51aaec;
   }
 }
+.marker.badge-location {
+  width: 100%;
+  text-align: left;
+  text-transform: uppercase;
+}
+@media screen {
+  .marker.badge-location {
+    background: #f0f0ee;
+    color: #000000;
+  }
+}
+@media screen {
+  .marker.badge-location:before {
+    color: #e9584c;
+  }
+}
+.marker.badge-location-ext {
+  height: auto;
+}
+.marker.badge-location-ext .badge-location-adres,
+.marker.badge-location-ext .badge-location-plaats,
+.marker.badge-location-ext .badge-location-link,
+.marker.badge-location-ext .badge-location-bijzonderheden {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  padding-left: 1.71428571em;
+}
+.marker .badge-location-title {
+  color: #e9584c;
+}
+.marker .badge-location-bijzonderheden {
+  font-style: italic;
+}
 .marker.badge-date {
-  width: 12.28571429em;
   text-transform: uppercase;
 }
 @media screen {
@@ -3040,11 +3112,25 @@ a.video-thumb:focus {
 @media screen {
   .marker.badge-date {
     color: #000000;
-    background: #ffffff;
+    background: #f0f0ee;
   }
 }
+.marker.badge-date-wrapper {
+  width: 100%;
+  padding: 0;
+  text-align: left;
+}
+@media screen {
+  .marker.badge-date-wrapper {
+    background: #f0f0ee;
+  }
+}
+.marker.badge-date-wrapper .badge-time {
+  margin-right: 0;
+}
 .marker.badge-time {
-  width: 5.71428571em;
+  width: 6.28571429em;
+  float: right;
 }
 @media screen {
   .marker.badge-time {
@@ -3052,7 +3138,7 @@ a.video-thumb:focus {
   }
 }
 .marker.badge-koor-tijd {
-  width: 5.71428571em;
+  width: 6.28571429em;
 }
 @media screen {
   .marker.badge-koor-tijd {
@@ -3060,7 +3146,7 @@ a.video-thumb:focus {
   }
 }
 .marker.badge-sleepgroep-tijd {
-  width: 6.85714286em;
+  width: 7.42857143em;
 }
 @media screen {
   .marker.badge-sleepgroep-tijd {
@@ -3068,7 +3154,7 @@ a.video-thumb:focus {
   }
 }
 .marker.badge-multimedia {
-  width: 1.71428571em;
+  width: 2.28571429em;
   line-height: 1.71428571em;
 }
 @media screen {
@@ -3077,7 +3163,7 @@ a.video-thumb:focus {
   }
 }
 .marker.badge-nodetype {
-  width: 8.57142857em;
+  width: 9.14285714em;
 }
 .marker.badge-nodetype-pagina {
   background: #f4b785;
@@ -3733,7 +3819,6 @@ a.fa {
 #sidebar-right .fa:before {
   font-size: 1.75em;
   line-height: 1em;
-  margin-right: 0.28571429em;
 }
 /**
  * Local tasks

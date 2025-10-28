@@ -1,13 +1,14 @@
 .badge {
   display: inline-block;
-  vertical-align: middle;  
+  vertical-align: middle;
+  box-sizing: border-box;
   font-size: 14em/@fs;
   line-height: 24em/@fs;
   padding: 4em/@fs;
   margin: 0 4em/@fs 4em/@fs 0;
   text-align: center;
   .transition-standard();
-  height: 24em/@fs;
+  height: 32em/@fs;
 
   color: @white;
   background: @grey;
@@ -21,13 +22,13 @@
   
   &.badge-combo {
     font-family: thirdwing;
-	width: 24em/@fs;
+	width: 32em/@fs;
     font-size: 24em/@fs;
-    width: 24em/24;
+    width: 32em/24;
     line-height: 24em/24;
     padding: 4em/24;
 	margin: 0 4em/24 4em/24 0;
-	height: 24em/24;
+	height: 32em/24;
   }
   &.badge-combo-aanwezig {   background: @green; }
   &.badge-combo-vervanging { background: @orange; }
@@ -42,7 +43,7 @@
   }
   &.badge-functie {
     padding: 4em/@fs 8em/@fs;
-    width: 92em/@fs;
+    width: 100em/@fs;
   }
   @media screen {
   &.badge-functie-A  { background: @red;        }
@@ -59,29 +60,57 @@
   }
 
   &.badge-sleepgroep {
-    width: 24em/@fs;
+    width: 32em/@fs;
     line-height: 24em/@fs;
     @media screen {
       background: @yellow;
     }
   }
   &.badge-nummer {
-    width: 24em/@fs;
+    width: 32em/@fs;
     line-height: 24em/@fs;
     @media screen {
       background: @grey;
     }
   }
   &.badge-kar {
-    width: 168em/@fs; // 5*32 (width + padding) + 4*4 (margin) - 2*4 (padding)
+    width: 176em/@fs; // 5*32 (width + padding) + 4*4 (margin) - 2*4 (padding)
     overflow: hidden;
     @media screen {
       background: @blue;
     }
   }
-
+  &.badge-location {
+    @media screen {
+      background: @white-off;
+	  color: @black;
+	}
+	width: 100%;
+	text-align: left;
+	text-transform: uppercase;
+	&:before {
+      @media screen { color: @red; }
+    }
+	span {
+      
+    }
+  }
+  &.badge-location-ext {
+    height: auto;
+	.badge-location-adres, .badge-location-plaats, .badge-location-link, .badge-location-bijzonderheden {
+	  display: inline-block;
+	  box-sizing: border-box;
+	  width: 100%;
+	  padding-left: 24em/@fs;
+	}
+  }
+  .badge-location-title {
+    color: @red;
+  }
+  .badge-location-bijzonderheden {
+    font-style: italic;
+  }
   &.badge-date {
-    width: 172em/@fs;
     text-transform: uppercase;
     &:before {
       @media screen { color: @red; }
@@ -91,37 +120,44 @@
     }
     @media screen {
       color: @black;
-      background: @white;
+      background: @white-off;
     }
   }
-
+  &.badge-date-wrapper {
+    @media screen { background: @white-off; }
+    width: 100%;
+	padding: 0;
+	text-align: left;
+	.badge-time {
+	  margin-right: 0;
+	}
+  }
   &.badge-time {
-    width: 80em/@fs;
-    @media screen {
-      background: @red;
-    }
+    width: 88em/@fs;
+	float: right;
+    @media screen { background: @red; }
   }
   &.badge-koor-tijd {
-    width: 80em/@fs;
+    width: 88em/@fs;
     @media screen {
       background: @primary;
     }
   }
   &.badge-sleepgroep-tijd {
-    width: 96em/@fs; // 3*32 (width + padding) + 2*4 (margin) - 2*4 (padding)
+    width: 104em/@fs; // 3*32 (width + padding) + 2*4 (margin) - 2*4 (padding)
     @media screen {
       background: @yellow;
     }
   }
   &.badge-multimedia {
-    width: 24em/@fs;
+    width: 32em/@fs;
     line-height: 24em/@fs;
     @media screen {
       background: @grey;
     }
   }
   &.badge-nodetype {
-    width: 120em/@fs;
+    width: 128em/@fs;
   }
   &.badge-nodetype-pagina     { background: @brown;  }
   &.badge-nodetype-nieuws     { background: @green;  }
