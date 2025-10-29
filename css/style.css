@@ -544,29 +544,7 @@ tbody tr:first-child td.active {
 tbody tr,
 tbody tr.odd,
 tbody tr.even {
-  -webkit-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  -moz-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  -ms-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  -o-transition: border 0.4s, background-color 0.4s, color 0.6s;
-}
-@media screen {
-  tbody tr,
-  tbody tr.odd,
-  tbody tr.even {
-    background: transparent url('../images/dots-grey.svg') repeat-x 0% 98%;
-  }
-}
-tbody tr:last-child,
-tbody tr.odd:last-child,
-tbody tr.even:last-child {
-  background: transparent;
-}
-@media screen {
-  tbody tr:hover:not(:last-child),
-  tbody tr.odd:hover:not(:last-child),
-  tbody tr.even:hover:not(:last-child) {
-    background-image: url('../images/dots-orange.svg');
-  }
+  background: #ffffff;
 }
 @media print {
   tbody tr,
@@ -1201,12 +1179,36 @@ body {
 .nd-region-middle,
 .nd-region-middle-wrapper,
 .nd-region-footer,
-.nd-sidebar-right .nd-region-middle {
+.nd-sidebar-right .nd-region-middle,
+.nd-two-sidebars .nd-region-middle,
+.nd-sidebar-left .nd-region-middle {
   float: none;
   display: block;
   margin: 0;
   clear: both;
   width: auto;
+}
+.buildmode-teaser:not(:empty),
+.buildmode-full:not(:empty),
+.buildmode-schema:not(:empty) {
+  position: relative;
+  background: #ffffff;
+  padding: 3.42857143em 1.71428571em 0;
+  margin: 0 0 3.42857143em;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.buildmode-schema:not(:empty) {
+  padding: 0.85714286em;
+  margin: 0 0 0.85714286em;
+}
+.buildmode-schema.taxonomy-Wereldlijk,
+.buildmode-schema.taxonomy-Kerkelijk,
+.buildmode-schema.taxonomy-Concours,
+.buildmode-schema.taxonomy-Koorreis,
+.buildmode-schema.taxonomy-Vergadering {
+  background: #fdf1e7;
 }
 .buildmode-teaser > .nd-region-header > .field-background {
   position: absolute;
@@ -1217,14 +1219,14 @@ body {
 }
 .buildmode-teaser > .nd-region-header > .field-background .node-background {
   width: 100%;
-  height: 15.71428571em;
+  height: 28.71428571em;
   background-position: center 10%;
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #878786;
-  -webkit-border-radius: 10px 10px 0 0;
-  -moz-border-radius: 10px 10px 0 0;
-  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 .buildmode-teaser > .nd-region-header > .field-background .node-background:after {
   content: ' ';
@@ -1232,12 +1234,12 @@ body {
   z-index: 1;
   display: block;
   width: 100%;
-  height: 15.71428571em;
+  height: 28.71428571em;
   background: #ffffff;
   opacity: 0.75;
-  -webkit-border-radius: 10px 10px 0 0;
-  -moz-border-radius: 10px 10px 0 0;
-  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 .buildmode-full > .nd-region-right > .field-afbeeldingen > div > div,
 .buildmode-teaser > .nd-region-right > .field-afbeeldingen > div > div {
@@ -1254,76 +1256,111 @@ body {
 .buildmode-full .field-background {
   display: none;
 }
-.buildmode-teaser:not(:empty),
-.buildmode-full:not(:empty),
-.buildmode-schema:not(:empty) {
-  position: relative;
-  background: #ffffff;
-  padding: 1.71428571em;
-  padding-bottom: 0;
-  margin: 0 0 3.42857143em;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-.buildmode-teaser:not(:empty) > .nd-region-header > .field-background .node-background,
-.buildmode-full:not(:empty) > .nd-region-header > .field-background .node-background,
-.buildmode-schema:not(:empty) > .nd-region-header > .field-background .node-background {
-  height: 27em;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-.buildmode-teaser:not(:empty) > .nd-region-header > .field-background .node-background:after,
-.buildmode-full:not(:empty) > .nd-region-header > .field-background .node-background:after,
-.buildmode-schema:not(:empty) > .nd-region-header > .field-background .node-background:after {
-  height: 27em;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-.buildmode-teaser:not(:empty) > .nd-region-middle-wrapper > .nd-region-middle > .field-title,
-.buildmode-full:not(:empty) > .nd-region-middle-wrapper > .nd-region-middle > .field-title,
-.buildmode-schema:not(:empty) > .nd-region-middle-wrapper > .nd-region-middle > .field-title {
+.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle > .field-title,
+.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle > .field-title {
   height: 10.71428571em;
   display: table-cell;
   vertical-align: bottom;
   overflow: hidden;
 }
-.buildmode-teaser:not(:empty).taxonomy-Leden,
-.buildmode-full:not(:empty).taxonomy-Leden,
-.buildmode-schema:not(:empty).taxonomy-Leden {
+.role-bestuur .buildmode-teaser.taxonomy-Bezoekers,
+.role-beheer .buildmode-teaser.taxonomy-Bezoekers,
+.role-admin .buildmode-teaser.taxonomy-Bezoekers,
+.role-bestuur .buildmode-full:not(:empty).taxonomy-Bezoekers,
+.role-beheer .buildmode-full:not(:empty).taxonomy-Bezoekers,
+.role-admin .buildmode-full:not(:empty).taxonomy-Bezoekers,
+.role-bestuur .buildmode-teaser.taxonomy-Leden,
+.role-beheer .buildmode-teaser.taxonomy-Leden,
+.role-admin .buildmode-teaser.taxonomy-Leden,
+.role-bestuur .buildmode-full:not(:empty).taxonomy-Leden,
+.role-beheer .buildmode-full:not(:empty).taxonomy-Leden,
+.role-admin .buildmode-full:not(:empty).taxonomy-Leden,
+.role-bestuur .buildmode-teaser.taxonomy-Bestuur,
+.role-beheer .buildmode-teaser.taxonomy-Bestuur,
+.role-admin .buildmode-teaser.taxonomy-Bestuur,
+.role-bestuur .buildmode-full:not(:empty).taxonomy-Bestuur,
+.role-beheer .buildmode-full:not(:empty).taxonomy-Bestuur,
+.role-admin .buildmode-full:not(:empty).taxonomy-Bestuur,
+.role-bestuur .buildmode-teaser.taxonomy-Muziekcommissie,
+.role-beheer .buildmode-teaser.taxonomy-Muziekcommissie,
+.role-admin .buildmode-teaser.taxonomy-Muziekcommissie,
+.role-bestuur .buildmode-full:not(:empty).taxonomy-Muziekcommissie,
+.role-beheer .buildmode-full:not(:empty).taxonomy-Muziekcommissie,
+.role-admin .buildmode-full:not(:empty).taxonomy-Muziekcommissie {
   background: #ffffff;
 }
 @media screen {
-  .buildmode-teaser:not(:empty).taxonomy-Leden:before,
-  .buildmode-full:not(:empty).taxonomy-Leden:before,
-  .buildmode-schema:not(:empty).taxonomy-Leden:before {
+  .role-bestuur .buildmode-teaser.taxonomy-Bezoekers:before,
+  .role-beheer .buildmode-teaser.taxonomy-Bezoekers:before,
+  .role-admin .buildmode-teaser.taxonomy-Bezoekers:before,
+  .role-bestuur .buildmode-full:not(:empty).taxonomy-Bezoekers:before,
+  .role-beheer .buildmode-full:not(:empty).taxonomy-Bezoekers:before,
+  .role-admin .buildmode-full:not(:empty).taxonomy-Bezoekers:before,
+  .role-bestuur .buildmode-teaser.taxonomy-Leden:before,
+  .role-beheer .buildmode-teaser.taxonomy-Leden:before,
+  .role-admin .buildmode-teaser.taxonomy-Leden:before,
+  .role-bestuur .buildmode-full:not(:empty).taxonomy-Leden:before,
+  .role-beheer .buildmode-full:not(:empty).taxonomy-Leden:before,
+  .role-admin .buildmode-full:not(:empty).taxonomy-Leden:before,
+  .role-bestuur .buildmode-teaser.taxonomy-Bestuur:before,
+  .role-beheer .buildmode-teaser.taxonomy-Bestuur:before,
+  .role-admin .buildmode-teaser.taxonomy-Bestuur:before,
+  .role-bestuur .buildmode-full:not(:empty).taxonomy-Bestuur:before,
+  .role-beheer .buildmode-full:not(:empty).taxonomy-Bestuur:before,
+  .role-admin .buildmode-full:not(:empty).taxonomy-Bestuur:before,
+  .role-bestuur .buildmode-teaser.taxonomy-Muziekcommissie:before,
+  .role-beheer .buildmode-teaser.taxonomy-Muziekcommissie:before,
+  .role-admin .buildmode-teaser.taxonomy-Muziekcommissie:before,
+  .role-bestuur .buildmode-full:not(:empty).taxonomy-Muziekcommissie:before,
+  .role-beheer .buildmode-full:not(:empty).taxonomy-Muziekcommissie:before,
+  .role-admin .buildmode-full:not(:empty).taxonomy-Muziekcommissie:before {
     z-index: 5;
-    content: 'voor leden';
     position: absolute;
-    right: 2.14285714em;
     top: 0;
-    background: #e9584c;
+    right: 1.71428571em;
+    padding: 0.28571429em 0.57142857em;
     color: #ffffff;
     text-align: center;
-    width: 8.21428571em;
-    line-height: 2.14285714em;
     -webkit-border-radius: 0 0 5px 5px;
     -moz-border-radius: 0 0 5px 5px;
     border-radius: 0 0 5px 5px;
   }
 }
-.buildmode-teaser:not(:empty).taxonomy-Bezoekers,
-.buildmode-full:not(:empty).taxonomy-Bezoekers,
-.buildmode-schema:not(:empty).taxonomy-Bezoekers {
-  background: #ffffff;
-  border: 0;
+.role-bestuur .buildmode-teaser.taxonomy-Bestuur:before,
+.role-beheer .buildmode-teaser.taxonomy-Bestuur:before,
+.role-admin .buildmode-teaser.taxonomy-Bestuur:before,
+.role-bestuur .buildmode-full:not(:empty).taxonomy-Bestuur:before,
+.role-beheer .buildmode-full:not(:empty).taxonomy-Bestuur:before,
+.role-admin .buildmode-full:not(:empty).taxonomy-Bestuur:before {
+  background: #e9584c;
+  content: 'Voor Bestuur';
 }
-.buildmode-teaser:not(:empty).taxonomy-Bezoekers:before,
-.buildmode-full:not(:empty).taxonomy-Bezoekers:before,
-.buildmode-schema:not(:empty).taxonomy-Bezoekers:before {
-  content: '';
+.role-bestuur .buildmode-teaser.taxonomy-Muziekcommissie:before,
+.role-beheer .buildmode-teaser.taxonomy-Muziekcommissie:before,
+.role-admin .buildmode-teaser.taxonomy-Muziekcommissie:before,
+.role-bestuur .buildmode-full:not(:empty).taxonomy-Muziekcommissie:before,
+.role-beheer .buildmode-full:not(:empty).taxonomy-Muziekcommissie:before,
+.role-admin .buildmode-full:not(:empty).taxonomy-Muziekcommissie:before {
+  background: #e6d119;
+  content: 'Voor MC';
+}
+.role-bestuur .buildmode-teaser.taxonomy-Leden:before,
+.role-beheer .buildmode-teaser.taxonomy-Leden:before,
+.role-admin .buildmode-teaser.taxonomy-Leden:before,
+.role-bestuur .buildmode-full:not(:empty).taxonomy-Leden:before,
+.role-beheer .buildmode-full:not(:empty).taxonomy-Leden:before,
+.role-admin .buildmode-full:not(:empty).taxonomy-Leden:before {
+  background: #51aaec;
+  content: 'Voor Leden';
+}
+.role-bestuur .buildmode-teaser.taxonomy-Bezoekers:before,
+.role-beheer .buildmode-teaser.taxonomy-Bezoekers:before,
+.role-admin .buildmode-teaser.taxonomy-Bezoekers:before,
+.role-bestuur .buildmode-full:not(:empty).taxonomy-Bezoekers:before,
+.role-beheer .buildmode-full:not(:empty).taxonomy-Bezoekers:before,
+.role-admin .buildmode-full:not(:empty).taxonomy-Bezoekers:before {
+  background: #aad563;
+  content: 'Voor bezoekers';
 }
 .nd-region-middle,
 .nd-region-right {
@@ -1339,8 +1376,17 @@ body {
   column-gap: 1.71428571em;
   row-gap: 1.71428571em;
 }
+.node-type-activiteit.buildmode-schema {
+  display: grid;
+  grid-template-columns: 25em 1fr 12.85714286em;
+  grid-template-areas: "node-left node-main node-right";
+  column-gap: 1.71428571em;
+}
 .node-type-activiteit .nd-region-header {
   grid-area: node-main;
+}
+.node-type-activiteit .nd-region-left {
+  grid-area: node-left;
 }
 .node-type-activiteit .nd-region-middle-wrapper {
   grid-area: node-main;
@@ -1627,113 +1673,55 @@ tr.dblog-access-denied td.active {
 /**
  * Ledenagenda
  */
-.agenda .views-field-title .Wereldlijk,
-.agenda .views-field-title .Kerkelijk,
-.agenda .views-field-title .Vergadering,
-.agenda .views-field-title .Koorreis,
-.agenda .views-field-title .Concours,
-.agenda .views-field-title .Overige {
-  font-weight: 600;
+.agenda.agenda-leden .badge-date-wrapper {
+  width: 18.35714286em;
 }
-.agenda .views-field-title .Wereldlijk a:link,
-.agenda .views-field-title .Kerkelijk a:link,
-.agenda .views-field-title .Vergadering a:link,
-.agenda .views-field-title .Koorreis a:link,
-.agenda .views-field-title .Concours a:link,
-.agenda .views-field-title .Overige a:link,
-.agenda .views-field-title .Wereldlijk a:visited,
-.agenda .views-field-title .Kerkelijk a:visited,
-.agenda .views-field-title .Vergadering a:visited,
-.agenda .views-field-title .Koorreis a:visited,
-.agenda .views-field-title .Concours a:visited,
-.agenda .views-field-title .Overige a:visited {
-  color: #eb7314;
+.agenda.agenda-leden .badge-koor-tijd {
+  margin-right: 0;
 }
-@media print {
-  .agenda .views-field-title .Wereldlijk a:link,
-  .agenda .views-field-title .Kerkelijk a:link,
-  .agenda .views-field-title .Vergadering a:link,
-  .agenda .views-field-title .Koorreis a:link,
-  .agenda .views-field-title .Concours a:link,
-  .agenda .views-field-title .Overige a:link,
-  .agenda .views-field-title .Wereldlijk a:visited,
-  .agenda .views-field-title .Kerkelijk a:visited,
-  .agenda .views-field-title .Vergadering a:visited,
-  .agenda .views-field-title .Koorreis a:visited,
-  .agenda .views-field-title .Concours a:visited,
-  .agenda .views-field-title .Overige a:visited {
-    color: #000000;
-  }
+.agenda.agenda-leden h2 {
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 1.71428571em;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  margin: 0;
 }
-.agenda .views-field-title .Wereldlijk a:hover,
-.agenda .views-field-title .Kerkelijk a:hover,
-.agenda .views-field-title .Vergadering a:hover,
-.agenda .views-field-title .Koorreis a:hover,
-.agenda .views-field-title .Concours a:hover,
-.agenda .views-field-title .Overige a:hover,
-.agenda .views-field-title .Wereldlijk a:active,
-.agenda .views-field-title .Kerkelijk a:active,
-.agenda .views-field-title .Vergadering a:active,
-.agenda .views-field-title .Koorreis a:active,
-.agenda .views-field-title .Concours a:active,
-.agenda .views-field-title .Overige a:active,
-.agenda .views-field-title .Wereldlijk a:focus,
-.agenda .views-field-title .Kerkelijk a:focus,
-.agenda .views-field-title .Vergadering a:focus,
-.agenda .views-field-title .Koorreis a:focus,
-.agenda .views-field-title .Concours a:focus,
-.agenda .views-field-title .Overige a:focus {
+.agenda.agenda-leden h2 a:link,
+.agenda.agenda-leden h2 a:visited {
+  color: #e9584c;
+}
+.agenda.agenda-leden h2 a:hover,
+.agenda.agenda-leden h2 a:active,
+.agenda.agenda-leden h2 a:focus {
   color: #3c329b;
 }
-.agenda .views-field-field-bijzonderheden-value {
-  font-size: 0.75em;
-  line-height: 2em;
+.agenda.agenda-leden .field-bijzonderheden {
+  font-style: italic;
 }
-.agenda.agenda-leden .views-field-field-datum-value {
-  width: 13.14285714em;
+.agenda.agenda-leden .node-edit-link,
+.agenda.agenda-leden .node-clone-link {
+  display: inline-block;
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  /* for absolute positioning of icon */
+  vertical-align: bottom;
+  width: 1.71428571em;
 }
-.agenda.agenda-leden .views-field-field-sleepgroep-value {
-  width: 11.85714286em;
-}
-.agenda.agenda-leden .views-field-field-keyboard-value {
-  width: 8.14285714em;
-}
-@media screen {
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-sleepgroep,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-sleepgroep,
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-time,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-time,
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-koor-tijd,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-koor-tijd,
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-sleepgroep-tijd,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-sleepgroep-tijd,
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-kar,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-kar {
-    background: #d7d7d6;
-  }
-}
-@media screen {
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-aanwezig,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-aanwezig,
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-vervanging,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-vervanging {
-    background-color: #d6ebb3;
-  }
-}
-@media screen {
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-afwezig,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-afwezig {
-    background-color: #f4ada7;
-  }
-}
-@media screen {
-  .agenda tr.odd:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-vraag,
-  .agenda tr.even:not(:hover) span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) .badge-combo.badge-combo-vraag {
-    background-color: #d7d7d6;
-  }
-}
-.agenda .nd-region-right {
-  width: 12.85714286em;
+.agenda.agenda-leden .node-edit-link:before,
+.agenda.agenda-leden .node-clone-link:before {
+  font-family: FontAwesome;
+  text-indent: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0;
+  display: inline;
+  width: auto;
 }
 /**
  * Opnamen
@@ -2610,6 +2598,7 @@ a.video-thumb:focus {
 }
 .badge.badge-location {
   width: 100%;
+  overflow: hidden;
   text-align: left;
   text-transform: uppercase;
 }
@@ -2919,6 +2908,7 @@ a.video-thumb:focus {
 }
 .marker.badge-location {
   width: 100%;
+  overflow: hidden;
   text-align: left;
   text-transform: uppercase;
 }

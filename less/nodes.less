@@ -3,12 +3,30 @@
  */
  
 // RESETS FOR ND REGIONS
-.nd-region-header, .nd-region-left, .nd-region-right, .nd-region-middle, .nd-region-middle-wrapper, .nd-region-footer, .nd-sidebar-right .nd-region-middle {
+.nd-region-header, .nd-region-left, .nd-region-right, .nd-region-middle, .nd-region-middle-wrapper, .nd-region-footer, .nd-sidebar-right .nd-region-middle, .nd-two-sidebars .nd-region-middle, .nd-sidebar-left .nd-region-middle {
   float: none;
   display: block;
   margin: 0;
   clear: both;
   width: auto;
+}
+.buildmode-teaser, .buildmode-full, .buildmode-schema {
+  &:not(:empty) {
+    position: relative;
+    background: @white;
+    padding: 48em/@fs 24em/@fs 0;
+    margin: 0 0 48em/@fs;
+    .border-radius(@border-radius-large);
+  }
+}
+.buildmode-schema {
+  &:not(:empty) {
+    padding: 12em/@fs;
+    margin: 0 0 12em/@fs;
+  }
+  &.taxonomy-Wereldlijk, &.taxonomy-Kerkelijk, &.taxonomy-Concours, &.taxonomy-Koorreis, &.taxonomy-Vergadering {
+    background: @secondary-light;
+  }
 }
 .buildmode-teaser {
   > .nd-region-header {
@@ -21,22 +39,22 @@
       z-index: 0;
       .node-background {
         width: 100%;
-        height: 220em/@fs;
+        height: 402em/@fs;
         background-position: center 10%;
         background-size: cover;
         background-repeat: no-repeat;
         background-color: @grey;
-        .border-radius(@border-radius-large @border-radius-large 0 0);
+        .border-radius(@border-radius-large);
         &:after {
           content: ' ';
           position: relative;
           z-index: 1;
           display: block;
           width: 100%;
-          height: 220em/@fs;
+          height: 402em/@fs;
           background: @white;
           opacity: 0.75;
-          .border-radius(@border-radius-large @border-radius-large 0 0);
+          .border-radius(@border-radius-large);
         }
       }
     }
@@ -57,26 +75,7 @@
 .buildmode-full .field-background {
   display: none;
 }
-.buildmode-teaser, .buildmode-full, .buildmode-schema {
-  &:not(:empty) {
-    position: relative;
-    background: @white;
-    padding: 24em/@fs;
-	padding-bottom: 0;
-    margin: 0 0 48em/@fs;
-    .border-radius(@border-radius-large);
-    > .nd-region-header {
-      > .field-background {
-        .node-background {
-          height: 378em/@fs;
-          .border-radius(@border-radius-large);
-          &:after {
-            height: 378em/@fs;
-            .border-radius(@border-radius-large);
-          }
-        }
-      }
-    }
+.buildmode-teaser, .buildmode-full {
     > .nd-region-middle-wrapper > .nd-region-middle {
       > .field-title {
         height: 150em/@fs;
@@ -85,32 +84,49 @@
         overflow: hidden;
       }
     }
-    &.taxonomy-Leden {
-      background: @white;
+}
+.role-bestuur, .role-beheer, .role-admin {
+.buildmode-teaser, .buildmode-full:not(:empty) {
+    &.taxonomy-Bezoekers, &.taxonomy-Leden, &.taxonomy-Bestuur, &.taxonomy-Muziekcommissie {
+	  background: @white;
       &:before {
        @media screen {
         z-index: 5;
-        content: 'voor leden';
         position: absolute;
-        right: 30em/@fs;
         top: 0;
-        background: @red; 
+		right: 24em/@fs;
+		padding: 4em/@fs 8em/@fs;
         color: @white;
         text-align: center;
-        width: 115em/@fs;
-        line-height: 30em/@fs;
         .border-radius(0 0 @border-radius-small @border-radius-small);
        }
       }
+	}
+	&.taxonomy-Bestuur {
+	  &:before {
+        background: @red;
+	    content: 'Voor Bestuur';
+	  }
+    }
+	&.taxonomy-Muziekcommissie {
+	  &:before {
+        background: @yellow;
+	    content: 'Voor MC';
+	  }
+    }
+    &.taxonomy-Leden {
+	  &:before {
+        background: @blue;
+	    content: 'Voor Leden';
+	  }
     }
     &.taxonomy-Bezoekers {
-      background: @white;
-      border: 0;
       &:before {
-        content: '';
+	    background: @green;
+        content: 'Voor bezoekers';
       }
     }
-  }
+}
 }
 .nd-region-middle, .nd-region-right {
   position: relative;
@@ -127,8 +143,18 @@
 	column-gap: 24em/@fs;
 	row-gap: 24em/@fs;
   }
+  &.buildmode-schema {
+    display: grid;
+	grid-template-columns: 350em/@fs 1fr 180em/@fs;
+	grid-template-areas:
+	"node-left node-main node-right";
+	column-gap: 24em/@fs;
+  }
   .nd-region-header {
     grid-area: node-main;
+  }
+  .nd-region-left {
+    grid-area: node-left;
   }
   .nd-region-middle-wrapper {
     grid-area: node-main;

@@ -334,18 +334,7 @@ tbody {
     }
   }
   tr, tr.odd, tr.even {
-    .transition-standard();
-    @media screen { background: transparent url('../images/dots-grey.svg') repeat-x 0% 98%; }
-    &:last-child {
-      background: transparent;
-    }
-    &:hover {
-      @media screen { 
-        &:not(:last-child) {
-          background-image: url('../images/dots-orange.svg');
-        }
-      }
-    }
+    background: @white;
     @media print {
       border-bottom: 1px solid @grey-dark;
     }

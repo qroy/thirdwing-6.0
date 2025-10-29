@@ -1,59 +1,30 @@
 /**
  * Ledenagenda
  */
-.agenda {
-  .views-field-title {
-    .Wereldlijk, .Kerkelijk, .Vergadering, .Koorreis, .Concours, .Overige {
-      font-weight: 600;
-      a {
-        &:link, &:visited {
-          color: @secondary;
-          @media print { color: @black; }
-        }
-        &:hover, &:active, &:focus {
-          color: @primary;
-        }
-      }
-    }
-  }
-  .views-field-field-bijzonderheden-value {
-    font-size: 12em/16;
-    line-height: 24em/12;
-  }
-
-  &.agenda-leden {
-    .views-field-field-datum-value {
-      width: 184em/@fs;
-    }
-    .views-field-field-sleepgroep-value {
-      width: 166em/@fs;
-    }
-    .views-field-field-keyboard-value {
-      width: 114em/@fs;
-    }
-  }
-   
-  tr {
-    &.odd, &.even {
-      &:not(:hover) {
-        span:not(.Wereldlijk):not(.Kerkelijk):not(.Vergadering):not(.Overige) {
-          .badge-sleepgroep,
-          .badge-time,
-          .badge-koor-tijd,
-          .badge-sleepgroep-tijd,
-          .badge-kar {
-            @media screen { background: @grey-light; }
-          }
-		  .badge-combo.badge-combo-aanwezig, .badge-combo.badge-combo-vervanging { @media screen { background-color: @green-light; } }
-          .badge-combo.badge-combo-afwezig,                                      { @media screen { background-color: @red-light; } }
-		  .badge-combo.badge-combo-vraag,                                        { @media screen { background-color: @grey-light; } }
-        }
-      }
-    }
-  }
-  .nd-region-right {
-    width: 180em/@fs;
-  }
+.agenda.agenda-leden {
+	.badge-date-wrapper {
+	  width: 257em/@fs;
+	}
+	.badge-koor-tijd {
+	  margin-right: 0;
+	}
+	h2 {
+	  text-transform: uppercase;
+      font-size: 14em/@fs;
+      line-height: 24em/@fs;
+	  display: inline-block;
+      vertical-align: middle;
+      box-sizing: border-box;
+	  margin: 0;
+	  a:link, a:visited { color: @red; }
+	  a:hover, a:active, a:focus { color: @primary; }
+	}
+	.field-bijzonderheden {
+	  font-style: italic;
+	}
+	.node-edit-link, .node-clone-link {
+	  .icon-only();
+	}
 }
 
 /**
