@@ -65,9 +65,21 @@ function phptemplate_preprocess_page(&$vars, $hook) {
 }
 function phptemplate_preprocess_node(&$vars) {
   if (module_exists('taxonomy') && $vars['node']->nid) {
+	$term_divs = array();
     foreach (taxonomy_node_get_terms($vars['node']) as $term) {
-      $vars['node_classes'] = $vars['node_classes'] . ' taxonomy-' . eregi_replace('[^a-z0-9]', '-', $term->name);
+	  $class = preg_replace('/[^a-zA-Z0-9-]+/', '-', $term->name);
+	  if ($class == 'Bezoekers') { $class_short = 'BEZ'; }
+	  if ($class == 'Aspirant-Leden') { $class_short = 'ASP'; }
+	  if ($class == 'Leden') { $class_short = 'LED'; }
+	  if ($class == 'Bestuur') { $class_short = 'BES'; }
+	  if ($class == 'Muziekcommissie') { $class_short = 'MC'; }
+	  if ($class == 'Beheer') { $class_short = 'BEH'; }
+      $vars['node_classes'] = $vars['node_classes'] . ' taxonomy-' . $class;
+	  if ($term->vid == '4') {
+        $term_divs[] = '<span class="badge-access badge-access-' . $class . '" title="Zichtbaar voor ' . $class . '">' . $class_short . '</span>';
+	  }
     }
+	$vars['taxonomy_term_divs'] = '<div class="badge-access-wrapper">' . implode("\n", $term_divs) . '</div>';
   }
   if ($vars['node']->field_afbeeldingen[0]['filepath'] && $vars['node']->sticky) {
     $vars['node_classes'] = $vars['node_classes'] . ' node-hero';

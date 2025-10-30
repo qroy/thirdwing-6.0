@@ -941,6 +941,7 @@ body {
 #logo a:focus #logo-img {
   color: #eb7314;
   border-color: #eb7314;
+  background-image: url(../images/logo_zonder_tekst-secondary.svg);
 }
 #logo #logo-img {
   background-image: url(../images/logo_zonder_tekst.svg);
@@ -974,6 +975,12 @@ body {
   color: #eb7314;
   justify-self: right;
   align-items: end;
+}
+.node-hero #logo a:hover #logo-img,
+.node-hero #logo a:active #logo-img,
+.node-hero #logo a:focus #logo-img {
+  background-color: #eb7314;
+  background-image: url(../images/logo_met_tekst.svg);
 }
 .node-hero #logo #logo-img {
   border: 0;
@@ -1193,7 +1200,7 @@ body {
 .buildmode-schema:not(:empty) {
   position: relative;
   background: #ffffff;
-  padding: 3.42857143em 1.71428571em 0;
+  padding: 1.71428571em 1.71428571em;
   margin: 0 0 1.71428571em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -1203,6 +1210,7 @@ body {
 .buildmode-schema:not(:empty) {
   padding: 0.85714286em;
   margin: 0 0 0.85714286em;
+  min-height: 9.42857143em;
 }
 .buildmode-teaser > .nd-region-header > .field-background {
   position: absolute;
@@ -1213,7 +1221,7 @@ body {
 }
 .buildmode-teaser > .nd-region-header > .field-background .node-background {
   width: 100%;
-  height: 28.71428571em;
+  height: 27em;
   background-position: center 10%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1228,24 +1236,66 @@ body {
   z-index: 1;
   display: block;
   width: 100%;
-  height: 28.71428571em;
+  height: 27em;
   background: #ffffff;
   opacity: 0.75;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.buildmode-full > .nd-region-right > .field-afbeeldingen > div > div,
-.buildmode-teaser > .nd-region-right > .field-afbeeldingen > div > div {
+.qfield-item {
+  float: right;
+  max-width: 50%;
+  /* 50% of article width */
+  max-height: 400px;
+  margin-left: 20px;
+  /* Space between image and text */
+  margin-bottom: 20px;
+  /* Space below image */
+}
+.qfield-item a {
+  display: block;
+  max-height: 400px;
+}
+.qfield-item img {
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.field-afbeeldingen > .field-items > .field-item {
+  display: none;
+}
+.field-afbeeldingen > .field-items > .field-item:first-child {
+  display: block;
+  float: right;
+  max-width: 50%;
+  max-height: 23.57142857em;
+  text-align: right;
+}
+.node-type-activiteit .field-afbeeldingen > .field-items > .field-item {
   height: 23.57142857em;
   width: 100%;
+  max-width: 100%;
+  margin: 0;
 }
-.buildmode-full > .nd-region-right > .field-afbeeldingen > div > div img,
-.buildmode-teaser > .nd-region-right > .field-afbeeldingen > div > div img {
-  height: 100%;
-  width: 100%;
+.field-afbeeldingen > .field-items > .field-item a {
+  display: inline-block;
+  max-height: 23.57142857em;
+}
+.field-afbeeldingen > .field-items > .field-item img {
+  max-height: 23.57142857em;
+  max-width: 100%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   object-position: right top;
+  display: block;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 .buildmode-full .field-background {
   display: none;
@@ -1257,104 +1307,159 @@ body {
   vertical-align: bottom;
   overflow: hidden;
 }
-.role-bestuur .buildmode-teaser.taxonomy-Bezoekers,
-.role-beheer .buildmode-teaser.taxonomy-Bezoekers,
-.role-admin .buildmode-teaser.taxonomy-Bezoekers,
-.role-bestuur .buildmode-full:not(:empty).taxonomy-Bezoekers,
-.role-beheer .buildmode-full:not(:empty).taxonomy-Bezoekers,
-.role-admin .buildmode-full:not(:empty).taxonomy-Bezoekers,
-.role-bestuur .buildmode-teaser.taxonomy-Leden,
-.role-beheer .buildmode-teaser.taxonomy-Leden,
-.role-admin .buildmode-teaser.taxonomy-Leden,
-.role-bestuur .buildmode-full:not(:empty).taxonomy-Leden,
-.role-beheer .buildmode-full:not(:empty).taxonomy-Leden,
-.role-admin .buildmode-full:not(:empty).taxonomy-Leden,
-.role-bestuur .buildmode-teaser.taxonomy-Bestuur,
-.role-beheer .buildmode-teaser.taxonomy-Bestuur,
-.role-admin .buildmode-teaser.taxonomy-Bestuur,
-.role-bestuur .buildmode-full:not(:empty).taxonomy-Bestuur,
-.role-beheer .buildmode-full:not(:empty).taxonomy-Bestuur,
-.role-admin .buildmode-full:not(:empty).taxonomy-Bestuur,
-.role-bestuur .buildmode-teaser.taxonomy-Muziekcommissie,
-.role-beheer .buildmode-teaser.taxonomy-Muziekcommissie,
-.role-admin .buildmode-teaser.taxonomy-Muziekcommissie,
-.role-bestuur .buildmode-full:not(:empty).taxonomy-Muziekcommissie,
-.role-beheer .buildmode-full:not(:empty).taxonomy-Muziekcommissie,
-.role-admin .buildmode-full:not(:empty).taxonomy-Muziekcommissie {
-  background: #ffffff;
+.badge-access,
+badge-access-wrapper {
+  display: none;
 }
-@media screen {
-  .role-bestuur .buildmode-teaser.taxonomy-Bezoekers:before,
-  .role-beheer .buildmode-teaser.taxonomy-Bezoekers:before,
-  .role-admin .buildmode-teaser.taxonomy-Bezoekers:before,
-  .role-bestuur .buildmode-full:not(:empty).taxonomy-Bezoekers:before,
-  .role-beheer .buildmode-full:not(:empty).taxonomy-Bezoekers:before,
-  .role-admin .buildmode-full:not(:empty).taxonomy-Bezoekers:before,
-  .role-bestuur .buildmode-teaser.taxonomy-Leden:before,
-  .role-beheer .buildmode-teaser.taxonomy-Leden:before,
-  .role-admin .buildmode-teaser.taxonomy-Leden:before,
-  .role-bestuur .buildmode-full:not(:empty).taxonomy-Leden:before,
-  .role-beheer .buildmode-full:not(:empty).taxonomy-Leden:before,
-  .role-admin .buildmode-full:not(:empty).taxonomy-Leden:before,
-  .role-bestuur .buildmode-teaser.taxonomy-Bestuur:before,
-  .role-beheer .buildmode-teaser.taxonomy-Bestuur:before,
-  .role-admin .buildmode-teaser.taxonomy-Bestuur:before,
-  .role-bestuur .buildmode-full:not(:empty).taxonomy-Bestuur:before,
-  .role-beheer .buildmode-full:not(:empty).taxonomy-Bestuur:before,
-  .role-admin .buildmode-full:not(:empty).taxonomy-Bestuur:before,
-  .role-bestuur .buildmode-teaser.taxonomy-Muziekcommissie:before,
-  .role-beheer .buildmode-teaser.taxonomy-Muziekcommissie:before,
-  .role-admin .buildmode-teaser.taxonomy-Muziekcommissie:before,
-  .role-bestuur .buildmode-full:not(:empty).taxonomy-Muziekcommissie:before,
-  .role-beheer .buildmode-full:not(:empty).taxonomy-Muziekcommissie:before,
-  .role-admin .buildmode-full:not(:empty).taxonomy-Muziekcommissie:before {
-    z-index: 5;
-    position: absolute;
-    top: 0;
-    right: 1.71428571em;
-    padding: 0.28571429em 0.57142857em;
-    color: #ffffff;
-    text-align: center;
-    -webkit-border-radius: 0 0 5px 5px;
-    -moz-border-radius: 0 0 5px 5px;
-    border-radius: 0 0 5px 5px;
-  }
+.role-bestuur .buildmode-teaser .badge-access-wrapper,
+.role-beheer .buildmode-teaser .badge-access-wrapper,
+.role-admin .buildmode-teaser .badge-access-wrapper,
+.role-bestuur .buildmode-full:not(:empty) .badge-access-wrapper,
+.role-beheer .buildmode-full:not(:empty) .badge-access-wrapper,
+.role-admin .buildmode-full:not(:empty) .badge-access-wrapper,
+.role-bestuur .buildmode-schema .badge-access-wrapper,
+.role-beheer .buildmode-schema .badge-access-wrapper,
+.role-admin .buildmode-schema .badge-access-wrapper {
+  font-size: 0.71428571em;
+  line-height: 1.2em;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 2.4em;
+  z-index: 5;
 }
-.role-bestuur .buildmode-teaser.taxonomy-Bestuur:before,
-.role-beheer .buildmode-teaser.taxonomy-Bestuur:before,
-.role-admin .buildmode-teaser.taxonomy-Bestuur:before,
-.role-bestuur .buildmode-full:not(:empty).taxonomy-Bestuur:before,
-.role-beheer .buildmode-full:not(:empty).taxonomy-Bestuur:before,
-.role-admin .buildmode-full:not(:empty).taxonomy-Bestuur:before {
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Bezoekers,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Bezoekers,
+.role-admin .buildmode-teaser .badge-access.badge-access-Bezoekers,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Bezoekers,
+.role-beheer .buildmode-schema .badge-access.badge-access-Bezoekers,
+.role-admin .buildmode-schema .badge-access.badge-access-Bezoekers,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
+.role-admin .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
+.role-beheer .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
+.role-admin .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Leden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Leden,
+.role-admin .buildmode-teaser .badge-access.badge-access-Leden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Leden,
+.role-beheer .buildmode-schema .badge-access.badge-access-Leden,
+.role-admin .buildmode-schema .badge-access.badge-access-Leden,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Bestuur,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Bestuur,
+.role-admin .buildmode-teaser .badge-access.badge-access-Bestuur,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Bestuur,
+.role-beheer .buildmode-schema .badge-access.badge-access-Bestuur,
+.role-admin .buildmode-schema .badge-access.badge-access-Bestuur,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
+.role-admin .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Muziekcommissie,
+.role-beheer .buildmode-schema .badge-access.badge-access-Muziekcommissie,
+.role-admin .buildmode-schema .badge-access.badge-access-Muziekcommissie,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Beheer,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Beheer,
+.role-admin .buildmode-teaser .badge-access.badge-access-Beheer,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Beheer,
+.role-beheer .buildmode-schema .badge-access.badge-access-Beheer,
+.role-admin .buildmode-schema .badge-access.badge-access-Beheer {
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  color: #ffffff;
+  text-align: center;
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Beheer,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Beheer,
+.role-admin .buildmode-teaser .badge-access.badge-access-Beheer,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Beheer,
+.role-beheer .buildmode-schema .badge-access.badge-access-Beheer,
+.role-admin .buildmode-schema .badge-access.badge-access-Beheer {
   background: #e9584c;
-  content: 'Voor Bestuur';
 }
-.role-bestuur .buildmode-teaser.taxonomy-Muziekcommissie:before,
-.role-beheer .buildmode-teaser.taxonomy-Muziekcommissie:before,
-.role-admin .buildmode-teaser.taxonomy-Muziekcommissie:before,
-.role-bestuur .buildmode-full:not(:empty).taxonomy-Muziekcommissie:before,
-.role-beheer .buildmode-full:not(:empty).taxonomy-Muziekcommissie:before,
-.role-admin .buildmode-full:not(:empty).taxonomy-Muziekcommissie:before {
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Bestuur,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Bestuur,
+.role-admin .buildmode-teaser .badge-access.badge-access-Bestuur,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Bestuur,
+.role-beheer .buildmode-schema .badge-access.badge-access-Bestuur,
+.role-admin .buildmode-schema .badge-access.badge-access-Bestuur {
+  background: #e9584c;
+}
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
+.role-admin .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Muziekcommissie,
+.role-beheer .buildmode-schema .badge-access.badge-access-Muziekcommissie,
+.role-admin .buildmode-schema .badge-access.badge-access-Muziekcommissie {
   background: #e6d119;
-  content: 'Voor MC';
 }
-.role-bestuur .buildmode-teaser.taxonomy-Leden:before,
-.role-beheer .buildmode-teaser.taxonomy-Leden:before,
-.role-admin .buildmode-teaser.taxonomy-Leden:before,
-.role-bestuur .buildmode-full:not(:empty).taxonomy-Leden:before,
-.role-beheer .buildmode-full:not(:empty).taxonomy-Leden:before,
-.role-admin .buildmode-full:not(:empty).taxonomy-Leden:before {
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Leden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Leden,
+.role-admin .buildmode-teaser .badge-access.badge-access-Leden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Leden,
+.role-beheer .buildmode-schema .badge-access.badge-access-Leden,
+.role-admin .buildmode-schema .badge-access.badge-access-Leden {
   background: #51aaec;
-  content: 'Voor Leden';
 }
-.role-bestuur .buildmode-teaser.taxonomy-Bezoekers:before,
-.role-beheer .buildmode-teaser.taxonomy-Bezoekers:before,
-.role-admin .buildmode-teaser.taxonomy-Bezoekers:before,
-.role-bestuur .buildmode-full:not(:empty).taxonomy-Bezoekers:before,
-.role-beheer .buildmode-full:not(:empty).taxonomy-Bezoekers:before,
-.role-admin .buildmode-full:not(:empty).taxonomy-Bezoekers:before {
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
+.role-admin .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
+.role-beheer .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
+.role-admin .buildmode-schema .badge-access.badge-access-Aspirant-Leden {
+  background: #51aaec;
+}
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Bezoekers,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Bezoekers,
+.role-admin .buildmode-teaser .badge-access.badge-access-Bezoekers,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Bezoekers,
+.role-beheer .buildmode-schema .badge-access.badge-access-Bezoekers,
+.role-admin .buildmode-schema .badge-access.badge-access-Bezoekers {
   background: #aad563;
-  content: 'Voor bezoekers';
+}
+.role-bestuur .buildmode-schema .badge-access-wrapper,
+.role-beheer .buildmode-schema .badge-access-wrapper,
+.role-admin .buildmode-schema .badge-access-wrapper {
+  left: 1.2em;
 }
 .nd-region-middle,
 .nd-region-right {
@@ -1362,16 +1467,18 @@ body {
   z-index: 2;
 }
 .node-type-activiteit.buildmode-full,
-.node-type-activiteit.buildmode-teaser {
+.node-type-activiteit.buildmode-teaser,
+.node-type-activiteit.buildmode-schema {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   grid-template-areas: "node-main node-right" "node-footer node-footer";
   column-gap: 1.71428571em;
+}
+.node-type-activiteit.buildmode-full {
   row-gap: 1.71428571em;
 }
 .node-type-activiteit.buildmode-schema {
-  display: grid;
   grid-template-columns: 25em 1fr 12.85714286em;
   grid-template-areas: "node-left node-main node-right";
   column-gap: 1.71428571em;
@@ -1676,10 +1783,8 @@ tr.dblog-access-denied td.active {
 .agenda.agenda-leden h2 {
   text-transform: uppercase;
   font-size: 1em;
-  line-height: 1.71428571em;
-  display: inline-block;
+  line-height: 2.57142857em;
   vertical-align: middle;
-  box-sizing: border-box;
   margin: 0;
 }
 .agenda.agenda-leden h2 a:link,
@@ -1704,6 +1809,7 @@ tr.dblog-access-denied td.active {
   /* for absolute positioning of icon */
   vertical-align: bottom;
   width: 1.71428571em;
+  margin: 0 0 0.28571429em 0.28571429em;
 }
 .agenda.agenda-leden .node-edit-link:before,
 .agenda.agenda-leden .node-clone-link:before {
@@ -1721,7 +1827,8 @@ tr.dblog-access-denied td.active {
 .agenda.agenda-leden .node-clone-link:link,
 .agenda.agenda-leden .node-edit-link:visited,
 .agenda.agenda-leden .node-clone-link:visited {
-  background: #d7d7d6;
+  color: #d7d7d6;
+  background: #ffffff;
 }
 .agenda.agenda-leden .node-edit-link:active,
 .agenda.agenda-leden .node-clone-link:active,
@@ -1751,6 +1858,23 @@ tr.dblog-access-denied td.active {
 .agenda.agenda-leden .taxonomy-Vergadering h2 a:visited {
   color: #e9584c;
 }
+.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:hover,
+.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:hover,
+.agenda.agenda-leden .taxonomy-Concours h2 a:hover,
+.agenda.agenda-leden .taxonomy-Koorreis h2 a:hover,
+.agenda.agenda-leden .taxonomy-Vergadering h2 a:hover,
+.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:active,
+.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:active,
+.agenda.agenda-leden .taxonomy-Concours h2 a:active,
+.agenda.agenda-leden .taxonomy-Koorreis h2 a:active,
+.agenda.agenda-leden .taxonomy-Vergadering h2 a:active,
+.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:focus,
+.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:focus,
+.agenda.agenda-leden .taxonomy-Concours h2 a:focus,
+.agenda.agenda-leden .taxonomy-Koorreis h2 a:focus,
+.agenda.agenda-leden .taxonomy-Vergadering h2 a:focus {
+  color: #3c329b;
+}
 /**
  * Opnamen
  */
@@ -1774,7 +1898,7 @@ tr.dblog-access-denied td.active {
 }
 .opnamen .opname {
   position: relative;
-  background: #f0f0ee;
+  background: #ffffff;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;

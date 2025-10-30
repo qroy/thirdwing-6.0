@@ -26,7 +26,7 @@
   &:not(:empty) {
     position: relative;
     background: @white;
-    padding: 48em/@fs 24em/@fs 0;
+    padding: 24em/@fs 24em/@fs;
     margin: 0 0 24em/@fs;
     .border-radius(@border-radius-large);
 	box-sizing: border-box;
@@ -36,6 +36,7 @@
   &:not(:empty) {
     padding: 12em/@fs;
     margin: 0 0 12em/@fs;
+	min-height: 132em/@fs;
   }
 }
 .buildmode-teaser {
@@ -49,7 +50,7 @@
       z-index: 0;
       .node-background {
         width: 100%;
-        height: 402em/@fs;
+        height: 378em/@fs;
         background-position: center 10%;
         background-size: cover;
         background-repeat: no-repeat;
@@ -61,7 +62,7 @@
           z-index: 1;
           display: block;
           width: 100%;
-          height: 402em/@fs;
+          height: 378em/@fs;
           background: @white;
           opacity: 0.75;
           .border-radius(@border-radius-large);
@@ -70,21 +71,68 @@
     }
   }    
 }
-.buildmode-full, .buildmode-teaser {
-  > .nd-region-right > .field-afbeeldingen > div > div {
-    height: 330em/@fs;
-    width: 100%;
-    img {
-      height: 100%;
-	  width: 100%;
-      object-fit: contain;
-	  object-position: right top;
-    }
+
+// FIELD-AFBEELDINGEN
+.qfield-item {
+  float: right;
+  max-width: 50%; /* 50% of article width */
+  max-height: 400px;
+  margin-left: 20px; /* Space between image and text */
+  margin-bottom: 20px; /* Space below image */
+}
+
+.qfield-item a {
+  display: block;
+  max-height: 400px;
+}
+
+.qfield-item img {
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+.field-afbeeldingen {
+  > .field-items > .field-item {
+  display: none;
+  &:first-child {
+    display: block;
+    float: right;
+    max-width: 50%;
+	max-height: 330em/@fs;
+	text-align: right;
+  }
   }
 }
+.node-type-activiteit .field-afbeeldingen > .field-items > .field-item {
+  height: 330em/@fs;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+.field-afbeeldingen > .field-items > .field-item {
+  a {
+    display: inline-block;
+	max-height: 330em/@fs;
+  }
+  img {
+    max-height: 330em/@fs;
+    max-width: 100%;
+	width: auto;
+	height: auto;
+    object-fit: contain;
+	object-position: right top;
+    display: block;
+    .border-radius(@border-radius-large);
+  }
+}
+// TEMPORARY
 .buildmode-full .field-background {
   display: none;
 }
+
 .buildmode-teaser, .buildmode-full {
     > .nd-region-middle-wrapper > .nd-region-middle {
       > .field-title {
@@ -95,66 +143,70 @@
       }
     }
 }
-.role-bestuur, .role-beheer, .role-admin {
-.buildmode-teaser, .buildmode-full:not(:empty) {
-    &.taxonomy-Bezoekers, &.taxonomy-Leden, &.taxonomy-Bestuur, &.taxonomy-Muziekcommissie {
-	  background: @white;
-      &:before {
-       @media screen {
-        z-index: 5;
-        position: absolute;
-        top: 0;
-		right: 24em/@fs;
-		padding: 4em/@fs 8em/@fs;
+// ACCESS BADGES
+.badge-access, badge-access-wrapper { display: none; }
+.role-bestuur, 
+.role-beheer, 
+.role-admin {
+  .buildmode-teaser, 
+  .buildmode-full:not(:empty),
+  .buildmode-schema {
+    .badge-access-wrapper {
+	  font-size: 10em/@fs;
+      line-height: 12em/10;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 24em/10;
+	  z-index: 5;
+	}
+    .badge-access {
+      &.badge-access-Bezoekers,
+	  &.badge-access-Aspirant-Leden,
+	  &.badge-access-Leden,
+	  &.badge-access-Bestuur, 
+	  &.badge-access-Muziekcommissie,
+      &.badge-access-Beheer {
+        display: inline-block;
+        padding: 4em/10 8em/10;
         color: @white;
         text-align: center;
-        .border-radius(0 0 @border-radius-small @border-radius-small);
-       }
+        .border-radius(@border-radius-small @border-radius-small 0 0);
       }
+	  &.badge-access-Beheer { background: @red; }
+	  &.badge-access-Bestuur { background: @red; }
+	  &.badge-access-Muziekcommissie { background: @yellow; }
+      &.badge-access-Leden { background: @blue; }
+	  &.badge-access-Aspirant-Leden { background: @blue; }
+      &.badge-access-Bezoekers { background: @green; }
 	}
-	&.taxonomy-Bestuur {
-	  &:before {
-        background: @red;
-	    content: 'Voor Bestuur';
-	  }
+  }
+  .buildmode-schema {
+	.badge-access-wrapper {
+	  left: 12em/10;
     }
-	&.taxonomy-Muziekcommissie {
-	  &:before {
-        background: @yellow;
-	    content: 'Voor MC';
-	  }
-    }
-    &.taxonomy-Leden {
-	  &:before {
-        background: @blue;
-	    content: 'Voor Leden';
-	  }
-    }
-    &.taxonomy-Bezoekers {
-      &:before {
-	    background: @green;
-        content: 'Voor bezoekers';
-      }
-    }
-}
+  }
 }
 .nd-region-middle, .nd-region-right {
   position: relative;
   z-index: 2;
 }
+
+//GRIDS FOR NODE-TYPE ACTIVITEIT
 .node-type-activiteit {
-  &.buildmode-full, &.buildmode-teaser {
+  &.buildmode-full, &.buildmode-teaser, &.buildmode-schema {
     display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: auto auto;
 	grid-template-areas:
     "node-main node-right"
-    "node-footer node-footer";
+	"node-footer node-footer";
 	column-gap: 24em/@fs;
-	row-gap: 24em/@fs;
+  }
+  &.buildmode-full {
+    row-gap: 24em/@fs;
   }
   &.buildmode-schema {
-    display: grid;
 	grid-template-columns: 350em/@fs 1fr 180em/@fs;
 	grid-template-areas:
 	"node-left node-main node-right";

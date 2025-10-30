@@ -11,10 +11,8 @@
 	h2 {
 	  text-transform: uppercase;
       font-size: 14em/@fs;
-      line-height: 24em/@fs;
-	  display: inline-block;
+      line-height: 36em/@fs;
       vertical-align: middle;
-      box-sizing: border-box;
 	  margin: 0;
 	  a:link, a:visited { color: @grey; }
 	  a:hover, a:active, a:focus { color: @primary; }
@@ -24,22 +22,18 @@
 	}
 	.node-edit-link, .node-clone-link {
 	  .icon-only();
-	  &:link, &:visited { background: @grey-light; }
+	  &:link, &:visited { color: @grey-light; background: @white; }
 	  &:active, &:hover, &:focus { background: @secondary; }
+	  margin: 0 0 4em/@fs 4em/@fs;
 	}
 	.taxonomy-Wereldlijk, .taxonomy-Kerkelijk, .taxonomy-Concours, .taxonomy-Koorreis, .taxonomy-Vergadering {
       border: 5em/@fs solid @grey-light;
 	  padding: 7em/@fs;
 	  h2 {
 	    a:link, a:visited { color: @red; }
+		a:hover, a:active, a:focus { color: @primary; }
 	  }
-//	  .box-shadow(@box-shadow-large);
 	}
-	.taxonomy-Repetitie {
-	@media screen {
-
-	}
-    }
 }
 
 /**
@@ -58,7 +52,7 @@
   }
   .opname {
     position: relative;
-    background: @white-off;
+    background: @white;
     .border-radius(@border-radius-large);
     padding: 6em/@fs;
     &:hover {

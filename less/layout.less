@@ -79,6 +79,7 @@ body {
 	  #logo-img { 
 	    color: @secondary;
 	    border-color: @secondary;
+		background-image: url(../images/logo_zonder_tekst-secondary.svg);
       }
     }
   }
@@ -115,6 +116,14 @@ body {
   }
 }
 .node-hero #logo {
+  a {
+    &:hover, &:active, &:focus {
+      #logo-img { 
+        background-color: @secondary;
+        background-image: url(../images/logo_met_tekst.svg);
+      }
+    }
+  }
   #logo-img {
     border: 0;
     background-color: @primary;
