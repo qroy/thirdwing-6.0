@@ -182,18 +182,19 @@ a.video-thumb {
 /**
  * Sleepgroepen
  */
-.sleepgroepen {
-  margin-right: -12em/@fs;
-  overflow: hidden;
+.sleepgroepen .view-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @media @tablet { grid-template-columns: repeat(3, 1fr); }
+  @media @normal { grid-template-columns: repeat(4, 1fr); }
+  @media @wide { grid-template-columns: repeat(6, 1fr); }
+  column-gap: 6em/@fs;
+  row-gap: 12em/@fs;
   .item-list {
     box-sizing: border-box;
-    float: left;
-    width: 100% / 3;
-    @media @normal { width: 100% / 5; }
-    padding: 0 12em/@fs 12em/@fs 0;
     text-align: center;
     ol {
-      background: @white-off;
+      background: @white;
       .border-radius(@border-radius-large);
       padding: 6em/@fs;
       min-height: 360em/@fs;

@@ -69,15 +69,22 @@ function phptemplate_preprocess_node(&$vars) {
     foreach (taxonomy_node_get_terms($vars['node']) as $term) {
 	  $class = preg_replace('/[^a-zA-Z0-9-]+/', '-', $term->name);
 	  if ($class == 'Bezoekers') { $class_short = 'BEZ'; }
+	  if ($class == 'Vrienden') { $class_short = 'VRI'; }
 	  if ($class == 'Aspirant-Leden') { $class_short = 'ASP'; }
 	  if ($class == 'Leden') { $class_short = 'LED'; }
 	  if ($class == 'Bestuur') { $class_short = 'BES'; }
 	  if ($class == 'Muziekcommissie') { $class_short = 'MC'; }
+	  if ($class == 'Concertcommissie') { $class_short = 'CC'; }
+	  if ($class == 'Commissie Interne Relaties') { $class_short = 'IR'; }
+	  if ($class == 'Commissie Koorregie') { $class_short = 'REG'; }
+	  if ($class == 'Feestcommissie') { $class_short = 'FC'; }
+	  if ($class == 'Band') { $class_short = 'BAN'; }
 	  if ($class == 'Beheer') { $class_short = 'BEH'; }
       $vars['node_classes'] = $vars['node_classes'] . ' taxonomy-' . $class;
 	  if ($term->vid == '4') {
         $term_divs[] = '<span class="badge-access badge-access-' . $class . '" title="Zichtbaar voor ' . $class . '">' . $class_short . '</span>';
 	  }
+	  $class = '';
     }
 	$vars['taxonomy_term_divs'] = '<div class="badge-access-wrapper">' . implode("\n", $term_divs) . '</div>';
   }

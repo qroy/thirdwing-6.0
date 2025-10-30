@@ -5,8 +5,8 @@
    display: none;
  }
 #header .content {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
 #header, #menu-service {
@@ -26,8 +26,8 @@
     padding: 0;
     background: none;
     a {
-      font-size: 14px;
-      line-height: 30px; 
+      font-size: @fs;
+      line-height: 36em/@fs; 
       text-decoration: none;
     }
   }
@@ -37,8 +37,8 @@
     margin-bottom: -10px; /* remove extra height from menu */
     > a:link, > a:visited {
       display: block;
-      margin: 0 1px;
-      padding: 0 7px;
+      margin: 0 1em/@fs;
+      padding: 0 7em/@fs;
       color: @white-off;
     }
     > a:active, > a:focus, > a:hover, > a.active, > a.active-trail, &.active-trail > a, &.over > a, &:hover > a {
@@ -154,15 +154,15 @@ a.fa {
 #header, #menu-service {
   ul.menu a.fa::before {
     font-family: FontAwesome;
-    margin-right: 5px;
-    width: 30px;
+    margin-right: 5em/@fs;
+    width: 30em/@fs;
     text-align: center;
   }
   ul.menu  a.fa {
     text-indent: 200%;
     white-space: nowrap;
     overflow: hidden;
-    width: 16px;
+    width: 16em/@fs;
     position: relative;
   }
   ul.menu  a.fa::before {
@@ -178,13 +178,14 @@ a.fa {
 
 #sidebar-right {
   ul.menu {
-    margin: 0 0 24em/14 0;
+    margin: 0 0 24em/@fs 0;
+    padding: 0;
   }
   ul.menu li {
     margin: 0;
     padding: 0;
     background: none;
-    font-size: 16em/14;  
+    font-size: 16em/@fs;  
     line-height: 30em/16;
   
     a:link, a:visited {
@@ -362,13 +363,11 @@ td.menu-disabled {
   }
   #block-menu-menu-footer, #block-menu-menu-footer-service, #block-menu-menu-footer-service-visitor {
     ul.menu li {
-     
       a {
-        .border-radius(@border-radius-large);
-        padding: 0 10px;
-        margin: 0 0 5px;
-        width: 100px;
-        line-height: 28px;
+        .border-radius(@border-radius-small);
+        padding: 4em/@fs 10em/@fs;
+        margin: 0 0 4em/@fs;
+        line-height: 24/@fs;
         display: block;
         &:link, &:visited {
           background: @grey;
@@ -386,7 +385,7 @@ td.menu-disabled {
       float: left;
       a {
         .border-radius();
-        margin: 0 0 10px 10px;
+        margin: 0 12px 12px 0;
         &:link, &:visited {
           background: @white-off;
           color: @grey-dark;
@@ -400,18 +399,18 @@ td.menu-disabled {
       text-indent: 200%;
       white-space: nowrap;
       overflow: hidden;
-      width: 80px;
-      height: 80px;
+      width: 72px;
+      height: 72px;
       position: relative;
       &::before {
-        width: 80px;
+        width: 72px;
         text-align: center;
         text-indent: 0;
         position: absolute;
         left: 0;
         margin: 0;
         font-size: 50px;
-        line-height: 80px;
+        line-height: 72px;
       }
     }
   }

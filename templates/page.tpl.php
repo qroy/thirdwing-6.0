@@ -44,8 +44,7 @@
 <?php if ($left): ?><aside role="complementary" id="sidebar-left" class="sidebar"><?php print $left ?></aside><?php endif; ?>
 <?php if ($right): ?><aside role="complementary" id="sidebar-right" class="sidebar"><?php print $right ?></aside><?php endif; ?>
 <footer id="footer"><?php print $footer_message ?>
-<div id="footer-left"><?php print $footerleft ?></div>
-<div id="footer-right"><?php print $footerright ?></div>
+<?php print $footer ?>
 </footer>
 <div id="header-bg"></div>
 <div id="footer-bg"></div>

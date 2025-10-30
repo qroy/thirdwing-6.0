@@ -13,5 +13,4 @@ regions[left] = Left sidebar
 regions[before_content] = Before Content
 regions[content] = Content
 regions[right] = Right sidebar
-regions[footerleft] = Left Footer
-regions[footerright] = Right Footer
+regions[footer] = Footer
