@@ -16,7 +16,7 @@
       vertical-align: middle;
       box-sizing: border-box;
 	  margin: 0;
-	  a:link, a:visited { color: @red; }
+	  a:link, a:visited { color: @grey; }
 	  a:hover, a:active, a:focus { color: @primary; }
 	}
 	.field-bijzonderheden {
@@ -24,7 +24,22 @@
 	}
 	.node-edit-link, .node-clone-link {
 	  .icon-only();
+	  &:link, &:visited { background: @grey-light; }
+	  &:active, &:hover, &:focus { background: @secondary; }
 	}
+	.taxonomy-Wereldlijk, .taxonomy-Kerkelijk, .taxonomy-Concours, .taxonomy-Koorreis, .taxonomy-Vergadering {
+      border: 5em/@fs solid @grey-light;
+	  padding: 7em/@fs;
+	  h2 {
+	    a:link, a:visited { color: @red; }
+	  }
+//	  .box-shadow(@box-shadow-large);
+	}
+	.taxonomy-Repetitie {
+	@media screen {
+
+	}
+    }
 }
 
 /**

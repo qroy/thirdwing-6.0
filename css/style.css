@@ -1194,21 +1194,15 @@ body {
   position: relative;
   background: #ffffff;
   padding: 3.42857143em 1.71428571em 0;
-  margin: 0 0 3.42857143em;
+  margin: 0 0 1.71428571em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
+  box-sizing: border-box;
 }
 .buildmode-schema:not(:empty) {
   padding: 0.85714286em;
   margin: 0 0 0.85714286em;
-}
-.buildmode-schema.taxonomy-Wereldlijk,
-.buildmode-schema.taxonomy-Kerkelijk,
-.buildmode-schema.taxonomy-Concours,
-.buildmode-schema.taxonomy-Koorreis,
-.buildmode-schema.taxonomy-Vergadering {
-  background: #fdf1e7;
 }
 .buildmode-teaser > .nd-region-header > .field-background {
   position: absolute;
@@ -1690,7 +1684,7 @@ tr.dblog-access-denied td.active {
 }
 .agenda.agenda-leden h2 a:link,
 .agenda.agenda-leden h2 a:visited {
-  color: #e9584c;
+  color: #878786;
 }
 .agenda.agenda-leden h2 a:hover,
 .agenda.agenda-leden h2 a:active,
@@ -1722,6 +1716,40 @@ tr.dblog-access-denied td.active {
   margin: 0;
   display: inline;
   width: auto;
+}
+.agenda.agenda-leden .node-edit-link:link,
+.agenda.agenda-leden .node-clone-link:link,
+.agenda.agenda-leden .node-edit-link:visited,
+.agenda.agenda-leden .node-clone-link:visited {
+  background: #d7d7d6;
+}
+.agenda.agenda-leden .node-edit-link:active,
+.agenda.agenda-leden .node-clone-link:active,
+.agenda.agenda-leden .node-edit-link:hover,
+.agenda.agenda-leden .node-clone-link:hover,
+.agenda.agenda-leden .node-edit-link:focus,
+.agenda.agenda-leden .node-clone-link:focus {
+  background: #eb7314;
+}
+.agenda.agenda-leden .taxonomy-Wereldlijk,
+.agenda.agenda-leden .taxonomy-Kerkelijk,
+.agenda.agenda-leden .taxonomy-Concours,
+.agenda.agenda-leden .taxonomy-Koorreis,
+.agenda.agenda-leden .taxonomy-Vergadering {
+  border: 0.35714286em solid #d7d7d6;
+  padding: 0.5em;
+}
+.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:link,
+.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:link,
+.agenda.agenda-leden .taxonomy-Concours h2 a:link,
+.agenda.agenda-leden .taxonomy-Koorreis h2 a:link,
+.agenda.agenda-leden .taxonomy-Vergadering h2 a:link,
+.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:visited,
+.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:visited,
+.agenda.agenda-leden .taxonomy-Concours h2 a:visited,
+.agenda.agenda-leden .taxonomy-Koorreis h2 a:visited,
+.agenda.agenda-leden .taxonomy-Vergadering h2 a:visited {
+  color: #e9584c;
 }
 /**
  * Opnamen

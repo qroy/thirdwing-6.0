@@ -3,29 +3,39 @@
  */
  
 // RESETS FOR ND REGIONS
-.nd-region-header, .nd-region-left, .nd-region-right, .nd-region-middle, .nd-region-middle-wrapper, .nd-region-footer, .nd-sidebar-right .nd-region-middle, .nd-two-sidebars .nd-region-middle, .nd-sidebar-left .nd-region-middle {
+.nd-region-header, 
+.nd-region-left, 
+.nd-region-right, 
+.nd-region-middle, 
+.nd-region-middle-wrapper, 
+.nd-region-footer, 
+.nd-sidebar-right 
+.nd-region-middle, 
+.nd-two-sidebars .nd-region-middle, 
+.nd-sidebar-left .nd-region-middle {
   float: none;
   display: block;
   margin: 0;
   clear: both;
   width: auto;
 }
-.buildmode-teaser, .buildmode-full, .buildmode-schema {
+
+.buildmode-teaser, 
+.buildmode-full, 
+.buildmode-schema {
   &:not(:empty) {
     position: relative;
     background: @white;
     padding: 48em/@fs 24em/@fs 0;
-    margin: 0 0 48em/@fs;
+    margin: 0 0 24em/@fs;
     .border-radius(@border-radius-large);
+	box-sizing: border-box;
   }
 }
 .buildmode-schema {
   &:not(:empty) {
     padding: 12em/@fs;
     margin: 0 0 12em/@fs;
-  }
-  &.taxonomy-Wereldlijk, &.taxonomy-Kerkelijk, &.taxonomy-Concours, &.taxonomy-Koorreis, &.taxonomy-Vergadering {
-    background: @secondary-light;
   }
 }
 .buildmode-teaser {
