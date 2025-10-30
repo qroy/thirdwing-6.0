@@ -2,14 +2,35 @@
  * Nodes and Comments
  */
  // RESETS FOR ND REGIONS
-.nd-region-header, .nd-region-left, .nd-region-right, .nd-region-middle, .nd-region-middle-wrapper, .nd-region-footer, .nd-sidebar-right .nd-region-middle {
+// RESETS FOR ND REGIONS
+.nd-region-header, 
+.nd-region-left, 
+.nd-region-right, 
+.nd-region-middle, 
+.nd-region-middle-wrapper, 
+.nd-region-footer, 
+.nd-sidebar-right 
+.nd-region-middle, 
+.nd-two-sidebars .nd-region-middle, 
+.nd-sidebar-left .nd-region-middle {
   float: none;
   display: block;
   margin: 0;
   clear: both;
   width: auto;
 }
-.buildmode-full, .buildmode-teaser {
+.buildmode-schema {
+  .node:not(:empty) {
+    position: relative;
+    background: @white;
+    .border-radius(@border-radius-large);
+	box-sizing: border-box;
+    padding: 10em/@fs;
+    margin: 0 0 12em/@fs;
+	border: 2em/@fs solid @white-off;
+  }
+}
+.buildmode-full, .buildmode-teaser, .buildmode-schema {
   .node-type-activiteit {
     display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -28,9 +49,22 @@
     .nd-region-right {
       grid-area: node-right;
     }
+	.nd-region-left {
+      grid-area: node-left;
+    }
     .nd-region-footer {
       grid-area: node-footer;
     }
+  }
+}
+.buildmode-schema {
+  .node-type-activiteit {
+    display: grid;
+	grid-template-columns: 350em/@fs 1fr 180em/@fs;
+	grid-template-areas:
+	"node-left node-main node-right";
+	column-gap: 24em/@fs;
+	row-gap: 0;
   }
 }
 .buildmode-full, .buildmode-teaser {

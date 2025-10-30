@@ -1219,15 +1219,29 @@ body.two-sidebars #grid #sidebar-right {
 .nd-region-middle,
 .nd-region-middle-wrapper,
 .nd-region-footer,
-.nd-sidebar-right .nd-region-middle {
+.nd-sidebar-right .nd-region-middle,
+.nd-two-sidebars .nd-region-middle,
+.nd-sidebar-left .nd-region-middle {
   float: none;
   display: block;
   margin: 0;
   clear: both;
   width: auto;
 }
+.buildmode-schema .node:not(:empty) {
+  position: relative;
+  background: #ffffff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 0.71428571em;
+  margin: 0 0 0.85714286em;
+  border: 0.14285714em solid #f0f0ee;
+}
 .buildmode-full .node-type-activiteit,
-.buildmode-teaser .node-type-activiteit {
+.buildmode-teaser .node-type-activiteit,
+.buildmode-schema .node-type-activiteit {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
@@ -1236,20 +1250,36 @@ body.two-sidebars #grid #sidebar-right {
   row-gap: 1.71428571em;
 }
 .buildmode-full .node-type-activiteit .nd-region-header,
-.buildmode-teaser .node-type-activiteit .nd-region-header {
+.buildmode-teaser .node-type-activiteit .nd-region-header,
+.buildmode-schema .node-type-activiteit .nd-region-header {
   grid-area: node-main;
 }
 .buildmode-full .node-type-activiteit .nd-region-middle-wrapper,
-.buildmode-teaser .node-type-activiteit .nd-region-middle-wrapper {
+.buildmode-teaser .node-type-activiteit .nd-region-middle-wrapper,
+.buildmode-schema .node-type-activiteit .nd-region-middle-wrapper {
   grid-area: node-main;
 }
 .buildmode-full .node-type-activiteit .nd-region-right,
-.buildmode-teaser .node-type-activiteit .nd-region-right {
+.buildmode-teaser .node-type-activiteit .nd-region-right,
+.buildmode-schema .node-type-activiteit .nd-region-right {
   grid-area: node-right;
 }
+.buildmode-full .node-type-activiteit .nd-region-left,
+.buildmode-teaser .node-type-activiteit .nd-region-left,
+.buildmode-schema .node-type-activiteit .nd-region-left {
+  grid-area: node-left;
+}
 .buildmode-full .node-type-activiteit .nd-region-footer,
-.buildmode-teaser .node-type-activiteit .nd-region-footer {
+.buildmode-teaser .node-type-activiteit .nd-region-footer,
+.buildmode-schema .node-type-activiteit .nd-region-footer {
   grid-area: node-footer;
+}
+.buildmode-schema .node-type-activiteit {
+  display: grid;
+  grid-template-columns: 25em 1fr 12.85714286em;
+  grid-template-areas: "node-left node-main node-right";
+  column-gap: 1.71428571em;
+  row-gap: 0;
 }
 .buildmode-full > .node > div,
 .buildmode-teaser > .node > div {
@@ -1782,6 +1812,124 @@ tr.dblog-access-denied td.active {
 }
 .agenda.agenda-leden .views-field-field-sleepgroep-value {
   width: 12.85714286em;
+}
+.agenda.agenda-leden .badge-date-wrapper {
+  width: 18.35714286em;
+}
+.agenda.agenda-leden .badge-koor-tijd {
+  margin-right: 0;
+}
+.agenda.agenda-leden h2 {
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 1.71428571em;
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  margin: 0;
+}
+.agenda.agenda-leden h2 a:link,
+.agenda.agenda-leden h2 a:visited {
+  color: #878786;
+}
+.agenda.agenda-leden h2 a:hover,
+.agenda.agenda-leden h2 a:active,
+.agenda.agenda-leden h2 a:focus {
+  color: #3c329b;
+}
+.agenda.agenda-leden .field-bijzonderheden {
+  font-style: italic;
+}
+.agenda.agenda-leden .node-edit-link,
+.agenda.agenda-leden .node-clone-link {
+  display: inline-block;
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  /* for absolute positioning of icon */
+  vertical-align: bottom;
+  width: 1.71428571em;
+}
+.agenda.agenda-leden .node-edit-link:before,
+.agenda.agenda-leden .node-clone-link:before {
+  font-family: FontAwesome;
+  text-indent: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0;
+  display: inline;
+  width: auto;
+}
+.agenda.agenda-leden .node-edit-link:link,
+.agenda.agenda-leden .node-clone-link:link,
+.agenda.agenda-leden .node-edit-link:visited,
+.agenda.agenda-leden .node-clone-link:visited {
+  background: #d7d7d6;
+}
+.agenda.agenda-leden .node-edit-link:active,
+.agenda.agenda-leden .node-clone-link:active,
+.agenda.agenda-leden .node-edit-link:hover,
+.agenda.agenda-leden .node-clone-link:hover,
+.agenda.agenda-leden .node-edit-link:focus,
+.agenda.agenda-leden .node-clone-link:focus {
+  background: #eb7314;
+}
+.agenda.agenda-leden .taxonomy-Wereldlijk,
+.agenda.agenda-leden .taxonomy-Kerkelijk,
+.agenda.agenda-leden .taxonomy-Concours,
+.agenda.agenda-leden .taxonomy-Koorreis,
+.agenda.agenda-leden .taxonomy-Vergadering {
+  background: #f0f0ee;
+  padding: 0.5em;
+}
+.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:link,
+.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:link,
+.agenda.agenda-leden .taxonomy-Concours h2 a:link,
+.agenda.agenda-leden .taxonomy-Koorreis h2 a:link,
+.agenda.agenda-leden .taxonomy-Vergadering h2 a:link,
+.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:visited,
+.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:visited,
+.agenda.agenda-leden .taxonomy-Concours h2 a:visited,
+.agenda.agenda-leden .taxonomy-Koorreis h2 a:visited,
+.agenda.agenda-leden .taxonomy-Vergadering h2 a:visited {
+  color: #e9584c;
+}
+.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:hover,
+.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:hover,
+.agenda.agenda-leden .taxonomy-Concours h2 a:hover,
+.agenda.agenda-leden .taxonomy-Koorreis h2 a:hover,
+.agenda.agenda-leden .taxonomy-Vergadering h2 a:hover,
+.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:active,
+.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:active,
+.agenda.agenda-leden .taxonomy-Concours h2 a:active,
+.agenda.agenda-leden .taxonomy-Koorreis h2 a:active,
+.agenda.agenda-leden .taxonomy-Vergadering h2 a:active,
+.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:focus,
+.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:focus,
+.agenda.agenda-leden .taxonomy-Concours h2 a:focus,
+.agenda.agenda-leden .taxonomy-Koorreis h2 a:focus,
+.agenda.agenda-leden .taxonomy-Vergadering h2 a:focus {
+  color: #3c329b;
+}
+.agenda.agenda-leden .taxonomy-Wereldlijk .badge-date,
+.agenda.agenda-leden .taxonomy-Kerkelijk .badge-date,
+.agenda.agenda-leden .taxonomy-Concours .badge-date,
+.agenda.agenda-leden .taxonomy-Koorreis .badge-date,
+.agenda.agenda-leden .taxonomy-Vergadering .badge-date,
+.agenda.agenda-leden .taxonomy-Wereldlijk .badge-date-wrapper,
+.agenda.agenda-leden .taxonomy-Kerkelijk .badge-date-wrapper,
+.agenda.agenda-leden .taxonomy-Concours .badge-date-wrapper,
+.agenda.agenda-leden .taxonomy-Koorreis .badge-date-wrapper,
+.agenda.agenda-leden .taxonomy-Vergadering .badge-date-wrapper,
+.agenda.agenda-leden .taxonomy-Wereldlijk .badge-location,
+.agenda.agenda-leden .taxonomy-Kerkelijk .badge-location,
+.agenda.agenda-leden .taxonomy-Concours .badge-location,
+.agenda.agenda-leden .taxonomy-Koorreis .badge-location,
+.agenda.agenda-leden .taxonomy-Vergadering .badge-location {
+  background: #ffffff;
 }
 /**
  * Opnamen

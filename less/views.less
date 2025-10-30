@@ -35,6 +35,42 @@
     .views-field-field-sleepgroep-value {
       width: 180em/@fs;
     }
+  	.badge-date-wrapper {
+	  width: 257em/@fs;
+	}
+	.badge-koor-tijd {
+	  margin-right: 0;
+	}
+	h2 {
+	  text-transform: uppercase;
+      font-size: 14em/@fs;
+      line-height: 24em/@fs;
+	  display: inline-block;
+      vertical-align: middle;
+      box-sizing: border-box;
+	  margin: 0;
+	  a:link, a:visited { color: @grey; }
+	  a:hover, a:active, a:focus { color: @primary; }
+	}
+	.field-bijzonderheden {
+	  font-style: italic;
+	}
+	.node-edit-link, .node-clone-link {
+	  .icon-only();
+	  &:link, &:visited { background: @grey-light; }
+	  &:active, &:hover, &:focus { background: @secondary; }
+	}
+	.taxonomy-Wereldlijk, .taxonomy-Kerkelijk, .taxonomy-Concours, .taxonomy-Koorreis, .taxonomy-Vergadering {
+      background: @white-off;
+	  padding: 7em/@fs;
+	  h2 { 
+	    a:link, a:visited { color: @red; } 
+		a:hover, a:active, a:focus { color: @primary; }
+	  }
+	  .badge-date, .badge-date-wrapper, .badge-location {
+	    background: @white;
+	  }
+	}  
   }
 }
 
