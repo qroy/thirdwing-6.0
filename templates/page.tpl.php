@@ -16,8 +16,6 @@
 <script>$jq( function() { $( '#menu-main li:has(ul)' ).doubleTapToGo(); });</script>
 </head>
 <body class="<?php print $body_classes; ?>">
-<div id="page-wrapper">
-<div id="page">
 <header id="header" role="banner">
 <div id="logo">
 <?php if ($logo): ?><a href="/" title="Keer terug naar home"><div id="logo-img"></div><?php endif; ?>
@@ -50,8 +48,6 @@
 </footer>
 <div id="header-bg"></div>
 <div id="footer-bg"></div>
-</div>
-</div>
 <?php print $closure ?>
 </body>
 </html>

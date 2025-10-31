@@ -1,19 +1,23 @@
-/**
- * Primary navigation
- */
- .toggle-nav {
-   display: none;
- }
+// Primary navigation
+.toggle-nav, .toggle-tabs {
+  .box-shadow();
+  width: 130rem/@fs;
+  @media @normal {
+    display: none;
+  }
+  margin: 0;
+}
+.toggle-nav {
+  z-index: 10;
+}
 #header .content {
   margin: 0;
   padding: 0;
 }
-
 #header, #menu-service {
   .content > div > ul.menu {
   margin: 0;
   padding: 0;
-//  float: right;
   position: relative;
   z-index: 4;
   li {
@@ -138,7 +142,7 @@
   }
   }
 }
-
+// FONT AWESOME ICONS
 a.fa {
   font-family: 'Open Sans', Verdana, sans-serif;
   font-size: 14em/@fs;
@@ -164,11 +168,7 @@ a.fa {
     left: 0;
   }
 }
-
-/**
- * Right Sidebar Menu
- */
-
+// Right Sidebar Menu
 #sidebar-right {
   ul.menu {
     margin: 0 0 24em/@fs 0;

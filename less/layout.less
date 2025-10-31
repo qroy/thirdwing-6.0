@@ -7,8 +7,6 @@
 }
 body {
   background: @white-off;
-}
-#page {
   display: grid;
   grid-template-rows:  repeat(3, auto);
   column-gap: 12em/@fs;
@@ -25,7 +23,7 @@ body {
       ". footer footer .";
   }
 }
-.two-sidebars #page {
+.two-sidebars {
   grid-template-columns: 0 auto 0;
   grid-template-rows:  repeat(5, auto);
   grid-template-areas: 
@@ -43,7 +41,7 @@ body {
       ". . footer footer .";
   }
 }
-.sidebar-right #page {
+.sidebar-right {
   grid-template-rows:  repeat(4, auto);
   grid-template-areas:
     ". header ."
@@ -58,7 +56,7 @@ body {
       ". footer footer .";
     }
 }
-.sidebar-left #page {
+.sidebar-left {
   grid-template-columns: 0 auto 0;
   grid-template-rows:  repeat(4, auto);
   grid-template-areas:
@@ -107,8 +105,12 @@ body {
 }
 #logo {
   display: grid;
-  grid-template-columns: 140em/@fs min-content 1fr;
-  height: 120em/@fs;
+  grid-template-columns: 106em/@fs min-content 1fr;
+  height: 84em/@fs;
+  @media @tablet { 
+    grid-template-columns: 144em/@fs min-content 1fr;
+    height: 120em/@fs; 
+  }
   margin-bottom: 24em/@fs;
   right: 0;
   left: 0;
@@ -131,15 +133,23 @@ body {
 	background-position: center center;
 	background-size: 90%;
     box-sizing: border-box;
-    height: 120em/@fs;
-    width: 120em/@fs;
+	height: 84em/@fs;
+    width: 84em/@fs;
+	@media @tablet {
+      height: 120em/@fs;
+      width: 120em/@fs;
+	}
 	border: 2em/@fs solid @white;
     .border-radius(@border-radius-large);
   }
   #logo-title {
     font-weight: 600;
-    font-size: 70em/@fs;
-    line-height: 50em/70;
+	font-size: 48em/@fs;
+    line-height: 36em/48;
+	@media @tablet {
+      font-size: 70em/@fs;
+      line-height: 50em/70;
+	}
 	width: 2rem;
 	&::first-line {
       font-size: 28em/70;
@@ -147,12 +157,13 @@ body {
     }
   }
   #logo-slogan {
-    display: flex;
+    display: none;
+    @media @tablet { display: flex; }
     font-size: 36em/@fs;
     line-height: 40em/36;
     font-family: 'Indie Flower';
     height: 120em/36;
-    color: @secondary;
+    color: @white;
 	justify-self: right;
 	align-items: end;
   }
@@ -173,8 +184,12 @@ body {
 	background-image: url(../images/logo_met_tekst.svg);
 	background-size: 70%;
   }
-  #logo-title, #logo-slogan {
+  #logo-title {
     display: none;
+  }
+  #logo-slogan {
+	.text-shadow();
+	grid-column: -2;
   }
 }
 #main {

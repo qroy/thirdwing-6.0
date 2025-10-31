@@ -46,6 +46,8 @@
 @box-shadow-inset: inset 0 0 10px @black;
 @box-shadow-none: unset;
 
+@text-shadow-small: 0 0 3rem/@fs @black;
+
 .transition-standard {
   .transition(border 0.4s, background-color 0.4s, color 0.6s);
 }
@@ -69,6 +71,11 @@
      -moz-box-shadow: @shadow;
           box-shadow: @shadow;
   }
+}
+.text-shadow(@text-shadow:  @text-shadow-small) {
+  -webkit-text-shadow: @text-shadow;
+     -moz-text-shadow: @text-shadow;
+          text-shadow: @text-shadow;
 }
 .border-radius(@radius: @border-radius-small) {
   -webkit-border-radius: @radius;
