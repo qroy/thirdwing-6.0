@@ -229,8 +229,9 @@ a.video-thumb {
 .personen {
   .view-content {
     display: grid;
-	grid-template-columns: repeat(4, 1fr);      
-	@media @tablet { grid-template-columns: repeat(5, 1fr); }
+	grid-template-columns: repeat(2, 1fr);
+	@media @phone-ls { grid-template-columns: repeat(3, 1fr); }
+	@media @tablet { grid-template-columns: repeat(4, 1fr); }
     @media @normal { grid-template-columns: repeat(6, 1fr); }
   }
   .views-row, .views-field-nothing, .field-content { display: contents; }
@@ -247,7 +248,7 @@ a.video-thumb {
     line-height: 24em/12;
     .border-radius(@border-radius-large);
     padding: 12em/12;
-    background: @white-off;
+    background: @white;
   }
   .persoon-foto {
     height: 120em/12;
@@ -274,7 +275,7 @@ a.video-thumb {
       height: auto;
     }
     .persoon {
-      background: @white-off;
+      background: @white;
       padding: 12em/12 12em/12;
     }
     .persoon-foto {

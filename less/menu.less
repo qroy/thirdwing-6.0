@@ -11,132 +11,158 @@
   }
   margin: 0;
 }
-#header, #menu-service {
-  .content > div > ul.menu {
+#menu-wrapper :not(li) > ul.menu {
+  // TOP LEVEL MENU
   margin: 0;
   padding: 0;
   position: relative;
   z-index: 4;
-  li {
-    position: relative;
-    margin: 0;
-    padding: 0;
-    background: none;
-    a {
-      font-size: @fs;
-      line-height: 36em/@fs; 
-      text-decoration: none;
-    }
+}
+#menu-main :not(li) > ul.menu {
+  max-height: 0; // HIDE MENU
+  overflow: hidden;
+  @media @tablet { 
+    max-height: 1200em/@fs; // SHOW MENU
+	overflow: visible;
   }
-  > li {
-    float: left;
+}
+#menu-main.nav-active :not(li) > ul.menu {
+  // TOGGLE MENU WITH BUTTON
+  max-height: 1200em/@fs;
+}
+#menu-wrapper :not(li) > ul.menu li {
+  // ALL LIST ITEMS IN MENU
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background: none;
+  a {
+    line-height: 32em/@fs;
+    text-decoration: none;
+	color: @white;
+  }
+}
+#menu-wrapper :not(li) > ul.menu > li {
+  // TOP LEVEL ITEMS FOR MAIN AND SERVICE
+  > a:link, > a:visited {
+    display: block;
+    margin: 0 1em/@fs;
+    padding: 0 7em/@fs;
+	.border-radius(@border-radius-small);
+  }
+  > a:active, > a:focus, > a:hover, > a.active, > a.active-trail, &.active-trail > a, &.over > a, &:hover > a {
+    background-color: @secondary;
+    .box-shadow();
+  }
+}
+#menu-main :not(li) > ul.menu > li {
+  // TOP LEVEL ITEMS FOR MAIN
+  @media @tablet {
     padding-bottom: 10px; /* force a gap between menu and submenu */
     margin-bottom: -10px; /* remove extra height from menu */
-    > a:link, > a:visited {
-      display: block;
-      margin: 0 1em/@fs;
-      padding: 0 7em/@fs;
-      color: @white-off;
+    float: left;
+  }
+  > a:link, > a:visited {
+    margin-top: 6em/@fs;
+  	@media @tablet {
+	  margin-top: 0;
+	}
+  }
+  &.expanded > a {
+    .menu-arrow;
+  }
+}
+#menu-service :not(li) > ul.menu > li {
+  // TOP LEVEL ITEMS FOR SERVICE
+  padding-bottom: 10px; /* force a gap between menu and submenu */
+  margin-bottom: -10px; /* remove extra height from menu */
+  float: left;
+}
+#menu-wrapper :not(li) > ul.menu > li > ul {
+  // ALL LIST ITEMS LEVEL 2 AND LOWER
+  li { 
+    display: list-item; 
+    float: none;
+    position: relative;
+    padding-right: 10px;
+    margin-right: -10px;
+  }
+  li { 
+    a:link, a:visited {
+      position: relative;
+      padding: 0 7px;
+      white-space: nowrap;
     }
-    > a:active, > a:focus, > a:hover, > a.active, > a.active-trail, &.active-trail > a, &.over > a, &:hover > a {
-      background-color: @secondary;
-      color: @white;
-      .box-shadow();
-      .border-radius(0 0 @border-radius-small @border-radius-small);
-    }
-    &.first > a { margin-left: 8px; }
-    &.last > a { margin-right: 8px; }
-    &.expanded > a {
-      /* arrow for submenu */
-      &::after {
-        content: '  ';
-        height: 0;
-        position: relative;
-        right: 0;
-        width: 0;
-        border: 3px solid transparent;
-        border-top-color: @white;
-        margin: 0 0 0 2px;
-        overflow: hidden;
-        display: inline-block;
-      }
-    }
-    > ul {
-      // LEVEL 2
-      display: none;
-      padding: 0;
-      margin: 0;
-      position: absolute;
-      top: 100%;
-      min-width: 100%;
-      z-index: 4;
-      background: @grey-dark;
-      .box-shadow();
-      .border-radius();
-      li { 
-        display: list-item; 
-        float: none;
-        position: relative;
-        padding-right: 10px;
-        margin-right: -10px;
-      }
-      li { 
-        a:link, a:visited {
-          position: relative;
-          padding: 0 7px;
-          white-space: nowrap;
-          color: @white;
-        }
-        a:active, a:focus, a:hover, a.active, a.active-trail, &:hover > a {
-          background: @secondary;
-          .box-shadow(none);
-        }
-      }
-      li.first > a {
-        .border-radius(@border-radius-small @border-radius-small 0 0);
-      }
-      li.last > a {
-        .border-radius(0 0 @border-radius-small @border-radius-small);
-      }
-      li.first.last > a {
-        .border-radius(@border-radius-small);
-      }
-      > li.expanded > a {
-        padding-right: 12px;
-        &::after {
-          /* arrow for submenu */
-          content: '  ';
-          height: 0;
-          position: absolute;
-          right: 0;
-          top: 40%;
-          width: 0;
-          border: 3px solid transparent;
-          border-left-color: @white;
-          overflow: hidden;
-          display: block;
-        }
-      }
-    }
-    &:hover > ul {
-      display: block;
-    }
-    > ul > li > ul {
-      display: none;
-      padding: 0;
-      margin: 0;
-      position: absolute;
-      left: 100%;
-      top: 0;
-      background: @grey-dark;
-      .box-shadow();
-      .border-radius();
-      // LEVEL 3
-    }
-    > ul > li:hover > ul {
-      display: block;
+    a:active, a:focus, a:hover, a.active, a.active-trail, &:hover > a {
+      background: @secondary;
     }
   }
+  @media @tablet {
+    li.first > a {      .border-radius(@border-radius-small @border-radius-small 0 0); }
+    li.last > a {       .border-radius(0 0 @border-radius-small @border-radius-small); }
+    li.first.last > a { .border-radius(@border-radius-small); }
+  }
+}
+#menu-wrapper :not(li) > ul.menu > li > ul {
+  // LEVEL 2
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  z-index: 5;
+  background: @grey;
+  .box-shadow(@box-shadow-inset);
+  @media @tablet {
+    position: absolute;
+    top: 100%;
+    min-width: 100%;
+	background: @grey-dark;
+	.border-radius();
+	box-shadow: 0 0 10px @black;
+  }
+  > li.expanded > a {
+    padding-right: 12px;
+    .menu-arrow;
+  }
+}
+#menu-wrapper :not(li) > ul.menu > li:hover > ul,
+#menu-wrapper :not(li) > ul.menu > li > ul > li:hover > ul {
+  // SHOW LEVEL 2 AND 3
+  max-height: 1200em/@fs;
+  overflow: visible;
+}
+#menu-wrapper :not(li) > ul.menu > li > ul > li > ul {
+  // LEVEL 3
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+  background: @grey-dark;
+  .box-shadow(@box-shadow-inset);
+  @media @tablet {
+    position: absolute;
+    left: 100%;
+    top: 0;
+	box-shadow: 0 0 10px @black;
+    .border-radius();
+  }
+}
+
+// ARROW FOR SUBMENU
+.menu-arrow {
+  position: relative;
+  &:after {
+    content: '  ';
+    height: 0;
+    position: relative;
+    right: 0;
+    width: 0;
+    border: 3px solid transparent;
+    border-top-color: @white;
+    margin: 0 0 0 2px;
+    overflow: hidden;
+    display: inline-block;
   }
 }
 // FONT AWESOME ICONS
@@ -145,22 +171,34 @@ a.fa {
   font-size: 14em/@fs;
   line-height: 24em/@fs;
 }
-#header, #menu-service {
-  ul.menu a.fa::before {
+#menu-service {
+  ul.menu a.fa {
+    .fa-menu;
+  }
+}
+#menu-main {
+  ul.menu a.fa {
+    &::before {
+	  display: none;
+	}
+    @media @tablet {
+	  .fa-menu;
+	}
+  }
+}
+.fa-menu {
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 16em/@fs;
+  position: relative;
+  &::before {
+    display: block;
     font-family: FontAwesome;
     margin-right: 5em/@fs;
-    width: 30em/@fs;
+    width: 32em/@fs;
     text-align: center;
-  }
-  ul.menu  a.fa {
-    text-indent: 200%;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 16em/@fs;
-    position: relative;
-  }
-  ul.menu  a.fa::before {
-    text-indent: 0;
+	text-indent: 0;
     position: absolute;
     left: 0;
   }
