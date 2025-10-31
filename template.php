@@ -121,17 +121,6 @@ function phptemplate_node_submitted($node) {
     ));
 }
 
-/**
- * Generates IE CSS links for LTR and RTL languages.
- */
-function phptemplate_get_ie_styles() {
-  global $language;
-
-  $iecss = '<link type="text/css" rel="stylesheet" media="all" href="'. base_path() . path_to_theme() .'/css/fix-ie.css" />';
-
-  return $iecss;
-}
-
 function phptemplate_date_all_day_label() {
   return '';
 }

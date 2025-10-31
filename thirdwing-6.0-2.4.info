@@ -4,8 +4,8 @@ version = 2.4
 core = 6.x
 engine = phptemplate
 stylesheets[all][] = css/style.css
-stylesheets[all][] = jplayer.css
 scripts[] = js/doubletaptogo.js
+scripts[] = js/toggle-nav.js
 
 regions[topbar] = Topbar
 regions[header] = Menubar

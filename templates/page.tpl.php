@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php if ($hero): print '<style>#header-bg { background-image: url(/' . $hero . '); }</style>'; endif; ?>
 <?php print $styles ?>
-<!--[if lt IE 7]><?php print phptemplate_get_ie_styles(); ?><![endif]-->
 <link rel="apple-touch-icon" href="<?php print base_path() . path_to_theme() ?>/images/apple-touch-icon.png" />
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">var $jq = jQuery.noConflict();</script> 
@@ -24,7 +23,7 @@
 <?php if ($site_slogan): ?><div id="logo-slogan"><?php print $site_slogan; ?></div><?php endif; ?>
 </div>
 <nav id="menu-wrapper" role="navigation">
-<div id="menu-main"><a href="#" class="toggle-nav button button-x2 button-alt button-inline fa fa-bars">Menu</a><?php print $header; ?></div>
+<div id="menu-main"><a href="#" class="toggle-nav button button-alt fa fa-bars">Menu</a><?php print $header; ?></div>
 <div id="menu-service"><?php print $topbar; ?></div>
 </nav>
 </header>
