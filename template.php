@@ -1,6 +1,4 @@
 ﻿<?php
-// $Id: template.php,v 1.16.2.1 2009/02/25 11:47:37 goba Exp $
-
 /**
  * Return a themed breadcrumb trail.
  *
@@ -10,7 +8,7 @@
  */
 function phptemplate_breadcrumb($breadcrumb) {
   if (!empty($breadcrumb)) {
-    return '<div class="breadcrumb">'. implode(' › ', $breadcrumb) .'</div>';
+    return '<div id="breadcrumb">'. implode(' › ', $breadcrumb) .'</div>';
   }
 }
 
