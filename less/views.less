@@ -3,19 +3,23 @@
  */
 .agenda.agenda-leden {
 	.badge-date-wrapper {
-	  width: 257em/@fs;
+	  @media @tablet { width: 257em/@fs; }
 	}
 	.badge-koor-tijd {
 	  margin-right: 0;
 	}
 	h2 {
 	  text-transform: uppercase;
-      font-size: 14em/@fs;
-      line-height: 36em/@fs;
-      vertical-align: middle;
 	  margin: 0;
 	  a:link, a:visited { color: @grey; }
 	  a:hover, a:active, a:focus { color: @primary; }
+	  vertical-align: middle;
+	  Font-size: 18em/@fs;
+      line-height: 36em/18;
+      @media @tablet {
+        font-size: 14em/@fs;
+        line-height: 36em/@fs;
+      }
 	}
 	.field-bijzonderheden {
 	  font-style: italic;

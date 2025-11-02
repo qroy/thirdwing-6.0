@@ -34,9 +34,12 @@
 }
 .buildmode-schema {
   &:not(:empty) {
-    padding: 12em/@fs;
+    padding: 12em/@fs 12em/@fs 24em/@fs;
     margin: 0 0 12em/@fs;
 	min-height: 132em/@fs;
+	@media @tablet {
+      padding: 12em/@fs;
+	}
   }
 }
 .buildmode-teaser {
@@ -73,27 +76,6 @@
 }
 
 // FIELD-AFBEELDINGEN
-.qfield-item {
-  float: right;
-  max-width: 50%; /* 50% of article width */
-  max-height: 400px;
-  margin-left: 20px; /* Space between image and text */
-  margin-bottom: 20px; /* Space below image */
-}
-
-.qfield-item a {
-  display: block;
-  max-height: 400px;
-}
-
-.qfield-item img {
-  max-width: 100%;
-  max-height: 400px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  display: block;
-}
 .field-afbeeldingen {
   > .field-items > .field-item {
   display: none;

@@ -14,7 +14,7 @@
 <?php print $scripts ?>
 <script>$jq( function() { $( '#menu-main li:has(ul)' ).doubleTapToGo(); });</script>
 </head>
-<body class="<?php print $body_classes; ?>">
+<body class="page <?php print $body_classes; ?>">
 <header id="header" role="banner">
 <div id="logo">
 <?php if ($logo): ?><a href="/" title="Keer terug naar home"><div id="logo-img"></div><?php endif; ?>

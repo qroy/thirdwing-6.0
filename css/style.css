@@ -697,7 +697,7 @@ span.clear {
 #print {
   display: none;
 }
-body {
+.page {
   background: #f0f0ee;
   display: grid;
   grid-template-rows: repeat(3, auto);
@@ -706,7 +706,7 @@ body {
   grid-template-areas: ". header ." ". main ." ". footer .";
 }
 @media screen and (min-width: 59.285714285714285em ) {
-  body {
+  .page {
     grid-template-columns: minmax(1.71428571em, 1fr) minmax(50em, 78.57142857em) 14.28571429em minmax(1.71428571em, 1fr);
     grid-template-areas: ". header header ." ". main main ." ". footer footer .";
   }
@@ -1083,9 +1083,14 @@ body {
   box-sizing: border-box;
 }
 .buildmode-schema:not(:empty) {
-  padding: 0.85714286em;
+  padding: 0.85714286em 0.85714286em 1.71428571em;
   margin: 0 0 0.85714286em;
   min-height: 9.42857143em;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .buildmode-schema:not(:empty) {
+    padding: 0.85714286em;
+  }
 }
 .buildmode-teaser > .nd-region-header > .field-background {
   position: absolute;
@@ -1117,28 +1122,6 @@ body {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-}
-.qfield-item {
-  float: right;
-  max-width: 50%;
-  /* 50% of article width */
-  max-height: 400px;
-  margin-left: 20px;
-  /* Space between image and text */
-  margin-bottom: 20px;
-  /* Space below image */
-}
-.qfield-item a {
-  display: block;
-  max-height: 400px;
-}
-.qfield-item img {
-  max-width: 100%;
-  max-height: 400px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  display: block;
 }
 .field-afbeeldingen > .field-items > .field-item {
   display: none;
@@ -1755,18 +1738,20 @@ tr.dblog-access-denied td.active {
 /**
  * Ledenagenda
  */
-.agenda.agenda-leden .badge-date-wrapper {
-  width: 18.35714286em;
+@media screen and (min-width: 59.285714285714285em ) {
+  .agenda.agenda-leden .badge-date-wrapper {
+    width: 18.35714286em;
+  }
 }
 .agenda.agenda-leden .badge-koor-tijd {
   margin-right: 0;
 }
 .agenda.agenda-leden h2 {
   text-transform: uppercase;
-  font-size: 1em;
-  line-height: 2.57142857em;
-  vertical-align: middle;
   margin: 0;
+  vertical-align: middle;
+  Font-size: 1.28571429em;
+  line-height: 2em;
 }
 .agenda.agenda-leden h2 a:link,
 .agenda.agenda-leden h2 a:visited {
@@ -1776,6 +1761,12 @@ tr.dblog-access-denied td.active {
 .agenda.agenda-leden h2 a:active,
 .agenda.agenda-leden h2 a:focus {
   color: #3c329b;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .agenda.agenda-leden h2 {
+    font-size: 1em;
+    line-height: 2.57142857em;
+  }
 }
 .agenda.agenda-leden .field-bijzonderheden {
   font-style: italic;
@@ -3376,7 +3367,8 @@ a[type*="mpeg"]:before {
   position: relative;
   /* for absolute positioning of icon */
   vertical-align: middle;
-  width: 2rem;
+  width: 2.28571429em;
+  height: 2.28571429em;
   padding: 0 0.42857143rem;
 }
 .button-icon-only:before {
@@ -3387,62 +3379,9 @@ a[type*="mpeg"]:before {
   text-align: center;
   margin: 0;
   display: inline;
-  width: 2rem;
-}
-.button-x2 {
-  font-size: 1.42857143rem !important;
-  line-height: 3.07142857rem;
-}
-.button-x2:before {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 1.71428571rem !important;
-  line-height: 3.07142857rem;
-  width: 1.64285714rem;
-}
-.button-icon-only-x2 {
-  width: 3.07142857rem;
-}
-.button-icon-only-x2:before {
-  width: 3.07142857rem;
-  margin: 0;
-}
-.button-x3 {
-  font-size: 2.14285714rem;
-  line-height: 6.28571429rem;
-}
-.button-x3:before {
-  font-size: 3.42857143rem;
-  width: 4.85714286rem;
-}
-.button-icon-only-x3 {
-  width: 6.28571429rem;
-}
-.button-icon-only-x3:before {
-  width: 6.28571429rem;
-}
-.button-social {
-  text-indent: 200%;
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
-  /* for absolute positioning of icon */
-  width: 1.42857143em;
-  /* make room for icon */
-  vertical-align: top;
-}
-.button-social:before {
-  line-height: 2.57142857em;
-  text-indent: 0;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  text-align: center;
-  margin: 0;
-  display: inline;
-  width: auto;
+  width: 2.28571429em;
+  height: 2.28571429em;
+  line-height: 2.28571429em;
 }
 .calltoaction {
   font-size: 2.14285714em;
