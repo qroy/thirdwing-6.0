@@ -691,1911 +691,6 @@ span.clear {
   font-size: 0px;
   margin-bottom: -1px;
 }
-/**
- * Layout
- */
-#print {
-  display: none;
-}
-.page {
-  background: #f0f0ee;
-  display: grid;
-  grid-template-rows: repeat(3, auto);
-  column-gap: 0.85714286em;
-  grid-template-columns: 0 auto 0;
-  grid-template-areas: ". header ." ". main ." ". footer .";
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  .page {
-    grid-template-columns: minmax(1.71428571em, 1fr) minmax(50em, 78.57142857em) 14.28571429em minmax(1.71428571em, 1fr);
-    grid-template-areas: ". header header ." ". main main ." ". footer footer .";
-  }
-}
-.two-sidebars {
-  grid-template-columns: 0 auto 0;
-  grid-template-rows: repeat(5, auto);
-  grid-template-areas: ". header ." ". main ." ". sidebar-left ." ". sidebar-right ." ". footer .";
-}
-@media screen and (min-width: 71.42857142857143em ) {
-  .two-sidebars {
-    grid-template-columns: minmax(1.71428571em, 1fr) 14.28571429em minmax(50em, 78.57142857em) 14.28571429em minmax(1.71428571em, 1fr);
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas: ". . header header ." ". sidebar-left main sidebar-right ." ". . footer footer .";
-  }
-}
-.sidebar-right {
-  grid-template-rows: repeat(4, auto);
-  grid-template-areas: ". header ." ". main ." ". sidebar-right ." ". footer .";
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  .sidebar-right {
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas: ". header header ." ". main sidebar-right ." ". footer footer .";
-  }
-}
-.sidebar-left {
-  grid-template-columns: 0 auto 0;
-  grid-template-rows: repeat(4, auto);
-  grid-template-areas: ". header ." ". main ." ". sidebar-left ." ". footer .";
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  .sidebar-left {
-    grid-template-columns: minmax(1.71428571em, 1fr) 14.28571429em minmax(50em, 78.57142857em) 14.28571429em minmax(1.71428571em, 1fr);
-    grid-template-rows: repeat(3, auto);
-    grid-template-areas: ". . header header ." ". sidebar-left main main ." ". . footer footer .";
-  }
-}
-#header {
-  grid-area: header;
-  padding: 1.71428571em 0 2.71428571em;
-  display: grid;
-}
-#header-bg {
-  background-color: #3c329b;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-  grid-column: 1 / -1;
-  grid-row: 1;
-  z-index: -1;
-}
-@media screen {
-  #header-bg {
-    -webkit-box-shadow: inset 0 0 10px #000000;
-    -moz-box-shadow: inset 0 0 10px #000000;
-    box-shadow: inset 0 0 10px #000000;
-  }
-}
-.node-hero #header-bg {
-  grid-row: 1 / 3;
-}
-#menu-wrapper {
-  position: relative;
-  background-color: #464644;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  grid-template-columns: 6em auto;
-}
-@media screen {
-  #menu-wrapper {
-    -webkit-box-shadow: 0px 0px 10px #000000;
-    -moz-box-shadow: 0px 0px 10px #000000;
-    box-shadow: 0px 0px 10px #000000;
-  }
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  #menu-wrapper {
-    display: grid;
-    column-gap: 0.42857143em;
-    grid-template-columns: auto auto;
-  }
-}
-#menu-service {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  #menu-service {
-    position: relative;
-    justify-self: right;
-  }
-}
-#logo {
-  display: grid;
-  grid-template-columns: 7.57142857em min-content 1fr;
-  height: 6em;
-  margin-bottom: 1.71428571em;
-  right: 0;
-  left: 0;
-  color: #ffffff;
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  #logo {
-    grid-template-columns: 10.28571429em min-content 1fr;
-    height: 8.57142857em;
-  }
-}
-#logo a {
-  display: contents;
-  color: #ffffff;
-}
-#logo a:hover,
-#logo a:active,
-#logo a:focus {
-  color: #eb7314;
-}
-#logo a:hover #logo-img,
-#logo a:active #logo-img,
-#logo a:focus #logo-img {
-  color: #eb7314;
-  border-color: #eb7314;
-  background-image: url(../images/logo_zonder_tekst-secondary.svg);
-}
-#logo #logo-img {
-  background-image: url(../images/logo_zonder_tekst.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 90%;
-  box-sizing: border-box;
-  height: 6em;
-  width: 6em;
-  border: 0.14285714em solid #ffffff;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  #logo #logo-img {
-    height: 8.57142857em;
-    width: 8.57142857em;
-  }
-}
-#logo #logo-title {
-  font-weight: 600;
-  font-size: 3.42857143em;
-  line-height: 0.75em;
-  width: 2rem;
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  #logo #logo-title {
-    font-size: 5em;
-    line-height: 0.71428571em;
-  }
-}
-#logo #logo-title::first-line {
-  font-size: 0.4em;
-  font-weight: 400;
-}
-#logo #logo-slogan {
-  display: none;
-  font-size: 2.57142857em;
-  line-height: 1.11111111em;
-  font-family: 'Indie Flower';
-  height: 3.33333333em;
-  color: #ffffff;
-  justify-self: right;
-  align-items: end;
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  #logo #logo-slogan {
-    display: flex;
-  }
-}
-.node-hero #logo a:hover #logo-img,
-.node-hero #logo a:active #logo-img,
-.node-hero #logo a:focus #logo-img {
-  background-color: #eb7314;
-  background-image: url(../images/logo_met_tekst.svg);
-}
-.node-hero #logo #logo-img {
-  border: 0;
-  background-color: #3c329b;
-  background-image: url(../images/logo_met_tekst.svg);
-  background-size: 70%;
-}
-@media screen {
-  .node-hero #logo #logo-img {
-    -webkit-box-shadow: 0px 0px 10px #000000;
-    -moz-box-shadow: 0px 0px 10px #000000;
-    box-shadow: 0px 0px 10px #000000;
-  }
-}
-.node-hero #logo #logo-title {
-  display: none;
-}
-.node-hero #logo #logo-slogan {
-  -webkit-text-shadow: 0 0 0.21428571rem #000000;
-  -moz-text-shadow: 0 0 0.21428571rem #000000;
-  text-shadow: 0 0 0.21428571rem #000000;
-  grid-column: -2;
-}
-#main {
-  grid-area: main;
-  position: relative;
-  padding: 5.14285714em 0 3.42857143em;
-  margin: 3.42857143em 0;
-  min-height: 400px;
-}
-#breadcrumb {
-  font-size: 0.85714286em;
-  line-height: 2em;
-  position: absolute;
-  top: 3.5em;
-  left: 0;
-  z-index: 3;
-  background: #f0f0ee;
-  padding: 0 2em;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-#breadcrumb,
-#breadcrumb a {
-  color: #000000;
-}
-#sidebar-left {
-  grid-area: sidebar-left;
-}
-#sidebar-right {
-  grid-area: sidebar-right;
-}
-.sidebar {
-  margin: 8.57142857em 0 0;
-}
-.sidebar .block {
-  margin: 0 0 3.42857143em;
-}
-.block .content {
-  margin: 0;
-}
-.block-region {
-  padding: 1em;
-  background: transparent;
-  border: 2px dashed #b4d7f0;
-  text-align: center;
-  font-size: 1.3em;
-}
-#footer {
-  grid-area: footer;
-  padding: 1.71428571em 0 5.14285714em;
-  margin-top: 2.28571429em;
-  float: none;
-  clear: both;
-  min-height: 36em;
-  color: #f0f0ee;
-  position: relative;
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  #footer {
-    display: grid;
-    grid-template-columns: 14.28571429em minmax(max-content, 1fr) minmax(max-content, 1fr) minmax(84px, 336px) minmax(300px, 1fr);
-    column-gap: 1.71428571em;
-  }
-}
-#footer a:link,
-#footer a:visited {
-  color: #ffffff;
-}
-#footer a:hover,
-#footer a:active,
-#footer a.active {
-  color: #878786;
-}
-#footer h2 {
-  color: #f0f0ee;
-  text-transform: uppercase;
-  font-size: 1em;
-  line-height: 1.71428571em;
-  margin-bottom: 0.85714286em;
-}
-#footer .fa-ul {
-  margin-left: 1.71428571em;
-  padding: 0;
-}
-#footer .fa-ul li {
-  background: none;
-  margin: 0;
-  padding: 0;
-}
-#footer .block {
-  margin: 0;
-  padding: 0;
-}
-#block-block-5.block {
-  font-size: 0.71428571em;
-  line-height: 2em;
-  margin: 3.6em 0;
-  color: #878786;
-  padding: 0 70px 0 0;
-  position: relative;
-  box-sizing: border-box;
-  text-align: right;
-}
-#block-block-5.block:after {
-  content: '\e900';
-  font-family: 'thirdwing';
-  font-size: 50px;
-  line-height: 60px;
-  text-align: center;
-  display: block;
-  width: 60px;
-  height: 60px;
-  border: 2px solid #878786;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  visibility: visible;
-}
-#footer-bg {
-  background: #464644;
-  grid-column: 1 / -1;
-  grid-row: -2;
-  z-index: -1;
-}
-@media screen {
-  #footer-bg {
-    -webkit-box-shadow: inset 0 0 10px #000000;
-    -moz-box-shadow: inset 0 0 10px #000000;
-    box-shadow: inset 0 0 10px #000000;
-  }
-}
-@media screen {
-  .node-hero #footer-bg {
-    -webkit-box-shadow: unset;
-    -moz-box-shadow: unset;
-    box-shadow: unset;
-  }
-}
-/**
- * Nodes and Comments
- */
-.nd-region-header,
-.nd-region-left,
-.nd-region-right,
-.nd-region-middle,
-.nd-region-middle-wrapper,
-.nd-region-footer,
-.nd-sidebar-right .nd-region-middle,
-.nd-two-sidebars .nd-region-middle,
-.nd-sidebar-left .nd-region-middle {
-  float: none;
-  display: block;
-  margin: 0;
-  clear: both;
-  width: auto;
-}
-.buildmode-teaser:not(:empty),
-.buildmode-full:not(:empty),
-.buildmode-schema:not(:empty) {
-  position: relative;
-  background: #ffffff;
-  padding: 1.71428571em 1.71428571em;
-  margin: 0 0 1.71428571em;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  box-sizing: border-box;
-}
-.buildmode-schema:not(:empty) {
-  padding: 0.85714286em 0.85714286em 1.71428571em;
-  margin: 0 0 0.85714286em;
-  min-height: 9.42857143em;
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  .buildmode-schema:not(:empty) {
-    padding: 0.85714286em;
-  }
-}
-.buildmode-teaser > .nd-region-header > .field-background {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  z-index: 0;
-}
-.buildmode-teaser > .nd-region-header > .field-background .node-background {
-  width: 100%;
-  height: 27em;
-  background-position: center 10%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #878786;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-.buildmode-teaser > .nd-region-header > .field-background .node-background:after {
-  content: ' ';
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  height: 27em;
-  background: #ffffff;
-  opacity: 0.75;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-.field-afbeeldingen > .field-items > .field-item {
-  display: none;
-}
-.field-afbeeldingen > .field-items > .field-item:first-child {
-  display: block;
-  float: right;
-  max-width: 50%;
-  max-height: 23.57142857em;
-  text-align: right;
-}
-.node-type-activiteit .field-afbeeldingen > .field-items > .field-item {
-  height: 23.57142857em;
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-}
-.field-afbeeldingen > .field-items > .field-item a {
-  display: inline-block;
-  max-height: 23.57142857em;
-}
-.field-afbeeldingen > .field-items > .field-item img {
-  max-height: 23.57142857em;
-  max-width: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  object-position: right top;
-  display: block;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-}
-.buildmode-full .field-background {
-  display: none;
-}
-.buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle > .field-title,
-.buildmode-full > .nd-region-middle-wrapper > .nd-region-middle > .field-title {
-  height: 10.71428571em;
-  display: table-cell;
-  vertical-align: bottom;
-  overflow: hidden;
-}
-.badge-access,
-badge-access-wrapper {
-  display: none;
-}
-.role-bestuur .buildmode-teaser .badge-access-wrapper,
-.role-beheer .buildmode-teaser .badge-access-wrapper,
-.role-admin .buildmode-teaser .badge-access-wrapper,
-.role-bestuur .buildmode-full:not(:empty) .badge-access-wrapper,
-.role-beheer .buildmode-full:not(:empty) .badge-access-wrapper,
-.role-admin .buildmode-full:not(:empty) .badge-access-wrapper,
-.role-bestuur .buildmode-schema .badge-access-wrapper,
-.role-beheer .buildmode-schema .badge-access-wrapper,
-.role-admin .buildmode-schema .badge-access-wrapper {
-  font-size: 0.71428571em;
-  line-height: 1.2em;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 2.4em;
-  z-index: 5;
-}
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Bezoekers,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Bezoekers,
-.role-admin .buildmode-teaser .badge-access.badge-access-Bezoekers,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Bezoekers,
-.role-beheer .buildmode-schema .badge-access.badge-access-Bezoekers,
-.role-admin .buildmode-schema .badge-access.badge-access-Bezoekers,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Vrienden,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Vrienden,
-.role-admin .buildmode-teaser .badge-access.badge-access-Vrienden,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Vrienden,
-.role-beheer .buildmode-schema .badge-access.badge-access-Vrienden,
-.role-admin .buildmode-schema .badge-access.badge-access-Vrienden,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
-.role-admin .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
-.role-beheer .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
-.role-admin .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Leden,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Leden,
-.role-admin .buildmode-teaser .badge-access.badge-access-Leden,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Leden,
-.role-beheer .buildmode-schema .badge-access.badge-access-Leden,
-.role-admin .buildmode-schema .badge-access.badge-access-Leden,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Bestuur,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Bestuur,
-.role-admin .buildmode-teaser .badge-access.badge-access-Bestuur,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Bestuur,
-.role-beheer .buildmode-schema .badge-access.badge-access-Bestuur,
-.role-admin .buildmode-schema .badge-access.badge-access-Bestuur,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Muziekcommissie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Muziekcommissie,
-.role-admin .buildmode-schema .badge-access.badge-access-Muziekcommissie,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Concertcommissie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Concertcommissie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Concertcommissie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Concertcommissie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Concertcommissie,
-.role-admin .buildmode-schema .badge-access.badge-access-Concertcommissie,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Feestcommissie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Feestcommissie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Feestcommissie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Feestcommissie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Feestcommissie,
-.role-admin .buildmode-schema .badge-access.badge-access-Feestcommissie,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-admin .buildmode-teaser .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-beheer .buildmode-schema .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-admin .buildmode-schema .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
-.role-admin .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Band,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Band,
-.role-admin .buildmode-teaser .badge-access.badge-access-Band,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Band,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Band,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Band,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Band,
-.role-beheer .buildmode-schema .badge-access.badge-access-Band,
-.role-admin .buildmode-schema .badge-access.badge-access-Band,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Beheer,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Beheer,
-.role-admin .buildmode-teaser .badge-access.badge-access-Beheer,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Beheer,
-.role-beheer .buildmode-schema .badge-access.badge-access-Beheer,
-.role-admin .buildmode-schema .badge-access.badge-access-Beheer {
-  display: inline-block;
-  padding: 0.4em 0.8em;
-  color: #ffffff;
-  text-align: center;
-  -webkit-border-radius: 5px 5px 0 0;
-  -moz-border-radius: 5px 5px 0 0;
-  border-radius: 5px 5px 0 0;
-}
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Beheer,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Beheer,
-.role-admin .buildmode-teaser .badge-access.badge-access-Beheer,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Beheer,
-.role-beheer .buildmode-schema .badge-access.badge-access-Beheer,
-.role-admin .buildmode-schema .badge-access.badge-access-Beheer,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Bestuur,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Bestuur,
-.role-admin .buildmode-teaser .badge-access.badge-access-Bestuur,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Bestuur,
-.role-beheer .buildmode-schema .badge-access.badge-access-Bestuur,
-.role-admin .buildmode-schema .badge-access.badge-access-Bestuur {
-  background: #e9584c;
-}
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Concertcommissie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Concertcommissie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Concertcommissie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Concertcommissie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Concertcommissie,
-.role-admin .buildmode-schema .badge-access.badge-access-Concertcommissie,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Feestcommissie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Feestcommissie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Feestcommissie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Feestcommissie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Feestcommissie,
-.role-admin .buildmode-schema .badge-access.badge-access-Feestcommissie,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Commissie-Interne_relaties,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Commissie-Interne_relaties,
-.role-admin .buildmode-teaser .badge-access.badge-access-Commissie-Interne_relaties,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne_relaties,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne_relaties,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne_relaties,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Commissie-Interne_relaties,
-.role-beheer .buildmode-schema .badge-access.badge-access-Commissie-Interne_relaties,
-.role-admin .buildmode-schema .badge-access.badge-access-Commissie-Interne_relaties,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
-.role-admin .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Muziekcommissie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Muziekcommissie,
-.role-admin .buildmode-schema .badge-access.badge-access-Muziekcommissie {
-  background: #e6d119;
-}
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Leden,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Leden,
-.role-admin .buildmode-teaser .badge-access.badge-access-Leden,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Leden,
-.role-beheer .buildmode-schema .badge-access.badge-access-Leden,
-.role-admin .buildmode-schema .badge-access.badge-access-Leden,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Band,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Band,
-.role-admin .buildmode-teaser .badge-access.badge-access-Band,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Band,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Band,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Band,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Band,
-.role-beheer .buildmode-schema .badge-access.badge-access-Band,
-.role-admin .buildmode-schema .badge-access.badge-access-Band,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
-.role-admin .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
-.role-beheer .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
-.role-admin .buildmode-schema .badge-access.badge-access-Aspirant-Leden {
-  background: #51aaec;
-}
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Vrienden,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Vrienden,
-.role-admin .buildmode-teaser .badge-access.badge-access-Vrienden,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Vrienden,
-.role-beheer .buildmode-schema .badge-access.badge-access-Vrienden,
-.role-admin .buildmode-schema .badge-access.badge-access-Vrienden,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Bezoekers,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Bezoekers,
-.role-admin .buildmode-teaser .badge-access.badge-access-Bezoekers,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Bezoekers,
-.role-beheer .buildmode-schema .badge-access.badge-access-Bezoekers,
-.role-admin .buildmode-schema .badge-access.badge-access-Bezoekers {
-  background: #aad563;
-}
-.role-bestuur .buildmode-schema .badge-access-wrapper,
-.role-beheer .buildmode-schema .badge-access-wrapper,
-.role-admin .buildmode-schema .badge-access-wrapper {
-  left: 1.2em;
-}
-.nd-region-middle,
-.nd-region-right {
-  position: relative;
-  z-index: 2;
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  .node-type-activiteit.buildmode-full,
-  .node-type-activiteit.buildmode-teaser,
-  .node-type-activiteit.buildmode-schema {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas: "node-main node-right" "node-footer node-footer";
-    column-gap: 1.71428571em;
-  }
-  .node-type-activiteit.buildmode-full {
-    row-gap: 1.71428571em;
-  }
-  .node-type-activiteit.buildmode-schema {
-    grid-template-columns: 25em 1fr 12.85714286em;
-    grid-template-areas: "node-left node-main node-right";
-    column-gap: 1.71428571em;
-  }
-  .node-type-activiteit .nd-region-header {
-    grid-area: node-main;
-  }
-  .node-type-activiteit .nd-region-left {
-    grid-area: node-left;
-  }
-  .node-type-activiteit .nd-region-middle-wrapper {
-    grid-area: node-main;
-  }
-  .node-type-activiteit .nd-region-right {
-    grid-area: node-right;
-  }
-  .node-type-activiteit .nd-region-footer {
-    grid-area: node-footer;
-  }
-}
-.front h1 {
-  display: none;
-}
-.buildmode-full .node-type-foto > div > div > .field-afbeeldingen {
-  width: 100%;
-  padding: 0;
-}
-.field-inline,
-.field-inline div {
-  display: inline-block;
-  vertical-align: middle;
-}
-.field-inline .badge,
-.field-inline div .badge {
-  margin-right: 0;
-}
-.field .field-label-inline-first {
-  display: inline-block;
-  min-width: 11.42857143em;
-}
-.field-inline .field-label-inline-first {
-  display: inline;
-}
-.field-block {
-  display: block;
-}
-.field-margin-left {
-  margin-left: 0.85714286em;
-}
-.field-margin-right {
-  margin-right: 0.85714286em;
-}
-.field-group {
-  clear: left;
-}
-.field .field-label-inline-first {
-  font-weight: normal;
-  color: #e9584c;
-  text-transform: uppercase;
-}
-.admininfo,
-.messages {
-  position: relative;
-  z-index: 3;
-}
-.field-type-viewfield {
-  clear: both;
-}
-.editablefields .description {
-  display: none;
-}
-.editablefields .form-text {
-  max-width: 100px;
-  font-size: 10px;
-}
-.editablefields .form-select {
-  max-width: 50px;
-  font-size: 10px;
-}
-/**
- * Comments
- */
-#comments {
-  margin: 0;
-  padding: 0;
-}
-.guestbook .picture,
-#comments .picture,
-.comment .submitted {
-  float: right;
-  clear: right;
-  padding-left: 1em;
-}
-.guestbook .even .picture,
-#comments .even .picture {
-  float: left;
-  clear: left;
-  padding-right: 1em;
-  padding-left: 0;
-}
-#comments h2.comments {
-  margin: 25px 0 0 0;
-  padding: 0;
-}
-.comment {
-  background: transparent url(../images/bg-comment.png) no-repeat 100% 90px;
-}
-.guestbook .even,
-#comments .even {
-  background: transparent url(../images/bg-comment-l.png) no-repeat 0 90px;
-}
-.comment .content {
-  margin: 0 80px 20px 0;
-  background: #eee;
-}
-.guestbook .even .content,
-#comments .even .content {
-  margin: 0 0 20px 80px;
-}
-.comment .commentbox {
-  padding: 10px;
-}
-.comment .imagecache-ProfilePicture {
-  width: 65px;
-  height: auto;
-}
-.node .links,
-.comment .links {
-  text-align: left;
-  /* LTR */
-}
-.node .links,
-.comment .links {
-  clear: both;
-  display: block;
-  height: 20px;
-}
-ul.links li,
-ul.inline li {
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  /* LTR */
-  padding-right: 1em;
-  /* LTR */
-  background-image: none;
-}
-.node .links ul.links li {
-  padding: 4px 1em 4px 20px;
-}
-.view-content .node ul.links {
-  padding: 0;
-  margin: 0;
-}
-.view-content .node ul.links li,
-.comment ul.links li {
-  text-align: center;
-  display: block;
-  float: left;
-  height: 20px;
-  padding: 0 10px;
-  margin: 0 0 0 10px;
-  background: #eee;
-}
-.comment ul.links li {
-  background: #ffffff;
-  position: relative;
-  top: -5px;
-}
-.comment .submitted {
-  float: none;
-  clear: none;
-  padding-left: 0;
-  margin: 0 0 0 0;
-}
-/**
- * Aggregator.module
- */
-#aggregator {
-  margin-top: 1em;
-}
-#aggregator .feed-item-title {
-  font-size: 160%;
-  line-height: 130%;
-}
-#aggregator .feed-item {
-  border-bottom: 1px solid #e9eff3;
-  margin: -1.5em -31px 1.75em;
-  padding: 1.5em 31px;
-}
-#aggregator .feed-item-categories {
-  font-size: 0.92em;
-}
-#aggregator .feed-item-meta {
-  font-size: 0.92em;
-  color: #878786;
-}
-/**
- * Autocomplete.
- */
-#autocomplete li {
-  cursor: default;
-  padding: 2px;
-  margin: 0;
-}
-/**
- * Syndication icons and block
- */
-#block-node-0 h2 {
-  float: left;
-  /* LTR */
-  padding-right: 20px;
-  /* LTR */
-}
-#block-node-0 img,
-.feed-icon {
-  float: right;
-  /* LTR */
-  padding-top: 4px;
-}
-#block-node-0 .content {
-  clear: right;
-  /* LTR */
-}
-/**
- * Login Block
- */
-#user-login-form {
-  text-align: center;
-}
-#user-login-form ul {
-  text-align: left;
-  /* LTR */
-}
-/**
- * User profiles.
- */
-.profile {
-  margin-top: 1.5em;
-}
-.profile h3 {
-  border-bottom: 0;
-  margin-bottom: 1em;
-}
-.profile dl {
-  margin: 0;
-}
-.profile dt {
-  font-weight: normal;
-  color: #878786;
-  font-size: 0.92em;
-  line-height: 1.3em;
-  margin-top: 1.4em;
-  margin-bottom: 0.45em;
-}
-.profile dd {
-  margin-bottom: 1.6em;
-}
-/**
- * dblog.module
- */
-tr.dblog-user {
-  background-color: #fcf9e5;
-}
-tr.dblog-user td.active {
-  background-color: #fbf5cf;
-}
-tr.dblog-content {
-  background-color: #fefefe;
-}
-tr.dblog-content td.active {
-  background-color: #f5f5f5;
-}
-tr.dblog-warning {
-  background-color: #fdf5e6;
-}
-tr.dblog-warning td.active {
-  background-color: #fdf2de;
-}
-tr.dblog-error {
-  background-color: #fbe4e4;
-}
-tr.dblog-error td.active {
-  background-color: #fbdbdb;
-}
-tr.dblog-page-not-found,
-tr.dblog-access-denied {
-  background: #d7ffd7;
-}
-tr.dblog-page-not-found td.active,
-tr.dblog-access-denied td.active {
-  background: #c7eec7;
-}
-/**
- * Ledenagenda
- */
-@media screen and (min-width: 59.285714285714285em ) {
-  .agenda.agenda-leden .badge-date-wrapper {
-    width: 18.35714286em;
-  }
-}
-.agenda.agenda-leden .badge-koor-tijd {
-  margin-right: 0;
-}
-.agenda.agenda-leden h2 {
-  text-transform: uppercase;
-  margin: 0;
-  vertical-align: middle;
-  Font-size: 1.28571429em;
-  line-height: 2em;
-}
-.agenda.agenda-leden h2 a:link,
-.agenda.agenda-leden h2 a:visited {
-  color: #878786;
-}
-.agenda.agenda-leden h2 a:hover,
-.agenda.agenda-leden h2 a:active,
-.agenda.agenda-leden h2 a:focus {
-  color: #3c329b;
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  .agenda.agenda-leden h2 {
-    font-size: 1em;
-    line-height: 2.57142857em;
-  }
-}
-.agenda.agenda-leden .field-bijzonderheden {
-  font-style: italic;
-}
-.agenda.agenda-leden .node-edit-link,
-.agenda.agenda-leden .node-clone-link {
-  display: inline-block;
-  text-indent: 200%;
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
-  /* for absolute positioning of icon */
-  vertical-align: bottom;
-  width: 1.71428571em;
-  margin: 0 0 0.28571429em 0.28571429em;
-}
-.agenda.agenda-leden .node-edit-link:before,
-.agenda.agenda-leden .node-clone-link:before {
-  font-family: FontAwesome;
-  text-indent: 0;
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
-  margin: 0;
-  display: inline;
-  width: auto;
-}
-.agenda.agenda-leden .node-edit-link:link,
-.agenda.agenda-leden .node-clone-link:link,
-.agenda.agenda-leden .node-edit-link:visited,
-.agenda.agenda-leden .node-clone-link:visited {
-  color: #d7d7d6;
-  background: #ffffff;
-}
-.agenda.agenda-leden .node-edit-link:active,
-.agenda.agenda-leden .node-clone-link:active,
-.agenda.agenda-leden .node-edit-link:hover,
-.agenda.agenda-leden .node-clone-link:hover,
-.agenda.agenda-leden .node-edit-link:focus,
-.agenda.agenda-leden .node-clone-link:focus {
-  background: #eb7314;
-}
-.agenda.agenda-leden .taxonomy-Wereldlijk,
-.agenda.agenda-leden .taxonomy-Kerkelijk,
-.agenda.agenda-leden .taxonomy-Concours,
-.agenda.agenda-leden .taxonomy-Koorreis,
-.agenda.agenda-leden .taxonomy-Vergadering {
-  border: 0.35714286em solid #d7d7d6;
-  padding: 0.5em;
-}
-.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:link,
-.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:link,
-.agenda.agenda-leden .taxonomy-Concours h2 a:link,
-.agenda.agenda-leden .taxonomy-Koorreis h2 a:link,
-.agenda.agenda-leden .taxonomy-Vergadering h2 a:link,
-.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:visited,
-.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:visited,
-.agenda.agenda-leden .taxonomy-Concours h2 a:visited,
-.agenda.agenda-leden .taxonomy-Koorreis h2 a:visited,
-.agenda.agenda-leden .taxonomy-Vergadering h2 a:visited {
-  color: #e9584c;
-}
-.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:hover,
-.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:hover,
-.agenda.agenda-leden .taxonomy-Concours h2 a:hover,
-.agenda.agenda-leden .taxonomy-Koorreis h2 a:hover,
-.agenda.agenda-leden .taxonomy-Vergadering h2 a:hover,
-.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:active,
-.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:active,
-.agenda.agenda-leden .taxonomy-Concours h2 a:active,
-.agenda.agenda-leden .taxonomy-Koorreis h2 a:active,
-.agenda.agenda-leden .taxonomy-Vergadering h2 a:active,
-.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:focus,
-.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:focus,
-.agenda.agenda-leden .taxonomy-Concours h2 a:focus,
-.agenda.agenda-leden .taxonomy-Koorreis h2 a:focus,
-.agenda.agenda-leden .taxonomy-Vergadering h2 a:focus {
-  color: #3c329b;
-}
-/**
- * Opnamen
- */
-.opnamen {
-  overflow: hidden;
-  margin-right: -0.85714286em;
-  padding: 0;
-}
-.opnamen .views-row,
-.opnamen .field-item {
-  width: 50%;
-  box-sizing: border-box;
-  float: left;
-  padding: 0 0.85714286em 0.85714286em 0;
-}
-@media screen and (min-width: 71.42857142857143em ) {
-  .opnamen .views-row,
-  .opnamen .field-item {
-    width: 33.33333333%;
-  }
-}
-.opnamen .opname {
-  position: relative;
-  background: #ffffff;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  padding: 0.42857143em;
-}
-.opnamen .opname:hover {
-  -webkit-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  -moz-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  -ms-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  -o-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  background: #eb7314;
-}
-.opnamen .opname:hover .badge {
-  background: #ffffff;
-  color: #eb7314;
-}
-.opnamen .opname:hover .opname-title,
-.opnamen .opname:hover .opname-artist {
-  color: #ffffff;
-}
-.opnamen img {
-  width: 100%;
-  height: auto;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-.opnamen .opname-bestand {
-  position: relative;
-  z-index: 2;
-}
-.opnamen .opname-bestand:before {
-  display: block;
-  content: '';
-  width: 100%;
-  padding-top: 56.25%;
-}
-.opnamen .opname-bestand .video,
-.opnamen .opname-bestand .jp-single-player,
-.opnamen .opname-bestand img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.opnamen .opname-bestand .video .jp-interface,
-.opnamen .opname-bestand .jp-single-player .jp-interface,
-.opnamen .opname-bestand img .jp-interface {
-  top: 20%;
-}
-.opnamen .opname-bestand .video {
-  height: 100%;
-  width: 100%;
-}
-.opnamen .opname-data {
-  height: 5.14285714em;
-  margin-top: 0.42857143em;
-  overflow: hidden;
-}
-.opnamen .opname-title {
-  color: #e9584c;
-  text-transform: uppercase;
-  display: inline-block;
-}
-.opnamen .opname-artist {
-  display: inline-block;
-}
-.opnamen .opname-notes {
-  font-size: 0.85714286em;
-  line-height: 2em;
-}
-.opnamen .opname-type {
-  height: 2.57142857em;
-  text-align: right;
-  z-index: 2;
-  position: relative;
-}
-.opnamen .opname-link {
-  z-index: 1;
-  position: absolute;
-  display: block;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.opnamen .opname-foto .opname-link {
-  z-index: 3;
-}
-.opnamen .opname-foto .opname-title {
-  display: block;
-  min-height: 5.14285714em;
-}
-.opnamen .opname-foto .opname-artist,
-.opnamen .opname-foto .opname-notes {
-  display: none;
-}
-.opnamen .badge-multimedia {
-  display: none;
-}
-.opnamen .opname-foto .badge-foto {
-  display: inline-block;
-}
-.opnamen .opname-video .badge-video {
-  display: inline-block;
-}
-.opnamen .opname-audio .badge-audio {
-  display: inline-block;
-}
-.opnamen .badge.badge-audio-download:link,
-.opnamen .badge.badge-audio-download:visited {
-  background: #3c329b;
-  color: #ffffff;
-}
-.opnamen .badge.badge-audio-download:hover,
-.opnamen .badge.badge-audio-download:active,
-.opnamen .badge.badge-audio-download:focus {
-  background: #878786;
-  color: #eb7314;
-}
-.video.video-thumb {
-  display: block;
-  position: relative;
-  box-sizing: border-box;
-  text-align: center;
-}
-.video.video-thumb:after {
-  display: inline-block;
-  position: absolute;
-  content: '\f166';
-  font-family: FontAwesome;
-  font-size: 4.28571429em;
-  line-height: 1em;
-  top: 30%;
-  left: 0;
-  right: 0;
-}
-.video.video-thumb img {
-  width: 100%;
-  height: auto;
-}
-a.video-thumb:link,
-a.video-thumb:visited {
-  color: #ffffff;
-}
-a.video-thumb:hover,
-a.video-thumb:active,
-a.video-thumb:focus {
-  color: #eb7314;
-}
-/**
- * Sleepgroepen
- */
-.sleepgroepen .view-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 0.42857143em;
-  row-gap: 0.85714286em;
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  .sleepgroepen .view-content {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media screen and (min-width: 71.42857142857143em ) {
-  .sleepgroepen .view-content {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media screen and (min-width: 85.71428571428571em) {
-  .sleepgroepen .view-content {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-.sleepgroepen .view-content .item-list {
-  box-sizing: border-box;
-  text-align: center;
-}
-.sleepgroepen .view-content .item-list ol {
-  background: #ffffff;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  padding: 0.42857143em;
-  min-height: 25.71428571em;
-}
-.sleepgroepen .view-content .item-list h3 {
-  margin-bottom: 0.85714286em;
-}
-.sleepgroepen .view-content .sleepgroep-uitkoor {
-  text-decoration: line-through;
-}
-.sleepgroepen .view-content .sleepgroep-karrijder {
-  font-style: italic;
-}
-.sleepgroepen .view-content .sleepgroep-bestuur {
-  font-weight: bold;
-}
-.sleepgroepen .view-content .sleepgroep-geslacht-Man:after {
-  content: " \f222";
-}
-.sleepgroepen .view-content .sleepgroep-geslacht:after {
-  font-family: fontawesome;
-  color: #e9584c;
-  font-style: normal;
-  font-weight: normal;
-}
-/**
- * Combo en Bestuur en Commissies
- */
-.personen .view-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-@media screen and (min-width: 43.57142857142857em ) {
-  .personen .view-content {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  .personen .view-content {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media screen and (min-width: 71.42857142857143em ) {
-  .personen .view-content {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-.personen .views-row,
-.personen .views-field-nothing,
-.personen .field-content {
-  display: contents;
-}
-.personen.personen-ledenlijst .view-content {
-  grid-template-columns: 1fr;
-}
-.personen .persoon-wrapper {
-  width: 100%;
-  height: auto;
-  box-sizing: border-box;
-  padding: 0.42857143em 0.42857143em;
-}
-.personen .persoon {
-  text-align: center;
-  font-size: 0.85714286em;
-  line-height: 2em;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  padding: 1em;
-  background: #ffffff;
-}
-.personen .persoon-foto {
-  height: 10em;
-  width: 7.5em;
-  margin: 0 auto;
-}
-.personen .persoon-foto img {
-  box-sizing: border-box;
-  width: 100%;
-  height: auto;
-}
-.personen .persoon-naam {
-  text-transform: uppercase;
-  min-height: 4em;
-}
-.personen .persoon-functie {
-  color: #e9584c;
-}
-.personen .persoon-functie > span {
-  display: none;
-}
-.personen.personen-leden .persoon-wrapper,
-.personen.personen-ledenlijst .persoon-wrapper,
-.personen.personen-opstelling .persoon-wrapper {
-  height: auto;
-}
-.personen.personen-leden .persoon,
-.personen.personen-ledenlijst .persoon,
-.personen.personen-opstelling .persoon {
-  background: #ffffff;
-  padding: 1em 1em;
-}
-.personen.personen-leden .persoon-foto,
-.personen.personen-ledenlijst .persoon-foto,
-.personen.personen-opstelling .persoon-foto {
-  width: 80%;
-  height: auto;
-}
-.personen.personen-leden .persoon-naam,
-.personen.personen-ledenlijst .persoon-naam,
-.personen.personen-opstelling .persoon-naam {
-  min-height: 2em;
-}
-.personen.personen-leden .persoon-achternaam,
-.personen.personen-ledenlijst .persoon-achternaam,
-.personen.personen-opstelling .persoon-achternaam {
-  display: none;
-}
-.personen.personen-opstelling .view-content {
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-}
-.personen.personen-opstelling .persoon-wrapper {
-  width: 100%;
-  padding: 0.21428571em;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-101 {
-  grid-column: 1;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-102 {
-  grid-column: 2;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-103 {
-  grid-column: 3;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-104 {
-  grid-column: 4;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-105 {
-  grid-column: 5;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-106 {
-  grid-column: 6;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-107 {
-  grid-column: 7;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-108 {
-  grid-column: 8;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-109 {
-  grid-column: 9;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-110 {
-  grid-column: 10;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-111 {
-  grid-column: 11;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-112 {
-  grid-column: 12;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-113 {
-  grid-column: 13;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-114 {
-  grid-column: 14;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-115 {
-  grid-column: 15;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-116 {
-  grid-column: 16;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-201 {
-  grid-column: 1;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-202 {
-  grid-column: 2;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-203 {
-  grid-column: 3;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-204 {
-  grid-column: 4;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-205 {
-  grid-column: 5;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-206 {
-  grid-column: 6;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-207 {
-  grid-column: 7;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-208 {
-  grid-column: 8;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-209 {
-  grid-column: 9;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-210 {
-  grid-column: 10;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-211 {
-  grid-column: 11;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-212 {
-  grid-column: 12;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-213 {
-  grid-column: 13;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-214 {
-  grid-column: 14;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-215 {
-  grid-column: 15;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-216 {
-  grid-column: 16;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-301 {
-  grid-column: 1;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-302 {
-  grid-column: 2;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-303 {
-  grid-column: 3;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-304 {
-  grid-column: 4;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-305 {
-  grid-column: 5;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-306 {
-  grid-column: 6;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-307 {
-  grid-column: 7;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-308 {
-  grid-column: 8;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-309 {
-  grid-column: 9;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-310 {
-  grid-column: 10;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-311 {
-  grid-column: 11;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-312 {
-  grid-column: 12;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-313 {
-  grid-column: 13;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-314 {
-  grid-column: 14;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-315 {
-  grid-column: 15;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-316 {
-  grid-column: 16;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-401 {
-  grid-column: 1;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-402 {
-  grid-column: 2;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-403 {
-  grid-column: 3;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-404 {
-  grid-column: 4;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-405 {
-  grid-column: 5;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-406 {
-  grid-column: 6;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-407 {
-  grid-column: 7;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-408 {
-  grid-column: 8;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-409 {
-  grid-column: 9;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-410 {
-  grid-column: 10;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-411 {
-  grid-column: 11;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-412 {
-  grid-column: 12;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-413 {
-  grid-column: 13;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-414 {
-  grid-column: 14;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-415 {
-  grid-column: 15;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-416 {
-  grid-column: 16;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-500 {
-  grid-row: 6;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-601 {
-  grid-column: 8;
-  grid-row: 6;
-}
-.personen.personen-opstelling .persoon {
-  padding: 0.25em 0.25em;
-  font-size: 0.64285714em;
-  line-height: 2.66666667em;
-  color: #ffffff;
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  .personen.personen-opstelling .persoon {
-    font-size: 0.71428571em;
-    line-height: 2.4em;
-  }
-}
-@media screen and (min-width: 71.42857142857143em ) {
-  .personen.personen-opstelling .persoon {
-    font-size: 0.85714286em;
-    line-height: 2em;
-  }
-}
-.personen.personen-opstelling .persoon-A {
-  background: #e9584c;
-}
-.personen.personen-opstelling .persoon-B {
-  background: #51aaec;
-}
-.personen.personen-opstelling .persoon-C {
-  background: #3c329b;
-}
-.personen.personen-opstelling .persoon-D {
-  background: #e6d119;
-}
-.personen.personen-opstelling .persoon-E {
-  background: #aad563;
-}
-.personen.personen-opstelling .persoon-Y1 {
-  background: #878786;
-}
-.personen.personen-opstelling .persoon-Z1,
-.personen.personen-opstelling .persoon-Z2,
-.personen.personen-opstelling .persoon-Z3,
-.personen.personen-opstelling .persoon-Z4,
-.personen.personen-opstelling .persoon-Z5 {
-  background: #d7d7d6;
-}
-.personen.personen-ledenlijst .persoon-foto {
-  width: 4.14285714em;
-}
-@media screen {
-  .personen.personen-ledenlijst tr.odd:not(:hover) .badge-sleepgroep,
-  .personen.personen-ledenlijst tr.even:not(:hover) .badge-sleepgroep,
-  .personen.personen-ledenlijst tr.odd:not(:hover) .badge-functie,
-  .personen.personen-ledenlijst tr.even:not(:hover) .badge-functie {
-    background: #d7d7d6;
-  }
-}
-@media screen {
-  .personen.personen-ledenlijst .badge.persoon-aspirant {
-    background: #e9584c;
-  }
-}
-.personen-leden .persoon-functie .persoon-functie-koor,
-.personen-ledenlijst .persoon-functie .persoon-functie-koor,
-.personen-wie .persoon-functie .persoon-functie-koor,
-.personen-band .persoon-functie .persoon-functie-koor {
-  display: inline-block;
-}
-.personen-bestuur .persoon-functie .persoon-functie-bestuur {
-  display: inline-block;
-}
-.personen-mc .persoon-functie .persoon-functie-mc {
-  display: inline-block;
-}
-.personen-regie .persoon-functie .persoon-functie-regie {
-  display: inline-block;
-}
-.personen-concert .persoon-functie .persoon-functie-concert {
-  display: inline-block;
-}
-.personen-pr .persoon-functie .persoon-functie-pr {
-  display: inline-block;
-}
-.personen-ir .persoon-functie .persoon-functie-ir {
-  display: inline-block;
-}
-.personen-feest .persoon-functie .persoon-functie-feest {
-  display: inline-block;
-}
-.personen-tec .persoon-functie .persoon-functie-tec {
-  display: inline-block;
-}
-.personen-lw .persoon-functie .persoon-functie-lw {
-  display: inline-block;
-}
-.personen-fl .persoon-functie .persoon-functie-fl {
-  display: inline-block;
-}
-.personen-verjaardag .persoon-functie .persoon-functie-verjaardag {
-  display: inline-block;
-}
-@media screen {
-  .persoon-aspirant {
-    color: #e9584c;
-  }
-  .persoon-aspirant a:link,
-  .persoon-aspirant a:visited {
-    color: #e9584c;
-  }
-  .persoon-aspirant a:hover,
-  .persoon-aspirant a:active {
-    color: #3c329b;
-  }
-}
-@media print {
-  .persoon-aspirant {
-    font-style: italic;
-  }
-}
-.personen-ledenlijst .views-field-field-lidsinds-value.persoon-aspirant .date-display-single {
-  display: none;
-}
-.personen-ledenlijst .views-field-field-lidsinds-value.persoon-aspirant:after {
-  content: 'Aspirant';
-  font-size: 0.85714286em;
-  line-height: 2em;
-  text-transform: uppercase;
-}
-.personen-ledenlijst .persoon-functie-bestuur {
-  color: #e9584c;
-}
-/**
- * Repertoire
- */
-.repertoire .repertoire-programma {
-  color: #e9584c;
-  text-transform: uppercase;
-}
-@media screen {
-  .repertoire tr.odd:not(:hover) a:link .badge-nummer,
-  .repertoire tr.even:not(:hover) a:link .badge-nummer,
-  .repertoire tr.odd:not(:hover) a:visited .badge-nummer,
-  .repertoire tr.even:not(:hover) a:visited .badge-nummer {
-    background: #d7d7d6;
-  }
-}
-/**
- * Foto's
-*/
-.voorbeeld .views-row {
-  float: left;
-  margin: 0 10px 0 0;
-}
-.voorbeeld .view-footer {
-  clear: both;
-}
 .badge {
   display: inline-block;
   vertical-align: middle;
@@ -3400,6 +1495,1925 @@ a[type*="mpeg"]:before {
   -moz-border-radius: 5px;
   border-radius: 5px;
   margin-right: 0.38461538em;
+}
+/**
+ * Layout
+ */
+#print {
+  display: none;
+}
+.page {
+  background: #f0f0ee;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  column-gap: 0.85714286em;
+  grid-template-columns: 0 auto 0;
+  grid-template-areas: ". header ." ". main ." ". footer .";
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .page {
+    grid-template-columns: minmax(1.71428571em, 1fr) minmax(50em, 78.57142857em) 14.28571429em minmax(1.71428571em, 1fr);
+    grid-template-areas: ". header header ." ". main main ." ". footer footer .";
+  }
+}
+.two-sidebars {
+  grid-template-columns: 0 auto 0;
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas: ". header ." ". main ." ". sidebar-left ." ". sidebar-right ." ". footer .";
+}
+@media screen and (min-width: 71.42857142857143em ) {
+  .two-sidebars {
+    grid-template-columns: minmax(1.71428571em, 1fr) 14.28571429em minmax(50em, 78.57142857em) 14.28571429em minmax(1.71428571em, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: ". . header header ." ". sidebar-left main sidebar-right ." ". . footer footer .";
+  }
+}
+.sidebar-right {
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: ". header ." ". main ." ". sidebar-right ." ". footer .";
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .sidebar-right {
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: ". header header ." ". main sidebar-right ." ". footer footer .";
+  }
+}
+.sidebar-left {
+  grid-template-columns: 0 auto 0;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: ". header ." ". main ." ". sidebar-left ." ". footer .";
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .sidebar-left {
+    grid-template-columns: minmax(1.71428571em, 1fr) 14.28571429em minmax(50em, 78.57142857em) 14.28571429em minmax(1.71428571em, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: ". . header header ." ". sidebar-left main main ." ". . footer footer .";
+  }
+}
+#header {
+  grid-area: header;
+  padding: 1.71428571em 0 2.71428571em;
+  display: grid;
+}
+#header-bg {
+  background-color: #3c329b;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  grid-column: 1 / -1;
+  grid-row: 1;
+  z-index: -1;
+}
+@media screen {
+  #header-bg {
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    -moz-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
+  }
+}
+.node-hero #header-bg {
+  grid-row: 1 / 3;
+}
+#menu-wrapper {
+  position: relative;
+  background-color: #464644;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  grid-template-columns: 6em auto;
+}
+@media screen {
+  #menu-wrapper {
+    -webkit-box-shadow: 0px 0px 10px #000000;
+    -moz-box-shadow: 0px 0px 10px #000000;
+    box-shadow: 0px 0px 10px #000000;
+  }
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  #menu-wrapper {
+    display: grid;
+    column-gap: 0.42857143em;
+    grid-template-columns: auto auto;
+  }
+}
+#menu-service {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  #menu-service {
+    position: relative;
+    justify-self: right;
+  }
+}
+#logo {
+  display: grid;
+  grid-template-columns: 7.57142857em min-content 1fr;
+  height: 6em;
+  margin-bottom: 1.71428571em;
+  right: 0;
+  left: 0;
+  color: #ffffff;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  #logo {
+    grid-template-columns: 10.28571429em min-content 1fr;
+    height: 8.57142857em;
+  }
+}
+#logo a {
+  display: contents;
+  color: #ffffff;
+}
+#logo a:hover,
+#logo a:active,
+#logo a:focus {
+  color: #eb7314;
+}
+#logo a:hover #logo-img,
+#logo a:active #logo-img,
+#logo a:focus #logo-img {
+  color: #eb7314;
+  border-color: #eb7314;
+  background-image: url(../images/logo_zonder_tekst-secondary.svg);
+}
+#logo #logo-img {
+  background-image: url(../images/logo_zonder_tekst.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 90%;
+  box-sizing: border-box;
+  height: 6em;
+  width: 6em;
+  border: 0.14285714em solid #ffffff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  #logo #logo-img {
+    height: 8.57142857em;
+    width: 8.57142857em;
+  }
+}
+#logo #logo-title {
+  font-weight: 600;
+  font-size: 3.42857143em;
+  line-height: 0.75em;
+  width: 2rem;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  #logo #logo-title {
+    font-size: 5em;
+    line-height: 0.71428571em;
+  }
+}
+#logo #logo-title::first-line {
+  font-size: 0.4em;
+  font-weight: 400;
+}
+#logo #logo-slogan {
+  display: none;
+  font-size: 2.57142857em;
+  line-height: 1.11111111em;
+  font-family: 'Indie Flower';
+  height: 3.33333333em;
+  color: #ffffff;
+  justify-self: right;
+  align-items: end;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  #logo #logo-slogan {
+    display: flex;
+  }
+}
+.node-hero #logo a:hover #logo-img,
+.node-hero #logo a:active #logo-img,
+.node-hero #logo a:focus #logo-img {
+  background-color: #eb7314;
+  background-image: url(../images/logo_met_tekst.svg);
+}
+.node-hero #logo #logo-img {
+  border: 0;
+  background-color: #3c329b;
+  background-image: url(../images/logo_met_tekst.svg);
+  background-size: 70%;
+}
+@media screen {
+  .node-hero #logo #logo-img {
+    -webkit-box-shadow: 0px 0px 10px #000000;
+    -moz-box-shadow: 0px 0px 10px #000000;
+    box-shadow: 0px 0px 10px #000000;
+  }
+}
+.node-hero #logo #logo-title {
+  display: none;
+}
+.node-hero #logo #logo-slogan {
+  -webkit-text-shadow: 0 0 0.21428571rem #000000;
+  -moz-text-shadow: 0 0 0.21428571rem #000000;
+  text-shadow: 0 0 0.21428571rem #000000;
+  grid-column: -2;
+}
+#main {
+  grid-area: main;
+  position: relative;
+  padding: 5.14285714em 0 3.42857143em;
+  margin: 3.42857143em 0;
+  min-height: 400px;
+}
+#breadcrumb {
+  font-size: 0.85714286em;
+  line-height: 2em;
+  position: absolute;
+  top: 3.5em;
+  left: 0;
+  z-index: 3;
+  background: #f0f0ee;
+  padding: 0 2em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#breadcrumb,
+#breadcrumb a {
+  color: #000000;
+}
+#sidebar-left {
+  grid-area: sidebar-left;
+}
+#sidebar-right {
+  grid-area: sidebar-right;
+}
+.sidebar {
+  margin: 8.57142857em 0 0;
+}
+.sidebar .block {
+  margin: 0 0 3.42857143em;
+}
+.block .content {
+  margin: 0;
+}
+.block-region {
+  padding: 1em;
+  background: transparent;
+  border: 2px dashed #b4d7f0;
+  text-align: center;
+  font-size: 1.3em;
+}
+#footer {
+  grid-area: footer;
+  padding: 1.71428571em 0 5.14285714em;
+  margin-top: 2.28571429em;
+  float: none;
+  clear: both;
+  min-height: 36em;
+  color: #f0f0ee;
+  position: relative;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  #footer {
+    display: grid;
+    grid-template-columns: 14.28571429em minmax(max-content, 1fr) minmax(max-content, 1fr) minmax(84px, 336px) minmax(300px, 1fr);
+    column-gap: 1.71428571em;
+  }
+}
+#footer a:link,
+#footer a:visited {
+  color: #ffffff;
+}
+#footer a:hover,
+#footer a:active,
+#footer a.active {
+  color: #878786;
+}
+#footer h2 {
+  color: #f0f0ee;
+  text-transform: uppercase;
+  font-size: 1em;
+  line-height: 1.71428571em;
+  margin-bottom: 0.85714286em;
+}
+#footer .fa-ul {
+  margin-left: 1.71428571em;
+  padding: 0;
+}
+#footer .fa-ul li {
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+#footer .block {
+  margin: 0;
+  padding: 0;
+}
+#block-block-5.block {
+  font-size: 0.71428571em;
+  line-height: 2em;
+  margin: 3.6em 0;
+  color: #878786;
+  padding: 0 70px 0 0;
+  position: relative;
+  box-sizing: border-box;
+  text-align: right;
+}
+#block-block-5.block:after {
+  content: '\e900';
+  font-family: 'thirdwing';
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #878786;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  visibility: visible;
+}
+#footer-bg {
+  background: #464644;
+  grid-column: 1 / -1;
+  grid-row: -2;
+  z-index: -1;
+}
+@media screen {
+  #footer-bg {
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    -moz-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #000000;
+  }
+}
+@media screen {
+  .node-hero #footer-bg {
+    -webkit-box-shadow: unset;
+    -moz-box-shadow: unset;
+    box-shadow: unset;
+  }
+}
+/**
+ * Nodes and Comments
+ */
+.nd-region-header,
+.nd-region-left,
+.nd-region-right,
+.nd-region-middle,
+.nd-region-middle-wrapper,
+.nd-region-footer,
+.nd-sidebar-right .nd-region-middle,
+.nd-two-sidebars .nd-region-middle,
+.nd-sidebar-left .nd-region-middle {
+  float: none;
+  display: block;
+  margin: 0;
+  clear: both;
+  width: auto;
+}
+.buildmode-teaser:not(:empty),
+.buildmode-full:not(:empty),
+.buildmode-schema:not(:empty) {
+  position: relative;
+  background: #ffffff;
+  padding: 1.71428571em 1.71428571em;
+  margin: 0 0 1.71428571em;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.buildmode-schema:not(:empty) {
+  padding: 0.85714286em 0.85714286em 1.71428571em;
+  margin: 0 0 0.85714286em;
+  min-height: 9.42857143em;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .buildmode-schema:not(:empty) {
+    padding: 0.85714286em;
+  }
+}
+.buildmode-schema:not(:empty).taxonomy-Wereldlijk h2 a:link,
+.buildmode-schema:not(:empty).taxonomy-Kerkelijk h2 a:link,
+.buildmode-schema:not(:empty).taxonomy-Concours h2 a:link,
+.buildmode-schema:not(:empty).taxonomy-Koorreis h2 a:link,
+.buildmode-schema:not(:empty).taxonomy-Vergadering h2 a:link,
+.buildmode-schema:not(:empty).taxonomy-Wereldlijk h2 a:visited,
+.buildmode-schema:not(:empty).taxonomy-Kerkelijk h2 a:visited,
+.buildmode-schema:not(:empty).taxonomy-Concours h2 a:visited,
+.buildmode-schema:not(:empty).taxonomy-Koorreis h2 a:visited,
+.buildmode-schema:not(:empty).taxonomy-Vergadering h2 a:visited {
+  color: #e9584c;
+}
+.buildmode-schema:not(:empty).taxonomy-Wereldlijk h2 a:hover,
+.buildmode-schema:not(:empty).taxonomy-Kerkelijk h2 a:hover,
+.buildmode-schema:not(:empty).taxonomy-Concours h2 a:hover,
+.buildmode-schema:not(:empty).taxonomy-Koorreis h2 a:hover,
+.buildmode-schema:not(:empty).taxonomy-Vergadering h2 a:hover,
+.buildmode-schema:not(:empty).taxonomy-Wereldlijk h2 a:active,
+.buildmode-schema:not(:empty).taxonomy-Kerkelijk h2 a:active,
+.buildmode-schema:not(:empty).taxonomy-Concours h2 a:active,
+.buildmode-schema:not(:empty).taxonomy-Koorreis h2 a:active,
+.buildmode-schema:not(:empty).taxonomy-Vergadering h2 a:active,
+.buildmode-schema:not(:empty).taxonomy-Wereldlijk h2 a:focus,
+.buildmode-schema:not(:empty).taxonomy-Kerkelijk h2 a:focus,
+.buildmode-schema:not(:empty).taxonomy-Concours h2 a:focus,
+.buildmode-schema:not(:empty).taxonomy-Koorreis h2 a:focus,
+.buildmode-schema:not(:empty).taxonomy-Vergadering h2 a:focus {
+  color: #3c329b;
+}
+.buildmode-schema:not(:empty) h2 {
+  text-transform: uppercase;
+  margin: 0;
+  vertical-align: middle;
+  Font-size: 1.28571429em;
+  line-height: 2em;
+}
+.buildmode-schema:not(:empty) h2 a:link,
+.buildmode-schema:not(:empty) h2 a:visited {
+  color: #878786;
+}
+.buildmode-schema:not(:empty) h2 a:hover,
+.buildmode-schema:not(:empty) h2 a:active,
+.buildmode-schema:not(:empty) h2 a:focus {
+  color: #3c329b;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .buildmode-schema:not(:empty) h2 {
+    font-size: 1em;
+    line-height: 2.57142857em;
+  }
+}
+.buildmode-schema .badge-koor-tijd {
+  margin-right: 0;
+}
+.buildmode-schema .field-bijzonderheden {
+  font-style: italic;
+}
+.buildmode-schema .node-edit-link,
+.buildmode-schema .node-clone-link {
+  display: inline-block;
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  /* for absolute positioning of icon */
+  vertical-align: bottom;
+  width: 1.71428571em;
+  margin: 0 0 0.28571429em 0.28571429em;
+}
+.buildmode-schema .node-edit-link:before,
+.buildmode-schema .node-clone-link:before {
+  font-family: FontAwesome;
+  text-indent: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0;
+  display: inline;
+  width: auto;
+}
+.buildmode-schema .node-edit-link:link,
+.buildmode-schema .node-clone-link:link,
+.buildmode-schema .node-edit-link:visited,
+.buildmode-schema .node-clone-link:visited {
+  color: #d7d7d6;
+  background: #ffffff;
+}
+.buildmode-schema .node-edit-link:active,
+.buildmode-schema .node-clone-link:active,
+.buildmode-schema .node-edit-link:hover,
+.buildmode-schema .node-clone-link:hover,
+.buildmode-schema .node-edit-link:focus,
+.buildmode-schema .node-clone-link:focus {
+  background: #eb7314;
+}
+.buildmode-schema .nd-region-left,
+.buildmode-schema .nd-region-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 0 0.28571429em;
+}
+.buildmode-schema .nd-region-left .field-datum,
+.buildmode-schema .nd-region-right .field-datum,
+.buildmode-schema .nd-region-left .field-locatie,
+.buildmode-schema .nd-region-right .field-locatie {
+  flex-grow: 1;
+}
+.buildmode-schema .nd-region-left .field-items,
+.buildmode-schema .nd-region-right .field-items,
+.buildmode-schema .nd-region-left .field-item,
+.buildmode-schema .nd-region-right .field-item {
+  width: 100%;
+}
+.buildmode-teaser > .nd-region-header > .field-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+.buildmode-teaser > .nd-region-header > .field-background .field-items,
+.buildmode-teaser > .nd-region-header > .field-background .field-item {
+  height: 100%;
+}
+.buildmode-teaser > .nd-region-header > .field-background .node-background {
+  width: 100%;
+  height: 100%;
+  background-position: center 10%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #878786;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.buildmode-teaser > .nd-region-header > .field-background .node-background:after {
+  content: ' ';
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  opacity: 0.75;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.field-afbeeldingen > .field-items > .field-item {
+  display: none;
+}
+.field-afbeeldingen > .field-items > .field-item:first-child {
+  display: block;
+  float: right;
+  max-width: 50%;
+  max-height: 23.57142857em;
+  text-align: right;
+}
+.node-type-activiteit .field-afbeeldingen > .field-items > .field-item {
+  height: 23.57142857em;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
+.field-afbeeldingen > .field-items > .field-item a {
+  display: inline-block;
+  max-height: 23.57142857em;
+}
+.field-afbeeldingen > .field-items > .field-item img {
+  max-height: 23.57142857em;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: right top;
+  display: block;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.buildmode-full .field-background {
+  display: none;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle > .field-title,
+  .buildmode-full > .nd-region-middle-wrapper > .nd-region-middle > .field-title {
+    height: 10.71428571em;
+    display: table-cell;
+    vertical-align: bottom;
+    overflow: hidden;
+  }
+}
+.badge-access,
+badge-access-wrapper {
+  display: none;
+}
+.role-bestuur .buildmode-teaser .badge-access-wrapper,
+.role-beheer .buildmode-teaser .badge-access-wrapper,
+.role-admin .buildmode-teaser .badge-access-wrapper,
+.role-bestuur .buildmode-full:not(:empty) .badge-access-wrapper,
+.role-beheer .buildmode-full:not(:empty) .badge-access-wrapper,
+.role-admin .buildmode-full:not(:empty) .badge-access-wrapper,
+.role-bestuur .buildmode-schema .badge-access-wrapper,
+.role-beheer .buildmode-schema .badge-access-wrapper,
+.role-admin .buildmode-schema .badge-access-wrapper {
+  font-size: 0.71428571em;
+  line-height: 1.2em;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 2.4em;
+  z-index: 5;
+}
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Bezoekers,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Bezoekers,
+.role-admin .buildmode-teaser .badge-access.badge-access-Bezoekers,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Bezoekers,
+.role-beheer .buildmode-schema .badge-access.badge-access-Bezoekers,
+.role-admin .buildmode-schema .badge-access.badge-access-Bezoekers,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Vrienden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Vrienden,
+.role-admin .buildmode-teaser .badge-access.badge-access-Vrienden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Vrienden,
+.role-beheer .buildmode-schema .badge-access.badge-access-Vrienden,
+.role-admin .buildmode-schema .badge-access.badge-access-Vrienden,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
+.role-admin .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
+.role-beheer .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
+.role-admin .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Leden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Leden,
+.role-admin .buildmode-teaser .badge-access.badge-access-Leden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Leden,
+.role-beheer .buildmode-schema .badge-access.badge-access-Leden,
+.role-admin .buildmode-schema .badge-access.badge-access-Leden,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Bestuur,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Bestuur,
+.role-admin .buildmode-teaser .badge-access.badge-access-Bestuur,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Bestuur,
+.role-beheer .buildmode-schema .badge-access.badge-access-Bestuur,
+.role-admin .buildmode-schema .badge-access.badge-access-Bestuur,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
+.role-admin .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Muziekcommissie,
+.role-beheer .buildmode-schema .badge-access.badge-access-Muziekcommissie,
+.role-admin .buildmode-schema .badge-access.badge-access-Muziekcommissie,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Concertcommissie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Concertcommissie,
+.role-admin .buildmode-teaser .badge-access.badge-access-Concertcommissie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Concertcommissie,
+.role-beheer .buildmode-schema .badge-access.badge-access-Concertcommissie,
+.role-admin .buildmode-schema .badge-access.badge-access-Concertcommissie,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Feestcommissie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Feestcommissie,
+.role-admin .buildmode-teaser .badge-access.badge-access-Feestcommissie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Feestcommissie,
+.role-beheer .buildmode-schema .badge-access.badge-access-Feestcommissie,
+.role-admin .buildmode-schema .badge-access.badge-access-Feestcommissie,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Commissie-Interne-Relaties,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Commissie-Interne-Relaties,
+.role-admin .buildmode-teaser .badge-access.badge-access-Commissie-Interne-Relaties,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne-Relaties,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne-Relaties,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne-Relaties,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Commissie-Interne-Relaties,
+.role-beheer .buildmode-schema .badge-access.badge-access-Commissie-Interne-Relaties,
+.role-admin .buildmode-schema .badge-access.badge-access-Commissie-Interne-Relaties,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
+.role-admin .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
+.role-beheer .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
+.role-admin .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Band,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Band,
+.role-admin .buildmode-teaser .badge-access.badge-access-Band,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Band,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Band,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Band,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Band,
+.role-beheer .buildmode-schema .badge-access.badge-access-Band,
+.role-admin .buildmode-schema .badge-access.badge-access-Band,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Beheer,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Beheer,
+.role-admin .buildmode-teaser .badge-access.badge-access-Beheer,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Beheer,
+.role-beheer .buildmode-schema .badge-access.badge-access-Beheer,
+.role-admin .buildmode-schema .badge-access.badge-access-Beheer {
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  color: #ffffff;
+  text-align: center;
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Beheer,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Beheer,
+.role-admin .buildmode-teaser .badge-access.badge-access-Beheer,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Beheer,
+.role-beheer .buildmode-schema .badge-access.badge-access-Beheer,
+.role-admin .buildmode-schema .badge-access.badge-access-Beheer,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Bestuur,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Bestuur,
+.role-admin .buildmode-teaser .badge-access.badge-access-Bestuur,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Bestuur,
+.role-beheer .buildmode-schema .badge-access.badge-access-Bestuur,
+.role-admin .buildmode-schema .badge-access.badge-access-Bestuur {
+  background: #e9584c;
+}
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Concertcommissie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Concertcommissie,
+.role-admin .buildmode-teaser .badge-access.badge-access-Concertcommissie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Concertcommissie,
+.role-beheer .buildmode-schema .badge-access.badge-access-Concertcommissie,
+.role-admin .buildmode-schema .badge-access.badge-access-Concertcommissie,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Feestcommissie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Feestcommissie,
+.role-admin .buildmode-teaser .badge-access.badge-access-Feestcommissie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Feestcommissie,
+.role-beheer .buildmode-schema .badge-access.badge-access-Feestcommissie,
+.role-admin .buildmode-schema .badge-access.badge-access-Feestcommissie,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Commissie-Interne_relaties,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Commissie-Interne_relaties,
+.role-admin .buildmode-teaser .badge-access.badge-access-Commissie-Interne_relaties,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne_relaties,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne_relaties,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne_relaties,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Commissie-Interne_relaties,
+.role-beheer .buildmode-schema .badge-access.badge-access-Commissie-Interne_relaties,
+.role-admin .buildmode-schema .badge-access.badge-access-Commissie-Interne_relaties,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
+.role-admin .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
+.role-beheer .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
+.role-admin .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
+.role-admin .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Muziekcommissie,
+.role-beheer .buildmode-schema .badge-access.badge-access-Muziekcommissie,
+.role-admin .buildmode-schema .badge-access.badge-access-Muziekcommissie {
+  background: #e6d119;
+}
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Leden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Leden,
+.role-admin .buildmode-teaser .badge-access.badge-access-Leden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Leden,
+.role-beheer .buildmode-schema .badge-access.badge-access-Leden,
+.role-admin .buildmode-schema .badge-access.badge-access-Leden,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Band,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Band,
+.role-admin .buildmode-teaser .badge-access.badge-access-Band,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Band,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Band,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Band,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Band,
+.role-beheer .buildmode-schema .badge-access.badge-access-Band,
+.role-admin .buildmode-schema .badge-access.badge-access-Band,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
+.role-admin .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
+.role-beheer .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
+.role-admin .buildmode-schema .badge-access.badge-access-Aspirant-Leden {
+  background: #51aaec;
+}
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Vrienden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Vrienden,
+.role-admin .buildmode-teaser .badge-access.badge-access-Vrienden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Vrienden,
+.role-beheer .buildmode-schema .badge-access.badge-access-Vrienden,
+.role-admin .buildmode-schema .badge-access.badge-access-Vrienden,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-Bezoekers,
+.role-beheer .buildmode-teaser .badge-access.badge-access-Bezoekers,
+.role-admin .buildmode-teaser .badge-access.badge-access-Bezoekers,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
+.role-bestuur .buildmode-schema .badge-access.badge-access-Bezoekers,
+.role-beheer .buildmode-schema .badge-access.badge-access-Bezoekers,
+.role-admin .buildmode-schema .badge-access.badge-access-Bezoekers {
+  background: #aad563;
+}
+.role-bestuur .buildmode-schema .badge-access-wrapper,
+.role-beheer .buildmode-schema .badge-access-wrapper,
+.role-admin .buildmode-schema .badge-access-wrapper {
+  left: 1.2em;
+}
+.nd-region-middle,
+.nd-region-right {
+  position: relative;
+  z-index: 2;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .node-type-activiteit.buildmode-full,
+  .node-type-activiteit.buildmode-teaser,
+  .node-type-activiteit.buildmode-schema {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "node-main node-right" "node-footer node-footer";
+    column-gap: 1.71428571em;
+  }
+  .node-type-activiteit.buildmode-full {
+    row-gap: 1.71428571em;
+  }
+  .node-type-activiteit.buildmode-schema {
+    grid-template-columns: 25em 1fr 12.85714286em;
+    grid-template-areas: "node-left node-main node-right";
+    column-gap: 1.71428571em;
+  }
+  .node-type-activiteit .nd-region-header {
+    grid-area: node-main;
+  }
+  .node-type-activiteit .nd-region-left {
+    grid-area: node-left;
+  }
+  .node-type-activiteit .nd-region-middle-wrapper {
+    grid-area: node-main;
+  }
+  .node-type-activiteit .nd-region-right {
+    grid-area: node-right;
+  }
+  .node-type-activiteit .nd-region-footer {
+    grid-area: node-footer;
+  }
+}
+.front h1 {
+  display: none;
+}
+.buildmode-full .node-type-foto > div > div > .field-afbeeldingen {
+  width: 100%;
+  padding: 0;
+}
+.field-inline,
+.field-inline div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.field-inline .badge,
+.field-inline div .badge {
+  margin-right: 0;
+}
+.field .field-label-inline-first {
+  display: inline-block;
+  min-width: 11.42857143em;
+}
+.field-inline .field-label-inline-first {
+  display: inline;
+}
+.field-block {
+  display: block;
+}
+.field-margin-left {
+  margin-left: 0.85714286em;
+}
+.field-margin-right {
+  margin-right: 0.85714286em;
+}
+.field-group {
+  clear: left;
+}
+.field .field-label-inline-first {
+  font-weight: normal;
+  color: #e9584c;
+  text-transform: uppercase;
+}
+.admininfo,
+.messages {
+  position: relative;
+  z-index: 3;
+}
+.field-type-viewfield {
+  clear: both;
+}
+.editablefields .description {
+  display: none;
+}
+.editablefields .form-text {
+  max-width: 100px;
+  font-size: 10px;
+}
+.editablefields .form-select {
+  max-width: 50px;
+  font-size: 10px;
+}
+/**
+ * Comments
+ */
+#comments {
+  margin: 0;
+  padding: 0;
+}
+.guestbook .picture,
+#comments .picture,
+.comment .submitted {
+  float: right;
+  clear: right;
+  padding-left: 1em;
+}
+.guestbook .even .picture,
+#comments .even .picture {
+  float: left;
+  clear: left;
+  padding-right: 1em;
+  padding-left: 0;
+}
+#comments h2.comments {
+  margin: 25px 0 0 0;
+  padding: 0;
+}
+.comment {
+  background: transparent url(../images/bg-comment.png) no-repeat 100% 90px;
+}
+.guestbook .even,
+#comments .even {
+  background: transparent url(../images/bg-comment-l.png) no-repeat 0 90px;
+}
+.comment .content {
+  margin: 0 80px 20px 0;
+  background: #eee;
+}
+.guestbook .even .content,
+#comments .even .content {
+  margin: 0 0 20px 80px;
+}
+.comment .commentbox {
+  padding: 10px;
+}
+.comment .imagecache-ProfilePicture {
+  width: 65px;
+  height: auto;
+}
+.node .links,
+.comment .links {
+  text-align: left;
+  /* LTR */
+}
+.node .links,
+.comment .links {
+  clear: both;
+  display: block;
+  height: 20px;
+}
+ul.links li,
+ul.inline li {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  /* LTR */
+  padding-right: 1em;
+  /* LTR */
+  background-image: none;
+}
+.node .links ul.links li {
+  padding: 4px 1em 4px 20px;
+}
+.view-content .node ul.links {
+  padding: 0;
+  margin: 0;
+}
+.view-content .node ul.links li,
+.comment ul.links li {
+  text-align: center;
+  display: block;
+  float: left;
+  height: 20px;
+  padding: 0 10px;
+  margin: 0 0 0 10px;
+  background: #eee;
+}
+.comment ul.links li {
+  background: #ffffff;
+  position: relative;
+  top: -5px;
+}
+.comment .submitted {
+  float: none;
+  clear: none;
+  padding-left: 0;
+  margin: 0 0 0 0;
+}
+/**
+ * Aggregator.module
+ */
+#aggregator {
+  margin-top: 1em;
+}
+#aggregator .feed-item-title {
+  font-size: 160%;
+  line-height: 130%;
+}
+#aggregator .feed-item {
+  border-bottom: 1px solid #e9eff3;
+  margin: -1.5em -31px 1.75em;
+  padding: 1.5em 31px;
+}
+#aggregator .feed-item-categories {
+  font-size: 0.92em;
+}
+#aggregator .feed-item-meta {
+  font-size: 0.92em;
+  color: #878786;
+}
+/**
+ * Autocomplete.
+ */
+#autocomplete li {
+  cursor: default;
+  padding: 2px;
+  margin: 0;
+}
+/**
+ * Syndication icons and block
+ */
+#block-node-0 h2 {
+  float: left;
+  /* LTR */
+  padding-right: 20px;
+  /* LTR */
+}
+#block-node-0 img,
+.feed-icon {
+  float: right;
+  /* LTR */
+  padding-top: 4px;
+}
+#block-node-0 .content {
+  clear: right;
+  /* LTR */
+}
+/**
+ * Login Block
+ */
+#user-login-form {
+  text-align: center;
+}
+#user-login-form ul {
+  text-align: left;
+  /* LTR */
+}
+/**
+ * User profiles.
+ */
+.profile {
+  margin-top: 1.5em;
+}
+.profile h3 {
+  border-bottom: 0;
+  margin-bottom: 1em;
+}
+.profile dl {
+  margin: 0;
+}
+.profile dt {
+  font-weight: normal;
+  color: #878786;
+  font-size: 0.92em;
+  line-height: 1.3em;
+  margin-top: 1.4em;
+  margin-bottom: 0.45em;
+}
+.profile dd {
+  margin-bottom: 1.6em;
+}
+/**
+ * dblog.module
+ */
+tr.dblog-user {
+  background-color: #fcf9e5;
+}
+tr.dblog-user td.active {
+  background-color: #fbf5cf;
+}
+tr.dblog-content {
+  background-color: #fefefe;
+}
+tr.dblog-content td.active {
+  background-color: #f5f5f5;
+}
+tr.dblog-warning {
+  background-color: #fdf5e6;
+}
+tr.dblog-warning td.active {
+  background-color: #fdf2de;
+}
+tr.dblog-error {
+  background-color: #fbe4e4;
+}
+tr.dblog-error td.active {
+  background-color: #fbdbdb;
+}
+tr.dblog-page-not-found,
+tr.dblog-access-denied {
+  background: #d7ffd7;
+}
+tr.dblog-page-not-found td.active,
+tr.dblog-access-denied td.active {
+  background: #c7eec7;
+}
+/**
+ * Ledenagenda
+ */
+/**
+ * Opnamen
+ */
+.opnamen {
+  overflow: hidden;
+  margin-right: -0.85714286em;
+  padding: 0;
+}
+.opnamen .views-row,
+.opnamen .field-item {
+  width: 50%;
+  box-sizing: border-box;
+  float: left;
+  padding: 0 0.85714286em 0.85714286em 0;
+}
+@media screen and (min-width: 71.42857142857143em ) {
+  .opnamen .views-row,
+  .opnamen .field-item {
+    width: 33.33333333%;
+  }
+}
+.opnamen .opname {
+  position: relative;
+  background: #ffffff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 0.42857143em;
+}
+.opnamen .opname:hover {
+  -webkit-transition: border 0.4s, background-color 0.4s, color 0.6s;
+  -moz-transition: border 0.4s, background-color 0.4s, color 0.6s;
+  -ms-transition: border 0.4s, background-color 0.4s, color 0.6s;
+  -o-transition: border 0.4s, background-color 0.4s, color 0.6s;
+  background: #eb7314;
+}
+.opnamen .opname:hover .badge {
+  background: #ffffff;
+  color: #eb7314;
+}
+.opnamen .opname:hover .opname-title,
+.opnamen .opname:hover .opname-artist {
+  color: #ffffff;
+}
+.opnamen img {
+  width: 100%;
+  height: auto;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.opnamen .opname-bestand {
+  position: relative;
+  z-index: 2;
+}
+.opnamen .opname-bestand:before {
+  display: block;
+  content: '';
+  width: 100%;
+  padding-top: 56.25%;
+}
+.opnamen .opname-bestand .video,
+.opnamen .opname-bestand .jp-single-player,
+.opnamen .opname-bestand img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.opnamen .opname-bestand .video .jp-interface,
+.opnamen .opname-bestand .jp-single-player .jp-interface,
+.opnamen .opname-bestand img .jp-interface {
+  top: 20%;
+}
+.opnamen .opname-bestand .video {
+  height: 100%;
+  width: 100%;
+}
+.opnamen .opname-data {
+  height: 5.14285714em;
+  margin-top: 0.42857143em;
+  overflow: hidden;
+}
+.opnamen .opname-title {
+  color: #e9584c;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.opnamen .opname-artist {
+  display: inline-block;
+}
+.opnamen .opname-notes {
+  font-size: 0.85714286em;
+  line-height: 2em;
+}
+.opnamen .opname-type {
+  height: 2.57142857em;
+  text-align: right;
+  z-index: 2;
+  position: relative;
+}
+.opnamen .opname-link {
+  z-index: 1;
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.opnamen .opname-foto .opname-link {
+  z-index: 3;
+}
+.opnamen .opname-foto .opname-title {
+  display: block;
+  min-height: 5.14285714em;
+}
+.opnamen .opname-foto .opname-artist,
+.opnamen .opname-foto .opname-notes {
+  display: none;
+}
+.opnamen .badge-multimedia {
+  display: none;
+}
+.opnamen .opname-foto .badge-foto {
+  display: inline-block;
+}
+.opnamen .opname-video .badge-video {
+  display: inline-block;
+}
+.opnamen .opname-audio .badge-audio {
+  display: inline-block;
+}
+.opnamen .badge.badge-audio-download:link,
+.opnamen .badge.badge-audio-download:visited {
+  background: #3c329b;
+  color: #ffffff;
+}
+.opnamen .badge.badge-audio-download:hover,
+.opnamen .badge.badge-audio-download:active,
+.opnamen .badge.badge-audio-download:focus {
+  background: #878786;
+  color: #eb7314;
+}
+.video.video-thumb {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
+}
+.video.video-thumb:after {
+  display: inline-block;
+  position: absolute;
+  content: '\f166';
+  font-family: FontAwesome;
+  font-size: 4.28571429em;
+  line-height: 1em;
+  top: 30%;
+  left: 0;
+  right: 0;
+}
+.video.video-thumb img {
+  width: 100%;
+  height: auto;
+}
+a.video-thumb:link,
+a.video-thumb:visited {
+  color: #ffffff;
+}
+a.video-thumb:hover,
+a.video-thumb:active,
+a.video-thumb:focus {
+  color: #eb7314;
+}
+/**
+ * Sleepgroepen
+ */
+.sleepgroepen .view-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 0.42857143em;
+  row-gap: 0.85714286em;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .sleepgroepen .view-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 71.42857142857143em ) {
+  .sleepgroepen .view-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (min-width: 85.71428571428571em) {
+  .sleepgroepen .view-content {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+.sleepgroepen .view-content .item-list {
+  box-sizing: border-box;
+  text-align: center;
+}
+.sleepgroepen .view-content .item-list ol {
+  background: #ffffff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 0.42857143em;
+  min-height: 25.71428571em;
+}
+.sleepgroepen .view-content .item-list h3 {
+  margin-bottom: 0.85714286em;
+}
+.sleepgroepen .view-content .sleepgroep-uitkoor {
+  text-decoration: line-through;
+}
+.sleepgroepen .view-content .sleepgroep-karrijder {
+  font-style: italic;
+}
+.sleepgroepen .view-content .sleepgroep-bestuur {
+  font-weight: bold;
+}
+.sleepgroepen .view-content .sleepgroep-geslacht-Man:after {
+  content: " \f222";
+}
+.sleepgroepen .view-content .sleepgroep-geslacht:after {
+  font-family: fontawesome;
+  color: #e9584c;
+  font-style: normal;
+  font-weight: normal;
+}
+/**
+ * Combo en Bestuur en Commissies
+ */
+.personen .view-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media screen and (min-width: 43.57142857142857em ) {
+  .personen .view-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .personen .view-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (min-width: 71.42857142857143em ) {
+  .personen .view-content {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+.personen .views-row,
+.personen .views-field-nothing,
+.personen .field-content {
+  display: contents;
+}
+.personen.personen-ledenlijst .view-content {
+  grid-template-columns: 1fr;
+}
+.personen .persoon-wrapper {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 0.42857143em 0.42857143em;
+}
+.personen .persoon {
+  text-align: center;
+  font-size: 0.85714286em;
+  line-height: 2em;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  padding: 1em;
+  background: #ffffff;
+}
+.personen .persoon-foto {
+  height: 10em;
+  width: 7.5em;
+  margin: 0 auto;
+}
+.personen .persoon-foto img {
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+}
+.personen .persoon-naam {
+  text-transform: uppercase;
+  min-height: 4em;
+}
+.personen .persoon-functie {
+  color: #e9584c;
+}
+.personen .persoon-functie > span {
+  display: none;
+}
+.personen.personen-leden .persoon-wrapper,
+.personen.personen-ledenlijst .persoon-wrapper,
+.personen.personen-opstelling .persoon-wrapper {
+  height: auto;
+}
+.personen.personen-leden .persoon,
+.personen.personen-ledenlijst .persoon,
+.personen.personen-opstelling .persoon {
+  background: #ffffff;
+  padding: 1em 1em;
+}
+.personen.personen-leden .persoon-foto,
+.personen.personen-ledenlijst .persoon-foto,
+.personen.personen-opstelling .persoon-foto {
+  width: 80%;
+  height: auto;
+}
+.personen.personen-leden .persoon-naam,
+.personen.personen-ledenlijst .persoon-naam,
+.personen.personen-opstelling .persoon-naam {
+  min-height: 2em;
+}
+.personen.personen-leden .persoon-achternaam,
+.personen.personen-ledenlijst .persoon-achternaam,
+.personen.personen-opstelling .persoon-achternaam {
+  display: none;
+}
+.personen.personen-opstelling .view-content {
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+.personen.personen-opstelling .persoon-wrapper {
+  width: 100%;
+  padding: 0.21428571em;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-101 {
+  grid-column: 1;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-102 {
+  grid-column: 2;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-103 {
+  grid-column: 3;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-104 {
+  grid-column: 4;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-105 {
+  grid-column: 5;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-106 {
+  grid-column: 6;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-107 {
+  grid-column: 7;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-108 {
+  grid-column: 8;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-109 {
+  grid-column: 9;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-110 {
+  grid-column: 10;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-111 {
+  grid-column: 11;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-112 {
+  grid-column: 12;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-113 {
+  grid-column: 13;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-114 {
+  grid-column: 14;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-115 {
+  grid-column: 15;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-116 {
+  grid-column: 16;
+  grid-row: 1;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-201 {
+  grid-column: 1;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-202 {
+  grid-column: 2;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-203 {
+  grid-column: 3;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-204 {
+  grid-column: 4;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-205 {
+  grid-column: 5;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-206 {
+  grid-column: 6;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-207 {
+  grid-column: 7;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-208 {
+  grid-column: 8;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-209 {
+  grid-column: 9;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-210 {
+  grid-column: 10;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-211 {
+  grid-column: 11;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-212 {
+  grid-column: 12;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-213 {
+  grid-column: 13;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-214 {
+  grid-column: 14;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-215 {
+  grid-column: 15;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-216 {
+  grid-column: 16;
+  grid-row: 2;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-301 {
+  grid-column: 1;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-302 {
+  grid-column: 2;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-303 {
+  grid-column: 3;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-304 {
+  grid-column: 4;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-305 {
+  grid-column: 5;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-306 {
+  grid-column: 6;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-307 {
+  grid-column: 7;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-308 {
+  grid-column: 8;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-309 {
+  grid-column: 9;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-310 {
+  grid-column: 10;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-311 {
+  grid-column: 11;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-312 {
+  grid-column: 12;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-313 {
+  grid-column: 13;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-314 {
+  grid-column: 14;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-315 {
+  grid-column: 15;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-316 {
+  grid-column: 16;
+  grid-row: 3;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-401 {
+  grid-column: 1;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-402 {
+  grid-column: 2;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-403 {
+  grid-column: 3;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-404 {
+  grid-column: 4;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-405 {
+  grid-column: 5;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-406 {
+  grid-column: 6;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-407 {
+  grid-column: 7;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-408 {
+  grid-column: 8;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-409 {
+  grid-column: 9;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-410 {
+  grid-column: 10;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-411 {
+  grid-column: 11;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-412 {
+  grid-column: 12;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-413 {
+  grid-column: 13;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-414 {
+  grid-column: 14;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-415 {
+  grid-column: 15;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-416 {
+  grid-column: 16;
+  grid-row: 4;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-500 {
+  grid-row: 6;
+}
+.personen.personen-opstelling .persoon-wrapper.persoon-601 {
+  grid-column: 8;
+  grid-row: 6;
+}
+.personen.personen-opstelling .persoon {
+  padding: 0.25em 0.25em;
+  font-size: 0.64285714em;
+  line-height: 2.66666667em;
+  color: #ffffff;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .personen.personen-opstelling .persoon {
+    font-size: 0.71428571em;
+    line-height: 2.4em;
+  }
+}
+@media screen and (min-width: 71.42857142857143em ) {
+  .personen.personen-opstelling .persoon {
+    font-size: 0.85714286em;
+    line-height: 2em;
+  }
+}
+.personen.personen-opstelling .persoon-A {
+  background: #e9584c;
+}
+.personen.personen-opstelling .persoon-B {
+  background: #51aaec;
+}
+.personen.personen-opstelling .persoon-C {
+  background: #3c329b;
+}
+.personen.personen-opstelling .persoon-D {
+  background: #e6d119;
+}
+.personen.personen-opstelling .persoon-E {
+  background: #aad563;
+}
+.personen.personen-opstelling .persoon-Y1 {
+  background: #878786;
+}
+.personen.personen-opstelling .persoon-Z1,
+.personen.personen-opstelling .persoon-Z2,
+.personen.personen-opstelling .persoon-Z3,
+.personen.personen-opstelling .persoon-Z4,
+.personen.personen-opstelling .persoon-Z5 {
+  background: #d7d7d6;
+}
+.personen.personen-ledenlijst .persoon-foto {
+  width: 4.14285714em;
+}
+@media screen {
+  .personen.personen-ledenlijst tr.odd:not(:hover) .badge-sleepgroep,
+  .personen.personen-ledenlijst tr.even:not(:hover) .badge-sleepgroep,
+  .personen.personen-ledenlijst tr.odd:not(:hover) .badge-functie,
+  .personen.personen-ledenlijst tr.even:not(:hover) .badge-functie {
+    background: #d7d7d6;
+  }
+}
+@media screen {
+  .personen.personen-ledenlijst .badge.persoon-aspirant {
+    background: #e9584c;
+  }
+}
+.personen-leden .persoon-functie .persoon-functie-koor,
+.personen-ledenlijst .persoon-functie .persoon-functie-koor,
+.personen-wie .persoon-functie .persoon-functie-koor,
+.personen-band .persoon-functie .persoon-functie-koor {
+  display: inline-block;
+}
+.personen-bestuur .persoon-functie .persoon-functie-bestuur {
+  display: inline-block;
+}
+.personen-mc .persoon-functie .persoon-functie-mc {
+  display: inline-block;
+}
+.personen-regie .persoon-functie .persoon-functie-regie {
+  display: inline-block;
+}
+.personen-concert .persoon-functie .persoon-functie-concert {
+  display: inline-block;
+}
+.personen-pr .persoon-functie .persoon-functie-pr {
+  display: inline-block;
+}
+.personen-ir .persoon-functie .persoon-functie-ir {
+  display: inline-block;
+}
+.personen-feest .persoon-functie .persoon-functie-feest {
+  display: inline-block;
+}
+.personen-tec .persoon-functie .persoon-functie-tec {
+  display: inline-block;
+}
+.personen-lw .persoon-functie .persoon-functie-lw {
+  display: inline-block;
+}
+.personen-fl .persoon-functie .persoon-functie-fl {
+  display: inline-block;
+}
+.personen-verjaardag .persoon-functie .persoon-functie-verjaardag {
+  display: inline-block;
+}
+@media screen {
+  .persoon-aspirant {
+    color: #e9584c;
+  }
+  .persoon-aspirant a:link,
+  .persoon-aspirant a:visited {
+    color: #e9584c;
+  }
+  .persoon-aspirant a:hover,
+  .persoon-aspirant a:active {
+    color: #3c329b;
+  }
+}
+@media print {
+  .persoon-aspirant {
+    font-style: italic;
+  }
+}
+.personen-ledenlijst .views-field-field-lidsinds-value.persoon-aspirant .date-display-single {
+  display: none;
+}
+.personen-ledenlijst .views-field-field-lidsinds-value.persoon-aspirant:after {
+  content: 'Aspirant';
+  font-size: 0.85714286em;
+  line-height: 2em;
+  text-transform: uppercase;
+}
+.personen-ledenlijst .persoon-functie-bestuur {
+  color: #e9584c;
+}
+/**
+ * Repertoire
+ */
+.repertoire .repertoire-programma {
+  color: #e9584c;
+  text-transform: uppercase;
+}
+@media screen {
+  .repertoire tr.odd:not(:hover) a:link .badge-nummer,
+  .repertoire tr.even:not(:hover) a:link .badge-nummer,
+  .repertoire tr.odd:not(:hover) a:visited .badge-nummer,
+  .repertoire tr.even:not(:hover) a:visited .badge-nummer {
+    background: #d7d7d6;
+  }
+}
+/**
+ * Foto's
+*/
+.voorbeeld .views-row {
+  float: left;
+  margin: 0 10px 0 0;
+}
+.voorbeeld .view-footer {
+  clear: both;
 }
 /**
  * Collapsible fieldsets

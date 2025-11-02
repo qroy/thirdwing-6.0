@@ -40,6 +40,56 @@
 	@media @tablet {
       padding: 12em/@fs;
 	}
+	&.taxonomy-Wereldlijk, &.taxonomy-Kerkelijk, &.taxonomy-Concours, &.taxonomy-Koorreis, &.taxonomy-Vergadering {
+	  h2 {
+	    a:link, a:visited { color: @red; }
+		a:hover, a:active, a:focus { color: @primary; }
+	  }
+	}
+	h2 {
+	  text-transform: uppercase;
+	  margin: 0;
+	  a:link, a:visited { color: @grey; }
+	  a:hover, a:active, a:focus { color: @primary; }
+	  vertical-align: middle;
+	  Font-size: 18em/@fs;
+      line-height: 36em/18;
+      @media @tablet {
+        font-size: 14em/@fs;
+        line-height: 36em/@fs;
+      }
+	}
+  }
+  .badge-date-wrapper {
+//	@media @tablet { display: inline-block; width: 257em/@fs; }
+  }
+  .badge-koor-tijd {
+    margin-right: 0;
+  }
+  .field-bijzonderheden {
+    font-style: italic;
+  }
+  .node-edit-link, .node-clone-link {
+    .icon-only();
+    &:link, &:visited { color: @grey-light; background: @white; }
+    &:active, &:hover, &:focus { background: @secondary; }
+    margin: 0 0 4em/@fs 4em/@fs;
+  }
+  .nd-region-left, .nd-region-right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 0 4em/@fs;
+    .field-datum, .field-locatie {
+      flex-grow: 1;
+    }
+    .field-items, .field-item {
+      width: 100%;
+    }
+    @media @tablet {
+//      display: block;
+    }
   }
 }
 .buildmode-teaser {
@@ -50,10 +100,14 @@
       left: 0;
       top: 0;
       right: 0;
+      bottom: 0;
       z-index: 0;
+      .field-items, .field-item {
+        height: 100%;
+      }
       .node-background {
         width: 100%;
-        height: 378em/@fs;
+        height: 100%;
         background-position: center 10%;
         background-size: cover;
         background-repeat: no-repeat;
@@ -65,7 +119,7 @@
           z-index: 1;
           display: block;
           width: 100%;
-          height: 378em/@fs;
+          height: 100%;
           background: @white;
           opacity: 0.75;
           .border-radius(@border-radius-large);
@@ -78,14 +132,14 @@
 // FIELD-AFBEELDINGEN
 .field-afbeeldingen {
   > .field-items > .field-item {
-  display: none;
-  &:first-child {
-    display: block;
-    float: right;
-    max-width: 50%;
-	max-height: 330em/@fs;
-	text-align: right;
-  }
+    display: none;
+    &:first-child {
+      display: block;
+      float: right;
+      max-width: 50%;
+	  max-height: 330em/@fs;
+	  text-align: right;
+    }
   }
 }
 .node-type-activiteit .field-afbeeldingen > .field-items > .field-item {
@@ -118,10 +172,12 @@
 .buildmode-teaser, .buildmode-full {
     > .nd-region-middle-wrapper > .nd-region-middle {
       > .field-title {
+        @media @tablet {
         height: 150em/@fs;
         display: table-cell;
 		vertical-align: bottom;
         overflow: hidden;
+        }
       }
     }
 }
