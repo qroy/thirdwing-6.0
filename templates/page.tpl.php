@@ -12,7 +12,6 @@
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">var $jq = jQuery.noConflict();</script> 
 <?php print $scripts ?>
-<script>$jq( function() { $( '#menu-main li:has(ul)' ).doubleTapToGo(); });</script>
 </head>
 <body class="page <?php print $body_classes; ?>">
 <header id="header" role="banner">
@@ -23,20 +22,18 @@
 <?php if ($site_slogan): ?><div id="logo-slogan"><?php print $site_slogan; ?></div><?php endif; ?>
 </div>
 <nav id="menu-wrapper" role="navigation">
-<div id="menu-main"><a href="#" class="toggle-nav button button-alt fa fa-bars">Menu</a><?php print $header; ?></div>
+<div id="menu-main"><button aria-expanded="false" aria-controls="main-menu" aria-label="Toggle menu" class="menu-toggle button button-alt fa fa-bars">Menu</button><?php print $header; ?></div>
 <div id="menu-service"><?php print $topbar; ?></div>
 </nav>
 </header>
 <main id="main">
 <?php if ($breadcrumb): print $breadcrumb; endif; ?>
-<?php if ($show_messages && $messages): print $messages; endif; ?>
-<?php print $help; ?>
-<div class="clear-block"></div>
-<?php if ($tabs): print '<div id="tabs"><ul class="tabs primary">'. $tabs .'</ul>'; endif; ?>
-<?php if ($tabs): print '</div>'; endif; ?>
 <?php if ($mission): print '<div id="mission">'. $mission .'</div>'; endif; ?>
 <?php if ($title): print '<h1>'. $title .'</h1>'; endif; ?>
-<?php if ($tabs2): print '<div id="tabs2"><ul class="tabs secondary">'. $tabs2 .'</ul></div>'; endif; ?>
+<?php if ($tabs): print '<div id="menu-local-1"><button aria-expanded="false" aria-controls="local-menu" aria-label="Toggle menu" class="local-toggle button button-alt fa fa-cogs">Bewerk</button><ul class="tabs">'. $tabs .'</ul></div>'; endif; ?>
+<?php if ($tabs2): print '<div id="menu-local-2"><ul class="tabs">'. $tabs2 .'</ul></div>'; endif; ?>
+<?php if ($show_messages && $messages): print $messages; endif; ?>
+<?php print $help; ?>
 <div class="clear-block"><?php print $before_content ?><?php print $content ?></div>
 <?php print $feed_icons ?>
 </main>

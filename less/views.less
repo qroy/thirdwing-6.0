@@ -202,6 +202,8 @@ a.video-thumb {
 	@media @phone-ls { grid-template-columns: repeat(3, 1fr); }
 	@media @tablet { grid-template-columns: repeat(4, 1fr); }
     @media @normal { grid-template-columns: repeat(6, 1fr); }
+	column-gap: 12em/@fs;
+	row-gap: 12em/@fs;
   }
   .views-row, .views-field-nothing, .field-content { display: contents; }
   &.personen-ledenlijst .view-content { grid-template-columns: 1fr; }
@@ -209,7 +211,6 @@ a.video-thumb {
     width: 100%;
     height: auto;
     box-sizing: border-box;
-    padding: 6em/@fs 6em/@fs;
   }
   .persoon {
     text-align: center;
@@ -238,6 +239,9 @@ a.video-thumb {
     > span {
       display: none;
     }
+  }
+  .persoon-positie {
+    display: none;
   }
   &.personen-leden, &.personen-ledenlijst, &.personen-opstelling {
     .persoon-wrapper {
@@ -361,6 +365,9 @@ a.video-thumb {
     .persoon-Z3,
     .persoon-Z4,
     .persoon-Z5	{ background: @grey-light; }
+	.persoon-positie {
+      display: block;
+    }
   }
   &.personen-ledenlijst {
     .persoon-foto {

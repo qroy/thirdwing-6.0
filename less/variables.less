@@ -59,11 +59,16 @@
 @normal-width:   (1000em  / @fs);
 @wide-width:     (1200em / @fs);
 
-@phone:   ~"screen and (min-width: @{phone-width} )";
-@phone-ls:~"screen and (min-width: @{phone-ls-width} )";
-@tablet:  ~"screen and (min-width: @{tablet-width} )";
-@normal:  ~"screen and (min-width: @{normal-width} )";
-@wide:    ~"screen and (min-width: @{wide-width})";
+@phone:   		~"screen and (min-width: @{phone-width} )";
+@phone-max:		~"screen and (max-width: @{phone-width} )";
+@phone-ls:		~"screen and (min-width: @{phone-ls-width} )";
+@phone-ls-max:	~"screen and (max-width: @{phone-ls-width} )";
+@tablet:  		~"screen and (min-width: @{tablet-width} )";
+@tablet-max:  	~"screen and (max-width: @{tablet-width} )";
+@normal:  		~"screen and (min-width: @{normal-width} )";
+@normal-max:  	~"screen and (max-width: @{normal-width} )";
+@wide:    		~"screen and (min-width: @{wide-width})";
+@wide-max:    	~"screen and (max-width: @{wide-width})";
 
 .box-shadow(@shadow:  @box-shadow-large) {
   @media screen {
