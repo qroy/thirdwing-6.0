@@ -22,7 +22,8 @@
 
 .buildmode-teaser, 
 .buildmode-full, 
-.buildmode-schema {
+.buildmode-schema,
+#node-form {
   &:not(:empty) {
     position: relative;
     background: @white;
@@ -35,7 +36,7 @@
 .buildmode-schema {
   &:not(:empty) {
     padding: 12em/@fs 12em/@fs 24em/@fs;
-    margin: 0 0 12em/@fs;
+    margin: 0;
 	min-height: 132em/@fs;
 	@media @tablet {
       padding: 12em/@fs;
@@ -193,8 +194,8 @@
 }
 
 //GRIDS FOR NODE-TYPE ACTIVITEIT
-.node-type-activiteit {
 @media @phone-ls {
+.node-type-activiteit {
   &.buildmode-full, &.buildmode-teaser, &.buildmode-schema {
     display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -290,6 +291,65 @@
   }
   .field-voornaam, .field-achternaam, .field-achternaam-voorvoegsel {
     text-transform: uppercase;
+  }
+}
+.buildmode-schema&.node-type-profiel {
+  display: grid;
+  column-gap: 12em/@fs;
+  row-gap: 12em/@fs;
+  align-items: end;
+  grid-template-columns: 90em/@fs auto;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas:
+   "node-header node-left"
+   ". node-main"
+   ". node-right"
+   ". node-footer";
+  @media @phone-ls {
+    grid-template-columns: 90em/@fs 180em/@fs auto;
+	grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+     "node-header node-left node-main"
+     ". . node-right"
+     ". . node-footer";
+  }
+  @media @tablet {
+    grid-template-columns: 90em/@fs 180em/@fs 1fr 1fr 110em/@fs;
+	grid-template-rows: auto;
+    grid-template-areas:
+    "node-header node-left node-main node-right node-footer";
+  }
+  .nd-region-header { grid-area: node-header; }
+  .nd-region-left { grid-area: node-left; }
+  .nd-region-middle-wrapper { display: contents; }
+  .nd-region-middle { grid-area: node-main; }
+  .nd-region-right { grid-area: node-right; }
+  .nd-region-footer { grid-area: node-footer; }
+  .badge-access-wrapper { display: none; }
+  &.clear-block:after { display: none; }
+  .field-author-picture > .picture {
+    height: 108em/@fs;
+	img {
+	  height: 100%;
+	  width: auto;
+	}
+  }
+  .field-voornaam, .field-achternaam, .field-achternaam-voorvoegsel, .field-lidsinds {
+    text-transform: uppercase;
+  }
+  .field-ds-group-adres {
+    display: inline-block;
+	line-height: 24em/@fs;
+	padding-left: 24em/@fs;
+	position: relative;
+	&:before {
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	}
+  }
+  .aspirant {
+    color: @red;
   }
 }
 

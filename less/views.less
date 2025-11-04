@@ -1,13 +1,10 @@
-/**
- * Ledenagenda
- */
-.agenda.agenda-leden {
-
+// LEDENAGENDA
+.agenda-leden .view-content {
+  display: grid;
+  row-gap: 12em/@fs;
 }
 
-/**
- * Opnamen
- */
+// Opnamen
 .opnamen {
   overflow: hidden;
   margin-right: -12em/@fs;
@@ -202,6 +199,9 @@ div.content-profile-display {
   border: 0;
 }
 .personen {
+  .buildmode-teaser {
+    margin: 0;
+  }
   .view-content {
     display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -212,157 +212,84 @@ div.content-profile-display {
 	row-gap: 12em/@fs;
   }
   .views-row, .views-field-nothing, .field-content { display: contents; }
-  &.personen-ledenlijst .view-content { grid-template-columns: 1fr; }
+  &.personen-ledenlijst .view-content { 
+    grid-template-columns: 1fr;
+  }
   
   .badge-functie-cie, .badge-functie { display: none; }
   
-  .persoon-wrapper {
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-  }
-  .persoon {
-    text-align: center;
-    font-size: 12em/@fs;
-    line-height: 24em/12;
-    .border-radius(@border-radius-large);
-    padding: 12em/12;
-    background: @white;
-  }
-  .persoon-foto {
-    height: 120em/12;
-    width: 90em/12;
-    margin: 0 auto;
-    img {
-      box-sizing: border-box;
-      width: 100%;
-      height: auto;
-    }
-  }
-  .persoon-naam {
-    text-transform: uppercase;
-    min-height: 48em/12;
-  }
-  .persoon-functie {
-    color: @red;
-    > span {
-      display: none;
-    }
-  }
-  .persoon-positie {
-    display: none;
-  }
-  &.personen-leden, &.personen-ledenlijst, &.personen-opstelling {
-    .persoon-wrapper {
-      height: auto;
-    }
-    .persoon {
-      background: @white;
-      padding: 12em/12 12em/12;
-    }
-    .persoon-foto {
-      width: 80%;
-      height: auto;
-    }
-    .persoon-naam { 
-      min-height: 24em/12;
-    }
-    .persoon-achternaam { display: none; }
-  }
   &.personen-opstelling {
     .view-content {
-	  grid-template-columns: repeat(16, 1fr);
-	  grid-template-rows: repeat(6, 1fr);
+	  column-gap: 6em/@fs;
+	  row-gap: 6em/@fs;
+	  grid-template-columns: repeat(6, 1fr);
+	  grid-template-rows: repeat(16, 1fr);
+	  @media @tablet {
+	    grid-template-columns: repeat(16, 1fr);
+	    grid-template-rows: repeat(6, 1fr);
+	  }
 	}
-    .persoon-wrapper {
-      width: 100%;
-      padding: 3em/@fs;
-	  
-	  &.persoon-101 { grid-column: 1; grid-row: 1;}
-	  &.persoon-102 { grid-column: 2; grid-row: 1;}
-	  &.persoon-103 { grid-column: 3; grid-row: 1;}
-	  &.persoon-104 { grid-column: 4; grid-row: 1;}
-	  &.persoon-105 { grid-column: 5; grid-row: 1;}
-	  &.persoon-106 { grid-column: 6; grid-row: 1;}
-	  &.persoon-107 { grid-column: 7; grid-row: 1;}
-	  &.persoon-108 { grid-column: 8; grid-row: 1;}
-	  &.persoon-109 { grid-column: 9; grid-row: 1;}
-	  &.persoon-110 { grid-column: 10; grid-row: 1;}
-	  &.persoon-111 { grid-column: 11; grid-row: 1;}
-	  &.persoon-112 { grid-column: 12; grid-row: 1;}
-	  &.persoon-113 { grid-column: 13; grid-row: 1;}
-	  &.persoon-114 { grid-column: 14; grid-row: 1;}
-	  &.persoon-115 { grid-column: 15; grid-row: 1;}
-	  &.persoon-116 { grid-column: 16; grid-row: 1;}
-	  
-	  &.persoon-201 { grid-column: 1; grid-row: 2;}
-	  &.persoon-202 { grid-column: 2; grid-row: 2;}
-	  &.persoon-203 { grid-column: 3; grid-row: 2;}
-	  &.persoon-204 { grid-column: 4; grid-row: 2;}
-	  &.persoon-205 { grid-column: 5; grid-row: 2;}
-	  &.persoon-206 { grid-column: 6; grid-row: 2;}
-	  &.persoon-207 { grid-column: 7; grid-row: 2;}
-	  &.persoon-208 { grid-column: 8; grid-row: 2;}
-	  &.persoon-209 { grid-column: 9; grid-row: 2;}
-	  &.persoon-210 { grid-column: 10; grid-row: 2;}
-	  &.persoon-211 { grid-column: 11; grid-row: 2;}
-	  &.persoon-212 { grid-column: 12; grid-row: 2;}
-	  &.persoon-213 { grid-column: 13; grid-row: 2;}
-	  &.persoon-214 { grid-column: 14; grid-row: 2;}
-	  &.persoon-215 { grid-column: 15; grid-row: 2;}
-	  &.persoon-216 { grid-column: 16; grid-row: 2;}
-	  
-	  &.persoon-301 { grid-column: 1; grid-row: 3;}
-	  &.persoon-302 { grid-column: 2; grid-row: 3;}
-	  &.persoon-303 { grid-column: 3; grid-row: 3;}
-	  &.persoon-304 { grid-column: 4; grid-row: 3;}
-	  &.persoon-305 { grid-column: 5; grid-row: 3;}
-	  &.persoon-306 { grid-column: 6; grid-row: 3;}
-	  &.persoon-307 { grid-column: 7; grid-row: 3;}
-	  &.persoon-308 { grid-column: 8; grid-row: 3;}
-	  &.persoon-309 { grid-column: 9; grid-row: 3;}
-	  &.persoon-310 { grid-column: 10; grid-row: 3;}
-	  &.persoon-311 { grid-column: 11; grid-row: 3;}
-	  &.persoon-312 { grid-column: 12; grid-row: 3;}
-	  &.persoon-313 { grid-column: 13; grid-row: 3;}
-	  &.persoon-314 { grid-column: 14; grid-row: 3;}
-	  &.persoon-315 { grid-column: 15; grid-row: 3;}
-	  &.persoon-316 { grid-column: 16; grid-row: 3;}
-	  
-	  &.persoon-401 { grid-column: 1; grid-row: 4;}
-	  &.persoon-402 { grid-column: 2; grid-row: 4;}
-	  &.persoon-403 { grid-column: 3; grid-row: 4;}
-	  &.persoon-404 { grid-column: 4; grid-row: 4;}
-	  &.persoon-405 { grid-column: 5; grid-row: 4;}
-	  &.persoon-406 { grid-column: 6; grid-row: 4;}
-	  &.persoon-407 { grid-column: 7; grid-row: 4;}
-	  &.persoon-408 { grid-column: 8; grid-row: 4;}
-	  &.persoon-409 { grid-column: 9; grid-row: 4;}
-	  &.persoon-410 { grid-column: 10; grid-row: 4;}
-	  &.persoon-411 { grid-column: 11; grid-row: 4;}
-	  &.persoon-412 { grid-column: 12; grid-row: 4;}
-	  &.persoon-413 { grid-column: 13; grid-row: 4;}
-	  &.persoon-414 { grid-column: 14; grid-row: 4;}
-	  &.persoon-415 { grid-column: 15; grid-row: 4;}
-	  &.persoon-416 { grid-column: 16; grid-row: 4;}
-	  
-	  &.persoon-500 { grid-row: 6;}
-	  &.persoon-601 { grid-column: 8; grid-row: 6;}
-    }
-    .persoon {
-      padding: 3em/12 3em/12;
-      font-size: 9em/@fs;
-      line-height: 24em/9;
-      @media @tablet {
-        font-size: 10em/@fs;
-        line-height: 24em/10;
-      }
-      @media @normal {
-        font-size: 12em/@fs;
-        line-height: 24em/12;
-      }
-      color: @white;
-    }
+	.buildmode-teaser {
+	  padding: 3em/@fs;
+	}
+	.field-voornaam { 
+	  color: @white;
+//	  font-size: 10em/@fs;
+//	  line-height: 24em/10;
+	  @media @tablet {
+	    font-size: 14em/@fs;
+	    line-height: 24em/@fs;
+	  }
+	}
+	.field-author-picture img { width: 100%; }
+	.persoon-positie-R1 { grid-column: 4; }
+	.persoon-positie-R2 { grid-column: 3; }
+	.persoon-positie-R3 { grid-column: 2; }
+	.persoon-positie-R4 { grid-column: 1; }
+	.persoon-positie-RB { grid-column: 6; }
+	.persoon-positie-RD { grid-column: 6; grid-row: 8;}
+	.persoon-positie-RND { display: none; }
+	.persoon-positie-K01 { grid-row: 16; }
+	.persoon-positie-K02 { grid-row: 15; }
+	.persoon-positie-K03 { grid-row: 14; }
+	.persoon-positie-K04 { grid-row: 13; }
+	.persoon-positie-K05 { grid-row: 12; }
+	.persoon-positie-K06 { grid-row: 11; }
+	.persoon-positie-K07 { grid-row: 10; }
+	.persoon-positie-K08 { grid-row: 9; }
+	.persoon-positie-K09 { grid-row: 8; }
+	.persoon-positie-K10 { grid-row: 7; }
+	.persoon-positie-K11 { grid-row: 6; }
+	.persoon-positie-K12 { grid-row: 5; }
+	.persoon-positie-K13 { grid-row: 4; }
+	.persoon-positie-K14 { grid-row: 3; }
+	.persoon-positie-K15 { grid-row: 2; }
+	.persoon-positie-K16 { grid-row: 1; }
+	@media @tablet {
+	.persoon-positie-R1 { grid-row: 4; }
+	.persoon-positie-R2 { grid-row: 3; }
+	.persoon-positie-R3 { grid-row: 2; }
+	.persoon-positie-R4 { grid-row: 1; }
+	.persoon-positie-RB { grid-row: 6; grid-column: auto }
+	.persoon-positie-RD { grid-row: 6; grid-column: 8; }
+	.persoon-positie-K01 { grid-column: 1; }
+	.persoon-positie-K02 { grid-column: 2; }
+	.persoon-positie-K03 { grid-column: 3; }
+	.persoon-positie-K04 { grid-column: 4; }
+	.persoon-positie-K05 { grid-column: 5; }
+	.persoon-positie-K06 { grid-column: 6; }
+	.persoon-positie-K07 { grid-column: 7; }
+	.persoon-positie-K08 { grid-column: 8; }
+	.persoon-positie-K09 { grid-column: 9; }
+	.persoon-positie-K10 { grid-column: 10; }
+	.persoon-positie-K11 { grid-column: 11; }
+	.persoon-positie-K12 { grid-column: 12; }
+	.persoon-positie-K13 { grid-column: 13; }
+	.persoon-positie-K14 { grid-column: 14; }
+	.persoon-positie-K15 { grid-column: 15; }
+	.persoon-positie-K16 { grid-column: 16; }
+	}
+	
     .persoon-A  { background: @red; }
     .persoon-B  { background: @blue; }
     .persoon-C  { background: @purple; }
@@ -374,19 +301,6 @@ div.content-profile-display {
     .persoon-Z3,
     .persoon-Z4,
     .persoon-Z5	{ background: @grey-light; }
-	.persoon-positie {
-      display: block;
-    }
-  }
-  &.personen-ledenlijst {
-    .persoon-foto {
-      width: 58em/@fs;
-    }
-    .badge.persoon-aspirant {
-      @media screen {
-        background: @red;
-      }
-    }
   }
 }
 .personen-leden, .personen-opstelling {
@@ -395,6 +309,7 @@ div.content-profile-display {
 .personen-leden .badge-functie,
 .personen-ledenlijst .badge-functie,
 .personen-band .badge-functie 					{ display: inline-block; }
+.personen-ledenlijst	.field-functie-bestuur,
 .personen-bestuur		.field-functie-bestuur	{ display: inline-block; }
 .personen-mc			.field-functie-mc		{ display: inline-block; }
 .personen-regie			.field-functie-regie	{ display: inline-block; }
@@ -407,40 +322,7 @@ div.content-profile-display {
 .personen-fl			.field-functie-fl		{ display: inline-block; }
 .personen-verjaardag	.field-geboortedatum	{ display: inline-block; }
 
-.persoon-aspirant {
-  @media screen { 
-    color: @red; 
-    a:link, a:visited {
-      color: @red;
-    }
-    a:hover, a:active {
-      color: @primary;
-    }
-  }
-  @media print { font-style: italic; }
-}
-.personen-ledenlijst {
-  .views-field-field-lidsinds-value.persoon-aspirant {
-    .date-display-single {
-      display: none;
-    }
-    &:after {
-      content: 'Aspirant';
-      font-size: 12em/@fs;
-      line-height: 24em/12;
-      text-transform: uppercase;
-    }
-  }
-  .persoon-functie-bestuur {
-    color: @red; 
-  }
-}
-
-
-/**
- * Repertoire
- */
-
+// REPERTOIRE
 .repertoire {
   .repertoire-programma {
     color: @red;
@@ -458,11 +340,7 @@ div.content-profile-display {
     }
   }
 }
-
-/**
- * Foto's
-*/
-
+// FOTOS
 .voorbeeld .views-row {
   float: left;
   margin: 0 10px 0 0;

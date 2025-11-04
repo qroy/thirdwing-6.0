@@ -63,34 +63,81 @@ function phptemplate_preprocess_page(&$vars, $hook) {
 }
 function phptemplate_preprocess_node(&$vars) {
   if (module_exists('taxonomy') && $vars['node']->nid) {
-	$term_divs = array();
+    // Define mapping for short codes
+    $access_labels = array(
+      'Bezoekers' => 'BEZ',
+      'Vrienden' => 'VRI',
+      'Aspirant-Leden' => 'ASP',
+      'Leden' => 'LED',
+      'Bestuur' => 'BES',
+      'Muziekcommissie' => 'MC',
+      'Concertcommissie' => 'CC',
+      'Commissie Interne Relaties' => 'IR',
+      'Commissie Koorregie' => 'REG',
+      'Feestcommissie' => 'FC',
+      'Band' => 'BAN',
+      'Beheer' => 'BEH',
+    );
+    
+    $term_divs = array();
     foreach (taxonomy_node_get_terms($vars['node']) as $term) {
-	  $class = preg_replace('/[^a-zA-Z0-9-]+/', '-', $term->name);
-	  if ($class == 'Bezoekers') { $class_short = 'BEZ'; }
-	  if ($class == 'Vrienden') { $class_short = 'VRI'; }
-	  if ($class == 'Aspirant-Leden') { $class_short = 'ASP'; }
-	  if ($class == 'Leden') { $class_short = 'LED'; }
-	  if ($class == 'Bestuur') { $class_short = 'BES'; }
-	  if ($class == 'Muziekcommissie') { $class_short = 'MC'; }
-	  if ($class == 'Concertcommissie') { $class_short = 'CC'; }
-	  if ($class == 'Commissie Interne Relaties') { $class_short = 'IR'; }
-	  if ($class == 'Commissie Koorregie') { $class_short = 'REG'; }
-	  if ($class == 'Feestcommissie') { $class_short = 'FC'; }
-	  if ($class == 'Band') { $class_short = 'BAN'; }
-	  if ($class == 'Beheer') { $class_short = 'BEH'; }
-      $vars['node_classes'] = $vars['node_classes'] . ' taxonomy-' . $class;
-	  if ($term->vid == '4') {
-        $term_divs[] = '<span class="badge-access badge-access-' . $class . '" title="Zichtbaar voor ' . $class . '">' . $class_short . '</span>';
-	  }
-	  $class = '';
+      $class = preg_replace('/[^a-zA-Z0-9-]+/', '-', $term->name);
+      $vars['node_classes'] .= ' taxonomy-' . $class;
+      
+      // Only create badges for vocabulary 4
+      if ($term->vid == '4' && isset($access_labels[$term->name])) {
+        $class_short = $access_labels[$term->name];
+        $term_divs[] = '<span class="badge-access badge-access-' . $class . '" title="Zichtbaar voor ' . check_plain($term->name) . '">' . $class_short . '</span>';
+      }
     }
-	$vars['taxonomy_term_divs'] = '<div class="badge-access-wrapper">' . implode("\n", $term_divs) . '</div>';
+    
+    if (!empty($term_divs)) {
+      $vars['taxonomy_term_divs'] = '<div class="badge-access-wrapper">' . implode("\n", $term_divs) . '</div>';
+    }
   }
-  if ($vars['node']->field_afbeeldingen[0]['filepath'] && $vars['node']->sticky) {
-    $vars['node_classes'] = $vars['node_classes'] . ' node-hero';
+  
+  // Add hero class for sticky nodes with images
+  if (!empty($vars['node']->field_afbeeldingen[0]['filepath']) && $vars['node']->sticky) {
+    $vars['node_classes'] .= ' node-hero';
   }
-  if ($vars['node']->field_background[0]['filepath'] && $vars['node']->type == 'activiteit') {
-    $vars['node_classes'] = $vars['node_classes'] . ' node-hero';
+  
+  // Add hero class for activity nodes with backgrounds
+  if (!empty($vars['node']->field_background[0]['filepath']) && $vars['node']->type == 'activiteit') {
+    $vars['node_classes'] .= ' node-hero';
+  }
+  
+  // Add field-based classes for profiel content type
+  if ($vars['node']->type == 'profiel') {
+    // Add class based on field_koor select key
+    if (!empty($vars['node']->field_koor[0]['value'])) {
+      $koorfunctie_key = $vars['node']->field_koor[0]['value'];
+      $vars['node_classes'] .= ' persoon-' . $koorfunctie_key;
+    }
+	// Add class based on field_koor select key
+    if (!empty($vars['node']->field_positie[0]['value'])) {
+      $koorpositie_key = $vars['node']->field_positie[0]['value'];
+      $vars['node_classes'] .= ' persoon-positie-' . $koorpositie_key;
+    }
+	// Add class based on field_koor select key
+    if (!empty($vars['node']->field_positie_rij[0]['value'])) {
+      $koorpositie_rij_key = $vars['node']->field_positie_rij[0]['value'];
+      $vars['node_classes'] .= ' persoon-positie-' . $koorpositie_rij_key;
+    }
+	// Add class based on field_koor select key
+    if (!empty($vars['node']->field_positie_kolom[0]['value'])) {
+      $koorpositie_kolom_key = $vars['node']->field_positie_kolom[0]['value'];
+      $vars['node_classes'] .= ' persoon-positie-' . $koorpositie_kolom_key;
+    }
+	// Add classes based on author's roles
+    if ($vars['node']->uid) {
+      $author = user_load($vars['node']->uid);
+      if (!empty($author->roles)) {
+        foreach ($author->roles as $rid => $role_name) {
+          $role_class = preg_replace('/[^a-zA-Z0-9-]+/', '-', strtolower($role_name));
+          $vars['node_classes'] .= ' persoon-groep-' . $role_class;
+        }
+      }
+    }
   }
 }
 
