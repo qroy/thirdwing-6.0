@@ -1426,6 +1426,10 @@ body.two-sidebars #grid #sidebar-right {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
+.buildmode-teaser > .node.node-type-profiel {
+  margin: 0;
+  padding: 1.71428571em;
+}
 .buildmode-teaser > .node > div {
   /* header region */
 }
@@ -1500,6 +1504,23 @@ body.two-sidebars #grid #sidebar-right {
 }
 .node.node-type-locatie > div > div > .field-l-plaats {
   color: #e9584c;
+}
+.buildmode-teaser .node-type-profiel {
+  font-size: 0.85714286em;
+  line-height: 2em;
+  text-align: center;
+}
+.buildmode-teaser .node-type-profiel .field-author-picture {
+  width: 100%;
+}
+.buildmode-teaser .node-type-profiel .field-author-picture img {
+  width: 80%;
+  height: auto;
+}
+.buildmode-teaser .node-type-profiel .field-voornaam,
+.buildmode-teaser .node-type-profiel .field-achternaam,
+.buildmode-teaser .node-type-profiel .field-achternaam-voorvoegsel {
+  text-transform: uppercase;
 }
 .front h1 {
   display: none;
@@ -2157,9 +2178,19 @@ a.video-thumb:focus {
 /**
  * Combo en Bestuur en Commissies
  */
+.profile > .picture {
+  display: none;
+}
+div.content-profile-display {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
 .personen .view-content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  column-gap: 0.85714286em;
+  row-gap: 0.85714286em;
 }
 @media screen and (min-width: 59.285714285714285em ) {
   .personen .view-content {
@@ -2178,6 +2209,10 @@ a.video-thumb:focus {
 }
 .personen.personen-ledenlijst .view-content {
   grid-template-columns: 1fr;
+}
+.personen .badge-functie-cie,
+.personen .badge-functie {
+  display: none;
 }
 .personen .persoon-wrapper {
   width: 100%;
@@ -2564,6 +2599,50 @@ a.video-thumb:focus {
     background: #e9584c;
   }
 }
+.personen-leden .field-achternaam,
+.personen-opstelling .field-achternaam,
+.personen-leden .field-achternaam-voorvoegsel,
+.personen-opstelling .field-achternaam-voorvoegsel {
+  display: none;
+}
+.personen-leden .badge-functie,
+.personen-ledenlijst .badge-functie,
+.personen-band .badge-functie {
+  display: inline-block;
+}
+.personen-bestuur .field-functie-bestuur {
+  display: inline-block;
+}
+.personen-mc .field-functie-mc {
+  display: inline-block;
+}
+.personen-regie .field-functie-regie {
+  display: inline-block;
+}
+.personen-concert .field-functie-concert {
+  display: inline-block;
+}
+.personen-pr .field-functie-pr {
+  display: inline-block;
+}
+.personen-ir .field-functie-ir {
+  display: inline-block;
+}
+.personen-feest .field-functie-feest {
+  display: inline-block;
+}
+.personen-tec .field-functie-tec {
+  display: inline-block;
+}
+.personen-lw .field-functie-lw {
+  display: inline-block;
+}
+.personen-fl .field-functie-fl {
+  display: inline-block;
+}
+.personen-verjaardag .field-geboortedatum {
+  display: inline-block;
+}
 .personen-leden .persoon-functie .persoon-functie-koor,
 .personen-ledenlijst .persoon-functie .persoon-functie-koor,
 .personen-wie .persoon-functie .persoon-functie-koor,
@@ -2760,6 +2839,10 @@ a.video-thumb:focus {
   .badge.badge-functie-Z5 {
     background: #d7d7d6;
   }
+}
+.badge.badge-functie-cie {
+  color: #e9584c;
+  background: transparent;
 }
 .badge.badge-sleepgroep {
   width: 2.28571429em;
@@ -3071,6 +3154,10 @@ a.video-thumb:focus {
   .marker.badge-functie-Z5 {
     background: #d7d7d6;
   }
+}
+.marker.badge-functie-cie {
+  color: #e9584c;
+  background: transparent;
 }
 .marker.badge-sleepgroep {
   width: 2.28571429em;

@@ -162,6 +162,11 @@
 	padding-bottom: 0;
     margin: 0 0 48em/@fs;
     .border-radius(@border-radius-large);
+	
+	&.node-type-profiel {
+	  margin: 0;
+	  padding: 24em/@fs;
+	}
 
     > div { /* header region */
       > .field-background {
@@ -236,6 +241,21 @@
   }
   > .field-l-plaats {
     color: @red;
+  }
+}
+.buildmode-teaser .node-type-profiel {
+  font-size: 12em/@fs;
+  line-height: 24em/12;
+  text-align: center;
+  .field-author-picture {
+    width: 100%;
+	img {
+	  width: 80%;
+	  height: auto;
+	}
+  }
+  .field-voornaam, .field-achternaam, .field-achternaam-voorvoegsel {
+    text-transform: uppercase;
   }
 }
 .front h1 {

@@ -263,15 +263,28 @@ a.video-thumb {
 /**
  * Combo en Bestuur en Commissies
  */
+.profile > .picture {
+  display: none;
+}
+div.content-profile-display {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
 .personen {
   .view-content {
     display: grid;
 	grid-template-columns: repeat(4, 1fr);      
 	@media @tablet { grid-template-columns: repeat(5, 1fr); }
     @media @normal { grid-template-columns: repeat(6, 1fr); }
+	column-gap: 12em/@fs;
+	row-gap: 12em/@fs;
   }
   .views-row, .views-field-nothing, .field-content { display: contents; }
   &.personen-ledenlijst .view-content { grid-template-columns: 1fr; }
+  
+  .badge-functie-cie, .badge-functie { display: none; }
+  
   .persoon-wrapper {
     width: 100%;
     height: auto;
@@ -440,6 +453,25 @@ a.video-thumb {
     }
   }
 }
+
+.personen-leden, .personen-opstelling {
+  .field-achternaam, .field-achternaam-voorvoegsel { display: none; }
+}
+.personen-leden .badge-functie,
+.personen-ledenlijst .badge-functie,
+.personen-band .badge-functie 					{ display: inline-block; }
+.personen-bestuur		.field-functie-bestuur	{ display: inline-block; }
+.personen-mc			.field-functie-mc		{ display: inline-block; }
+.personen-regie			.field-functie-regie	{ display: inline-block; }
+.personen-concert		.field-functie-concert	{ display: inline-block; }
+.personen-pr			.field-functie-pr		{ display: inline-block; }
+.personen-ir			.field-functie-ir		{ display: inline-block; }
+.personen-feest			.field-functie-feest	{ display: inline-block; }
+.personen-tec			.field-functie-tec		{ display: inline-block; }
+.personen-lw			.field-functie-lw		{ display: inline-block; }
+.personen-fl			.field-functie-fl		{ display: inline-block; }
+.personen-verjaardag	.field-geboortedatum	{ display: inline-block; }
+
 .personen-leden      .persoon-functie .persoon-functie-koor,
 .personen-ledenlijst .persoon-functie .persoon-functie-koor,
 .personen-wie        .persoon-functie .persoon-functie-koor,
