@@ -26,7 +26,7 @@
   &:not(:empty) {
     position: relative;
     background: @white;
-    padding: 24em/@fs 24em/@fs;
+    padding: 24em/@fs;
     margin: 0 0 24em/@fs;
     .border-radius(@border-radius-large);
 	box-sizing: border-box;
@@ -40,50 +40,6 @@
 	@media @tablet {
       padding: 12em/@fs;
 	}
-	&.taxonomy-Wereldlijk, &.taxonomy-Kerkelijk, &.taxonomy-Concours, &.taxonomy-Koorreis, &.taxonomy-Vergadering {
-	  h2 {
-	    a:link, a:visited { color: @red; }
-		a:hover, a:active, a:focus { color: @primary; }
-	  }
-	}
-	h2 {
-	  text-transform: uppercase;
-	  margin: 0;
-	  a:link, a:visited { color: @grey; }
-	  a:hover, a:active, a:focus { color: @primary; }
-	  vertical-align: middle;
-	  Font-size: 18em/@fs;
-      line-height: 36em/18;
-      @media @tablet {
-        font-size: 14em/@fs;
-        line-height: 36em/@fs;
-      }
-	}
-  }
-  .badge-koor-tijd {
-    margin-right: 0;
-  }
-  .field-bijzonderheden {
-    font-style: italic;
-  }
-  .node-edit-link, .node-clone-link {
-    .icon-only();
-    &:link, &:visited { color: @grey-light; background: @white; }
-    &:active, &:hover, &:focus { background: @secondary; }
-    margin: 0 0 4em/@fs 4em/@fs;
-  }
-  .nd-region-left, .nd-region-right {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: flex-start;
-    gap: 0 4em/@fs;
-    .field-datum, .field-locatie {
-      flex-grow: 1;
-    }
-    .field-items, .field-item {
-      width: 100%;
-    }
   }
 }
 .buildmode-teaser {
@@ -274,7 +230,68 @@
   }
 }
 }
-
+// FIELDS FOR ACTIVITEIT SCHEMA
+.buildmode-schema&.node-type-activiteit {
+  &.taxonomy-Wereldlijk, &.taxonomy-Kerkelijk, &.taxonomy-Concours, &.taxonomy-Koorreis, &.taxonomy-Vergadering {
+    h2 {
+      a:link, a:visited { color: @red; }
+      a:hover, a:active, a:focus { color: @primary; }
+	}
+  }
+  h2 {
+    text-transform: uppercase;
+    margin: 0;
+    a:link, a:visited { color: @grey; }
+    a:hover, a:active, a:focus { color: @primary; }
+    vertical-align: middle;
+    font-size: 18em/@fs;
+    line-height: 36em/18;
+    @media @tablet {
+      font-size: 14em/@fs;
+      line-height: 36em/@fs;
+    }
+  }
+  .badge-koor-tijd {
+    margin-right: 0;
+  }
+  .field-bijzonderheden {
+    font-style: italic;
+  }
+  .node-edit-link, .node-clone-link {
+    .icon-only();
+    &:link, &:visited { color: @grey-light; background: @white; }
+    &:active, &:hover, &:focus { background: @secondary; }
+    margin: 0 0 4em/@fs 4em/@fs;
+  }
+  .nd-region-left, .nd-region-right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 0 4em/@fs;
+    .field-datum, .field-locatie {
+      flex-grow: 1;
+    }
+    .field-items, .field-item {
+      width: 100%;
+    }
+  }
+}
+.buildmode-teaser&.node-type-profiel {
+  font-size: 12em/@fs;
+  line-height: 24em/12;
+  text-align: center;
+  .field-author-picture {
+    width: 100%;
+	img {
+	  width: 80%;
+	  height: auto;
+	}
+  }
+  .field-voornaam, .field-achternaam, .field-achternaam-voorvoegsel {
+    text-transform: uppercase;
+  }
+}
 
 
 .front h1 {

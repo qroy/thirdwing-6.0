@@ -192,9 +192,15 @@ a.video-thumb {
   }
 }
 
-/**
- * Combo en Bestuur en Commissies
- */
+// LEDEN WEERGAVEN
+.profile > .picture {
+  display: none;
+}
+div.content-profile-display {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
 .personen {
   .view-content {
     display: grid;
@@ -207,6 +213,9 @@ a.video-thumb {
   }
   .views-row, .views-field-nothing, .field-content { display: contents; }
   &.personen-ledenlijst .view-content { grid-template-columns: 1fr; }
+  
+  .badge-functie-cie, .badge-functie { display: none; }
+  
   .persoon-wrapper {
     width: 100%;
     height: auto;
@@ -373,16 +382,6 @@ a.video-thumb {
     .persoon-foto {
       width: 58em/@fs;
     }
-    tr {
-      &.odd, &.even {
-        &:not(:hover) {
-          .badge-sleepgroep,
-          .badge-functie {
-            @media screen { background: @grey-light; }
-          }
-        }
-      }
-    }
     .badge.persoon-aspirant {
       @media screen {
         background: @red;
@@ -390,21 +389,23 @@ a.video-thumb {
     }
   }
 }
-.personen-leden      .persoon-functie .persoon-functie-koor,
-.personen-ledenlijst .persoon-functie .persoon-functie-koor,
-.personen-wie        .persoon-functie .persoon-functie-koor,
-.personen-band       .persoon-functie .persoon-functie-koor       { display: inline-block; }
-.personen-bestuur    .persoon-functie .persoon-functie-bestuur    { display: inline-block; }
-.personen-mc         .persoon-functie .persoon-functie-mc         { display: inline-block; }
-.personen-regie      .persoon-functie .persoon-functie-regie      { display: inline-block; }
-.personen-concert    .persoon-functie .persoon-functie-concert    { display: inline-block; }
-.personen-pr         .persoon-functie .persoon-functie-pr         { display: inline-block; }
-.personen-ir         .persoon-functie .persoon-functie-ir         { display: inline-block; }
-.personen-feest      .persoon-functie .persoon-functie-feest      { display: inline-block; }
-.personen-tec        .persoon-functie .persoon-functie-tec        { display: inline-block; }
-.personen-lw         .persoon-functie .persoon-functie-lw         { display: inline-block; }
-.personen-fl         .persoon-functie .persoon-functie-fl         { display: inline-block; }
-.personen-verjaardag .persoon-functie .persoon-functie-verjaardag { display: inline-block; }
+.personen-leden, .personen-opstelling {
+  .field-achternaam, .field-achternaam-voorvoegsel { display: none; }
+}
+.personen-leden .badge-functie,
+.personen-ledenlijst .badge-functie,
+.personen-band .badge-functie 					{ display: inline-block; }
+.personen-bestuur		.field-functie-bestuur	{ display: inline-block; }
+.personen-mc			.field-functie-mc		{ display: inline-block; }
+.personen-regie			.field-functie-regie	{ display: inline-block; }
+.personen-concert		.field-functie-concert	{ display: inline-block; }
+.personen-pr			.field-functie-pr		{ display: inline-block; }
+.personen-ir			.field-functie-ir		{ display: inline-block; }
+.personen-feest			.field-functie-feest	{ display: inline-block; }
+.personen-tec			.field-functie-tec		{ display: inline-block; }
+.personen-lw			.field-functie-lw		{ display: inline-block; }
+.personen-fl			.field-functie-fl		{ display: inline-block; }
+.personen-verjaardag	.field-geboortedatum	{ display: inline-block; }
 
 .persoon-aspirant {
   @media screen { 
