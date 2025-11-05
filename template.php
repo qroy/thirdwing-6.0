@@ -66,6 +66,13 @@ function phptemplate_preprocess_node(&$vars) {
       $vars['node_classes'] = $vars['node_classes'] . ' taxonomy-' . eregi_replace('[^a-z0-9]', '-', $term->name);
     }
   }
+  if ($vars['node']->type == 'activiteit') {
+    // Add class based on field_activiteit_status select key
+    if (!empty($vars['node']->field_activiteit_status[0]['value'])) {
+      $status_key = $vars['node']->field_activiteit_status[0]['value'];
+      $vars['node_classes'] .= ' node-status-' . $status_key;
+    }
+  }
 }
 
 

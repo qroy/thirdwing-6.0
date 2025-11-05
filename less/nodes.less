@@ -27,7 +27,7 @@
 	box-sizing: border-box;
     padding: 10em/@fs;
     margin: 0 0 12em/@fs;
-	border: 2em/@fs solid @white-off;
+	border: 3em/@fs solid @white-off;
   }
 }
 .buildmode-full, .buildmode-teaser, .buildmode-schema {
@@ -65,6 +65,9 @@
 	"node-left node-main node-right";
 	column-gap: 24em/@fs;
 	row-gap: 0;
+	&.node-status-optie {
+	  border: 3em/@fs dashed @red;
+	}
   }
 }
 .buildmode-full, .buildmode-teaser {

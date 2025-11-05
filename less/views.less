@@ -17,10 +17,6 @@
       }
 	}
   }
-  .views-field-field-bijzonderheden-value {
-    font-size: 12em/16;
-    line-height: 24em/12;
-  }
 
   &.agenda-leden {
     .views-field-field-datum-value {
@@ -52,14 +48,15 @@
 	  a:link, a:visited { color: @grey; }
 	  a:hover, a:active, a:focus { color: @primary; }
 	}
-	.field-bijzonderheden {
+	.field-bijzonderheden, .field-kledingcode a {
 	  font-style: italic;
 	}
 	.node-edit-link, .node-clone-link {
-	  .icon-only();
-	  &:link, &:visited { background: @grey-light; }
-	  &:active, &:hover, &:focus { background: @secondary; }
-	}
+      .icon-only();
+      &:link, &:visited { color: @grey-light; background: @white; }
+      &:active, &:hover, &:focus { background: @secondary; }
+      margin: 0 0 4em/@fs 4em/@fs;
+    }
 	.taxonomy-Wereldlijk, .taxonomy-Kerkelijk, .taxonomy-Concours, .taxonomy-Koorreis, .taxonomy-Vergadering {
       background: @white-off;
 	  padding: 7em/@fs;

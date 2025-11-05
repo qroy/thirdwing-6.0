@@ -1237,7 +1237,7 @@ body.two-sidebars #grid #sidebar-right {
   box-sizing: border-box;
   padding: 0.71428571em;
   margin: 0 0 0.85714286em;
-  border: 0.14285714em solid #f0f0ee;
+  border: 0.21428571em solid #f0f0ee;
 }
 .buildmode-full .node-type-activiteit,
 .buildmode-teaser .node-type-activiteit,
@@ -1280,6 +1280,9 @@ body.two-sidebars #grid #sidebar-right {
   grid-template-areas: "node-left node-main node-right";
   column-gap: 1.71428571em;
   row-gap: 0;
+}
+.buildmode-schema .node-type-activiteit.node-status-optie {
+  border: 0.21428571em dashed #e9584c;
 }
 .buildmode-full > .node > div,
 .buildmode-teaser > .node > div {
@@ -1818,10 +1821,6 @@ tr.dblog-access-denied td.active {
 .agenda .views-field-title .title a:focus {
   color: #3c329b;
 }
-.agenda .views-field-field-bijzonderheden-value {
-  font-size: 0.75em;
-  line-height: 2em;
-}
 .agenda.agenda-leden .views-field-field-datum-value {
   width: 28.07142857em;
 }
@@ -1858,7 +1857,8 @@ tr.dblog-access-denied td.active {
 .agenda.agenda-leden h2 a:focus {
   color: #3c329b;
 }
-.agenda.agenda-leden .field-bijzonderheden {
+.agenda.agenda-leden .field-bijzonderheden,
+.agenda.agenda-leden .field-kledingcode a {
   font-style: italic;
 }
 .agenda.agenda-leden .node-edit-link,
@@ -1871,6 +1871,7 @@ tr.dblog-access-denied td.active {
   /* for absolute positioning of icon */
   vertical-align: bottom;
   width: 1.71428571em;
+  margin: 0 0 0.28571429em 0.28571429em;
 }
 .agenda.agenda-leden .node-edit-link:before,
 .agenda.agenda-leden .node-clone-link:before {
@@ -1888,7 +1889,8 @@ tr.dblog-access-denied td.active {
 .agenda.agenda-leden .node-clone-link:link,
 .agenda.agenda-leden .node-edit-link:visited,
 .agenda.agenda-leden .node-clone-link:visited {
-  background: #d7d7d6;
+  color: #d7d7d6;
+  background: #ffffff;
 }
 .agenda.agenda-leden .node-edit-link:active,
 .agenda.agenda-leden .node-clone-link:active,
