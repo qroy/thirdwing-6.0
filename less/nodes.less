@@ -223,8 +223,18 @@
 }
 
 //GRIDS FOR NODE-TYPE ACTIVITEIT
-@media @phone-ls {
 .node-type-activiteit {
+  @media @phone-ls-max {
+  &.buildmode-schema {
+    display: grid;
+	grid-template-rows: auto auto auto;
+	row-gap: 12em/@fs;
+	.nd-region-left { grid-row: 1; }
+	.nd-region-middle-wrapper { grid-row: 2; }
+	.nd-region-right { grid-row: 3; }
+  }
+  }
+  @media @phone-ls {
   &.buildmode-full, &.buildmode-teaser, &.buildmode-schema {
     display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -258,7 +268,7 @@
   .nd-region-footer {
     grid-area: node-footer;
   }
-}
+  }
 }
 // FIELDS FOR ACTIVITEIT SCHEMA
 .buildmode-schema&.node-type-activiteit {
@@ -286,6 +296,7 @@
   }
   .field-bijzonderheden, .field-kledingcode a {
     font-style: italic;
+	margin-bottom: 12em/@fs;
   }
   .node-edit-link, .node-clone-link {
     .icon-only();

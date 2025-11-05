@@ -2300,6 +2300,22 @@ badge-access-wrapper {
 .node-hero #main > h1 {
   display: none;
 }
+@media screen and (max-width: 43.57142857142857em ) {
+  .node-type-activiteit.buildmode-schema {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    row-gap: 0.85714286em;
+  }
+  .node-type-activiteit.buildmode-schema .nd-region-left {
+    grid-row: 1;
+  }
+  .node-type-activiteit.buildmode-schema .nd-region-middle-wrapper {
+    grid-row: 2;
+  }
+  .node-type-activiteit.buildmode-schema .nd-region-right {
+    grid-row: 3;
+  }
+}
 @media screen and (min-width: 43.57142857142857em ) {
   .node-type-activiteit.buildmode-full,
   .node-type-activiteit.buildmode-teaser,
@@ -2391,6 +2407,7 @@ badge-access-wrapper {
 .buildmode-schema.node-type-activiteit .field-bijzonderheden,
 .buildmode-schema.node-type-activiteit .field-kledingcode a {
   font-style: italic;
+  margin-bottom: 0.85714286em;
 }
 .buildmode-schema.node-type-activiteit .node-edit-link,
 .buildmode-schema.node-type-activiteit .node-clone-link {
