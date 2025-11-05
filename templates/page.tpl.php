@@ -6,14 +6,16 @@
 <?php print $head ?>
 <title><?php print $head_title ?></title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<?php if ($hero): print '<style>#header-bg { background-image: url(/' . $hero . '); }</style>'; endif; ?>
+<?php if ($hero): print '<style>.page-bg { background-image: url(/' . $hero . '); }</style>'; endif; ?>
 <?php print $styles ?>
 <link rel="apple-touch-icon" href="<?php print base_path() . path_to_theme() ?>/images/apple-touch-icon.png" />
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">var $jq = jQuery.noConflict();</script> 
 <?php print $scripts ?>
 </head>
-<body class="page <?php print $body_classes; ?>">
+<body class="<?php print $body_classes; ?>">
+<div class="page-bg"></div>
+<div class="page">
 <header id="header" role="banner">
 <div id="logo">
 <?php if ($logo): ?><a href="/" title="Keer terug naar home"><div id="logo-img"></div><?php endif; ?>
@@ -44,6 +46,7 @@
 </footer>
 <div id="header-bg"></div>
 <div id="footer-bg"></div>
+</div>
 <?php print $closure ?>
 </body>
 </html>

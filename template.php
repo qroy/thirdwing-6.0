@@ -105,7 +105,13 @@ function phptemplate_preprocess_node(&$vars) {
   if (!empty($vars['node']->field_background[0]['filepath']) && $vars['node']->type == 'activiteit') {
     $vars['node_classes'] .= ' node-hero';
   }
-  
+  if ($vars['node']->type == 'activiteit') {
+    // Add class based on field_activiteit_status select key
+    if (!empty($vars['node']->field_activiteit_status[0]['value'])) {
+      $status_key = $vars['node']->field_activiteit_status[0]['value'];
+      $vars['node_classes'] .= ' node-status-' . $status_key;
+    }
+  }
   // Add field-based classes for profiel content type
   if ($vars['node']->type == 'profiel') {
     // Add class based on field_koor select key

@@ -113,10 +113,18 @@
     li.first.last > a { .border-radius(@border-radius-small); }
   }
 }
-#menu-wrapper :not(li) > ul.menu > li > ul {
-  // LEVEL 2
+#menu-wrapper :not(li) > ul.menu > li > ul,
+#menu-wrapper :not(li) > ul.menu > li > ul > li > ul {
+  // HIDE LEVEL 2 + 3
   max-height: 0;
   overflow: hidden;
+  @media @tablet { 
+    transition: max-height 0s 0.3s, 
+	            overflow 0s 0.3s; 
+  }
+}
+#menu-wrapper :not(li) > ul.menu > li > ul {
+  // LEVEL 2
   padding: 0;
   margin: 0;
   z-index: 5;
@@ -141,6 +149,7 @@
     // SHOW LEVEL 2 AND 3
     max-height: 1200em/@fs;
     overflow: visible;
+	transition-delay: 0s;
   }
 }
 @media @tablet-max {
@@ -148,13 +157,10 @@
   #menu-wrapper :not(li) > ul.menu > li > ul > li.open > ul {
     // SHOW LEVEL 2 AND 3
     max-height: 1200em/@fs;
-    overflow: visible;
   }
 }
 #menu-wrapper :not(li) > ul.menu > li > ul > li > ul {
   // LEVEL 3
-  max-height: 0;
-  overflow: hidden;
   padding: 0;
   margin: 0;
   z-index: 2;

@@ -1517,7 +1517,11 @@ a[type*="mpeg"]:before {
   display: none;
 }
 .page {
-  background: #f0f0ee;
+  background-color: #f0f0ee;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
   display: grid;
   grid-template-rows: repeat(3, auto);
   column-gap: 0.85714286em;
@@ -1529,6 +1533,9 @@ a[type*="mpeg"]:before {
     grid-template-columns: minmax(1.71428571em, 1fr) minmax(50em, 78.57142857em) 14.28571429em minmax(1.71428571em, 1fr);
     grid-template-areas: ". header header ." ". main main ." ". footer footer .";
   }
+}
+.node-hero .page {
+  background-color: transparent;
 }
 .two-sidebars {
   grid-template-columns: 0 auto 0;
@@ -1571,10 +1578,6 @@ a[type*="mpeg"]:before {
 }
 #header-bg {
   background-color: #3c329b;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
   grid-column: 1 / -1;
   grid-row: 1;
   z-index: -1;
@@ -1587,7 +1590,16 @@ a[type*="mpeg"]:before {
   }
 }
 .node-hero #header-bg {
-  grid-row: 1 / 3;
+  display: none;
+}
+.page-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
 }
 #menu-wrapper {
   position: relative;
@@ -1868,9 +1880,9 @@ a[type*="mpeg"]:before {
 }
 @media screen {
   .node-hero #footer-bg {
-    -webkit-box-shadow: unset;
-    -moz-box-shadow: unset;
-    box-shadow: unset;
+    -webkit-box-shadow: 0px 0px 10px #000000;
+    -moz-box-shadow: 0px 0px 10px #000000;
+    box-shadow: 0px 0px 10px #000000;
   }
 }
 /**
@@ -2257,6 +2269,37 @@ badge-access-wrapper {
   position: relative;
   z-index: 2;
 }
+.buildmode-full.node-hero.node-type-pagina {
+  background: transparent;
+  padding: 0;
+}
+.buildmode-full.node-hero.node-type-pagina .field-afbeeldingen {
+  display: none;
+}
+.buildmode-full.node-hero.node-type-pagina .cta-wrapper {
+  padding: 1.71428571em;
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.buildmode-full.node-hero.node-type-pagina .field-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 1.71428571em;
+  row-gap: 1.71428571em;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .buildmode-full.node-hero.node-type-pagina {
+    padding-top: 20.57142857em;
+  }
+  .buildmode-full.node-hero.node-type-pagina .field-body {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.node-hero #main > h1 {
+  display: none;
+}
 @media screen and (min-width: 43.57142857142857em ) {
   .node-type-activiteit.buildmode-full,
   .node-type-activiteit.buildmode-teaser,
@@ -2345,7 +2388,8 @@ badge-access-wrapper {
 .buildmode-schema.node-type-activiteit .badge-koor-tijd {
   margin-right: 0;
 }
-.buildmode-schema.node-type-activiteit .field-bijzonderheden {
+.buildmode-schema.node-type-activiteit .field-bijzonderheden,
+.buildmode-schema.node-type-activiteit .field-kledingcode a {
   font-style: italic;
 }
 .buildmode-schema.node-type-activiteit .node-edit-link,
@@ -2406,6 +2450,15 @@ badge-access-wrapper {
 .buildmode-schema.node-type-activiteit .nd-region-left .field-item,
 .buildmode-schema.node-type-activiteit .nd-region-right .field-item {
   width: 100%;
+}
+.buildmode-schema.node-type-activiteit.node-status-optie {
+  border: 0.21428571em dashed #e9584c;
+  padding: 0.64285714em 0.64285714em 1.5em;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .buildmode-schema.node-type-activiteit.node-status-optie {
+    padding: 0.64285714em;
+  }
 }
 .buildmode-teaser.node-type-profiel {
   font-size: 0.85714286em;
@@ -2497,9 +2550,6 @@ badge-access-wrapper {
 }
 .buildmode-schema.node-type-profiel .aspirant {
   color: #e9584c;
-}
-.front h1 {
-  display: none;
 }
 .buildmode-full .node-type-foto > div > div > .field-afbeeldingen {
   width: 100%;
@@ -3726,9 +3776,18 @@ html.js fieldset.collapsible legend a:active {
     border-radius: 5px;
   }
 }
-#menu-wrapper :not(li) > ul.menu > li > ul {
+#menu-wrapper :not(li) > ul.menu > li > ul,
+#menu-wrapper :not(li) > ul.menu > li > ul > li > ul {
   max-height: 0;
   overflow: hidden;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  #menu-wrapper :not(li) > ul.menu > li > ul,
+  #menu-wrapper :not(li) > ul.menu > li > ul > li > ul {
+    transition: max-height 0s 0.3s, overflow 0s 0.3s;
+  }
+}
+#menu-wrapper :not(li) > ul.menu > li > ul {
   padding: 0;
   margin: 0;
   z-index: 5;
@@ -3774,18 +3833,16 @@ html.js fieldset.collapsible legend a:active {
   #menu-wrapper :not(li) > ul.menu > li > ul > li:hover > ul {
     max-height: 85.71428571em;
     overflow: visible;
+    transition-delay: 0s;
   }
 }
 @media screen and (max-width: 59.285714285714285em ) {
   #menu-wrapper :not(li) > ul.menu > li.open > ul,
   #menu-wrapper :not(li) > ul.menu > li > ul > li.open > ul {
     max-height: 85.71428571em;
-    overflow: visible;
   }
 }
 #menu-wrapper :not(li) > ul.menu > li > ul > li > ul {
-  max-height: 0;
-  overflow: hidden;
   padding: 0;
   margin: 0;
   z-index: 2;

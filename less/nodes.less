@@ -193,6 +193,35 @@
   z-index: 2;
 }
 
+//HERO PAGE
+.buildmode-full.node-hero.node-type-pagina {
+  background: transparent;
+  padding: 0;
+  .field-afbeeldingen {
+    display: none;
+  }
+  .cta-wrapper {
+    padding: 24em/@fs;
+    background: fade(@white, 80%);
+	.border-radius();
+  }
+  .field-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 24em/@fs;
+	row-gap: 24em/@fs;
+  }
+  @media @tablet {
+    padding-top: 288em/@fs;
+    .field-body {
+	  grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+.node-hero #main > h1 {
+  display: none;
+}
+
 //GRIDS FOR NODE-TYPE ACTIVITEIT
 @media @phone-ls {
 .node-type-activiteit {
@@ -255,7 +284,7 @@
   .badge-koor-tijd {
     margin-right: 0;
   }
-  .field-bijzonderheden {
+  .field-bijzonderheden, .field-kledingcode a {
     font-style: italic;
   }
   .node-edit-link, .node-clone-link {
@@ -276,6 +305,11 @@
     .field-items, .field-item {
       width: 100%;
     }
+  }
+  &.node-status-optie {
+    border: 3em/@fs dashed @red;
+	padding: 9em/@fs 9em/@fs 21em/@fs;
+	@media @tablet { padding: 9em/@fs; }
   }
 }
 .buildmode-teaser&.node-type-profiel {
@@ -354,9 +388,6 @@
 }
 
 
-.front h1 {
-  display: none;
-}
 .buildmode-full .node-type-foto > div > div {
   > .field-afbeeldingen {
     width: 100%;
