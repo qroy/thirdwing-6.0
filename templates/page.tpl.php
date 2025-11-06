@@ -36,7 +36,8 @@
 <?php if ($tabs2): print '<div id="menu-local-2"><ul class="tabs">'. $tabs2 .'</ul></div>'; endif; ?>
 <?php if ($show_messages && $messages): print $messages; endif; ?>
 <?php print $help; ?>
-<div class="clear-block"><?php print $before_content ?><?php print $content ?></div>
+<?php print $before_content ?>
+<?php print $content ?>
 <?php print $feed_icons ?>
 </main>
 <?php if ($left): ?><aside role="complementary" id="sidebar-left" class="sidebar"><?php print $left ?></aside><?php endif; ?>

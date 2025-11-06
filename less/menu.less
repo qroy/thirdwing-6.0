@@ -233,53 +233,7 @@ a.fa {
     left: 0;
   }
 }
-// Right Sidebar Menu
-#sidebar-right {
-  ul.menu {
-    margin: 0 0 24em/@fs 0;
-    padding: 0;
-  }
-  ul.menu li {
-    margin: 0;
-    padding: 0;
-    background: none;
-    font-size: 16em/@fs;  
-    line-height: 30em/16;
-  
-    a:link, a:visited {
-      color: @grey-dark;
-      text-align: center;
-      background-color: @grey-light;
-      margin: 0 0 18em/16;
-      padding: 18em/16 0;
-      .border-radius();
-      border: 1px solid @grey-light;
-    }
-  }
-  #block-menu-menu-startpagina-rec ul.menu li {
-    a:link, a:visited {
-      color: @white;
-      background-color: @primary;
-      border: 1px solid @primary;
-    }
-  }  
-  #block-menu-menu-startpagina-rec ul.menu li, ul.menu li {
-    a:hover, a:active, a.active:link, a.active:visited {
-      background-color: @secondary;
-      color: @white;
-      text-decoration: none;
-      border: 1px solid @secondary;
-    }
-  }
-  .fa:before {
-    font-size: 28em/16;
-    line-height: 28em/28;
-    margin-right: 8em/28;
-  }
-}
-
 // LOCAL TASKS
-
 #tabs2 {
   position: relative;
   z-index: 3;
@@ -316,21 +270,8 @@ ul.tabs {
     }
   }
 }
-
-/**
- * Menu.module
- */
-tr.odd td.menu-disabled {
-  background-color: #edf5fa;
-}
-tr.even td.menu-disabled {
-  background-color: @white;
-}
-td.menu-disabled {
-  opacity: 0.5;
-}
-
-.tw-archief {
+// ARCHIEF MENU
+.bdldagenda-archief {
   font-size: 12px;
   line-height: 22px;
   ul.views-summary {
@@ -358,32 +299,30 @@ td.menu-disabled {
     }
   }
 }
-
+// MENUS IN MAIN
 #main {
-  ul.menu, .menu ul.views-summary {
-    overflow: hidden;
-    padding: 20em/@fs 0 0;
-    margin: 24em/@fs 0 0 0;
-    background: transparent url(../images/dots-orange.svg) repeat-x left top;
+  ul.menu, ul.views-summary {
+    margin: 0 0 24em/@fs;
+	padding: 0;
+	display: grid;
+	column-gap: 12em/@fs;
+	row-gap: 12em/@fs;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	@media @tablet { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     li {
       margin: 0;
       padding: 0;
       background: none;
-      width: 100%/2;
-      @media @normal { width: 100%/3; }
-      box-sizing: border-box;
-      float: left;
-  
+      box-sizing: border-box;  
       a:link, a:visited {
         color: @grey-dark;
         text-align: center;
         background-color: @grey-light;
-        margin: 6em/@fs;
         padding: 6em/@fs;
         .border-radius();
         display: block;
+		box-sizing: border-box;
       }
-
       a:hover, a:active, a:focus, a.active, a.active-trail {
         color: @white;
         background-color: @secondary;
@@ -391,7 +330,88 @@ td.menu-disabled {
     }
   }
 }
-
+// CALL TO ACTION AND SOCIAL IN MAIN
+#main .menu-name-menu-startpagina-rec ul.menu,
+#main .menu-name-menu-social ul.menu {
+  font-size: 24em/@fs;
+  line-height: 24/24;
+  column-gap: 12em/24;
+  row-gap: 12em/24;
+  margin: 0 0 24em/24;
+}
+#main .menu-name-menu-startpagina-rec ul.menu {
+  li {
+    a:link, a:visited {
+      color: @white;
+      background-color: @primary;
+	  height: 100em/24;
+    }
+    a:hover, a:active, a.active:link, a.active:visited {
+      background-color: @secondary;
+      color: @white;
+      text-decoration: none;
+    }
+  }
+}
+#main .menu-name-menu-social ul.menu {
+  @media @tablet { grid-template-columns: repeat(3, 100em/24); }
+  li {
+    a:link, a:visited {
+      color: @white;
+      background-color: @grey-dark;
+    }
+    a:hover, a:active, a.active:link, a.active:visited {
+      background-color: @secondary;
+      color: @white;
+      text-decoration: none;
+    }
+	a.fa {
+      text-indent: 200%;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+	  aspect-ratio: 1 ~"/" 1;
+      &::before {
+        font-size: 50em/24;
+        line-height: 72em/50;
+        width: 72em/50;
+        text-align: center;
+        text-indent: 0;
+        position: absolute;
+        left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		margin: 0;
+      }
+    }
+  }
+}
+.node-hero #main .menu-name-menu-startpagina-rec,
+.node-hero #main .menu-name-menu-social {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+}
+.node-hero #main .block-menu_block {
+  display: contents;
+  .content {
+    display: contents;
+  }
+  &:after {
+    clear: none;
+	display: none;
+	content: '';
+  }
+}
+.node-hero #main .menu-name-menu-startpagina-rec {
+  
+  width: calc(~"100% - " 336em/@fs ~" - " 4em/@fs);
+}
+.node-hero #main .menu-name-menu-social {
+  width: 336em/@fs;
+  padding-left: 12em/@fs;
+}
+// MENUS IN FOOTER
 #footer {
   ul.menu {
     margin: 0;
@@ -402,7 +422,7 @@ td.menu-disabled {
       background: none;
     }
   }
-  #block-menu-menu-footer, #block-menu-menu-footer-service, #block-menu-menu-footer-service-visitor {
+  .menu-name-menu-footer, .menu-name-menu-footer-service, .menu-name-menu-footer-service-visitor {
     ul.menu li {
       a {
         .border-radius(@border-radius-small);
@@ -421,12 +441,12 @@ td.menu-disabled {
       }
     }
   }
-  #block-menu-menu-social {
+  .menu-name-menu-social {
     ul li {
       float: left;
       a {
         .border-radius();
-        margin: 0 12px 12px 0;
+        margin: 0 12em/@fs 12em/@fs 0;
         &:link, &:visited {
           background: @white-off;
           color: @grey-dark;
@@ -440,18 +460,18 @@ td.menu-disabled {
       text-indent: 200%;
       white-space: nowrap;
       overflow: hidden;
-      width: 72px;
-      height: 72px;
+      width: 72em/@fs;
+      height: 72em/@fs;
       position: relative;
       &::before {
-        width: 72px;
+        font-size: 50em/@fs;
+        line-height: 72em/50;
+        width: 72em/50;
         text-align: center;
         text-indent: 0;
         position: absolute;
         left: 0;
         margin: 0;
-        font-size: 50px;
-        line-height: 72px;
       }
     }
   }
