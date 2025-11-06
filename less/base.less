@@ -381,18 +381,19 @@ span.read-more {
   margin: 0 0 24em/@fs;
   padding: 24em/@fs;
   border: 0;
-  background-color: @green-light;
+  background-color: fade(@green-light, 80%);
   .border-radius(@border-radius-large);
 }
 .messages.error {
-  background-color: @red-light;
+  background-color: fade(@red-light, 80%);
 }
 .messages.warning {
-  background-color: @yellow-light;
+  background-color: fade(@yellow-light, 80%);
 }
 .messages ul {
   margin: 0;
 }
+
 /**
  * Status report colors.
  */
