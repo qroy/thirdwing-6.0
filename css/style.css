@@ -4040,19 +4040,23 @@ tr.even td.menu-disabled {
 td.menu-disabled {
   opacity: 0.5;
 }
-.tw-archief {
+.sidebar .activiteiten,
+.sidebar .nieuws {
   font-size: 12px;
   line-height: 22px;
 }
-.tw-archief ul.views-summary {
+.sidebar .activiteiten ul.views-summary,
+.sidebar .nieuws ul.views-summary {
   padding: 0;
   margin: 0;
 }
-.tw-archief ul.views-summary li {
+.sidebar .activiteiten ul.views-summary li,
+.sidebar .nieuws ul.views-summary li {
   padding: 0;
   margin: 0;
 }
-.tw-archief ul.views-summary li a {
+.sidebar .activiteiten ul.views-summary li a,
+.sidebar .nieuws ul.views-summary li a {
   box-sizing: border-box;
   float: left;
   margin: 2px 2px 0 0;
@@ -4066,9 +4070,12 @@ td.menu-disabled {
   background: #d7d7d6;
   width: 80px;
 }
-.tw-archief ul.views-summary li a.active,
-.tw-archief ul.views-summary li a:hover,
-.tw-archief ul.views-summary li a:active {
+.sidebar .activiteiten ul.views-summary li a.active,
+.sidebar .nieuws ul.views-summary li a.active,
+.sidebar .activiteiten ul.views-summary li a:hover,
+.sidebar .nieuws ul.views-summary li a:hover,
+.sidebar .activiteiten ul.views-summary li a:active,
+.sidebar .nieuws ul.views-summary li a:active {
   color: #ffffff;
   background: #3c329b;
 }
