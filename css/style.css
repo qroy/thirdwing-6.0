@@ -605,16 +605,16 @@ span.submitted a:active {
   margin: 0 0 1.71428571em;
   padding: 1.71428571em;
   border: 0;
-  background-color: rgba(214, 235, 179, 0.8);
+  background-color: rgba(214, 235, 179, 0.7);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
 .messages.error {
-  background-color: rgba(244, 173, 167, 0.8);
+  background-color: rgba(244, 173, 167, 0.7);
 }
 .messages.warning {
-  background-color: rgba(245, 237, 163, 0.8);
+  background-color: rgba(245, 237, 163, 0.7);
 }
 .messages ul {
   margin: 0;
