@@ -4,6 +4,7 @@ version = 2.4
 core = 6.x
 engine = phptemplate
 stylesheets[all][] = css/style.css
+stylesheets[all][] = jplayer.css
 scripts[] = js/menu.js
 
 regions[topbar] = Topbar

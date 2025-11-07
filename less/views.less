@@ -4,17 +4,43 @@
   row-gap: 12em/@fs;
 }
 
+// ACTIVITEITEN EN NIEUWS IN 2 KOLOMMEN
+.activiteiten .view-content:has(> :nth-child(2)),
+.nieuws .view-content:has(> :nth-child(2)) {
+  @media @wide {
+//    display: flex;
+//	flex-wrap: wrap;
+//	gap: 24em/@fs 24em/@fs;
+//    display: grid;
+//	column-gap: 24em/@fs;
+//	grid-template-columns: repeat(2, 1fr);
+    column-count: 2;
+    column-gap: 24em/@fs;
+    .views-row {
+	  break-inside: avoid;
+//	  flex: 0 0 calc(~'50% - ' 12em/@fs);
+	}
+  }
+}
+// ADVERTENTIES
+#node-6048 {
+  background: @primary;
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center;     /* vertical centering */
+}
 // Opnamen
 .opnamen {
-  overflow: hidden;
-  margin-right: -12em/@fs;
-  padding: 0;
+  .view-content {
+    display: grid;
+    column-gap: 12em/@fs;
+    row-gap: 12em/@fs;
+	grid-template-columns: repeat(1, 1fr);
+    @media @phone-ls { grid-template-columns: repeat(2, 1fr); }
+	@media @tablet { grid-template-columns: repeat(3, 1fr); }
+  }
   .views-row, .field-item {
-    width: 100% /2;
-    @media @normal { width: 100% / 3; }
-    box-sizing: border-box;
-    float: left;
-    padding: 0 12em/@fs 12em/@fs 0;
+    display: contents;
   }
   .opname {
     position: relative;
@@ -199,6 +225,7 @@ div.content-profile-display {
   border: 0;
 }
 .personen {
+  margin-bottom: 24em/@fs;
   .buildmode-teaser {
     margin: 0;
   }

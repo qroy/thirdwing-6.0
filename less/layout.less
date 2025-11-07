@@ -6,12 +6,15 @@
   display: none;
 }
 .page {
+  padding: 0;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
   background-color: @white-off;
   position: absolute;
-  left: 50%; 
-  transform: translateX(-50%);
+  top: 0;
+  z-index: 0;
   width: 100%;
   display: grid;
+  box-sizing: border-box;
   grid-template-rows:  repeat(3, auto);
   column-gap: 12em/@fs;
   grid-template-columns: 0 auto 0;
@@ -218,6 +221,10 @@
   padding: 72em/@fs 0 48em/@fs;
   margin: 48em/@fs 0;
   min-height: 400px;
+}
+.node-hero.node-type-pagina #main {
+  padding-top: calc(~'70lvh - ' 202em/@fs);
+  @media @tablet { padding-top: calc(~'70lvh - ' 238em/@fs); }
 }
 #breadcrumb {
   font-size: 12em/@fs;

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
 <head profile="http://www.w3.org/1999/xhtml/vocab">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0">
 <?php print $head ?>
 <title><?php print $head_title ?></title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -32,8 +32,9 @@
 <?php if ($breadcrumb): print $breadcrumb; endif; ?>
 <?php if ($mission): print '<div id="mission">'. $mission .'</div>'; endif; ?>
 <?php if ($title): print '<h1>'. $title .'</h1>'; endif; ?>
-<?php if ($tabs): print '<div id="menu-local-1"><button aria-expanded="false" aria-controls="local-menu" aria-label="Toggle menu" class="local-toggle button button-alt fa fa-cogs">Bewerk</button><ul class="tabs">'. $tabs .'</ul></div>'; endif; ?>
-<?php if ($tabs2): print '<div id="menu-local-2"><ul class="tabs">'. $tabs2 .'</ul></div>'; endif; ?>
+<?php if ($tabs): print '<div id="menu-local"><button aria-expanded="false" aria-controls="local-menu" aria-label="Toggle menu" class="local-toggle button button-alt fa fa-cogs">Bewerk</button><ul class="tabs">'. $tabs .'</ul>'; endif; ?>
+<?php if ($tabs2): print '<ul class="tabs">'. $tabs2 .'</ul>'; endif; ?>
+<?php if ($tabs): print '</div>'; endif; ?>
 <?php if ($show_messages && $messages): print $messages; endif; ?>
 <?php print $help; ?>
 <?php print $before_content ?>

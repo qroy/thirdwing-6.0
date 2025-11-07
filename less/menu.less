@@ -23,7 +23,7 @@
   z-index: 4;
 }
 #menu-main :not(li) > ul.menu,
-#menu-local-1 > ul.tabs {
+#menu-local > ul.tabs {
   max-height: 0; // HIDE MENU
   overflow: hidden;
   @media @tablet { 
@@ -32,9 +32,10 @@
   }
 }
 #menu-main.is-open :not(li) > ul.menu,
-#menu-local-1.is-open > ul.tabs {
+#menu-local.is-open > ul.tabs {
   // TOGGLE MENU WITH BUTTON
   max-height: 1200em/@fs;
+  overflow: visible;
 }
 #menu-wrapper :not(li) > ul.menu li {
   // ALL LIST ITEMS IN MENU
@@ -234,25 +235,25 @@ a.fa {
   }
 }
 // LOCAL TASKS
-#tabs2 {
-  position: relative;
-  z-index: 3;
-}
-
 ul.tabs {
-  margin: 0 0 24em/@fs;
+  margin: 2em/@fs 0 24em/@fs;
+  @media @tablet {
+    margin: 0 0 24em/@fs;
+	height: 32em/@fs;
+  }
   padding: 0;
   border: 0 solid transparent;
   background: @grey;
-  height: 30em/@fs;
   .border-radius();
   li a {
-    float: left;
-    padding: 0 10em/@fs;
-    margin: 0 2em/@fs 0 0;
-    float: left;
+    margin: 0 1em/@fs 1em/@fs 0;
+    @media @tablet {
+      float: left;
+      margin: 0 1em/@fs 0 0;
+	}
+	padding: 0 7em/@fs;
     display: block;
-    line-height: 30em/@fs;
+    line-height: 32em/@fs;
     border: 0 solid transparent;
     &:link, &:visited {
       color: @white;
@@ -270,35 +271,6 @@ ul.tabs {
     }
   }
 }
-// ARCHIEF MENU
-.bdldagenda-archief {
-  font-size: 12px;
-  line-height: 22px;
-  ul.views-summary {
-    padding: 0;
-    margin: 0;
-    li {
-      padding: 0;
-      margin: 0;
-      a {
-        box-sizing: border-box;
-        float: left;
-        margin: 2px 2px 0 0;
-        padding: 0;
-        display: inline-block;
-        color: @grey-dark;
-        text-align: center;
-        .border-radius(@border-radius-small);
-        background: @grey-light;
-        width: 80px;
-        &.active, &:hover, &:active {
-          color: @white;
-          background: @primary;
-        }
-      }
-    }
-  }
-}
 // MENUS IN MAIN
 #main {
   ul.menu, ul.views-summary {
@@ -313,9 +285,10 @@ ul.tabs {
       margin: 0;
       padding: 0;
       background: none;
-      box-sizing: border-box;  
+      box-sizing: border-box;
       a:link, a:visited {
-        color: @grey-dark;
+        font-weight: 600;
+		color: @grey-dark;
         text-align: center;
         background-color: @grey-light;
         padding: 6em/@fs;
@@ -330,21 +303,39 @@ ul.tabs {
     }
   }
 }
+// ARCHIVE MENUS IN MAIN
+#main {
+  .activiteiten, .nieuws, .multimedia {
+    ul.views-summary {
+	  grid-template-columns: repeat(3, minmax(0, 1fr));
+	  @media @phone-ls { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+	  @media @tablet { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+	  @media @normal { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+	  @media @wide { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+	  
+	  
+	}
+  }
+}
 // CALL TO ACTION AND SOCIAL IN MAIN
 #main .menu-name-menu-startpagina-rec ul.menu,
 #main .menu-name-menu-social ul.menu {
-  font-size: 24em/@fs;
+  font-size: 24em/@fs; /* bigger font size */
   line-height: 24/24;
-  column-gap: 12em/24;
-  row-gap: 12em/24;
-  margin: 0 0 24em/24;
+  column-gap: 12em/24; /* reset column-gap because relative to font size */
+  row-gap: 12em/24; /* reset row-gap because relative to font size */
+  margin: 0 0 24em/24; /* reset columngap because relative to font size */
 }
 #main .menu-name-menu-startpagina-rec ul.menu {
+  grid-template-columns: minmax(0, 1fr);
+  @media @tablet { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   li {
     a:link, a:visited {
       color: @white;
       background-color: @primary;
 	  height: 100em/24;
+	  line-height: 88em/24;
+	  padding: 6em/24;
     }
     a:hover, a:active, a.active:link, a.active:visited {
       background-color: @secondary;
@@ -354,6 +345,7 @@ ul.tabs {
   }
 }
 #main .menu-name-menu-social ul.menu {
+  grid-template-columns: repeat(1, 100em/24);
   @media @tablet { grid-template-columns: repeat(3, 100em/24); }
   li {
     a:link, a:visited {
@@ -404,12 +396,15 @@ ul.tabs {
   }
 }
 .node-hero #main .menu-name-menu-startpagina-rec {
-  
-  width: calc(~"100% - " 336em/@fs ~" - " 4em/@fs);
+  width: calc(~"100% - " 112em/@fs ~" - " 4em/@fs);
+  @media @tablet { width: calc(~"100% - " 336em/@fs ~" - " 4em/@fs); }
 }
 .node-hero #main .menu-name-menu-social {
-  width: 336em/@fs;
+  width: 112em/@fs;
   padding-left: 12em/@fs;
+  @media @tablet {
+    width: 336em/@fs;
+  }
 }
 // MENUS IN FOOTER
 #footer {

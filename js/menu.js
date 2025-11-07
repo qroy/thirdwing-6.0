@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
   $('.local-toggle').click(function(e) {
     e.preventDefault();
     var $button = $(this);
-    var $menuContainer = $('#menu-local-1');
+    var $menuContainer = $('#menu-local');
     
     // Toggle menu visibility
     $button.toggleClass('is-active');
