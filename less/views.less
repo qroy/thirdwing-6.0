@@ -75,15 +75,17 @@
  * Opnamen
  */
 .opnamen {
-  overflow: hidden;
-  margin-right: -12em/@fs;
   padding: 0;
+  .view-content {
+    display: grid;
+    column-gap: 12em/@fs;
+    row-gap: 12em/@fs;
+	grid-template-columns: repeat(1, 1fr);
+    @media @phone-ls { grid-template-columns: repeat(2, 1fr); }
+	@media @tablet { grid-template-columns: repeat(3, 1fr); }
+  }
   .views-row, .field-item {
-    width: 100% /2;
-    @media @normal { width: 100% / 3; }
-    box-sizing: border-box;
-    float: left;
-    padding: 0 12em/@fs 12em/@fs 0;
+    display: contents;
   }
   .opname {
     position: relative;
