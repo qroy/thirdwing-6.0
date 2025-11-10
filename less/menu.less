@@ -437,11 +437,15 @@ ul.tabs {
     }
   }
   .menu-name-menu-social {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 12em/@fs;
+    }
     ul li {
-      float: left;
       a {
         .border-radius();
-        margin: 0 12em/@fs 12em/@fs 0;
+        margin: 0;
         &:link, &:visited {
           background: @white-off;
           color: @grey-dark;
@@ -455,17 +459,28 @@ ul.tabs {
       text-indent: 200%;
       white-space: nowrap;
       overflow: hidden;
-      width: 72em/@fs;
-      height: 72em/@fs;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 ~"/" 1;
       position: relative;
       &::before {
-        font-size: 50em/@fs;
-        line-height: 72em/50;
-        width: 72em/50;
+        font-size: 72em/@fs;
+        line-height: 100em/72;
+        @media @tablet {
+          font-size: 50em/@fs;
+          line-height: 72em/50;
+        }
+        display: flex;
+        align-items: center;
+        justify-content: center;
         text-align: center;
         text-indent: 0;
         position: absolute;
+        width: 100%;
         left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
         margin: 0;
       }
     }

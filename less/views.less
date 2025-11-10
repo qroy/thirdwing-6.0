@@ -29,7 +29,7 @@
   justify-content: center; /* horizontal centering */
   align-items: center;     /* vertical centering */
 }
-// Opnamen
+// MULTIMEDIA
 .opnamen {
   .view-content {
     display: grid;
@@ -47,138 +47,9 @@
   article.node-type-audio {
     margin: 0;
   }
-  .opname {
-    position: relative;
-    background: @white;
-    .border-radius(@border-radius-large);
-    padding: 6em/@fs;
-    &:hover {
-      .transition-standard();
-      background: @secondary;
-      .badge { background: @white; color: @secondary; }
-      .opname-title, .opname-artist { color: @white; }
-    }
-  }
-  img {
-    width: 100%;
-    height: auto;
-    .border-radius();
-  }
-  .opname-bestand {
-    position: relative;
-    z-index: 2;
-    &:before {
-      display: block;
-      content: '';
-      width: 100%;
-      padding-top: (9 / 16) * 100%;
-    }
-    .video, .jp-single-player, img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      .jp-interface {
-        top: 20%;
-      }
-    }
-    .video {
-      height: 100%;
-      width: 100%;
-    }
-  }
-  .opname-data {
-    height: 72em/@fs;
-    margin-top: 6em/@fs;
-    overflow: hidden;
-  }
-  .opname-title {
-    color: @red;
-    text-transform: uppercase;
-    display: inline-block;
-  }
-  .opname-artist {
-    display: inline-block;
-  }
-  .opname-notes {
-    font-size: 12em/@fs;
-    line-height: 24em/12;
-  }
-  .opname-type {
-    height: 36em/@fs;
-    text-align: right;
-    z-index: 2;
-    position: relative;
-  }
-  .opname-link {
-    z-index: 1;
-    position: absolute;
-    display: block;
-    top: 0; bottom: 0; left: 0; right: 0;
-  }
-  .opname-foto {
-    .opname-link { 
-      z-index: 3;
-    }
-    .opname-title {
-      display: block;
-      min-height: 72em/@fs;
-    }
-    .opname-artist, .opname-notes {
-      display: none;
-    }
-  }
-  .badge-multimedia { display: none; }
-  .opname-foto .badge-foto { display: inline-block; }
-  .opname-video .badge-video { display: inline-block; }
-  .opname-audio .badge-audio { display: inline-block; }
-  .badge.badge-audio-download {
-    &:link, &:visited {
-      background: @primary;
-      color: @white;
-    }
-    &:hover, &:active, &:focus {
-      background: @grey;
-      color: @secondary;
-    }
-  }
-}
-.video {
-  &.video-thumb {
-    display: block;
-    position: relative;
-    box-sizing: border-box;
-    text-align: center;
-    &:after {
-      display: inline-block;
-      position: absolute;
-      content: '\f166';
-      font-family: FontAwesome;
-      font-size: 60em/@fs;
-      line-height: 60em/60;
-      top: 30%;
-      left: 0;
-      right: 0;
-    }
-    img { 
-      width: 100%;
-      height: auto;
-    }
-  }
-}
-a.video-thumb {
-  &:link, &:visited {
-    color: @white;
-  }
-  &:hover, &:active, &:focus {
-    color: @secondary;
-  }
 }
 
-/**
- * Sleepgroepen
- */
+// SLEEPGROEPEN
 .sleepgroepen .view-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -379,4 +250,27 @@ div.content-profile-display {
 }
 .voorbeeld .view-footer {
   clear: both;
+}
+// PAGER
+.item-list ul.pager {
+  margin-top: 24em/@fs;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4em/@fs;
+  justify-content: center;
+  li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+  li.pager-current, a:link, a:visited {
+    display: inline-block;
+    padding: 4em/@fs 12em/@fs;
+    .border-radius(@border-radius-large);
+    background-color: @grey-light;
+  }
+  li.pager-current, a:hover, a:active, a:focus {
+    background-color: @secondary;
+    color: @white;
+  }
 }

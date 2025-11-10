@@ -267,7 +267,7 @@
 
 #footer {
   grid-area: footer;
-  padding: 24em/@fs 0 72em/@fs;
+  padding: 0 0 72em/@fs;
   margin-top: 32em/@fs;
   float: none;
   clear: both;
@@ -276,7 +276,7 @@
   position: relative;
   @media @tablet {
     display: grid;
-    grid-template-columns: 200em/@fs minmax(max-content, 1fr) minmax(max-content, 1fr) minmax(84px, 336px) minmax(300px, 1fr);
+    grid-template-columns: 200em/@fs minmax(max-content, 1fr) minmax(max-content, 1fr) auto 225em/@fs;
     column-gap: 24em/@fs;
   }
   a {
@@ -304,14 +304,14 @@
     }
   }
   .block {
-    margin: 0;
+    margin: 24em/@fs 0 0;
     padding: 0;
   }
 }
 #block-block-5.block {
     font-size: 10em/@fs;
     line-height: 20em/10;
-    margin: 36em/10 0;
+    margin: 60em/10 0;
     color: @grey;
     padding: 0 70px 0 0;
     position: relative;

@@ -1810,7 +1810,7 @@ a[type*="mpeg"]:before {
 }
 #footer {
   grid-area: footer;
-  padding: 1.71428571em 0 5.14285714em;
+  padding: 0 0 5.14285714em;
   margin-top: 2.28571429em;
   float: none;
   clear: both;
@@ -1821,7 +1821,7 @@ a[type*="mpeg"]:before {
 @media screen and (min-width: 59.285714285714285em ) {
   #footer {
     display: grid;
-    grid-template-columns: 14.28571429em minmax(max-content, 1fr) minmax(max-content, 1fr) minmax(84px, 336px) minmax(300px, 1fr);
+    grid-template-columns: 14.28571429em minmax(max-content, 1fr) minmax(max-content, 1fr) auto 16.07142857em;
     column-gap: 1.71428571em;
   }
 }
@@ -1851,13 +1851,13 @@ a[type*="mpeg"]:before {
   padding: 0;
 }
 #footer .block {
-  margin: 0;
+  margin: 1.71428571em 0 0;
   padding: 0;
 }
 #block-block-5.block {
   font-size: 0.71428571em;
   line-height: 2em;
-  margin: 3.6em 0;
+  margin: 6em 0;
   color: #878786;
   padding: 0 70px 0 0;
   position: relative;
@@ -2721,6 +2721,9 @@ article.buildmode-teaser.node-type-video .field-title h2 {
   line-height: 1.5em;
   margin-bottom: 0;
 }
+.block-views {
+  margin-bottom: 1.71428571em;
+}
 .field-inline,
 .field-inline div {
   display: inline-block;
@@ -2917,163 +2920,6 @@ tr.dblog-access-denied td.active {
 .opnamen article.node-type-audio {
   margin: 0;
 }
-.opnamen .opname {
-  position: relative;
-  background: #ffffff;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  padding: 0.42857143em;
-}
-.opnamen .opname:hover {
-  -webkit-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  -moz-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  -ms-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  -o-transition: border 0.4s, background-color 0.4s, color 0.6s;
-  background: #eb7314;
-}
-.opnamen .opname:hover .badge {
-  background: #ffffff;
-  color: #eb7314;
-}
-.opnamen .opname:hover .opname-title,
-.opnamen .opname:hover .opname-artist {
-  color: #ffffff;
-}
-.opnamen img {
-  width: 100%;
-  height: auto;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-.opnamen .opname-bestand {
-  position: relative;
-  z-index: 2;
-}
-.opnamen .opname-bestand:before {
-  display: block;
-  content: '';
-  width: 100%;
-  padding-top: 56.25%;
-}
-.opnamen .opname-bestand .video,
-.opnamen .opname-bestand .jp-single-player,
-.opnamen .opname-bestand img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-.opnamen .opname-bestand .video .jp-interface,
-.opnamen .opname-bestand .jp-single-player .jp-interface,
-.opnamen .opname-bestand img .jp-interface {
-  top: 20%;
-}
-.opnamen .opname-bestand .video {
-  height: 100%;
-  width: 100%;
-}
-.opnamen .opname-data {
-  height: 5.14285714em;
-  margin-top: 0.42857143em;
-  overflow: hidden;
-}
-.opnamen .opname-title {
-  color: #e9584c;
-  text-transform: uppercase;
-  display: inline-block;
-}
-.opnamen .opname-artist {
-  display: inline-block;
-}
-.opnamen .opname-notes {
-  font-size: 0.85714286em;
-  line-height: 2em;
-}
-.opnamen .opname-type {
-  height: 2.57142857em;
-  text-align: right;
-  z-index: 2;
-  position: relative;
-}
-.opnamen .opname-link {
-  z-index: 1;
-  position: absolute;
-  display: block;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.opnamen .opname-foto .opname-link {
-  z-index: 3;
-}
-.opnamen .opname-foto .opname-title {
-  display: block;
-  min-height: 5.14285714em;
-}
-.opnamen .opname-foto .opname-artist,
-.opnamen .opname-foto .opname-notes {
-  display: none;
-}
-.opnamen .badge-multimedia {
-  display: none;
-}
-.opnamen .opname-foto .badge-foto {
-  display: inline-block;
-}
-.opnamen .opname-video .badge-video {
-  display: inline-block;
-}
-.opnamen .opname-audio .badge-audio {
-  display: inline-block;
-}
-.opnamen .badge.badge-audio-download:link,
-.opnamen .badge.badge-audio-download:visited {
-  background: #3c329b;
-  color: #ffffff;
-}
-.opnamen .badge.badge-audio-download:hover,
-.opnamen .badge.badge-audio-download:active,
-.opnamen .badge.badge-audio-download:focus {
-  background: #878786;
-  color: #eb7314;
-}
-.video.video-thumb {
-  display: block;
-  position: relative;
-  box-sizing: border-box;
-  text-align: center;
-}
-.video.video-thumb:after {
-  display: inline-block;
-  position: absolute;
-  content: '\f166';
-  font-family: FontAwesome;
-  font-size: 4.28571429em;
-  line-height: 1em;
-  top: 30%;
-  left: 0;
-  right: 0;
-}
-.video.video-thumb img {
-  width: 100%;
-  height: auto;
-}
-a.video-thumb:link,
-a.video-thumb:visited {
-  color: #ffffff;
-}
-a.video-thumb:hover,
-a.video-thumb:active,
-a.video-thumb:focus {
-  color: #eb7314;
-}
-/**
- * Sleepgroepen
- */
 .sleepgroepen .view-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -3430,6 +3276,35 @@ div.content-profile-display {
 }
 .voorbeeld .view-footer {
   clear: both;
+}
+.item-list ul.pager {
+  margin-top: 1.71428571em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.28571429em;
+  justify-content: center;
+}
+.item-list ul.pager li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+.item-list ul.pager li.pager-current,
+.item-list ul.pager a:link,
+.item-list ul.pager a:visited {
+  display: inline-block;
+  padding: 0.28571429em 0.85714286em;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  background-color: #d7d7d6;
+}
+.item-list ul.pager li.pager-current,
+.item-list ul.pager a:hover,
+.item-list ul.pager a:active,
+.item-list ul.pager a:focus {
+  background-color: #eb7314;
+  color: #ffffff;
 }
 input {
   box-sizing: border-box;
@@ -4303,14 +4178,16 @@ ul.tabs li a:focus {
   background: #f0f0ee;
   color: #464644;
 }
-#footer .menu-name-menu-social ul li {
-  float: left;
+#footer .menu-name-menu-social ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 0.85714286em;
 }
 #footer .menu-name-menu-social ul li a {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  margin: 0 0.85714286em 0.85714286em 0;
+  margin: 0;
 }
 #footer .menu-name-menu-social ul li a:link,
 #footer .menu-name-menu-social ul li a:visited {
@@ -4325,19 +4202,32 @@ ul.tabs li a:focus {
   text-indent: 200%;
   white-space: nowrap;
   overflow: hidden;
-  width: 5.14285714em;
-  height: 5.14285714em;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
   position: relative;
 }
 #footer .menu-name-menu-social a.fa::before {
-  font-size: 3.57142857em;
-  line-height: 1.44em;
-  width: 1.44em;
+  font-size: 5.14285714em;
+  line-height: 1.38888889em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   text-indent: 0;
   position: absolute;
+  width: 100%;
   left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   margin: 0;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  #footer .menu-name-menu-social a.fa::before {
+    font-size: 3.57142857em;
+    line-height: 1.44em;
+  }
 }
 /**
  * Admin Styles
