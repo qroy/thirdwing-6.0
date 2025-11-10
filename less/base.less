@@ -1,10 +1,6 @@
 @font-face {
   font-family: 'thirdwing';
-  src:url('../fonts/thirdwing.eot?6atzak');
-  src:url('../fonts/thirdwing.eot?#iefix6atzak') format('embedded-opentype'),
-    url('../fonts/thirdwing.ttf?6atzak') format('truetype'),
-    url('../fonts/thirdwing.woff?6atzak') format('woff'),
-    url('../fonts/thirdwing.svg?6atzak#band') format('svg');
+  src:url('../fonts/Thirdwing-Regular.otf') format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -22,7 +18,7 @@ body {
   font-size: 100%;
   color: @black;
 }
-#wrapper {
+#page-wrapper {
   font-size: @fs/16em;
   line-height: @lh/@fs+0em;
 }
@@ -104,8 +100,10 @@ strong, b {
 }
 .fa:before {
   font-family: fontawesome;
-  margin-right: 2px;
   font-weight: normal;
+  display: inline-block;
+  text-align: center;
+  width: 24em/@fs;
 }
 a {
   .transition-standard();
@@ -327,7 +325,7 @@ thead th {
 }
 tbody {
   td, td.active {
-    padding: 12em/@fs 6em/@fs 18em/@fs;
+    padding: 12em/@fs 6em/@fs;
     vertical-align: top;
   }
   tr:first-child {
@@ -336,21 +334,18 @@ tbody {
     }
   }
   tr, tr.odd, tr.even {
-    .transition-standard();
-    @media screen { background: transparent url('../images/dots-grey.svg') repeat-x 0% 98%; }
-    &:last-child {
-      background: transparent;
-    }
-    &:hover {
-      @media screen { 
-        &:not(:last-child) {
-          background-image: url('../images/dots-orange.svg');
-        }
-      }
-    }
     @media print {
       border-bottom: 1px solid @grey-dark;
     }
+  }
+  tr.even {
+    background: @white-off;
+    .badge-location-wrapper, .badge-date-wrapper, .badge-location, .badge-date {
+      background: @white;
+    }
+  }
+  tr.odd {
+    background: @white;
   }
 }
 
