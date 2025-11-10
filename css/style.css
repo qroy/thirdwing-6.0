@@ -1346,7 +1346,7 @@ span.clear {
   position: relative;
   /* for absolute positioning of icon */
   vertical-align: bottom;
-  width: 1.71428571em;
+  width: 2.28571429em;
 }
 .views-field-edit-node a:before,
 .views-field-delete-node a:before,
@@ -1923,7 +1923,10 @@ a[type*="mpeg"]:before {
 .buildmode-teaser:not(:empty),
 .buildmode-full:not(:empty),
 .buildmode-schema:not(:empty),
-#node-form:not(:empty) {
+#main > dl:not(:empty),
+#main > form:not(:empty),
+#main > .admin:not(:empty),
+#main > .help:not(:empty):not(:empty) {
   position: relative;
   background: #ffffff;
   padding: 1.71428571em;
@@ -1943,7 +1946,7 @@ a[type*="mpeg"]:before {
     padding: 0.85714286em;
   }
 }
-.buildmode-teaser > .nd-region-header > .field-background {
+article.buildmode-teaser .field-background {
   position: absolute;
   left: 0;
   top: 0;
@@ -1951,11 +1954,11 @@ a[type*="mpeg"]:before {
   bottom: 0;
   z-index: 0;
 }
-.buildmode-teaser > .nd-region-header > .field-background .field-items,
-.buildmode-teaser > .nd-region-header > .field-background .field-item {
+article.buildmode-teaser .field-background .field-items,
+article.buildmode-teaser .field-background .field-item {
   height: 100%;
 }
-.buildmode-teaser > .nd-region-header > .field-background .node-background {
+article.buildmode-teaser .field-background .node-background {
   width: 100%;
   height: 100%;
   background-position: center 10%;
@@ -1966,7 +1969,7 @@ a[type*="mpeg"]:before {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.buildmode-teaser > .nd-region-header > .field-background .node-background:after {
+article.buildmode-teaser .field-background .node-background:after {
   content: ' ';
   position: relative;
   z-index: 1;
@@ -1979,44 +1982,80 @@ a[type*="mpeg"]:before {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-.field-afbeeldingen > .field-items > .field-item {
+article.node-type-activiteit .field-afbeeldingen .field-item,
+article.node-type-nieuws .field-afbeeldingen .field-item {
   display: none;
 }
-.field-afbeeldingen > .field-items > .field-item:first-child {
+article.node-type-activiteit .field-afbeeldingen .field-item:first-child,
+article.node-type-nieuws .field-afbeeldingen .field-item:first-child {
   display: block;
-  float: right;
-  max-width: 50%;
-  max-height: 23.57142857em;
-  text-align: right;
 }
-.node-type-activiteit .field-afbeeldingen > .field-items > .field-item {
-  height: 23.57142857em;
+@media screen and (min-width: 43.57142857142857em ) {
+  article.node-type-activiteit .field-afbeeldingen .field-item:first-child,
+  article.node-type-nieuws .field-afbeeldingen .field-item:first-child {
+    float: right;
+    max-width: 50%;
+    max-height: 23.57142857em;
+    text-align: right;
+  }
+}
+article.node-type-foto.buildmode-teaser .field-afbeeldingen .field-item {
+  display: none;
+}
+article.node-type-foto.buildmode-teaser .field-afbeeldingen .field-item:first-child {
+  display: block;
+}
+article.node-type-activiteit .field-afbeeldingen .field-item:first-child {
   width: 100%;
   max-width: 100%;
   margin: 0;
 }
-.field-afbeeldingen > .field-items > .field-item a {
-  display: inline-block;
-  max-height: 23.57142857em;
+@media screen and (min-width: 43.57142857142857em ) {
+  article.node-type-activiteit .field-afbeeldingen .field-item:first-child {
+    height: 23.57142857em;
+  }
 }
-.field-afbeeldingen > .field-items > .field-item img {
-  max-height: 23.57142857em;
+article .field-afbeeldingen .field-item a {
+  display: inline-block;
+}
+article .field-afbeeldingen .field-item img {
+  max-height: 100%;
   max-width: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
   object-position: right top;
   display: block;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+@media screen and (min-width: 43.57142857142857em ) {
+  article.node-type-activiteit .field-afbeeldingen .field-item a,
+  article.node-type-nieuws .field-afbeeldingen .field-item a {
+    max-height: 23.57142857em;
+  }
+  article.node-type-activiteit .field-afbeeldingen .field-item img,
+  article.node-type-nieuws .field-afbeeldingen .field-item img {
+    max-height: 23.57142857em;
+  }
+}
+article.node-type-nieuws .field-afbeeldingen .field-item {
+  margin-bottom: 1.71428571em;
+}
+@media screen and (min-width: 43.57142857142857em ) {
+  article.node-type-nieuws .field-afbeeldingen .field-item {
+    margin-left: 1.71428571em;
+  }
 }
 .buildmode-full .field-background {
   display: none;
 }
 @media screen and (min-width: 59.285714285714285em ) {
-  .buildmode-teaser > .nd-region-middle-wrapper > .nd-region-middle > .field-title,
-  .buildmode-full > .nd-region-middle-wrapper > .nd-region-middle > .field-title {
+  article.node-type-nieuws.buildmode-full .field-title,
+  article.node-type-activiteit.buildmode-full .field-title,
+  article.node-type-nieuws.buildmode-teaser .field-title,
+  article.node-type-activiteit.buildmode-teaser .field-title {
     height: 10.71428571em;
     display: table-cell;
     vertical-align: bottom;
@@ -2044,114 +2083,114 @@ badge-access-wrapper {
   left: 2.4em;
   z-index: 5;
 }
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Bezoekers,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Bezoekers,
-.role-admin .buildmode-teaser .badge-access.badge-access-Bezoekers,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Bezoekers,
-.role-beheer .buildmode-schema .badge-access.badge-access-Bezoekers,
-.role-admin .buildmode-schema .badge-access.badge-access-Bezoekers,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Vrienden,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Vrienden,
-.role-admin .buildmode-teaser .badge-access.badge-access-Vrienden,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Vrienden,
-.role-beheer .buildmode-schema .badge-access.badge-access-Vrienden,
-.role-admin .buildmode-schema .badge-access.badge-access-Vrienden,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
-.role-admin .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
-.role-beheer .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
-.role-admin .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Leden,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Leden,
-.role-admin .buildmode-teaser .badge-access.badge-access-Leden,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Leden,
-.role-beheer .buildmode-schema .badge-access.badge-access-Leden,
-.role-admin .buildmode-schema .badge-access.badge-access-Leden,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Bestuur,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Bestuur,
-.role-admin .buildmode-teaser .badge-access.badge-access-Bestuur,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Bestuur,
-.role-beheer .buildmode-schema .badge-access.badge-access-Bestuur,
-.role-admin .buildmode-schema .badge-access.badge-access-Bestuur,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Muziekcommissie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Muziekcommissie,
-.role-admin .buildmode-schema .badge-access.badge-access-Muziekcommissie,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Concertcommissie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Concertcommissie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Concertcommissie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Concertcommissie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Concertcommissie,
-.role-admin .buildmode-schema .badge-access.badge-access-Concertcommissie,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Feestcommissie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Feestcommissie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Feestcommissie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Feestcommissie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Feestcommissie,
-.role-admin .buildmode-schema .badge-access.badge-access-Feestcommissie,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-admin .buildmode-teaser .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-beheer .buildmode-schema .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-admin .buildmode-schema .badge-access.badge-access-Commissie-Interne-Relaties,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
-.role-admin .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Band,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Band,
-.role-admin .buildmode-teaser .badge-access.badge-access-Band,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Band,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Band,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Band,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Band,
-.role-beheer .buildmode-schema .badge-access.badge-access-Band,
-.role-admin .buildmode-schema .badge-access.badge-access-Band,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Beheer,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Beheer,
-.role-admin .buildmode-teaser .badge-access.badge-access-Beheer,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Beheer,
-.role-beheer .buildmode-schema .badge-access.badge-access-Beheer,
-.role-admin .buildmode-schema .badge-access.badge-access-Beheer {
+.role-bestuur .buildmode-teaser .badge-access.badge-access-bezoekers,
+.role-beheer .buildmode-teaser .badge-access.badge-access-bezoekers,
+.role-admin .buildmode-teaser .badge-access.badge-access-bezoekers,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-bezoekers,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-bezoekers,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-bezoekers,
+.role-bestuur .buildmode-schema .badge-access.badge-access-bezoekers,
+.role-beheer .buildmode-schema .badge-access.badge-access-bezoekers,
+.role-admin .buildmode-schema .badge-access.badge-access-bezoekers,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-vrienden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-vrienden,
+.role-admin .buildmode-teaser .badge-access.badge-access-vrienden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-vrienden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-vrienden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-vrienden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-vrienden,
+.role-beheer .buildmode-schema .badge-access.badge-access-vrienden,
+.role-admin .buildmode-schema .badge-access.badge-access-vrienden,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-aspirant-Leden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-aspirant-Leden,
+.role-admin .buildmode-teaser .badge-access.badge-access-aspirant-Leden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-aspirant-Leden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-aspirant-Leden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-aspirant-Leden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-aspirant-Leden,
+.role-beheer .buildmode-schema .badge-access.badge-access-aspirant-Leden,
+.role-admin .buildmode-schema .badge-access.badge-access-aspirant-Leden,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-leden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-leden,
+.role-admin .buildmode-teaser .badge-access.badge-access-leden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-leden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-leden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-leden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-leden,
+.role-beheer .buildmode-schema .badge-access.badge-access-leden,
+.role-admin .buildmode-schema .badge-access.badge-access-leden,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-bestuur,
+.role-beheer .buildmode-teaser .badge-access.badge-access-bestuur,
+.role-admin .buildmode-teaser .badge-access.badge-access-bestuur,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-bestuur,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-bestuur,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-bestuur,
+.role-bestuur .buildmode-schema .badge-access.badge-access-bestuur,
+.role-beheer .buildmode-schema .badge-access.badge-access-bestuur,
+.role-admin .buildmode-schema .badge-access.badge-access-bestuur,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-muziekcommissie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-muziekcommissie,
+.role-admin .buildmode-teaser .badge-access.badge-access-muziekcommissie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-muziekcommissie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-muziekcommissie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-muziekcommissie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-muziekcommissie,
+.role-beheer .buildmode-schema .badge-access.badge-access-muziekcommissie,
+.role-admin .buildmode-schema .badge-access.badge-access-muziekcommissie,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-concertcommissie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-concertcommissie,
+.role-admin .buildmode-teaser .badge-access.badge-access-concertcommissie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-concertcommissie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-concertcommissie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-concertcommissie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-concertcommissie,
+.role-beheer .buildmode-schema .badge-access.badge-access-concertcommissie,
+.role-admin .buildmode-schema .badge-access.badge-access-concertcommissie,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-feestcommissie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-feestcommissie,
+.role-admin .buildmode-teaser .badge-access.badge-access-feestcommissie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-feestcommissie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-feestcommissie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-feestcommissie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-feestcommissie,
+.role-beheer .buildmode-schema .badge-access.badge-access-feestcommissie,
+.role-admin .buildmode-schema .badge-access.badge-access-feestcommissie,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-commissie-interne-relaties,
+.role-beheer .buildmode-teaser .badge-access.badge-access-commissie-interne-relaties,
+.role-admin .buildmode-teaser .badge-access.badge-access-commissie-interne-relaties,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-commissie-interne-relaties,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-commissie-interne-relaties,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-commissie-interne-relaties,
+.role-bestuur .buildmode-schema .badge-access.badge-access-commissie-interne-relaties,
+.role-beheer .buildmode-schema .badge-access.badge-access-commissie-interne-relaties,
+.role-admin .buildmode-schema .badge-access.badge-access-commissie-interne-relaties,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-commissie-koorregie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-commissie-koorregie,
+.role-admin .buildmode-teaser .badge-access.badge-access-commissie-koorregie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-commissie-koorregie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-commissie-koorregie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-commissie-koorregie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-commissie-koorregie,
+.role-beheer .buildmode-schema .badge-access.badge-access-commissie-koorregie,
+.role-admin .buildmode-schema .badge-access.badge-access-commissie-koorregie,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-band,
+.role-beheer .buildmode-teaser .badge-access.badge-access-band,
+.role-admin .buildmode-teaser .badge-access.badge-access-band,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-band,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-band,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-band,
+.role-bestuur .buildmode-schema .badge-access.badge-access-band,
+.role-beheer .buildmode-schema .badge-access.badge-access-band,
+.role-admin .buildmode-schema .badge-access.badge-access-band,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-beheer,
+.role-beheer .buildmode-teaser .badge-access.badge-access-beheer,
+.role-admin .buildmode-teaser .badge-access.badge-access-beheer,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-beheer,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-beheer,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-beheer,
+.role-bestuur .buildmode-schema .badge-access.badge-access-beheer,
+.role-beheer .buildmode-schema .badge-access.badge-access-beheer,
+.role-admin .buildmode-schema .badge-access.badge-access-beheer {
   display: inline-block;
   padding: 0.4em 0.8em;
   color: #ffffff;
@@ -2160,120 +2199,120 @@ badge-access-wrapper {
   -moz-border-radius: 5px 5px 0 0;
   border-radius: 5px 5px 0 0;
 }
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Beheer,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Beheer,
-.role-admin .buildmode-teaser .badge-access.badge-access-Beheer,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Beheer,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Beheer,
-.role-beheer .buildmode-schema .badge-access.badge-access-Beheer,
-.role-admin .buildmode-schema .badge-access.badge-access-Beheer,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Bestuur,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Bestuur,
-.role-admin .buildmode-teaser .badge-access.badge-access-Bestuur,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bestuur,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Bestuur,
-.role-beheer .buildmode-schema .badge-access.badge-access-Bestuur,
-.role-admin .buildmode-schema .badge-access.badge-access-Bestuur {
+.role-bestuur .buildmode-teaser .badge-access.badge-access-beheer,
+.role-beheer .buildmode-teaser .badge-access.badge-access-beheer,
+.role-admin .buildmode-teaser .badge-access.badge-access-beheer,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-beheer,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-beheer,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-beheer,
+.role-bestuur .buildmode-schema .badge-access.badge-access-beheer,
+.role-beheer .buildmode-schema .badge-access.badge-access-beheer,
+.role-admin .buildmode-schema .badge-access.badge-access-beheer,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-bestuur,
+.role-beheer .buildmode-teaser .badge-access.badge-access-bestuur,
+.role-admin .buildmode-teaser .badge-access.badge-access-bestuur,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-bestuur,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-bestuur,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-bestuur,
+.role-bestuur .buildmode-schema .badge-access.badge-access-bestuur,
+.role-beheer .buildmode-schema .badge-access.badge-access-bestuur,
+.role-admin .buildmode-schema .badge-access.badge-access-bestuur {
   background: #e9584c;
 }
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Concertcommissie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Concertcommissie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Concertcommissie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Concertcommissie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Concertcommissie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Concertcommissie,
-.role-admin .buildmode-schema .badge-access.badge-access-Concertcommissie,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Feestcommissie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Feestcommissie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Feestcommissie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Feestcommissie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Feestcommissie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Feestcommissie,
-.role-admin .buildmode-schema .badge-access.badge-access-Feestcommissie,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Commissie-Interne_relaties,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Commissie-Interne_relaties,
-.role-admin .buildmode-teaser .badge-access.badge-access-Commissie-Interne_relaties,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne_relaties,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne_relaties,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Interne_relaties,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Commissie-Interne_relaties,
-.role-beheer .buildmode-schema .badge-access.badge-access-Commissie-Interne_relaties,
-.role-admin .buildmode-schema .badge-access.badge-access-Commissie-Interne_relaties,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Commissie-Koorregie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Commissie-Koorregie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
-.role-admin .buildmode-schema .badge-access.badge-access-Commissie-Koorregie,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
-.role-admin .buildmode-teaser .badge-access.badge-access-Muziekcommissie,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Muziekcommissie,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Muziekcommissie,
-.role-beheer .buildmode-schema .badge-access.badge-access-Muziekcommissie,
-.role-admin .buildmode-schema .badge-access.badge-access-Muziekcommissie {
+.role-bestuur .buildmode-teaser .badge-access.badge-access-concertcommissie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-concertcommissie,
+.role-admin .buildmode-teaser .badge-access.badge-access-concertcommissie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-concertcommissie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-concertcommissie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-concertcommissie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-concertcommissie,
+.role-beheer .buildmode-schema .badge-access.badge-access-concertcommissie,
+.role-admin .buildmode-schema .badge-access.badge-access-concertcommissie,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-feestcommissie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-feestcommissie,
+.role-admin .buildmode-teaser .badge-access.badge-access-feestcommissie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-feestcommissie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-feestcommissie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-feestcommissie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-feestcommissie,
+.role-beheer .buildmode-schema .badge-access.badge-access-feestcommissie,
+.role-admin .buildmode-schema .badge-access.badge-access-feestcommissie,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-commissie-interne_relaties,
+.role-beheer .buildmode-teaser .badge-access.badge-access-commissie-interne_relaties,
+.role-admin .buildmode-teaser .badge-access.badge-access-commissie-interne_relaties,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-commissie-interne_relaties,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-commissie-interne_relaties,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-commissie-interne_relaties,
+.role-bestuur .buildmode-schema .badge-access.badge-access-commissie-interne_relaties,
+.role-beheer .buildmode-schema .badge-access.badge-access-commissie-interne_relaties,
+.role-admin .buildmode-schema .badge-access.badge-access-commissie-interne_relaties,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-commissie-koorregie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-commissie-koorregie,
+.role-admin .buildmode-teaser .badge-access.badge-access-commissie-koorregie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-commissie-koorregie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-commissie-koorregie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-commissie-koorregie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-commissie-koorregie,
+.role-beheer .buildmode-schema .badge-access.badge-access-commissie-koorregie,
+.role-admin .buildmode-schema .badge-access.badge-access-commissie-koorregie,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-muziekcommissie,
+.role-beheer .buildmode-teaser .badge-access.badge-access-muziekcommissie,
+.role-admin .buildmode-teaser .badge-access.badge-access-muziekcommissie,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-muziekcommissie,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-muziekcommissie,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-muziekcommissie,
+.role-bestuur .buildmode-schema .badge-access.badge-access-muziekcommissie,
+.role-beheer .buildmode-schema .badge-access.badge-access-muziekcommissie,
+.role-admin .buildmode-schema .badge-access.badge-access-muziekcommissie {
   background: #e6d119;
 }
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Leden,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Leden,
-.role-admin .buildmode-teaser .badge-access.badge-access-Leden,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Leden,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Leden,
-.role-beheer .buildmode-schema .badge-access.badge-access-Leden,
-.role-admin .buildmode-schema .badge-access.badge-access-Leden,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Band,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Band,
-.role-admin .buildmode-teaser .badge-access.badge-access-Band,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Band,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Band,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Band,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Band,
-.role-beheer .buildmode-schema .badge-access.badge-access-Band,
-.role-admin .buildmode-schema .badge-access.badge-access-Band,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
-.role-admin .buildmode-teaser .badge-access.badge-access-Aspirant-Leden,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Aspirant-Leden,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
-.role-beheer .buildmode-schema .badge-access.badge-access-Aspirant-Leden,
-.role-admin .buildmode-schema .badge-access.badge-access-Aspirant-Leden {
+.role-bestuur .buildmode-teaser .badge-access.badge-access-leden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-leden,
+.role-admin .buildmode-teaser .badge-access.badge-access-leden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-leden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-leden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-leden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-leden,
+.role-beheer .buildmode-schema .badge-access.badge-access-leden,
+.role-admin .buildmode-schema .badge-access.badge-access-leden,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-band,
+.role-beheer .buildmode-teaser .badge-access.badge-access-band,
+.role-admin .buildmode-teaser .badge-access.badge-access-band,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-band,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-band,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-band,
+.role-bestuur .buildmode-schema .badge-access.badge-access-band,
+.role-beheer .buildmode-schema .badge-access.badge-access-band,
+.role-admin .buildmode-schema .badge-access.badge-access-band,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-aspirant-leden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-aspirant-leden,
+.role-admin .buildmode-teaser .badge-access.badge-access-aspirant-leden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-aspirant-leden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-aspirant-leden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-aspirant-leden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-aspirant-leden,
+.role-beheer .buildmode-schema .badge-access.badge-access-aspirant-leden,
+.role-admin .buildmode-schema .badge-access.badge-access-aspirant-leden {
   background: #51aaec;
 }
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Vrienden,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Vrienden,
-.role-admin .buildmode-teaser .badge-access.badge-access-Vrienden,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Vrienden,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Vrienden,
-.role-beheer .buildmode-schema .badge-access.badge-access-Vrienden,
-.role-admin .buildmode-schema .badge-access.badge-access-Vrienden,
-.role-bestuur .buildmode-teaser .badge-access.badge-access-Bezoekers,
-.role-beheer .buildmode-teaser .badge-access.badge-access-Bezoekers,
-.role-admin .buildmode-teaser .badge-access.badge-access-Bezoekers,
-.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
-.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
-.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-Bezoekers,
-.role-bestuur .buildmode-schema .badge-access.badge-access-Bezoekers,
-.role-beheer .buildmode-schema .badge-access.badge-access-Bezoekers,
-.role-admin .buildmode-schema .badge-access.badge-access-Bezoekers {
+.role-bestuur .buildmode-teaser .badge-access.badge-access-vrienden,
+.role-beheer .buildmode-teaser .badge-access.badge-access-vrienden,
+.role-admin .buildmode-teaser .badge-access.badge-access-vrienden,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-vrienden,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-vrienden,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-vrienden,
+.role-bestuur .buildmode-schema .badge-access.badge-access-vrienden,
+.role-beheer .buildmode-schema .badge-access.badge-access-vrienden,
+.role-admin .buildmode-schema .badge-access.badge-access-vrienden,
+.role-bestuur .buildmode-teaser .badge-access.badge-access-bezoekers,
+.role-beheer .buildmode-teaser .badge-access.badge-access-bezoekers,
+.role-admin .buildmode-teaser .badge-access.badge-access-bezoekers,
+.role-bestuur .buildmode-full:not(:empty) .badge-access.badge-access-bezoekers,
+.role-beheer .buildmode-full:not(:empty) .badge-access.badge-access-bezoekers,
+.role-admin .buildmode-full:not(:empty) .badge-access.badge-access-bezoekers,
+.role-bestuur .buildmode-schema .badge-access.badge-access-bezoekers,
+.role-beheer .buildmode-schema .badge-access.badge-access-bezoekers,
+.role-admin .buildmode-schema .badge-access.badge-access-bezoekers {
   background: #aad563;
 }
 .role-bestuur .buildmode-schema .badge-access-wrapper,
@@ -2432,7 +2471,7 @@ badge-access-wrapper {
   position: relative;
   /* for absolute positioning of icon */
   vertical-align: bottom;
-  width: 1.71428571em;
+  width: 2.28571429em;
   margin: 0 0 0.28571429em 0.28571429em;
 }
 .buildmode-schema.node-type-activiteit .node-edit-link:before,
@@ -2582,9 +2621,105 @@ badge-access-wrapper {
 .buildmode-schema.node-type-profiel .aspirant {
   color: #e9584c;
 }
-.buildmode-full .node-type-foto > div > div > .field-afbeeldingen {
+.buildmode-full.node-type-foto .field-afbeeldingen .field-items {
+  display: grid;
+  row-gap: 0.85714286em;
+  column-gap: 0.85714286em;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media screen and (min-width: 43.57142857142857em ) {
+  .buildmode-full.node-type-foto .field-afbeeldingen .field-items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .buildmode-full.node-type-foto .field-afbeeldingen .field-items {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (min-width: 71.42857142857143em ) {
+  .buildmode-full.node-type-foto .field-afbeeldingen .field-items {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media screen and (min-width: 78.57142857142857em) {
+  .buildmode-full.node-type-foto .field-afbeeldingen .field-items {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+article.buildmode-teaser.node-type-foto .field-afbeeldingen a,
+article.buildmode-teaser.node-type-foto .field-afbeeldingen img,
+article.buildmode-teaser.node-type-audio .field-mp3 .jp-single-player,
+article.buildmode-teaser.node-type-video .field-video .video {
   width: 100%;
-  padding: 0;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+article.buildmode-teaser.node-type-foto .field-afbeeldingen .field-item:first-child,
+article.buildmode-teaser.node-type-foto .field-afbeeldingen .field-item:first-child,
+article.buildmode-teaser.node-type-audio .field-mp3 .field-item:first-child,
+article.buildmode-teaser.node-type-video .field-video .field-item:first-child {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+article.buildmode-teaser.node-type-foto,
+article.buildmode-teaser.node-type-audio,
+article.buildmode-teaser.node-type-video {
+  padding: 0.85714286em;
+}
+article.buildmode-teaser.node-type-foto .field-group,
+article.buildmode-teaser.node-type-audio .field-group,
+article.buildmode-teaser.node-type-video .field-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.85714286em;
+}
+article.buildmode-teaser.node-type-foto .badge-nodetype,
+article.buildmode-teaser.node-type-audio .badge-nodetype,
+article.buildmode-teaser.node-type-video .badge-nodetype,
+article.buildmode-teaser.node-type-foto .node-edit-link,
+article.buildmode-teaser.node-type-audio .node-edit-link,
+article.buildmode-teaser.node-type-video .node-edit-link {
+  display: inline-block;
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  /* for absolute positioning of icon */
+  vertical-align: bottom;
+  width: 2.28571429em;
+}
+article.buildmode-teaser.node-type-foto .badge-nodetype:before,
+article.buildmode-teaser.node-type-audio .badge-nodetype:before,
+article.buildmode-teaser.node-type-video .badge-nodetype:before,
+article.buildmode-teaser.node-type-foto .node-edit-link:before,
+article.buildmode-teaser.node-type-audio .node-edit-link:before,
+article.buildmode-teaser.node-type-video .node-edit-link:before {
+  font-family: FontAwesome;
+  text-indent: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0;
+  display: inline;
+  width: auto;
+}
+article.buildmode-teaser.node-type-foto .field-title h2,
+article.buildmode-teaser.node-type-audio .field-title h2,
+article.buildmode-teaser.node-type-video .field-title h2 {
+  color: #e9584c;
+  text-transform: uppercase;
+  font-size: 1.14285714em;
+  line-height: 1.5em;
+  margin-bottom: 0;
 }
 .field-inline,
 .field-inline div {
@@ -2776,6 +2911,11 @@ tr.dblog-access-denied td.active {
 .opnamen .views-row,
 .opnamen .field-item {
   display: contents;
+}
+.opnamen article.node-type-foto,
+.opnamen article.node-type-video,
+.opnamen article.node-type-audio {
+  margin: 0;
 }
 .opnamen .opname {
   position: relative;
@@ -4308,7 +4448,7 @@ tr.taxonomy-term-divider-bottom {
   position: relative;
   /* for absolute positioning of icon */
   vertical-align: bottom;
-  width: 1.71428571em;
+  width: 2.28571429em;
   display: block;
   position: absolute;
 }

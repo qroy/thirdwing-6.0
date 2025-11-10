@@ -1,4 +1,3 @@
-<?php phptemplate_comment_wrapper(NULL, $node->type); ?>
 <!DOCTYPE html>
 <html lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
 <head profile="http://www.w3.org/1999/xhtml/vocab">

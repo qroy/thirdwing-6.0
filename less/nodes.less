@@ -23,7 +23,10 @@
 .buildmode-teaser, 
 .buildmode-full, 
 .buildmode-schema,
-#node-form {
+#main > dl,
+#main > form,
+#main > .admin,
+#main > .help:not(:empty) {
   &:not(:empty) {
     position: relative;
     background: @white;
@@ -43,94 +46,115 @@
 	}
   }
 }
-.buildmode-teaser {
-  > .nd-region-header {
-    > .field-background {
-    // position background image
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 0;
-      .field-items, .field-item {
-        height: 100%;
-      }
-      .node-background {
+// BACKGROUND IMAGE ACTIVITEITEN
+article.buildmode-teaser {
+  .field-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    .field-items, .field-item {
+      height: 100%;
+    }
+    .node-background {
+      width: 100%;
+      height: 100%;
+      background-position: center 10%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: @grey;
+      .border-radius(@border-radius-large);
+      &:after {
+        content: ' ';
+        position: relative;
+        z-index: 1;
+        display: block;
         width: 100%;
         height: 100%;
-        background-position: center 10%;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-color: @grey;
+        background: @white;
+        opacity: 0.75;
         .border-radius(@border-radius-large);
-        &:after {
-          content: ' ';
-          position: relative;
-          z-index: 1;
-          display: block;
-          width: 100%;
-          height: 100%;
-          background: @white;
-          opacity: 0.75;
-          .border-radius(@border-radius-large);
-        }
       }
-    }
-  }    
-}
-
-// FIELD-AFBEELDINGEN
-.field-afbeeldingen {
-  > .field-items > .field-item {
-    display: none;
-    &:first-child {
-      display: block;
-      float: right;
-      max-width: 50%;
-	  max-height: 330em/@fs;
-	  text-align: right;
     }
   }
 }
-.node-type-activiteit .field-afbeeldingen > .field-items > .field-item {
-  height: 330em/@fs;
+// FIELD-AFBEELDINGEN
+article.node-type-activiteit,
+article.node-type-nieuws {
+  .field-afbeeldingen .field-item {
+    display: none;
+    &:first-child {
+      display: block;
+	  @media @phone-ls {
+        float: right;
+        max-width: 50%;
+	    max-height: 330em/@fs;
+        text-align: right;
+	  }
+    }
+  }
+}
+article.node-type-foto.buildmode-teaser .field-afbeeldingen .field-item {
+  display: none;
+  &:first-child {
+    display: block;
+  }
+}
+article.node-type-activiteit .field-afbeeldingen .field-item:first-child {
+  @media @phone-ls { height: 330em/@fs; }
   width: 100%;
   max-width: 100%;
   margin: 0;
 }
-.field-afbeeldingen > .field-items > .field-item {
+article .field-afbeeldingen .field-item {
   a {
     display: inline-block;
-	max-height: 330em/@fs;
   }
   img {
-    max-height: 330em/@fs;
+    max-height: 100%;
     max-width: 100%;
-	width: auto;
+  	width: auto;
 	height: auto;
     object-fit: contain;
 	object-position: right top;
     display: block;
-    .border-radius(@border-radius-large);
+	.border-radius();
   }
+}
+article.node-type-activiteit .field-afbeeldingen .field-item,
+article.node-type-nieuws .field-afbeeldingen .field-item {
+  @media @phone-ls {
+  a {
+	max-height: 330em/@fs;
+  }
+  img {
+    max-height: 330em/@fs;
+  }
+  }
+}
+article.node-type-nieuws .field-afbeeldingen .field-item {
+  @media @phone-ls { margin-left: 24em/@fs; }
+  margin-bottom: 24em/@fs;
 }
 // TEMPORARY
 .buildmode-full .field-background {
   display: none;
 }
-
-.buildmode-teaser, .buildmode-full {
-    > .nd-region-middle-wrapper > .nd-region-middle {
-      > .field-title {
-        @media @tablet {
+// TITLE ACTIVITEIT EN NIEUWS
+article.node-type-nieuws,
+article.node-type-activiteit {
+  &.buildmode-full, &.buildmode-teaser {
+    .field-title {
+      @media @tablet {
         height: 150em/@fs;
         display: table-cell;
-		vertical-align: bottom;
+	    vertical-align: bottom;
         overflow: hidden;
-        }
       }
     }
+  }
 }
 // ACCESS BADGES
 .badge-access, badge-access-wrapper { display: none; }
@@ -150,36 +174,36 @@
 	  z-index: 5;
 	}
     .badge-access {
-      &.badge-access-Bezoekers,
-      &.badge-access-Vrienden,
-	  &.badge-access-Aspirant-Leden,
-	  &.badge-access-Leden,
-	  &.badge-access-Bestuur, 
-	  &.badge-access-Muziekcommissie,
-	  &.badge-access-Concertcommissie,
-	  &.badge-access-Feestcommissie,
-	  &.badge-access-Commissie-Interne-Relaties,
-	  &.badge-access-Commissie-Koorregie,
-	  &.badge-access-Band,
-      &.badge-access-Beheer {
+      &.badge-access-bezoekers,
+      &.badge-access-vrienden,
+	  &.badge-access-aspirant-Leden,
+	  &.badge-access-leden,
+	  &.badge-access-bestuur, 
+	  &.badge-access-muziekcommissie,
+	  &.badge-access-concertcommissie,
+	  &.badge-access-feestcommissie,
+	  &.badge-access-commissie-interne-relaties,
+	  &.badge-access-commissie-koorregie,
+	  &.badge-access-band,
+      &.badge-access-beheer {
         display: inline-block;
         padding: 4em/10 8em/10;
         color: @white;
         text-align: center;
         .border-radius(@border-radius-small @border-radius-small 0 0);
       }
-	  &.badge-access-Beheer,
-	  &.badge-access-Bestuur { background: @red; }
-	  &.badge-access-Concertcommissie,
-	  &.badge-access-Feestcommissie,
-	  &.badge-access-Commissie-Interne_relaties,
-	  &.badge-access-Commissie-Koorregie,
-	  &.badge-access-Muziekcommissie { background: @yellow; }
-      &.badge-access-Leden,
-      &.badge-access-Band,
-	  &.badge-access-Aspirant-Leden { background: @blue; }
-	  &.badge-access-Vrienden,
-      &.badge-access-Bezoekers { background: @green; }
+	  &.badge-access-beheer,
+	  &.badge-access-bestuur { background: @red; }
+	  &.badge-access-concertcommissie,
+	  &.badge-access-feestcommissie,
+	  &.badge-access-commissie-interne_relaties,
+	  &.badge-access-commissie-koorregie,
+	  &.badge-access-muziekcommissie { background: @yellow; }
+      &.badge-access-leden,
+      &.badge-access-band,
+	  &.badge-access-aspirant-leden { background: @blue; }
+	  &.badge-access-vrienden,
+      &.badge-access-bezoekers { background: @green; }
 	}
   }
   .buildmode-schema {
@@ -212,7 +236,6 @@
 	row-gap: 24em/@fs;
   }
   @media @tablet {
-//    padding-top: 288em/@fs;
     .field-body {
 	  grid-template-columns: repeat(3, 1fr);
     }
@@ -323,6 +346,7 @@
 	@media @tablet { padding: 9em/@fs; }
   }
 }
+// GEBRUIKERS
 .buildmode-teaser&.node-type-profiel {
   font-size: 12em/@fs;
   line-height: 24em/12;
@@ -338,7 +362,7 @@
     text-transform: uppercase;
   }
 }
-.buildmode-schema&.node-type-profiel {
+.buildmode-schema.node-type-profiel {
   display: grid;
   column-gap: 12em/@fs;
   row-gap: 12em/@fs;
@@ -397,14 +421,63 @@
     color: @red;
   }
 }
-
-
-.buildmode-full .node-type-foto > div > div {
-  > .field-afbeeldingen {
-    width: 100%;
-    padding: 0;
+// FOTO ALBUMS
+.buildmode-full.node-type-foto {
+  .field-afbeeldingen .field-items {
+    display: grid;
+	row-gap: 12em/@fs;
+	column-gap: 12em/@fs;
+	grid-template-columns: repeat(2, 1fr);
+	@media @phone-ls { grid-template-columns: repeat(3, 1fr); }
+	@media @tablet { grid-template-columns: repeat(4, 1fr); }
+	@media @normal { grid-template-columns: repeat(5, 1fr); }
+	@media @wide { grid-template-columns: repeat(6, 1fr); }
   }
 }
+// MEDIA
+article.buildmode-teaser.node-type-foto .field-afbeeldingen a,
+article.buildmode-teaser.node-type-foto .field-afbeeldingen img,
+article.buildmode-teaser.node-type-audio .field-mp3 .jp-single-player,
+article.buildmode-teaser.node-type-video .field-video .video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  .border-radius();
+  overflow: hidden;
+}
+article.buildmode-teaser.node-type-foto .field-afbeeldingen,
+article.buildmode-teaser.node-type-foto .field-afbeeldingen,
+article.buildmode-teaser.node-type-audio .field-mp3,
+article.buildmode-teaser.node-type-video .field-video {
+  .field-item:first-child {
+    aspect-ratio: 16 ~"/" 9;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+  }
+}
+article.buildmode-teaser.node-type-foto,
+article.buildmode-teaser.node-type-audio,
+article.buildmode-teaser.node-type-video {
+  padding: 12em/@fs;
+  .field-group {
+    display: flex;
+	justify-content: flex-end;
+	margin-top: 12em/@fs;
+  }
+  .badge-nodetype, .node-edit-link {
+    .icon-only();
+  }
+  .field-title h2 {
+    color: @red;
+	text-transform: uppercase;
+	font-size: 16em/@fs;
+	line-height: 24em/16;
+	margin-bottom: 0;
+  }
+}
+
 .field-inline, .field-inline div {
   display: inline-block;
   vertical-align: middle;

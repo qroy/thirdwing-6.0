@@ -1,201 +1,297 @@
 ﻿<?php
 /**
+ * @file
+ * Theme functions and preprocessing for the theme.
+ */
+
+/**
  * Return a themed breadcrumb trail.
  *
- * @param $breadcrumb
+ * @param array $breadcrumb
  *   An array containing the breadcrumb links.
- * @return a string containing the breadcrumb output.
+ * @return string
+ *   A string containing the breadcrumb output.
  */
 function phptemplate_breadcrumb($breadcrumb) {
   if (!empty($breadcrumb)) {
-    return '<div id="breadcrumb">'. implode(' › ', $breadcrumb) .'</div>';
+    return '<div id="breadcrumb">' . implode(' › ', $breadcrumb) . '</div>';
   }
 }
 
 /**
- * Allow themable wrapping of all comments.
- */
-function phptemplate_comment_wrapper($content, $node) {
-  if (!$content || $node->type == 'forum') {
-    return '<div id="comments">'. $content .'</div><a name="comments"></a>';
-  }
-  else {
-    return '<div id="comments"><h2 class="comments">'. t('Comments') .'</h2>'. $content .'</div><a name="comments"></a>';
-  }
-}
-
-/**
- * Override or insert PHPTemplate variables into the templates.
+ * Override or insert PHPTemplate variables into the page templates.
+ *
+ * @param array $vars
+ *   Template variables.
+ * @param string $hook
+ *   The hook being preprocessed.
  */
 function phptemplate_preprocess_page(&$vars, $hook) {
-  global $user; // Add this line!
+  global $user;
   
   $body_classes = array($vars['body_classes']);
   
-  if ((arg(0) == 'node') && (is_numeric(arg(1)))) {
-    if (!$vars['node']) $vars['node'] = node_load(arg(1));
-  }
-  $vars['tabs2'] = menu_secondary_local_tasks(); 
-  if (module_exists('taxonomy') && $vars['node']->nid) {
-    foreach (taxonomy_node_get_terms($vars['node']) as $term) {
-      $body_classes[] = 'taxonomy-' . eregi_replace('[^a-z0-9]', '-', $term->name);
+  // Load node if on node page
+  if (arg(0) == 'node' && is_numeric(arg(1))) {
+    if (!isset($vars['node']) || !$vars['node']) {
+      $vars['node'] = node_load(arg(1));
     }
   }
-  if ($vars['node']->field_afbeeldingen[0]['filepath'] && $vars['node']->sticky) {
-    $body_classes[] = 'node-hero';
-    $vars['hero'] = $vars['node']->field_afbeeldingen[0]['filepath'];
-  }
-  if ($vars['node']->field_background[0]['filepath'] && $vars['node']->type == 'activiteit') {
-    $body_classes[] = 'node-hero';
-    $vars['hero'] = $vars['node']->field_background[0]['filepath'];
-  }
-  $body_classes[] = 'node-type-' . $vars['node']->type;
   
-  // Add classes for each role the user has
-  if ($user->uid) {
+  // Add secondary tabs
+  $vars['tabs2'] = menu_secondary_local_tasks();
+  
+  // Only process if we have a valid node
+  if (isset($vars['node']) && is_object($vars['node']) && !empty($vars['node']->nid)) {
+    $node = $vars['node'];
+    
+    // Add taxonomy classes
+    if (module_exists('taxonomy')) {
+      $terms = taxonomy_node_get_terms($node);
+      foreach ($terms as $term) {
+        $body_classes[] = 'taxonomy-' . preg_replace('/[^a-z0-9]+/', '-', strtolower($term->name));
+      }
+    }
+    
+    // Add hero class for sticky nodes with images
+    if (!empty($node->field_afbeeldingen[0]['filepath']) && $node->sticky) {
+      $body_classes[] = 'node-hero';
+      $vars['hero'] = $node->field_afbeeldingen[0]['filepath'];
+    }
+    
+    // Add hero class for activity nodes with backgrounds
+    if (!empty($node->field_background[0]['filepath']) && $node->type == 'activiteit') {
+      $body_classes[] = 'node-hero';
+      $vars['hero'] = $node->field_background[0]['filepath'];
+    }
+    
+    // Add node type class
+    $body_classes[] = 'node-type-' . $node->type;
+  }
+  
+  // Add user role classes
+  if ($user->uid && !empty($user->roles)) {
     foreach ($user->roles as $role) {
       $body_classes[] = 'role-' . str_replace(' ', '-', strtolower($role));
     }
   }
   
-  // Add new body classes to existing variable
-  $vars['body_classes'] = implode(' ', $body_classes);
+  // Combine all body classes
+  $vars['body_classes'] = implode(' ', array_unique($body_classes));
 }
+
+/**
+ * Preprocess node variables.
+ *
+ * @param array $vars
+ *   Template variables.
+ */
 function phptemplate_preprocess_node(&$vars) {
-  if (module_exists('taxonomy') && $vars['node']->nid) {
-    // Define mapping for short codes
-    $access_labels = array(
-      'Bezoekers' => 'BEZ',
-      'Vrienden' => 'VRI',
-      'Aspirant-Leden' => 'ASP',
-      'Leden' => 'LED',
-      'Bestuur' => 'BES',
-      'Muziekcommissie' => 'MC',
-      'Concertcommissie' => 'CC',
-      'Commissie Interne Relaties' => 'IR',
-      'Commissie Koorregie' => 'REG',
-      'Feestcommissie' => 'FC',
-      'Band' => 'BAN',
-      'Beheer' => 'BEH',
-    );
+  $node = $vars['node'];
+  
+  // Add taxonomy classes and badges
+  if (module_exists('taxonomy') && !empty($node->nid)) {
+    _phptemplate_add_taxonomy_classes($vars);
+  }
+  
+  // Add hero classes
+  _phptemplate_add_hero_classes($vars);
+  
+  // Add content-type specific classes
+  switch ($node->type) {
+    case 'activiteit':
+      _phptemplate_add_activity_classes($vars);
+      break;
     
-    $term_divs = array();
-    foreach (taxonomy_node_get_terms($vars['node']) as $term) {
-      $class = preg_replace('/[^a-zA-Z0-9-]+/', '-', $term->name);
-      $vars['node_classes'] .= ' taxonomy-' . $class;
-      
-      // Only create badges for vocabulary 4
-      if ($term->vid == '4' && isset($access_labels[$term->name])) {
-        $class_short = $access_labels[$term->name];
-        $term_divs[] = '<span class="badge-access badge-access-' . $class . '" title="Zichtbaar voor ' . check_plain($term->name) . '">' . $class_short . '</span>';
-      }
-    }
+    case 'profiel':
+      _phptemplate_add_profile_classes($vars);
+      break;
+  }
+}
+
+/**
+ * Helper function to add taxonomy classes and badges.
+ *
+ * @param array $vars
+ *   Template variables passed by reference.
+ */
+function _phptemplate_add_taxonomy_classes(&$vars) {
+  $node = $vars['node'];
+  
+  // Define mapping for access level short codes
+  $access_labels = array(
+    'Bezoekers' => 'BEZ',
+    'Vrienden' => 'VRI',
+    'Aspirant-Leden' => 'ASP',
+    'Leden' => 'LED',
+    'Bestuur' => 'BES',
+    'Muziekcommissie' => 'MC',
+    'Concertcommissie' => 'CC',
+    'Commissie Interne Relaties' => 'IR',
+    'Commissie Koorregie' => 'REG',
+    'Feestcommissie' => 'FC',
+    'Band' => 'BAN',
+    'Beheer' => 'BEH',
+  );
+  
+  $term_divs = array();
+  $terms = taxonomy_node_get_terms($node);
+  
+  foreach ($terms as $term) {
+    $class = preg_replace('/[^a-zA-Z0-9-]+/', '-', strtolower($term->name));
+    $vars['node_classes'] .= ' taxonomy-' . $class;
     
-    if (!empty($term_divs)) {
-      $vars['taxonomy_term_divs'] = '<div class="badge-access-wrapper">' . implode("\n", $term_divs) . '</div>';
+    // Only create badges for vocabulary 4 (access levels)
+    if ($term->vid == 4 && isset($access_labels[$term->name])) {
+      $class_short = $access_labels[$term->name];
+      $term_divs[] = '<span class="badge-access badge-access-' . $class . '" title="Zichtbaar voor ' . check_plain($term->name) . '">' . $class_short . '</span>';
     }
   }
   
+  if (!empty($term_divs)) {
+    $vars['taxonomy_term_divs'] = '<div class="badge-access-wrapper">' . implode("\n", $term_divs) . '</div>';
+  }
+}
+
+/**
+ * Helper function to add hero classes to nodes.
+ *
+ * @param array $vars
+ *   Template variables passed by reference.
+ */
+function _phptemplate_add_hero_classes(&$vars) {
+  $node = $vars['node'];
+  
   // Add hero class for sticky nodes with images
-  if (!empty($vars['node']->field_afbeeldingen[0]['filepath']) && $vars['node']->sticky) {
+  if (!empty($node->field_afbeeldingen[0]['filepath']) && $node->sticky) {
     $vars['node_classes'] .= ' node-hero';
   }
   
   // Add hero class for activity nodes with backgrounds
-  if (!empty($vars['node']->field_background[0]['filepath']) && $vars['node']->type == 'activiteit') {
+  if (!empty($node->field_background[0]['filepath']) && $node->type == 'activiteit') {
     $vars['node_classes'] .= ' node-hero';
   }
-  if ($vars['node']->type == 'activiteit') {
-    // Add class based on field_activiteit_status select key
-    if (!empty($vars['node']->field_activiteit_status[0]['value'])) {
-      $status_key = $vars['node']->field_activiteit_status[0]['value'];
-      $vars['node_classes'] .= ' node-status-' . $status_key;
-    }
+}
+
+/**
+ * Helper function to add activity-specific classes.
+ *
+ * @param array $vars
+ *   Template variables passed by reference.
+ */
+function _phptemplate_add_activity_classes(&$vars) {
+  $node = $vars['node'];
+  
+  // Add class based on field_activiteit_status select key
+  if (!empty($node->field_activiteit_status[0]['value'])) {
+    $status_key = $node->field_activiteit_status[0]['value'];
+    $vars['node_classes'] .= ' node-status-' . $status_key;
   }
-  // Add field-based classes for profiel content type
-  if ($vars['node']->type == 'profiel') {
-    // Add class based on field_koor select key
-    if (!empty($vars['node']->field_koor[0]['value'])) {
-      $koorfunctie_key = $vars['node']->field_koor[0]['value'];
-      $vars['node_classes'] .= ' persoon-' . $koorfunctie_key;
-    }
-	// Add class based on field_koor select key
-    if (!empty($vars['node']->field_positie[0]['value'])) {
-      $koorpositie_key = $vars['node']->field_positie[0]['value'];
-      $vars['node_classes'] .= ' persoon-positie-' . $koorpositie_key;
-    }
-	// Add class based on field_koor select key
-    if (!empty($vars['node']->field_positie_rij[0]['value'])) {
-      $koorpositie_rij_key = $vars['node']->field_positie_rij[0]['value'];
-      $vars['node_classes'] .= ' persoon-positie-' . $koorpositie_rij_key;
-    }
-	// Add class based on field_koor select key
-    if (!empty($vars['node']->field_positie_kolom[0]['value'])) {
-      $koorpositie_kolom_key = $vars['node']->field_positie_kolom[0]['value'];
-      $vars['node_classes'] .= ' persoon-positie-' . $koorpositie_kolom_key;
-    }
-	// Add classes based on author's roles
-    if ($vars['node']->uid) {
-      $author = user_load($vars['node']->uid);
-      if (!empty($author->roles)) {
-        foreach ($author->roles as $rid => $role_name) {
-          $role_class = preg_replace('/[^a-zA-Z0-9-]+/', '-', strtolower($role_name));
-          $vars['node_classes'] .= ' persoon-groep-' . $role_class;
-        }
+}
+
+/**
+ * Helper function to add profile-specific classes.
+ *
+ * @param array $vars
+ *   Template variables passed by reference.
+ */
+function _phptemplate_add_profile_classes(&$vars) {
+  $node = $vars['node'];
+  
+  // Add class based on field_koor (choir function)
+  if (!empty($node->field_koor[0]['value'])) {
+    $vars['node_classes'] .= ' persoon-' . $node->field_koor[0]['value'];
+  }
+  
+  // Add class based on field_positie (position)
+  if (!empty($node->field_positie[0]['value'])) {
+    $vars['node_classes'] .= ' persoon-positie-' . $node->field_positie[0]['value'];
+  }
+  
+  // Add class based on field_positie_rij (row position)
+  if (!empty($node->field_positie_rij[0]['value'])) {
+    $vars['node_classes'] .= ' persoon-positie-' . $node->field_positie_rij[0]['value'];
+  }
+  
+  // Add class based on field_positie_kolom (column position)
+  if (!empty($node->field_positie_kolom[0]['value'])) {
+    $vars['node_classes'] .= ' persoon-positie-' . $node->field_positie_kolom[0]['value'];
+  }
+  
+  // Add classes based on author's roles
+  if (!empty($node->uid)) {
+    $author = user_load($node->uid);
+    if ($author && !empty($author->roles)) {
+      foreach ($author->roles as $rid => $role_name) {
+        $role_class = preg_replace('/[^a-zA-Z0-9-]+/', '-', strtolower($role_name));
+        $vars['node_classes'] .= ' persoon-groep-' . $role_class;
       }
     }
   }
 }
 
-
 /**
- * Returns the rendered local tasks. The default implementation renders
- * them as tabs. Overridden to split the secondary tasks.
+ * Returns the rendered local tasks.
  *
- * @ingroup themeable
+ * Overridden to show only primary tasks.
+ *
+ * @return string
+ *   Rendered primary local tasks.
  */
 function phptemplate_menu_local_tasks() {
   return menu_primary_local_tasks();
 }
 
-function phptemplate_comment_submitted($comment) {
-  return t('Geplaatst op !datetime door !username',
-    array(
-      '!username' => theme('username', $comment),
-      '!datetime' => format_date($comment->timestamp)
-    ));
-}
-
+/**
+ * Theme function for node submission information.
+ *
+ * @param object $node
+ *   The node object.
+ * @return string
+ *   Formatted submission text.
+ */
 function phptemplate_node_submitted($node) {
-  return t('Geplaatst op !datetime door !username',
-    array(
-      '!username' => theme('username', $node),
-      '!datetime' => format_date($node->created),
-    ));
+  return t('Geplaatst op !datetime door !username', array(
+    '!username' => theme('username', $node),
+    '!datetime' => format_date($node->created),
+  ));
 }
 
+/**
+ * Theme function for date all day label.
+ *
+ * @return string
+ *   Empty string to hide the label.
+ */
 function phptemplate_date_all_day_label() {
   return '';
 }
 
+/**
+ * Theme function for FileField files.
+ *
+ * @param array $file
+ *   File array.
+ * @return string
+ *   Formatted file output.
+ */
 function phptemplate_filefield_file($file) {
-  // Views may call this function with a NULL value, return an empty string.
+  // Views may call this function with a NULL value
   if (empty($file['fid'])) {
     return '';
   }
 
-  $path = $file['filepath'];
-  $url = file_create_url($path);
+  $url = file_create_url($file['filepath']);
   $icon = theme('filefield_icon', $file);
 
-  // Set options as per anchor format described at
+  // Set options for the link
   $options = array(
     'attributes' => array(
       'type' => $file['filemime'] . '; length=' . $file['filesize'],
     ),
   );
 
-  // Use the description as the link text if available.
+  // Use the description as the link text if available
   if (empty($file['data']['description'])) {
     $link_text = $file['filename'];
   }
@@ -204,26 +300,33 @@ function phptemplate_filefield_file($file) {
     $options['attributes']['title'] = $file['filename'];
   }
 
-  //open files of particular mime types in new window
-  $new_window_mimetypes = array(
-    'application/pdf',
-    'text/plain'
-  );
+  // Open files of particular mime types in new window
+  $new_window_mimetypes = array('application/pdf', 'text/plain');
   if (in_array($file['filemime'], $new_window_mimetypes)) {
     $options['attributes']['target'] = '_blank';
   }
 
-  return '<div class="filefield-file clear-block">'. $icon . l($link_text, $url, $options) .'</div>';
+  return '<div class="filefield-file clear-block">' . $icon . l($link_text, $url, $options) . '</div>';
 }
 
+/**
+ * Theme function for radio buttons with custom styling.
+ *
+ * @param array $element
+ *   Form element array.
+ * @return string
+ *   Themed radio button.
+ */
 function phptemplate_radio($element) {
   _form_set_class($element, array('form-radio'));
+  
   $output = '<input type="radio" ';
   $output .= 'id="' . $element['#id'] . '" ';
   $output .= 'name="' . $element['#name'] . '" ';
   $output .= 'value="' . $element['#return_value'] . '" ';
-  $output .= (check_plain($element['#value']) == $element['#return_value']) ? ' checked="checked" ' : ' ';
+  $output .= (check_plain($element['#value']) == $element['#return_value']) ? ' checked="checked" ' : '';
   $output .= drupal_attributes($element['#attributes']) . ' />';
+  
   if (!is_null($element['#title'])) {
     $output = '<label class="option" for="' . $element['#id'] . '">' . $output . '<div class="option__indicator"></div> ' . $element['#title'] . '</label>';
   }
@@ -231,14 +334,24 @@ function phptemplate_radio($element) {
   unset($element['#title']);
   return theme('form_element', $element, $output);
 }
+
+/**
+ * Theme function for checkboxes with custom styling.
+ *
+ * @param array $element
+ *   Form element array.
+ * @return string
+ *   Themed checkbox.
+ */
 function phptemplate_checkbox($element) {
   _form_set_class($element, array('form-checkbox'));
+  
   $checkbox = '<input ';
   $checkbox .= 'type="checkbox" ';
   $checkbox .= 'name="' . $element['#name'] . '" ';
   $checkbox .= 'id="' . $element['#id'] . '" ';
   $checkbox .= 'value="' . $element['#return_value'] . '" ';
-  $checkbox .= $element['#value'] ? ' checked="checked" ' : ' ';
+  $checkbox .= $element['#value'] ? ' checked="checked" ' : '';
   $checkbox .= drupal_attributes($element['#attributes']) . ' />';
 
   if (!is_null($element['#title'])) {
@@ -248,10 +361,26 @@ function phptemplate_checkbox($element) {
   unset($element['#title']);
   return theme('form_element', $element, $checkbox);
 }
+
+/**
+ * Theme function for select elements with custom styling.
+ *
+ * @param array $element
+ *   Form element array.
+ * @return string
+ *   Themed select element.
+ */
 function phptemplate_select($element) {
-  $select = '';
-  $size = $element['#size'] ? ' size="' . $element['#size'] . '"' : '';
   _form_set_class($element, array('form-select'));
+  
+  $size = $element['#size'] ? ' size="' . $element['#size'] . '"' : '';
   $multiple = $element['#multiple'];
-  return theme('form_element', $element, '<div class="select"><select name="' . $element['#name'] . '' . ($multiple ? '[]' : '') . '"' . ($multiple ? ' multiple="multiple" ' : '') . drupal_attributes($element['#attributes']) . ' id="' . $element['#id'] . '" ' . $size . '>' . form_select_options($element) . '</select><div class="select__arrow"></div></div>');
+  $name = $element['#name'] . ($multiple ? '[]' : '');
+  $multiple_attr = $multiple ? ' multiple="multiple"' : '';
+  
+  $select = '<select name="' . $name . '"' . $multiple_attr . drupal_attributes($element['#attributes']) . ' id="' . $element['#id'] . '"' . $size . '>';
+  $select .= form_select_options($element);
+  $select .= '</select>';
+  
+  return theme('form_element', $element, '<div class="select">' . $select . '<div class="select__arrow"></div></div>');
 }
