@@ -339,10 +339,12 @@ div.content-profile-display {
     .view-content {
 	  grid-template-columns: repeat(16, 1fr);
 	  grid-template-rows: repeat(6, 1fr);
+    column-gap: 2em/@fs;
+    row-gap: 2em/@fs;
 	}
     .persoon-wrapper {
       width: 100%;
-      padding: 3em/@fs;
+      padding: 0;
 	  
 	  &.persoon-101 { grid-column: 1; grid-row: 1;}
 	  &.persoon-102 { grid-column: 2; grid-row: 1;}
