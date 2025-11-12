@@ -5,21 +5,20 @@
 }
 
 // ACTIVITEITEN EN NIEUWS IN 2 KOLOMMEN
-.activiteiten .view-content:has(> :nth-child(2)),
 .nieuws .view-content:has(> :nth-child(2)) {
   @media @wide {
-//    display: flex;
-//	flex-wrap: wrap;
-//	gap: 24em/@fs 24em/@fs;
-//    display: grid;
-//	column-gap: 24em/@fs;
-//	grid-template-columns: repeat(2, 1fr);
     column-count: 2;
     column-gap: 24em/@fs;
     .views-row {
 	  break-inside: avoid;
-//	  flex: 0 0 calc(~'50% - ' 12em/@fs);
 	}
+  }
+}
+.activiteiten .view-content:has(> :nth-child(2)) {
+  @media @wide {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24em/@fs;
   }
 }
 // ADVERTENTIES
