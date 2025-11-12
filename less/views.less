@@ -106,91 +106,71 @@ div.content-profile-display {
   }
   .view-content {
     display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	@media @phone-ls { grid-template-columns: repeat(3, 1fr); }
-	@media @tablet { grid-template-columns: repeat(4, 1fr); }
+    grid-template-columns: repeat(2, 1fr);
+    @media @phone-ls { grid-template-columns: repeat(3, 1fr); }
+    @media @tablet { grid-template-columns: repeat(4, 1fr); }
     @media @normal { grid-template-columns: repeat(6, 1fr); }
-	column-gap: 12em/@fs;
-	row-gap: 12em/@fs;
+    column-gap: 12em/@fs;
+    row-gap: 12em/@fs;
   }
   .views-row, .views-field-nothing, .field-content { display: contents; }
   &.personen-ledenlijst .view-content { 
     grid-template-columns: 1fr;
   }
-  
   .badge-functie-cie, .badge-functie { display: none; }
-  
   &.personen-opstelling {
     .view-content {
-	  column-gap: 6em/@fs;
-	  row-gap: 6em/@fs;
-	  grid-template-columns: repeat(6, 1fr);
-	  grid-template-rows: repeat(16, 1fr);
-	  @media @tablet {
-	    grid-template-columns: repeat(16, 1fr);
-	    grid-template-rows: repeat(6, 1fr);
-	  }
-	}
-	.buildmode-teaser {
-	  padding: 3em/@fs;
-	}
-	.field-voornaam { 
-	  color: @white;
-//	  font-size: 10em/@fs;
-//	  line-height: 24em/10;
-	  @media @tablet {
-	    font-size: 14em/@fs;
-	    line-height: 24em/@fs;
-	  }
-	}
-	.field-author-picture img { width: 100%; }
-	.persoon-positie-R1 { grid-column: 4; }
-	.persoon-positie-R2 { grid-column: 3; }
-	.persoon-positie-R3 { grid-column: 2; }
-	.persoon-positie-R4 { grid-column: 1; }
-	.persoon-positie-RB { grid-column: 6; }
-	.persoon-positie-RD { grid-column: 6; grid-row: 8;}
-	.persoon-positie-RND { display: none; }
-	.persoon-positie-K01 { grid-row: 16; }
-	.persoon-positie-K02 { grid-row: 15; }
-	.persoon-positie-K03 { grid-row: 14; }
-	.persoon-positie-K04 { grid-row: 13; }
-	.persoon-positie-K05 { grid-row: 12; }
-	.persoon-positie-K06 { grid-row: 11; }
-	.persoon-positie-K07 { grid-row: 10; }
-	.persoon-positie-K08 { grid-row: 9; }
-	.persoon-positie-K09 { grid-row: 8; }
-	.persoon-positie-K10 { grid-row: 7; }
-	.persoon-positie-K11 { grid-row: 6; }
-	.persoon-positie-K12 { grid-row: 5; }
-	.persoon-positie-K13 { grid-row: 4; }
-	.persoon-positie-K14 { grid-row: 3; }
-	.persoon-positie-K15 { grid-row: 2; }
-	.persoon-positie-K16 { grid-row: 1; }
-	@media @tablet {
-	.persoon-positie-R1 { grid-row: 4; }
-	.persoon-positie-R2 { grid-row: 3; }
-	.persoon-positie-R3 { grid-row: 2; }
-	.persoon-positie-R4 { grid-row: 1; }
-	.persoon-positie-RB { grid-row: 6; grid-column: auto }
-	.persoon-positie-RD { grid-row: 6; grid-column: 8; }
-	.persoon-positie-K01 { grid-column: 1; }
-	.persoon-positie-K02 { grid-column: 2; }
-	.persoon-positie-K03 { grid-column: 3; }
-	.persoon-positie-K04 { grid-column: 4; }
-	.persoon-positie-K05 { grid-column: 5; }
-	.persoon-positie-K06 { grid-column: 6; }
-	.persoon-positie-K07 { grid-column: 7; }
-	.persoon-positie-K08 { grid-column: 8; }
-	.persoon-positie-K09 { grid-column: 9; }
-	.persoon-positie-K10 { grid-column: 10; }
-	.persoon-positie-K11 { grid-column: 11; }
-	.persoon-positie-K12 { grid-column: 12; }
-	.persoon-positie-K13 { grid-column: 13; }
-	.persoon-positie-K14 { grid-column: 14; }
-	.persoon-positie-K15 { grid-column: 15; }
-	.persoon-positie-K16 { grid-column: 16; }
-	}
+      grid-template-columns: repeat(16, 1fr);
+      grid-template-rows: repeat(6, 1fr);
+      column-gap: 1em/@fs;
+      row-gap: 1em/@fs;
+      @media @tablet {
+        column-gap: 6em/@fs;
+        row-gap: 6em/@fs;
+      }
+    }
+    .buildmode-teaser {
+      padding: 3em/@fs;
+      .border-radius();
+    }
+    .field-voornaam {
+      display: none;
+      color: @white;
+      @media @phone-ls {
+        font-size: 10em/@fs;
+        line-height: 24em/10;
+        display: inline;
+      }
+      @media @tablet {
+        display: inline;
+        font-size: 12em/@fs;
+        line-height: 24em/12;
+      }
+    }
+    .field-author-picture img { width: 100%; }
+    .persoon-positie-RND { display: none; }
+    .persoon-positie-R1 { grid-row: 4; }
+    .persoon-positie-R2 { grid-row: 3; }
+    .persoon-positie-R3 { grid-row: 2; }
+    .persoon-positie-R4 { grid-row: 1; }
+    .persoon-positie-RB { grid-row: 6; grid-column: auto }
+    .persoon-positie-RD { grid-row: 6; grid-column: 8; }
+    .persoon-positie-K01 { grid-column: 1; }
+    .persoon-positie-K02 { grid-column: 2; }
+    .persoon-positie-K03 { grid-column: 3; }
+    .persoon-positie-K04 { grid-column: 4; }
+    .persoon-positie-K05 { grid-column: 5; }
+    .persoon-positie-K06 { grid-column: 6; }
+    .persoon-positie-K07 { grid-column: 7; }
+    .persoon-positie-K08 { grid-column: 8; }
+    .persoon-positie-K09 { grid-column: 9; }
+    .persoon-positie-K10 { grid-column: 10; }
+    .persoon-positie-K11 { grid-column: 11; }
+    .persoon-positie-K12 { grid-column: 12; }
+    .persoon-positie-K13 { grid-column: 13; }
+    .persoon-positie-K14 { grid-column: 14; }
+    .persoon-positie-K15 { grid-column: 15; }
+    .persoon-positie-K16 { grid-column: 16; }
 	
     .persoon-A  { background: @red; }
     .persoon-B  { background: @blue; }
@@ -229,17 +209,6 @@ div.content-profile-display {
   .repertoire-programma {
     color: @red;
     text-transform: uppercase;
-  }
-  tr {
-    &.odd, &.even {
-      &:not(:hover) {
-        a:link, a:visited {
-          .badge-nummer {
-            @media screen { background: @grey-light; }
-          }
-        }
-      }
-    }
   }
 }
 // FOTOS

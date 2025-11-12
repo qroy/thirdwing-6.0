@@ -278,7 +278,7 @@ p {
 strong,
 b {
   text-transform: uppercase;
-  color: #3c329b;
+  font-weight: 600;
 }
 .fa {
   font-family: 'Open Sans', Verdana, sans-serif;
@@ -2537,10 +2537,12 @@ badge-access-wrapper {
 }
 .buildmode-teaser.node-type-profiel .field-author-picture {
   width: 100%;
+  aspect-ratio: 16 / 20;
 }
 .buildmode-teaser.node-type-profiel .field-author-picture img {
   width: 80%;
   height: auto;
+  aspect-ratio: 16 / 20;
 }
 .buildmode-teaser.node-type-profiel .field-voornaam,
 .buildmode-teaser.node-type-profiel .field-achternaam,
@@ -2596,6 +2598,7 @@ badge-access-wrapper {
 }
 .buildmode-schema.node-type-profiel .field-author-picture > .picture {
   height: 7.71428571em;
+  aspect-ratio: 16 / 20;
 }
 .buildmode-schema.node-type-profiel .field-author-picture > .picture img {
   height: 100%;
@@ -3027,171 +3030,114 @@ div.content-profile-display {
   display: none;
 }
 .personen.personen-opstelling .view-content {
-  column-gap: 0.42857143em;
-  row-gap: 0.42857143em;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(16, 1fr);
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  column-gap: 0.07142857em;
+  row-gap: 0.07142857em;
 }
 @media screen and (min-width: 59.285714285714285em ) {
   .personen.personen-opstelling .view-content {
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    column-gap: 0.42857143em;
+    row-gap: 0.42857143em;
   }
 }
 .personen.personen-opstelling .buildmode-teaser {
   padding: 0.21428571em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 .personen.personen-opstelling .field-voornaam {
+  display: none;
   color: #ffffff;
+}
+@media screen and (min-width: 43.57142857142857em ) {
+  .personen.personen-opstelling .field-voornaam {
+    font-size: 0.71428571em;
+    line-height: 2.4em;
+    display: inline;
+  }
 }
 @media screen and (min-width: 59.285714285714285em ) {
   .personen.personen-opstelling .field-voornaam {
-    font-size: 1em;
-    line-height: 1.71428571em;
+    display: inline;
+    font-size: 0.85714286em;
+    line-height: 2em;
   }
 }
 .personen.personen-opstelling .field-author-picture img {
   width: 100%;
 }
-.personen.personen-opstelling .persoon-positie-R1 {
-  grid-column: 4;
-}
-.personen.personen-opstelling .persoon-positie-R2 {
-  grid-column: 3;
-}
-.personen.personen-opstelling .persoon-positie-R3 {
-  grid-column: 2;
-}
-.personen.personen-opstelling .persoon-positie-R4 {
-  grid-column: 1;
-}
-.personen.personen-opstelling .persoon-positie-RB {
-  grid-column: 6;
-}
-.personen.personen-opstelling .persoon-positie-RD {
-  grid-column: 6;
-  grid-row: 8;
-}
 .personen.personen-opstelling .persoon-positie-RND {
   display: none;
 }
-.personen.personen-opstelling .persoon-positie-K01 {
-  grid-row: 16;
-}
-.personen.personen-opstelling .persoon-positie-K02 {
-  grid-row: 15;
-}
-.personen.personen-opstelling .persoon-positie-K03 {
-  grid-row: 14;
-}
-.personen.personen-opstelling .persoon-positie-K04 {
-  grid-row: 13;
-}
-.personen.personen-opstelling .persoon-positie-K05 {
-  grid-row: 12;
-}
-.personen.personen-opstelling .persoon-positie-K06 {
-  grid-row: 11;
-}
-.personen.personen-opstelling .persoon-positie-K07 {
-  grid-row: 10;
-}
-.personen.personen-opstelling .persoon-positie-K08 {
-  grid-row: 9;
-}
-.personen.personen-opstelling .persoon-positie-K09 {
-  grid-row: 8;
-}
-.personen.personen-opstelling .persoon-positie-K10 {
-  grid-row: 7;
-}
-.personen.personen-opstelling .persoon-positie-K11 {
-  grid-row: 6;
-}
-.personen.personen-opstelling .persoon-positie-K12 {
-  grid-row: 5;
-}
-.personen.personen-opstelling .persoon-positie-K13 {
+.personen.personen-opstelling .persoon-positie-R1 {
   grid-row: 4;
 }
-.personen.personen-opstelling .persoon-positie-K14 {
+.personen.personen-opstelling .persoon-positie-R2 {
   grid-row: 3;
 }
-.personen.personen-opstelling .persoon-positie-K15 {
+.personen.personen-opstelling .persoon-positie-R3 {
   grid-row: 2;
 }
-.personen.personen-opstelling .persoon-positie-K16 {
+.personen.personen-opstelling .persoon-positie-R4 {
   grid-row: 1;
 }
-@media screen and (min-width: 59.285714285714285em ) {
-  .personen.personen-opstelling .persoon-positie-R1 {
-    grid-row: 4;
-  }
-  .personen.personen-opstelling .persoon-positie-R2 {
-    grid-row: 3;
-  }
-  .personen.personen-opstelling .persoon-positie-R3 {
-    grid-row: 2;
-  }
-  .personen.personen-opstelling .persoon-positie-R4 {
-    grid-row: 1;
-  }
-  .personen.personen-opstelling .persoon-positie-RB {
-    grid-row: 6;
-    grid-column: auto;
-  }
-  .personen.personen-opstelling .persoon-positie-RD {
-    grid-row: 6;
-    grid-column: 8;
-  }
-  .personen.personen-opstelling .persoon-positie-K01 {
-    grid-column: 1;
-  }
-  .personen.personen-opstelling .persoon-positie-K02 {
-    grid-column: 2;
-  }
-  .personen.personen-opstelling .persoon-positie-K03 {
-    grid-column: 3;
-  }
-  .personen.personen-opstelling .persoon-positie-K04 {
-    grid-column: 4;
-  }
-  .personen.personen-opstelling .persoon-positie-K05 {
-    grid-column: 5;
-  }
-  .personen.personen-opstelling .persoon-positie-K06 {
-    grid-column: 6;
-  }
-  .personen.personen-opstelling .persoon-positie-K07 {
-    grid-column: 7;
-  }
-  .personen.personen-opstelling .persoon-positie-K08 {
-    grid-column: 8;
-  }
-  .personen.personen-opstelling .persoon-positie-K09 {
-    grid-column: 9;
-  }
-  .personen.personen-opstelling .persoon-positie-K10 {
-    grid-column: 10;
-  }
-  .personen.personen-opstelling .persoon-positie-K11 {
-    grid-column: 11;
-  }
-  .personen.personen-opstelling .persoon-positie-K12 {
-    grid-column: 12;
-  }
-  .personen.personen-opstelling .persoon-positie-K13 {
-    grid-column: 13;
-  }
-  .personen.personen-opstelling .persoon-positie-K14 {
-    grid-column: 14;
-  }
-  .personen.personen-opstelling .persoon-positie-K15 {
-    grid-column: 15;
-  }
-  .personen.personen-opstelling .persoon-positie-K16 {
-    grid-column: 16;
-  }
+.personen.personen-opstelling .persoon-positie-RB {
+  grid-row: 6;
+  grid-column: auto;
+}
+.personen.personen-opstelling .persoon-positie-RD {
+  grid-row: 6;
+  grid-column: 8;
+}
+.personen.personen-opstelling .persoon-positie-K01 {
+  grid-column: 1;
+}
+.personen.personen-opstelling .persoon-positie-K02 {
+  grid-column: 2;
+}
+.personen.personen-opstelling .persoon-positie-K03 {
+  grid-column: 3;
+}
+.personen.personen-opstelling .persoon-positie-K04 {
+  grid-column: 4;
+}
+.personen.personen-opstelling .persoon-positie-K05 {
+  grid-column: 5;
+}
+.personen.personen-opstelling .persoon-positie-K06 {
+  grid-column: 6;
+}
+.personen.personen-opstelling .persoon-positie-K07 {
+  grid-column: 7;
+}
+.personen.personen-opstelling .persoon-positie-K08 {
+  grid-column: 8;
+}
+.personen.personen-opstelling .persoon-positie-K09 {
+  grid-column: 9;
+}
+.personen.personen-opstelling .persoon-positie-K10 {
+  grid-column: 10;
+}
+.personen.personen-opstelling .persoon-positie-K11 {
+  grid-column: 11;
+}
+.personen.personen-opstelling .persoon-positie-K12 {
+  grid-column: 12;
+}
+.personen.personen-opstelling .persoon-positie-K13 {
+  grid-column: 13;
+}
+.personen.personen-opstelling .persoon-positie-K14 {
+  grid-column: 14;
+}
+.personen.personen-opstelling .persoon-positie-K15 {
+  grid-column: 15;
+}
+.personen.personen-opstelling .persoon-positie-K16 {
+  grid-column: 16;
 }
 .personen.personen-opstelling .persoon-A {
   background: #e9584c;
@@ -3266,14 +3212,6 @@ div.content-profile-display {
 .repertoire .repertoire-programma {
   color: #e9584c;
   text-transform: uppercase;
-}
-@media screen {
-  .repertoire tr.odd:not(:hover) a:link .badge-nummer,
-  .repertoire tr.even:not(:hover) a:link .badge-nummer,
-  .repertoire tr.odd:not(:hover) a:visited .badge-nummer,
-  .repertoire tr.even:not(:hover) a:visited .badge-nummer {
-    background: #d7d7d6;
-  }
 }
 .voorbeeld .views-row {
   float: left;
