@@ -1603,7 +1603,10 @@ body.two-sidebars #grid #sidebar-right {
 .buildmode-teaser .node.node-type-video .badge-nodetype,
 .buildmode-teaser .node.node-type-foto .node-edit-link,
 .buildmode-teaser .node.node-type-audio .node-edit-link,
-.buildmode-teaser .node.node-type-video .node-edit-link {
+.buildmode-teaser .node.node-type-video .node-edit-link,
+.buildmode-teaser .node.node-type-foto .file-download-link,
+.buildmode-teaser .node.node-type-audio .file-download-link,
+.buildmode-teaser .node.node-type-video .file-download-link {
   display: inline-block;
   text-indent: 200%;
   white-space: nowrap;
@@ -1618,7 +1621,10 @@ body.two-sidebars #grid #sidebar-right {
 .buildmode-teaser .node.node-type-video .badge-nodetype:before,
 .buildmode-teaser .node.node-type-foto .node-edit-link:before,
 .buildmode-teaser .node.node-type-audio .node-edit-link:before,
-.buildmode-teaser .node.node-type-video .node-edit-link:before {
+.buildmode-teaser .node.node-type-video .node-edit-link:before,
+.buildmode-teaser .node.node-type-foto .file-download-link:before,
+.buildmode-teaser .node.node-type-audio .file-download-link:before,
+.buildmode-teaser .node.node-type-video .file-download-link:before {
   font-family: FontAwesome;
   text-indent: 0;
   position: absolute;
