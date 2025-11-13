@@ -1405,12 +1405,12 @@ body.two-sidebars #grid #sidebar-right {
 .buildmode-teaser > .node > div > div .field-clear-block {
   height: 0;
 }
-.buildmode-full > .node.taxonomy-Leden > div > div > .field-read-more .button-social,
-.buildmode-teaser > .node.taxonomy-Leden > div > div > .field-read-more .button-social {
+.buildmode-full > .node.taxonomy-leden > div > div > .field-read-more .button-social,
+.buildmode-teaser > .node.taxonomy-leden > div > div > .field-read-more .button-social {
   display: none;
 }
-.buildmode-full > .node.taxonomy-Bezoekers > div > div > .field-read-more .button-social,
-.buildmode-teaser > .node.taxonomy-Bezoekers > div > div > .field-read-more .button-social {
+.buildmode-full > .node.taxonomy-bezoekers > div > div > .field-read-more .button-social,
+.buildmode-teaser > .node.taxonomy-bezoekers > div > div > .field-read-more .button-social {
   display: inline-block;
 }
 .buildmode-full > .node-type-nieuws > div > div > .field-afbeeldingen,
@@ -1457,12 +1457,12 @@ body.two-sidebars #grid #sidebar-right {
   vertical-align: bottom;
   overflow: hidden;
 }
-.buildmode-teaser > .node.taxonomy-Leden {
+.buildmode-teaser > .node.taxonomy-leden {
   background: #ffffff;
   border: 2px solid #e9584c;
 }
 @media screen {
-  .buildmode-teaser > .node.taxonomy-Leden:before {
+  .buildmode-teaser > .node.taxonomy-leden:before {
     z-index: 5;
     content: 'voor leden';
     position: absolute;
@@ -1478,11 +1478,11 @@ body.two-sidebars #grid #sidebar-right {
     border-radius: 0 0 5px 5px;
   }
 }
-.buildmode-teaser > .node.taxonomy-Bezoekers {
+.buildmode-teaser > .node.taxonomy-bezoekers {
   background: #f0f0ee;
   border: 0;
 }
-.buildmode-teaser > .node.taxonomy-Bezoekers:before {
+.buildmode-teaser > .node.taxonomy-bezoekers:before {
   content: '';
 }
 .buildmode-full > .node > div > div {
@@ -1898,58 +1898,58 @@ tr.dblog-access-denied td.active {
 .agenda.agenda-leden .node-clone-link:focus {
   background: #eb7314;
 }
-.agenda.agenda-leden .taxonomy-Wereldlijk,
-.agenda.agenda-leden .taxonomy-Kerkelijk,
-.agenda.agenda-leden .taxonomy-Concours,
-.agenda.agenda-leden .taxonomy-Koorreis,
-.agenda.agenda-leden .taxonomy-Vergadering {
+.agenda.agenda-leden .activiteit-wereldlijk,
+.agenda.agenda-leden .activiteit-kerkelijk,
+.agenda.agenda-leden .activiteit-concours,
+.agenda.agenda-leden .activiteit-koorreis,
+.agenda.agenda-leden .activiteit-vergadering {
   background: #f0f0ee;
   padding: 0.5em;
 }
-.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:link,
-.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:link,
-.agenda.agenda-leden .taxonomy-Concours h2 a:link,
-.agenda.agenda-leden .taxonomy-Koorreis h2 a:link,
-.agenda.agenda-leden .taxonomy-Vergadering h2 a:link,
-.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:visited,
-.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:visited,
-.agenda.agenda-leden .taxonomy-Concours h2 a:visited,
-.agenda.agenda-leden .taxonomy-Koorreis h2 a:visited,
-.agenda.agenda-leden .taxonomy-Vergadering h2 a:visited {
+.agenda.agenda-leden .activiteit-wereldlijk h2 a:link,
+.agenda.agenda-leden .activiteit-kerkelijk h2 a:link,
+.agenda.agenda-leden .activiteit-concours h2 a:link,
+.agenda.agenda-leden .activiteit-koorreis h2 a:link,
+.agenda.agenda-leden .activiteit-vergadering h2 a:link,
+.agenda.agenda-leden .activiteit-wereldlijk h2 a:visited,
+.agenda.agenda-leden .activiteit-kerkelijk h2 a:visited,
+.agenda.agenda-leden .activiteit-concours h2 a:visited,
+.agenda.agenda-leden .activiteit-koorreis h2 a:visited,
+.agenda.agenda-leden .activiteit-vergadering h2 a:visited {
   color: #e9584c;
 }
-.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:hover,
-.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:hover,
-.agenda.agenda-leden .taxonomy-Concours h2 a:hover,
-.agenda.agenda-leden .taxonomy-Koorreis h2 a:hover,
-.agenda.agenda-leden .taxonomy-Vergadering h2 a:hover,
-.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:active,
-.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:active,
-.agenda.agenda-leden .taxonomy-Concours h2 a:active,
-.agenda.agenda-leden .taxonomy-Koorreis h2 a:active,
-.agenda.agenda-leden .taxonomy-Vergadering h2 a:active,
-.agenda.agenda-leden .taxonomy-Wereldlijk h2 a:focus,
-.agenda.agenda-leden .taxonomy-Kerkelijk h2 a:focus,
-.agenda.agenda-leden .taxonomy-Concours h2 a:focus,
-.agenda.agenda-leden .taxonomy-Koorreis h2 a:focus,
-.agenda.agenda-leden .taxonomy-Vergadering h2 a:focus {
+.agenda.agenda-leden .activiteit-wereldlijk h2 a:hover,
+.agenda.agenda-leden .activiteit-kerkelijk h2 a:hover,
+.agenda.agenda-leden .activiteit-concours h2 a:hover,
+.agenda.agenda-leden .activiteit-koorreis h2 a:hover,
+.agenda.agenda-leden .activiteit-vergadering h2 a:hover,
+.agenda.agenda-leden .activiteit-wereldlijk h2 a:active,
+.agenda.agenda-leden .activiteit-kerkelijk h2 a:active,
+.agenda.agenda-leden .activiteit-concours h2 a:active,
+.agenda.agenda-leden .activiteit-koorreis h2 a:active,
+.agenda.agenda-leden .activiteit-vergadering h2 a:active,
+.agenda.agenda-leden .activiteit-wereldlijk h2 a:focus,
+.agenda.agenda-leden .activiteit-kerkelijk h2 a:focus,
+.agenda.agenda-leden .activiteit-concours h2 a:focus,
+.agenda.agenda-leden .activiteit-koorreis h2 a:focus,
+.agenda.agenda-leden .activiteit-vergadering h2 a:focus {
   color: #3c329b;
 }
-.agenda.agenda-leden .taxonomy-Wereldlijk .badge-date,
-.agenda.agenda-leden .taxonomy-Kerkelijk .badge-date,
-.agenda.agenda-leden .taxonomy-Concours .badge-date,
-.agenda.agenda-leden .taxonomy-Koorreis .badge-date,
-.agenda.agenda-leden .taxonomy-Vergadering .badge-date,
-.agenda.agenda-leden .taxonomy-Wereldlijk .badge-date-wrapper,
-.agenda.agenda-leden .taxonomy-Kerkelijk .badge-date-wrapper,
-.agenda.agenda-leden .taxonomy-Concours .badge-date-wrapper,
-.agenda.agenda-leden .taxonomy-Koorreis .badge-date-wrapper,
-.agenda.agenda-leden .taxonomy-Vergadering .badge-date-wrapper,
-.agenda.agenda-leden .taxonomy-Wereldlijk .badge-location,
-.agenda.agenda-leden .taxonomy-Kerkelijk .badge-location,
-.agenda.agenda-leden .taxonomy-Concours .badge-location,
-.agenda.agenda-leden .taxonomy-Koorreis .badge-location,
-.agenda.agenda-leden .taxonomy-Vergadering .badge-location {
+.agenda.agenda-leden .activiteit-wereldlijk .badge-date,
+.agenda.agenda-leden .activiteit-kerkelijk .badge-date,
+.agenda.agenda-leden .activiteit-concours .badge-date,
+.agenda.agenda-leden .activiteit-koorreis .badge-date,
+.agenda.agenda-leden .activiteit-vergadering .badge-date,
+.agenda.agenda-leden .activiteit-wereldlijk .badge-date-wrapper,
+.agenda.agenda-leden .activiteit-kerkelijk .badge-date-wrapper,
+.agenda.agenda-leden .activiteit-concours .badge-date-wrapper,
+.agenda.agenda-leden .activiteit-koorreis .badge-date-wrapper,
+.agenda.agenda-leden .activiteit-vergadering .badge-date-wrapper,
+.agenda.agenda-leden .activiteit-wereldlijk .badge-location,
+.agenda.agenda-leden .activiteit-kerkelijk .badge-location,
+.agenda.agenda-leden .activiteit-concours .badge-location,
+.agenda.agenda-leden .activiteit-koorreis .badge-location,
+.agenda.agenda-leden .activiteit-vergadering .badge-location {
   background: #ffffff;
 }
 /**
