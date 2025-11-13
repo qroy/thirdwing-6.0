@@ -161,30 +161,30 @@ article.node-type-activiteit {
 .role-bestuur, 
 .role-beheer, 
 .role-admin {
-  .buildmode-teaser, 
+  .buildmode-teaser,
   .buildmode-full:not(:empty),
   .buildmode-schema {
     .badge-access-wrapper {
-	  font-size: 10em/@fs;
+      font-size: 10em/@fs;
       line-height: 12em/10;
       display: block;
       position: absolute;
       bottom: 0;
       left: 24em/10;
-	  z-index: 5;
-	}
+      z-index: 5;
+    }
     .badge-access {
       &.badge-access-bezoekers,
       &.badge-access-vrienden,
-	  &.badge-access-aspirant-Leden,
-	  &.badge-access-leden,
-	  &.badge-access-bestuur, 
-	  &.badge-access-muziekcommissie,
-	  &.badge-access-concertcommissie,
-	  &.badge-access-feestcommissie,
-	  &.badge-access-commissie-interne-relaties,
-	  &.badge-access-commissie-koorregie,
-	  &.badge-access-band,
+      &.badge-access-aspirant-Leden,
+      &.badge-access-leden,
+      &.badge-access-bestuur,
+      &.badge-access-muziekcommissie,
+      &.badge-access-concertcommissie,
+      &.badge-access-feestcommissie,
+      &.badge-access-commissie-interne-relaties,
+      &.badge-access-commissie-koorregie,
+      &.badge-access-band,
       &.badge-access-beheer {
         display: inline-block;
         padding: 4em/10 8em/10;
@@ -192,23 +192,23 @@ article.node-type-activiteit {
         text-align: center;
         .border-radius(@border-radius-small @border-radius-small 0 0);
       }
-	  &.badge-access-beheer,
-	  &.badge-access-bestuur { background: @red; }
-	  &.badge-access-concertcommissie,
-	  &.badge-access-feestcommissie,
-	  &.badge-access-commissie-interne_relaties,
-	  &.badge-access-commissie-koorregie,
-	  &.badge-access-muziekcommissie { background: @yellow; }
+      &.badge-access-beheer,
+      &.badge-access-bestuur { background: @red; }
+      &.badge-access-concertcommissie,
+      &.badge-access-feestcommissie,
+      &.badge-access-commissie-interne_relaties,
+      &.badge-access-commissie-koorregie,
+      &.badge-access-muziekcommissie { background: @yellow; }
       &.badge-access-leden,
       &.badge-access-band,
-	  &.badge-access-aspirant-leden { background: @blue; }
-	  &.badge-access-vrienden,
+      &.badge-access-aspirant-leden { background: @blue; }
+      &.badge-access-vrienden,
       &.badge-access-bezoekers { background: @green; }
-	}
+    }
   }
   .buildmode-schema {
-	.badge-access-wrapper {
-	  left: 12em/10;
+    .badge-access-wrapper {
+      left: 12em/10;
     }
   }
 }
@@ -455,9 +455,9 @@ article.buildmode-teaser.node-type-audio .field-mp3,
 article.buildmode-teaser.node-type-video .field-video {
   .field-item:first-child {
     aspect-ratio: 16 ~"/" 9;
-	width: 100%;
-	display: block;
-	overflow: hidden;
+    width: 100%;
+    display: block;
+    overflow: hidden;
   }
 }
 article.buildmode-teaser.node-type-foto,
@@ -466,18 +466,27 @@ article.buildmode-teaser.node-type-video {
   padding: 12em/@fs;
   .field-group {
     display: flex;
-	justify-content: flex-end;
-	margin-top: 12em/@fs;
+    justify-content: flex-end;
+    margin-top: 12em/@fs;
   }
   .badge-nodetype, .node-edit-link {
     .icon-only();
   }
   .field-title h2 {
     color: @red;
-	text-transform: uppercase;
-	font-size: 16em/@fs;
-	line-height: 24em/16;
-	margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: 16em/@fs;
+    line-height: 24em/16;
+    margin-bottom: 0;
+  }
+}
+.role-bestuur,
+.role-beheer,
+.role-admin {
+  article.buildmode-teaser.node-type-audio,
+  article.buildmode-teaser.node-type-foto,
+  article.buildmode-teaser.node-type-video {
+    padding-bottom: 32em/@fs;
   }
 }
 

@@ -2704,6 +2704,17 @@ article.buildmode-teaser.node-type-video .field-title h2 {
   line-height: 1.5em;
   margin-bottom: 0;
 }
+.role-bestuur article.buildmode-teaser.node-type-audio,
+.role-beheer article.buildmode-teaser.node-type-audio,
+.role-admin article.buildmode-teaser.node-type-audio,
+.role-bestuur article.buildmode-teaser.node-type-foto,
+.role-beheer article.buildmode-teaser.node-type-foto,
+.role-admin article.buildmode-teaser.node-type-foto,
+.role-bestuur article.buildmode-teaser.node-type-video,
+.role-beheer article.buildmode-teaser.node-type-video,
+.role-admin article.buildmode-teaser.node-type-video {
+  padding-bottom: 2.28571429em;
+}
 .block-views {
   margin-bottom: 1.71428571em;
 }
