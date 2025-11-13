@@ -2403,33 +2403,13 @@ badge-access-wrapper {
     grid-area: node-footer;
   }
 }
-.buildmode-schema.node-type-activiteit.taxonomy-Wereldlijk h2 a:link,
-.buildmode-schema.node-type-activiteit.taxonomy-Kerkelijk h2 a:link,
-.buildmode-schema.node-type-activiteit.taxonomy-Concours h2 a:link,
-.buildmode-schema.node-type-activiteit.taxonomy-Koorreis h2 a:link,
-.buildmode-schema.node-type-activiteit.taxonomy-Vergadering h2 a:link,
-.buildmode-schema.node-type-activiteit.taxonomy-Wereldlijk h2 a:visited,
-.buildmode-schema.node-type-activiteit.taxonomy-Kerkelijk h2 a:visited,
-.buildmode-schema.node-type-activiteit.taxonomy-Concours h2 a:visited,
-.buildmode-schema.node-type-activiteit.taxonomy-Koorreis h2 a:visited,
-.buildmode-schema.node-type-activiteit.taxonomy-Vergadering h2 a:visited {
+.buildmode-schema.node-type-activiteit:not(.activiteit-repetitie) h2 a:link,
+.buildmode-schema.node-type-activiteit:not(.activiteit-repetitie) h2 a:visited {
   color: #e9584c;
 }
-.buildmode-schema.node-type-activiteit.taxonomy-Wereldlijk h2 a:hover,
-.buildmode-schema.node-type-activiteit.taxonomy-Kerkelijk h2 a:hover,
-.buildmode-schema.node-type-activiteit.taxonomy-Concours h2 a:hover,
-.buildmode-schema.node-type-activiteit.taxonomy-Koorreis h2 a:hover,
-.buildmode-schema.node-type-activiteit.taxonomy-Vergadering h2 a:hover,
-.buildmode-schema.node-type-activiteit.taxonomy-Wereldlijk h2 a:active,
-.buildmode-schema.node-type-activiteit.taxonomy-Kerkelijk h2 a:active,
-.buildmode-schema.node-type-activiteit.taxonomy-Concours h2 a:active,
-.buildmode-schema.node-type-activiteit.taxonomy-Koorreis h2 a:active,
-.buildmode-schema.node-type-activiteit.taxonomy-Vergadering h2 a:active,
-.buildmode-schema.node-type-activiteit.taxonomy-Wereldlijk h2 a:focus,
-.buildmode-schema.node-type-activiteit.taxonomy-Kerkelijk h2 a:focus,
-.buildmode-schema.node-type-activiteit.taxonomy-Concours h2 a:focus,
-.buildmode-schema.node-type-activiteit.taxonomy-Koorreis h2 a:focus,
-.buildmode-schema.node-type-activiteit.taxonomy-Vergadering h2 a:focus {
+.buildmode-schema.node-type-activiteit:not(.activiteit-repetitie) h2 a:hover,
+.buildmode-schema.node-type-activiteit:not(.activiteit-repetitie) h2 a:active,
+.buildmode-schema.node-type-activiteit:not(.activiteit-repetitie) h2 a:focus {
   color: #3c329b;
 }
 .buildmode-schema.node-type-activiteit h2 {

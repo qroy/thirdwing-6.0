@@ -294,12 +294,12 @@ article.node-type-activiteit {
   }
 }
 // FIELDS FOR ACTIVITEIT SCHEMA
-.buildmode-schema&.node-type-activiteit {
-  &.taxonomy-Wereldlijk, &.taxonomy-Kerkelijk, &.taxonomy-Concours, &.taxonomy-Koorreis, &.taxonomy-Vergadering {
+.buildmode-schema.node-type-activiteit {
+  &:not(.activiteit-repetitie) {
     h2 {
       a:link, a:visited { color: @red; }
       a:hover, a:active, a:focus { color: @primary; }
-	}
+	  }
   }
   h2 {
     text-transform: uppercase;

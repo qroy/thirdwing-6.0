@@ -187,6 +187,12 @@ function _phptemplate_add_activity_classes(&$vars) {
     $status_key = $node->field_activiteit_status[0]['value'];
     $vars['node_classes'] .= ' node-status-' . $status_key;
   }
+  
+   // Add class based on field_activiteit_soort
+  if (!empty($node->field_activiteit_soort[0]['value'])) {
+    $soort_value = preg_replace('/[^a-zA-Z0-9-]+/', '-', strtolower($node->field_activiteit_soort[0]['value']));
+    $vars['node_classes'] .= ' activiteit-' . $soort_value;
+  }
 }
 
 /**
