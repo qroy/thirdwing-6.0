@@ -1537,6 +1537,11 @@ a[type*="mpeg"]:before {
   grid-template-columns: 0 auto 0;
   grid-template-areas: ". header ." ". main ." ". footer .";
 }
+@media (prefers-color-scheme: dark) {
+  .page {
+    background-color: #878786;
+  }
+}
 @media screen and (min-width: 59.285714285714285em ) {
   .page {
     grid-template-columns: minmax(1.71428571em, 1fr) minmax(50em, 78.57142857em) 14.28571429em minmax(1.71428571em, 1fr);
@@ -1928,7 +1933,7 @@ a[type*="mpeg"]:before {
 #main > .admin:not(:empty),
 #main > .help:not(:empty):not(:empty) {
   position: relative;
-  background: #ffffff;
+  background-color: #ffffff;
   padding: 1.71428571em;
   margin: 0 0 1.71428571em;
   -webkit-border-radius: 10px;
@@ -1936,10 +1941,20 @@ a[type*="mpeg"]:before {
   border-radius: 10px;
   box-sizing: border-box;
 }
+@media (prefers-color-scheme: dark) {
+  .buildmode-teaser:not(:empty),
+  .buildmode-full:not(:empty),
+  .buildmode-schema:not(:empty),
+  #main > dl:not(:empty),
+  #main > form:not(:empty),
+  #main > .admin:not(:empty),
+  #main > .help:not(:empty):not(:empty) {
+    background-color: #d7d7d6;
+  }
+}
 .buildmode-schema:not(:empty) {
   padding: 0.85714286em 0.85714286em 1.71428571em;
   margin: 0;
-  min-height: 9.42857143em;
 }
 @media screen and (min-width: 59.285714285714285em ) {
   .buildmode-schema:not(:empty) {
@@ -2510,6 +2525,11 @@ badge-access-wrapper {
     padding: 0.64285714em;
   }
 }
+.role-bestuur article.node-type-activiteit.buildmode-schema.node-status-optie,
+.role-beheer article.node-type-activiteit.buildmode-schema.node-status-optie,
+.role-admin article.node-type-activiteit.buildmode-schema.node-status-optie {
+  padding-bottom: 1.5em;
+}
 .buildmode-teaser.node-type-profiel {
   font-size: 0.85714286em;
   line-height: 2em;
@@ -2704,16 +2724,68 @@ article.buildmode-teaser.node-type-video .field-title h2 {
   line-height: 1.5em;
   margin-bottom: 0;
 }
-.role-bestuur article.buildmode-teaser.node-type-audio,
-.role-beheer article.buildmode-teaser.node-type-audio,
-.role-admin article.buildmode-teaser.node-type-audio,
-.role-bestuur article.buildmode-teaser.node-type-foto,
-.role-beheer article.buildmode-teaser.node-type-foto,
-.role-admin article.buildmode-teaser.node-type-foto,
-.role-bestuur article.buildmode-teaser.node-type-video,
-.role-beheer article.buildmode-teaser.node-type-video,
-.role-admin article.buildmode-teaser.node-type-video {
-  padding-bottom: 2.28571429em;
+article.node-type-repertoire.buildmode-schema {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: "node-header node-left" "node-header node-main" "node-header node-right" "node-header node-footer";
+  column-gap: 0.85714286em;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  article.node-type-repertoire.buildmode-schema {
+    grid-template-columns: max-content 3fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "node-header node-left node-right node-footer" "node-header node-main node-right node-footer";
+  }
+}
+@media screen and (min-width: 71.42857142857143em ) {
+  article.node-type-repertoire.buildmode-schema {
+    grid-template-columns: max-content 2fr 2fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "node-header node-left node-main node-right node-footer";
+  }
+}
+article.node-type-repertoire.buildmode-schema .nd-region-header {
+  grid-area: node-header;
+}
+article.node-type-repertoire.buildmode-schema .nd-region-left {
+  grid-area: node-left;
+}
+article.node-type-repertoire.buildmode-schema .nd-region-middle-wrapper {
+  grid-area: node-main;
+}
+article.node-type-repertoire.buildmode-schema .nd-region-right {
+  grid-area: node-right;
+}
+article.node-type-repertoire.buildmode-schema .nd-region-footer {
+  grid-area: node-footer;
+}
+article.node-type-repertoire h2 {
+  text-transform: uppercase;
+  margin: 0;
+  vertical-align: middle;
+  font-size: 1em;
+  line-height: 2.57142857em;
+}
+article.node-type-repertoire h2 a:link,
+article.node-type-repertoire h2 a:visited {
+  color: #e9584c;
+}
+article.node-type-repertoire h2 a:hover,
+article.node-type-repertoire h2 a:active,
+article.node-type-repertoire h2 a:focus {
+  color: #3c329b;
+}
+.role-bestuur article.buildmode-full,
+.role-beheer article.buildmode-full,
+.role-admin article.buildmode-full,
+.role-bestuur article.buildmode-teaser,
+.role-beheer article.buildmode-teaser,
+.role-admin article.buildmode-teaser,
+.role-bestuur article.buildmode-schema,
+.role-beheer article.buildmode-schema,
+.role-admin article.buildmode-schema {
+  padding-bottom: 1.71428571em;
 }
 .block-views {
   margin-bottom: 1.71428571em;
@@ -2746,6 +2818,7 @@ article.buildmode-teaser.node-type-video .field-title h2 {
 .field-group {
   clear: left;
 }
+.field .field-label,
 .field .field-label-inline-first {
   font-weight: normal;
   color: #e9584c;
@@ -3199,6 +3272,10 @@ div.content-profile-display {
 }
 .personen-verjaardag .field-geboortedatum {
   display: inline-block;
+}
+.repertoire .view-content {
+  display: grid;
+  row-gap: 0.85714286em;
 }
 .repertoire .repertoire-programma {
   color: #e9584c;

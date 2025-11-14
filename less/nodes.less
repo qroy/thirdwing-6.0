@@ -29,21 +29,24 @@
 #main > .help:not(:empty) {
   &:not(:empty) {
     position: relative;
-    background: @white;
+    background-color: @white;
+    @media @darkmode {
+      background-color: @grey-light;
+    }
     padding: 24em/@fs;
     margin: 0 0 24em/@fs;
     .border-radius(@border-radius-large);
-	box-sizing: border-box;
+    box-sizing: border-box;
   }
 }
 .buildmode-schema {
   &:not(:empty) {
     padding: 12em/@fs 12em/@fs 24em/@fs;
     margin: 0;
-	min-height: 132em/@fs;
-	@media @tablet {
+//    min-height: 132em/@fs;
+    @media @tablet {
       padding: 12em/@fs;
-	}
+    }
   }
 }
 // BACKGROUND IMAGE ACTIVITEITEN
@@ -248,49 +251,39 @@ article.node-type-activiteit {
 //GRIDS FOR NODE-TYPE ACTIVITEIT
 .node-type-activiteit {
   @media @phone-ls-max {
-  &.buildmode-schema {
-    display: grid;
-	grid-template-rows: auto auto auto;
-	row-gap: 12em/@fs;
-	.nd-region-left { grid-row: 1; }
-	.nd-region-middle-wrapper { grid-row: 2; }
-	.nd-region-right { grid-row: 3; }
-  }
+    &.buildmode-schema {
+      display: grid;
+      grid-template-rows: auto auto auto;
+      row-gap: 12em/@fs;
+      .nd-region-left { grid-row: 1; }
+      .nd-region-middle-wrapper { grid-row: 2; }
+      .nd-region-right { grid-row: 3; }
+    }
   }
   @media @phone-ls {
-  &.buildmode-full, &.buildmode-teaser, &.buildmode-schema {
-    display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: auto auto;
-	grid-template-areas:
-    "node-main node-right"
-	"node-footer node-footer";
-	column-gap: 24em/@fs;
-  }
-  &.buildmode-full {
-    row-gap: 24em/@fs;
-  }
-  &.buildmode-schema {
-	grid-template-columns: 350em/@fs 1fr 180em/@fs;
-	grid-template-areas:
-	"node-left node-main node-right";
-	column-gap: 24em/@fs;
-  }
-  .nd-region-header {
-    grid-area: node-main;
-  }
-  .nd-region-left {
-    grid-area: node-left;
-  }
-  .nd-region-middle-wrapper {
-    grid-area: node-main;
-  }
-  .nd-region-right {
-    grid-area: node-right;
-  }
-  .nd-region-footer {
-    grid-area: node-footer;
-  }
+    &.buildmode-full, &.buildmode-teaser, &.buildmode-schema {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas:
+      "node-main node-right"
+      "node-footer node-footer";
+      column-gap: 24em/@fs;
+    }
+    &.buildmode-full {
+      row-gap: 24em/@fs;
+    }
+    &.buildmode-schema {
+      grid-template-columns: 350em/@fs 1fr 180em/@fs;
+      grid-template-areas:
+      "node-left node-main node-right";
+      column-gap: 24em/@fs;
+    }
+    .nd-region-header { grid-area: node-main; }
+    .nd-region-left { grid-area: node-left; }
+    .nd-region-middle-wrapper { grid-area: node-main; }
+    .nd-region-right { grid-area: node-right; }
+    .nd-region-footer { grid-area: node-footer; }
   }
 }
 // FIELDS FOR ACTIVITEIT SCHEMA
@@ -342,8 +335,15 @@ article.node-type-activiteit {
   }
   &.node-status-optie {
     border: 3em/@fs dashed @red;
-	padding: 9em/@fs 9em/@fs 21em/@fs;
-	@media @tablet { padding: 9em/@fs; }
+    padding: 9em/@fs 9em/@fs 21em/@fs;
+    @media @tablet { padding: 9em/@fs; }
+  }
+}
+.role-bestuur,
+.role-beheer,
+.role-admin {
+  article.node-type-activiteit.buildmode-schema.node-status-optie {
+    padding-bottom: 21em/@fs;
   }
 }
 // PROFIELEN
@@ -372,23 +372,22 @@ article.node-type-activiteit {
   grid-template-columns: 90em/@fs auto;
   grid-template-rows: repeat(4, auto);
   grid-template-areas:
-   "node-header node-left"
-   ". node-main"
-   ". node-right"
-   ". node-footer";
+  "node-header node-left"
+  ". node-main"
+  ". node-right"
+  ". node-footer";
   @media @phone-ls {
     grid-template-columns: 90em/@fs 180em/@fs auto;
-	grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
     grid-template-areas:
-     "node-header node-left node-main"
-     ". . node-right"
-     ". . node-footer";
+    "node-header node-left node-main"
+    ". . node-right"
+    ". . node-footer";
   }
   @media @tablet {
     grid-template-columns: 90em/@fs 180em/@fs 1fr 1fr 110em/@fs;
-	grid-template-rows: auto;
-    grid-template-areas:
-    "node-header node-left node-main node-right node-footer";
+    grid-template-rows: auto;
+    grid-template-areas: "node-header node-left node-main node-right node-footer";
   }
   .nd-region-header { grid-area: node-header; }
   .nd-region-left { grid-area: node-left; }
@@ -400,25 +399,25 @@ article.node-type-activiteit {
   &.clear-block:after { display: none; }
   .field-author-picture > .picture {
     height: 108em/@fs;
-	aspect-ratio: 16 ~"/" 20;
-	img {
-	  height: 100%;
-	  width: auto;
-	}
+    aspect-ratio: 16 ~"/" 20;
+    img {
+      height: 100%;
+      width: auto;
+    }
   }
   .field-voornaam, .field-achternaam, .field-achternaam-voorvoegsel, .field-lidsinds {
     text-transform: uppercase;
   }
   .field-ds-group-adres {
     display: inline-block;
-	line-height: 24em/@fs;
-	padding-left: 24em/@fs;
-	position: relative;
-	&:before {
-	  position: absolute;
-	  left: 0;
-	  top: 0;
-	}
+    line-height: 24em/@fs;
+    padding-left: 24em/@fs;
+    position: relative;
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
   }
   .aspirant {
     color: @red;
@@ -428,13 +427,13 @@ article.node-type-activiteit {
 .buildmode-full.node-type-foto {
   .field-afbeeldingen .field-items {
     display: grid;
-	row-gap: 12em/@fs;
-	column-gap: 12em/@fs;
-	grid-template-columns: repeat(2, 1fr);
-	@media @phone-ls { grid-template-columns: repeat(3, 1fr); }
-	@media @tablet { grid-template-columns: repeat(4, 1fr); }
-	@media @normal { grid-template-columns: repeat(5, 1fr); }
-	@media @wide { grid-template-columns: repeat(6, 1fr); }
+    row-gap: 12em/@fs;
+    column-gap: 12em/@fs;
+    grid-template-columns: repeat(2, 1fr);
+    @media @phone-ls { grid-template-columns: repeat(3, 1fr); }
+    @media @tablet { grid-template-columns: repeat(4, 1fr); }
+    @media @normal { grid-template-columns: repeat(5, 1fr); }
+    @media @wide { grid-template-columns: repeat(6, 1fr); }
   }
 }
 // MEDIA
@@ -480,13 +479,54 @@ article.buildmode-teaser.node-type-video {
     margin-bottom: 0;
   }
 }
+// NODE TYPE REPERTOIRE
+article.node-type-repertoire {
+  &.buildmode-schema {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: 
+    "node-header node-left"
+    "node-header node-main"
+    "node-header node-right"
+    "node-header node-footer";
+    @media @tablet {
+      grid-template-columns: max-content 3fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: 
+      "node-header node-left node-right node-footer"
+      "node-header node-main node-right node-footer";
+    }
+    @media @normal {
+      grid-template-columns: max-content 2fr 2fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "node-header node-left node-main node-right node-footer";
+    }
+    column-gap: 12em/@fs;
+    .nd-region-header { grid-area: node-header; }
+    .nd-region-left { grid-area: node-left; }
+    .nd-region-middle-wrapper { grid-area: node-main; }
+    .nd-region-right { grid-area: node-right; }
+    .nd-region-footer { grid-area: node-footer; }
+  }
+  h2 {
+    text-transform: uppercase;
+    margin: 0;
+    a:link, a:visited { color: @red; }
+    a:hover, a:active, a:focus { color: @primary; }
+    vertical-align: middle;
+    font-size: 14em/@fs;
+    line-height: 36em/@fs;
+  }
+}
+// EXTRA PADDING FOR ACCESS BADGES
 .role-bestuur,
 .role-beheer,
 .role-admin {
-  article.buildmode-teaser.node-type-audio,
-  article.buildmode-teaser.node-type-foto,
-  article.buildmode-teaser.node-type-video {
-    padding-bottom: 32em/@fs;
+  article.buildmode-full,
+  article.buildmode-teaser,
+  article.buildmode-schema {
+    padding-bottom: 24em/@fs;
   }
 }
 
@@ -519,10 +559,12 @@ article.buildmode-teaser.node-type-video {
 .field-group {
   clear: left;
 }
-.field .field-label-inline-first {
-  font-weight: normal;
-  color: @red;
-  text-transform: uppercase;
+.field {
+  .field-label, .field-label-inline-first {
+    font-weight: normal;
+    color: @red;
+    text-transform: uppercase;
+  }
 }
 
 .admininfo, .messages {
