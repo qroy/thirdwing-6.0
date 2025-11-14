@@ -1649,6 +1649,58 @@ body.two-sidebars #grid #sidebar-right {
   line-height: 1.5em;
   margin-bottom: 0;
 }
+.buildmode-schema .node.node-type-repertoire {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: "node-header node-left" "node-header node-main" "node-header node-right" "node-header node-footer";
+  column-gap: 0.85714286em;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .buildmode-schema .node.node-type-repertoire {
+    grid-template-columns: max-content 3fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: "node-header node-left node-right node-footer" "node-header node-main node-right node-footer";
+  }
+}
+@media screen and (min-width: 67.85714285714286em ) {
+  .buildmode-schema .node.node-type-repertoire {
+    grid-template-columns: max-content 2fr 2fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "node-header node-left node-main node-right node-footer";
+  }
+}
+.buildmode-schema .node.node-type-repertoire .nd-region-header {
+  grid-area: node-header;
+}
+.buildmode-schema .node.node-type-repertoire .nd-region-left {
+  grid-area: node-left;
+}
+.buildmode-schema .node.node-type-repertoire .nd-region-middle-wrapper {
+  grid-area: node-main;
+}
+.buildmode-schema .node.node-type-repertoire .nd-region-right {
+  grid-area: node-right;
+}
+.buildmode-schema .node.node-type-repertoire .nd-region-footer {
+  grid-area: node-footer;
+}
+.buildmode-schema .node.node-type-repertoire h2 {
+  text-transform: uppercase;
+  margin: 0;
+  vertical-align: middle;
+  font-size: 1em;
+  line-height: 2.57142857em;
+}
+.buildmode-schema .node.node-type-repertoire h2 a:link,
+.buildmode-schema .node.node-type-repertoire h2 a:visited {
+  color: #e9584c;
+}
+.buildmode-schema .node.node-type-repertoire h2 a:hover,
+.buildmode-schema .node.node-type-repertoire h2 a:active,
+.buildmode-schema .node.node-type-repertoire h2 a:focus {
+  color: #3c329b;
+}
 .field-inline,
 .field-inline div {
   display: inline-block;
@@ -1677,6 +1729,7 @@ body.two-sidebars #grid #sidebar-right {
 .field-group {
   clear: left;
 }
+.field .field-label,
 .field .field-label-inline-first {
   font-weight: normal;
   color: #e9584c;
@@ -2722,6 +2775,10 @@ div.content-profile-display {
 /**
  * Repertoire
  */
+.repertoire .view-content {
+  display: grid;
+  row-gap: 0.85714286em;
+}
 .repertoire .repertoire-programma {
   color: #e9584c;
   text-transform: uppercase;
