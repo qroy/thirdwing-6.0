@@ -305,16 +305,14 @@ ul.tabs {
 }
 // ARCHIVE MENUS IN MAIN
 #main {
-  .activiteiten, .nieuws, .multimedia {
+  .activiteiten, .nieuws, .multimedia, .agenda {
     ul.views-summary {
-	  grid-template-columns: repeat(3, minmax(0, 1fr));
-	  @media @phone-ls { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-	  @media @tablet { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-	  @media @normal { grid-template-columns: repeat(8, minmax(0, 1fr)); }
-	  @media @wide { grid-template-columns: repeat(10, minmax(0, 1fr)); }
-	  
-	  
-	}
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      @media @phone-ls { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      @media @tablet { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+      @media @normal { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+      @media @wide { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+    }
   }
 }
 // CALL TO ACTION AND SOCIAL IN MAIN

@@ -4007,34 +4007,39 @@ ul.tabs li a:focus {
 }
 #main .activiteiten ul.views-summary,
 #main .nieuws ul.views-summary,
-#main .multimedia ul.views-summary {
+#main .multimedia ul.views-summary,
+#main .agenda ul.views-summary {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 @media screen and (min-width: 43.57142857142857em ) {
   #main .activiteiten ul.views-summary,
   #main .nieuws ul.views-summary,
-  #main .multimedia ul.views-summary {
+  #main .multimedia ul.views-summary,
+  #main .agenda ul.views-summary {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 @media screen and (min-width: 59.285714285714285em ) {
   #main .activiteiten ul.views-summary,
   #main .nieuws ul.views-summary,
-  #main .multimedia ul.views-summary {
+  #main .multimedia ul.views-summary,
+  #main .agenda ul.views-summary {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
 @media screen and (min-width: 71.42857142857143em ) {
   #main .activiteiten ul.views-summary,
   #main .nieuws ul.views-summary,
-  #main .multimedia ul.views-summary {
+  #main .multimedia ul.views-summary,
+  #main .agenda ul.views-summary {
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
 }
 @media screen and (min-width: 78.57142857142857em) {
   #main .activiteiten ul.views-summary,
   #main .nieuws ul.views-summary,
-  #main .multimedia ul.views-summary {
+  #main .multimedia ul.views-summary,
+  #main .agenda ul.views-summary {
     grid-template-columns: repeat(10, minmax(0, 1fr));
   }
 }
