@@ -19,6 +19,11 @@
   clear: both;
   width: auto;
 }
+// CLEAR BLOCK RESET FOR Nodes
+article.clear-block:after {
+  content: "";
+  display: none;
+}
 
 .buildmode-teaser, 
 .buildmode-full, 
@@ -39,15 +44,9 @@
     box-sizing: border-box;
   }
 }
-.buildmode-schema {
-  &:not(:empty) {
-    padding: 12em/@fs 12em/@fs 24em/@fs;
-    margin: 0;
-//    min-height: 132em/@fs;
-    @media @tablet {
-      padding: 12em/@fs;
-    }
-  }
+.buildmode-schema:not(:empty) {
+  padding: 12em/@fs;
+  margin: 0;
 }
 // BACKGROUND IMAGE ACTIVITEITEN
 article.buildmode-teaser {
@@ -85,17 +84,18 @@ article.buildmode-teaser {
 }
 // FIELD-AFBEELDINGEN
 article.node-type-activiteit,
-article.node-type-nieuws {
+article.node-type-nieuws,
+article.node-type-pagina {
   .field-afbeeldingen .field-item {
     display: none;
     &:first-child {
       display: block;
-	  @media @phone-ls {
+      @media @phone-ls {
         float: right;
         max-width: 50%;
-	    max-height: 330em/@fs;
+        max-height: 330em/@fs;
         text-align: right;
-	  }
+      }
     }
   }
 }
@@ -119,22 +119,23 @@ article .field-afbeeldingen .field-item {
     max-height: 100%;
     max-width: 100%;
   	width: auto;
-	height: auto;
+    height: auto;
     object-fit: contain;
-	object-position: right top;
+    object-position: right top;
     display: block;
-	.border-radius();
+    .border-radius();
   }
 }
+article.node-type-pagina .field-afbeeldingen .field-item,
 article.node-type-activiteit .field-afbeeldingen .field-item,
 article.node-type-nieuws .field-afbeeldingen .field-item {
   @media @phone-ls {
-  a {
-	max-height: 330em/@fs;
-  }
-  img {
-    max-height: 330em/@fs;
-  }
+    a {
+      max-height: 330em/@fs;
+    }
+    img {
+      max-height: 330em/@fs;
+    }
   }
 }
 article.node-type-nieuws .field-afbeeldingen .field-item {
@@ -160,7 +161,7 @@ article.node-type-activiteit {
   }
 }
 // ACCESS BADGES
-.badge-access, badge-access-wrapper { display: none; }
+.badge-access, .badge-access-wrapper { display: none; }
 .role-bestuur, 
 .role-beheer, 
 .role-admin {
@@ -549,15 +550,6 @@ article.node-type-repertoire {
 }
 .field-block {
   display: block;
-}
-.field-margin-left {
-  margin-left: 12em/@fs;
-}
-.field-margin-right {
-  margin-right: 12em/@fs;
-}
-.field-group {
-  clear: left;
 }
 .field {
   .field-label, .field-label-inline-first {

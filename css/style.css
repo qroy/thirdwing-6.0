@@ -907,7 +907,7 @@ span.clear {
   margin-right: 0;
 }
 .badge.badge-time {
-  width: 6.28571429em;
+  width: 6.14285714em;
   float: right;
 }
 @media screen {
@@ -916,7 +916,7 @@ span.clear {
   }
 }
 .badge.badge-koor-tijd {
-  width: 6.28571429em;
+  width: 6.14285714em;
 }
 @media screen {
   .badge.badge-koor-tijd {
@@ -1222,7 +1222,7 @@ span.clear {
   margin-right: 0;
 }
 .marker.badge-time {
-  width: 6.28571429em;
+  width: 6.14285714em;
   float: right;
 }
 @media screen {
@@ -1231,7 +1231,7 @@ span.clear {
   }
 }
 .marker.badge-koor-tijd {
-  width: 6.28571429em;
+  width: 6.14285714em;
 }
 @media screen {
   .marker.badge-koor-tijd {
@@ -1826,7 +1826,7 @@ a[type*="mpeg"]:before {
 @media screen and (min-width: 59.285714285714285em ) {
   #footer {
     display: grid;
-    grid-template-columns: 14.28571429em minmax(max-content, 1fr) minmax(max-content, 1fr) auto 16.07142857em;
+    grid-template-columns: 14.28571429em minmax(max-content, 1fr) minmax(max-content, 1fr) auto 11.42857143em;
     column-gap: 1.71428571em;
   }
 }
@@ -1864,28 +1864,15 @@ a[type*="mpeg"]:before {
   line-height: 2em;
   margin: 6em 0;
   color: #878786;
-  padding: 0 70px 0 0;
+  padding: 0;
   position: relative;
   box-sizing: border-box;
-  text-align: right;
-}
-#block-block-5.block:after {
-  content: '\e900';
-  font-family: 'thirdwing';
-  font-size: 50px;
-  line-height: 60px;
   text-align: center;
-  display: block;
-  width: 60px;
-  height: 60px;
-  border: 2px solid #878786;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  visibility: visible;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  #block-block-5.block {
+    text-align: right;
+  }
 }
 #footer-bg {
   background: #464644;
@@ -1925,6 +1912,10 @@ a[type*="mpeg"]:before {
   clear: both;
   width: auto;
 }
+article.clear-block:after {
+  content: "";
+  display: none;
+}
 .buildmode-teaser:not(:empty),
 .buildmode-full:not(:empty),
 .buildmode-schema:not(:empty),
@@ -1953,13 +1944,8 @@ a[type*="mpeg"]:before {
   }
 }
 .buildmode-schema:not(:empty) {
-  padding: 0.85714286em 0.85714286em 1.71428571em;
+  padding: 0.85714286em;
   margin: 0;
-}
-@media screen and (min-width: 59.285714285714285em ) {
-  .buildmode-schema:not(:empty) {
-    padding: 0.85714286em;
-  }
 }
 article.buildmode-teaser .field-background {
   position: absolute;
@@ -1998,16 +1984,19 @@ article.buildmode-teaser .field-background .node-background:after {
   border-radius: 10px;
 }
 article.node-type-activiteit .field-afbeeldingen .field-item,
-article.node-type-nieuws .field-afbeeldingen .field-item {
+article.node-type-nieuws .field-afbeeldingen .field-item,
+article.node-type-pagina .field-afbeeldingen .field-item {
   display: none;
 }
 article.node-type-activiteit .field-afbeeldingen .field-item:first-child,
-article.node-type-nieuws .field-afbeeldingen .field-item:first-child {
+article.node-type-nieuws .field-afbeeldingen .field-item:first-child,
+article.node-type-pagina .field-afbeeldingen .field-item:first-child {
   display: block;
 }
 @media screen and (min-width: 43.57142857142857em ) {
   article.node-type-activiteit .field-afbeeldingen .field-item:first-child,
-  article.node-type-nieuws .field-afbeeldingen .field-item:first-child {
+  article.node-type-nieuws .field-afbeeldingen .field-item:first-child,
+  article.node-type-pagina .field-afbeeldingen .field-item:first-child {
     float: right;
     max-width: 50%;
     max-height: 23.57142857em;
@@ -2046,10 +2035,12 @@ article .field-afbeeldingen .field-item img {
   border-radius: 5px;
 }
 @media screen and (min-width: 43.57142857142857em ) {
+  article.node-type-pagina .field-afbeeldingen .field-item a,
   article.node-type-activiteit .field-afbeeldingen .field-item a,
   article.node-type-nieuws .field-afbeeldingen .field-item a {
     max-height: 23.57142857em;
   }
+  article.node-type-pagina .field-afbeeldingen .field-item img,
   article.node-type-activiteit .field-afbeeldingen .field-item img,
   article.node-type-nieuws .field-afbeeldingen .field-item img {
     max-height: 23.57142857em;
@@ -2078,7 +2069,7 @@ article.node-type-nieuws .field-afbeeldingen .field-item {
   }
 }
 .badge-access,
-badge-access-wrapper {
+.badge-access-wrapper {
   display: none;
 }
 .role-bestuur .buildmode-teaser .badge-access-wrapper,
@@ -2808,15 +2799,6 @@ article.node-type-repertoire h2 a:focus {
 }
 .field-block {
   display: block;
-}
-.field-margin-left {
-  margin-left: 0.85714286em;
-}
-.field-margin-right {
-  margin-right: 0.85714286em;
-}
-.field-group {
-  clear: left;
 }
 .field .field-label,
 .field .field-label-inline-first {

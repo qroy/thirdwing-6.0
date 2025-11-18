@@ -9,7 +9,6 @@
   text-align: center;
   .transition-standard();
   height: 32em/@fs;
-
   color: @white;
   background: @grey;
   @media print { 
@@ -19,22 +18,20 @@
     padding: 3em/@fs;
   }
   .border-radius();
-  
   &.badge-combo {
     font-family: thirdwing;
-	width: 32em/@fs;
+    width: 32em/@fs;
     font-size: 24em/@fs;
     width: 32em/24;
     line-height: 24em/24;
     padding: 4em/24;
-	margin: 0 4em/24 4em/24 0;
-	height: 32em/24;
+    margin: 0 4em/24 4em/24 0;
+    height: 32em/24;
   }
   &.badge-combo-aanwezig {   background: @green; }
   &.badge-combo-vervanging { background: @orange; }
   &.badge-combo-vraag {      background: @grey-light; }
   &.badge-combo-afwezig {    background: @red; }
-
   @media print {
     &.badge-combo-aanwezig  {   background: @grey-light; color: @grey-dark;  border-color: @grey-light;  }
 	&.badge-combo-vervanging {  background: @grey-light; color: @grey-dark;  border-color: @grey-light;  }
@@ -60,10 +57,9 @@
   }
   &.badge-functie-cie {
     color: @red;
-	background: transparent;
-	padding: 0;
+    background: transparent;
+    padding: 0;
   }
-
   &.badge-sleepgroep {
     width: 32em/@fs;
     line-height: 24em/@fs;
@@ -136,18 +132,18 @@
 	}
   }
   &.badge-time {
-    width: 88em/@fs;
-	float: right;
+    width: 86em/@fs;
+    float: right;
     @media screen { background: @red; }
   }
   &.badge-koor-tijd {
-    width: 88em/@fs;
+    width: 86em/@fs;
     @media screen {
       background: @primary;
     }
   }
   &.badge-sleepgroep-tijd {
-    width: 104em/@fs; // 3*32 (width + padding) + 2*4 (margin)
+    width: 104em/@fs;
     @media screen {
       background: @yellow;
     }
