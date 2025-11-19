@@ -1449,6 +1449,19 @@ a[type*="mpeg"]:before {
 .button.active {
   background: #eb7314;
 }
+.button-admin {
+  background: #878786;
+}
+.button-admin:link,
+.button-admin:visited {
+  background: #878786;
+}
+.button-admin:active,
+.button-admin:hover,
+.button-admin:focus,
+.button-admin.active {
+  background: #eb7314;
+}
 .button-alt {
   background: #eb7314;
 }
@@ -2678,56 +2691,71 @@ article.buildmode-teaser.node-type-video .field-title h2 {
   line-height: 1.5em;
   margin-bottom: 0;
 }
-article.node-type-repertoire.buildmode-schema {
+article.node-type-repertoire.buildmode-schema,
+article.node-type-programma.programma-nummer.buildmode-schema {
   display: grid;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: 2.28571429em 1fr;
   grid-template-rows: repeat(4, auto);
   grid-template-areas: "node-header node-left" "node-header node-main" "node-header node-right" "node-header node-footer";
   column-gap: 0.85714286em;
 }
 @media screen and (min-width: 59.285714285714285em ) {
-  article.node-type-repertoire.buildmode-schema {
+  article.node-type-repertoire.buildmode-schema,
+  article.node-type-programma.programma-nummer.buildmode-schema {
     grid-template-columns: max-content 3fr 1fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas: "node-header node-left node-right node-footer" "node-header node-main node-right node-footer";
   }
 }
 @media screen and (min-width: 71.42857142857143em ) {
-  article.node-type-repertoire.buildmode-schema {
-    grid-template-columns: max-content 2fr 2fr 1fr 1fr;
+  article.node-type-repertoire.buildmode-schema,
+  article.node-type-programma.programma-nummer.buildmode-schema {
+    grid-template-columns: 2.28571429em 2fr 2fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: "node-header node-left node-main node-right node-footer";
   }
 }
-article.node-type-repertoire.buildmode-schema .nd-region-header {
+article.node-type-repertoire.buildmode-schema .nd-region-header,
+article.node-type-programma.programma-nummer.buildmode-schema .nd-region-header {
   grid-area: node-header;
 }
-article.node-type-repertoire.buildmode-schema .nd-region-left {
+article.node-type-repertoire.buildmode-schema .nd-region-left,
+article.node-type-programma.programma-nummer.buildmode-schema .nd-region-left {
   grid-area: node-left;
 }
-article.node-type-repertoire.buildmode-schema .nd-region-middle-wrapper {
+article.node-type-repertoire.buildmode-schema .nd-region-middle-wrapper,
+article.node-type-programma.programma-nummer.buildmode-schema .nd-region-middle-wrapper {
   grid-area: node-main;
 }
-article.node-type-repertoire.buildmode-schema .nd-region-right {
+article.node-type-repertoire.buildmode-schema .nd-region-right,
+article.node-type-programma.programma-nummer.buildmode-schema .nd-region-right {
   grid-area: node-right;
 }
-article.node-type-repertoire.buildmode-schema .nd-region-footer {
+article.node-type-repertoire.buildmode-schema .nd-region-footer,
+article.node-type-programma.programma-nummer.buildmode-schema .nd-region-footer {
   grid-area: node-footer;
 }
-article.node-type-repertoire h2 {
+article.node-type-repertoire h2,
+article.node-type-programma.programma-nummer h2 {
   text-transform: uppercase;
   margin: 0;
+  color: #e9584c;
   vertical-align: middle;
   font-size: 1em;
   line-height: 2.57142857em;
 }
 article.node-type-repertoire h2 a:link,
-article.node-type-repertoire h2 a:visited {
+article.node-type-programma.programma-nummer h2 a:link,
+article.node-type-repertoire h2 a:visited,
+article.node-type-programma.programma-nummer h2 a:visited {
   color: #e9584c;
 }
 article.node-type-repertoire h2 a:hover,
+article.node-type-programma.programma-nummer h2 a:hover,
 article.node-type-repertoire h2 a:active,
-article.node-type-repertoire h2 a:focus {
+article.node-type-programma.programma-nummer h2 a:active,
+article.node-type-repertoire h2 a:focus,
+article.node-type-programma.programma-nummer h2 a:focus {
   color: #3c329b;
 }
 .role-bestuur article.buildmode-full,
@@ -3853,6 +3881,11 @@ ul.tabs li a:focus {
 #main ul.views-summary li a.active-trail {
   color: #ffffff;
   background-color: #eb7314;
+}
+#main ul.menu li .item-count,
+#main ul.views-summary li .item-count {
+  font-weight: 300;
+  font-size: 0.85714286em;
 }
 #main .activiteiten ul.views-summary,
 #main .nieuws ul.views-summary,

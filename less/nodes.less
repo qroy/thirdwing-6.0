@@ -317,12 +317,6 @@ article.node-type-activiteit {
     font-style: italic;
 	margin-bottom: 12em/@fs;
   }
-  .node-edit-link, .node-clone-link {
-//    .icon-only();
-//    &:link, &:visited { color: @grey-light; background: @white; }
-//    &:active, &:hover, &:focus { background: @secondary; }
-//    margin: 0 0 4em/@fs 4em/@fs;
-  }
   .nd-region-left, .nd-region-right {
     display: flex;
     flex-wrap: wrap;
@@ -483,10 +477,11 @@ article.buildmode-teaser.node-type-video {
   }
 }
 // NODE TYPE REPERTOIRE
-article.node-type-repertoire {
+article.node-type-repertoire,
+article.node-type-programma.programma-nummer {
   &.buildmode-schema {
     display: grid;
-    grid-template-columns: max-content 1fr;
+    grid-template-columns: 32em/@fs 1fr;
     grid-template-rows: repeat(4, auto);
     grid-template-areas: 
     "node-header node-left"
@@ -501,7 +496,7 @@ article.node-type-repertoire {
       "node-header node-main node-right node-footer";
     }
     @media @normal {
-      grid-template-columns: max-content 2fr 2fr 1fr 1fr;
+      grid-template-columns: 32em/@fs 2fr 2fr 1fr 1fr;
       grid-template-rows: auto;
       grid-template-areas: "node-header node-left node-main node-right node-footer";
     }
@@ -515,6 +510,7 @@ article.node-type-repertoire {
   h2 {
     text-transform: uppercase;
     margin: 0;
+    color: @red;
     a:link, a:visited { color: @red; }
     a:hover, a:active, a:focus { color: @primary; }
     vertical-align: middle;

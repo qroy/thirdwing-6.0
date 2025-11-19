@@ -106,6 +106,10 @@ function phptemplate_preprocess_node(&$vars) {
     case 'profiel':
       _phptemplate_add_profile_classes($vars);
       break;
+      
+    case 'programma':
+      _phptemplate_add_programma_classes($vars);
+      break;
   }
 }
 
@@ -233,6 +237,22 @@ function _phptemplate_add_profile_classes(&$vars) {
         $vars['node_classes'] .= ' persoon-groep-' . $role_class;
       }
     }
+  }
+}
+
+/**
+ * Helper function to add programma-specific classes.
+ *
+ * @param array $vars
+ *   Template variables passed by reference.
+ */
+function _phptemplate_add_programma_classes(&$vars) {
+  $node = $vars['node'];
+  
+   // Add class based on field_prog_type
+  if (!empty($node->field_prog_type[0]['value'])) {
+    $soort_value = preg_replace('/[^a-zA-Z0-9-]+/', '-', strtolower($node->field_prog_type[0]['value']));
+    $vars['node_classes'] .= ' programma-' . $soort_value;
   }
 }
 
