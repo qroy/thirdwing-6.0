@@ -275,12 +275,12 @@ ul.tabs {
 #main {
   ul.menu, ul.views-summary {
     margin: 0 0 24em/@fs;
-	padding: 0;
-	display: grid;
-	column-gap: 12em/@fs;
-	row-gap: 12em/@fs;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	@media @tablet { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    padding: 0;
+    display: grid;
+    column-gap: 12em/@fs;
+    row-gap: 12em/@fs;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    @media @tablet { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     li {
       margin: 0;
       padding: 0;
@@ -288,13 +288,13 @@ ul.tabs {
       box-sizing: border-box;
       a:link, a:visited {
         font-weight: 600;
-		color: @grey-dark;
+        color: @grey-dark;
         text-align: center;
         background-color: @grey-light;
         padding: 6em/@fs;
         .border-radius();
         display: block;
-		box-sizing: border-box;
+        box-sizing: border-box;
       }
       a:hover, a:active, a:focus, a.active, a.active-trail {
         color: @white;

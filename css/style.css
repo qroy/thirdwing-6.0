@@ -740,7 +740,7 @@ span.clear {
   background: #aad563;
 }
 .badge.badge-combo-vervanging {
-  background: #eb7314;
+  background: #d6ebb3;
 }
 .badge.badge-combo-vraag {
   background: #d7d7d6;
@@ -1055,7 +1055,7 @@ span.clear {
   background: #aad563;
 }
 .marker.badge-combo-vervanging {
-  background: #eb7314;
+  background: #d6ebb3;
 }
 .marker.badge-combo-vraag {
   background: #d7d7d6;
@@ -1912,9 +1912,11 @@ a[type*="mpeg"]:before {
   clear: both;
   width: auto;
 }
-article.clear-block:after {
-  content: "";
-  display: none;
+@media screen and (max-width: 43.57142857142857em ) {
+  article.clear-block:after {
+    content: "";
+    display: none;
+  }
 }
 .buildmode-teaser:not(:empty),
 .buildmode-full:not(:empty),
@@ -2448,45 +2450,6 @@ article.node-type-nieuws .field-afbeeldingen .field-item {
   font-style: italic;
   margin-bottom: 0.85714286em;
 }
-.buildmode-schema.node-type-activiteit .node-edit-link,
-.buildmode-schema.node-type-activiteit .node-clone-link {
-  display: inline-block;
-  text-indent: 200%;
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
-  /* for absolute positioning of icon */
-  vertical-align: bottom;
-  width: 2.28571429em;
-  margin: 0 0 0.28571429em 0.28571429em;
-}
-.buildmode-schema.node-type-activiteit .node-edit-link:before,
-.buildmode-schema.node-type-activiteit .node-clone-link:before {
-  font-family: FontAwesome;
-  text-indent: 0;
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
-  margin: 0;
-  display: inline;
-  width: auto;
-}
-.buildmode-schema.node-type-activiteit .node-edit-link:link,
-.buildmode-schema.node-type-activiteit .node-clone-link:link,
-.buildmode-schema.node-type-activiteit .node-edit-link:visited,
-.buildmode-schema.node-type-activiteit .node-clone-link:visited {
-  color: #d7d7d6;
-  background: #ffffff;
-}
-.buildmode-schema.node-type-activiteit .node-edit-link:active,
-.buildmode-schema.node-type-activiteit .node-clone-link:active,
-.buildmode-schema.node-type-activiteit .node-edit-link:hover,
-.buildmode-schema.node-type-activiteit .node-clone-link:hover,
-.buildmode-schema.node-type-activiteit .node-edit-link:focus,
-.buildmode-schema.node-type-activiteit .node-clone-link:focus {
-  background: #eb7314;
-}
 .buildmode-schema.node-type-activiteit .nd-region-left,
 .buildmode-schema.node-type-activiteit .nd-region-right {
   display: flex;
@@ -2824,102 +2787,6 @@ article.node-type-repertoire h2 a:focus {
 .editablefields .form-select {
   max-width: 50px;
   font-size: 10px;
-}
-/**
- * Autocomplete.
- */
-#autocomplete li {
-  cursor: default;
-  padding: 2px;
-  margin: 0;
-}
-/**
- * Syndication icons and block
- */
-#block-node-0 h2 {
-  float: left;
-  /* LTR */
-  padding-right: 20px;
-  /* LTR */
-}
-#block-node-0 img,
-.feed-icon {
-  float: right;
-  /* LTR */
-  padding-top: 4px;
-}
-#block-node-0 .content {
-  clear: right;
-  /* LTR */
-}
-/**
- * Login Block
- */
-#user-login-form {
-  text-align: center;
-}
-#user-login-form ul {
-  text-align: left;
-  /* LTR */
-}
-/**
- * User profiles.
- */
-.profile {
-  margin-top: 1.5em;
-}
-.profile h3 {
-  border-bottom: 0;
-  margin-bottom: 1em;
-}
-.profile dl {
-  margin: 0;
-}
-.profile dt {
-  font-weight: normal;
-  color: #878786;
-  font-size: 0.92em;
-  line-height: 1.3em;
-  margin-top: 1.4em;
-  margin-bottom: 0.45em;
-}
-.profile dd {
-  margin-bottom: 1.6em;
-}
-/**
- * dblog.module
- */
-tr.dblog-user {
-  background-color: #fcf9e5;
-}
-tr.dblog-user td.active {
-  background-color: #fbf5cf;
-}
-tr.dblog-content {
-  background-color: #fefefe;
-}
-tr.dblog-content td.active {
-  background-color: #f5f5f5;
-}
-tr.dblog-warning {
-  background-color: #fdf5e6;
-}
-tr.dblog-warning td.active {
-  background-color: #fdf2de;
-}
-tr.dblog-error {
-  background-color: #fbe4e4;
-}
-tr.dblog-error td.active {
-  background-color: #fbdbdb;
-}
-tr.dblog-page-not-found,
-tr.dblog-access-denied {
-  background: #d7ffd7;
-}
-tr.dblog-page-not-found td.active,
-tr.dblog-access-denied td.active {
-  background: #c7eec7;
 }
 .agenda-leden .view-content {
   display: grid;

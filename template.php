@@ -249,21 +249,6 @@ function phptemplate_menu_local_tasks() {
 }
 
 /**
- * Theme function for node submission information.
- *
- * @param object $node
- *   The node object.
- * @return string
- *   Formatted submission text.
- */
-function phptemplate_node_submitted($node) {
-  return t('Geplaatst op !datetime door !username', array(
-    '!username' => theme('username', $node),
-    '!datetime' => format_date($node->created),
-  ));
-}
-
-/**
  * Theme function for date all day label.
  *
  * @return string

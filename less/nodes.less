@@ -19,10 +19,12 @@
   clear: both;
   width: auto;
 }
-// CLEAR BLOCK RESET FOR Nodes
+// CLEAR BLOCK RESET FOR NODES ON MOBILE
 article.clear-block:after {
-  content: "";
-  display: none;
+  @media @phone-ls-max {
+    content: "";
+    display: none;
+  }
 }
 
 .buildmode-teaser, 
@@ -154,7 +156,7 @@ article.node-type-activiteit {
       @media @tablet {
         height: 150em/@fs;
         display: table-cell;
-	    vertical-align: bottom;
+        vertical-align: bottom;
         overflow: hidden;
       }
     }
@@ -316,10 +318,10 @@ article.node-type-activiteit {
 	margin-bottom: 12em/@fs;
   }
   .node-edit-link, .node-clone-link {
-    .icon-only();
-    &:link, &:visited { color: @grey-light; background: @white; }
-    &:active, &:hover, &:focus { background: @secondary; }
-    margin: 0 0 4em/@fs 4em/@fs;
+//    .icon-only();
+//    &:link, &:visited { color: @grey-light; background: @white; }
+//    &:active, &:hover, &:focus { background: @secondary; }
+//    margin: 0 0 4em/@fs 4em/@fs;
   }
   .nd-region-left, .nd-region-right {
     display: flex;
@@ -354,12 +356,12 @@ article.node-type-activiteit {
   text-align: center;
   .field-author-picture {
     width: 100%;
-	aspect-ratio: 16 ~"/" 20;
-	img {
-	  width: 80%;
-	  height: auto;
-	  aspect-ratio: 16 ~"/" 20;
-	}
+    aspect-ratio: 16 ~"/" 20;
+    img {
+      width: 80%;
+      height: auto;
+      aspect-ratio: 16 ~"/" 20;
+    }
   }
   .field-voornaam, .field-achternaam, .field-achternaam-voorvoegsel {
     text-transform: uppercase;
@@ -577,108 +579,4 @@ article.node-type-repertoire {
 .editablefields .form-select {
   max-width: 50px;
   font-size: 10px;
-}
-
-/**
- * Autocomplete.
- */
-#autocomplete li {
-  cursor: default;
-  padding: 2px;
-  margin: 0;
-}
-
-/**
- * Syndication icons and block
- */
-#block-node-0 h2 {
-  float: left; /* LTR */
-  padding-right: 20px; /* LTR */
-}
-
-#block-node-0 img, .feed-icon {
-  float: right; /* LTR */
-  padding-top: 4px;
-}
-
-#block-node-0 .content {
-  clear: right; /* LTR */
-}
-
-/**
- * Login Block
- */
-#user-login-form {
-  text-align: center;
-}
-#user-login-form ul {
-  text-align: left; /* LTR */
-}
-
-/**
- * User profiles.
- */
-.profile {
-  margin-top: 1.5em;
-}
-.profile h3 {
-  border-bottom: 0;
-  margin-bottom: 1em;
-}
-.profile dl {
-  margin: 0;
-}
-.profile dt {
-  font-weight: normal;
-  color: @grey;
-  font-size: 0.92em;
-  line-height: 1.3em;
-  margin-top: 1.4em;
-  margin-bottom: 0.45em;
-}
-.profile dd {
-  margin-bottom: 1.6em;
-}
-
-
-
-/**
- * dblog.module
- */
-tr.dblog-user {
-  background-color: #fcf9e5;
-}
-
-tr.dblog-user td.active {
-  background-color: #fbf5cf;
-}
-
-tr.dblog-content {
-  background-color: #fefefe;
-}
-
-tr.dblog-content td.active {
-  background-color: #f5f5f5;
-}
-
-tr.dblog-warning {
-  background-color: #fdf5e6;
-}
-
-tr.dblog-warning td.active {
-  background-color: #fdf2de;
-}
-
-tr.dblog-error {
-  background-color: #fbe4e4;
-}
-
-tr.dblog-error td.active {
-  background-color: #fbdbdb;
-}
-tr.dblog-page-not-found, tr.dblog-access-denied {
-  background: #d7ffd7;
-}
-tr.dblog-page-not-found td.active, tr.dblog-access-denied td.active {
-  background: #c7eec7;
 }
