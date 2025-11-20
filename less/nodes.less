@@ -38,10 +38,10 @@ article.clear-block:after {
     position: relative;
     background-color: @white;
     @media @darkmode {
-      background-color: @grey-light;
+//      background-color: @grey-light;
     }
     padding: 24em/@fs;
-    margin: 0 0 24em/@fs;
+//    margin: 0 0 24em/@fs;
     .border-radius(@border-radius-large);
     box-sizing: border-box;
   }
@@ -87,7 +87,8 @@ article.buildmode-teaser {
 // FIELD-AFBEELDINGEN
 article.node-type-activiteit,
 article.node-type-nieuws,
-article.node-type-pagina {
+article.node-type-pagina,
+article.node-type-repertoire {
   .field-afbeeldingen .field-item {
     display: none;
     &:first-child {
@@ -113,6 +114,11 @@ article.node-type-activiteit .field-afbeeldingen .field-item:first-child {
   max-width: 100%;
   margin: 0;
 }
+article.node-type-repertoire .field-afbeeldingen .field-item:first-child {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
 article .field-afbeeldingen .field-item {
   a {
     display: inline-block;
@@ -132,10 +138,7 @@ article.node-type-pagina .field-afbeeldingen .field-item,
 article.node-type-activiteit .field-afbeeldingen .field-item,
 article.node-type-nieuws .field-afbeeldingen .field-item {
   @media @phone-ls {
-    a {
-      max-height: 330em/@fs;
-    }
-    img {
+    a, img {
       max-height: 330em/@fs;
     }
   }
@@ -507,6 +510,21 @@ article.node-type-programma.programma-nummer {
     .nd-region-right { grid-area: node-right; }
     .nd-region-footer { grid-area: node-footer; }
   }
+  &.buildmode-teaser, &.buildmode-full {
+    display: grid;
+    @media @phone-ls {
+      column-gap: 24em/@fs;
+    }
+  }
+  &.buildmode-full {
+    @media @phone-ls { grid-template-columns: 1fr 240em/@fs; }
+  }
+  &.buildmode-teaser {
+    @media @phone-ls {
+      grid-template-columns: 1fr 120em/@fs;
+      grid-template-rows: 120em/@fs; 
+    }
+  }
   h2 {
     text-transform: uppercase;
     margin: 0;
@@ -530,7 +548,7 @@ article.node-type-programma.programma-nummer {
 }
 
 .block-views {
-  margin-bottom: 24em/@fs;
+  margin-top: 24em/@fs;
 }
 .field-inline, .field-inline div {
   display: inline-block;

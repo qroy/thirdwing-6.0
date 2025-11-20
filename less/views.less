@@ -6,17 +6,20 @@
 
 // ACTIVITEITEN EN NIEUWS IN 2 KOLOMMEN
 .nieuws .view-content:has(> :nth-child(2)) {
+  display: grid;
+  row-gap: 24em/@fs;
   @media @wide {
     column-count: 2;
     column-gap: 24em/@fs;
     .views-row {
-	  break-inside: avoid;
-	}
+      break-inside: avoid;
+    }
   }
 }
 .activiteiten .view-content:has(> :nth-child(2)) {
+  row-gap: 24em/@fs;
+  display: grid;
   @media @wide {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 24em/@fs;
   }
@@ -100,7 +103,6 @@ div.content-profile-display {
   border: 0;
 }
 .personen {
-  margin-bottom: 24em/@fs;
   .buildmode-teaser {
     margin: 0;
   }
@@ -209,6 +211,12 @@ div.content-profile-display {
   .view-content {
     display: grid;
     row-gap: 12em/@fs;
+  }
+  &.repertoire-teaser .view-content {
+    @media @tablet {
+      column-gap: 12em/@fs;
+      grid-template-columns: 1fr 1fr;
+    }
   }
   .repertoire-programma {
     color: @red;

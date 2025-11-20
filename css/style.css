@@ -1550,11 +1550,6 @@ a[type*="mpeg"]:before {
   grid-template-columns: 0 auto 0;
   grid-template-areas: ". header ." ". main ." ". footer .";
 }
-@media (prefers-color-scheme: dark) {
-  .page {
-    background-color: #878786;
-  }
-}
 @media screen and (min-width: 59.285714285714285em ) {
   .page {
     grid-template-columns: minmax(1.71428571em, 1fr) minmax(50em, 78.57142857em) 14.28571429em minmax(1.71428571em, 1fr);
@@ -1941,22 +1936,10 @@ a[type*="mpeg"]:before {
   position: relative;
   background-color: #ffffff;
   padding: 1.71428571em;
-  margin: 0 0 1.71428571em;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   box-sizing: border-box;
-}
-@media (prefers-color-scheme: dark) {
-  .buildmode-teaser:not(:empty),
-  .buildmode-full:not(:empty),
-  .buildmode-schema:not(:empty),
-  #main > dl:not(:empty),
-  #main > form:not(:empty),
-  #main > .admin:not(:empty),
-  #main > .help:not(:empty):not(:empty) {
-    background-color: #d7d7d6;
-  }
 }
 .buildmode-schema:not(:empty) {
   padding: 0.85714286em;
@@ -2000,18 +1983,21 @@ article.buildmode-teaser .field-background .node-background:after {
 }
 article.node-type-activiteit .field-afbeeldingen .field-item,
 article.node-type-nieuws .field-afbeeldingen .field-item,
-article.node-type-pagina .field-afbeeldingen .field-item {
+article.node-type-pagina .field-afbeeldingen .field-item,
+article.node-type-repertoire .field-afbeeldingen .field-item {
   display: none;
 }
 article.node-type-activiteit .field-afbeeldingen .field-item:first-child,
 article.node-type-nieuws .field-afbeeldingen .field-item:first-child,
-article.node-type-pagina .field-afbeeldingen .field-item:first-child {
+article.node-type-pagina .field-afbeeldingen .field-item:first-child,
+article.node-type-repertoire .field-afbeeldingen .field-item:first-child {
   display: block;
 }
 @media screen and (min-width: 43.57142857142857em ) {
   article.node-type-activiteit .field-afbeeldingen .field-item:first-child,
   article.node-type-nieuws .field-afbeeldingen .field-item:first-child,
-  article.node-type-pagina .field-afbeeldingen .field-item:first-child {
+  article.node-type-pagina .field-afbeeldingen .field-item:first-child,
+  article.node-type-repertoire .field-afbeeldingen .field-item:first-child {
     float: right;
     max-width: 50%;
     max-height: 23.57142857em;
@@ -2034,6 +2020,11 @@ article.node-type-activiteit .field-afbeeldingen .field-item:first-child {
     height: 23.57142857em;
   }
 }
+article.node-type-repertoire .field-afbeeldingen .field-item:first-child {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+}
 article .field-afbeeldingen .field-item a {
   display: inline-block;
 }
@@ -2052,9 +2043,7 @@ article .field-afbeeldingen .field-item img {
 @media screen and (min-width: 43.57142857142857em ) {
   article.node-type-pagina .field-afbeeldingen .field-item a,
   article.node-type-activiteit .field-afbeeldingen .field-item a,
-  article.node-type-nieuws .field-afbeeldingen .field-item a {
-    max-height: 23.57142857em;
-  }
+  article.node-type-nieuws .field-afbeeldingen .field-item a,
   article.node-type-pagina .field-afbeeldingen .field-item img,
   article.node-type-activiteit .field-afbeeldingen .field-item img,
   article.node-type-nieuws .field-afbeeldingen .field-item img {
@@ -2735,6 +2724,33 @@ article.node-type-repertoire.buildmode-schema .nd-region-footer,
 article.node-type-programma.programma-nummer.buildmode-schema .nd-region-footer {
   grid-area: node-footer;
 }
+article.node-type-repertoire.buildmode-teaser,
+article.node-type-programma.programma-nummer.buildmode-teaser,
+article.node-type-repertoire.buildmode-full,
+article.node-type-programma.programma-nummer.buildmode-full {
+  display: grid;
+}
+@media screen and (min-width: 43.57142857142857em ) {
+  article.node-type-repertoire.buildmode-teaser,
+  article.node-type-programma.programma-nummer.buildmode-teaser,
+  article.node-type-repertoire.buildmode-full,
+  article.node-type-programma.programma-nummer.buildmode-full {
+    column-gap: 1.71428571em;
+  }
+}
+@media screen and (min-width: 43.57142857142857em ) {
+  article.node-type-repertoire.buildmode-full,
+  article.node-type-programma.programma-nummer.buildmode-full {
+    grid-template-columns: 1fr 17.14285714em;
+  }
+}
+@media screen and (min-width: 43.57142857142857em ) {
+  article.node-type-repertoire.buildmode-teaser,
+  article.node-type-programma.programma-nummer.buildmode-teaser {
+    grid-template-columns: 1fr 8.57142857em;
+    grid-template-rows: 8.57142857em;
+  }
+}
 article.node-type-repertoire h2,
 article.node-type-programma.programma-nummer h2 {
   text-transform: uppercase;
@@ -2770,7 +2786,7 @@ article.node-type-programma.programma-nummer h2 a:focus {
   padding-bottom: 1.71428571em;
 }
 .block-views {
-  margin-bottom: 1.71428571em;
+  margin-top: 1.71428571em;
 }
 .field-inline,
 .field-inline div {
@@ -2820,6 +2836,10 @@ article.node-type-programma.programma-nummer h2 a:focus {
   display: grid;
   row-gap: 0.85714286em;
 }
+.nieuws .view-content:has( > :nth-child(2)) {
+  display: grid;
+  row-gap: 1.71428571em;
+}
 @media screen and (min-width: 78.57142857142857em) {
   .nieuws .view-content:has( > :nth-child(2)) {
     column-count: 2;
@@ -2829,9 +2849,12 @@ article.node-type-programma.programma-nummer h2 a:focus {
     break-inside: avoid;
   }
 }
+.activiteiten .view-content:has( > :nth-child(2)) {
+  row-gap: 1.71428571em;
+  display: grid;
+}
 @media screen and (min-width: 78.57142857142857em) {
   .activiteiten .view-content:has( > :nth-child(2)) {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.71428571em;
   }
@@ -2930,9 +2953,6 @@ div.content-profile-display {
   padding: 0;
   margin: 0;
   border: 0;
-}
-.personen {
-  margin-bottom: 1.71428571em;
 }
 .personen .buildmode-teaser {
   margin: 0;
@@ -3153,6 +3173,12 @@ div.content-profile-display {
 .repertoire .view-content {
   display: grid;
   row-gap: 0.85714286em;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .repertoire.repertoire-teaser .view-content {
+    column-gap: 0.85714286em;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .repertoire .repertoire-programma {
   color: #e9584c;
@@ -3834,7 +3860,7 @@ ul.tabs li a:focus {
 }
 #main ul.menu,
 #main ul.views-summary {
-  margin: 0 0 1.71428571em;
+  margin: 1.71428571em 0 0;
   padding: 0;
   display: grid;
   column-gap: 0.85714286em;
@@ -3934,7 +3960,7 @@ ul.tabs li a:focus {
   /* reset column-gap because relative to font size */
   row-gap: 0.5em;
   /* reset row-gap because relative to font size */
-  margin: 0 0 1em;
+  margin: 1em 0 0;
   /* reset columngap because relative to font size */
 }
 #main .menu-name-menu-startpagina-rec ul.menu {
