@@ -2848,6 +2848,10 @@ article.node-type-programma.programma-nummer h2 a:focus {
     column-gap: 1.71428571em;
   }
 }
+.nieuws .view-content:has( > :nth-child(2)) activiteit,
+.activiteiten .view-content:has( > :nth-child(2)) activiteit {
+  height: 100%;
+}
 #node-6048 {
   background: #3c329b;
   display: flex;
