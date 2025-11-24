@@ -1241,7 +1241,10 @@ body.two-sidebars #grid #sidebar-right {
 }
 .buildmode-full .node-type-activiteit,
 .buildmode-teaser .node-type-activiteit,
-.buildmode-schema .node-type-activiteit {
+.buildmode-schema .node-type-activiteit,
+.buildmode-full .node-type-repertoire,
+.buildmode-teaser .node-type-repertoire,
+.buildmode-schema .node-type-repertoire {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
@@ -1251,27 +1254,42 @@ body.two-sidebars #grid #sidebar-right {
 }
 .buildmode-full .node-type-activiteit .nd-region-header,
 .buildmode-teaser .node-type-activiteit .nd-region-header,
-.buildmode-schema .node-type-activiteit .nd-region-header {
+.buildmode-schema .node-type-activiteit .nd-region-header,
+.buildmode-full .node-type-repertoire .nd-region-header,
+.buildmode-teaser .node-type-repertoire .nd-region-header,
+.buildmode-schema .node-type-repertoire .nd-region-header {
   grid-area: node-main;
 }
 .buildmode-full .node-type-activiteit .nd-region-middle-wrapper,
 .buildmode-teaser .node-type-activiteit .nd-region-middle-wrapper,
-.buildmode-schema .node-type-activiteit .nd-region-middle-wrapper {
+.buildmode-schema .node-type-activiteit .nd-region-middle-wrapper,
+.buildmode-full .node-type-repertoire .nd-region-middle-wrapper,
+.buildmode-teaser .node-type-repertoire .nd-region-middle-wrapper,
+.buildmode-schema .node-type-repertoire .nd-region-middle-wrapper {
   grid-area: node-main;
 }
 .buildmode-full .node-type-activiteit .nd-region-right,
 .buildmode-teaser .node-type-activiteit .nd-region-right,
-.buildmode-schema .node-type-activiteit .nd-region-right {
+.buildmode-schema .node-type-activiteit .nd-region-right,
+.buildmode-full .node-type-repertoire .nd-region-right,
+.buildmode-teaser .node-type-repertoire .nd-region-right,
+.buildmode-schema .node-type-repertoire .nd-region-right {
   grid-area: node-right;
 }
 .buildmode-full .node-type-activiteit .nd-region-left,
 .buildmode-teaser .node-type-activiteit .nd-region-left,
-.buildmode-schema .node-type-activiteit .nd-region-left {
+.buildmode-schema .node-type-activiteit .nd-region-left,
+.buildmode-full .node-type-repertoire .nd-region-left,
+.buildmode-teaser .node-type-repertoire .nd-region-left,
+.buildmode-schema .node-type-repertoire .nd-region-left {
   grid-area: node-left;
 }
 .buildmode-full .node-type-activiteit .nd-region-footer,
 .buildmode-teaser .node-type-activiteit .nd-region-footer,
-.buildmode-schema .node-type-activiteit .nd-region-footer {
+.buildmode-schema .node-type-activiteit .nd-region-footer,
+.buildmode-full .node-type-repertoire .nd-region-footer,
+.buildmode-teaser .node-type-repertoire .nd-region-footer,
+.buildmode-schema .node-type-repertoire .nd-region-footer {
   grid-area: node-footer;
 }
 .buildmode-schema .node-type-activiteit {
@@ -1419,6 +1437,13 @@ body.two-sidebars #grid #sidebar-right {
 .buildmode-teaser > .node-type-pagina > div > div > .field-afbeeldingen {
   width: 50%;
 }
+.buildmode-teaser .node-type-nieuws .field-title,
+.buildmode-teaser .node-type-activiteit .field-title {
+  height: 10.71428571em;
+  display: table-cell;
+  vertical-align: bottom;
+  overflow: hidden;
+}
 .buildmode-teaser > .node {
   position: relative;
   background: #f0f0ee;
@@ -1447,15 +1472,6 @@ body.two-sidebars #grid #sidebar-right {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-}
-.buildmode-teaser > .node > div > div {
-  /* middle region */
-}
-.buildmode-teaser > .node > div > div > .field-title {
-  height: 10.71428571em;
-  display: table-cell;
-  vertical-align: bottom;
-  overflow: hidden;
 }
 .buildmode-teaser > .node.taxonomy-leden {
   background: #ffffff;

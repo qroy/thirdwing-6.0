@@ -31,14 +31,14 @@
   }
 }
 .buildmode-full, .buildmode-teaser, .buildmode-schema {
-  .node-type-activiteit {
+  .node-type-activiteit, .node-type-repertoire {
     display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: auto auto;
-	grid-template-areas: 
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
     "node-main node-right"
     "node-footer node-footer";
-	column-gap: 24em/@fs;
+    column-gap: 24em/@fs;
   	row-gap: 24em/@fs;
     .nd-region-header {
       grid-area: node-main;
@@ -158,6 +158,16 @@
   }
 }
 .buildmode-teaser {
+  .node-type-nieuws, .node-type-activiteit {
+    .field-title {
+      height: 150em/@fs;
+      display: table-cell;
+      vertical-align: bottom;
+      overflow: hidden;
+    }
+  }
+}
+.buildmode-teaser {
   > .node {
     position: relative;
     background: @white-off;
@@ -181,14 +191,6 @@
             .border-radius(@border-radius-large);
           }
         }
-      }
-    }
-    > div > div { /* middle region */
-      > .field-title {
-        height: 150em/@fs;
-        display: table-cell;
-		vertical-align: bottom;
-        overflow: hidden;
       }
     }
     &.taxonomy-leden {
