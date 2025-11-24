@@ -5,17 +5,7 @@
 }
 
 // ACTIVITEITEN EN NIEUWS IN 2 KOLOMMEN
-.nieuws .view-content:has(> :nth-child(2)) {
-  display: grid;
-  row-gap: 24em/@fs;
-  @media @wide {
-    column-count: 2;
-    column-gap: 24em/@fs;
-    .views-row {
-      break-inside: avoid;
-    }
-  }
-}
+.nieuws .view-content:has(> :nth-child(2)),
 .activiteiten .view-content:has(> :nth-child(2)) {
   row-gap: 24em/@fs;
   display: grid;
