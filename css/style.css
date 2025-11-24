@@ -2724,6 +2724,16 @@ article.node-type-repertoire.buildmode-schema .nd-region-footer,
 article.node-type-programma.programma-nummer.buildmode-schema .nd-region-footer {
   grid-area: node-footer;
 }
+article.node-type-repertoire.buildmode-schema .field-oefenmateriaal .button,
+article.node-type-programma.programma-nummer.buildmode-schema .field-oefenmateriaal .button,
+article.node-type-repertoire.buildmode-schema .field-partij-koor-l .button,
+article.node-type-programma.programma-nummer.buildmode-schema .field-partij-koor-l .button,
+article.node-type-repertoire.buildmode-schema .field-partij-tekst .button,
+article.node-type-programma.programma-nummer.buildmode-schema .field-partij-tekst .button,
+article.node-type-repertoire.buildmode-schema .field-partij-band .button,
+article.node-type-programma.programma-nummer.buildmode-schema .field-partij-band .button {
+  width: 100%;
+}
 article.node-type-repertoire.buildmode-teaser,
 article.node-type-programma.programma-nummer.buildmode-teaser,
 article.node-type-repertoire.buildmode-full,
@@ -2773,6 +2783,11 @@ article.node-type-programma.programma-nummer h2 a:active,
 article.node-type-repertoire h2 a:focus,
 article.node-type-programma.programma-nummer h2 a:focus {
   color: #3c329b;
+}
+article.node-type-programma.programma-programma h2 {
+  text-transform: uppercase;
+  margin: 0;
+  color: #e9584c;
 }
 .role-bestuur article.buildmode-full,
 .role-beheer article.buildmode-full,
@@ -2848,8 +2863,8 @@ article.node-type-programma.programma-nummer h2 a:focus {
     column-gap: 1.71428571em;
   }
 }
-.nieuws .view-content:has( > :nth-child(2)) activiteit,
-.activiteiten .view-content:has( > :nth-child(2)) activiteit {
+.nieuws .view-content:has( > :nth-child(2)) article,
+.activiteiten .view-content:has( > :nth-child(2)) article {
   height: 100%;
 }
 #node-6048 {

@@ -509,6 +509,14 @@ article.node-type-programma.programma-nummer {
     .nd-region-middle-wrapper { grid-area: node-main; }
     .nd-region-right { grid-area: node-right; }
     .nd-region-footer { grid-area: node-footer; }
+    .field-oefenmateriaal,
+    .field-partij-koor-l,
+    .field-partij-tekst,
+    .field-partij-band {
+      .button {
+        width: 100%;
+      }
+    }
   }
   &.buildmode-teaser, &.buildmode-full {
     display: grid;
@@ -534,6 +542,13 @@ article.node-type-programma.programma-nummer {
     vertical-align: middle;
     font-size: 14em/@fs;
     line-height: 36em/@fs;
+  }
+}
+article.node-type-programma.programma-programma {
+  h2 {
+    text-transform: uppercase;
+    margin: 0;
+    color: @red;
   }
 }
 // EXTRA PADDING FOR ACCESS BADGES
