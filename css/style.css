@@ -2405,315 +2405,114 @@ div.content-profile-display {
   column-gap: 0.14285714em;
   row-gap: 0.14285714em;
 }
-.personen.personen-opstelling .persoon-wrapper {
-  width: 100%;
-  padding: 0;
+.personen.personen-opstelling .view-content .buildmode-teaser .node {
+  padding: 0.21428571em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
-.personen.personen-opstelling .persoon-wrapper.persoon-101 {
-  grid-column: 1;
-  grid-row: 1;
+.personen.personen-opstelling .view-content .views-row,
+.personen.personen-opstelling .view-content .buildmode-teaser {
+  display: contents;
 }
-.personen.personen-opstelling .persoon-wrapper.persoon-102 {
-  grid-column: 2;
-  grid-row: 1;
+.personen.personen-opstelling .view-content .persoon-positie-RND {
+  display: none;
 }
-.personen.personen-opstelling .persoon-wrapper.persoon-103 {
-  grid-column: 3;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-104 {
-  grid-column: 4;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-105 {
-  grid-column: 5;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-106 {
-  grid-column: 6;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-107 {
-  grid-column: 7;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-108 {
-  grid-column: 8;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-109 {
-  grid-column: 9;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-110 {
-  grid-column: 10;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-111 {
-  grid-column: 11;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-112 {
-  grid-column: 12;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-113 {
-  grid-column: 13;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-114 {
-  grid-column: 14;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-115 {
-  grid-column: 15;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-116 {
-  grid-column: 16;
-  grid-row: 1;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-201 {
-  grid-column: 1;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-202 {
-  grid-column: 2;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-203 {
-  grid-column: 3;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-204 {
-  grid-column: 4;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-205 {
-  grid-column: 5;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-206 {
-  grid-column: 6;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-207 {
-  grid-column: 7;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-208 {
-  grid-column: 8;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-209 {
-  grid-column: 9;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-210 {
-  grid-column: 10;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-211 {
-  grid-column: 11;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-212 {
-  grid-column: 12;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-213 {
-  grid-column: 13;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-214 {
-  grid-column: 14;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-215 {
-  grid-column: 15;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-216 {
-  grid-column: 16;
-  grid-row: 2;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-301 {
-  grid-column: 1;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-302 {
-  grid-column: 2;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-303 {
-  grid-column: 3;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-304 {
-  grid-column: 4;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-305 {
-  grid-column: 5;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-306 {
-  grid-column: 6;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-307 {
-  grid-column: 7;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-308 {
-  grid-column: 8;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-309 {
-  grid-column: 9;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-310 {
-  grid-column: 10;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-311 {
-  grid-column: 11;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-312 {
-  grid-column: 12;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-313 {
-  grid-column: 13;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-314 {
-  grid-column: 14;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-315 {
-  grid-column: 15;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-316 {
-  grid-column: 16;
-  grid-row: 3;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-401 {
-  grid-column: 1;
+.personen.personen-opstelling .view-content .persoon-positie-R1 {
   grid-row: 4;
 }
-.personen.personen-opstelling .persoon-wrapper.persoon-402 {
-  grid-column: 2;
-  grid-row: 4;
+.personen.personen-opstelling .view-content .persoon-positie-R2 {
+  grid-row: 3;
 }
-.personen.personen-opstelling .persoon-wrapper.persoon-403 {
-  grid-column: 3;
-  grid-row: 4;
+.personen.personen-opstelling .view-content .persoon-positie-R3 {
+  grid-row: 2;
 }
-.personen.personen-opstelling .persoon-wrapper.persoon-404 {
-  grid-column: 4;
-  grid-row: 4;
+.personen.personen-opstelling .view-content .persoon-positie-R4 {
+  grid-row: 1;
 }
-.personen.personen-opstelling .persoon-wrapper.persoon-405 {
-  grid-column: 5;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-406 {
-  grid-column: 6;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-407 {
-  grid-column: 7;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-408 {
-  grid-column: 8;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-409 {
-  grid-column: 9;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-410 {
-  grid-column: 10;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-411 {
-  grid-column: 11;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-412 {
-  grid-column: 12;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-413 {
-  grid-column: 13;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-414 {
-  grid-column: 14;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-415 {
-  grid-column: 15;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-416 {
-  grid-column: 16;
-  grid-row: 4;
-}
-.personen.personen-opstelling .persoon-wrapper.persoon-500 {
+.personen.personen-opstelling .view-content .persoon-positie-RB {
   grid-row: 6;
+  grid-column: auto;
 }
-.personen.personen-opstelling .persoon-wrapper.persoon-601 {
-  grid-column: 8;
+.personen.personen-opstelling .view-content .persoon-positie-RD {
   grid-row: 6;
+  grid-column: 8;
 }
-.personen.personen-opstelling .persoon {
-  padding: 0.25em 0.25em;
-  font-size: 0.64285714em;
-  line-height: 2.66666667em;
-  color: #ffffff;
+.personen.personen-opstelling .view-content .persoon-positie-K01 {
+  grid-column: 1;
 }
-@media screen and (min-width: 59.285714285714285em ) {
-  .personen.personen-opstelling .persoon {
-    font-size: 0.71428571em;
-    line-height: 2.4em;
-  }
+.personen.personen-opstelling .view-content .persoon-positie-K02 {
+  grid-column: 2;
 }
-@media screen and (min-width: 67.85714285714286em ) {
-  .personen.personen-opstelling .persoon {
-    font-size: 0.85714286em;
-    line-height: 2em;
-  }
+.personen.personen-opstelling .view-content .persoon-positie-K03 {
+  grid-column: 3;
 }
-.personen.personen-opstelling .persoon-A {
+.personen.personen-opstelling .view-content .persoon-positie-K04 {
+  grid-column: 4;
+}
+.personen.personen-opstelling .view-content .persoon-positie-K05 {
+  grid-column: 5;
+}
+.personen.personen-opstelling .view-content .persoon-positie-K06 {
+  grid-column: 6;
+}
+.personen.personen-opstelling .view-content .persoon-positie-K07 {
+  grid-column: 7;
+}
+.personen.personen-opstelling .view-content .persoon-positie-K08 {
+  grid-column: 8;
+}
+.personen.personen-opstelling .view-content .persoon-positie-K09 {
+  grid-column: 9;
+}
+.personen.personen-opstelling .view-content .persoon-positie-K10 {
+  grid-column: 10;
+}
+.personen.personen-opstelling .view-content .persoon-positie-K11 {
+  grid-column: 11;
+}
+.personen.personen-opstelling .view-content .persoon-positie-K12 {
+  grid-column: 12;
+}
+.personen.personen-opstelling .view-content .persoon-positie-K13 {
+  grid-column: 13;
+}
+.personen.personen-opstelling .view-content .persoon-positie-K14 {
+  grid-column: 14;
+}
+.personen.personen-opstelling .view-content .persoon-positie-K15 {
+  grid-column: 15;
+}
+.personen.personen-opstelling .view-content .persoon-positie-K16 {
+  grid-column: 16;
+}
+.personen.personen-opstelling .view-content .persoon-A {
   background: #e9584c;
 }
-.personen.personen-opstelling .persoon-B {
+.personen.personen-opstelling .view-content .persoon-B {
   background: #51aaec;
 }
-.personen.personen-opstelling .persoon-C {
+.personen.personen-opstelling .view-content .persoon-C {
   background: #3c329b;
 }
-.personen.personen-opstelling .persoon-D {
+.personen.personen-opstelling .view-content .persoon-D {
   background: #e6d119;
 }
-.personen.personen-opstelling .persoon-E {
+.personen.personen-opstelling .view-content .persoon-E {
   background: #aad563;
 }
-.personen.personen-opstelling .persoon-Y1 {
+.personen.personen-opstelling .view-content .persoon-Y1 {
   background: #878786;
 }
-.personen.personen-opstelling .persoon-Z1,
-.personen.personen-opstelling .persoon-Z2,
-.personen.personen-opstelling .persoon-Z3,
-.personen.personen-opstelling .persoon-Z4,
-.personen.personen-opstelling .persoon-Z5 {
+.personen.personen-opstelling .view-content .persoon-Z1,
+.personen.personen-opstelling .view-content .persoon-Z2,
+.personen.personen-opstelling .view-content .persoon-Z3,
+.personen.personen-opstelling .view-content .persoon-Z4,
+.personen.personen-opstelling .view-content .persoon-Z5 {
   background: #d7d7d6;
+}
+.personen.personen-opstelling .view-content .field-voornaam {
+  color: #ffffff;
 }
 .personen.personen-ledenlijst .persoon-foto {
   width: 4.14285714em;

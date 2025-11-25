@@ -115,8 +115,50 @@ function phptemplate_preprocess_node(&$vars) {
       $vars['node_classes'] .= ' activiteit-' . $soort_value;
     }
   }
+  if ($vars['node']->type == 'profiel') {
+    _phptemplate_add_profile_classes($vars);
+  }
 }
-
+/**
+ * Helper function to add profile-specific classes.
+ *
+ * @param array $vars
+ *   Template variables passed by reference.
+ */
+function _phptemplate_add_profile_classes(&$vars) {
+  $node = $vars['node'];
+  
+  // Add class based on field_koor (choir function)
+  if (!empty($node->field_koor[0]['value'])) {
+    $vars['node_classes'] .= ' persoon-' . $node->field_koor[0]['value'];
+  }
+  
+  // Add class based on field_positie (position)
+  if (!empty($node->field_positie[0]['value'])) {
+    $vars['node_classes'] .= ' persoon-positie-' . $node->field_positie[0]['value'];
+  }
+  
+  // Add class based on field_positie_rij (row position)
+  if (!empty($node->field_positie_rij[0]['value'])) {
+    $vars['node_classes'] .= ' persoon-positie-' . $node->field_positie_rij[0]['value'];
+  }
+  
+  // Add class based on field_positie_kolom (column position)
+  if (!empty($node->field_positie_kolom[0]['value'])) {
+    $vars['node_classes'] .= ' persoon-positie-' . $node->field_positie_kolom[0]['value'];
+  }
+  
+  // Add classes based on author's roles
+  if (!empty($node->uid)) {
+    $author = user_load($node->uid);
+    if ($author && !empty($author->roles)) {
+      foreach ($author->roles as $rid => $role_name) {
+        $role_class = preg_replace('/[^a-zA-Z0-9-]+/', '-', strtolower($role_name));
+        $vars['node_classes'] .= ' persoon-groep-' . $role_class;
+      }
+    }
+  }
+}
 /**
  * Returns the rendered local tasks.
  *
