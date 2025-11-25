@@ -2528,14 +2528,14 @@ article.node-type-nieuws .field-afbeeldingen .field-item {
 }
 @media screen and (min-width: 43.57142857142857em ) {
   .buildmode-schema.node-type-profiel {
-    grid-template-columns: 6.42857143em 12.85714286em auto;
+    grid-template-columns: 6.42857143em 15.71428571em auto;
     grid-template-rows: repeat(3, auto);
     grid-template-areas: "node-header node-left node-main" ". . node-right" ". . node-footer";
   }
 }
 @media screen and (min-width: 59.285714285714285em ) {
   .buildmode-schema.node-type-profiel {
-    grid-template-columns: 6.42857143em 12.85714286em 1fr 1fr 7.85714286em;
+    grid-template-columns: 6.42857143em 15.71428571em 1fr 1fr 7.85714286em;
     grid-template-rows: auto;
     grid-template-areas: "node-header node-left node-main node-right node-footer";
   }
