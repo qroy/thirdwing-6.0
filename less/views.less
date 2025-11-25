@@ -545,3 +545,45 @@ div.content-profile-display {
 .voorbeeld .view-footer {
   clear: both;
 }
+
+// REPERTOIRE
+.repertoire {
+  .view-content {
+    display: grid;
+    row-gap: 12em/@fs;
+  }
+  &.repertoire-teaser .view-content {
+    @media @tablet {
+      column-gap: 12em/@fs;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .repertoire-programma {
+    color: @red;
+    text-transform: uppercase;
+  }
+}
+
+// PAGER
+.item-list ul.pager {
+  margin-top: 24em/@fs;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4em/@fs;
+  justify-content: center;
+  li {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+  }
+  li.pager-current, a:link, a:visited {
+    display: inline-block;
+    padding: 4em/@fs 12em/@fs;
+    .border-radius(@border-radius-large);
+    background-color: @grey-light;
+  }
+  li.pager-current, a:hover, a:active, a:focus {
+    background-color: @secondary;
+    color: @white;
+  }
+}

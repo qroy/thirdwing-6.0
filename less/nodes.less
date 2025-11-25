@@ -374,6 +374,50 @@
       line-height: 36em/@fs;
     }
 }
+// NODE TYPE VERSLAG
+.buildmode-schema .node.node-type-verslag {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+    "node-left"
+    "node-main"
+    "node-right";
+    @media @tablet {
+      column-gap: 24em/@fs;
+      grid-template-columns: 200em/@fs 2fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "node-left node-main node-right";
+    }
+    .nd-region-left { grid-area: node-left; }
+    .nd-region-middle-wrapper { grid-area: node-main; }
+    .nd-region-right { grid-area: node-right; }
+    .nd-region-left {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      align-content: flex-start;
+      gap: 0 4em/@fs;
+      .field-datum, .field-locatie {
+        flex-grow: 1;
+      }
+      .field-items, .field-item {
+        width: 100%;
+      }
+    }
+    h2 {
+      text-transform: uppercase;
+      margin: 0;
+      color: @red;
+      vertical-align: middle;
+      font-size: 14em/@fs;
+      line-height: 36em/@fs;
+    }
+    .field-files {
+      .button {
+        width: 100%;
+      }
+    }
+}
 
 .field-inline, .field-inline div {
   display: inline-block;
