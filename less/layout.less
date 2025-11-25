@@ -141,55 +141,65 @@
   color: @white;
   a {
     display: contents;
-	color: @white;
-	&:hover, &:active, &:focus {
+    color: @white;
+    &:hover, &:active, &:focus {
       color: @secondary;
-	  #logo-img { 
-	    color: @secondary;
-	    border-color: @secondary;
-		background-image: url(../images/logo_zonder_tekst-secondary.svg);
+      #logo-img {
+        color: @secondary;
+        border-color: @secondary;
+        background-image: url(../images/logo_zonder_tekst-secondary.svg);
       }
     }
   }
   #logo-img {
     background-image: url(../images/logo_zonder_tekst.svg);
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 90%;
     box-sizing: border-box;
-	height: 84em/@fs;
+    height: 84em/@fs;
     width: 84em/@fs;
-	@media @tablet {
+    @media @tablet {
       height: 120em/@fs;
       width: 120em/@fs;
-	}
-	border: 2em/@fs solid @white;
+    }
+    border: 2em/@fs solid @white;
     .border-radius(@border-radius-large);
   }
   #logo-title {
     font-weight: 600;
-	font-size: 48em/@fs;
+    font-size: 48em/@fs;
     line-height: 36em/48;
-	@media @tablet {
+    @media @tablet {
       font-size: 70em/@fs;
       line-height: 50em/70;
-	}
-	width: 2rem;
-	&::first-line {
+    }
+    width: 2rem;
+    &::first-line {
       font-size: 28em/70;
-	  font-weight: 400;
+      font-weight: 400;
     }
   }
   #logo-slogan {
     display: none;
-    @media @tablet { display: flex; }
-    font-size: 36em/@fs;
-    line-height: 40em/36;
     font-family: 'Indie Flower';
-    height: 120em/36;
     color: @white;
-	justify-self: right;
-	align-items: end;
+    justify-self: right;
+    align-items: end;
+    font-size: 24em/@fs;
+    line-height: 40em/24;
+    @media @phone-ls { 
+      display: flex;
+      height: 84em/24;
+    }
+    @media @tablet {
+      height: 120em/24;
+    }
+    @media @normal {
+      font-size: 36em/@fs;
+      line-height: 40em/36;
+      height: 120em/36;
+    }
   }
 }
 .node-hero #logo {
