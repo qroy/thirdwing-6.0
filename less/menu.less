@@ -330,14 +330,26 @@ ul.tabs {
 }
 #main .menu-name-menu-startpagina-rec ul.menu {
   grid-template-columns: minmax(0, 1fr);
-  @media @tablet { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  @media @normal { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   li {
     a:link, a:visited {
       color: @white;
       background-color: @primary;
-	  height: 100em/24;
-	  line-height: 88em/24;
-	  padding: 6em/24;
+      height: 100em/24;
+      line-height: 88em/24;
+      padding: 6em/24;
+      @media @normal {
+        font-size: 18em/24;
+        height: 100em/18;
+        line-height: 88em/18;
+        padding: 6em/18;
+      }
+      @media @wide {
+        font-size: 24em/24;
+        height: 100em/24;
+        line-height: 88em/24;
+        padding: 6em/24;
+      }
     }
     a:hover, a:active, a.active:link, a.active:visited {
       background-color: @secondary;
@@ -348,7 +360,7 @@ ul.tabs {
 }
 #main .menu-name-menu-social ul.menu {
   grid-template-columns: repeat(1, 100em/24);
-  @media @tablet { grid-template-columns: repeat(3, 100em/24); }
+  @media @normal { grid-template-columns: repeat(4, 100em/24); }
   li {
     a:link, a:visited {
       color: @white;
@@ -364,7 +376,7 @@ ul.tabs {
       white-space: nowrap;
       overflow: hidden;
       position: relative;
-	  aspect-ratio: 1 ~"/" 1;
+      aspect-ratio: 1 ~"/" 1;
       &::before {
         font-size: 50em/24;
         line-height: 72em/50;
@@ -373,9 +385,9 @@ ul.tabs {
         text-indent: 0;
         position: absolute;
         left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		margin: 0;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
       }
     }
   }
@@ -393,19 +405,19 @@ ul.tabs {
   }
   &:after {
     clear: none;
-	display: none;
-	content: '';
+    display: none;
+    content: '';
   }
 }
 .node-hero #main .menu-name-menu-startpagina-rec {
   width: calc(~"100% - " 112em/@fs ~" - " 4em/@fs);
-  @media @tablet { width: calc(~"100% - " 336em/@fs ~" - " 4em/@fs); }
+  @media @normal { width: calc(~"100% - " 448em/@fs ~" - " 4em/@fs); }
 }
 .node-hero #main .menu-name-menu-social {
   width: 112em/@fs;
   padding-left: 12em/@fs;
-  @media @tablet {
-    width: 336em/@fs;
+  @media @normal {
+    width: 448em/@fs;
   }
 }
 // MENUS IN FOOTER
@@ -441,7 +453,7 @@ ul.tabs {
   .menu-name-menu-social {
     ul {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       column-gap: 12em/@fs;
     }
     ul li {

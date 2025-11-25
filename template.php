@@ -95,6 +95,14 @@ function phptemplate_preprocess_node(&$vars) {
     _phptemplate_add_taxonomy_classes($vars);
   }
   
+  // Add hero classes
+  if (!empty($node->field_afbeeldingen[0]['filepath']) && !empty($node->sticky)) {
+    $vars['node_classes'] .= ' node-hero';
+  }
+  elseif (!empty($node->field_background[0]['filepath']) && $node->type == 'activiteit') {
+    $vars['node_classes'] .= ' node-hero';
+  }
+  
   // Add content-type specific classes
   switch ($node->type) {
     case 'activiteit':
