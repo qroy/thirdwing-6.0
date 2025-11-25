@@ -1,8 +1,11 @@
-﻿<?php
+<?php
 /**
  * @file
  * Theme functions and preprocessing for the theme.
  */
+
+// Constants
+define('THIRDWING_ACCESS_VOCABULARY_ID', 4);
 
 /**
  * Return a themed breadcrumb trail.
@@ -53,14 +56,12 @@ function phptemplate_preprocess_page(&$vars, $hook) {
       }
     }
     
-    // Add hero class for sticky nodes with images
-    if (!empty($node->field_afbeeldingen[0]['filepath']) && $node->sticky) {
+    // Add hero class and background for hero nodes
+    if (!empty($node->field_afbeeldingen[0]['filepath']) && !empty($node->sticky)) {
       $body_classes[] = 'node-hero';
       $vars['hero'] = $node->field_afbeeldingen[0]['filepath'];
     }
-    
-    // Add hero class for activity nodes with backgrounds
-    if (!empty($node->field_background[0]['filepath']) && $node->type == 'activiteit') {
+    elseif (!empty($node->field_background[0]['filepath']) && $node->type == 'activiteit') {
       $body_classes[] = 'node-hero';
       $vars['hero'] = $node->field_background[0]['filepath'];
     }
@@ -94,9 +95,6 @@ function phptemplate_preprocess_node(&$vars) {
     _phptemplate_add_taxonomy_classes($vars);
   }
   
-  // Add hero classes
-  _phptemplate_add_hero_classes($vars);
-  
   // Add content-type specific classes
   switch ($node->type) {
     case 'activiteit':
@@ -120,24 +118,26 @@ function phptemplate_preprocess_node(&$vars) {
  *   Template variables passed by reference.
  */
 function _phptemplate_add_taxonomy_classes(&$vars) {
+  static $access_labels;
+  
+  if (!isset($access_labels)) {
+    $access_labels = array(
+      'Bezoekers' => 'BEZ',
+      'Vrienden' => 'VRI',
+      'Aspirant-Leden' => 'ASP',
+      'Leden' => 'LED',
+      'Bestuur' => 'BES',
+      'Muziekcommissie' => 'MC',
+      'Concertcommissie' => 'CC',
+      'Commissie Interne Relaties' => 'IR',
+      'Commissie Koorregie' => 'REG',
+      'Feestcommissie' => 'FC',
+      'Band' => 'BAN',
+      'Beheer' => 'BEH',
+    );
+  }
+  
   $node = $vars['node'];
-  
-  // Define mapping for access level short codes
-  $access_labels = array(
-    'Bezoekers' => 'BEZ',
-    'Vrienden' => 'VRI',
-    'Aspirant-Leden' => 'ASP',
-    'Leden' => 'LED',
-    'Bestuur' => 'BES',
-    'Muziekcommissie' => 'MC',
-    'Concertcommissie' => 'CC',
-    'Commissie Interne Relaties' => 'IR',
-    'Commissie Koorregie' => 'REG',
-    'Feestcommissie' => 'FC',
-    'Band' => 'BAN',
-    'Beheer' => 'BEH',
-  );
-  
   $term_divs = array();
   $terms = taxonomy_node_get_terms($node);
   
@@ -145,8 +145,8 @@ function _phptemplate_add_taxonomy_classes(&$vars) {
     $class = preg_replace('/[^a-zA-Z0-9-]+/', '-', strtolower($term->name));
     $vars['node_classes'] .= ' taxonomy-' . $class;
     
-    // Only create badges for vocabulary 4 (access levels)
-    if ($term->vid == 4 && isset($access_labels[$term->name])) {
+    // Only create badges for access level vocabulary
+    if ($term->vid == THIRDWING_ACCESS_VOCABULARY_ID && isset($access_labels[$term->name])) {
       $class_short = $access_labels[$term->name];
       $term_divs[] = '<span class="badge-access badge-access-' . $class . '" title="Zichtbaar voor ' . check_plain($term->name) . '">' . $class_short . '</span>';
     }
@@ -154,26 +154,6 @@ function _phptemplate_add_taxonomy_classes(&$vars) {
   
   if (!empty($term_divs)) {
     $vars['taxonomy_term_divs'] = '<div class="badge-access-wrapper">' . implode("\n", $term_divs) . '</div>';
-  }
-}
-
-/**
- * Helper function to add hero classes to nodes.
- *
- * @param array $vars
- *   Template variables passed by reference.
- */
-function _phptemplate_add_hero_classes(&$vars) {
-  $node = $vars['node'];
-  
-  // Add hero class for sticky nodes with images
-  if (!empty($node->field_afbeeldingen[0]['filepath']) && $node->sticky) {
-    $vars['node_classes'] .= ' node-hero';
-  }
-  
-  // Add hero class for activity nodes with backgrounds
-  if (!empty($node->field_background[0]['filepath']) && $node->type == 'activiteit') {
-    $vars['node_classes'] .= ' node-hero';
   }
 }
 
@@ -186,15 +166,9 @@ function _phptemplate_add_hero_classes(&$vars) {
 function _phptemplate_add_activity_classes(&$vars) {
   $node = $vars['node'];
   
-  // Add class based on field_activiteit_status select key
-  if (!empty($node->field_activiteit_status[0]['value'])) {
-    $status_key = $node->field_activiteit_status[0]['value'];
-    $vars['node_classes'] .= ' node-status-' . $status_key;
-  }
-  
-   // Add class based on field_activiteit_soort
-  if (!empty($node->field_activiteit_soort[0]['value'])) {
-    $soort_value = preg_replace('/[^a-zA-Z0-9-]+/', '-', strtolower($node->field_activiteit_soort[0]['value']));
+  // Add class based on field_act_type
+  if (!empty($node->field_act_type[0]['value'])) {
+    $soort_value = preg_replace('/[^a-zA-Z0-9-]+/', '-', strtolower($node->field_act_type[0]['value']));
     $vars['node_classes'] .= ' activiteit-' . $soort_value;
   }
 }
@@ -208,24 +182,9 @@ function _phptemplate_add_activity_classes(&$vars) {
 function _phptemplate_add_profile_classes(&$vars) {
   $node = $vars['node'];
   
-  // Add class based on field_koor (choir function)
-  if (!empty($node->field_koor[0]['value'])) {
-    $vars['node_classes'] .= ' persoon-' . $node->field_koor[0]['value'];
-  }
-  
-  // Add class based on field_positie (position)
-  if (!empty($node->field_positie[0]['value'])) {
-    $vars['node_classes'] .= ' persoon-positie-' . $node->field_positie[0]['value'];
-  }
-  
-  // Add class based on field_positie_rij (row position)
-  if (!empty($node->field_positie_rij[0]['value'])) {
-    $vars['node_classes'] .= ' persoon-positie-' . $node->field_positie_rij[0]['value'];
-  }
-  
-  // Add class based on field_positie_kolom (column position)
+  // Add column position class
   if (!empty($node->field_positie_kolom[0]['value'])) {
-    $vars['node_classes'] .= ' persoon-positie-' . $node->field_positie_kolom[0]['value'];
+    $vars['node_classes'] .= ' profiel-positie-' . $node->field_positie_kolom[0]['value'];
   }
   
   // Add classes based on author's roles

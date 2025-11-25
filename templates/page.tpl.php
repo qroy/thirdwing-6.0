@@ -8,7 +8,7 @@
 <?php if ($hero): print '<style>.page-bg { background-image: url(/' . $hero . '); }</style>'; endif; ?>
 <?php print $styles ?>
 <link rel="apple-touch-icon" href="<?php print base_path() . path_to_theme() ?>/images/apple-touch-icon.png" />
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script type="text/javascript">var $jq = jQuery.noConflict();</script> 
 <?php print $scripts ?>
 </head>
