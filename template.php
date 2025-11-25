@@ -56,12 +56,14 @@ function phptemplate_preprocess_page(&$vars, $hook) {
       }
     }
     
-    // Add hero class and background for hero nodes
-    if (!empty($node->field_afbeeldingen[0]['filepath']) && !empty($node->sticky)) {
+    // Add hero class for sticky nodes with images
+    if (!empty($node->field_afbeeldingen[0]['filepath']) && $node->sticky) {
       $body_classes[] = 'node-hero';
       $vars['hero'] = $node->field_afbeeldingen[0]['filepath'];
     }
-    elseif (!empty($node->field_background[0]['filepath']) && $node->type == 'activiteit') {
+    
+    // Add hero class for activity nodes with backgrounds
+    if (!empty($node->field_background[0]['filepath']) && $node->type == 'activiteit') {
       $body_classes[] = 'node-hero';
       $vars['hero'] = $node->field_background[0]['filepath'];
     }
@@ -96,10 +98,11 @@ function phptemplate_preprocess_node(&$vars) {
   }
   
   // Add hero classes
-  if (!empty($node->field_afbeeldingen[0]['filepath']) && !empty($node->sticky)) {
+  if (!empty($node->field_afbeeldingen[0]['filepath']) && $node->sticky) {
     $vars['node_classes'] .= ' node-hero';
   }
-  elseif (!empty($node->field_background[0]['filepath']) && $node->type == 'activiteit') {
+  
+  if (!empty($node->field_background[0]['filepath']) && $node->type == 'activiteit') {
     $vars['node_classes'] .= ' node-hero';
   }
   
@@ -174,9 +177,15 @@ function _phptemplate_add_taxonomy_classes(&$vars) {
 function _phptemplate_add_activity_classes(&$vars) {
   $node = $vars['node'];
   
-  // Add class based on field_act_type
-  if (!empty($node->field_act_type[0]['value'])) {
-    $soort_value = preg_replace('/[^a-zA-Z0-9-]+/', '-', strtolower($node->field_act_type[0]['value']));
+  // Add class based on field_activiteit_status select key
+  if (!empty($node->field_activiteit_status[0]['value'])) {
+    $status_key = $node->field_activiteit_status[0]['value'];
+    $vars['node_classes'] .= ' node-status-' . $status_key;
+  }
+  
+   // Add class based on field_activiteit_soort
+  if (!empty($node->field_activiteit_soort[0]['value'])) {
+    $soort_value = preg_replace('/[^a-zA-Z0-9-]+/', '-', strtolower($node->field_activiteit_soort[0]['value']));
     $vars['node_classes'] .= ' activiteit-' . $soort_value;
   }
 }
@@ -190,9 +199,24 @@ function _phptemplate_add_activity_classes(&$vars) {
 function _phptemplate_add_profile_classes(&$vars) {
   $node = $vars['node'];
   
-  // Add column position class
+  // Add class based on field_koor (choir function)
+  if (!empty($node->field_koor[0]['value'])) {
+    $vars['node_classes'] .= ' persoon-' . $node->field_koor[0]['value'];
+  }
+  
+  // Add class based on field_positie (position)
+  if (!empty($node->field_positie[0]['value'])) {
+    $vars['node_classes'] .= ' persoon-positie-' . $node->field_positie[0]['value'];
+  }
+  
+  // Add class based on field_positie_rij (row position)
+  if (!empty($node->field_positie_rij[0]['value'])) {
+    $vars['node_classes'] .= ' persoon-positie-' . $node->field_positie_rij[0]['value'];
+  }
+  
+  // Add class based on field_positie_kolom (column position)
   if (!empty($node->field_positie_kolom[0]['value'])) {
-    $vars['node_classes'] .= ' profiel-positie-' . $node->field_positie_kolom[0]['value'];
+    $vars['node_classes'] .= ' persoon-positie-' . $node->field_positie_kolom[0]['value'];
   }
   
   // Add classes based on author's roles
