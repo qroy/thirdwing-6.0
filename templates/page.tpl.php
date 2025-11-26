@@ -1,4 +1,3 @@
-<?php phptemplate_comment_wrapper(NULL, $node->type); ?>
 <!DOCTYPE html>
 <html lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
 <head profile="http://www.w3.org/1999/xhtml/vocab">
@@ -8,7 +7,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php if ($hero): print '<style>#header { background-image: url(/' . $hero . '); }</style>'; endif; ?>
 <?php print $styles ?>
-<!--[if lt IE 7]><?php print phptemplate_get_ie_styles(); ?><![endif]-->
 <link rel="apple-touch-icon" href="<?php print base_path() . path_to_theme() ?>/images/apple-touch-icon.png" />
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">var $jq = jQuery.noConflict();</script> 
