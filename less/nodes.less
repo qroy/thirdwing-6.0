@@ -30,6 +30,7 @@ article.clear-block:after {
 .buildmode-teaser, 
 .buildmode-full, 
 .buildmode-schema,
+.buildmode-3,
 #main > dl,
 #main > form,
 #main > .admin,
@@ -51,7 +52,8 @@ article.clear-block:after {
   margin: 0;
 }
 // BACKGROUND IMAGE ACTIVITEITEN
-article.buildmode-teaser {
+article.buildmode-teaser,
+article.buildmode-3 {
   .field-background {
     position: absolute;
     left: 0;
@@ -154,7 +156,7 @@ article.node-type-nieuws .field-afbeeldingen .field-item {
 // TITLE ACTIVITEIT EN NIEUWS
 article.node-type-nieuws,
 article.node-type-activiteit {
-  &.buildmode-full, &.buildmode-teaser {
+  &.buildmode-full, &.buildmode-teaser, &.buildmode-3 {
     .field-title {
       @media @tablet {
         height: 150em/@fs;

@@ -1941,6 +1941,7 @@ a[type*="mpeg"]:before {
 .buildmode-teaser:not(:empty),
 .buildmode-full:not(:empty),
 .buildmode-schema:not(:empty),
+.buildmode-3:not(:empty),
 #main > dl:not(:empty),
 #main > form:not(:empty),
 #main > .admin:not(:empty),
@@ -1957,7 +1958,8 @@ a[type*="mpeg"]:before {
   padding: 0.85714286em;
   margin: 0;
 }
-article.buildmode-teaser .field-background {
+article.buildmode-teaser .field-background,
+article.buildmode-3 .field-background {
   position: absolute;
   left: 0;
   top: 0;
@@ -1966,10 +1968,13 @@ article.buildmode-teaser .field-background {
   z-index: 0;
 }
 article.buildmode-teaser .field-background .field-items,
-article.buildmode-teaser .field-background .field-item {
+article.buildmode-3 .field-background .field-items,
+article.buildmode-teaser .field-background .field-item,
+article.buildmode-3 .field-background .field-item {
   height: 100%;
 }
-article.buildmode-teaser .field-background .node-background {
+article.buildmode-teaser .field-background .node-background,
+article.buildmode-3 .field-background .node-background {
   width: 100%;
   height: 100%;
   background-position: center 10%;
@@ -1980,7 +1985,8 @@ article.buildmode-teaser .field-background .node-background {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-article.buildmode-teaser .field-background .node-background:after {
+article.buildmode-teaser .field-background .node-background:after,
+article.buildmode-3 .field-background .node-background:after {
   content: ' ';
   position: relative;
   z-index: 1;
@@ -2077,7 +2083,9 @@ article.node-type-nieuws .field-afbeeldingen .field-item {
   article.node-type-nieuws.buildmode-full .field-title,
   article.node-type-activiteit.buildmode-full .field-title,
   article.node-type-nieuws.buildmode-teaser .field-title,
-  article.node-type-activiteit.buildmode-teaser .field-title {
+  article.node-type-activiteit.buildmode-teaser .field-title,
+  article.node-type-nieuws.buildmode-3 .field-title,
+  article.node-type-activiteit.buildmode-3 .field-title {
     height: 10.71428571em;
     display: table-cell;
     vertical-align: bottom;
@@ -3260,6 +3268,10 @@ div.content-profile-display {
   clear: both;
 }
 .verslagen .view-content {
+  display: grid;
+  row-gap: 0.85714286em;
+}
+.page-search .content {
   display: grid;
   row-gap: 0.85714286em;
 }
