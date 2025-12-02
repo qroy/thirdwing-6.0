@@ -244,6 +244,7 @@
   position: absolute;
   top: 42em/12;
   left: 0;
+  right: 0;
   z-index: 3;
   background: @white-off;
   .border-radius(@border-radius-small);
@@ -252,7 +253,8 @@
   padding: 0 24em/12;
 }
 #breadcrumb, #breadcrumb a {
-  color: @black;
+  &:link, &:visited { color: @black; }
+  &:hover, &:active { color: @secondary; }
 }
 #sidebar-left {
   grid-area: sidebar-left;
