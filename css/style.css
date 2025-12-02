@@ -3314,6 +3314,9 @@ div.content-profile-display {
   background-color: #eb7314;
   color: #ffffff;
 }
+.help {
+  margin-bottom: 1.71428571em;
+}
 input {
   box-sizing: border-box;
   font-size: 1em;
@@ -3481,55 +3484,53 @@ label:not(.option) {
  * Collapsible fieldsets
  */
 fieldset {
-  margin: 0 0 1.71428571em;
-  padding: 3.42857143em 1.71428571em 1.71428571em;
+  margin: 1.71428571em 0 0;
+  padding: 4em 1.71428571em 1.71428571em;
   border: 0.14285714em solid #f0f0ee;
-  background: #ffffff;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  background-color: #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
   position: relative;
   box-sizing: border-box;
 }
 .buildmode-teaser fieldset {
-  background: #ffffff;
+  background-color: #ffffff;
 }
 fieldset legend {
   position: absolute;
-  top: 0;
-  left: 1.71428571em;
+  top: -0.14285714em;
+  left: -0.14285714em;
+  right: -0.14285714em;
   box-sizing: border-box;
-  padding: 0 0.71428571em;
-  background: #f0f0ee;
-  line-height: 1.71428571em;
-  -webkit-border-radius: 0 0 5px 5px;
-  -moz-border-radius: 0 0 5px 5px;
-  border-radius: 0 0 5px 5px;
+  padding: 0 1.71428571em;
+  background-color: #f0f0ee;
+  line-height: 2.28571429em;
+  border: 0.14285714em solid #f0f0ee;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 .buildmode-teaser fieldset legend {
   color: #464644;
   background: #ffffff;
 }
 html.js fieldset.collapsed {
-  background: transparent;
-  border-top: #3c329b 2px solid;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  margin-bottom: 2.25em;
+  margin: 1.71428571em 0 0;
+  padding: 0 0 2.28571429em;
+  border: 0.14285714em solid #f0f0ee;
 }
 html.js fieldset.collapsible legend {
-  background: transparent;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  padding: 0;
+  border: 0.14285714em solid #3c329b;
+  background-color: #3c329b;
+}
+html.js fieldset.collapsible legend:hover {
+  border: 0.14285714em solid #eb7314;
+  background-color: #eb7314;
 }
 html.js fieldset.collapsible legend a {
-  padding: 0 0.5em;
-  -webkit-border-radius: 0 0 10px 10px;
-  -moz-border-radius: 0 0 10px 10px;
-  border-radius: 0 0 10px 10px;
+  background: 0;
+  padding: 0;
 }
 html.js fieldset.collapsible legend a::after {
   display: inline-block;
@@ -3547,13 +3548,11 @@ html.js fieldset.collapsed legend a::after {
 }
 html.js fieldset.collapsible legend a:link,
 html.js fieldset.collapsible legend a:visited {
-  background: #3c329b;
   color: #ffffff;
 }
 html.js fieldset.collapsible legend a:hover,
 html.js fieldset.collapsible legend a:focus,
 html.js fieldset.collapsible legend a:active {
-  background: #eb7314;
   color: #ffffff;
 }
 #header .content {
