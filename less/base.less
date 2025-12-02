@@ -15,6 +15,7 @@ html {
   font-family: 'Open Sans', Verdana, sans-serif;
   font-size: 100%;
   color: @black;
+  word-break: break-all;
 }
 body {
   margin: 0 0 0 0;
@@ -281,9 +282,8 @@ td, td.active, thead th, tr, tr.odd, tr.even {
 }
 
 table {
-  margin: 1em 0;
+  margin: 24em/@fs 0;
   width: 100%;
-  border-bottom: 2px solid @primary;
   @media print { border-color: @grey-dark; }
 }
 
@@ -309,10 +309,10 @@ thead th {
     }
   }
   &:first-child {
-    .border-radius(@border-radius-small 0 0 0);
+    .border-radius(@border-radius-small 0 0 @border-radius-small);
   }
   &:last-child {
-    .border-radius(0 @border-radius-small 0 0);
+    .border-radius(0 @border-radius-small @border-radius-small 0);
   }
 }
 tbody {
