@@ -2574,19 +2574,14 @@ article.node-type-pagina .field-afbeeldingen .field-item {
 .buildmode-schema.node-type-profiel.clear-block:after {
   display: none;
 }
-.buildmode-schema.node-type-profiel .field-author-picture > .picture {
-  height: 7.71428571em;
-  aspect-ratio: 16 / 20;
-}
-.buildmode-schema.node-type-profiel .field-author-picture > .picture img {
-  height: 100%;
-  width: auto;
-}
 .buildmode-schema.node-type-profiel .field-voornaam,
 .buildmode-schema.node-type-profiel .field-achternaam,
 .buildmode-schema.node-type-profiel .field-achternaam-voorvoegsel,
 .buildmode-schema.node-type-profiel .field-lidsinds {
   text-transform: uppercase;
+}
+.buildmode-schema.node-type-profiel .field-author-picture .picture {
+  height: 7.71428571em;
 }
 .buildmode-schema.node-type-profiel .field-ds-group-adres {
   display: inline-block;
@@ -2601,6 +2596,33 @@ article.node-type-pagina .field-afbeeldingen .field-item {
 }
 .buildmode-schema.node-type-profiel .aspirant {
   color: #e9584c;
+}
+article.node-type-profiel .field-author-picture .picture {
+  width: 20em;
+  aspect-ratio: 16 / 20;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  article.node-type-profiel .field-author-picture .picture {
+    height: 15.42857143em;
+    width: auto;
+  }
+}
+article.node-type-profiel .field-author-picture .picture img {
+  height: 100%;
+  width: auto;
+}
+.profile .picture {
+  float: none;
+  margin: 0;
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  .profile .picture {
+    float: right;
+    margin: 0 0 1.71428571em 1.71428571em;
+  }
+}
+.profile h3 {
+  border: 0;
 }
 .buildmode-full.node-type-foto .field-afbeeldingen .field-items {
   display: grid;
@@ -3484,7 +3506,7 @@ label:not(.option) {
  * Collapsible fieldsets
  */
 fieldset {
-  margin: 1.71428571em 0 0;
+  margin: 0 0 1.71428571em;
   padding: 4em 1.71428571em 1.71428571em;
   border: 0.14285714em solid #f0f0ee;
   background-color: #ffffff;
@@ -3516,7 +3538,7 @@ fieldset legend {
   background: #ffffff;
 }
 html.js fieldset.collapsed {
-  margin: 1.71428571em 0 0;
+  margin: 0 0 1.71428571em;
   padding: 0 0 2.28571429em;
   border: 0.14285714em solid #f0f0ee;
 }

@@ -400,16 +400,11 @@ article.node-type-activiteit {
   .nd-region-footer { grid-area: node-footer; }
   .badge-access-wrapper { display: none; }
   &.clear-block:after { display: none; }
-  .field-author-picture > .picture {
-    height: 108em/@fs;
-    aspect-ratio: 16 ~"/" 20;
-    img {
-      height: 100%;
-      width: auto;
-    }
-  }
   .field-voornaam, .field-achternaam, .field-achternaam-voorvoegsel, .field-lidsinds {
     text-transform: uppercase;
+  }
+  .field-author-picture .picture {
+    height: 108em/@fs;
   }
   .field-ds-group-adres {
     display: inline-block;
@@ -426,6 +421,32 @@ article.node-type-activiteit {
     color: @red;
   }
 }
+article.node-type-profiel {
+  .field-author-picture .picture {
+    width: 280em/@fs;
+    @media @tablet { 
+      height: 216em/@fs;
+      width: auto;
+    }
+    aspect-ratio: 16 ~"/" 20;
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+.profile .picture {
+  float: none;
+  margin: 0;
+  @media @tablet { 
+    float: right; 
+    margin: 0 0 24em/@fs 24em/@fs;
+  }
+}
+.profile h3 {
+  border: 0;
+}
+
 // FOTO ALBUMS
 .buildmode-full.node-type-foto {
   .field-afbeeldingen .field-items {
