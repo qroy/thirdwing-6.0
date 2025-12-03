@@ -1,5 +1,4 @@
 // FORMS
-
 input {
   box-sizing: border-box;
   font-size: 14em/@fs;
@@ -58,6 +57,14 @@ input {
   }
   &[type=radio] ~ .option__indicator {
     .border-radius(50%);
+  }
+  &[type="text"].form-text {
+    @media @phone-ls-max {
+      width: 100%;          /* Takes full container width */
+      max-width: 100%;      /* Never exceeds container */
+      min-width: 0;         /* Overrides size attribute's minimum */
+      box-sizing: border-box; /* Includes padding in width calculation */
+    }
   }
 }
 textarea {

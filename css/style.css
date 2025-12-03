@@ -2606,17 +2606,17 @@ article.node-type-pagina .field-afbeeldingen .field-item {
 .buildmode-schema.node-type-profiel .aspirant {
   color: #e9584c;
 }
-article.node-type-profiel .field-author-picture .picture {
+article.node-type-profiel.buildmode-full .field-author-picture .picture {
   width: 20em;
   aspect-ratio: 16 / 20;
 }
 @media screen and (min-width: 59.285714285714285em ) {
-  article.node-type-profiel .field-author-picture .picture {
+  article.node-type-profiel.buildmode-full .field-author-picture .picture {
     height: 15.42857143em;
     width: auto;
   }
 }
-article.node-type-profiel .field-author-picture .picture img {
+article.node-type-profiel.buildmode-full .field-author-picture .picture img {
   height: 100%;
   width: auto;
 }
@@ -3450,6 +3450,18 @@ input[type=radio] ~ .option__indicator {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+}
+@media screen and (max-width: 43.57142857142857em ) {
+  input[type="text"].form-text {
+    width: 100%;
+    /* Takes full container width */
+    max-width: 100%;
+    /* Never exceeds container */
+    min-width: 0;
+    /* Overrides size attribute's minimum */
+    box-sizing: border-box;
+    /* Includes padding in width calculation */
+  }
 }
 textarea {
   box-sizing: border-box;
