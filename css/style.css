@@ -532,7 +532,7 @@ thead th:last-child {
 }
 tbody td,
 tbody td.active {
-  padding: 0.85714286em 0.42857143em 1.28571429em;
+  padding: 0.85714286em 0.42857143em;
   vertical-align: top;
 }
 tbody tr:first-child td,
