@@ -1,12 +1,11 @@
-; $Id: garland.info,v 1.5 2007/07/01 23:27:32 goba Exp $
-name = Thirdwing 2.3
-description = Versie 2 van de Thirdwing site, gemaakt in 2010.
-version = 2.3
+name = Thirdwing 2.4
+description = Herontwerp van de site in 2025 om deze geschikt te maken voor mobiele apparaten.
+version = 2.4
 core = 6.x
 engine = phptemplate
 stylesheets[all][] = css/style.css
 stylesheets[all][] = jplayer.css
-scripts[] = js/doubletaptogo.js
+scripts[] = js/menu.js
 
 regions[topbar] = Topbar
 regions[header] = Menubar
@@ -14,5 +13,4 @@ regions[left] = Left sidebar
 regions[before_content] = Before Content
 regions[content] = Content
 regions[right] = Right sidebar
-regions[footerleft] = Left Footer
-regions[footerright] = Right Footer
+regions[footer] = Footer

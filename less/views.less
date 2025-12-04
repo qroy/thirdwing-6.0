@@ -1,236 +1,66 @@
-/**
- * Ledenagenda
- */
-.agenda {
-  .views-field-title {
-    .title {
-	  text-transform: uppercase;
-	  font-weight: 600;
-      a {
-        &:link, &:visited {
-          color: @red;
-          @media print { color: @black; }
-        }
-        &:hover, &:active, &:focus {
-          color: @primary;
-        }
-      }
-	}
-  }
-
-  &.agenda-leden {
-    .views-field-field-datum-value {
-      width: 393em/@fs;
-    }
-	.badge-date-wrapper {
-	  width: 300em/@fs;
-	}
-	.badge-koor-tijd {
-	  margin-right: 0;
-	}
-    .views-field-field-sleepgroep-value {
-      width: 180em/@fs;
-    }
-  	.badge-date-wrapper {
-	  width: 257em/@fs;
-	}
-	.badge-koor-tijd {
-	  margin-right: 0;
-	}
-	h2 {
-	  text-transform: uppercase;
-      font-size: 14em/@fs;
-      line-height: 24em/@fs;
-	  display: inline-block;
-      vertical-align: middle;
-      box-sizing: border-box;
-	  margin: 0;
-	  a:link, a:visited { color: @grey; }
-	  a:hover, a:active, a:focus { color: @primary; }
-	}
-	.field-bijzonderheden, .field-kledingcode a {
-	  font-style: italic;
-	}
-	.node-edit-link, .node-clone-link {
-      .icon-only();
-      &:link, &:visited { color: @grey-light; background: @white; }
-      &:active, &:hover, &:focus { background: @secondary; }
-      margin: 0 0 4em/@fs 4em/@fs;
-    }
-	.activiteit-wereldlijk, .activiteit-kerkelijk, .activiteit-concours, .activiteit-koorreis, .activiteit-vergadering {
-      background: @white-off;
-	  padding: 7em/@fs;
-	  h2 { 
-	    a:link, a:visited { color: @red; } 
-		a:hover, a:active, a:focus { color: @primary; }
-	  }
-	  .badge-date, .badge-date-wrapper, .badge-location {
-	    background: @white;
-	  }
-	}  
-  }
+// LEDENAGENDA
+.agenda .view-content {
+  display: grid;
+  row-gap: 12em/@fs;
 }
 
-/**
- * Opnamen
- */
+// ACTIVITEITEN EN NIEUWS IN 2 KOLOMMEN
+.nieuws .view-content:has(> :nth-child(2)),
+.activiteiten .view-content:has(> :nth-child(2)) {
+  row-gap: 24em/@fs;
+  display: grid;
+  @media @wide {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24em/@fs;
+  }
+  article {
+    height: 100%;
+  }
+}
+// ADVERTENTIES
+#node-6048 {
+  background: @primary;
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center;     /* vertical centering */
+}
+// MULTIMEDIA
 .opnamen {
-  padding: 0;
   .view-content {
     display: grid;
     column-gap: 12em/@fs;
     row-gap: 12em/@fs;
-	grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     @media @phone-ls { grid-template-columns: repeat(2, 1fr); }
-	@media @tablet { grid-template-columns: repeat(3, 1fr); }
+	  @media @tablet { grid-template-columns: repeat(3, 1fr); }
   }
   .views-row, .field-item {
     display: contents;
   }
-  .opname {
-    position: relative;
-    background: @white-off;
-    .border-radius(@border-radius-large);
-    padding: 6em/@fs;
-    &:hover {
-      .transition-standard();
-      background: @secondary;
-      .badge { background: @white; color: @secondary; }
-      .opname-title, .opname-artist { color: @white; }
-    }
-  }
-  img {
-    width: 100%;
-    height: auto;
-    .border-radius();
-  }
-  .opname-bestand {
-    position: relative;
-    z-index: 2;
-    &:before {
-      display: block;
-      content: '';
-      width: 100%;
-      padding-top: (9 / 16) * 100%;
-    }
-    .video, .jp-single-player, img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      .jp-interface {
-        top: 20%;
-      }
-    }
-    .video {
-      height: 100%;
-      width: 100%;
-    }
-  }
-  .opname-data {
-    height: 72em/@fs;
-    margin-top: 6em/@fs;
-    overflow: hidden;
-  }
-  .opname-title {
-    color: @red;
-    text-transform: uppercase;
-    display: inline-block;
-  }
-  .opname-artist {
-    display: inline-block;
-  }
-  .opname-notes {
-    font-size: 12em/@fs;
-    line-height: 24em/12;
-  }
-  .opname-type {
-    height: 36em/@fs;
-    text-align: right;
-    z-index: 2;
-    position: relative;
-  }
-  .opname-link {
-    z-index: 1;
-    position: absolute;
-    display: block;
-    top: 0; bottom: 0; left: 0; right: 0;
-  }
-  .opname-foto {
-    .opname-link { 
-      z-index: 3;
-    }
-    .opname-title {
-      display: block;
-      min-height: 72em/@fs;
-    }
-    .opname-artist, .opname-notes {
-      display: none;
-    }
-  }
-  .badge-multimedia { display: none; }
-  .opname-foto .badge-foto { display: inline-block; }
-  .opname-video .badge-video { display: inline-block; }
-  .opname-audio .badge-audio { display: inline-block; }
-  .badge.badge-audio-download {
-    &:link, &:visited {
-      background: @primary;
-      color: @white;
-    }
-    &:hover, &:active, &:focus {
-      background: @grey;
-      color: @secondary;
-    }
+  article.node-type-foto,
+  article.node-type-video,
+  article.node-type-audio {
+    margin: 0;
   }
 }
-.video {
-  &.video-thumb {
-    display: block;
-    position: relative;
-    box-sizing: border-box;
-    text-align: center;
-    &:after {
-      display: inline-block;
-      position: absolute;
-      content: '\f166';
-      font-family: FontAwesome;
-      font-size: 60em/@fs;
-      line-height: 60em/60;
-      top: 30%;
-      left: 0;
-      right: 0;
-    }
-    img { 
-      width: 100%;
-      height: auto;
-    }
-  }
-}
-a.video-thumb {
-  &:link, &:visited {
-    color: @white;
-  }
-  &:hover, &:active, &:focus {
-    color: @secondary;
-  }
+.opnamen-archief {
+  margin-top: 24em/@fs;
 }
 
-/**
- * Sleepgroepen
- */
-.sleepgroepen {
-  margin-right: -12em/@fs;
-  overflow: hidden;
+// SLEEPGROEPEN
+.sleepgroepen .view-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  @media @tablet { grid-template-columns: repeat(3, 1fr); }
+  @media @normal { grid-template-columns: repeat(4, 1fr); }
+  @media @wide { grid-template-columns: repeat(6, 1fr); }
+  column-gap: 6em/@fs;
+  row-gap: 12em/@fs;
   .item-list {
     box-sizing: border-box;
-    float: left;
-    width: 100% / 3;
-    @media @normal { width: 100% / 5; }
-    padding: 0 12em/@fs 12em/@fs 0;
     text-align: center;
     ol {
-      background: @white-off;
+      background: @white;
       .border-radius(@border-radius-large);
       padding: 6em/@fs;
       min-height: 360em/@fs;
@@ -259,9 +89,7 @@ a.video-thumb {
   }
 }
 
-/**
- * Combo en Bestuur en Commissies
- */
+// LEDEN WEERGAVEN
 .profile > .picture {
   display: none;
 }
@@ -271,139 +99,101 @@ div.content-profile-display {
   border: 0;
 }
 .personen {
+  .buildmode-teaser {
+    margin: 0;
+  }
   .view-content {
     display: grid;
-	grid-template-columns: repeat(4, 1fr);      
-	@media @tablet { grid-template-columns: repeat(5, 1fr); }
+    grid-template-columns: repeat(2, 1fr);
+    @media @phone-ls { grid-template-columns: repeat(3, 1fr); }
+    @media @tablet { grid-template-columns: repeat(4, 1fr); }
     @media @normal { grid-template-columns: repeat(6, 1fr); }
-	column-gap: 12em/@fs;
-	row-gap: 12em/@fs;
+    column-gap: 12em/@fs;
+    row-gap: 12em/@fs;
   }
   .views-row, .views-field-nothing, .field-content { display: contents; }
-  &.personen-ledenlijst .view-content { grid-template-columns: 1fr; }
-  
+  &.personen-ledenlijst .view-content { 
+    grid-template-columns: 1fr;
+  }
   .badge-functie-cie, .badge-functie { display: none; }
-  
-  .persoon-wrapper {
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-    padding: 6em/@fs 6em/@fs;
-  }
-  .persoon {
-    text-align: center;
-    font-size: 12em/@fs;
-    line-height: 24em/12;
-    .border-radius(@border-radius-large);
-    padding: 12em/12;
-    background: @white-off;
-  }
-  .persoon-foto {
-    height: 120em/12;
-    width: 90em/12;
-    margin: 0 auto;
-    img {
-      box-sizing: border-box;
-      width: 100%;
-      height: auto;
-    }
-  }
-  .persoon-naam {
-    text-transform: uppercase;
-    min-height: 48em/12;
-  }
-  .persoon-functie {
-    color: @red;
-    > span {
-      display: none;
-    }
-  }
-  &.personen-leden, &.personen-ledenlijst, &.personen-opstelling {
-    .persoon-wrapper {
-      height: auto;
-    }
-    .persoon {
-      background: @white-off;
-      padding: 12em/12 12em/12;
-    }
-    .persoon-foto {
-      width: 80%;
-      height: auto;
-    }
-    .persoon-naam { 
-      min-height: 24em/12;
-    }
-    .persoon-achternaam { display: none; }
-  }
   &.personen-opstelling {
     .view-content {
       grid-template-columns: repeat(16, 1fr);
       grid-template-rows: repeat(6, 1fr);
-      column-gap: 2em/@fs;
-      row-gap: 2em/@fs;
-      .buildmode-teaser .node {
-        padding: 3em/@fs;
-        .border-radius();
+      column-gap: 1em/@fs;
+      row-gap: 1em/@fs;
+      @media @tablet {
+        column-gap: 6em/@fs;
+        row-gap: 6em/@fs;
       }
-      .views-row, .buildmode-teaser { display: contents; }
-      .persoon-positie-RND { display: none; }
-      .persoon-positie-R1 { grid-row: 4; }
-      .persoon-positie-R2 { grid-row: 3; }
-      .persoon-positie-R3 { grid-row: 2; }
-      .persoon-positie-R4 { grid-row: 1; }
-      .persoon-positie-RB { grid-row: 6; grid-column: auto }
-      .persoon-positie-RD { grid-row: 6; grid-column: 8; }
-      .persoon-positie-K01 { grid-column: 1; }
-      .persoon-positie-K02 { grid-column: 2; }
-      .persoon-positie-K03 { grid-column: 3; }
-      .persoon-positie-K04 { grid-column: 4; }
-      .persoon-positie-K05 { grid-column: 5; }
-      .persoon-positie-K06 { grid-column: 6; }
-      .persoon-positie-K07 { grid-column: 7; }
-      .persoon-positie-K08 { grid-column: 8; }
-      .persoon-positie-K09 { grid-column: 9; }
-      .persoon-positie-K10 { grid-column: 10; }
-      .persoon-positie-K11 { grid-column: 11; }
-      .persoon-positie-K12 { grid-column: 12; }
-      .persoon-positie-K13 { grid-column: 13; }
-      .persoon-positie-K14 { grid-column: 14; }
-      .persoon-positie-K15 { grid-column: 15; }
-      .persoon-positie-K16 { grid-column: 16; }
+    }
+    .buildmode-teaser {
+      padding: 3em/@fs;
+      .border-radius();
+    }
+    .field-voornaam {
+      display: none;
+      color: @white;
+      @media @phone-ls {
+        font-size: 10em/@fs;
+        line-height: 24em/10;
+        display: inline;
+      }
+      @media @tablet {
+        display: inline;
+        font-size: 12em/@fs;
+        line-height: 24em/12;
+      }
+    }
+    .field-author-picture .picture, 
+    .field-author-picture .picture img { 
+      width: 100%; 
+      height: auto;
+    }
+    .persoon-positie-RND { display: none; }
+    .persoon-positie-R1 { grid-row: 4; }
+    .persoon-positie-R2 { grid-row: 3; }
+    .persoon-positie-R3 { grid-row: 2; }
+    .persoon-positie-R4 { grid-row: 1; }
+    .persoon-positie-RB { grid-row: 6; grid-column: auto }
+    .persoon-positie-RD { grid-row: 6; grid-column: 8; }
+    .persoon-positie-K01 { grid-column: 1; }
+    .persoon-positie-K02 { grid-column: 2; }
+    .persoon-positie-K03 { grid-column: 3; }
+    .persoon-positie-K04 { grid-column: 4; }
+    .persoon-positie-K05 { grid-column: 5; }
+    .persoon-positie-K06 { grid-column: 6; }
+    .persoon-positie-K07 { grid-column: 7; }
+    .persoon-positie-K08 { grid-column: 8; }
+    .persoon-positie-K09 { grid-column: 9; }
+    .persoon-positie-K10 { grid-column: 10; }
+    .persoon-positie-K11 { grid-column: 11; }
+    .persoon-positie-K12 { grid-column: 12; }
+    .persoon-positie-K13 { grid-column: 13; }
+    .persoon-positie-K14 { grid-column: 14; }
+    .persoon-positie-K15 { grid-column: 15; }
+    .persoon-positie-K16 { grid-column: 16; }
 	
-      .persoon-A  { background: @red; }
-      .persoon-B  { background: @blue; }
-      .persoon-C  { background: @purple; }
-      .persoon-D  { background: @yellow; }
-      .persoon-E  { background: @green; }
-      .persoon-Y1 { background: @grey; }
-      .persoon-Z1,
-      .persoon-Z2,
-      .persoon-Z3,
-      .persoon-Z4,
-      .persoon-Z5	{ background: @grey-light; }
-      .field-voornaam {
-        color: @white;
-      }
-    }
-  }
-  &.personen-ledenlijst {
-    .persoon-foto {
-      width: 58em/@fs;
-    }
-    .badge.persoon-aspirant {
-      @media screen {
-        background: @red;
-      }
-    }
+    .persoon-A  { background: @red; }
+    .persoon-B  { background: @blue; }
+    .persoon-C  { background: @purple; }
+    .persoon-D  { background: @yellow; }
+    .persoon-E  { background: @green; }
+    .persoon-Y1 { background: @grey; }
+    .persoon-Z1,
+    .persoon-Z2,
+    .persoon-Z3,
+    .persoon-Z4,
+    .persoon-Z5	{ background: @grey-light; }
   }
 }
-
 .personen-leden, .personen-opstelling {
   .field-achternaam, .field-achternaam-voorvoegsel { display: none; }
 }
 .personen-leden .badge-functie,
 .personen-ledenlijst .badge-functie,
 .personen-band .badge-functie 					{ display: inline-block; }
+.personen-ledenlijst	.field-functie-bestuur,
 .personen-bestuur		.field-functie-bestuur	{ display: inline-block; }
 .personen-mc			.field-functie-mc		{ display: inline-block; }
 .personen-regie			.field-functie-regie	{ display: inline-block; }
@@ -415,79 +205,6 @@ div.content-profile-display {
 .personen-lw			.field-functie-lw		{ display: inline-block; }
 .personen-fl			.field-functie-fl		{ display: inline-block; }
 .personen-verjaardag	.field-geboortedatum	{ display: inline-block; }
-
-.personen-leden      .persoon-functie .persoon-functie-koor,
-.personen-ledenlijst .persoon-functie .persoon-functie-koor,
-.personen-wie        .persoon-functie .persoon-functie-koor,
-.personen-band       .persoon-functie .persoon-functie-koor       { display: inline-block; }
-.personen-bestuur    .persoon-functie .persoon-functie-bestuur    { display: inline-block; }
-.personen-mc         .persoon-functie .persoon-functie-mc         { display: inline-block; }
-.personen-regie      .persoon-functie .persoon-functie-regie      { display: inline-block; }
-.personen-concert    .persoon-functie .persoon-functie-concert    { display: inline-block; }
-.personen-pr         .persoon-functie .persoon-functie-pr         { display: inline-block; }
-.personen-ir         .persoon-functie .persoon-functie-ir         { display: inline-block; }
-.personen-feest      .persoon-functie .persoon-functie-feest      { display: inline-block; }
-.personen-tec        .persoon-functie .persoon-functie-tec        { display: inline-block; }
-.personen-lw         .persoon-functie .persoon-functie-lw         { display: inline-block; }
-.personen-fl         .persoon-functie .persoon-functie-fl         { display: inline-block; }
-.personen-verjaardag .persoon-functie .persoon-functie-verjaardag { display: inline-block; }
-
-.persoon-aspirant {
-  @media screen { 
-    color: @red; 
-    a:link, a:visited {
-      color: @red;
-    }
-    a:hover, a:active {
-      color: @primary;
-    }
-  }
-  @media print { font-style: italic; }
-}
-.personen-ledenlijst {
-  .views-field-field-lidsinds-value.persoon-aspirant {
-    .date-display-single {
-      display: none;
-    }
-    &:after {
-      content: 'Aspirant';
-      font-size: 12em/@fs;
-      line-height: 24em/12;
-      text-transform: uppercase;
-    }
-  }
-  .persoon-functie-bestuur {
-    color: @red; 
-  }
-}
-
-
-/**
- * Repertoire
- */
-
-.repertoire {
-  .view-content {
-    display: grid;
-    row-gap: 12em/@fs;
-  }
-  .repertoire-programma {
-    color: @red;
-    text-transform: uppercase;
-  }
-}
-
-/**
- * Foto's
-*/
-
-.voorbeeld .views-row {
-  float: left;
-  margin: 0 10px 0 0;
-}
-.voorbeeld .view-footer {
-  clear: both;
-}
 
 // REPERTOIRE
 .repertoire {
@@ -506,7 +223,26 @@ div.content-profile-display {
     text-transform: uppercase;
   }
 }
-
+// FOTOS
+.voorbeeld .views-row {
+  float: left;
+  margin: 0 10px 0 0;
+}
+.voorbeeld .view-footer {
+  clear: both;
+}
+// VERSLAGEN
+.verslagen {
+  .view-content {
+    display: grid;
+    row-gap: 12em/@fs;
+  }
+}
+// SEARCH RESULTS
+.page-search .content {
+  display: grid;
+  row-gap: 12em/@fs;
+}
 // PAGER
 .item-list ul.pager {
   margin-top: 24em/@fs;
@@ -529,4 +265,10 @@ div.content-profile-display {
     background-color: @secondary;
     color: @white;
   }
+}
+
+// ADMIN STUFF
+
+.help {
+  margin-bottom: 24em/@fs;
 }

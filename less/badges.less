@@ -1,6 +1,6 @@
 .badge {
   display: inline-block;
-  vertical-align: middle;
+  vertical-align: middle;  
   box-sizing: border-box;
   font-size: 14em/@fs;
   line-height: 24em/@fs;
@@ -9,7 +9,6 @@
   text-align: center;
   .transition-standard();
   height: 32em/@fs;
-
   color: @white;
   background: @grey;
   @media print { 
@@ -19,25 +18,23 @@
     padding: 3em/@fs;
   }
   .border-radius();
-  
   &.badge-combo {
     font-family: thirdwing;
-	width: 32em/@fs;
+    width: 32em/@fs;
     font-size: 24em/@fs;
     width: 32em/24;
     line-height: 24em/24;
     padding: 4em/24;
-	margin: 0 4em/24 4em/24 0;
-	height: 32em/24;
+    margin: 0 4em/24 4em/24 0;
+    height: 32em/24;
   }
   &.badge-combo-aanwezig {   background: @green; }
   &.badge-combo-vervanging { background: @green-light; }
   &.badge-combo-vraag {      background: @grey-light; }
   &.badge-combo-afwezig {    background: @red; }
-
   @media print {
     &.badge-combo-aanwezig  {   background: @grey-light; color: @grey-dark;  border-color: @grey-light;  }
-	&.badge-combo-vervanging {  background: @grey-light; color: @grey-dark;  border-color: @grey-light;  }
+    &.badge-combo-vervanging {  background: @grey-light; color: @grey-dark;  border-color: @grey-light;  }
     &.badge-combo-vraag {       background: transparent; color: @white-off;  border-color: @white-off;   }
     &.badge-combo-afwezig {     background: transparent; color: transparent; border-color: transparent;  }
   }
@@ -52,17 +49,17 @@
   &.badge-functie-D  { background: @yellow;     }
   &.badge-functie-E  { background: @green;      }
   &.badge-functie-Y1 { background: @grey;       }
-  &.badge-functie-Z1 { background: @grey-light; }
-  &.badge-functie-Z2 { background: @grey-light; }
-  &.badge-functie-Z3 { background: @grey-light; }
-  &.badge-functie-Z4 { background: @grey-light; }
-  &.badge-functie-Z5 { background: @grey-light; }
+  &.badge-functie-Z1 { background: @grey-dark; }
+  &.badge-functie-Z2 { background: @grey-dark; }
+  &.badge-functie-Z3 { background: @grey-dark; }
+  &.badge-functie-Z4 { background: @grey-dark; }
+  &.badge-functie-Z5 { background: @grey-dark; }
   }
   &.badge-functie-cie {
     color: @red;
-	background: transparent;
+    background: transparent;
+    padding: 0;
   }
-
   &.badge-sleepgroep {
     width: 32em/@fs;
     line-height: 24em/@fs;
@@ -78,7 +75,7 @@
     }
   }
   &.badge-kar {
-    width: 176em/@fs; // 5*32 (width + padding) + 4*4 (margin) - 2*4 (padding)
+    width: 176em/@fs; // 5*32 (width + padding) + 4*4 (margin)
     overflow: hidden;
     @media screen {
       background: @blue;
@@ -89,15 +86,12 @@
       background: @white-off;
 	  color: @black;
 	}
-	overflow: hidden;
 	width: 100%;
+	overflow: hidden;
 	text-align: left;
 	text-transform: uppercase;
 	&:before {
       @media screen { color: @red; }
-    }
-	span {
-      
     }
   }
   &.badge-location-ext {
@@ -138,18 +132,18 @@
 	}
   }
   &.badge-time {
-    width: 88em/@fs;
-	float: right;
+    width: 86em/@fs;
+    float: right;
     @media screen { background: @red; }
   }
   &.badge-koor-tijd {
-    width: 88em/@fs;
+    width: 86em/@fs;
     @media screen {
       background: @primary;
     }
   }
   &.badge-sleepgroep-tijd {
-    width: 104em/@fs; // 3*32 (width + padding) + 2*4 (margin) - 2*4 (padding)
+    width: 104em/@fs;
     @media screen {
       background: @yellow;
     }
@@ -190,14 +184,14 @@
   &.badge-color-brown         { background: @brown;  }
   &.badge-color-grey-light    { background: @grey-light; }
 }
-.location {
-  display: block;
-  text-transform: uppercase;
+.field-box {
+  background: @white-off;
+  padding: 4em/@fs;
+  padding-bottom: 0;
+  margin-bottom: 4em/@fs;
+  .border-radius();
 }
-.location-title {
-  color: @red;
-}
-.buildmode-full .location span { display: block; }
+
 .marker {
   .badge();
   .badge-color-red();
@@ -233,7 +227,7 @@ a:hover, a:active {
   overflow: hidden;
   position: relative; /* for absolute positioning of icon */
   vertical-align: bottom;
-  width: 24em/@fs;
+  width: 32em/@fs;
   &:before {
     font-family: FontAwesome;
     text-indent: 0;
@@ -287,6 +281,7 @@ a[type*="mpeg"] {
 
 .button {
   display: inline-block;
+  box-sizing: border-box;
   line-height: 24em/@fs;
   padding: 4em/@fs 8em/@fs;
   margin: 0 4em/@fs 4em/@fs 0;
@@ -301,25 +296,55 @@ a[type*="mpeg"] {
     background: @secondary;
   }
 }
-.button-social {
+.button-admin {
+  background: @grey;
+  &:link, &:visited { 
+    background: @grey; 
+  }
+  &:active, &:hover, &:focus, &.active { 
+    background: @secondary; 
+  }
+}
+.button-alt {
+  background: @secondary;
+  &:link, &:visited { 
+    background: @secondary; 
+  }
+  &:active, &:hover, &:focus, &.active { 
+    background: @secondary; 
+  }
+}
+.button-light {
+  &:link, &:visited {
+    background: @grey;
+    color: @grey-dark;
+  }
+  &:active, &:hover, &:focus, &.active {
+    background: @white-off;
+    color: @grey-dark;
+  }
+}
+.button-icon-only {
+  box-sizing: border-box;
   text-indent: 200%;
   white-space: nowrap;
   overflow: hidden;
   position: relative; /* for absolute positioning of icon */
-  width: 20em/@fs; /* make room for icon */
-  vertical-align: top;
+  vertical-align: middle;
+  width: 32em/@fs;
+  height: 32em/@fs;
+  padding: 0 6rem/@fs;
   &:before {
-    line-height: 36em/@fs;
     text-indent: 0;
     position: absolute;
     left: 0;
     right: 0;
-    top: 0;
-    bottom: 0;
     text-align: center;
     margin: 0;
     display: inline;
-    width: auto;
+    width: 32em/@fs;
+    height: 32em/@fs;
+    line-height: 32em/@fs;
   }
 }
 
