@@ -30,7 +30,6 @@ article.clear-block:after {
 .buildmode-teaser, 
 .buildmode-full, 
 .buildmode-schema,
-.buildmode-3,
 #main > dl,
 #main > form,
 #main > .admin,
@@ -42,6 +41,14 @@ article.clear-block:after {
     .border-radius(@border-radius-large);
     box-sizing: border-box;
   }
+}
+.node-hero .buildmode-full:not(:empty) {
+  background-color: var(--white-fade);
+}
+.node-hero #main .block > h2 {
+  padding: 0 7em/24;
+  background: var(--white-fade);
+  .border-radius(@border-radius-small);
 }
 .buildmode-schema:not(:empty) {
   padding: 12em/@fs;
