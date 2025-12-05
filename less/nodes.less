@@ -186,7 +186,7 @@ article.node-type-pagina .field-afbeeldingen .field-items {
 // TITLE ACTIVITEIT EN NIEUWS
 article.node-type-nieuws,
 article.node-type-activiteit {
-  &.buildmode-full, &.buildmode-teaser, &.buildmode-3 {
+  &.buildmode-full, &.buildmode-teaser {
     .field-title {
       @media @tablet {
         height: 150em/@fs;
@@ -195,6 +195,24 @@ article.node-type-activiteit {
         overflow: hidden;
       }
     }
+  }
+}
+article.node-type-nieuws {
+  .field-author {
+    margin-bottom: 24em/@fs;
+  }
+  .field em {
+    font-style: normal;
+  }
+}
+article.node-type-nieuws.buildmode-full,
+article.node-type-video.buildmode-full,
+article.node-type-audio.buildmode-full,
+article.node-type-profiel.buildmode-full,
+article.node-type-foto.buildmode-full,
+article.node-type-repertoire.buildmode-full {
+  .field-node-type {
+    margin-bottom: 48em/@fs;
   }
 }
 // ACCESS BADGES
@@ -301,7 +319,7 @@ article.node-type-activiteit {
   @media @phone-ls {
     &.buildmode-full, &.buildmode-teaser, &.buildmode-schema {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 3fr 2fr;
       grid-template-rows: auto auto;
       grid-template-areas:
       "node-main node-right"
@@ -554,7 +572,7 @@ article.node-type-programma.programma-nummer {
     "node-header node-right"
     "node-header node-footer";
     @media @tablet {
-      grid-template-columns: max-content 3fr 1fr 1fr;
+      grid-template-columns: 32em/@fs 3fr 1fr 1fr;
       grid-template-rows: auto auto;
       grid-template-areas: 
       "node-header node-left node-right node-footer"

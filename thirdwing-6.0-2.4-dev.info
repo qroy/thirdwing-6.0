@@ -1,6 +1,6 @@
-name = Thirdwing 2.4
+name = Thirdwing 2.4-dev
 description = Herontwerp van de site in 2025 om deze geschikt te maken voor mobiele apparaten.
-version = 2.4
+version = 2.4-dev
 core = 6.x
 engine = phptemplate
 stylesheets[all][] = css/style.css

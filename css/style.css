@@ -2126,14 +2126,26 @@ article.node-type-pagina .field-afbeeldingen .field-items {
   article.node-type-nieuws.buildmode-full .field-title,
   article.node-type-activiteit.buildmode-full .field-title,
   article.node-type-nieuws.buildmode-teaser .field-title,
-  article.node-type-activiteit.buildmode-teaser .field-title,
-  article.node-type-nieuws.buildmode-3 .field-title,
-  article.node-type-activiteit.buildmode-3 .field-title {
+  article.node-type-activiteit.buildmode-teaser .field-title {
     height: 10.71428571em;
     display: table-cell;
     vertical-align: bottom;
     overflow: hidden;
   }
+}
+article.node-type-nieuws .field-author {
+  margin-bottom: 1.71428571em;
+}
+article.node-type-nieuws .field em {
+  font-style: normal;
+}
+article.node-type-nieuws.buildmode-full .field-node-type,
+article.node-type-video.buildmode-full .field-node-type,
+article.node-type-audio.buildmode-full .field-node-type,
+article.node-type-profiel.buildmode-full .field-node-type,
+article.node-type-foto.buildmode-full .field-node-type,
+article.node-type-repertoire.buildmode-full .field-node-type {
+  margin-bottom: 3.42857143em;
 }
 .badge-access,
 .badge-access-wrapper {
@@ -2447,7 +2459,7 @@ article.node-type-pagina .field-afbeeldingen .field-items {
   .node-type-activiteit.buildmode-teaser,
   .node-type-activiteit.buildmode-schema {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 2fr;
     grid-template-rows: auto auto;
     grid-template-areas: "node-main node-right" "node-footer node-footer";
     column-gap: 1.71428571em;
@@ -2785,7 +2797,7 @@ article.node-type-programma.programma-nummer.buildmode-schema {
 @media screen and (min-width: 59.285714285714285em ) {
   article.node-type-repertoire.buildmode-schema,
   article.node-type-programma.programma-nummer.buildmode-schema {
-    grid-template-columns: max-content 3fr 1fr 1fr;
+    grid-template-columns: 2.28571429em 3fr 1fr 1fr;
     grid-template-rows: auto auto;
     grid-template-areas: "node-header node-left node-right node-footer" "node-header node-main node-right node-footer";
   }
