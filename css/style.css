@@ -2008,28 +2008,60 @@ article.buildmode-3 .field-background .node-background:after {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-article.node-type-activiteit .field-afbeeldingen .field-item,
-article.node-type-nieuws .field-afbeeldingen .field-item,
-article.node-type-pagina .field-afbeeldingen .field-item,
-article.node-type-repertoire .field-afbeeldingen .field-item {
-  display: none;
-}
-article.node-type-activiteit .field-afbeeldingen .field-item:first-child,
-article.node-type-nieuws .field-afbeeldingen .field-item:first-child,
-article.node-type-pagina .field-afbeeldingen .field-item:first-child,
-article.node-type-repertoire .field-afbeeldingen .field-item:first-child {
-  display: block;
+article.node-type-activiteit .field-afbeeldingen .field-items,
+article.node-type-nieuws .field-afbeeldingen .field-items,
+article.node-type-pagina .field-afbeeldingen .field-items,
+article.node-type-repertoire .field-afbeeldingen .field-items {
+  display: grid;
+  column-gap: 0.28571429em;
+  row-gap: 0.28571429em;
+  grid-template-columns: repeat(3, calc(33% -  0.28571429em));
 }
 @media screen and (min-width: 43.57142857142857em ) {
-  article.node-type-activiteit .field-afbeeldingen .field-item:first-child,
-  article.node-type-nieuws .field-afbeeldingen .field-item:first-child,
-  article.node-type-pagina .field-afbeeldingen .field-item:first-child,
-  article.node-type-repertoire .field-afbeeldingen .field-item:first-child {
+  article.node-type-activiteit .field-afbeeldingen .field-items,
+  article.node-type-nieuws .field-afbeeldingen .field-items,
+  article.node-type-pagina .field-afbeeldingen .field-items,
+  article.node-type-repertoire .field-afbeeldingen .field-items {
     float: right;
-    max-width: 50%;
-    max-height: 23.57142857em;
-    text-align: right;
+    width: 50%;
+    box-sizing: border-box;
   }
+}
+@media screen and (min-width: 59.285714285714285em ) {
+  article.node-type-activiteit .field-afbeeldingen .field-items,
+  article.node-type-nieuws .field-afbeeldingen .field-items,
+  article.node-type-pagina .field-afbeeldingen .field-items,
+  article.node-type-repertoire .field-afbeeldingen .field-items {
+    width: 35%;
+  }
+}
+article.node-type-activiteit .field-afbeeldingen .field-items .field-item,
+article.node-type-nieuws .field-afbeeldingen .field-items .field-item,
+article.node-type-pagina .field-afbeeldingen .field-items .field-item,
+article.node-type-repertoire .field-afbeeldingen .field-items .field-item {
+  aspect-ratio: 1 / 1;
+}
+article.node-type-activiteit .field-afbeeldingen .field-items .field-item:first-child,
+article.node-type-nieuws .field-afbeeldingen .field-items .field-item:first-child,
+article.node-type-pagina .field-afbeeldingen .field-items .field-item:first-child,
+article.node-type-repertoire .field-afbeeldingen .field-items .field-item:first-child {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  aspect-ratio: auto;
+}
+article.node-type-activiteit .field-afbeeldingen .field-items a,
+article.node-type-nieuws .field-afbeeldingen .field-items a,
+article.node-type-pagina .field-afbeeldingen .field-items a,
+article.node-type-repertoire .field-afbeeldingen .field-items a,
+article.node-type-activiteit .field-afbeeldingen .field-items img,
+article.node-type-nieuws .field-afbeeldingen .field-items img,
+article.node-type-pagina .field-afbeeldingen .field-items img,
+article.node-type-repertoire .field-afbeeldingen .field-items img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 article.node-type-foto.buildmode-teaser .field-afbeeldingen .field-item {
   display: none;
@@ -2037,17 +2069,30 @@ article.node-type-foto.buildmode-teaser .field-afbeeldingen .field-item {
 article.node-type-foto.buildmode-teaser .field-afbeeldingen .field-item:first-child {
   display: block;
 }
-article.node-type-activiteit .field-afbeeldingen .field-item:first-child {
+article.node-type-activiteit .field-afbeeldingen .field-items {
   width: 100%;
   max-width: 100%;
   margin: 0;
 }
+article.node-type-activiteit .field-afbeeldingen .field-items .field-item {
+  max-width: 100%;
+}
 @media screen and (min-width: 43.57142857142857em ) {
-  article.node-type-activiteit .field-afbeeldingen .field-item:first-child {
-    height: 23.57142857em;
+  article.node-type-activiteit .field-afbeeldingen .field-items .field-item a,
+  article.node-type-activiteit .field-afbeeldingen .field-items .field-item img {
+    max-height: 23.57142857em;
+    width: auto;
+  }
+  article.node-type-activiteit .field-afbeeldingen .field-items .field-item a {
+    height: auto;
+    float: right;
+  }
+  article.node-type-activiteit .field-afbeeldingen .field-items .field-item img {
+    object-fit: contain;
+    object-position: right top;
   }
 }
-article.node-type-repertoire .field-afbeeldingen .field-item:first-child {
+article.node-type-repertoire .field-afbeeldingen .field-items {
   width: 100%;
   max-width: 100%;
   margin: 0;
@@ -2067,28 +2112,15 @@ article .field-afbeeldingen .field-item img {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-@media screen and (min-width: 43.57142857142857em ) {
-  article.node-type-pagina .field-afbeeldingen .field-item a,
-  article.node-type-activiteit .field-afbeeldingen .field-item a,
-  article.node-type-nieuws .field-afbeeldingen .field-item a,
-  article.node-type-pagina .field-afbeeldingen .field-item img,
-  article.node-type-activiteit .field-afbeeldingen .field-item img,
-  article.node-type-nieuws .field-afbeeldingen .field-item img {
-    max-height: 23.57142857em;
-  }
-}
-article.node-type-nieuws .field-afbeeldingen .field-item,
-article.node-type-pagina .field-afbeeldingen .field-item {
+article.node-type-nieuws .field-afbeeldingen .field-items,
+article.node-type-pagina .field-afbeeldingen .field-items {
   margin-bottom: 1.71428571em;
 }
 @media screen and (min-width: 43.57142857142857em ) {
-  article.node-type-nieuws .field-afbeeldingen .field-item,
-  article.node-type-pagina .field-afbeeldingen .field-item {
+  article.node-type-nieuws .field-afbeeldingen .field-items,
+  article.node-type-pagina .field-afbeeldingen .field-items {
     margin-left: 1.71428571em;
   }
-}
-.buildmode-full .field-background {
-  display: none;
 }
 @media screen and (min-width: 59.285714285714285em ) {
   article.node-type-nieuws.buildmode-full .field-title,
