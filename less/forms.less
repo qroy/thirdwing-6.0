@@ -5,18 +5,18 @@ input {
   line-height: 24em/14;
   .border-radius();
   border: 2em/14 solid transparent;
-  background: @white-off;
+  background: var(--white-off);
   padding: 4em/14 8em/14;
   &:focus:read-write {
     outline: none;
-    border: 2em/14 solid @orange;
+    border: 2em/14 solid var(--secondary);
   }
   &:hover:read-write:not(:focus):not(:disabled) {
-    border: 2em/14 solid @grey;
+    border: 2em/14 solid var(--grey);
   }
   &:read-only, &:disabled {
-    color: @grey;
-    background: @grey-light;
+    color: var(--grey);
+    background: var(--grey-light);
   }
   &[type=submit], &[type=reset] {
     .button;
@@ -39,20 +39,20 @@ input {
       width: 12em/14;
       height: 12em/14;
       margin-right: 10em/14;
-      border: 2em/14 solid @white;
-      background: @white-off;
+      border: 2em/14 solid var(--white);
+      background: var(--white-off);
     }
     &:checked ~ .option__indicator {
-      background: @grey-dark;
+      background: var(--grey-dark);
     }
     &:focus ~ .option__indicator {
-      border-color: @orange;
+      border-color: var(--secondary);
     }
     &:disabled ~ .option__indicator {
-      border-color: @grey-light;
+      border-color: var(--grey-light);
     }
     &:disabled:checked ~ .option__indicator {
-      background: @grey;
+      background: var(--grey);
     }
   }
   &[type=radio] ~ .option__indicator {
@@ -72,10 +72,10 @@ textarea {
   font-size: 14px;
   line-height: 24em/14;
   .border-radius(@border-radius-small @border-radius-small 0 0);
-  border: 1em/14 solid @grey-light;
+  border: 1em/14 solid var(--grey-light);
   &:focus:read-write {
     outline: none;
-    border: 2em/14 solid @orange;
+    border: 2em/14 solid var(--secondary);
   }
 }
 select {
@@ -85,7 +85,7 @@ select {
   line-height: 24em/14;
   cursor: pointer;
   border: 2em/14 solid transparent;
-  background: @white-off;
+  background: var(--white-off);
   padding: 4em/14 30em/14 4em/14 8em/14;
   .border-radius();
   outline: 0;
@@ -97,10 +97,10 @@ select {
   }
   &:focus {
     outline: none;
-    border: 2em/14 solid @orange;
+    border: 2em/14 solid var(--secondary);
   }
   &:hover:not(:focus) {
-    border: 2em/14 solid @grey;
+    border: 2em/14 solid var(--grey);
   }
   ~ .select__arrow {
     display: inline-block;
@@ -118,10 +118,10 @@ select {
   }
 }
 label:hover input ~ .option__indicator {
-    border-color: @grey;
+    border-color: var(--grey);
 }
 label:not(.option) {
   font-weight: normal;
-  color: @red;
+  color: var(--red);
   text-transform: uppercase;
 }

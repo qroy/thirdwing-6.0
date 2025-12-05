@@ -8,8 +8,7 @@
 .page {
   padding: 0;
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-  background-color: @white-off;
-//  @media @darkmode { background-color: @grey; }
+  background-color: var(--white-off);
   position: absolute;
   top: 0;
   z-index: 0;
@@ -90,7 +89,7 @@
   display: grid;
 }
 #header-bg {
-  background-color: @primary;
+  background-color: var(--primary);
   .box-shadow(@box-shadow-inset);
   grid-column: 1 ~"/" -1;
   grid-row: 1;
@@ -108,7 +107,7 @@
 }
 #menu-wrapper {
   position: relative;
-  background-color: @tertiary;
+  background-color: var(--tertiary);
   .box-shadow();
   .border-radius();
   grid-template-columns: 84em/@fs auto;
@@ -139,15 +138,15 @@
   margin-bottom: 24em/@fs;
   right: 0;
   left: 0;
-  color: @white;
+  color: var(--white);
   a {
     display: contents;
-    color: @white;
+    color: var(--white);
     &:hover, &:active, &:focus {
-      color: @secondary;
+      color: var(--secondary);
       #logo-img {
-        color: @secondary;
-        border-color: @secondary;
+        color: var(--secondary);
+        border-color: var(--secondary);
         background-image: url(../images/logo_zonder_tekst-secondary.svg);
       }
     }
@@ -164,7 +163,7 @@
       height: 120em/@fs;
       width: 120em/@fs;
     }
-    border: 2em/@fs solid @white;
+    border: 2em/@fs solid var(--white);
     .border-radius(@border-radius-large);
   }
   #logo-title {
@@ -184,7 +183,7 @@
   #logo-slogan {
     display: none;
     font-family: 'Indie Flower';
-    color: @white;
+    color: var(--white);
     justify-self: right;
     align-items: end;
     font-size: 24em/@fs;
@@ -207,14 +206,14 @@
   a {
     &:hover, &:active, &:focus {
       #logo-img { 
-        background-color: @secondary;
+        background-color: var(--secondary);
         background-image: url(../images/logo_met_tekst.svg);
       }
     }
   }
   #logo-img {
     border: 0;
-    background-color: @primary;
+    background-color: var(--primary);
     .box-shadow();
 	background-image: url(../images/logo_met_tekst.svg);
 	background-size: 70%;
@@ -246,15 +245,15 @@
   left: 0;
   right: 0;
   z-index: 3;
-  background: @white-off;
+  background: var(--white-off);
   .border-radius(@border-radius-small);
 }
 .node-hero #breadcrumb {
   padding: 0 24em/12;
 }
 #breadcrumb, #breadcrumb a {
-  &:link, &:visited { color: @black; }
-  &:hover, &:active { color: @secondary; }
+  &:link, &:visited { color: var(--black); }
+  &:hover, &:active { color: var(--secondary); }
 }
 #sidebar-left {
   grid-area: sidebar-left;
@@ -272,11 +271,10 @@
   margin: 0;
 }
 .block-region {
-  padding: 1em;
+  padding: 24em/@fs;
   background: transparent;
-  border: 2px dashed #b4d7f0;
+  border: 2em/@fs dashed var(--red);
   text-align: center;
-  font-size: 1.3em;
 }
 
 #footer {
@@ -286,7 +284,7 @@
   float: none;
   clear: both;
   min-height: 504em/@fs;
-  color: @white-off;
+  color: var(--white-off);
   position: relative;
   @media @tablet {
     display: grid;
@@ -295,14 +293,14 @@
   }
   a {
     &:link, &:visited {
-      color: @white;
+      color: var(--white);
     }
     &:hover, &:active, &.active {
-      color: @grey;
+      color: var(--grey);
     }
   }
   h2 {
-    color: @white-off; 
+    color: var(--white-off); 
     text-transform: uppercase;
     font-size: 14em/14;
     line-height: 24em/14;
@@ -326,7 +324,7 @@
   font-size: 10em/@fs;
   line-height: 20em/10;
   margin: 60em/10 0;
-  color: @grey;
+  color: var(--grey);
   padding: 0;
   position: relative;
   box-sizing: border-box;
@@ -335,7 +333,8 @@
 }
 #footer-bg {
   .box-shadow(@box-shadow-inset);
-  background: @grey-dark;
+  background: var(--grey-dark);
+  @media @darkmode { background-color: var(--grey-dark); }
   grid-column: 1 ~"/" -1;
   grid-row: -2;
   z-index: -1;

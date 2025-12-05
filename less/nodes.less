@@ -37,12 +37,8 @@ article.clear-block:after {
 #main > .help:not(:empty) {
   &:not(:empty) {
     position: relative;
-    background-color: @white;
-    @media @darkmode {
-//      background-color: @grey-light;
-    }
+    background-color: var(--white);
     padding: 24em/@fs;
-//    margin: 0 0 24em/@fs;
     .border-radius(@border-radius-large);
     box-sizing: border-box;
   }
@@ -70,7 +66,7 @@ article.buildmode-3 {
       background-position: center 10%;
       background-size: cover;
       background-repeat: no-repeat;
-      background-color: @grey;
+      background-color: var(--grey);
       .border-radius(@border-radius-large);
       &:after {
         content: ' ';
@@ -79,7 +75,7 @@ article.buildmode-3 {
         display: block;
         width: 100%;
         height: 100%;
-        background: @white;
+        background: var(--white);
         opacity: 0.75;
         .border-radius(@border-radius-large);
       }
@@ -247,22 +243,22 @@ article.node-type-repertoire.buildmode-full {
       &.badge-access-beheer {
         display: inline-block;
         padding: 4em/10 8em/10;
-        color: @white;
+        color: var(--white);
         text-align: center;
         .border-radius(@border-radius-small @border-radius-small 0 0);
       }
       &.badge-access-beheer,
-      &.badge-access-bestuur { background: @red; }
+      &.badge-access-bestuur { background: var(--red); }
       &.badge-access-concertcommissie,
       &.badge-access-feestcommissie,
       &.badge-access-commissie-interne_relaties,
       &.badge-access-commissie-koorregie,
-      &.badge-access-muziekcommissie { background: @yellow; }
+      &.badge-access-muziekcommissie { background: var(--yellow); }
       &.badge-access-leden,
       &.badge-access-band,
-      &.badge-access-aspirant-leden { background: @blue; }
+      &.badge-access-aspirant-leden { background: var(--blue); }
       &.badge-access-vrienden,
-      &.badge-access-bezoekers { background: @green; }
+      &.badge-access-bezoekers { background: var(--green); }
     }
   }
   .buildmode-schema {
@@ -285,8 +281,8 @@ article.node-type-repertoire.buildmode-full {
   }
   .cta-wrapper {
     padding: 24em/@fs;
-    background: fade(@white, 80%);
-	.border-radius();
+    background: var(--white-fade);
+    .border-radius();
   }
   .field-body {
     display: grid;
@@ -346,15 +342,15 @@ article.node-type-repertoire.buildmode-full {
 .buildmode-schema.node-type-activiteit {
   &:not(.activiteit-repetitie) {
     h2 {
-      a:link, a:visited { color: @red; }
-      a:hover, a:active, a:focus { color: @primary; }
+      a:link, a:visited { color: var(--red); }
+      a:hover, a:active, a:focus { color: var(--primary); }
 	  }
   }
   h2 {
     text-transform: uppercase;
     margin: 0;
-    a:link, a:visited { color: @grey; }
-    a:hover, a:active, a:focus { color: @primary; }
+    a:link, a:visited { color: var(--grey); }
+    a:hover, a:active, a:focus { color: var(--primary); }
     vertical-align: middle;
     font-size: 18em/@fs;
     line-height: 36em/18;
@@ -384,7 +380,7 @@ article.node-type-repertoire.buildmode-full {
     }
   }
   &.node-status-optie {
-    border: 3em/@fs dashed @red;
+    border: 3em/@fs dashed var(--red);
     padding: 9em/@fs 9em/@fs 21em/@fs;
     @media @tablet { padding: 9em/@fs; }
   }
@@ -465,7 +461,7 @@ article.node-type-repertoire.buildmode-full {
     }
   }
   .aspirant {
-    color: @red;
+    color: var(--red);
   }
 }
 article.node-type-profiel.buildmode-full {
@@ -547,7 +543,7 @@ article.buildmode-teaser.node-type-video {
     .icon-only();
   }
   .field-title h2 {
-    color: @red;
+    color: var(--red);
     text-transform: uppercase;
     font-size: 16em/@fs;
     line-height: 24em/16;
@@ -616,9 +612,9 @@ article.node-type-programma.programma-nummer {
   h2 {
     text-transform: uppercase;
     margin: 0;
-    color: @red;
-    a:link, a:visited { color: @red; }
-    a:hover, a:active, a:focus { color: @primary; }
+    color: var(--red);
+    a:link, a:visited { color: var(--red); }
+    a:hover, a:active, a:focus { color: var(--primary); }
     vertical-align: middle;
     font-size: 14em/@fs;
     line-height: 36em/@fs;
@@ -628,7 +624,7 @@ article.node-type-programma.programma-programma {
   h2 {
     text-transform: uppercase;
     margin: 0;
-    color: @red;
+    color: var(--red);
   }
 }
 // NODE TYPE VERSLAG
@@ -665,7 +661,7 @@ article.node-type-verslag {
     h2 {
       text-transform: uppercase;
       margin: 0;
-      color: @red;
+      color: var(--red);
       vertical-align: middle;
       font-size: 14em/@fs;
       line-height: 36em/@fs;
@@ -711,7 +707,7 @@ article.node-type-verslag {
 .field {
   .field-label, .field-label-inline-first {
     font-weight: normal;
-    color: @red;
+    color: var(--red);
     text-transform: uppercase;
   }
 }

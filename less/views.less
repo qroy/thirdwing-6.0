@@ -19,7 +19,7 @@
 }
 // ADVERTENTIES
 #node-6048 {
-  background: @primary;
+  background: var(--primary);
   display: flex;
   justify-content: center; /* horizontal centering */
   align-items: center;     /* vertical centering */
@@ -60,7 +60,7 @@
     box-sizing: border-box;
     text-align: center;
     ol {
-      background: @white;
+      background: var(--white);
       .border-radius(@border-radius-large);
       padding: 6em/@fs;
       min-height: 360em/@fs;
@@ -83,7 +83,7 @@
   }
   .sleepgroep-geslacht:after {
     font-family: fontawesome;
-    color: @red;
+    color: var(--red);
     font-style: normal;
     font-weight: normal;
   }
@@ -133,7 +133,7 @@ div.content-profile-display {
     }
     .field-voornaam {
       display: none;
-      color: @white;
+      color: var(--white);
       @media @phone-ls {
         font-size: 10em/@fs;
         line-height: 24em/10;
@@ -174,17 +174,17 @@ div.content-profile-display {
     .persoon-positie-K15 { grid-column: 15; }
     .persoon-positie-K16 { grid-column: 16; }
 	
-    .persoon-A  { background: @red; }
-    .persoon-B  { background: @blue; }
-    .persoon-C  { background: @purple; }
-    .persoon-D  { background: @yellow; }
-    .persoon-E  { background: @green; }
-    .persoon-Y1 { background: @grey; }
+    .persoon-A  { background: var(--red); }
+    .persoon-B  { background: var(--blue); }
+    .persoon-C  { background: var(--purple); }
+    .persoon-D  { background: var(--yellow); }
+    .persoon-E  { background: var(--green); }
+    .persoon-Y1 { background: var(--grey); }
     .persoon-Z1,
     .persoon-Z2,
     .persoon-Z3,
     .persoon-Z4,
-    .persoon-Z5	{ background: @grey-light; }
+    .persoon-Z5	{ background: var(--grey-light); }
   }
 }
 .personen-leden, .personen-opstelling {
@@ -219,7 +219,7 @@ div.content-profile-display {
     }
   }
   .repertoire-programma {
-    color: @red;
+    color: var(--red);
     text-transform: uppercase;
   }
 }
@@ -259,11 +259,11 @@ div.content-profile-display {
     display: inline-block;
     padding: 4em/@fs 12em/@fs;
     .border-radius(@border-radius-large);
-    background-color: @grey-light;
+    background-color: var(--grey-light);
   }
   li.pager-current, a:hover, a:active, a:focus {
-    background-color: @secondary;
-    color: @white;
+    background-color: var(--secondary);
+    color: var(--white);
   }
 }
 
