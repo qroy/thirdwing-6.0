@@ -1,7 +1,4 @@
-/**
- * COLOURS
- */
-
+// COLOURS
 @purple:         rgb( 60,  50, 155);
 @orange:         rgb(235, 115,  20);
 @pink:           rgb(167,  88,  99);
@@ -15,9 +12,9 @@
 @grey-dark:      rgb( 70,  70,  68);
 @grey:           rgb(135, 135, 134);
 @grey-light:     rgb(215, 215, 214);
-@grey-lightest:  rgb(230, 230, 229);
 @white-off:      rgb(240, 240, 238);
 @white:          rgb(255, 255, 255);
+@white-fade:     fade(@white, 80%);
 
 @purple-light:   lighten(@purple, 30%);
 @orange-light:   lighten(@orange, 45%);
@@ -26,10 +23,6 @@
 @blue-light:     lighten(@blue,   20%);
 @yellow-light:   lighten(@yellow, 30%);
 @red-light:      lighten(@red,    20%);
-@red-lightest:   lighten(@red,    38%);
-
-@fs: 14; /* font-size in pixels */
-@lh: 24; /* line-height in pixels */
 
 @primary:        @purple;
 @secondary:      @orange;
@@ -37,6 +30,41 @@
 @primary-light:  @purple-light;
 @secondary-light:@orange-light;
 
+:root {
+  --purple:        @purple;
+  --orange:        @orange;
+  --pink:          @pink;
+  --green:         @green;
+  --blue:          @blue;
+  --red:           @red;
+  --yellow:        @yellow;
+  --brown:         @brown;
+
+  --black:         @black;
+  --grey-dark:     @grey-dark;
+  --grey:          @grey;
+  --grey-light:    @grey-light;
+  --white-off:     @white-off;
+  --white:         @white;
+  --white-fade:    @white-fade;
+
+  --purple-light:  @purple-light;
+  --orange-light:  @orange-light;
+  --pink-light:    @pink-light;
+  --green-light:   @green-light;
+  --blue-light:    @blue-light;
+  --yellow-light:  @yellow-light;
+  --red-light:     @red-light;
+  
+  --primary:       @purple;
+  --secondary:     @orange;
+  --tertiary:      @grey-dark;
+  --primary-light: @purple-light;
+  --secondary-light: @orange-light;
+}
+
+@fs: 14; /* font-size in pixels */
+@lh: 24; /* line-height in pixels */
 
 @border-radius-large: 10px;
 @border-radius-small: 5px;

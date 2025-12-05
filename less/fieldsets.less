@@ -4,14 +4,14 @@
 fieldset {
   margin: 0 0 24em/@fs;
   padding: 56em/@fs 24em/@fs 24em/@fs;
-  border: 2em/@fs solid @white-off;
-  background-color: @white;
+  border: 2em/@fs solid var(--white-off);
+  background-color: var(--white);
   .border-radius(@border-radius-small);
   position: relative;
   box-sizing: border-box;
 }
 .buildmode-teaser fieldset {
-  background-color: @white;
+  background-color: var(--white);
 }
 fieldset legend {
   position: absolute;
@@ -20,27 +20,27 @@ fieldset legend {
   right: -2em/@fs;
   box-sizing: border-box;
   padding: 0 24em/@fs;
-  background-color: @white-off;
+  background-color: var(--white-off);
   line-height: 32em/@fs;
-  border: 2em/@fs solid @white-off;
+  border: 2em/@fs solid var(--white-off);
   .border-radius(@border-radius-small);
 }
 .buildmode-teaser fieldset legend {
-  color: @grey-dark;
-  background: @white;
+  color: var(--grey-dark);
+  background: var(--white);
 }
 
 html.js fieldset.collapsed {
   margin: 0 0 24em/@fs;
   padding: 0 0 32em/@fs;
-  border: 2em/@fs solid @white-off;
+  border: 2em/@fs solid var(--white-off);
 }
 html.js fieldset.collapsible legend {
-  border: 2em/@fs solid @grey;
-  background-color: @grey;
+  border: 2em/@fs solid var(--grey);
+  background-color: var(--grey);
   &:hover {
-    border: 2em/@fs solid @secondary;
-    background-color: @secondary;
+    border: 2em/@fs solid var(--secondary);
+    background-color: var(--secondary);
   }
 }
 html.js fieldset.collapsible legend a {
@@ -54,7 +54,7 @@ html.js fieldset.collapsible legend a::after {
   position: relative;
   width: 0;
   border: 5px solid transparent;
-  border-top-color: @white;
+  border-top-color: var(--white);
   margin-left: 5px;
 }
 html.js fieldset.collapsed legend a {
@@ -62,16 +62,14 @@ html.js fieldset.collapsed legend a {
 }
 html.js fieldset.collapsed legend a::after {
   border-top-color: transparent;
-  border-left-color: @white;
+  border-left-color: var(--white);
 }
 html.js fieldset.collapsible legend a:link,
 html.js fieldset.collapsible legend a:visited {
-//  background-color: @primary;
-  color: @white;
+  color: var(--white);
 }
 html.js fieldset.collapsible legend a:hover,
 html.js fieldset.collapsible legend a:focus,
 html.js fieldset.collapsible legend a:active {
-//  background-color: @secondary;
-  color: @white;
+  color: var(--white);
 }

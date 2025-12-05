@@ -46,7 +46,7 @@
   a {
     line-height: 32em/@fs;
     text-decoration: none;
-    color: @white;
+    color: var(--white);
   }
 }
 #menu-wrapper :not(li) > ul.menu > li {
@@ -58,7 +58,7 @@
     .border-radius(@border-radius-small);
   }
   > a:active, > a:focus, > a:hover, > a.active, > a.active-trail, &.active-trail > a, &.over > a, &:hover > a {
-    background-color: @secondary;
+    background-color: var(--secondary);
     .box-shadow();
   }
 }
@@ -101,7 +101,7 @@
       white-space: nowrap;
     }
     a:active, a:focus, a:hover, a.active, a.active-trail, &:hover > a {
-      background: @secondary;
+      background: var(--secondary);
     }
 	a.active-trail:not(.active) {
 	  .box-shadow(@box-shadow-large);
@@ -129,15 +129,15 @@
   padding: 0;
   margin: 0;
   z-index: 5;
-  background: @grey;
+  background: var(--grey);
   .box-shadow(@box-shadow-inset);
   @media @tablet {
     position: absolute;
     top: 100%;
     min-width: 100%;
 	.border-radius();
-	background: @grey-dark;
-	box-shadow: 0 0 10px @black;
+	background: var(--grey-dark);
+	box-shadow: 0 0 10px var(--black);
   }
   > li.expanded > a {
     padding-right: 12px;
@@ -165,14 +165,14 @@
   padding: 0;
   margin: 0;
   z-index: 2;
-  background: @grey;
+  background: var(--grey);
   .box-shadow(@box-shadow-inset);
   @media @tablet {
     position: absolute;
     left: 100%;
     top: 0;
-	background: @grey-dark;
-	box-shadow: 0 0 10px @black;
+	background: var(--grey-dark);
+	box-shadow: 0 0 10px var(--black);
     .border-radius();
   }
 }
@@ -190,7 +190,7 @@
     right: 0;
     width: 0;
     border: 3px solid transparent;
-    border-top-color: @white;
+    border-top-color: var(--white);
     margin: 0 0 0 2px;
     overflow: hidden;
     display: inline-block;
@@ -243,7 +243,7 @@ ul.tabs {
   }
   padding: 0;
   border: 0 solid transparent;
-  background: @grey;
+  background: var(--grey);
   .border-radius();
   li a {
     margin: 0 1em/@fs 1em/@fs 0;
@@ -256,8 +256,8 @@ ul.tabs {
     line-height: 32em/@fs;
     border: 0 solid transparent;
     &:link, &:visited {
-      color: @white;
-      background: @grey;
+      color: var(--white);
+      background: var(--grey);
     }
   }
   li:first-of-type a {
@@ -265,7 +265,7 @@ ul.tabs {
   }
   li {
     &.active a, a:active, a:hover, a:focus {
-      background: @secondary;
+      background: var(--secondary);
       .border-radius();
       border: 0 solid transparent;
     }
@@ -288,17 +288,17 @@ ul.tabs {
       box-sizing: border-box;
       a:link, a:visited {
         font-weight: 600;
-        color: @grey-dark;
+        color: var(--grey-dark);
         text-align: center;
-        background-color: @grey-light;
+        background-color: var(--grey-light);
         padding: 6em/@fs;
         .border-radius();
         display: block;
         box-sizing: border-box;
       }
       a:hover, a:active, a:focus, a.active, a.active-trail {
-        color: @white;
-        background-color: @secondary;
+        color: var(--white);
+        background-color: var(--secondary);
       }
       .item-count {
         font-weight: 300;
@@ -333,8 +333,8 @@ ul.tabs {
   @media @normal { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   li {
     a:link, a:visited {
-      color: @white;
-      background-color: @primary;
+      color: var(--white);
+      background-color: var(--primary);
       height: 100em/24;
       line-height: 88em/24;
       padding: 6em/24;
@@ -352,8 +352,8 @@ ul.tabs {
       }
     }
     a:hover, a:active, a.active:link, a.active:visited {
-      background-color: @secondary;
-      color: @white;
+      background-color: var(--secondary);
+      color: var(--white);
       text-decoration: none;
     }
   }
@@ -363,12 +363,12 @@ ul.tabs {
   @media @normal { grid-template-columns: repeat(4, 100em/24); }
   li {
     a:link, a:visited {
-      color: @white;
-      background-color: @grey-dark;
+      color: var(--white);
+      background-color: var(--grey-dark);
     }
     a:hover, a:active, a.active:link, a.active:visited {
-      background-color: @secondary;
-      color: @white;
+      background-color: var(--secondary);
+      color: var(--white);
       text-decoration: none;
     }
 	a.fa {
@@ -440,12 +440,12 @@ ul.tabs {
         line-height: 24/@fs;
         display: block;
         &:link, &:visited {
-          background: @grey;
-          color: @grey-dark;
+          background: var(--grey);
+          color: var(--grey-dark);
         }
         &:hover, &:active, &.active {
-          background: @white-off;
-          color: @grey-dark;
+          background: var(--white-off);
+          color: var(--grey-dark);
         }
       }
     }
@@ -461,11 +461,11 @@ ul.tabs {
         .border-radius();
         margin: 0;
         &:link, &:visited {
-          background: @white-off;
-          color: @grey-dark;
+          background: var(--white-off);
+          color: var(--grey-dark);
         }
         &:hover, &:active {
-          background: @grey;
+          background: var(--grey);
         }
       }
     }
