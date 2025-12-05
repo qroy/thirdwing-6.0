@@ -970,7 +970,7 @@ span.clear {
   background: var(--purple);
 }
 .badge.badge-vriend-3 {
-  background: #eb7314;
+  background: var(--secondary);
 }
 .badge.badge-color-grey {
   background: var(--grey);
@@ -979,7 +979,7 @@ span.clear {
   background: var(--purple);
 }
 .badge.badge-color-orange {
-  background: #eb7314;
+  background: var(--secondary);
 }
 .badge.badge-color-red {
   background: var(--red);
@@ -1285,7 +1285,7 @@ span.clear {
   background: var(--purple);
 }
 .marker.badge-vriend-3 {
-  background: #eb7314;
+  background: var(--secondary);
 }
 .marker.badge-color-grey {
   background: var(--grey);
@@ -1294,7 +1294,7 @@ span.clear {
   background: var(--purple);
 }
 .marker.badge-color-orange {
-  background: #eb7314;
+  background: var(--secondary);
 }
 .marker.badge-color-red {
   background: var(--red);
@@ -1794,19 +1794,19 @@ a[type*="mpeg"]:before {
 }
 #breadcrumb {
   font-size: 0.85714286em;
-  line-height: 2em;
+  line-height: 2.66666667em;
   position: absolute;
-  top: 3.5em;
+  top: 2.66666667em;
   left: 0;
   right: 0;
   z-index: 3;
-  background: var(--white-off);
+}
+.node-hero #breadcrumb {
+  padding: 0 0.58333333em;
+  background: var(--white-fade);
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-}
-.node-hero #breadcrumb {
-  padding: 0 2em;
 }
 #breadcrumb:link,
 #breadcrumb a:link,
@@ -1954,7 +1954,6 @@ a[type*="mpeg"]:before {
 .buildmode-teaser:not(:empty),
 .buildmode-full:not(:empty),
 .buildmode-schema:not(:empty),
-.buildmode-3:not(:empty),
 #main > dl:not(:empty),
 #main > form:not(:empty),
 #main > .admin:not(:empty),
@@ -1966,6 +1965,16 @@ a[type*="mpeg"]:before {
   -moz-border-radius: 10px;
   border-radius: 10px;
   box-sizing: border-box;
+}
+.node-hero .buildmode-full:not(:empty) {
+  background-color: var(--white-fade);
+}
+.node-hero #main .block > h2 {
+  padding: 0 0.29166667em;
+  background: var(--white-fade);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 .buildmode-schema:not(:empty) {
   padding: 0.85714286em;
@@ -3415,7 +3424,7 @@ input {
 }
 input:focus:read-write {
   outline: none;
-  border: 0.14285714em solid #eb7314;
+  border: 0.14285714em solid var(--secondary);
 }
 input:hover:read-write:not(:focus):not(:disabled) {
   border: 0.14285714em solid var(--grey);
@@ -3488,7 +3497,7 @@ input[type=radio]:checked ~ .option__indicator {
 }
 input[type=checkbox]:focus ~ .option__indicator,
 input[type=radio]:focus ~ .option__indicator {
-  border-color: #eb7314;
+  border-color: var(--secondary);
 }
 input[type=checkbox]:disabled ~ .option__indicator,
 input[type=radio]:disabled ~ .option__indicator {
@@ -3526,7 +3535,7 @@ textarea {
 }
 textarea:focus:read-write {
   outline: none;
-  border: 0.14285714em solid #eb7314;
+  border: 0.14285714em solid var(--secondary);
 }
 select {
   display: inline-block;
@@ -3550,7 +3559,7 @@ select::-ms-expand {
 }
 select:focus {
   outline: none;
-  border: 0.14285714em solid #eb7314;
+  border: 0.14285714em solid var(--secondary);
 }
 select:hover:not(:focus) {
   border: 0.14285714em solid var(--grey);
@@ -4495,7 +4504,7 @@ tr.taxonomy-term-divider-bottom {
 .jp-interface ul.jp-controls a.jp-play:focus,
 .jp-interface ul.jp-controls a.jp-pause:focus,
 .jp-interface ul.jp-controls a.jp-stop:focus {
-  background: #eb7314;
+  background: var(--secondary);
   color: var(--white);
 }
 .jp-interface ul.jp-controls a.jp-play,
@@ -4532,7 +4541,7 @@ tr.taxonomy-term-divider-bottom {
 .jp-interface ul.jp-controls a.jp-volume-max:active,
 .jp-interface ul.jp-controls a.jp-volume-min:focus,
 .jp-interface ul.jp-controls a.jp-volume-max:focus {
-  color: #eb7314;
+  color: var(--secondary);
 }
 .jp-interface ul.jp-controls a.jp-volume-min {
   right: 6.85714286em;
@@ -4577,7 +4586,7 @@ div.jp-load-bar {
   border-radius: 5px;
 }
 div.jp-play-bar {
-  background: #eb7314;
+  background: var(--secondary);
   width: 0px;
   height: 0.85714286em;
   -webkit-border-radius: 5px;
@@ -4598,7 +4607,7 @@ div.jp-volume-bar {
   border-radius: 5px;
 }
 div.jp-volume-bar-value {
-  background: #eb7314;
+  background: var(--secondary);
   width: 0px;
   height: 0.85714286em;
   -webkit-border-radius: 5px;
